@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       7bff862d-c420-4713-8a7d-431f6a59dd5c
+:END:
+#+title: second
+#+filetags:
+
+* test
+this is my second node
+[[https://brand.ncsu.edu/img/downloads/logo-02.jpg]]

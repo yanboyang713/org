@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       9a29e681-412f-4286-9551-7b20ddffdb8b
+:END:
+#+title: Istio Gateway
+#+filetags: definition 
+
+* Definition
+Istio Gateway is a load balancer operating at the edge of the mesh receiving incoming or outgoing HTTP/TCP connections.
+
+* Examples
+
+* Reference List
+https://istio.io/latest/docs/reference/config/networking/gateway/

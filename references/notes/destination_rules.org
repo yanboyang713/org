@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       73f5055f-aa99-45b7-88de-029d808058fb
+:END:
+#+title: Destination rules
+#+filetags: definition 
+
+* Definition
+Along with [[id:7c263c00-c957-49c0-8550-d33ef2192097][Virtual Service]], destination rules are a key part of Istio’s traffic routing functionality. The Virtual services as how to route your traffic to a given destination and then use destination rules to configure what happens to traffic for that destination. Destination rules are applied after virtual service routing rules are evaluated, so they apply to the traffic’s “real” destination.
+
+In particular, destination rules specify named service subsets, such as grouping all a given service’s instances by version. Then use these service subsets in the routing rules of virtual services to control the traffic to different instances of services.
+
+Destination rules also could customize Envoy’s traffic policies when calling the entire destination service or a particular service subset, such as preferred load balancing model, TLS security mode, or circuit breaker settings.
+
+* Examples

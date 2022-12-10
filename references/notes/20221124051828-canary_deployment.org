@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       30e9c78c-eabe-45af-8618-ead8b41f8ad4
+:END:
+#+title: Canary Deployment
+#+filetags: Canary
+
+* Why need Canary Deployment
+[[id:e21dd64b-ea43-46a7-b251-ebbad431e863][Murphy's law]]
+
+* What Is Canary Deployment
+Canary deployments are a staged release practice. We roll out software updates to a small group of users first so they can test them and provide feedback. Once the changes are accepted, the update will be rolled out to the remaining users.
+
+https://semaphoreci.com/blog/what-is-canary-deployment#:~:text=In%20software%20engineering%2C%20canary%20deployment,the%20rest%20of%20the%20users.

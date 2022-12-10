@@ -1,0 +1,20 @@
+:PROPERTIES:
+:ID:       bf45a0e9-97e0-499e-8597-65ce23618425
+:END:
+#+title: PKGBUILDs install regular files
+#+filetags: PKGBUILD
+
+It depends what folder contains. if it only contains regular files (non-executables):
+
+#+begin_src bash
+install -d ${pkgdir}/opt/
+install -m 644 ${srcdir}/${pkgname}-${pkgver}/folder/* ${pkgdir}/opt/
+#+end_src
+If it contains subdirectories:
+#+begin_src bash
+install -d ${pkgdir}/opt/
+cp -r ${srcdir}/${pkgname}-${pkgver}/folder/* ${pkgdir}/opt/
+#+end_src
+
+* Reference List
+1. https://bbs.archlinux.org/viewtopic.php?id=78476

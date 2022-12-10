@@ -1,0 +1,23 @@
+:PROPERTIES:
+:ID:       791cfc10-7aa5-4ad2-a1a4-6a87fc664d1f
+:END:
+#+title: Git Fork Subdirectory Of Repo
+#+filetags: git fork
+
+Fork A Subdirectory Of Repo
+* Introduction
+Ever wanted to fork a subdirectory and not the whole Git/GitHub repository. Well I have, I recently had to fork a subdirectory of one of the repositories I wanted to work on without the need to fork the whole repository. In this post, I will show you how it’s done.
+* Clone the repo
+#+begin_src console
+git clone https://github.com/<someones-username>/<some-repo-you-want-to-fork>
+cd some-repo-you-want-to-fork
+#+end_src
+* Create a branch using the git subtree command for the folder only
+#+begin_src console
+git subtree split --prefix=src -b dir-you-want-to-fork
+git checkout dir-you-want-to-fork
+#+end_src
+
+* Reference List
+1. https://blog.mphomphego.co.za/blog/2021/02/07/How-to-fork-a-subdirectory-of-repo-as-a-different-repo-on-GitHub.html
+2. https://www.mendelowski.com/docs/git/fork-subdirectory/

@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       5f999ad1-4a30-4472-a743-49a2a6343b48
+:END:
+#+title: Kiali
+#+filetags: definition 
+
+View [[id:4f0a7a3e-db3c-4d39-b776-4b746f564347][mesh service]] using Kiali
+* Definition
+
+
+* Examples

@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       48d11b5f-8c43-4b43-966b-c214fb57c9ae
+:END:
+#+title: rust learning
+#+filetags: rust book
+
+https://github.com/sunface/rust-course
+
+https://github.com/sunface/rust-by-practice
+
+https://github.com/rustlang-cn/rusty-book

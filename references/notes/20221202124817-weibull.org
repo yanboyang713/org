@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       79bf16b0-8869-48dc-8710-05c1dc362a27
+:END:
+#+title: weibull
+#+filetags: weibull
+
+https://en.wikipedia.org/wiki/Weibull_distribution
