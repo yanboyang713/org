@@ -1,8 +1,0 @@
-:PROPERTIES:
-:ID:       3869d803-5df2-4822-9d80-ac219a7105f5
-:END:
-#+title: first
-#+filetags:
-
-[[id:7bff862d-c420-4713-8a7d-431f6a59dd5c][second]]
-lala
