@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       506d20e8-5453-495d-abff-a6920b92d24b
+:END:
+#+title: Hugo
+#+filetags: Hugo
+
+Hugo is the world’s fastest static website engine. It’s written in Go (aka Golang).
+
+* WIKI theme
++ [[id:bc507e2b-e819-410e-9ec9-b6fc4bd4d082][docsy]]
+
+* Reference List
+   1. https://gohugo.io/documentation/

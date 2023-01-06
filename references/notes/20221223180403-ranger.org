@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       9ca3ce07-9795-46f2-9a99-4d99b71de2f0
+:END:
+#+title: Ranger
+#+filetags: Ranger
+
+* Reference List
+1. https://linuxconfig.org/introduction-to-ranger-file-manager
+2. https://ashpex.eu.org/2020/08/ranger-configure/#ranger-icons
+3. https://wiki.archlinux.org/title/ranger

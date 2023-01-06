@@ -11,3 +11,10 @@
 Canary deployments are a staged release practice. We roll out software updates to a small group of users first so they can test them and provide feedback. Once the changes are accepted, the update will be rolled out to the remaining users.
 
 https://semaphoreci.com/blog/what-is-canary-deployment#:~:text=In%20software%20engineering%2C%20canary%20deployment,the%20rest%20of%20the%20users.
+
+Canary deployments are a method of staged release [1]. To test the upgrades and get user input, we release them to a select sample of users first. The remaining users will receive the update after the modifications are approved. Canary deployments might be accomplished extremely well with [[id:4f0a7a3e-db3c-4d39-b776-4b746f564347][mesh service]] ([[id:3f679682-02ce-41da-a5fc-bb5d354d48d7][istio]]).
+
+The most well-known open source service mesh software is called Istio. Service-to-service communication is handled by a separate infrastructure layer called a service mesh. It is in charge of ensuring that requests are delivered reliably through the intricate web of services that makes up a contemporary, cloud-native application. In actual use, the service mesh is usually implemented as a collection of thin network proxies that are installed concurrently with application code without the requirement for the application to be aware of it.
+
+* Reference List
+1. Canary Deployment strategy for Kubernetes (n.d.). Retrieved November 26, 2022, from https://learn.microsoft.com/en-us/azure/devops/pipelines/ecosystems/kubernetes/canary-demo?view=azure-devops&tabs=yaml

@@ -1,0 +1,24 @@
+:PROPERTIES:
+:ID:       b60301a4-574f-43ee-a864-15f5793ea990
+:END:
+#+title: Kubernetes
+#+filetags:  
+
+Kubernetes, also known as K8s, is an open-source system for automating deployment, scaling, and management of containerized applications.
+
+It groups containers that make up an application into logical units for easy management and discovery. Kubernetes builds upon 15 years of experience of running production workloads at Google, combined with best-of-breed ideas and practices from the community.
+
+* Publishing Services (ServiceTypes)
+For some parts of your application (for example, frontends) you may want to expose a Service onto an external IP address, that's outside of your cluster.
+
+Kubernetes ServiceTypes allow you to specify what kind of Service you want.
+
+Type values and their behaviors are:
++ [[id:f6851ac4-2947-4f36-bd09-ed2fe97995b7][ClusterIP]]
++ [[id:fb6e83d6-b60b-4c98-837b-d4b6d91c1b56][NodePort]]
+
+* Routing
++ [[id:bd7ebf5a-affb-476e-b7ac-50042cab09b3][Ingress]]
+
+* Reference List
+1. https://kubernetes.io/

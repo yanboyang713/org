@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       160cf0c4-db39-467f-9712-552e64899894
+:END:
+#+title: KupenStack
+#+filetags:  
+
+* Overview
+http://res.cloudinary.com/dkvj6mo4c/image/upload/v1672969359/screenshot/lpblfykzkn8ybrhlzaqn.png
+
+[[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]]
+
+[[id:cf2c18b4-f9a0-412f-825f-11a0e837dab5][OpenStack]]
+
+* Reference List
+1. Yadav, P. and Rathi, V.K., 2021. KupenStack: Kubernetes based Cloud Native OpenStack. arXiv preprint arXiv:2106.02956.

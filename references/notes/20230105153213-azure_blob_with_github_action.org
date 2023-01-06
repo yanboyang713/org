@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       69194520-27db-4964-9595-f66505bed2d5
+:END:
+#+title: Azure Blob with Github Action
+#+filetags:  
+
+* Upload
+https://github.com/marketplace/actions/azure-blob-storage-upload
+
+* Download
+https://github.com/marketplace/actions/azure-blob-storage-download-blob

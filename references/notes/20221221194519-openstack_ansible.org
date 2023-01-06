@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       a260f44c-5ad5-4904-8a5c-023fe576dc64
+:END:
+#+title: OpenStack-Ansible
+#+filetags: OpenStack
+
+OpenStack-Ansible provides Ansible playbooks and roles for the deployment and configuration of an OpenStack environment.
+
+* Reference List
+1. https://docs.openstack.org/openstack-ansible/latest/

@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       cc4d5749-c647-406e-a08d-ef4850406219
+:END:
+#+title: ns3
+#+filetags:  
+
+* What is ns-3?
+ns-3 is a discrete-event network simulator, targeted primarily for research and educational use. ns-3 is free software, licensed under the GNU GPLv2 license, and is publicly available for research, development, and use.
+
+The goal of the ns-3 project is to develop a preferred, open simulation environment for networking research: it should be aligned with the simulation needs of modern networking research and should encourage community contribution, peer review, and validation of the software.
+
+* Reference List
+1. https://www.nsnam.org/about/

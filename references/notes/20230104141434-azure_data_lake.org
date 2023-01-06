@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       be42aaf3-a82d-4dfc-b885-fba7c9676dff
+:END:
+#+title: Azure Data Lake
+#+filetags: Data Lake
+Azure Data Lake Storage Gen2 is a set of capabilities dedicated to big data analytics, built on [[id:966dde6b-ab1c-4834-9d8c-bd71184a1297][Azure Blob]] Storage.
+
+Data Lake Storage Gen2 converges the capabilities of Azure Data Lake Storage Gen1 with Azure Blob Storage. For example, Data Lake Storage Gen2 provides file system semantics, file-level security, and scale. Because these capabilities are built on Blob storage, you'll also get low-cost, tiered storage, with high availability/disaster recovery capabilities.

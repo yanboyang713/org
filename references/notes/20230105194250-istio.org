@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       3f679682-02ce-41da-a5fc-bb5d354d48d7
+:END:
+#+title: istio
+#+filetags:  
+
+Istio is an open platform for providing a uniform way to integrate microservices, manage traffic flow across microservices, enforce policies and aggregate telemetry data. Istio's control plane provides an abstraction layer over the underlying cluster management platform, such as [[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]].
+
+* Traffic Management
++ [[id:9a29e681-412f-4286-9551-7b20ddffdb8b][Istio Gateway]]
++ [[id:7c263c00-c957-49c0-8550-d33ef2192097][Virtual Service]]
++ [[id:73f5055f-aa99-45b7-88de-029d808058fb][Destination rules]]
+
+* Reference List
+1. https://github.com/istio/istio
+2. https://istio.io/latest/docs/

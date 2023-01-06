@@ -1,0 +1,19 @@
+:PROPERTIES:
+:ID:       b7f0dd68-c203-405b-baad-c16d131e7c94
+:END:
+#+title: Types of Storage
+#+filetags:
+* Major types of storage
+** Block storage
+Bootable and file (need OS to store metadata about folder structure), database, protocol: iSCSI and Fibre Channel
+
+** File storage
+Only file in hierarchical folder, for multiple devices/share, protocol: SMB, NFS
+
+** Object storage
+Flat structure, rich metadata support, protocol: HTTP
+
+Intuitively, think about “block storage” as “disk”, “file storage” as file share, “object storage” cloud/HTTP-based storage
+
+Example:
++ [[id:966dde6b-ab1c-4834-9d8c-bd71184a1297][Azure Blob]]

@@ -1,0 +1,26 @@
+:PROPERTIES:
+:ID:       966dde6b-ab1c-4834-9d8c-bd71184a1297
+:END:
+#+title: Azure Blob
+#+filetags: object storage
+
+Azure Blob Storage is Microsoft's object storage solution for the cloud. Blob Storage is optimized for storing massive amounts of unstructured data. Unstructured data is data that doesn't adhere to a particular data model or definition, such as text or binary data.
+
+* About Blob Storage
+Blob Storage is designed for:
+
++ Serving images or documents directly to a browser.
++ Storing files for distributed access.
++ Streaming video and audio.
++ Writing to log files.
++ Storing data for backup and restore, disaster recovery, and archiving.
++ Storing data for analysis by an on-premises or Azure-hosted service.
+
+* Usage
+1. Using [[id:57775ed0-ba6a-40ab-bb6f-e2e0adb9ae61][BlobFuse]] to make “object storage” as “file storage”.
+2. [[id:69194520-27db-4964-9595-f66505bed2d5][Azure Blob with Github Action]]
+
+
+
+* Reference List
+1. https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction

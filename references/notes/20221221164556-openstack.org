@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       cf2c18b4-f9a0-412f-825f-11a0e837dab5
+:END:
+#+title: OpenStack
+#+filetags: OpenStack
+* What is OpenStack?
+OpenStack is a cloud operating system that controls large pools of compute, storage, and networking resources throughout a datacenter, all managed through a dashboard that gives administrators control while empowering their users to provision resources through a web interface.
+* Install
+[[id:a260f44c-5ad5-4904-8a5c-023fe576dc64][OpenStack-Ansible]]
+
+* Reference List
+1. https://docs.openstack.org/zed/?_ga=2.230829343.1805240115.1671489424-481961317.1671489424

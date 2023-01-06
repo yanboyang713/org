@@ -1,0 +1,17 @@
+:PROPERTIES:
+:ID:       f6c12716-7d4f-4def-af11-73f122e5c821
+:END:
+#+title: Meta Scientific Linux
+#+filetags:  
+
+* WM
++ [[id:e7c6bf03-516a-4c23-85cc-72cf9e5f1b3c][eww]]
+
+* System Info
++ [[id:a9dfe2aa-4f7f-4536-8053-1683ba63cef5][finger]]
+
+* Packages Manger
++ [[id:917be974-9940-4719-97e3-1e40141e88cc][PKGBUILD]]
+
+* File Manger
++ [[id:9ca3ce07-9795-46f2-9a99-4d99b71de2f0][Ranger]]

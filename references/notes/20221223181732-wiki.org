@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       bc507e2b-e819-410e-9ec9-b6fc4bd4d082
+:END:
+#+title: docsy
+#+filetags: Wiki
+
+* Reference List
+https://www.docsy.dev/about/
