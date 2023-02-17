@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       79bc332f-c5dc-4118-9f15-b85492daea3f
+:END:
+#+title: Trident
+#+filetags:  
+
+Trident: NetApp a cloud storage specialist company has designed Trident. It is easy to deploy and provides automatic volume backup. This solution is highly scalable and flexible. It integrates with the Kubernetes environment and provisions huge data run in any combination of NetApp platforms. It is steadfast storage for cloud containers. Trident is used by companies like AWS, Google Cloud, and Microsoft Azure. It has free and commercial offerings combined with support.
+
+* Reference List
+1. https://anarsolutions.com/10-popular-cloud-native-storage-solutions-%F0%9F%93%8C/

@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       6e9a67f6-7338-4248-8eeb-9b742b1d5293
+:END:
+#+title: Install Archlinux with Full Disk Encryption
+#+filetags:  
+
+https://gist.github.com/kurtmc/ae586ef83b6ea05635bf310f1160d138

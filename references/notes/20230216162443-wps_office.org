@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       e6ff9271-adf0-4fed-bdb9-29de13fc10e4
+:END:
+#+title: WPS Office
+#+filetags:  
+
+* Installation
+#+begin_src bash
+paru -S ttf-wps-fonts wps-office-cn
+#+end_src
+
+* Reference List
+1. https://wiki.archlinux.org/title/WPS_Office

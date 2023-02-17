@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       c130e97c-6493-4e70-b9c7-957c84e4eedd
+:END:
+#+title: ufw
+#+filetags:  
+
+
+* Reference List
+1. https://www.unixmen.com/firewallsetup-use-ufw-arch-linux/

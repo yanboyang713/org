@@ -1,0 +1,18 @@
+:PROPERTIES:
+:ID:       a63c6ec6-a812-4694-b777-3d83a2286725
+:END:
+#+title: Anomaly Prediction
+#+filetags:  
+
+* Database Set-up
+[[id:955c1a91-a8c5-45ad-ae0a-4d95d8ce5869][TimeScaleDB]]
+
+#+begin_src sql
+        SELECT datname FROM pg_catalog.pg_database;
+
+        CREATE DATABASE anomalyprediction;
+        CREATE EXTENSION IF NOT EXISTS timescaledb CASCADE;
+#+end_src
+
+* Reference List
+1.

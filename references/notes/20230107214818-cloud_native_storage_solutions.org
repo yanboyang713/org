@@ -1,0 +1,28 @@
+:PROPERTIES:
+:ID:       88836d8c-a8ab-4029-a530-77b3f27c6160
+:END:
+#+title: Cloud Native Storage Solutions
+#+filetags:  
+
+* Top 10 widely used Cloud-Native Storage Solutions
+** Open Source
++ [[id:c625aa5e-187f-4776-b28c-0bb4b7df9198][Ceph]]
++ [[id:02c96226-8109-4c31-9473-4a717fe34484][Linstor]]
++ [[id:5a722108-4739-49da-9dcb-ca3551abfe1a][Rook]]
++ [[id:bc1b4ff1-ab61-4e26-81dc-4876221fe062][Longhorn]]
+
+** Commercial
++ [[id:2a71fca3-aa58-4229-960e-c6d379bf7a95][Robin]]
++ [[id:7517b87e-b22f-407a-b4ec-679bfb1534b5][Diamanti]]
+
+** Free and Commercial versions
++ [[id:79bc332f-c5dc-4118-9f15-b85492daea3f][Trident]]
++ [[id:6cad5603-b816-4086-b27c-53c9339c93f7][Kubera]]
++ [[id:478e24e2-3e69-4d4f-b627-768ce1e1e376][StorageOS]]
++ [[id:a23d9314-456f-4591-9b98-41ce1a5bf73f][Portworx]]
+
+* Public Cloud Solutions
++ [[id:be42aaf3-a82d-4dfc-b885-fba7c9676dff][Azure Data Lake]]
+
+* Reference List
+1. https://anarsolutions.com/10-popular-cloud-native-storage-solutions-%F0%9F%93%8C/

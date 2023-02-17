@@ -1,0 +1,54 @@
+:PROPERTIES:
+:ID:       494d0c77-a11a-4b78-85a0-b1b4726d135c
+:END:
+#+title: psql
+#+filetags:  
+* What is psql
+Psql is the interactive terminal for working with Postgres. Theres an abundance of flags available for use when working with psql, but lets focus on some of the most important ones, then how to connect:
++ -h the host to connect to
++ -U the user to connect with
++ -p the port to connect to (default is 5432)
+
+* Connection
+** Connect to PostgreSQL
+#+begin_src bash
+psql -h localhost -U username
+#+end_src
+
+** Connect to database
+#+begin_src bash
+psql -h localhost -U username databasename
+#+end_src
+
+* Commonly used commands
+** List tables in database
+#+begin_src console
+# \d
+      List of relations
+ Schema |   Name    | Type  | Owner
+--------+-----------+-------+-------
+ public | employees | table | craig
+(1 row)
+#+end_src
+
+** List all databases
+#+begin_src console
+# \l
+          List of databases
+Name     |   Owner   | Encoding | Collate | Ctype |      Access privileges
+---------+-----------+----------+---------+-------+-----------------------------
+learning | jarvis    | UTF8     | C       | UTF-8 |
+#+end_src
+
+** Connect to another database
+#+begin_src bash
+#\c dbname
+#+end_src
+
+** Quit from postgres shell
+#+begin_src bash
+#\q
+#+end_src
+
+* Reference List
+1. https://www.postgresguide.com/utilities/psql/

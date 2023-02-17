@@ -1,0 +1,51 @@
+:PROPERTIES:
+:ID:       2210ac49-a9e6-4a08-9e1f-8ee5b39e6d8d
+:END:
+#+title: ns3 installation
+#+filetags:
+
+* Pre-install
+#+begin_src bash
+paru -S cmake python dpdk qt5-base openmpi sqlite libxml2 boost boost-libs glibe libpcap gsl gtk3 goocanvas python-gobject python-cairo python-pygraphviz ipython clang llvm castxml python-pygccxml python-cxxfilt python-setuptools python-pip python-wheel git mercurial doxygen graphviz imagemagick python-sphinx texlive-bin
+#+end_src
+
+* Set-up Script
+#+begin_src bash
+#!/bin/bash
+current_dir=$(pwd)
+
+# ns3 version 3.37
+ns3_ver="3.37"
+ns3_folder="ns-allinone-${ns3_ver}"
+ns3_scratch="${current_dir}/${ns3_folder}/ns-${ns3_ver}/scratch"
+
+# download ns3 to current dir
+if [ ! -d "${current_dir}"/${ns3_folder} ]; then
+    ns3_file_name="ns-allinone-${ns3_ver}.tar.bz2"
+    url="https://www.nsnam.org/releases/${ns3_file_name}"
+    if [ ! -f "${current_dir}/${ns3_file_name}" ]; then
+        echo "Downloading NS3-${ns3_ver}..."
+        wget --show-progress --quiet $url
+    fi
+    # unzip
+    echo "Unzipping ${ns3_file_name}..."
+    tar xjf ${ns3_file_name}
+    # Delete tar file
+    echo "Deleteing TAR file"
+    rm ${ns3_file_name}
+
+fi
+
+# compile (opitonal)
+echo "Compiling ns3..."
+cd "${current_dir}"/${ns3_folder} || return
+./build.py
+
+# link scratch in assets
+echo "Copying scratch to ns3..."
+ln -s -v "${current_dir}"/scratch/*.cc "${ns3_scratch}"/
+
+#+end_src
+
+* Project Example
+https://github.com/yanboyang713/ns3-learning.git

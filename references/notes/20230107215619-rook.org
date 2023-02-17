@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       5a722108-4739-49da-9dcb-ca3551abfe1a
+:END:
+#+title: Rook
+#+filetags:  
+
+* Introduction
+This solution is a self-scaling and self-healing open source storage for cloud native environment. It offers object and block storage. Rook enables automation of configuration, deployment, provisioning, monitoring of storage. Its Kubernetes platform empowers multiple storage solutions, upgrading, migration and disaster recovery. You get to manage resources and experience overall consistency across cloud applications. Those already using Rook are CROWDFOX, gini, Pacific Research Platform and a few more.
+
+* Reference List
+1. https://anarsolutions.com/10-popular-cloud-native-storage-solutions-%F0%9F%93%8C/
+2. https://github.com/rook/rook

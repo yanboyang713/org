@@ -9,5 +9,11 @@ ns-3 is a discrete-event network simulator, targeted primarily for research and 
 
 The goal of the ns-3 project is to develop a preferred, open simulation environment for networking research: it should be aligned with the simulation needs of modern networking research and should encourage community contribution, peer review, and validation of the software.
 
+* NS 3 Installation
+[[id:2210ac49-a9e6-4a08-9e1f-8ee5b39e6d8d][ns3 installation]]
+
+* NS 3 config
+[[id:4d2a426a-90b4-491f-b6de-d49ab8ebad83][ns3 TraceSources]]
+
 * Reference List
 1. https://www.nsnam.org/about/

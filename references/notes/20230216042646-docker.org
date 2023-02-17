@@ -1,0 +1,54 @@
+:PROPERTIES:
+:ID:       e4fa2843-dc6e-4303-a209-40df1bd10a0f
+:END:
+#+title: docker
+#+filetags:  
+
+* Arch Installation
+#+begin_src bash
+pacman -S docker
+systemctl start docker.service
+#+end_src
+
+If you want to avoid typing sudo whenever you run the docker command, add your username to the docker group:
+
+Create the docker group.
+#+begin_src bash
+sudo groupadd docker
+#+end_src
+
+Add your user to the docker group.
+#+begin_src bash
+sudo usermod -aG docker ${USER}
+#+end_src
+
+To apply the new group membership, log out of the server and back in, or type the following:
+
+#+begin_src bash
+su - ${USER}
+#+end_src
+
+You will be prompted to enter your user’s password to continue.
+
+Confirm that your user is now added to the docker group by typing:
+#+begin_src console
+(base) yanboyang713@boyang:~/Documents/docker-as-dev-environment$ id -nG
+yanboyang713 adm cdrom sudo dip plugdev lpadmin sambashare microk8s docker
+#+end_src
+
+If you need to add a user to the docker group that you’re not logged in as, declare that username explicitly using:
+#+begin_src bash
+sudo usermod -aG docker username
+#+end_src
+
+The rest of this article assumes you are running the docker command as a user in the docker group. If you choose not to, please prepend the commands with sudo.
+
+Let’s explore the docker command next.
+
+Test Docker
+#+begin_src bash
+docker info
+#+end_src
+
+* Reference List
+1. https://wiki.archlinux.org/title/docker

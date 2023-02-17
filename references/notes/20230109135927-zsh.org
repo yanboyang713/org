@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       ccf63974-d736-4927-92d7-41f6c1a5ea06
+:END:
+#+title: zsh
+#+filetags:  
+
+* Reference List
+1. https://www.sitepoint.com/zsh-tips-tricks/
+2. https://wiki.archlinux.org/title/zsh

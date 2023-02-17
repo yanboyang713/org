@@ -15,3 +15,20 @@
 
 * File Manger
 + [[id:9ca3ce07-9795-46f2-9a99-4d99b71de2f0][Ranger]]
+
+* Meta-Emacs
+[[id:19182f6d-b637-4879-8e9c-b093f492db5c][emacs]]
+
+* Firewall
+[[id:c130e97c-6493-4e70-b9c7-957c84e4eedd][ufw]]
+
+* Shell
+[[id:ccf63974-d736-4927-92d7-41f6c1a5ea06][zsh]]
+
+* WIKI
+https://www.metascientificlinux.com/
+Theme based on [[id:bc507e2b-e819-410e-9ec9-b6fc4bd4d082][docsy]]
+
+* Disk
+Script to install Archlinux with full disk encryption
+[[id:6e9a67f6-7338-4248-8eeb-9b742b1d5293][Install Archlinux with Full Disk Encryption]]

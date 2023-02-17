@@ -1,0 +1,59 @@
+:PROPERTIES:
+:ID:       955c1a91-a8c5-45ad-ae0a-4d95d8ce5869
+:END:
+#+title: TimeScaleDB
+#+filetags:  
+
+* Installation
+** Pre-installation
++ [[id:e4fa2843-dc6e-4303-a209-40df1bd10a0f][docker]]
+
+** Install
+#+begin_src bash
+docker run -d --name timescaledb -p 5432:5432 \
+-e POSTGRES_PASSWORD=password timescale/timescaledb:latest-pg14
+
+docker start /timescaledb
+docker container ls
+docker ps -a
+#+end_src
+
+
+* Connect to database
+** Client [[id:494d0c77-a11a-4b78-85a0-b1b4726d135c][psql]]
+I recommend using [[id:494d0c77-a11a-4b78-85a0-b1b4726d135c][psql]].
+
+** Client [[id:797784c8-2df1-4445-8811-f18e54ff84d8][Beekeeper Studio]]
+Run: beekeeper-studio
+
+#+begin_src file
+User name:postgres
+Password: password
+#+end_src
+
+* Create Database
+#+begin_src sql
+CREATE DATABASE vicroads;
+CREATE EXTENSION IF NOT EXISTS timescaledb CASCADE;
+#+end_src
+
+* Create Table
+#+begin_src sql
+DROP TABLE detector;
+CREATE TABLE detector (
+	"id" INTEGER PRIMARY KEY,
+	"name" TEXT,
+	"link_key" TEXT,
+	"description" TEXT,
+	"x" NUMERIC,
+	"y" NUMERIC
+);
+#+end_src
+
+* Remove
+#+begin_src bash
+docker rm /timescaledb
+#+end_src
+
+* Reference List
+1.

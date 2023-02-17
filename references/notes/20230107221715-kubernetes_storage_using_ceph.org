@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       98fa1a96-287c-4298-9f0c-987464bb8cf3
+:END:
+#+title: Kubernetes Storage using Ceph
+#+filetags:  
+
+[[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]]
+[[id:c625aa5e-187f-4776-b28c-0bb4b7df9198][Ceph]]
+
+* Reference List
+1. https://www.velotio.com/engineering-blog/kubernetes-storage-using-ceph

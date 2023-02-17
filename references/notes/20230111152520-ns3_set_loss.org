@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       53f385d7-7442-435c-9b1d-9818f1979b20
+:END:
+#+title: ns3 set loss
+#+filetags:  
+
+[[id:cc4d5749-c647-406e-a08d-ef4850406219][ns3]] set path loss
+
+#+begin_src c++
+    Ptr<MatrixPropagationLossModel> lossModel = CreateObject<MatrixPropagationLossModel>();
+    lossModel->SetDefaultLoss(200); // set default loss to 200 dB (no link)
+#+end_src
+
+Example DIR:
+/example/wireless/wifi-hidden-terminal.cc

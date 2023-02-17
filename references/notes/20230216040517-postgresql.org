@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       930e6248-352a-48af-8c0a-f8b0999b74c3
+:END:
+#+title: PostgreSQL
+#+filetags:  
+
+* C/C++ Interface
+#+begin_src bash
+paru -S libpqxx
+#+end_src
+
+* Reference List
+1. https://www.tutorialspoint.com/postgresql/postgresql_c_cpp.htm

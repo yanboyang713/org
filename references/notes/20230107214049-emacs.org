@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       19182f6d-b637-4879-8e9c-b093f492db5c
+:END:
+#+title: emacs
+#+filetags:  
+
+* Configure Example
+https://hieuphay.com/doom-emacs-config/
+https://abdelhakbougouffa.pro/posts/config/#org-modern
+
+* org mode
+[[id:8ec1bf68-c0cc-4b66-9f02-67e008a77c7c][Org Agenda]]

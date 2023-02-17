@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       797784c8-2df1-4445-8811-f18e54ff84d8
+:END:
+#+title: Beekeeper Studio
+#+filetags:
+
+* Introduction
+The SQL Editor and Database Manager Of Your Dreams A modern, easy to use, and good looking SQL client for MySQL, Postgres, SQLite, SQL Server, and more.
+
+* Installation
+#+begin_src bash
+paru -S beekeeper-studio-bin
+#+end_src
+
+* Reference List
+1. https://www.beekeeperstudio.io/
