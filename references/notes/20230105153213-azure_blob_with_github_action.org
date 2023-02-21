@@ -4,6 +4,8 @@
 #+title: Azure Blob with Github Action
 #+filetags:  
 
+[[id:b0ffda2b-ff06-47ee-9e0a-7a922b026155][Github Action]]
+
 * Upload
 https://github.com/marketplace/actions/azure-blob-storage-upload
 

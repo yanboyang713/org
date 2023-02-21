@@ -10,3 +10,6 @@ https://abdelhakbougouffa.pro/posts/config/#org-modern
 
 * org mode
 [[id:8ec1bf68-c0cc-4b66-9f02-67e008a77c7c][Org Agenda]]
+
+* Research
+[[id:6314a4a8-8a04-492c-8a4b-de9e4ff8df00][org roam]]

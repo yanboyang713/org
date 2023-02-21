@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       1f01bac0-e865-4f93-a5f2-e07ef483fc3c
+:END:
+#+title: ns3 Ubuntu
+#+filetags:  
+
+This base on [[id:803d821b-6f7d-4e07-9a1f-08c9736c7dec][ubuntu]] OS.
+
+* Reference List
+1. https://www.nsnam.org/wiki/Installation#Ubuntu.2FDebian.2FMint

@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       a2da1c32-ba1a-4c2c-9374-1bd8896920fa
+:END:
+#+title: rust
+#+filetags:  
+
+[[id:48d11b5f-8c43-4b43-966b-c214fb57c9ae][rust learning]]

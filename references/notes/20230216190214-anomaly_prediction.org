@@ -14,5 +14,8 @@
         CREATE EXTENSION IF NOT EXISTS timescaledb CASCADE;
 #+end_src
 
+* Papers
++ [[id:cb8b4f66-a3f9-4079-86fc-0577f080a58c][Deep Learning for multivariate time series data Anomaly Detection]]
+
 * Reference List
 1.

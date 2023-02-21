@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       e0e66428-575c-4680-ab09-e7567eb25ef8
+:END:
+#+title: personal portfolio
+#+filetags:  
+
+* [[id:506d20e8-5453-495d-abff-a6920b92d24b][Hugo]] Theme
++ [[https://github.com/hugo-toha/toha][Toha]]

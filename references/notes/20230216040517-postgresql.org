@@ -1,13 +1,161 @@
 :PROPERTIES:
 :ID:       930e6248-352a-48af-8c0a-f8b0999b74c3
 :END:
-#+title: PostgreSQL
+#+title: PostgreSQL C++ Interface
 #+filetags:  
 
-* C/C++ Interface
+* Setup environment
+[[id:2f14b6e7-a87b-4543-b5a5-255d107a3767][Cmake Installation]]
+
+** Install libpqxx
+*** Build
+#+begin_src bash
+cd ~
+git clone https://github.com/jtv/libpqxx.git
+./configure
+make -j4
+sudo make install
+#+end_src
+*** Arch Linux
 #+begin_src bash
 paru -S libpqxx
 #+end_src
 
+
+* Building libpqxx in cmake
+** Code
+#+begin_src c++
+#include <iostream>
+#include <pqxx/pqxx>
+
+using namespace std;
+using namespace pqxx;
+
+int main(int argc, char *argv[])
+{
+    try
+    {
+        connection C("dbname = postgres user = postgres password = mysecretpassword \
+      hostaddr = 127.0.0.1 port = 5433");
+        if (C.is_open())
+        {
+            cout << "Opened database successfully: " << C.dbname() << endl;
+        }
+        else
+        {
+            cout << "Can't open database" << endl;
+            return 1;
+        }
+    }
+    catch (const std::exception &e)
+    {
+        cerr << e.what() << std::endl;
+        return 1;
+    }
+}
+#+end_src
+
+** CMakeLists.txt
+#+begin_src cmake
+include(FetchContent)
+
+cmake_minimum_required (VERSION 3.10)
+project(example VERSION 1.0.0 LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+FetchContent_Declare(
+  libpqxx
+  GIT_REPOSITORY https://github.com/jtv/libpqxx.git
+  GIT_TAG 17e5a6c8ac3abc05329891aaa378bd6004b9c8ee
+)
+set(PQXX_LIBRARIES pqxx)
+
+FetchContent_MakeAvailable(libpqxx)
+
+add_executable(main main.cpp)
+
+target_link_libraries(main "${PQXX_LIBRARIES}")
+#+end_src
+
+** How to build
+#+begin_src bash
+mkdir build
+cd build
+cmake ..
+cmake --build .
+#+end_src
+
+** How to run
+#+begin_src console
+./main
+Opened database successfully: postgres
+#+end_src
+
+* Without building libpqxx in cmake
+** Code
+#+begin_src c++
+#include <iostream>
+#include <pqxx/pqxx>
+
+using namespace std;
+using namespace pqxx;
+
+int main(int argc, char *argv[])
+{
+    try
+    {
+        connection C("dbname = postgres user = postgres password = mysecretpassword \
+      hostaddr = 127.0.0.1 port = 5433");
+        if (C.is_open())
+        {
+            cout << "Opened database successfully: " << C.dbname() << endl;
+        }
+        else
+        {
+            cout << "Can't open database" << endl;
+            return 1;
+        }
+    }
+    catch (const std::exception &e)
+    {
+        cerr << e.what() << std::endl;
+        return 1;
+    }
+}
+#+end_src
+
+** CMakeLists.txt
+#+begin_src cmake
+cmake_minimum_required (VERSION 3.10)
+project(example VERSION 1.0.0 LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+add_executable(main main.cpp)
+
+target_link_libraries(main -lpqxx -lpq)
+#+end_src
+
+** How to build
+#+begin_src console
+mkdir build
+cd build
+cmake ..
+cmake --build .
+#+end_src
+
+** How to run
+#+begin_src console
+./main
+Opened database successfully: postgres
+#+end_src
+
 * Reference List
 1. https://www.tutorialspoint.com/postgresql/postgresql_c_cpp.htm
+2. https://stackoverflow.com/questions/51633845/add-libpqxx-library-to-cmake
+3. https://github.com/jtv/libpqxx/blob/master/BUILDING-cmake.md

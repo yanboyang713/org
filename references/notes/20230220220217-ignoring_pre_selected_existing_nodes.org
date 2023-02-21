@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       7181cc98-0914-4904-81df-7484e3307179
+:END:
+#+title: Ignoring pre-selected existing nodes
+#+filetags:  
+
+For common completion frameworks (e.g. ivy, vertico), <enter> is used to select candidates.
+
+For vertico, your case requires M-<return> (vertico-exit-input).
+
+For ivy, it is C-M-j (ivy-immediate-done).
+
+* Reference List
+1. https://emacs.stackexchange.com/questions/70436/create-new-org-roam-node-ignoring-pre-selected-existing-nodes

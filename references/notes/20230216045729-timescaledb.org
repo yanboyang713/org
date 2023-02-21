@@ -18,7 +18,6 @@ docker container ls
 docker ps -a
 #+end_src
 
-
 * Connect to database
 ** Client [[id:494d0c77-a11a-4b78-85a0-b1b4726d135c][psql]]
 I recommend using [[id:494d0c77-a11a-4b78-85a0-b1b4726d135c][psql]].

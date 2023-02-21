@@ -5,9 +5,8 @@
 #+filetags:
 
 * Pre-install
-#+begin_src bash
-paru -S cmake python dpdk qt5-base openmpi sqlite libxml2 boost boost-libs glibe libpcap gsl gtk3 goocanvas python-gobject python-cairo python-pygraphviz ipython clang llvm castxml python-pygccxml python-cxxfilt python-setuptools python-pip python-wheel git mercurial doxygen graphviz imagemagick python-sphinx texlive-bin
-#+end_src
++ [[id:ac850f11-2ba0-451b-b257-9bb9dc746876][ns3 arch]]
++ [[id:1f01bac0-e865-4f93-a5f2-e07ef483fc3c][ns3 Ubuntu]]
 
 * Set-up Script
 #+begin_src bash

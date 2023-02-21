@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       6314a4a8-8a04-492c-8a4b-de9e4ff8df00
+:END:
+#+title: org roam
+#+filetags:  
+
+[[id:7181cc98-0914-4904-81df-7484e3307179][Ignoring pre-selected existing nodes]]
+
+* Reference List
+1. https://www.orgroam.com/manual.html

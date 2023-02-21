@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       29337d81-6b02-4a62-bd87-6e9d5d454af4
+:END:
+#+title: github
+#+filetags:
+
+[[id:28776313-f579-466f-9a3d-216fc14a5308][git]]

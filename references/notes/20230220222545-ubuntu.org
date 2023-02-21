@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       803d821b-6f7d-4e07-9a1f-08c9736c7dec
+:END:
+#+title: ubuntu
+#+filetags:

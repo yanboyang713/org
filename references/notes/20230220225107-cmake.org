@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       4d5f908b-d263-4e2b-8944-57d8d507df41
+:END:
+#+title: Cmake
+#+filetags:  
+
+[[id:2f14b6e7-a87b-4543-b5a5-255d107a3767][Cmake installation]]

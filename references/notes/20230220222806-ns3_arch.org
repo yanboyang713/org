@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       ac850f11-2ba0-451b-b257-9bb9dc746876
+:END:
+#+title: ns3 arch
+#+filetags:  
+
+This base on [[id:dc13b67c-8d8b-40fd-b8cf-9ea8547e485d][Arch Linux]] OS.
+
+#+begin_src bash
+paru -S cmake python dpdk qt5-base openmpi sqlite libxml2 boost boost-libs glibe libpcap gsl gtk3 goocanvas python-gobject python-cairo python-pygraphviz ipython clang llvm castxml python-pygccxml python-cxxfilt python-setuptools python-pip python-wheel git mercurial doxygen graphviz imagemagick python-sphinx texlive-bin
+#+end_src

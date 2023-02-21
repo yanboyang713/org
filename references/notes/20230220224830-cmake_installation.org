@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       2f14b6e7-a87b-4543-b5a5-255d107a3767
+:END:
+#+title: Cmake installation
+#+filetags:
+* Install CMake
+
+#+begin_src bash
+cd ~
+wget https://github.com/Kitware/CMake/releases/download/v3.14.5/cmake-3.14.5.tar.gz
+tar xf cmake-3.14.5.tar.gz
+cd cmake-3.14.5
+./bootstrap --parallel=10
+make -j4
+sudo make -j4 install
+#+end_src

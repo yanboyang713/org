@@ -15,5 +15,8 @@ The goal of the ns-3 project is to develop a preferred, open simulation environm
 * NS 3 config
 [[id:4d2a426a-90b4-491f-b6de-d49ab8ebad83][ns3 TraceSources]]
 
+* Projects
++ [[id:a63c6ec6-a812-4694-b777-3d83a2286725][Anomaly Prediction]]
+
 * Reference List
 1. https://www.nsnam.org/about/
