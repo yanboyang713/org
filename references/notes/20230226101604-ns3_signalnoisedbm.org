@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       8c7d76a3-c303-49d7-9350-3ca6f13e9718
+:END:
+#+title: NS3 SignalNoiseDbm
+#+filetags:  
+
+[[id:cc4d5749-c647-406e-a08d-ef4850406219][ns3]]
+https://www.nsnam.org/docs/release/3.34/doxygen/structns3_1_1_signal_noise_dbm.html

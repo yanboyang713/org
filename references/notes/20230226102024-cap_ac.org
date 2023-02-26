@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       2f5fcf68-2587-4477-88c4-1aff17a6ece1
+:END:
+#+title: cAP ac
+#+filetags:  
+
+https://mikrotik.com/product/cap_ac
+
+[[id:7b3d4c7a-30a8-4f0f-a587-fdbb39109e57][mikrotik]]

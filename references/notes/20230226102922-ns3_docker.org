@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       b3b4e883-7757-4857-9d58-35240f902df6
+:END:
+#+title: ns3-docker
+#+filetags:
+
+[[id:cc4d5749-c647-406e-a08d-ef4850406219][ns3]]
+[[id:e4fa2843-dc6e-4303-a209-40df1bd10a0f][docker]]
+
+https://github.com/hygorjardim/ns3-docker

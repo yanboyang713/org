@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       de08236b-4dd8-4de5-af92-452c400e4a50
+:END:
+#+title: ns3-mmwave
+#+filetags:  
+
+[[id:cc4d5749-c647-406e-a08d-ef4850406219][ns3]]
+[[id:a663f0da-be79-4371-a8d7-8f02576edc81][60 GHz]]
+
+https://github.com/nyuwireless-unipd/ns3-mmwave

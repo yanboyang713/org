@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       52e8ca62-f013-41c8-a7d6-6a54655de658
+:END:
+#+title: NS3 Packet
+#+filetags:  
+
+[[id:cc4d5749-c647-406e-a08d-ef4850406219][ns3]]
+
+https://www.nsnam.org/docs/models/html/packets.html
+https://www.nsnam.org/docs/release/3.19/doxygen/classns3_1_1_packet.html

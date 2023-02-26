@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       7b3d4c7a-30a8-4f0f-a587-fdbb39109e57
+:END:
+#+title: mikrotik
+#+filetags:

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       c6a15356-3732-44c6-bc7a-8b3f5c44f3d2
+:END:
+#+title: Postgresql Numeric Types
+#+filetags:
+
+[[id:97a5c070-1745-4002-b5fe-0d170877ba3f][postgre]]
+
+* Reference List
+1. https://www.postgresql.org/docs/current/datatype-numeric.html

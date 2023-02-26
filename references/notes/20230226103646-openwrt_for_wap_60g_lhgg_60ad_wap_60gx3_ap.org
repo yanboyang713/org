@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       c8413c2a-4220-4f30-9137-570844d9c85a
+:END:
+#+title: Openwrt for wAP 60G/LHGG-60ad/wAP 60Gx3 AP
+#+filetags:  
+
+[[id:a663f0da-be79-4371-a8d7-8f02576edc81][60 GHz]]
+[[id:dfedb92d-7290-4643-b06b-088a497746b3][Openwrt]]
+
+https://github.com/IMDEANetworksWNG/Mikrotik-researcher-tools

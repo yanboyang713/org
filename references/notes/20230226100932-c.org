@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       4cb9c502-be4e-49c5-9900-ebcbbdba2b10
+:END:
+#+title: c++
+#+filetags:

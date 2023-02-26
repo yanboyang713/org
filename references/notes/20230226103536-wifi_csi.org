@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       c5fb3604-2033-40ea-80b2-37d1853569b9
+:END:
+#+title: WiFi CSI
+#+filetags:  
+
+[[id:a663f0da-be79-4371-a8d7-8f02576edc81][60 GHz]]
+
+https://github.com/Marsrocky/Awesome-WiFi-CSI-Sensing

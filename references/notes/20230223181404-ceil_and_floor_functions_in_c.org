@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       f5e8b70d-561b-4485-823c-18cc0a78f342
+:END:
+#+title: Ceil and Floor functions in C++
+#+filetags:
+
+[[id:4cb9c502-be4e-49c5-9900-ebcbbdba2b10][c++]]
+
+* Reference List
+1. https://www.geeksforgeeks.org/ceil-floor-functions-cpp/

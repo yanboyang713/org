@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       1df305a6-e32e-4fab-97af-a3753311e349
+:END:
+#+title: Date/Time Types
+#+filetags:  
+
+[[id:97a5c070-1745-4002-b5fe-0d170877ba3f][postgre]]
+
+https://www.postgresql.org/docs/7.3/datatype-datetime.html
+https://www.postgresql.org/docs/current/datatype-datetime.html

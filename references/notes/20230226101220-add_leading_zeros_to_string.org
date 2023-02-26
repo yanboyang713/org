@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       0df2e8ce-5209-40b2-8fd3-1a824fc67984
+:END:
+#+title: add leading zeros to string
+#+filetags:  
+
+[[id:4cb9c502-be4e-49c5-9900-ebcbbdba2b10][c++]]
+https://stackoverflow.com/questions/6143824/add-leading-zeroes-to-string-without-sprintf

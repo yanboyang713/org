@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       a663f0da-be79-4371-a8d7-8f02576edc81
+:END:
+#+title: 60 GHz
+#+filetags:

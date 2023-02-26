@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       9a0c33e3-9df9-4d62-8989-877882dfe208
+:END:
+#+title: AirSimN
+#+filetags:  
+
+[[id:cc4d5749-c647-406e-a08d-ef4850406219][ns3]]
+
+[[id:9af21282-5cb8-4433-a4f2-a05fe80c6300][AirSim]]
+
+Code Repo: https://github.com/ShengMingTang/AirSimN
+
+Tang, S.M., Hsu, C.H., Tian, Z. and Su, X., 2021, October. An aerodynamic, computer vision, and network simulator for networked drone applications. In Proceedings of the 27th Annual International Conference on Mobile Computing and Networking (pp. 831-833).

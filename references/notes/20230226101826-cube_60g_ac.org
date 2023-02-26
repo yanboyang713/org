@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       8986e41c-bc5b-457c-bd99-c47b52fa8c08
+:END:
+#+title: Cube 60G ac
+#+filetags:  
+
+[[id:7b3d4c7a-30a8-4f0f-a587-fdbb39109e57][mikrotik]]
+
+[[id:a663f0da-be79-4371-a8d7-8f02576edc81][60 GHz]]
+
+https://mikrotik.com/product/cube_60g_ac

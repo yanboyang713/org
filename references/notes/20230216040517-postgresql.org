@@ -4,6 +4,8 @@
 #+title: PostgreSQL C++ Interface
 #+filetags:  
 
+[[id:4cb9c502-be4e-49c5-9900-ebcbbdba2b10][c++]]
+
 * Setup environment
 [[id:2f14b6e7-a87b-4543-b5a5-255d107a3767][Cmake Installation]]
 
@@ -154,6 +156,9 @@ cmake --build .
 ./main
 Opened database successfully: postgres
 #+end_src
+
+* Example
+https://www.reddit.com/r/cpp_questions/comments/snpkh2/pqxx_connection_class_is_this_clean_code_can_it/
 
 * Reference List
 1. https://www.tutorialspoint.com/postgresql/postgresql_c_cpp.htm

@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       74316788-070a-4125-af7b-b71421639e12
+:END:
+#+title: NS3 WifiTxVector
+#+filetags:  
+
+[[id:cc4d5749-c647-406e-a08d-ef4850406219][ns3]]
+https://www.nsnam.org/docs/release/3.27/doxygen/classns3_1_1_wifi_tx_vector.html

@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       dfedb92d-7290-4643-b06b-088a497746b3
+:END:
+#+title: Openwrt
+#+filetags:

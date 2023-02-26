@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       3a4951a5-f85e-48e6-93d5-c42ef1da74fc
+:END:
+#+title: FlyNetSim
+#+filetags:  
+
+[[id:363cd982-b188-4e15-97af-0c18a73e2746][ardupilot]]
+[[id:cc4d5749-c647-406e-a08d-ef4850406219][ns3]]
+
+Baidya, S., Shaikh, Z. and Levorato, M., 2018, October. FlyNetSim: An open source synchronized UAV network simulator based on ns-3 and ardupilot. In Proceedings of the 21st ACM International Conference on Modeling, Analysis and Simulation of Wireless and Mobile Systems (pp. 37-45).
