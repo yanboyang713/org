@@ -1,0 +1,18 @@
+:PROPERTIES:
+:ID:       0184f476-af36-4dae-ad22-63dfde9d7b2e
+:END:
+#+title: Azure CLI Login
+#+filetags:  
+
+Install [[id:29b9f5ab-e328-4e3c-b54d-437879553d58][Azure CLI in Docker]].
+
+Before using any Azure CLI commands. Login
+#+begin_src bash
+az login
+#+end_src
+
+Follow the steps below:
+To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code RQR5A8WRA to authenticate.
+
+* Reference List
+1. https://learn.microsoft.com/en-us/cli/azure/get-started-with-azure-cli

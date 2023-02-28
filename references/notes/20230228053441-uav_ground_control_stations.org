@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       86148910-f7ec-4e5d-97ba-5e1d821ce171
+:END:
+#+title: UAV Ground Control Stations
+#+filetags:
+
+[[id:5584e347-c6aa-46cd-9435-0921f561f5f6][QGroundControl]]
+[[id:7b9a8d8a-d1b2-4a54-946b-c86db45bf327][MAVProxy]]

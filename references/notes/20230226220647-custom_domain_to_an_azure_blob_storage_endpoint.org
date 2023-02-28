@@ -1,0 +1,80 @@
+:PROPERTIES:
+:ID:       4f42fb5c-fcc5-46f8-a5ed-42a813e8acbe
+:END:
+#+title: custom domain to an Azure Blob Storage endpoint
+#+filetags:
+
+Creating [[id:be42aaf3-a82d-4dfc-b885-fba7c9676dff][Azure Data Lake]] first.
+
+* Map a custom domain with only HTTP enabled
+** Briefly Unavailable
+✔️ Step 1: Get the host name of your storage endpoint.
+
+✔️ Step 2: Create a canonical name (CNAME) record with your domain provider.
+
+✔️ Step 3: Register the custom domain with Azure.
+
+✔️ Step 4: Test your custom domain.
+
+*** Step 1: Get the host name of your storage endpoint
+The host name is the storage endpoint URL without the protocol identifier and the trailing slash.
+1. In the Azure portal, go to your storage account.
+2. In the menu pane, under *Settings*, select *Endpoints*.
+3. Copy the value of the *Blob service* endpoint or the *Static website* endpoint to a text file.
+
+*Note:*
+The Data Lake storage endpoint is not supported (For example: https://mystorageaccount.dfs.core.windows.net/).
+
+4. Remove the protocol identifier (For example: HTTPS) and the trailing slash from that string. The following table contains examples.
+
+   | Type of endpoint | endpoint                                       | host name                             |
+   |------------------+------------------------------------------------+---------------------------------------|
+   | blob service     | https://boyangpublic.blob.core.windows.net/    | boyangpublic.blob.core.windows.net    |
+   | static website   | https://boyangpublic.z13.web.core.windows.net/ | boyangpublic.z13.web.core.windows.net |
+   |                  |                                                |                                       |
+Set this value aside for later.
+*** Step 2: Create a canonical name (CNAME) record with your domain provider
+Create a CNAME record to point to your host name. A CNAME record is a type of Domain Name System (DNS) record that maps a source domain name to a destination domain name.
+
+For example, *cloudflare*: Domain -> DNS -> Records
+[[http://res.cloudinary.com/dkvj6mo4c/image/upload/v1677468461/screenshot/izkfpldfdunfz7s2vanq.png]]
+
+Create a CNAME record. As part of that record, provide the following items:
+
+The subdomain alias such as www or photos. The subdomain is required, root domains are not supported.
+
+The host name that you obtained in the Get the host name of your storage endpoint section earlier in this article.
+
+*** Step 3: Pre-register your custom domain with Azure
+When you pre-register your custom domain with Azure, you permit Azure to recognize your custom domain without having to modify the DNS record for the domain. That way, when you do modify the DNS record for the domain, it will be mapped to the blob endpoint with no downtime.
+
+Run the following PowerShell command.
+#+begin_src bash
+az storage account update \
+   --resource-group <resource-group-name> \
+   --name <storage-account-name> \
+   --custom-domain <custom-domain-name> \
+   --use-subdomain false
+#+end_src
+
+For example:
+#+begin_src bash
+az storage account update \
+> --resource-group permanent \
+> --name boyangpublic \
+> --custom-domain blog.yanboyang.com \
+> --use-subdomain false
+#+end_src
+
++ Replace the <resource-group-name> placeholder with the name of the resource group.
++ Replace the <storage-account-name> placeholder with the name of the storage account.
++ Replace the <custom-domain-name> placeholder with the name of your custom domain, including the subdomain.
+
+For example, if your domain is contoso.com and your subdomain alias is www, enter www.contoso.com. If your subdomain is photos, enter photos.contoso.com.
+
+Traffic to your domain is not yet being routed to your storage account until you create a CNAME record with your domain provider. You'll do that in the next section.
+
+* Map a custom domain with HTTPS enabled
+
+* Reference List
+1. https://learn.microsoft.com/en-us/azure/storage/blobs/storage-custom-domain-name?tabs=azure-portal

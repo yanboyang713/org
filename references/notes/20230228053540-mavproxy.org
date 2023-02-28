@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       7b9a8d8a-d1b2-4a54-946b-c86db45bf327
+:END:
+#+title: MAVProxy
+#+filetags:
+
+could be as one of [[id:918361a2-6114-4fae-b596-487bb0d42c4e][xApp]] in [[id:ef47832f-5edc-4c6a-bd2d-8e02c4bd5d9a][open-RAN]]

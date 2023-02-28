@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       47675bd8-938b-4c63-b2fb-d87f85f9764c
+:END:
+#+title: create subsection tag
+#+filetags:
+
+command:
+M-x org-id-get-create (SPC m I)

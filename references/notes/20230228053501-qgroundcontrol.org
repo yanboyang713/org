@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       5584e347-c6aa-46cd-9435-0921f561f5f6
+:END:
+#+title: QGroundControl
+#+filetags:

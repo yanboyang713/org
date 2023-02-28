@@ -5,4 +5,4 @@
 #+filetags:  
 
 * [[id:506d20e8-5453-495d-abff-a6920b92d24b][Hugo]] Theme
-+ [[https://github.com/hugo-toha/toha][Toha]]
++ [[id:e0abdd5c-c094-44dc-a1c1-aac20ebc2d58][toha]]

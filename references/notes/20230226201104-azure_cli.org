@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       d0975414-8327-4f43-915b-494edac9a571
+:END:
+#+title: Azure CLI
+#+filetags:  
+
+Azure Command-Line Interface
+
+https://learn.microsoft.com/en-us/cli/azure/
+
+* Install
+[[id:29b9f5ab-e328-4e3c-b54d-437879553d58][Azure CLI in Docker]]

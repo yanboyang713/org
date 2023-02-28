@@ -3,6 +3,61 @@
 :END:
 #+title: Azure Data Lake
 #+filetags: Data Lake
+
+* Introduction
 Azure Data Lake Storage Gen2 is a set of capabilities dedicated to big data analytics, built on [[id:966dde6b-ab1c-4834-9d8c-bd71184a1297][Azure Blob]] Storage.
 
 Data Lake Storage Gen2 converges the capabilities of Azure Data Lake Storage Gen1 with Azure Blob Storage. For example, Data Lake Storage Gen2 provides file system semantics, file-level security, and scale. Because these capabilities are built on Blob storage, you'll also get low-cost, tiered storage, with high availability/disaster recovery capabilities.
+
+* Create with [[id:d0975414-8327-4f43-915b-494edac9a571][Azure CLI]]
+The code snippet below does the following initial steps:
+
++ Logs in to your Azure account.
++ Sets the active subscription where the create operations will be done.
++ Creates a new resource group for the new deployment activities.
++ Creates a user-assigned managed identity.
++ Adds an extension to the Azure CLI to use features for Data Lake Storage Gen2.
++ Creates a new storage account with Data Lake Storage Gen2 by using the --hierarchical-namespace true flag.
+
+** [[id:0184f476-af36-4dae-ad22-63dfde9d7b2e][Azure CLI Login]]
+#+begin_src bash
+az login
+az account set --subscription <SUBSCRIPTION_ID>
+#+end_src
+
+*NOTE:* If you don't know your subscription. please [[id:db48bf15-7baf-4e50-87a8-364613953613][list]] your subscription first.
+
+** [[id:ab1f8de8-25ee-4b16-9b52-65dff59a534d][az group]]
+
+If you have exise resource group: you could [[id:2c0683b1-c109-4385-b3b0-3d2b4ecd223a][List Group]] and use.
+If you have not, [[id:e6754bc3-469d-4fc0-8b4e-a91eef763edc][Create new]] one.
+
+** Creates a user-assigned managed identity
+
+#+begin_src bash
+# Create managed identity
+az identity create -g <RESOURCEGROUPNAME> -n <MANAGEDIDENTITYNAME>
+#+end_src
+
+For example:
+#+begin_src bash
+az identity create -g permanent -n boyangIdentity
+#+end_src
+
+** Adds an extension
+
+#+begin_src bash
+az extension add --name storage-preview
+#+end_src
+
+** Creates a new storage account with Data Lake Storage Gen2
+
+#+begin_src bash
+az storage account create --name <STORAGEACCOUNTNAME> \
+    --resource-group <RESOURCEGROUPNAME> \
+    --location eastus --sku Standard_LRS \
+    --kind StorageV2 --hns true
+#+end_src
+
+* Reference List
+1. https://learn.microsoft.com/en-us/azure/hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2-azure-cli

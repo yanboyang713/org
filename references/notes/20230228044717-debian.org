@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       0c65c1a6-4751-4290-876f-6c5ad7694068
+:END:
+#+title: Debian
+#+filetags:
+Using [[id:b51b8a59-3767-426d-baf0-3f7149667b89][APT Packaging System]]
+
+* Check Debian version
+#+begin_src bash
+cat /etc/debian_version
+#+end_src

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       0eaa3c90-4802-406d-b359-4ed70585c39e
+:END:
+#+title: ns3-cmake
+#+filetags:
+
+[[id:cc4d5749-c647-406e-a08d-ef4850406219][ns3]]
+[[id:4d5f908b-d263-4e2b-8944-57d8d507df41][Cmake]]
+
+https://www.nsnam.org/docs/manual/html/working-with-cmake.html

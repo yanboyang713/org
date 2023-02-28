@@ -1,0 +1,35 @@
+:PROPERTIES:
+:ID:       91354a8d-6bc3-4b94-9a65-155d6c81d868
+:END:
+#+title: hugo installation
+#+filetags:
+
+In order to run the theme locally, you must have the following tools installed.
+
++ Hugo version v0.109.x (extended) or later.
++ Go language version v1.18.x or later.
++ Node version v18.x and npm version 8.x or later.
+
+* [[id:dc13b67c-8d8b-40fd-b8cf-9ea8547e485d][Arch Linux]]
+#+begin_src bash
+paru -S hugo go nodejs npm
+#+end_src
+
+* Check
+#+begin_src bash
+# Check Hugo version
+➜ hugo version
+hugo v0.109.0+extended linux/amd64 BuildDate=unknown
+
+# Check Go version
+➜ go version
+go version go1.19.4 linux/amd64
+
+# Check Node version
+➜ node -v
+v18.12.1
+
+# Check NPM version
+➜ npm -v
+8.19.2
+#+end_src

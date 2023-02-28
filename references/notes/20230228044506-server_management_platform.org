@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       3d7a3738-41a1-4ade-9b8b-47394109135a
+:END:
+#+title: Server Management Platform
+#+filetags:  
+
++ [[id:77bd7428-f1ee-4306-8d5a-62f38134dfc5][Proxmox VE]]
++ [[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]]
++ [[id:cf2c18b4-f9a0-412f-825f-11a0e837dab5][OpenStack]]

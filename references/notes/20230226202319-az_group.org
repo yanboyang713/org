@@ -1,0 +1,27 @@
+:PROPERTIES:
+:ID:       ab1f8de8-25ee-4b16-9b52-65dff59a534d
+:END:
+#+title: az group
+#+filetags:  
+
+[[id:d0975414-8327-4f43-915b-494edac9a571][Azure CLI]]
+
+* Group List
+:PROPERTIES:
+:ID:       2c0683b1-c109-4385-b3b0-3d2b4ecd223a
+:END:
+List resource groups.
+#+begin_src bash
+az group list
+#+end_src
+
+* Create new
+:PROPERTIES:
+:ID:       e6754bc3-469d-4fc0-8b4e-a91eef763edc
+:END:
+#+begin_src bash
+az group create --name <RESOURCEGROUPNAME> --location eastus
+#+end_src
+
+* Reference List
+1. https://learn.microsoft.com/en-us/cli/azure/group?view=azure-cli-latest

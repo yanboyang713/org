@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       77bd7428-f1ee-4306-8d5a-62f38134dfc5
+:END:
+#+title: Proxmox VE
+#+filetags:  
+
+* Introduction
+Proxmox VE is a complete, open-source server management platform for enterprise virtualization. Based on [[id:0c65c1a6-4751-4290-876f-6c5ad7694068][Debian]]. It tightly integrates the KVM hypervisor and Linux Containers (LXC), software-defined storage and networking functionality, on a single platform. With the integrated web-based user interface you can manage VMs and containers, high availability for clusters, or the integrated disaster recovery tools with ease.
+
+* Reference List
+1. https://www.proxmox.com/en/proxmox-ve

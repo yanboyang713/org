@@ -1,0 +1,28 @@
+:PROPERTIES:
+:ID:       f62ad4d3-0e7c-4173-b51b-d177bd622475
+:END:
+#+title: az account subscription
+#+filetags:  
+
+* list
+:PROPERTIES:
+:ID:       db48bf15-7baf-4e50-87a8-364613953613
+:END:
+
+Get all subscriptions for a tenant.
+#+begin_src bash
+az account subscription list
+#+end_src
+
+* cancel
+#+begin_src bash
+az account subscription cancel
+#+end_src
+
+For example:
+#+begin_src bash
+az account subscription cancel --subscription-id "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+#+end_src
+
+* Reference List
+1. https://learn.microsoft.com/en-us/cli/azure/account/subscription?view=azure-cli-latest

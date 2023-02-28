@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       d93186c8-94fe-43f1-8996-a32aabc5df4e
+:END:
+#+title: Near real-time RIC
+#+filetags:  
+
+[[http://res.cloudinary.com/dkvj6mo4c/image/upload/v1675803180/screenshot/e5riky3bevnqleks2bxp.png]]
+
+E2 connect to [[id:8798618b-1d83-48b9-8ee3-24bc8016caa8][ns-O-RAN]]
+
+
+[[id:918361a2-6114-4fae-b596-487bb0d42c4e][xApp]]

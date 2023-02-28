@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       a04b27da-d546-4277-90a2-753eee11ffbc
+:END:
+#+title: Gazebo
+#+filetags:

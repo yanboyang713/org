@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       c0cf7ac4-128f-4f83-ad39-865465f8b7e9
+:END:
+#+title: latex
+#+filetags:  
+
+* Install
+** [[id:dc13b67c-8d8b-40fd-b8cf-9ea8547e485d][Arch Linux]]
+#+begin_src bash
+paru -S texlive-most texlive-lang texlive-langextra texlive-bibtexextra texlive-fontsextra biber texlive-latexindent-meta
+#+end_src

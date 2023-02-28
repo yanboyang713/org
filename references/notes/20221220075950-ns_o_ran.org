@@ -4,6 +4,8 @@
 #+title: ns-O-RAN
 #+filetags:
 
+Based on [[id:de08236b-4dd8-4de5-af92-452c400e4a50][ns3-mmwave]]
+
 * Pre-reading
 1. [[id:cc4d5749-c647-406e-a08d-ef4850406219][ns3]]
 

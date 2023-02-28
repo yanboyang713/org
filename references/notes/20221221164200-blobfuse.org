@@ -1,7 +1,7 @@
 :PROPERTIES:
 :ID:       57775ed0-ba6a-40ab-bb6f-e2e0adb9ae61
 :END:
-#+title: BlobFuse
+#+title: azure storage fuse
 #+filetags: BlobFuse
 
 This article serves as reference for storage types provided by major cloud providers and trend I observe: using fuse to make “object storage” as “file storage”
@@ -11,12 +11,15 @@ Even “object storage” is very popular in cloud, there are lots of use cases 
 * Basic step
 We will be using blobfuse v2
 ** Install blobfuse v2
+
+*** [[id:e665e465-bddc-43c6-bf19-21e4fcbdbd0b][Installation DEB file]]
 #+begin_src bash
 wget https://github.com/Azure/azure-storage-fuse/releases/download/blobfuse2-2.0.0-preview.3/blobfuse2-2.0.0-preview.3-Ubuntu-22.04-x86-64.deb
 sudo apt-get install libfuse3-dev fuse3 -y
 sudo dpkg -i blobfuse2-2.0.0-preview.3-Ubuntu-22.04-x86-64.deb
 #+end_src
 
+*** [[id:dc13b67c-8d8b-40fd-b8cf-9ea8547e485d][Arch Linux]]
 #+begin_src bash
 paru -S azure-storage-fuse
 

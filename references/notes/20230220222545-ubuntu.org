@@ -3,3 +3,9 @@
 :END:
 #+title: ubuntu
 #+filetags:
+
+Ubuntu is derived from [[id:0c65c1a6-4751-4290-876f-6c5ad7694068][Debian]].
+Using [[id:b51b8a59-3767-426d-baf0-3f7149667b89][APT Packaging System]].
+
+* Reference List
+1. https://itsfoss.com/debian-vs-ubuntu/

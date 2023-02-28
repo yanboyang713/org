@@ -1,0 +1,27 @@
+:PROPERTIES:
+:ID:       b51b8a59-3767-426d-baf0-3f7149667b89
+:END:
+#+title: APT Packaging System
+#+filetags:
+
+* Installation DEB file
+:PROPERTIES:
+:ID:       e665e465-bddc-43c6-bf19-21e4fcbdbd0b
+:END:
+** dpkg
+Using:
+#+begin_src bash
+sudo dpkg -i /path/to/deb/file
+sudo apt-get install -f
+#+end_src
+
+** apt install
+Using:
+#+begin_src bash
+sudo apt install ./name.deb
+#+end_src
+
+Or
+#+begin_src bash
+sudo apt install /path/to/package/name.deb
+#+end_src

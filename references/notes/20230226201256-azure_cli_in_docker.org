@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       29b9f5ab-e328-4e3c-b54d-437879553d58
+:END:
+#+title: Azure CLI in Docker
+#+filetags:
+
+[[id:e4fa2843-dc6e-4303-a209-40df1bd10a0f][docker]]
+
+#+begin_src bash
+docker run -it mcr.microsoft.com/azure-cli
+#+end_src
+
+* Reference List
+1. https://learn.microsoft.com/en-us/cli/azure/run-azure-cli-docker
