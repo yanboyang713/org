@@ -1,7 +1,9 @@
 :PROPERTIES:
 :ID:       4fb3287a-23fb-4585-bd87-be76e4b4077f
 :END:
-#+title: Radio Unit
+#+title: Radio Unit (RU)
 #+filetags:
 
 [[id:8798618b-1d83-48b9-8ee3-24bc8016caa8][ns-O-RAN]]
+
+connected to [[id:b4120974-f457-41ea-8311-f95fa61b2036][CU/DU]]

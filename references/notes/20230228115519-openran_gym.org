@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       0c944fee-6eaf-429b-a769-7bc5275191d6
+:END:
+#+title: OpenRAN Gym
+#+filetags:  
+
+An Open Toolbox for Data Collection and Experimentation with AI in [[id:ef47832f-5edc-4c6a-bd2d-8e02c4bd5d9a][open-RAN]]
+
+[[http://res.cloudinary.com/dkvj6mo4c/image/upload/v1677603371/screenshot/t6zl0cbiasst8eafx4s8.png]]
+
+[[http://res.cloudinary.com/dkvj6mo4c/image/upload/v1677603624/screenshot/zvkrj2atlpxubkkh753m.png]]
+
+Base station have a [[id:f569b0dd-5cc8-4edf-9783-e80e54c4b8d7][Data Collection Module]]
+
+* Reference List
+1. L. Bonati, M. Polese, S. D’Oro, S. Basagni, and T. Melodia, “OpenRAN Gym: AI/ML Development, Data Collection, and Testing for O-RAN on PAWR Platforms,” Computer Networks, vol. 220, pp. 1-11, January 2023

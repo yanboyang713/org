@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       b4120974-f457-41ea-8311-f95fa61b2036
+:END:
+#+title: CU/DU
+#+filetags:
+
+[[id:6275398f-b777-4d06-8398-3e509a0cacf7][Base Station]]

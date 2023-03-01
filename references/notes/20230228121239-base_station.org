@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       6275398f-b777-4d06-8398-3e509a0cacf7
+:END:
+#+title: Base Station
+#+filetags:
+
+[[id:f569b0dd-5cc8-4edf-9783-e80e54c4b8d7][Data Collection Module]]
