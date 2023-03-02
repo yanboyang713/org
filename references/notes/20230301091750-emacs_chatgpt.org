@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       c6faa742-e4a8-4d49-b6e3-3f99bbf9e2f0
+:END:
+#+title: emacs chatgpt
+#+filetags:  
+
+[[id:19182f6d-b637-4879-8e9c-b093f492db5c][emacs]]
+
+* Reference List
+1. https://github.com/joshcho/ChatGPT.el

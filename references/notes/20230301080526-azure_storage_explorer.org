@@ -1,0 +1,22 @@
+:PROPERTIES:
+:ID:       6d8f71ef-afee-49b0-8915-48e9a5dd9cce
+:END:
+#+title: Azure Storage Explorer
+#+filetags:
+
+Free tool to conveniently manage your Azure cloud storage resources from your desktop.
+
+Upload, download, and manage [[id:966dde6b-ab1c-4834-9d8c-bd71184a1297][Azure Blob]] , files, queues, and tables, as well as [[id:be42aaf3-a82d-4dfc-b885-fba7c9676dff][Azure Data Lake]] Storage entities and Azure managed disks. Configure storage permissions and access controls, tiers, and rules.
+
+* Installation
+** Pre-required
++ [[id:29fc3fd1-9481-413c-ba98-ab968b7fcf20][GNOME Keyring]]
+
+** Install
+#+begin_src bash
+paru -S storageexplorer
+#+end_src
+
+* Reference List
+1. https://azure.microsoft.com/en-us/products/storage/storage-explorer
+2. https://aur.archlinux.org/packages/storageexplorer

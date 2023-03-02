@@ -74,6 +74,11 @@ For example, if your domain is contoso.com and your subdomain alias is www, ente
 
 Traffic to your domain is not yet being routed to your storage account until you create a CNAME record with your domain provider. You'll do that in the next section.
 
+*** Step 4: Test your custom domain
+To confirm that your custom domain is mapped to your blob service endpoint, create a blob in a public container within your storage account. Then, in a web browser, access the blob by using a URI in the following format: http://<subdomain.customdomain>/<mycontainer>/<myblob>
+
+For example, to access a web form in the myforms container in the photos.contoso.com custom subdomain, you might use the following URI: http://photos.contoso.com/myforms/applicationform.htm
+
 * Map a custom domain with HTTPS enabled
 
 * Reference List

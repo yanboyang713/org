@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       29fc3fd1-9481-413c-ba98-ab968b7fcf20
+:END:
+#+title: GNOME Keyring
+#+filetags:  
+
+* Reference List
+1. https://wiki.archlinux.org/title/GNOME/Keyring
