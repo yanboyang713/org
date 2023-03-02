@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       8d795681-df88-4ebb-8599-d9079e4c7a91
+:END:
+#+title: emacs-slack
+#+filetags:  
+
+[[id:19182f6d-b637-4879-8e9c-b093f492db5c][emacs]]
+
+* Reference List
+1. https://github.com/yuya373/emacs-slack.git

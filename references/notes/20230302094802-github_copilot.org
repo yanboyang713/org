@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       bee9c288-838c-44e7-9749-a287afacb908
+:END:
+#+title: github copilot
+#+filetags:  
+
+* Reference List
+1. https://github.com/features/copilot

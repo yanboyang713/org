@@ -6,6 +6,13 @@
 Using [[id:b51b8a59-3767-426d-baf0-3f7149667b89][APT Packaging System]]
 
 * Check Debian version
+:PROPERTIES:
+:ID:       abff9df8-daf4-45ec-b483-2ed9f302f6a3
+:END:
+
 #+begin_src bash
 cat /etc/debian_version
 #+end_src
+
+* Reference List
+1. https://www.ionos.com/digitalguide/server/know-how/how-to-check-debian-version/#:~:text=By%20typing%20%E2%80%9Clsb_release%20%2Da%E2%80%9D%2C%20you%20can%20get%20information,information%2C%20including%20your%20Debian%20version.

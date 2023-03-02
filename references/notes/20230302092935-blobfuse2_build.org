@@ -1,0 +1,22 @@
+:PROPERTIES:
+:ID:       9d092214-6871-4850-8350-171a50e34413
+:END:
+#+title: Blobfuse2 Build
+#+filetags:
+
+Build the binaries from source code
+
+* Clone the repository
+#+begin_src bash
+git clone https://github.com/Azure/azure-storage-fuse/
+cd ./azure-storage-fuse
+git checkout main
+#+end_src
+
+* Build BlobFuse2
+#+begin_src bash
+go get
+go build -tags=fuse3
+#+end_src
+
+You could move to [[id:517c60a6-33f9-444b-82f7-2defab84b469][Configure BlobFuse2]]

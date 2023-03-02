@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       6248d05c-1e34-404a-8696-ba76ca245587
+:END:
+#+title: copilot
+#+filetags:
+
+[[id:bee9c288-838c-44e7-9749-a287afacb908][github copilot]]

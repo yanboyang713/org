@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       e636016b-92bd-4444-ab43-2c72b43bf84a
+:END:
+#+title: Emacs GitHub Copilot
+#+filetags:
+
+[[id:bee9c288-838c-44e7-9749-a287afacb908][github copilot]]
+[[id:19182f6d-b637-4879-8e9c-b093f492db5c][emacs]]
+
+* Reference List
+1. https://github.com/zerolfx/copilot.el.git

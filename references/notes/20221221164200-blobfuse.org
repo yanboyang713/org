@@ -1,7 +1,7 @@
 :PROPERTIES:
 :ID:       57775ed0-ba6a-40ab-bb6f-e2e0adb9ae61
 :END:
-#+title: azure storage fuse
+#+title: Azure Storage Fuse
 #+filetags: BlobFuse
 
 This article serves as reference for storage types provided by major cloud providers and trend I observe: using fuse to make “object storage” as “file storage”
@@ -11,12 +11,25 @@ Even “object storage” is very popular in cloud, there are lots of use cases 
 * Basic step
 We will be using blobfuse v2
 ** Install blobfuse v2
+*** [[id:9d092214-6871-4850-8350-171a50e34413][Blobfuse2 Build]] from source code
 
 *** [[id:e665e465-bddc-43c6-bf19-21e4fcbdbd0b][Installation DEB file]]
+Download link: https://github.com/Azure/azure-storage-fuse/releases/tag/blobfuse2-2.0.2
+
+**** [[id:0c65c1a6-4751-4290-876f-6c5ad7694068][Debian]] 11
+
+***** [[https://learn.microsoft.com/en-us/azure/storage/blobs/blobfuse2-how-to-deploy#configure-the-microsoft-package-repository][Configure the Microsoft package repository]]
 #+begin_src bash
-wget https://github.com/Azure/azure-storage-fuse/releases/download/blobfuse2-2.0.0-preview.3/blobfuse2-2.0.0-preview.3-Ubuntu-22.04-x86-64.deb
+wget https://github.com/Azure/azure-storage-fuse/releases/download/blobfuse2-2.0.2/blobfuse2-2.0.2-Debian-11.0-x86-64.deb
+apt-get update
 sudo apt-get install libfuse3-dev fuse3 -y
-sudo dpkg -i blobfuse2-2.0.0-preview.3-Ubuntu-22.04-x86-64.deb
+dpkg -i blobfuse2-2.0.2-Debian-11.0-x86-64.deb
+#+end_src
+*NOTE:* If you want to [[id:abff9df8-daf4-45ec-b483-2ed9f302f6a3][Check Debian version]].
+
+***** [[https://learn.microsoft.com/en-us/azure/storage/blobs/blobfuse2-how-to-deploy#install-blobfuse2][Install BlobFuse2]]
+#+begin_src bash
+sudo apt-get install blobfuse2
 #+end_src
 
 *** [[id:dc13b67c-8d8b-40fd-b8cf-9ea8547e485d][Arch Linux]]
@@ -26,6 +39,16 @@ paru -S azure-storage-fuse
 blobfuse2 --help
 
 blobfuse2 --version
+#+end_src
+
+** Configure BlobFuse2
+:PROPERTIES:
+:ID:       517c60a6-33f9-444b-82f7-2defab84b469
+:END:
+
+*** Modify /etc/fuse.conf and uncomment user_allow_other
+#+begin_src bash
+sed '/user_allow_other/s/^#//g' -i /etc/fuse.conf
 #+end_src
 
 ** Configure blobfuse v2 caching (blobfuse uses cache to speed up repeated file retrieval)
@@ -39,7 +62,33 @@ sudo mkdir /mnt/ramdisk/blobfuse2tmp
 sudo chown $USER /mnt/ramdisk/blobfuse2tmp
 #+end_src
 
-#+RESULTS:
+** Create syslog
+#+begin_src bash
+paru -S rsyslog logrotate
+#+end_src
+
+*** Show status
+#+begin_src bash
+sudo systemctl status logrotate.service
+#logrotate is usually run through the systemd service: logrotate.service
+sudo systemctl status rsyslog.service
+
+#+end_src
+
+*** Start
+#+begin_src bash
+sudo systemctl start logrotate.service
+sudo systemctl start rsyslog.service
+#+end_src
+
+*** Set-up
+#+begin_src bash
+sudo mkdir /etc/rsyslog.d
+cd /etc/rsyslog.d
+sudo wget https://raw.githubusercontent.com/Azure/azure-storage-fuse/main/setup/11-blobfuse2.conf
+
+sudo wget -O blobfuse2 https://raw.githubusercontent.com/Azure/azure-storage-fuse/main/setup/blobfuse2-logrotate
+#+end_src
 
 ** Create mount folder
 #+begin_src bash
@@ -188,3 +237,4 @@ https://github.com/Azure/azure-storage-fuse/blob/main/TSG.md
 3. https://github.com/Azure/azure-storage-fuse
 4. https://aur.archlinux.org/packages/azure-storage-fuse
 5. https://learn.microsoft.com/en-us/azure/storage/blobs/blobfuse2-configuration
+6. https://toggen.com.au/it-tips/blobfuse2/
