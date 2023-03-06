@@ -4,44 +4,63 @@
 #+title: toha
 #+filetags:  
 
-[[https://github.com/hugo-toha/toha][Toha]]
+There is [[https://github.com/hugo-toha/toha][Toha]] link.
 
 * Pre-required
 [[id:91354a8d-6bc3-4b94-9a65-155d6c81d868][hugo installation]]
 
-* Set-up
-** Create new [[id:29337d81-6b02-4a62-bd87-6e9d5d454af4][github]] Repo
-** Clone
+* Getting Started
+** Step 1: Fork the example repo and rename
+At first, fork this [[https://github.com/hugo-toha/hugo-toha.github.io.git][sample repo]] to your account. Then, rename the repo to whatever you want.
+
+If you want to use Github Pages to deploy your site, then rename it to <your username>.github.io.
+
+The sample repo comes with pre-configured Github Actions to publish the site in Github Pages and Netlify.
+
+** Step 2: Clone the forked repo locally
+Once you have forked and renamed the repository, you can now clone the forked repository in your local machine for further changes.
 #+begin_src bash
-git clone git@github.com:yanboyang713/blog.git
+git clone git@github.com:<your username>/<forked repo name>
 #+end_src
 
-** Initialize Hugo module on you repo
-initialize [[https://gohugo.io/hugo-modules/][Hugo modules]] in your repo. This will create a go.mod file.
-#+begin_src bash
-hugo mod init github.com/<your username>/<your repo name>
+** Step 3: Change config.yaml file
+Now, open the repository in an editor and change the following configurations in your *config.yaml* file located at the root of your repository.
+
+*** Change the baseURL
+At first change the baseURL to your site URL. If you want to use Github Pages to host your site, then set it as below:
+#+begin_src yaml
+baseURL: https://<your username>.github.io
 #+end_src
 
-In my case:
-#+begin_src bash
-
-hugo mod init github.com/yanboyang713/blog
+*** Change the gitRepo
+Now, change the gitRepo field under the params section to point to your forked repository. For example,
+#+begin_src yaml
+gitRepo: https://github.com/<your username>/<your forked repo name>
 #+end_src
 
-** Add theme as your module dependency
-Now, in your config.yaml file, add a module section.
+*** Disable analytics or configure it properly
+**** Google Analytics
+The sample repo comes with Google Analytics pre-configured. The analytics id point to the original site. So, either disable the analytics or configure it properly according to this guide.
+
+You can disable the analytics by setting the following field under the params.features section:
 
 #+begin_src yaml
-# Use Hugo modules to add theme
-module:
-  imports:
-  - path: github.com/hugo-toha/toha/v4
+analytics:
+  enabled: false
 #+end_src
 
-Check this sample config.yaml for further reference.
+**** News Letter
+Disable news letter functionality
+The sample repo comes with a pre-configured mailchimp newsletter service. Disable it by setting the following field under the params.footer section.
 
-* Run the site locally
+#+begin_src yaml
+newsletter:
+  enable: false
+#+end_src
+
+** Step 4: Run the site locally
 Now, run the following commands to run your site locally:
+
 a. Load Hugo modules
 #+begin_src bash
 hugo mod tidy
@@ -57,3 +76,28 @@ c. Run the site
 #+begin_src bash
 hugo server -w
 #+end_src
+
+If everything goes right, you should see an output similar to this.
+[[https://toha-guides.netlify.app/posts/quickstart/images/local_site.png]]
+
+Now, go to *localhost:1313* in your browser and you should see your site running.
+
+** Step 5: Push the changes to Github
+If you have come this far, it means your site is running locally without any issue. Let’s push these changes to Github.
+#+begin_src bash
+# stage all the changes
+git add .
+
+# commit the changes
+git commit -m "Initial site setup" -s
+
+# push the changes to Github
+git push origin HEAD
+#+end_src
+
+** Step 6: Deployment to Github Pages
+Firstly, you need change Default Permissions, fllowing [[id:f3de75f6-5454-4453-b84a-8e16aa1b8a58][Github Action Change Default Permissions]].
+[[id:8471a070-5676-4ec2-adf8-170bcd894987][GitHub Pages Action]]
+
+* Customize the background, logo, and a few other things of your site
+Reference: https://toha-guides.netlify.app/posts/configuration/site-parameters/

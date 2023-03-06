@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       7ecfb6a9-ebb8-4179-ae9d-09e51e409f68
+:END:
+#+title: export org roam using hugo
+#+filetags:  
+
+[[id:6314a4a8-8a04-492c-8a4b-de9e4ff8df00][org roam]]
+[[id:506d20e8-5453-495d-abff-a6920b92d24b][Hugo]]
+
+* Reference List
+1. https://hugocisneros.com/blog/my-org-roam-notes-workflow/

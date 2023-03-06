@@ -62,31 +62,16 @@ sudo mkdir /mnt/ramdisk/blobfuse2tmp
 sudo chown $USER /mnt/ramdisk/blobfuse2tmp
 #+end_src
 
-** Create syslog
-#+begin_src bash
-paru -S rsyslog logrotate
-#+end_src
-
-*** Show status
-#+begin_src bash
-sudo systemctl status logrotate.service
-#logrotate is usually run through the systemd service: logrotate.service
-sudo systemctl status rsyslog.service
-
-#+end_src
-
-*** Start
-#+begin_src bash
-sudo systemctl start logrotate.service
-sudo systemctl start rsyslog.service
-#+end_src
-
+** Set-up [[id:8b072520-0fb7-48e6-8786-8933b9ed6038][rsyslog]]
 *** Set-up
 #+begin_src bash
 sudo mkdir /etc/rsyslog.d
 cd /etc/rsyslog.d
 sudo wget https://raw.githubusercontent.com/Azure/azure-storage-fuse/main/setup/11-blobfuse2.conf
+#+end_src
 
+** Set-up [[id:a89f8b57-b4fe-4e66-a6bb-0619eb0ef822][Logrotate]]
+#+begin_src bash
 sudo wget -O blobfuse2 https://raw.githubusercontent.com/Azure/azure-storage-fuse/main/setup/blobfuse2-logrotate
 #+end_src
 
@@ -136,12 +121,11 @@ sudo usermod -aG fuse yanboyang713
 
 ** Mount with blobfuse
 #+begin_src bash
-sudo blobfuse2 mount ~/mycontainer/ --config-file=~/blobfuseConfig.yaml --log-level=log_debug --log-file-path=~/bobfuse2b.log
+blobfuse2 mount /home/yanboyang713/mycontainer/ --config-file=/home/yanboyang713/fileCacheConfig-ok.yaml --ignore-open-flags --foreground=true --allow-other
 #+end_src
 
-#+begin_src bash
-sudo blobfuse2 mount /home/yanboyang713/mycontainer/ --config-file=/home/yanboyang713/fileCacheConfig.yaml --allow-other
-#+end_src
+*NOTE:* Ignoring invalid max threads value 4294967295 > max (100000).
+Please, go to [[id:cf70d8e3-a27b-4844-97fe-6c71a3383dad][Set the max threads value]]
 
 ** Now you can access Blob through the mounted directory, and you can see the file in Blob
 #+begin_src bash

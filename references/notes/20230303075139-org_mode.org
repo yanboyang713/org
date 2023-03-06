@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       305e6b72-ccc4-4d41-9458-28dd24d3c4fa
+:END:
+#+title: org mode
+#+filetags:  
+
+This is for [[id:19182f6d-b637-4879-8e9c-b093f492db5c][emacs]] org mode.
+
++ [[id:721fcc31-e626-481c-a8f2-966c89521a1a][org-transclusion]]
++ [[id:8ec1bf68-c0cc-4b66-9f02-67e008a77c7c][Org Agenda]]
++ Research: [[id:6314a4a8-8a04-492c-8a4b-de9e4ff8df00][org roam]]

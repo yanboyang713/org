@@ -1,5 +1,0 @@
-:PROPERTIES:
-:ID:       fe8ef448-20a7-4c02-b84d-dc7e00e4c07a
-:END:
-#+title: cmake
-#+filetags:

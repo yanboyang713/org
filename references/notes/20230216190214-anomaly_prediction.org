@@ -14,6 +14,9 @@
         CREATE EXTENSION IF NOT EXISTS timescaledb CASCADE;
 #+end_src
 
+* Distribution
+[[id:fb9ea8e3-b517-493a-bbdf-b41c87985f4c][Nikagumi Rice Distribution]]
+
 * Papers
 + [[id:cb8b4f66-a3f9-4079-86fc-0577f080a58c][Deep Learning for multivariate time series data Anomaly Detection]]
 

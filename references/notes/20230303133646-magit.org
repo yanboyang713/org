@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       57c2901e-fc29-4286-ac12-5bdc179b4247
+:END:
+#+title: magit
+#+filetags:
+
+[[id:19182f6d-b637-4879-8e9c-b093f492db5c][emacs]]
+[[id:37b5d73b-d976-401c-b2ad-5d78678edaa3][git rebase]]
+
+* Reference List
+1. https://magit.vc/manual/magit/Rebasing.html

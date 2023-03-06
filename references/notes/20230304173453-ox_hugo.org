@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       60ca314a-b562-43e5-956b-da46ced595a1
+:END:
+#+title: ox-hugo
+#+filetags:
+
+[[id:506d20e8-5453-495d-abff-a6920b92d24b][Hugo]]
+[[id:19182f6d-b637-4879-8e9c-b093f492db5c][emacs]]
+[[id:305e6b72-ccc4-4d41-9458-28dd24d3c4fa][org mode]]
+
+* Reference List
+1. https://github.com/kaushalmodi/ox-hugo

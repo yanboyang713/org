@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       ea9a037a-5864-40d4-a5a0-904445d1c7e2
+:END:
+#+title: openwechat
+#+filetags:  
+
+[[id:af305a84-e740-4de9-8718-524febc59b73][wechat]]
+
+https://github.com/eatmoreapple/openwechat.git

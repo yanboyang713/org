@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       e6335410-2849-4c1c-aa8d-b427c604df9d
+:END:
+#+title: toha document/sample
+#+filetags:  
+
+[[id:e0abdd5c-c094-44dc-a1c1-aac20ebc2d58][toha]]
+
+Document: https://toha-guides.netlify.app/posts/
+
+Example Site: https://github.com/hugo-toha/toha

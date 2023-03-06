@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       57a559b4-6356-496d-9224-7a0c755bb517
+:END:
+#+title: chatgpt wechat robot
+#+filetags:  
+
+https://github.com/ZYallers/chatgpt_wechat_robot.git
+
+[[id:af305a84-e740-4de9-8718-524febc59b73][wechat]]
+[[id:41607733-bee3-4525-b956-478fc5bb7e68][chatgpt]]
+[[id:ea9a037a-5864-40d4-a5a0-904445d1c7e2][openwechat]]

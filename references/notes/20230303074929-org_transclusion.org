@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       721fcc31-e626-481c-a8f2-966c89521a1a
+:END:
+#+title: org-transclusion
+#+filetags:  
+
+[[https://nobiot.github.io/org-transclusion/][Org-transclusion User Manual]]
+
+* Reference List
+1. https://github.com/nobiot/org-transclusion

@@ -1,0 +1,49 @@
+:PROPERTIES:
+:ID:       cf70d8e3-a27b-4844-97fe-6c71a3383dad
+:END:
+#+title: Set the max threads value
+#+filetags:  
+
+There are two ways to set the maximum number of threads:
+* Editing the /etc/security/limits.conf file
+You can also set the maximum number of threads by editing the /etc/security/limits.conf file. This file contains a list of resource limits for different users and groups. To set the maximum number of threads for a specific user, add the following line to the file:
+
+#+begin_src file
+<username> hard nproc <max_threads_value>
+#+end_src
+
+Replace <username> with the desired user, and <max_threads_value> with the desired maximum number of threads.
+
+or,
+
+#+begin_src file
+/* hard nproc <max_threads_value>
+#+end_src
+
+After making changes to the /etc/security/limits.conf file, you may need to log out and log back in for the changes to take effect.
+
+* Using the *ulimit* command
+The ulimit command is used to set various resource limits for a user or a process. To set the maximum number of threads for a process, you can use the following command:
+
+#+begin_src bash
+ulimit -u <max_threads_value>
+#+end_src
+
+Replace <max_threads_value> with the desired maximum number of threads.
+
+Note that the maximum number of threads allowed can vary based on the system configuration, and the value specified may not always be achievable.
+
+** Get ulimit setting value
+You can use the ulimit command with the -a option to display the current resource limits for the shell and its child processes. To display the current maximum number of threads limit, you can use the following command:
+#+begin_src bash
+ulimit -a | grep "max user processes"
+#+end_src
+
+This will display the current maximum number of threads limit in the output.
+
+Alternatively, you can use the ulimit command with the -u option to display the current maximum number of threads limit directly. For example:
+#+begin_src bash
+ulimit -u
+#+end_src
+
+This will display the current maximum number of threads limit for the current shell session. If you want to check the limit for a specific user, you can switch to that user and run the command.

@@ -1,0 +1,43 @@
+:PROPERTIES:
+:ID:       8b072520-0fb7-48e6-8786-8933b9ed6038
+:END:
+#+title: rsyslog
+#+filetags:
+
+* Introduction
+rsyslog is a syslog implementation that offers many benefits over syslog-ng. It can be configured to receive log entries from systemd's journal in order to process or filter them before quickly writing them to disk or sending them over network.
+
+*NOTE:* It is recommended to disable and uninstall the syslog-ng package to prevent possible conflicts.
+
+#+begin_src bash
+paru -R syslog-ng
+#+end_src
+
+* Installation
+#+begin_src bash
+paru -S rsyslog
+#+end_src
+
+* Start Service
+#+begin_src bash
+sudo systemctl start rsyslog.service
+#+end_src
+*NOTE:* If your faced this *ERROR* MSG: rsyslog.service: Job rsyslog.service/start failed with result 'dependency'.
+Please, restart the service: Try restarting the rsyslog service using the systemctl command:
+#+begin_src bash
+sudo systemctl restart rsyslog.service
+#+end_src
+
+* Show status
+#+begin_src bash
+sudo systemctl status rsyslog.service
+#+end_src
+
+* Enable rsyslog
+If runnning ok, enable it.
+#+begin_src bash
+sudo systemctl enable rsyslog.service
+#+end_src
+
+* Reference List
+1. https://wiki.archlinux.org/title/rsyslog

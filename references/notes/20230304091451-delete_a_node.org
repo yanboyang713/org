@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       960744cb-96e9-4948-bf0d-a39ff7d0f221
+:END:
+#+title: delete a node
+#+filetags:  
+
+[[id:6314a4a8-8a04-492c-8a4b-de9e4ff8df00][org roam]] delete a node.
+
+Just need delete the file or headline of the node you want to delete.
+
+Delete file: SPC f D
+
+Then *M-x org-roam-db-sync* or *SPC n r s*.
+
+* Reference List
+1. https://www.reddit.com/r/OrgRoam/comments/smqq7t/how_to_delete_a_node/
