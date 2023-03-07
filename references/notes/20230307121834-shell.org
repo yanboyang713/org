@@ -1,0 +1,37 @@
+:PROPERTIES:
+:ID:       d10f4549-c550-4c6b-beaf-7a78e477dc32
+:END:
+#+title: shell
+#+filetags:  
+
+* Find out your current shell name
+:PROPERTIES:
+:ID:       74e709ec-8c74-4ef9-af27-29f66e66dcc6
+:END:
+#+begin_src bash
+printf "My current shell - %s\n" "$SHELL"
+#+end_src
+
+* To list all installed shells, run:
+:PROPERTIES:
+:ID:       dc076b0f-3a64-4627-852b-f17496198c08
+:END:
+
+#+begin_src bash
+chsh -l
+#+end_src
+
+* And to set one as default for your user do:
+:PROPERTIES:
+:ID:       1113a416-9d6f-48db-a1b4-e6aee904366d
+:END:
+
+#+begin_src bash
+chsh -s full-path-to-shell
+#+end_src
+
+* zsh
+I like [[id:ccf63974-d736-4927-92d7-41f6c1a5ea06][zsh]].
+
+* Reference List
+1. https://www.cyberciti.biz/faq/change-my-default-shell-in-linux-using-chsh/

@@ -1,0 +1,32 @@
+:PROPERTIES:
+:ID:       188a45e8-3558-4748-889f-aee08f1cf74d
+:END:
+#+title: Managing Conda
+#+filetags:
+Let’s first start by checking if conda is installed.
+
+#+begin_src bash
+conda --version
+#+end_src
+
+Once it has been confirmed that conda has been installed, we will now make sure that it is up to date.
+#+begin_src bash
+conda update conda
+#+end_src
+
+Conda will compare versions and let you know what is available to install. It will also tell you about other packages that will be automatically updated or changed with the update. If there are newer version available, follow the instruction to install the newest version of conda.
+
+*TIPS*: To see the full documentation for any command, type the command followed by –help. For example, to learn about the conda update command:
+#+begin_src bash
+conda update --help
+#+end_src
+
+If you faced the error below:
+#+begin_src file
+EnvironmentNotWritableError: The current user does not have write permissions to the target environment.
+  environment location: /opt/miniconda3
+  uid: 1000
+  gid: 1000
+#+end_src
+
+try to use sudo

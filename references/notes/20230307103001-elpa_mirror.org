@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       9919216c-e877-4cfa-b643-054789fb0f2f
+:END:
+#+title: elpa-mirror
+#+filetags:  
+
+[[id:19182f6d-b637-4879-8e9c-b093f492db5c][emacs]]
+
+* Reference List
+1. https://github.com/redguardtoo/elpa-mirror/tree/9d7cfbf72ef8c7cd014c91e5bb3d8fbebda56140

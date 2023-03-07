@@ -17,6 +17,18 @@
 * Distribution
 [[id:fb9ea8e3-b517-493a-bbdf-b41c87985f4c][Nikagumi Rice Distribution]]
 
+* [[id:2bbcea1e-04c3-4a26-95de-28138b78e2d4][c++ runID]]
+
+* [[id:d1323e7d-033e-405a-8967-bf4ee4bc855e][Jupyter]]
+#+begin_src bash
+conda create -n anomaly python=3.7.7
+conda activate anomaly
+conda install notebook ipykernel
+ipython kernel install --user --name anomaly --display-name "Python (anomaly)"
+conda deactivate
+#+end_src
+
+
 * Papers
 + [[id:cb8b4f66-a3f9-4079-86fc-0577f080a58c][Deep Learning for multivariate time series data Anomaly Detection]]
 

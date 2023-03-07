@@ -1,0 +1,47 @@
+:PROPERTIES:
+:ID:       e7a3a9a7-67aa-4e74-985d-33b484e1a23e
+:END:
+#+title: ns3 wifi channel
+#+filetags:  
+
+[[id:cc4d5749-c647-406e-a08d-ef4850406219][ns3]]
+
+#+begin_src c++
+    /*
+    YansWifiChannelHelper wifiChannel;
+    wifiChannel.SetPropagationDelay("ns3::ConstantSpeedPropagationDelayModel");
+    if (frequency == 6){
+        // Reference Loss for Friss at 1 m with 6.0 GHz
+        wifiChannel.AddPropagationLoss("ns3::LogDistancePropagationLossModel",
+                                       "Exponent",
+                                       DoubleValue(2.0),
+                                       "ReferenceDistance",
+                                       DoubleValue(1.0),
+                                       "ReferenceLoss",
+                                       DoubleValue(49.013));
+    } else if (frequency == 5){
+        // Reference Loss for Friss at 1 m with 5.15 GHz
+        wifiChannel.AddPropagationLoss("ns3::LogDistancePropagationLossModel",
+                                       "Exponent",
+                                       DoubleValue(2.0),
+                                       "ReferenceDistance",
+                                       DoubleValue(1.0),
+                                       "ReferenceLoss",
+                                       DoubleValue(46.6777)
+);
+
+    } else {
+        // Reference Loss for Friss at 1 m with 2.4 GHz
+        wifiChannel.AddPropagationLoss("ns3::LogDistancePropagationLossModel",
+                                       "Exponent",
+                                       DoubleValue(2.0),
+                                       "ReferenceDistance",
+                                       DoubleValue(1.0),
+                                       "ReferenceLoss",
+                                       DoubleValue(40.046));
+    }
+     */
+
+    //wifiPhy.SetChannel (wifiChannel.Create ());
+
+#+end_src

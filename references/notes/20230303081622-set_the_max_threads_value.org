@@ -47,3 +47,6 @@ ulimit -u
 #+end_src
 
 This will display the current maximum number of threads limit for the current shell session. If you want to check the limit for a specific user, you can switch to that user and run the command.
+
+* Reference List
+1. https://stackoverflow.com/questions/344203/maximum-number-of-threads-per-process-in-linux

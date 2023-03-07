@@ -1,0 +1,21 @@
+:PROPERTIES:
+:ID:       d1323e7d-033e-405a-8967-bf4ee4bc855e
+:END:
+#+title: Jupyter
+#+filetags: python jupyter conda
+
+[[id:012ee935-1a96-4a7d-bb5f-fd95d83438a8][conda]]
+
+#+begin_src bash
+conda create -n myenv python=3.7.7
+conda activate myenv
+conda install notebook ipykernel
+ipython kernel install --user --name myenv --display-name "Python (myenv)"
+#+end_src
+
+Start the notebook server from the command line:
+#+begin_src bash
+jupyter notebook --ip='*' --NotebookApp.token='' --NotebookApp.password=''
+#+end_src
+
+A notebook server runs locally at 127.0.0.1:8888 and is accessible only from localhost. You may access the notebook server from the browser using http://127.0.0.1:8888.

@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       2498d30e-6b85-4330-97d9-bccfafc7ee08
+:END:
+#+title: Rust RPC framework
+#+filetags: RPC Rust
+
+[[id:a2da1c32-ba1a-4c2c-9374-1bd8896920fa][rust]]
+https://github.com/cloudwego/volo

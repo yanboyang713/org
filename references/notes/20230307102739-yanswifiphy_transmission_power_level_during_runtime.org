@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       6d9aa726-4be0-4660-9648-fcb4b18179b0
+:END:
+#+title: YansWifiPhy changing staff during runtime
+#+filetags:  
+
+[[id:cc4d5749-c647-406e-a08d-ef4850406219][ns3]]
+
+* Reference List
+1. https://groups.google.com/g/ns-3-users/c/uI87w-wpOew
+2. https://groups.google.com/g/ns-3-users/c/0W6fhQYj2Rk
+3. https://www.nsnam.org/docs/release/3.19/doxygen/classns3_1_1_yans_wifi_phy.html#a8e8274f3529b2f811e33ad64257d3ca2

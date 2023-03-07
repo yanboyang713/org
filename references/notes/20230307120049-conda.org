@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       012ee935-1a96-4a7d-bb5f-fd95d83438a8
+:END:
+#+title: conda
+#+filetags:
+
+[[id:b45f4784-5a7f-44ae-a3a5-3e96a550d353][Conda Installation]]
+
+[[id:188a45e8-3558-4748-889f-aee08f1cf74d][Managing Conda]]
