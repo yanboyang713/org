@@ -1,0 +1,89 @@
+:PROPERTIES:
+:ID:       9ff47363-e4b4-4f5f-8c9c-e972ac735fe8
+:END:
+#+title: psycopg2
+#+filetags:  
+
+[[id:97a5c070-1745-4002-b5fe-0d170877ba3f][postgre]] Python interface
+
+* Set Database parameters
+#+begin_src python
+param_dic = {
+    "host"      : "localhost",
+    "database"  : "anomalyprediction",
+    "user"      : "postgres",
+    "password"  : "password"
+}
+#+end_src
+
+* Connect
+#+begin_src python
+import psycopg2
+def connect(params_dic):
+    """ Connect to the PostgreSQL database server """
+    conn = None
+    try:
+        # connect to the PostgreSQL server
+        print('Connecting to the PostgreSQL database...')
+        conn = psycopg2.connect(**params_dic)
+    except (Exception, psycopg2.DatabaseError) as error:
+        print(error)
+        sys.exit(1)
+    print("Connection successful")
+    return conn
+conn = connect(param_dic)
+#+end_src
+
+* Data read and write function
+** Write
+#+begin_src python
+import psycopg2.extras as extras
+def execute_values(conn, df, table):
+    """
+    Using psycopg2.extras.execute_values() to insert the dataframe
+    """
+    # Create a list of tupples from the dataframe values
+    tuples = [tuple(x) for x in df.to_numpy()]
+    # Comma-separated dataframe columns
+    cols = ','.join(df.columns.values.tolist())
+    # SQL quert to execute
+    query  = "INSERT INTO %s(%s) VALUES %%s" % (table, cols)
+    cursor = conn.cursor()
+    try:
+        extras.execute_values(cursor, query, tuples)
+        conn.commit()
+    except (Exception, psycopg2.DatabaseError) as error:
+        print("Error: %s" % error)
+        conn.rollback()
+        cursor.close()
+        return 1
+    print("execute_values() done")
+    cursor.close()
+#+end_src
+** Read
+#+begin_src python
+def postgresql_to_dataframe(conn, select_query, column_names):
+    """
+    Tranform a SELECT query into a pandas dataframe
+    """
+    cursor = conn.cursor()
+    try:
+        cursor.execute(select_query)
+    except (Exception, psycopg2.DatabaseError) as error:
+        print("Error: %s" % error)
+        cursor.close()
+        return 1
+
+    # Naturally we get a list of tupples
+    tupples = cursor.fetchall()
+    cursor.close()
+
+    # We just need to turn it into a pandas dataframe
+    df = pd.DataFrame(tupples, columns=column_names)
+    return df
+#+end_src
+
+* Connect Close
+#+begin_src python
+conn.close()
+#+end_src

@@ -14,6 +14,147 @@
         CREATE EXTENSION IF NOT EXISTS timescaledb CASCADE;
 #+end_src
 
+#+begin_src sql
+--Anomaly Prediction Project
+
+--runrecord
+DROP TABLE runrecord;
+CREATE TABLE runrecord (
+	"runid" TEXT,
+	"hostname" TEXT,
+  	"datamode" TEXT,
+  	"controlmode" TEXT,
+  	"numofnodes" INTEGER,
+  	"simulationtime" REAL,
+  	"payloadsize" INTEGER,
+  	"datarate" TEXT,
+  	"channelnumber" INTEGER,
+  	"frequency" REAL,
+  	"standard" TEXT,
+  	"channelwidth" INTEGER,
+  	"guardinterval" INTEGER,
+  	PRIMARY KEY (runid, hostname)
+);
+--rxpacketinfo
+DROP TABLE rxpacketinfo;
+CREATE TABLE rxpacketinfo (
+	"runid" TEXT,
+  	"hostname" TEXT,
+	"type" TEXT,
+  	"time" TIMESTAMP WITHOUT TIME ZONE NOT NULL,
+  	"context" TEXT,
+  	"nodename" TEXT,
+  	"nodeid" INTEGER,
+  	"signaldb" REAL,
+  	"noisedb" REAL,
+  	"channelfreqmhz" INTEGER,
+  	"ness" INTEGER,
+  	"nss" INTEGER,
+  	"powerlevel" INTEGER,
+  	"packetsize" INTEGER,
+  	"packetuid" INTEGER,
+  	PRIMARY KEY (runid, hostname, packetuid, context, time),
+    FOREIGN KEY (runid, hostname)
+  		REFERENCES runrecord (runid, hostname)
+        ON DELETE CASCADE
+        ON UPDATE NO ACTION
+);
+
+SELECT create_hypertable('rxpacketinfo','time');
+CREATE INDEX ON rxpacketinfo (packetuid, time DESC);
+
+--txpacketinfo
+DROP TABLE txpacketinfo;
+CREATE TABLE txpacketinfo (
+	"runid" TEXT,
+  	"hostname" TEXT,
+	"type" TEXT,
+  	"time" TIMESTAMP WITHOUT TIME ZONE NOT NULL,
+  	"context" TEXT,
+  	"nodename" TEXT,
+  	"nodeid" INTEGER,
+  	"channelfreqmhz" INTEGER,
+  	"ness" INTEGER,
+  	"nss" INTEGER,
+  	"powerlevel" INTEGER,
+  	"packetsize" INTEGER,
+  	"packetuid" INTEGER,
+  	PRIMARY KEY (runid, hostname, packetuid, context, time),
+    FOREIGN KEY (runid, hostname)
+  		REFERENCES runrecord (runid, hostname)
+        ON DELETE CASCADE
+        ON UPDATE NO ACTION
+);
+
+SELECT create_hypertable('txpacketinfo','time');
+CREATE INDEX ON rxpacketinfo (packetuid, time DESC);
+
+--phytxdropinfo
+DROP TABLE phytxdropinfo;
+CREATE TABLE phytxdropinfo (
+	"runid" TEXT,
+  	"hostname" TEXT,
+	"type" TEXT,
+  	"time" TIMESTAMP WITHOUT TIME ZONE NOT NULL,
+  	"context" TEXT,
+  	"nodename" TEXT,
+  	"nodeid" INTEGER,
+  	"packetsize" INTEGER,
+  	"packetuid" INTEGER,
+  	PRIMARY KEY (runid, hostname, packetuid, context, time),
+    FOREIGN KEY (runid, hostname)
+  		REFERENCES runrecord (runid, hostname)
+        ON DELETE CASCADE
+        ON UPDATE NO ACTION
+);
+
+SELECT create_hypertable('phytxdropinfo','time');
+CREATE INDEX ON rxpacketinfo (packetuid, time DESC);
+
+--phytxdropinfo
+DROP TABLE phyrxdropinfo;
+CREATE TABLE phyrxdropinfo (
+	"runid" TEXT,
+  	"hostname" TEXT,
+	"type" TEXT,
+  	"time" TIMESTAMP WITHOUT TIME ZONE NOT NULL,
+  	"context" TEXT,
+  	"nodename" TEXT,
+  	"nodeid" INTEGER,
+  	"packetsize" INTEGER,
+  	"packetuid" INTEGER,
+  	"failurereason" TEXT,
+  	PRIMARY KEY (runid, hostname, packetuid, context, time),
+    FOREIGN KEY (runid, hostname)
+  		REFERENCES runrecord (runid, hostname)
+        ON DELETE CASCADE
+        ON UPDATE NO ACTION
+);
+
+SELECT create_hypertable('phyrxdropinfo','time');
+CREATE INDEX ON rxpacketinfo (packetuid, time DESC);
+
+--queuedropinfo
+DROP TABLE queuedropinfo;
+CREATE TABLE queuedropinfo (
+	"runid" TEXT,
+  	"hostname" TEXT,
+	"type" TEXT,
+  	"time" TIMESTAMP WITHOUT TIME ZONE NOT NULL,
+  	"context" TEXT,
+  	"nodename" TEXT,
+  	"nodeid" INTEGER,
+  	"packetsize" INTEGER,
+  	"packetuid" INTEGER,
+  	PRIMARY KEY (runid, hostname, packetuid, context, time),
+    FOREIGN KEY (runid, hostname)
+  		REFERENCES runrecord (runid, hostname)
+        ON DELETE CASCADE
+        ON UPDATE NO ACTION
+);
+
+#+end_src
+
 * Distribution
 [[id:fb9ea8e3-b517-493a-bbdf-b41c87985f4c][Nikagumi Rice Distribution]]
 

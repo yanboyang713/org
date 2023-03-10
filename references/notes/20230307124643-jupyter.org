@@ -4,7 +4,7 @@
 #+title: Jupyter
 #+filetags: python jupyter conda
 
-[[id:012ee935-1a96-4a7d-bb5f-fd95d83438a8][conda]]
+You need install [[id:012ee935-1a96-4a7d-bb5f-fd95d83438a8][conda]] first.
 
 #+begin_src bash
 conda create -n myenv python=3.7.7
