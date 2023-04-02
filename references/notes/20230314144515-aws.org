@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       dcf5e347-8a8a-4c63-a822-53f558025f8c
+:END:
+#+title: AWS
+#+filetags:  
+
+* Training and Certification
+https://www.aws.training/certification
+
+Training
+https://digitalcloud.training/

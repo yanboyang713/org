@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       c53db320-87f0-4eb2-bca3-cfb726b325f9
+:END:
+#+title: storage
+#+filetags:  
+
+[[id:05361f8d-2471-42a3-a2a4-0e6cd5349029][NAS]]
+[[id:88836d8c-a8ab-4029-a530-77b3f27c6160][Cloud Native Storage Solutions]]

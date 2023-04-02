@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       d53a50dd-be10-4052-9bc3-7e9675dfefd3
+:END:
+#+title: vertical heterogeneous network (VHetNet)
+#+filetags:
+
+Vertical heterogeneous networks (VHetNets) integrate space networks (comprising low, medium, and geostationary Earth orbit satellites), air networks (including [[id:bb44cf60-3fd2-4eca-89b9-d3c8608a615f][High Altitude Platform Station (HAPS)]] and unmanned aerial vehicles ([[id:99ad3062-59b9-490c-bbd6-a27cf4448aad][UAV]]s)), and terrestrial networks (comprising macro and micro base stations) to deliver comprehensive global coverage in 6G and beyond.
+
+* Reference List
+1. Wang, W., Abbasi, O., Yanikomeroglu, H., Liang, C., Tang, L., & Chen, Q. (2022). VHetNets for AI and AI for VHetNets: An Anomaly Detection Case Study for Ubiquitous IoT. arXiv preprint arXiv:2210.08132.
+2. Z. Wang et al., “AI-based cloud-edge-device collaboration in 6G spaceair-ground integrated power IoT,” IEEE Wireless Commun., vol. 29, no. 1, pp. 16–23, Feb. 2022.
+3. T. Darwish, G. K. Kurt, H. Yanikomeroglu, G. Senarath, and P. Zhu, “A vision of self-evolving network management for future intelligent vertical HetN"

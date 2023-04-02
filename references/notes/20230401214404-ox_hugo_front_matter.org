@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       edbcb10c-17dc-43ee-8457-8bb4f209284e
+:END:
+#+title: ox-hugo front-matter
+#+filetags:  
+
+[[id:60ca314a-b562-43e5-956b-da46ced595a1][ox-hugo]]
+
+https://ox-hugo.scripter.co/doc/custom-front-matter/#yaml-extra-front-matter

@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       05361f8d-2471-42a3-a2a4-0e6cd5349029
+:END:
+#+title: NAS
+#+filetags:  
+
+[[id:4c9071be-e1b9-406b-8ab1-3dd4da6a3ecb][xpenology]]

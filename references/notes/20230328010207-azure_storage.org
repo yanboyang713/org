@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       6fae2ad3-3a61-46c4-a3e3-84ee198f6f81
+:END:
+#+title: Azure Storage
+#+filetags:  
+
+[[id:6d8f71ef-afee-49b0-8915-48e9a5dd9cce][Azure Storage Explorer]]
+[[id:57775ed0-ba6a-40ab-bb6f-e2e0adb9ae61][Azure Storage Fuse]]
+[[id:966dde6b-ab1c-4834-9d8c-bd71184a1297][Azure Blob]]
+[[id:be42aaf3-a82d-4dfc-b885-fba7c9676dff][Azure Data Lake]]

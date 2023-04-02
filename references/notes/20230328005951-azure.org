@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       c40c4861-f09d-4bc2-a606-d2b62cc533f9
+:END:
+#+title: Azure
+#+filetags:  
+
+[[id:d0975414-8327-4f43-915b-494edac9a571][Azure CLI]]
+[[id:6fae2ad3-3a61-46c4-a3e3-84ee198f6f81][Azure Storage]]

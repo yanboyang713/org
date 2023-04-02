@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       aa20119a-0616-47c0-8250-da622f6ec60b
+:END:
+#+title: Public Cloud
+#+filetags:
+
+[[id:dcf5e347-8a8a-4c63-a822-53f558025f8c][AWS]]
+[[id:c40c4861-f09d-4bc2-a606-d2b62cc533f9][Azure]]
