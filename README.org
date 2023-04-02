@@ -1,0 +1,13 @@
+* Boyang's Braindump
+I write everything in Emacs org-mode and then convert everything through the Ninja build tool.
+
+* Pre-install
+#+begin_src bash
+paru -S python ninja
+#+end_src
+
+* Build
+To convert all Org files into Markdown, run:
+#+begin_src bash
+./build.py
+#+end_src
