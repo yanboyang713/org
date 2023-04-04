@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       f29fa337-432b-4ffc-882e-a5b621d02a56
+:END:
+#+title: OpenTX
+#+filetags:  
+
+[[id:86148910-f7ec-4e5d-97ba-5e1d821ce171][UAV Ground Control Stations]] firmware
+
+https://www.open-tx.org/

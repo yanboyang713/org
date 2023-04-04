@@ -1,0 +1,18 @@
+:PROPERTIES:
+:ID:       55f23b66-c353-4562-b4bc-da3df9ddc665
+:END:
+#+title: wireless networks
+#+filetags:  
+
+The next-generation wireless networks are evolving into very [[id:88d2f587-da04-4cd1-83f6-c085d000a458][Complex Systems]] because of the very diversified service requirements, heterogeneity in applications, devices, and networks.
+
+* Type
++ [[id:a34ce0b9-4e35-4eab-ab20-79b2ce96522b][Wireless Adhoc Network]]
++ [[id:43b9eff4-03f0-4263-9ad8-b8004a452f26][wireless sensor network (WSN)]]
+
+* Frequency
++ [[id:a663f0da-be79-4371-a8d7-8f02576edc81][60 GHz]]
+
+
+* Reference List
+1. Kibria, M. G., Nguyen, K., Villardi, G. P., Zhao, O., Ishizu, K., & Kojima, F. (2018). Big data analytics, machine learning, and artificial intelligence in next-generation wireless networks. IEEE access, 6, 32328-32338.

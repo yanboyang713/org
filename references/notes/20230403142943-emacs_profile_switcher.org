@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       e7d4989a-1f46-476a-bdf0-d0143845736f
+:END:
+#+title: Emacs Profile Switcher
+#+filetags:  
+
+[[id:19182f6d-b637-4879-8e9c-b093f492db5c][emacs]]
+https://systemcrafters.cc/emacs-tips/multiple-configurations-with-chemacs2
+
+https://github.com/plexus/chemacs2
+https://emacs.stackexchange.com/questions/36380/use-several-emacs-configurations-versions-simultaneously

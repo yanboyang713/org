@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       7c0c9d89-724c-4572-8302-7688e15e14b5
+:END:
+#+title: openwrt passwall
+#+filetags:  
+
+[[id:dfedb92d-7290-4643-b06b-088a497746b3][Openwrt]]
+
+bypass chinese [[id:f7904304-e3e3-484c-b541-349030a56fe3][firewall]]
+
+https://github.com/xiaorouji/openwrt-passwall

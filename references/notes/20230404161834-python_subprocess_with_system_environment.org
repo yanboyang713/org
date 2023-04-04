@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       b41cc6d1-778e-416e-982e-de2986122bc6
+:END:
+#+title: Python subprocess with system environment
+#+filetags:  
+
+https://stackoverflow.com/questions/2231227/python-subprocess-popen-with-a-modified-environment

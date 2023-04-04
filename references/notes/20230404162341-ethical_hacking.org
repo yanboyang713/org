@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       dacf3b87-6359-4355-bd5f-1166f3521b8a
+:END:
+#+title: Ethical Hacking
+#+filetags:  
+
+* Book
+https://www.guru99.com/best-ethical-hacking-books.html

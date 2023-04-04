@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       a5a08a3d-8245-479c-8f96-75f7f7a637f0
+:END:
+#+title: Open RAN Security
+#+filetags:  
+
+[[id:ef47832f-5edc-4c6a-bd2d-8e02c4bd5d9a][open-RAN]] [[id:278645d6-efd7-4127-a748-e309c118efbe][Security]]
+
+Liyanage, M., Braeken, A., Shahabuddin, S., & Ranaweera, P. (2023). Open RAN security: Challenges and opportunities. Journal of Network and Computer Applications, 103621.

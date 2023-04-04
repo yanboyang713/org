@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       9d081b8c-6810-430e-af79-5ff425201314
+:END:
+#+title: neural network interpretability
+#+filetags:  
+
+[[id:a40e3787-6e62-4176-80ae-56b9af015ddb][deep neural network]]
+
+* Reference List
+1. https://yzhang-gh.github.io/notes/ml/nn-interpretability.html#%E5%89%8D%E8%A8%80

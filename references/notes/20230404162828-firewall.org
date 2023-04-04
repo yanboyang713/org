@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       f7904304-e3e3-484c-b541-349030a56fe3
+:END:
+#+title: firewall
+#+filetags:  
+
+[[id:278645d6-efd7-4127-a748-e309c118efbe][security]]

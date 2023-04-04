@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       83136b3e-5b2a-4a48-8e7c-7ed6b2d3f871
+:END:
+#+title: build systems
+#+filetags:  
+
+[[id:be5a011d-8174-4c8b-a978-933f132772f9][ninja]]
+[[id:4d5f908b-d263-4e2b-8944-57d8d507df41][Cmake]]

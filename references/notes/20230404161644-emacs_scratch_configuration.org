@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       0a2d4c48-ea51-4b53-80a7-df3add48d463
+:END:
+#+title: Emacs Scratch Configuration
+#+filetags:  
+
+[[id:19182f6d-b637-4879-8e9c-b093f492db5c][emacs]]
+
+https://github.com/daviwil/emacs-from-scratch/blob/master/Emacs.org

@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       80d07df5-6da1-4c77-800c-dceeefd47f98
+:END:
+#+title: python
+#+filetags:  
+
+[[id:b41cc6d1-778e-416e-982e-de2986122bc6][Python subprocess with system environment]]
+[[id:d1323e7d-033e-405a-8967-bf4ee4bc855e][Jupyter]]

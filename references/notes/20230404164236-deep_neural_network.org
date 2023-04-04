@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       a40e3787-6e62-4176-80ae-56b9af015ddb
+:END:
+#+title: deep neural network
+#+filetags:  
+
+* Reference List
+1. https://aws.amazon.com/what-is/neural-network/#:~:text=Deep%20neural%20networks%2C%20or%20deep,one%20node%20suppresses%20the%20other.

@@ -7,3 +7,5 @@
 [[id:87f25fec-23bd-4c2e-89fe-6a6aed910d76][SMO (Service Management and Orchestration)]]
 [[id:d93186c8-94fe-43f1-8996-a32aabc5df4e][Near real-time RIC]]
 [[id:4fb3287a-23fb-4585-bd87-be76e4b4077f][Radio Unit]]
+
+Polese, M., Bonati, L., D'Oro, S., Basagni, S., & Melodia, T. (2022). Understanding O-RAN: Architecture, interfaces, algorithms, security, and research challenges. arXiv preprint arXiv:2202.01032.

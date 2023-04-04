@@ -1,9 +1,10 @@
 :PROPERTIES:
 :ID:       c5fb3604-2033-40ea-80b2-37d1853569b9
 :END:
-#+title: WiFi CSI
+#+title: CSI tools
 #+filetags:  
 
-[[id:a663f0da-be79-4371-a8d7-8f02576edc81][60 GHz]]
+[[id:55f23b66-c353-4562-b4bc-da3df9ddc665][wireless networks]]
 
-https://github.com/Marsrocky/Awesome-WiFi-CSI-Sensing
+* Reference List
+1. https://github.com/Marsrocky/Awesome-WiFi-CSI-Sensing#csi-tool

@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       be5a011d-8174-4c8b-a978-933f132772f9
+:END:
+#+title: ninja
+#+filetags:  
+
+https://jvns.ca/blog/2020/10/26/ninja--a-simple-way-to-do-builds/

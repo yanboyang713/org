@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       278645d6-efd7-4127-a748-e309c118efbe
+:END:
+#+title: security
+#+filetags:  
+
+[[id:dacf3b87-6359-4355-bd5f-1166f3521b8a][Ethical Hacking]]
+[[id:ba328d0b-0c36-42c8-90fc-b38dfdc068d5][blockchain]]

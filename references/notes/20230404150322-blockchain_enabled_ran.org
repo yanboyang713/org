@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       892023f9-8acd-4671-8bad-fa198111e749
+:END:
+#+title: Blockchain-enabled RAN
+#+filetags:  
+
+[[id:ba328d0b-0c36-42c8-90fc-b38dfdc068d5][blockchain]]
+[[id:ef47832f-5edc-4c6a-bd2d-8e02c4bd5d9a][open-RAN]]
+
+Wilhelmi, F., & Giupponi, L. (2021, December). On the Performance of Blockchain-enabled RAN-as-a-service in Beyond 5G Networks. In 2021 IEEE Global Communications Conference (GLOBECOM) (pp. 01-06). IEEE.
