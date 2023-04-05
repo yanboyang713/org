@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       71a72a13-82a5-4c85-8ac2-846a20d405e6
+:END:
+#+title: libp2p
+#+filetags:  
+
+[[id:a2da1c32-ba1a-4c2c-9374-1bd8896920fa][rust]]
+[[id:71cbbf7c-0eea-4f8d-8ffa-52eb2d9e40a5][peer-to-peer (P2P) network]]
+
+* Reference List
+1. https://github.com/libp2p/rust-libp2p

@@ -4,7 +4,7 @@
 #+title: Deep Learning for multivariate time series data Anomaly Detection
 #+filetags:
 
-Anomaly detection in multivariate time series data poses a particular challenge because it requires simultaneous consideration of temporal dependencies and relationships between variables. Recent deep learning-based works have made impressive progress in this field.
+[[id:d65974e5-d0d4-4bb0-9449-2551e188a576][Anomaly detection]] in multivariate [[id:b2377ddc-9d91-4c8e-a4d8-21fabf961ee8][Time Series]] data poses a particular challenge because it requires simultaneous consideration of temporal dependencies and relationships between variables. Recent deep learning-based works have made impressive progress in this field.
 
 Time-series analysis refers to a range of tasks that aim to extract meaningful knowledge from time-ordered data; the extracted knowledge can be used not only to diagnose the past behavior but also to predict the future.
 

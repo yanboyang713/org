@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       73351d8f-9b72-4cd1-ad38-dd892eee6b7f
+:END:
+#+title: micro-ROS porting to ESP32
+#+filetags:  
+
+[[id:af6583f4-519c-4604-b19b-827a20a34e51][micro-ROS]]
+[[id:84c34a37-5e53-403f-97bf-da4fb34c6784][ESP32]]
+
+* Reference List
+1. https://micro.ros.org/blog/2020/08/27/esp32/

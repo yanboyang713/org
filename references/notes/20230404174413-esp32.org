@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       84c34a37-5e53-403f-97bf-da4fb34c6784
+:END:
+#+title: ESP32
+#+filetags:

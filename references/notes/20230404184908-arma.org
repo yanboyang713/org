@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       b5f627fa-6b5d-4854-a017-858fc050005b
+:END:
+#+title: ARMA
+#+filetags:
+
+[[id:b2377ddc-9d91-4c8e-a4d8-21fabf961ee8][Time Series]] Forecasting using ARIMA Model

@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       d65974e5-d0d4-4bb0-9449-2551e188a576
+:END:
+#+title: Anomaly detection
+#+filetags:

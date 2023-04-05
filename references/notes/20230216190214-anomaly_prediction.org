@@ -1,7 +1,7 @@
 :PROPERTIES:
 :ID:       a63c6ec6-a812-4694-b777-3d83a2286725
 :END:
-#+title: Anomaly Prediction
+#+title: Wireless Anomaly detection Project
 #+filetags:  
 
 * Database Set-up

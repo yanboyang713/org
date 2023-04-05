@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       71cbbf7c-0eea-4f8d-8ffa-52eb2d9e40a5
+:END:
+#+title: peer-to-peer (P2P) network
+#+filetags:  
+
+* Reference List
+1. https://www.computerworld.com/article/2588287/networking-peer-to-peer-network.html

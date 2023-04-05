@@ -4,4 +4,6 @@
 #+title: rust
 #+filetags:  
 
+[[id:278645d6-efd7-4127-a748-e309c118efbe][security]]
+
 [[id:48d11b5f-8c43-4b43-966b-c214fb57c9ae][rust learning]]

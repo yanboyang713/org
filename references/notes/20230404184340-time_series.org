@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       b2377ddc-9d91-4c8e-a4d8-21fabf961ee8
+:END:
+#+title: Time Series
+#+filetags:
+

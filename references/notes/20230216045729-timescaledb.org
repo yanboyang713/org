@@ -4,6 +4,8 @@
 #+title: TimeScaleDB
 #+filetags:  
 
+[[id:b2377ddc-9d91-4c8e-a4d8-21fabf961ee8][Time Series]] database
+
 * Installation
 ** Pre-installation
 + [[id:e4fa2843-dc6e-4303-a209-40df1bd10a0f][docker]]

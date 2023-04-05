@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       af6583f4-519c-4604-b19b-827a20a34e51
+:END:
+#+title: micro-ROS
+#+filetags:  
+
+* Reference List
+1. https://micro.ros.org/blog/2020/08/27/esp32/

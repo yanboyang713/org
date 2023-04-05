@@ -9,3 +9,5 @@ https://github.com/sunface/rust-course
 https://github.com/sunface/rust-by-practice
 
 https://github.com/rustlang-cn/rusty-book
+
+https://zhuanlan.zhihu.com/p/411524054?utm_id=0
