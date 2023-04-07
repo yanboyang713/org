@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       d0a6bfed-421b-42ed-b362-4276006493b0
+:END:
+#+title: Factors Affecting the Performance of Wireless
+#+filetags:
+
+The reliability of [[id:55f23b66-c353-4562-b4bc-da3df9ddc665][wireless networks]] communication (WNC) is much lower than wired networks. WNC will impact by node overload, routing protocol, weather, obstacle blockage, and many other factors, all those [[id:039227e4-36f6-4b25-ab8b-941da3367c26][anomalies]] cannot be avoided.
+
+
+* Reference List
+1. Perkins, D. D., Hughes, H. D., & Owen, C. B. (2002, April). Factors affecting the performance of ad hoc networks. In 2002 IEEE International Conference on Communications. Conference Proceedings. ICC 2002 (Cat. No. 02CH37333) (Vol. 4, pp. 2048-2052). IEEE.

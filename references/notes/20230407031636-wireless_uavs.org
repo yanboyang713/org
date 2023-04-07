@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       18c5fba2-b8ec-4d4c-a1be-96ab25d91162
+:END:
+#+title: wireless UAVs
+#+filetags:  
+
+[[id:55f23b66-c353-4562-b4bc-da3df9ddc665][wireless networks]]
+[[id:99ad3062-59b9-490c-bbd6-a27cf4448aad][UAV]]
+
+Wireless provide a high degree of flexibility, mobility, and scalability, making it possible for UAVs to operate effectively in a wide range of environments and applications. As UAV technology continues to evolve, the importance of wireless networks is only expected to grow.

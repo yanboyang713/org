@@ -8,3 +8,4 @@
 
 * Reference List
 1. https://yzhang-gh.github.io/notes/ml/nn-interpretability.html#%E5%89%8D%E8%A8%80
+2. Zhang, Y., Tiňo, P., Leonardis, A., & Tang, K. (2021). A survey on neural network interpretability. IEEE Transactions on Emerging Topics in Computational Intelligence, 5(5), 726-742.

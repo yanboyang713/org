@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       039227e4-36f6-4b25-ab8b-941da3367c26
+:END:
+#+title: anomalies
+#+filetags:
+
+Other widely used words are outliers, exceptions, surprises, and aberrations. The need for action on the relevance of the issue finds outliers.
+
+[[id:d65974e5-d0d4-4bb0-9449-2551e188a576][Anomaly detection]]
+
+* Reference List
+1. Emmott, A. F., Das, S., Dietterich, T., Fern, A., Wong, W. K. (2013, August). Systematic construction of anomaly detection benchmarks from real data. In Proceedings of the ACM SIGKDD workshop on outlier detection and description (pp. 16-21).
+
