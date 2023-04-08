@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       b90ab085-e835-4b7e-b9c2-7b45d60893a3
+:END:
+#+title: backpropagation neural network
+#+filetags:  
+
+[[id:a40e3787-6e62-4176-80ae-56b9af015ddb][deep neural network]]

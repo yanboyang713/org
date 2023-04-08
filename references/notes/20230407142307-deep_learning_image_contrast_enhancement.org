@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       761aa6db-7834-4500-a523-dfb76b08ddee
+:END:
+#+title: Image Contrast Enhancement
+#+filetags:  
+
+[[id:a40e3787-6e62-4176-80ae-56b9af015ddb][deep neural network]]
+
+[[id:dc6c08ce-627a-4c65-9903-7f67d557a2f5][image processing]]
+
+* Reference List
+1. https://medium.com/@sunil7545/a-quick-overview-of-contrast-enhancement-and-its-variants-for-medical-image-processing-fcece3d2298a
