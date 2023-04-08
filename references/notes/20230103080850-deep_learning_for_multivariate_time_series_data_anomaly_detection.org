@@ -40,7 +40,10 @@ time-series anomaly detection on cloud systems with subsequent diagnosis of the 
 CNN-based approaches [70], [71] have been verified to be effective on several datasets from global cloud enterprises.
 
 * Networking
-Audibert et al. [72] proposed AE, in which one encoder and two decoders are trained adversarially, to identify network anomalies. In addition, Zhao et al. [73] recently suggested a graph attention network-based method to detect anomalies in a big-data processing framework. They explicitly modeled correlations between sensors via attention layers, captured temporal dependence with GRU, and increased performance by jointly applying forecasting and reconstruction results.
+[[id:48d3cbad-09ee-4259-a811-be9080e24f83][networking autoencoders Un-Supervised Anomaly Detection]]
+
+
+In addition, Zhao et al. [73] recently suggested a graph attention network-based method to detect anomalies in a big-data processing framework. They explicitly modeled correlations between sensors via attention layers, captured temporal dependence with GRU, and increased performance by jointly applying forecasting and reconstruction results.
 
 LSTM
 

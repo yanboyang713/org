@@ -34,7 +34,6 @@ Clone the Chemacs 2 repository as $HOME/.emacs.d. Note that if you already have 
 #+begin_src bash
 [ -f ~/.emacs ] && mv ~/.emacs ~/.emacs.bak
 [ -d ~/.emacs.d ] && mv ~/.emacs.d ~/.emacs.default
-[ -d ~/.config/emacs ] && mv ~/.config/emacs ~/.config/emacs.bak
 
 git clone https://github.com/plexus/chemacs2.git ~/.emacs.d
 #+end_src
@@ -44,7 +43,7 @@ Note that this is different from Chemacs 1. Before Chemacs installed itself as ~
 * Managing your Emacs profiles
 To tell Chemacs2 where to get your Emacs configuration, create a file in your home directory called ~/.emacs-profiles.el and populate it with this line:
 #+begin_src emacs-lisp
-(("default" . ((user-emacs-directory . "$DOOMDIR"))))
+(("default" . ((user-emacs-directory . "~/.emacs.default"))))
 #+end_src
 
 Now that we have this file in place, let's start Emacs to verify that it works.
@@ -52,39 +51,44 @@ Now that we have this file in place, let's start Emacs to verify that it works.
 ** Adding a profile
 Let's imagine that we wanted to create a new configuration to run alongside the current one. This is just as easy as adding a new entry to the ~/.emacs-profiles.el file:
 
-
+#+begin_src emacs-lisp
 (("myconfig" .  ((user-emacs-directory . "~/.my-emacs")))
  ("newconfig" . ((user-emacs-directory . "~/.my-new-emacs"))))
+#+end_src
 
 ** Setting the default profile
 When you have multiple profiles set up in this way, you can easily specify which one gets chosen as the default by creating the file ~/.emacs-profile and writing the name of the default profile there:
 
-
+#+begin_src bash
 echo 'myconfig' > ~/.emacs-profile
+#+end_src
 
 * A real example!
 Here's an example of using Chemacs2 to use 4 different Emacs configurations:
 
-
+#+begin_src emacs-lisp
 (("default"   . ((user-emacs-directory   . "~/.dotfiles/.emacs.d")))
  ("doom"      . ((user-emacs-directory   . "~/emacs-configs/doom-emacs")
                  (env . (("DOOMDIR"      . "~/.dotfiles/.doom.d")))))
  ("spacemacs" . ((user-emacs-directory   . "~/emacs-configs/spacemacs")
                  (env . (("SPACEMACSDIR" . "~/.dotfiles/.spacemacs.d")))))
  ("efs"       . ((user-emacs-directory   . "~/emacs-configs/emacs-from-scratch"))))
+#+end_src
 
-NOTE: The env lines aren't necessary if your Doom or Spacemacs personal config folders are in their default locations!
+*NOTE*: The env lines aren't necessary if your Doom or Spacemacs personal config folders are in their default locations!
 
 We can now launch Emacs with any of these configurattions at the same time using the following command:
 
-
+#+begin_src bash
 emacs --with-profile=profilename
+#+end_src
 
 So if we wanted to run both Doom and Spacemacs at the same time, we can run:
 
-
+#+begin_src bash
 emacs --with-profile=doom &
 emacs --with-profile=spacemacs &
+#+end_src
 
 Also note that we have a a profile named default, this will automatically make that profile the default when you run Emacs without specifying a profile, but you can still override the default by setting up .emacs-profile!
 
@@ -93,8 +97,9 @@ If you originally cloned Doom Emacs to the ~/.emacs.d folder and you now had to 
 
 The first thing to try is to run doom sync in the new folder location:
 
-
+#+begin_src console
 $ <new doom location>/bin/doom sync
+#+end_src
 
 If that doesn't work, you will need to delete the Doom config repo folder and re-clone it into the new location! This will also require running bin/doom install again.
 
@@ -103,24 +108,27 @@ If you have a dotfiles repository (you should!), you can make the Chemacs2 repo 
 
 The first step is to initialize the Chemacs2 repository as a submodule wherever you previously kept your .emacs.d folder in your dotfiles repo:
 
-
+#+begin_src bash
 cd ~/.dotfiles
 git submodule add https://github.com/plexus/chemacs2 .emacs.d
+#+end_src
 
 If you are using a tool like GNU Stow or dotcrafter.el to automatically link files from your dotfiles folder to your home folder, make sure to clone the submodule into the folder that you create your symbolic links from.
 
 Keep in mind that you will need to clone your dotfiles repo with the --recursive option from now on:
 
-
+#+begin_src bash
 git clone <URL-of-dotfiles-repo> --recursive
+#+end_src
 
 This will both your dotfiles repository and also any submodule repositories that are needed.
 
 * Setting the eln-cache path correctly
 One thing I noticed while using Chemacs2 with Emacs 28 and native compilation functionality turned on: the compiler output files were being sent to Chemacs' config folder instead of the real folder where my personal configuration lives. To send those files to the right location, add this line to your configuration:
 
-
+#+begin_src emacs-lisp
 (add-to-list 'comp-eln-load-path (expand-file-name "eln-cache/" user-emacs-directory))
+#+end_src
 
 Doom Emacs seems to have adjusted for this but I can't see it done in Spacemacs, might be needed there too!
 
@@ -131,8 +139,6 @@ Hopefully this gives you some interesing ideas for how you can use Chemacs2 for 
 
 I'm curious to hear how you can imagine yourself using it, so please leave a comment on the video and let me know!
 
-[[id:19182f6d-b637-4879-8e9c-b093f492db5c][emacs]]
-https://systemcrafters.cc/emacs-tips/multiple-configurations-with-chemacs2
-
-https://github.com/plexus/chemacs2
-https://emacs.stackexchange.com/questions/36380/use-several-emacs-configurations-versions-simultaneously
+* Reference List
+1. https://systemcrafters.cc/emacs-tips/multiple-configurations-with-chemacs2
+2. https://emacs.stackexchange.com/questions/36380/use-several-emacs-configurations-versions-simultaneously
