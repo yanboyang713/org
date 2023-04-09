@@ -1,6 +1,6 @@
 
 rule org2md
-  command = emacs --batch -l publish.el --eval "(jethro/publish \"$in\")"
+  command = emacs --batch -l init.el -l publish.el --eval '(boyang/publish "$in")'
   description = org2md $in
 
 build ~/personalblog/content/notes/20221124051158-murphy_s_law.md: org2md references/notes/20221124051158-murphy_s_law.org
@@ -23,27 +23,17 @@ build ~/personalblog/content/notes/20221202124817-weibull.md: org2md references/
 
 build ~/personalblog/content/notes/20221204094515-pkgbuilds_install_regular_files.md: org2md references/notes/20221204094515-pkgbuilds_install_regular_files.org
 
-build ~/personalblog/content/notes/agenda.md: org2md references/notes/agenda.org
-
-build ~/personalblog/content/notes/bibnotes.md: org2md references/notes/bibnotes.org
-
 build ~/personalblog/content/notes/destination_rules.md: org2md references/notes/destination_rules.org
 
 build ~/personalblog/content/notes/eww.md: org2md references/notes/eww.org
 
 build ~/personalblog/content/notes/finger.md: org2md references/notes/finger.org
 
-build ~/personalblog/content/notes/inbox.md: org2md references/notes/inbox.org
-
-build ~/personalblog/content/notes/incubate.md: org2md references/notes/incubate.org
-
 build ~/personalblog/content/notes/istio_gateway.md: org2md references/notes/istio_gateway.org
 
 build ~/personalblog/content/notes/kiali.md: org2md references/notes/kiali.org
 
 build ~/personalblog/content/notes/nodeport.md: org2md references/notes/nodeport.org
-
-build ~/personalblog/content/notes/openquestions.md: org2md references/notes/openquestions.org
 
 build ~/personalblog/content/notes/virtual_service.md: org2md references/notes/virtual_service.org
 
@@ -327,8 +317,6 @@ build ~/personalblog/content/notes/20230304173453-ox_hugo.md: org2md references/
 
 build ~/personalblog/content/notes/20230304173554-ox_hugo_section.md: org2md references/notes/20230304173554-ox_hugo_section.org
 
-build ~/personalblog/content/notes/20230304173914-export_org_roam_using_hugo.md: org2md references/notes/20230304173914-export_org_roam_using_hugo.org
-
 build ~/personalblog/content/notes/20230304174059-github_pages.md: org2md references/notes/20230304174059-github_pages.org
 
 build ~/personalblog/content/notes/20230304174153-github_pages_action.md: org2md references/notes/20230304174153-github_pages_action.org
@@ -396,3 +384,87 @@ build ~/personalblog/content/notes/20230331193317-nas.md: org2md references/note
 build ~/personalblog/content/notes/20230331193459-storage.md: org2md references/notes/20230331193459-storage.org
 
 build ~/personalblog/content/notes/20230401214404-ox_hugo_front_matter.md: org2md references/notes/20230401214404-ox_hugo_front_matter.org
+
+build ~/personalblog/content/notes/20230403142943-emacs_profile_switcher.md: org2md references/notes/20230403142943-emacs_profile_switcher.org
+
+build ~/personalblog/content/notes/20230404144212-ninja.md: org2md references/notes/20230404144212-ninja.org
+
+build ~/personalblog/content/notes/20230404144842-exporting_org_roam.md: org2md references/notes/20230404144842-exporting_org_roam.org
+
+build ~/personalblog/content/notes/20230404145929-blockchain.md: org2md references/notes/20230404145929-blockchain.org
+
+build ~/personalblog/content/notes/20230404150322-blockchain_enabled_ran.md: org2md references/notes/20230404150322-blockchain_enabled_ran.org
+
+build ~/personalblog/content/notes/20230404155008-opentx.md: org2md references/notes/20230404155008-opentx.org
+
+build ~/personalblog/content/notes/20230404155450-display_chinese_characters.md: org2md references/notes/20230404155450-display_chinese_characters.org
+
+build ~/personalblog/content/notes/20230404161644-emacs_scratch_configuration.md: org2md references/notes/20230404161644-emacs_scratch_configuration.org
+
+build ~/personalblog/content/notes/20230404161834-python_subprocess_with_system_environment.md: org2md references/notes/20230404161834-python_subprocess_with_system_environment.org
+
+build ~/personalblog/content/notes/20230404161934-python.md: org2md references/notes/20230404161934-python.org
+
+build ~/personalblog/content/notes/20230404162341-ethical_hacking.md: org2md references/notes/20230404162341-ethical_hacking.org
+
+build ~/personalblog/content/notes/20230404162519-security.md: org2md references/notes/20230404162519-security.org
+
+build ~/personalblog/content/notes/20230404162828-firewall.md: org2md references/notes/20230404162828-firewall.org
+
+build ~/personalblog/content/notes/20230404163014-openwrt_passwall.md: org2md references/notes/20230404163014-openwrt_passwall.org
+
+build ~/personalblog/content/notes/20230404163540-open_ran_security.md: org2md references/notes/20230404163540-open_ran_security.org
+
+build ~/personalblog/content/notes/20230404164236-deep_neural_network.md: org2md references/notes/20230404164236-deep_neural_network.org
+
+build ~/personalblog/content/notes/20230404164430-neural_network_interpretability.md: org2md references/notes/20230404164430-neural_network_interpretability.org
+
+build ~/personalblog/content/notes/20230404164637-complex_systems.md: org2md references/notes/20230404164637-complex_systems.org
+
+build ~/personalblog/content/notes/20230404164903-wireless_networks.md: org2md references/notes/20230404164903-wireless_networks.org
+
+build ~/personalblog/content/notes/20230404165836-build_systems.md: org2md references/notes/20230404165836-build_systems.org
+
+build ~/personalblog/content/notes/20230404170307-wifi.md: org2md references/notes/20230404170307-wifi.org
+
+build ~/personalblog/content/notes/20230404174413-esp32.md: org2md references/notes/20230404174413-esp32.org
+
+build ~/personalblog/content/notes/20230404174627-micro_ros.md: org2md references/notes/20230404174627-micro_ros.org
+
+build ~/personalblog/content/notes/20230404174730-micro_ros_porting_to_esp32.md: org2md references/notes/20230404174730-micro_ros_porting_to_esp32.org
+
+build ~/personalblog/content/notes/20230404174918-raspi.md: org2md references/notes/20230404174918-raspi.org
+
+build ~/personalblog/content/notes/20230404175738-peer_to_peer_p2p_network.md: org2md references/notes/20230404175738-peer_to_peer_p2p_network.org
+
+build ~/personalblog/content/notes/20230404175942-libp2p.md: org2md references/notes/20230404175942-libp2p.org
+
+build ~/personalblog/content/notes/20230404184340-time_series.md: org2md references/notes/20230404184340-time_series.org
+
+build ~/personalblog/content/notes/20230404184908-arma.md: org2md references/notes/20230404184908-arma.org
+
+build ~/personalblog/content/notes/20230404185853-lstm.md: org2md references/notes/20230404185853-lstm.org
+
+build ~/personalblog/content/notes/20230404190313-anomaly_detection.md: org2md references/notes/20230404190313-anomaly_detection.org
+
+build ~/personalblog/content/notes/20230405140352-nvidia.md: org2md references/notes/20230405140352-nvidia.org
+
+build ~/personalblog/content/notes/20230405140421-vgpu_unlock.md: org2md references/notes/20230405140421-vgpu_unlock.org
+
+build ~/personalblog/content/notes/20230405140623-openaios_vgpu_scheduler_for_kubernetes.md: org2md references/notes/20230405140623-openaios_vgpu_scheduler_for_kubernetes.org
+
+build ~/personalblog/content/notes/20230406103846-kubernetes_books.md: org2md references/notes/20230406103846-kubernetes_books.org
+
+build ~/personalblog/content/notes/20230407031636-wireless_uavs.md: org2md references/notes/20230407031636-wireless_uavs.org
+
+build ~/personalblog/content/notes/20230407033033-factors_affecting_the_performance_of_wireless.md: org2md references/notes/20230407033033-factors_affecting_the_performance_of_wireless.org
+
+build ~/personalblog/content/notes/20230407033403-anomalies.md: org2md references/notes/20230407033403-anomalies.org
+
+build ~/personalblog/content/notes/20230407040149-networking_autoencoders_un_supervised_anomaly_detection.md: org2md references/notes/20230407040149-networking_autoencoders_un_supervised_anomaly_detection.org
+
+build ~/personalblog/content/notes/20230407141510-backpropagation_neural_network.md: org2md references/notes/20230407141510-backpropagation_neural_network.org
+
+build ~/personalblog/content/notes/20230407142307-deep_learning_image_contrast_enhancement.md: org2md references/notes/20230407142307-deep_learning_image_contrast_enhancement.org
+
+build ~/personalblog/content/notes/20230407142839-image_processing.md: org2md references/notes/20230407142839-image_processing.org

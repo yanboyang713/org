@@ -3,14 +3,14 @@
 
 import glob
 from pathlib import Path
-
+#  command = emacs --batch -l init.el -l publish.el --eval \'(jethro/publish \\"$in\\")'
 files = glob.glob("./references/notes/*.org")
 
 with open("build.ninja", "w") as ninja_file:
     ninja_file.write(
         """
 rule org2md
-  command = DOOMDIR=/home/yanboyang/.config/meta-emacs emacs --batch -l publish.el --eval \"(jethro/publish \\"$in\\")"
+  command = emacs --batch -l init.el -l publish.el --eval \'(boyang/publish \"$in\")\'
   description = org2md $in
 """
     )

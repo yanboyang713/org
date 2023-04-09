@@ -6,6 +6,9 @@
 
 Hugo is the world’s fastest static website engine. It’s written in Go (aka Golang).
 
+* Instation
+[[id:91354a8d-6bc3-4b94-9a65-155d6c81d868][hugo installation]]
+
 * WIKI theme
 + [[id:bc507e2b-e819-410e-9ec9-b6fc4bd4d082][docsy]]
 

@@ -9,4 +9,5 @@
 
 [[id:be5a011d-8174-4c8b-a978-933f132772f9][ninja]]
 
-https://hugocisneros.com/blog/my-org-roam-notes-workflow/
+* Reference List
+1. https://hugocisneros.com/blog/my-org-roam-notes-workflow/
