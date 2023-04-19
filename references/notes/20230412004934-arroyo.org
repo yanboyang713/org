@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       8a4f62de-9f94-4db1-bc20-d4407351be9a
+:END:
+#+title: Arroyo
+#+filetags:  
+
+Arroyo is a distributed [[id:e04b75c5-56df-4f72-a586-967a80311414][stream processing engine]] written in [[id:a2da1c32-ba1a-4c2c-9374-1bd8896920fa][Rust]], designed to efficiently perform stateful computations on streams of data. Unlike traditional batch processing, streaming engines can operate on both bounded and unbounded sources, emitting results as soon as they are available.
+
+In short: Arroyo lets you ask complex questions of high-volume real-time data with subsecond results.
+
+https://github.com/ArroyoSystems/arroyo

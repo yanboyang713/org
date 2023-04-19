@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       7bab7928-237d-4784-a42f-b85ef6874b9b
+:END:
+#+title: DNS
+#+filetags:
+
+[[id:fe5ea5bb-bd21-451b-be0d-239e91361dfa][Pi-hole]]

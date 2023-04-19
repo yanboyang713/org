@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       88118b8b-28fc-4cbe-879c-493dd735c758
+:END:
+#+title: StatefulSet
+#+filetags:  
+
+[[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]]
+
+* Reference List
+1. https://kubernetes.io/docs/tutorials/stateful-application/basic-stateful-set/

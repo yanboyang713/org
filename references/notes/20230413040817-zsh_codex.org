@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       348ed973-b026-4994-b7b1-ca346ac1ffd4
+:END:
+#+title: Zsh Codex
+#+filetags:  
+
+[[id:ccf63974-d736-4927-92d7-41f6c1a5ea06][zsh]]
+[[id:4fc8f69a-5806-43d2-bf26-32915f28a895][Codex]]
+
+https://github.com/tom-doerr/zsh_codex

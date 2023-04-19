@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       5f44d918-1e45-4819-a973-53a2eb7185ee
+:END:
+#+title: CUAV Pixhawk
+#+filetags:
+
+CUAV Pixhawk V6X
+https://docs.px4.io/main/en/flight_controller/cuav_pixhawk_v6x.html

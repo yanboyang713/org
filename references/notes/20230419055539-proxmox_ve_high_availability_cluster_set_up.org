@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       db39af8b-657f-4b11-83fa-f3510dad3198
+:END:
+#+title: Proxmox VE High Availability Cluster Set-up
+#+filetags:  
+
+[[id:77bd7428-f1ee-4306-8d5a-62f38134dfc5][Proxmox VE]]
+
+* Reference List
+1. https://www.youtube.com/watch?v=JfZuZ6zE7AI&ab_channel=RaidOwl

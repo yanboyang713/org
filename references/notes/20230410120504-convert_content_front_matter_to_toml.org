@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       3a3a00e6-e8bb-4fe7-8d67-96a2def44e67
+:END:
+#+title: Convert content front matter to TOML
+#+filetags:  
+
+[[id:506d20e8-5453-495d-abff-a6920b92d24b][Hugo]]
+
+* Reference List
+1. https://gohugo.io/commands/hugo_convert_totoml/
+2. https://discourse.gohugo.io/t/how-to-covert-config-files-from-yaml-to-toml/20030

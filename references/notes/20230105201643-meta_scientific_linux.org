@@ -8,6 +8,7 @@ Meta Scientific Linux based on [[id:dc13b67c-8d8b-40fd-b8cf-9ea8547e485d][Arch L
 
 * WM
 + [[id:e7c6bf03-516a-4c23-85cc-72cf9e5f1b3c][eww]]
++ [[id:0367a56f-796b-44be-ae67-b4062b7a1188][meta-wm]]
 
 * System Info
 + [[id:a9dfe2aa-4f7f-4536-8053-1683ba63cef5][finger]]
@@ -37,3 +38,5 @@ Script to install Archlinux with full disk encryption
 
 * Office
 [[id:e6ff9271-adf0-4fed-bdb9-29de13fc10e4][WPS Office]]
+
+* [[id:a120e7b9-9390-4a5b-979d-755cf6ca17a1][WM notification daemon]]

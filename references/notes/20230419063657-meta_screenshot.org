@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       447a8e72-cc6d-41b1-860a-92e4e7af2c88
+:END:
+#+title: meta-screenshot
+#+filetags:  
+
+[[id:f6c12716-7d4f-4def-af11-73f122e5c821][Meta Scientific Linux]]
+
+[[id:95cacace-0194-462d-bc25-a18fad3a32cb][photo sharing service]]
+
+https://github.com/yanboyang713/Meta-Scientific-Collection-PKGBUILDs/tree/main/members/meta-screenshot

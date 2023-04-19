@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       95cacace-0194-462d-bc25-a18fad3a32cb
+:END:
+#+title: photo sharing service
+#+filetags:
+
++ [[id:b72c6af6-e8a2-4859-a192-670fb56a2276][Pixlr]]
++ cloudinary
+
+* Make OWN
++ [[id:966dde6b-ab1c-4834-9d8c-bd71184a1297][Azure Blob]]

@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       a120e7b9-9390-4a5b-979d-755cf6ca17a1
+:END:
+#+title: WM notification daemon
+#+filetags:
+
++ [[id:74387555-9b6b-4118-8375-ba63e7e2cf43][Dunst]]

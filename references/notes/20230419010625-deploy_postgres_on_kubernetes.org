@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       e900ecbb-d332-4a37-9b5f-c736884a7175
+:END:
+#+title: Deploy Postgres on kubernetes
+#+filetags:  
+
+[[id:97a5c070-1745-4002-b5fe-0d170877ba3f][PostgreSQL]]
+[[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]]
+
+* Reference List
+1. https://www.airplane.dev/blog/deploy-postgres-on-kubernetes

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       997755b5-81e0-4c6e-9ce4-c7ce8d2f217b
+:END:
+#+title: Hugo Content Section Tree
+#+filetags:  
+
+[[id:506d20e8-5453-495d-abff-a6920b92d24b][Hugo]]
+
+* Reference List
+1. https://gohugo.io/content-management/sections/

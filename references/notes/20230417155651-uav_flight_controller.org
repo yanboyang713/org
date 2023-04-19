@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       ab024519-7f4d-410e-b270-04809fc3f78d
+:END:
+#+title: UAV Flight Controller
+#+filetags:  
+
+Flight controller also called Autopilot, or FC for short, stabilizes and controls a [[id:99ad3062-59b9-490c-bbd6-a27cf4448aad][UAV]] for semi-autonomous and autonomous flights. It is one of the core components of a UAV. Flight controller primarily consists of a microcontroller, control circuit & a suite of sensors (gyroscope, accelerator, electronic compass, barometer, etc.). It has redundant sensors & power supplies and performs redundant switching in case of failure to ensure flight safety.
+
+* Software
+[[id:363cd982-b188-4e15-97af-0c18a73e2746][ardupilot]]
+* Hardware
++ [[id:5f44d918-1e45-4819-a973-53a2eb7185ee][CUAV Pixhawk]]
++ [[id:81a307fc-3733-4a2d-9b2e-fac47bad99f2][Cubepilot]]

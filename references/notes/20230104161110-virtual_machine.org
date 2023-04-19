@@ -39,6 +39,7 @@ Users can choose from two different types of virtual machines—process VMs and 
 ** System Virtual Machine Management Platform
 + [[id:cf2c18b4-f9a0-412f-825f-11a0e837dab5][OpenStack]]
 + [[id:e6303bdc-b166-486e-8e76-f45b619a376b][multipass]]
++ [[id:77bd7428-f1ee-4306-8d5a-62f38134dfc5][Proxmox VE]]
 
 * Reference List
 1. https://www.vmware.com/topics/glossary/content/virtual-machine.html

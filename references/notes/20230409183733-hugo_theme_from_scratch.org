@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       7a973898-f0ee-4ce5-a9e0-0b4d2a5c41fb
+:END:
+#+title: hugo theme from scratch
+#+filetags:  
+
+[[id:506d20e8-5453-495d-abff-a6920b92d24b][Hugo]]
+
+* Reference List
+1. https://www.goglides.dev/bkpandey/create-a-hugo-theme-from-scratch-20a8
+2. https://levelup.gitconnected.com/a-quick-tutorial-on-hugo-templates-creating-your-theme-a4102b42a85f
+3. https://nelsonslog.wordpress.com/2021/10/30/hugo-theme-from-scratch-the-absolute-minimum/
+4. https://gohugo.io/commands/hugo_new_theme/
+5. https://dev.to/vinliao/create-your-own-hugo-theme-from-scratch-5df9
+6. https://draft.dev/learn/creating-hugo-themes
+7. https://retrolog.io/blog/creating-a-hugo-theme-from-scratch/

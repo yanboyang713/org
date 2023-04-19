@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       340e7569-822a-4bff-a159-729fa37d081b
+:END:
+#+title: Buck2
+#+filetags:  
+
+A large-scale [[id:83136b3e-5b2a-4a48-8e7c-7ed6b2d3f871][build system]]. The successor to Buck.
+
+Ready for users ∈ {C++, Python, Rust, Erlang, OCaml}
+
+* Reference List
+1. https://buck2.build/
+2. https://github.com/facebook/buck2
