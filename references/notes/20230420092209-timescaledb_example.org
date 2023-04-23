@@ -1,0 +1,24 @@
+:PROPERTIES:
+:ID:       477a7c0a-140a-493b-8285-3aa396e013f8
+:END:
+#+title: TimescaleDB Example
+#+filetags:  
+
+* Create Database
+#+begin_src sql
+CREATE DATABASE vicroads;
+CREATE EXTENSION IF NOT EXISTS timescaledb CASCADE;
+#+end_src
+
+* Create Table
+#+begin_src sql
+DROP TABLE detector;
+CREATE TABLE detector (
+	"id" INTEGER PRIMARY KEY,
+	"name" TEXT,
+	"link_key" TEXT,
+	"description" TEXT,
+	"x" NUMERIC,
+	"y" NUMERIC
+);
+#+end_src

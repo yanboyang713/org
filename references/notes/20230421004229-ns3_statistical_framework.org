@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       0ef556a1-e852-4da7-9fd1-55eda4e32c56
+:END:
+#+title: NS3 Statistical Framework
+#+filetags:  
+
+[[id:cc4d5749-c647-406e-a08d-ef4850406219][ns3]]
+
+* Reference List
+1. Maygua-Marcillo, L., Urquiza-Aguiar, L., & Paredes-Paredes, M. (2018). Statistical Framework in NS-3.

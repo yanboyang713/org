@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       9d293990-ff98-47eb-93a4-556df1e7b26d
+:END:
+#+title: kubeadm
+#+filetags:  
+
+* Reference List
+1. https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/
+2. https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
+3. https://www.youtube.com/watch?v=j5rmtgyP8vY&ab_channel=%E9%BA%A6%E5%85%9C%E6%90%9EIT

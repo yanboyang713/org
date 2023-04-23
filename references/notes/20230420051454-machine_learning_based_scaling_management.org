@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       0f69795e-5411-4276-a38f-0ecdcb68e023
+:END:
+#+title: Machine Learning-Based Scaling Management
+#+filetags:  
+
+
+* Reference List
+1. Toka, L., Dobreff, G., Fodor, B., & Sonkoly, B. (2021). Machine learning-based scaling management for kubernetes edge clusters. IEEE Transactions on Network and Service Management, 18(1), 958-972.

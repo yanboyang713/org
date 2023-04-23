@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       49719c29-fef6-46e6-bfd9-35e3fce3a02f
+:END:
+#+title: KubeVirt
+#+filetags:  
+
+[[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]]
+[[id:605f9bc6-7c2d-4ce0-91d3-b001f279323e][Virtual Machine]]
+
+* Reference List
+1. https://opensource.com/article/20/9/vms-kubernetes-kubevirt

@@ -4,57 +4,20 @@
 #+title: TimeScaleDB
 #+filetags:  
 
-[[id:b2377ddc-9d91-4c8e-a4d8-21fabf961ee8][Time Series]] database
+TimescaleDB [2] is an open source [[id:b2377ddc-9d91-4c8e-a4d8-21fabf961ee8][Time Series]] database. It is an extension of [[id:97a5c070-1745-4002-b5fe-0d170877ba3f][PostgreSQL]] that optimises for time series data storage and processing [3]. As an extension of PostgreSQL, it is a fully relational database. It provides high levels of analytics abilities with SQL. TimescaleDB also benefits from the PostgreSQL ecosystem of a wide array of extensions, management tools, and visualisation dashboards. TimescaleDB transforms PostgreSQL tables into hypertables and optimise query planning and execution. Hypertables can also be easily deployed in a distributed environment and store data across multiple nodes [4], which could management by [[id:89d4f035-d667-490e-a71e-0a9f348371f4][Kubernetes]]. TimescaleDB also includes hyperfunctions, which is a set of functions oriented to time series data analysis operations. They extend SQL to achieve fast execution time on time series queries.
 
-* Installation
-** Pre-installation
-+ [[id:e4fa2843-dc6e-4303-a209-40df1bd10a0f][docker]]
+Comparing with PostgreSQL, TimescaleDB has shown to be 20x faster at inserting large scale data [5]. TimescaleDB can achieve 1.2x to 5x better performance in time-based queries and 450x better performance in time-ordering queries [1]. Although, InfluxDB is current most popularly [[id:b2377ddc-9d91-4c8e-a4d8-21fabf961ee8][Time Series]] database, TimescaleDB is tested to perform high cardinality inserts 3.5x faster and outperforms InfluxDB by 3.4x to 71x on complex queries [6].
 
-** Install
-#+begin_src bash
-docker run -d --name timescaledb -p 5432:5432 \
--e POSTGRES_PASSWORD=password timescale/timescaledb:latest-pg14
-
-docker start /timescaledb
-docker container ls
-docker ps -a
-#+end_src
-
-* Connect to database
-** Client [[id:494d0c77-a11a-4b78-85a0-b1b4726d135c][psql]]
-I recommend using [[id:494d0c77-a11a-4b78-85a0-b1b4726d135c][psql]].
-
-** Client [[id:797784c8-2df1-4445-8811-f18e54ff84d8][Beekeeper Studio]]
-Run: beekeeper-studio
-
-#+begin_src file
-User name:postgres
-Password: password
-#+end_src
-
-* Create Database
-#+begin_src sql
-CREATE DATABASE vicroads;
-CREATE EXTENSION IF NOT EXISTS timescaledb CASCADE;
-#+end_src
-
-* Create Table
-#+begin_src sql
-DROP TABLE detector;
-CREATE TABLE detector (
-	"id" INTEGER PRIMARY KEY,
-	"name" TEXT,
-	"link_key" TEXT,
-	"description" TEXT,
-	"x" NUMERIC,
-	"y" NUMERIC
-);
-#+end_src
-
-* Remove
-#+begin_src bash
-docker rm /timescaledb
-#+end_src
+* Post-reading
++ [[id:9b69a766-69ce-4d17-9cb8-42d50ffe8358][TimeScaleDB Installation]]
++ [[id:8543ab5b-7d36-460d-a7b7-2225d13c7b23][TimescaleDB Management Client]]
++ [[id:477a7c0a-140a-493b-8285-3aa396e013f8][TimescaleDB Example]]
 
 * Reference List
-1.
+1. Barez, F., Bilokon, P., & Xiong, R. (2023). Benchmarking Specialized Databases for High-frequency Data. arXiv preprint arXiv:2301.12561.
+2. Inc. T. Time-series data simplified — Timescale. 2022. Available from: https://www.timescale.com/
+3. Inc. T. Overview — Timescale Docs. 2022. Available from: https://docs.timescale.com/timescaledb/latest/overview/#accelerated-performance
+4. Inc. T. Distributed hypertables — Timescale Docs. 2022. Available from: https://docs.timescale.com/api/latest/distributed-hypertables/
+5. Kiefer R. TimescaleDB vs. PostgreSQL for time-series: 20x higher inserts, 2000x faster deletes, 1.2x-14,000x faster queries. 2017. Available from: https://www.timescale.com/blog/timescaledb-vs-6a696248104e/
+6. InfluxData. influxdb: open source time series database. 2022. Available from: https://www.influxdata.com/products/influxdb-overview/
+7. DB-Engines Ranking of Time Series DBMS. https://db-engines.com/en/ranking/time+series+dbms. Accessed 20 Apr 2023

@@ -2,12 +2,13 @@
 :ID:       cc4d5749-c647-406e-a08d-ef4850406219
 :END:
 #+title: ns3
-#+filetags:  
+#+filetags:
 
-* What is ns-3?
-ns-3 is a discrete-event network simulator, targeted primarily for research and educational use. ns-3 is free software, licensed under the GNU GPLv2 license, and is publicly available for research, development, and use.
+Today, there are several competitive as well as feature-rich network simulators available in the market for researchers, each with its own strengths and merits [2]. Many of these are capable of not only modeling traditional wired networks but also cutting-edge technologies such as Wi-Fi and 5G networks [2].
 
-The goal of the ns-3 project is to develop a preferred, open simulation environment for networking research: it should be aligned with the simulation needs of modern networking research and should encourage community contribution, peer review, and validation of the software.
+NS-3 is a popular discrete-event network [[id:7ba901b0-7d4c-4d02-b35c-7eef502447c0][simulation software]], targeted primarily for research and educational use. NS-3 provides a complex and rich library for the simulation of wireless and wired technology. There are two main benefits:
++ It supports the integrations with other open-source software, thus reducing the requirement for rewriting simulation models.
++ It can be used to simulate and analyze large-scale network simulations very efficiently [3, 4]. The protocols are designed to closely model realistic scenario computations and devices.
 
 * NS 3 Installation
 [[id:2210ac49-a9e6-4a08-9e1f-8ee5b39e6d8d][ns3 installation]]
@@ -20,3 +21,6 @@ The goal of the ns-3 project is to develop a preferred, open simulation environm
 
 * Reference List
 1. https://www.nsnam.org/about/
+2. Walia, A. K., Chhabra, A., & Sharma, D. (2022). Comparative Analysis of Contemporary Network Simulators. In Innovative Data Communication Technologies and Application: Proceedings of ICIDCA 2021 (pp. 369-383). Singapore: Springer Nature Singapore.
+3. Bilalb, S. M., & Othmana, M. (2013). A performance comparison of network simulators for wireless networks. arXiv preprint arXiv:1307.4129.
+4. Pan, J., & Jain, R. (2008). A survey of network simulation tools: Current status and future developments. Email: jp10@ cse. wustl. edu, 2(4), 45.

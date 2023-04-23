@@ -4,9 +4,12 @@
 #+title: Kubernetes
 #+filetags:  
 
-Kubernetes, also known as K8s, is an open-source system for automating deployment, scaling, and management of containerized applications.
+Kubernetes, also known as K8s, is an open-source system for automating deployment, [[id:5e3c0085-cca6-4de8-823e-9abfcbb2e99b][Scaling]], and management of containerized applications.
 
 It groups containers that make up an application into logical units for easy management and discovery. Kubernetes builds upon 15 years of experience of running production workloads at Google, combined with best-of-breed ideas and practices from the community.
+
+* Deployment Tools
++ [[id:9d293990-ff98-47eb-93a4-556df1e7b26d][kubeadm]]
 
 * Publishing Services (ServiceTypes)
 For some parts of your application (for example, frontends) you may want to expose a Service onto an external IP address, that's outside of your cluster.

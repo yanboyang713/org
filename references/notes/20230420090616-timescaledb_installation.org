@@ -1,0 +1,34 @@
+:PROPERTIES:
+:ID:       9b69a766-69ce-4d17-9cb8-42d50ffe8358
+:END:
+#+title:  TimeScaleDB Installation
+#+filetags:  
+
+[[id:955c1a91-a8c5-45ad-ae0a-4d95d8ce5869][TimeScaleDB]]
+
+* Single Node in Docker
+** Pre-installation
++ [[id:e4fa2843-dc6e-4303-a209-40df1bd10a0f][docker]]
+
+** Install
+#+begin_src bash
+docker run -d --name timescaledb -p 5432:5432 \
+-e POSTGRES_PASSWORD=password timescale/timescaledb:latest-pg14
+
+docker start /timescaledb
+docker container ls
+docker ps -a
+#+end_src
+
+#+begin_src file
+User name:postgres
+Password: password
+#+end_src
+
+** Remove
+#+begin_src bash
+docker rm /timescaledb
+#+end_src
+
+* Muilt-Node
+[[id:89d4f035-d667-490e-a71e-0a9f348371f4][TimescaleDB on Kubernetes]]

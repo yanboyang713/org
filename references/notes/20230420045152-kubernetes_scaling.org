@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       5e3c0085-cca6-4de8-823e-9abfcbb2e99b
+:END:
+#+title: Kubernetes Scaling
+#+filetags:
+
+[[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]], the container orchestrator that has become the most popular cloud manager in the past few years, offers automatic scaling features, called Horizontal and Vertical Pod Autoscaling (HPA [1], VPA [2]).
+
+* ML
+[[id:0f69795e-5411-4276-a38f-0ecdcb68e023][Machine Learning-Based Scaling Management]]
+
+* Reference List
+1. Horizontal Pod Autoscaler, Kubernetes, Mountain View, CA, USA. 2020. [Online]. Available: https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/
+2. Vertical Pod Autoscaler—Kubernetes. Accessed : Jan. 29, 2021. [Online]. Available: https://github.com/kubernetes/autoscaler/tree/master/verticalpod-autoscaler

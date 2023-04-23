@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       8543ab5b-7d36-460d-a7b7-2225d13c7b23
+:END:
+#+title: TimescaleDB Management Client
+#+filetags:
+
+* Connect to database
+** Client [[id:494d0c77-a11a-4b78-85a0-b1b4726d135c][psql]]
+I recommend using [[id:494d0c77-a11a-4b78-85a0-b1b4726d135c][psql]].
+
+** Client [[id:797784c8-2df1-4445-8811-f18e54ff84d8][Beekeeper Studio]]
+Run: beekeeper-studio
