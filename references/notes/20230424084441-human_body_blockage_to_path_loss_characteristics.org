@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       277963fb-7eca-44ba-a1c3-257277a43c99
+:END:
+#+title: human body blockage to path loss characteristics
+#+filetags:  
+
+[[id:fb9ea8e3-b517-493a-bbdf-b41c87985f4c][Nikagumi Rice Distribution]]
+
+* Reference List
+1. Nakamura, M., Sasaki, M., Inomata, M., & Onizawa, T. (2016, October). The effect of human body blockage to path loss characteristics in crowded areas. In 2016 International Symposium on Antennas and Propagation (ISAP) (pp. 218-219). IEEE.
