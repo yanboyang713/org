@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       5369d125-0f72-4140-86da-8c8d0583e9a5
+:END:
+#+title: edge computing
+#+filetags:  
+
+[[id:5e7318e5-8fa8-4b25-9062-7bc04eb3756e][Edge device]]

@@ -4,7 +4,76 @@
 #+title: Wireless Anomaly detection Project
 #+filetags:  
 
+* Metrics
+Physical Layer:
+\begin{itemize}
+    \item H-Phy-RX: RX packets information at the physical layer
+    \item H-Phy-TX: TX packets information at the physical layer
+    \item H-Phy-RX-Drop: RX drop packets information at the physical layer
+    \item H-Phy-TX-Drop: TX drop packets information at the physical layer
+\end{itemize}
+
+Mac Layer:
+\begin{itemize}
+    \item H-Mac-Dequeue: Dequeue packets information at the Mac layer
+    \item H-Mac-Enqueue: Enqueue packets information at the Mac layer
+    \item H-Mac-Queue-Drop: Drop packets information at the Mac layer
+    \item H-Mac-Before-Enqueue-Drop: Drop packets information before enqueue at the Mac layer
+    \item H-Mac-After-Dequeue-Drop: Drop packets information after dequeue at the Mac layer
+\end{itemize}
+
+H-Phy-RX:
+\begin{itemize}
+    \item Packet information with timestamp
+    \item Signal Dbm
+    \item Noise Dbm
+\end{itemize}
+
+H-Phy-TX:
+\begin{itemize}
+    \item Packet information with timestamp
+    \item Power Level
+\end{itemize}
+
+H-Phy-RX-Drop:
+\begin{itemize}
+    \item Packet information with timestamp
+    \item Failure Reason
+\end{itemize}
+
+H-Phy-TX-Drop:
+\begin{itemize}
+    \item Packet information with timestamp
+\end{itemize}
+
+H-Mac-Dequeue:
+\begin{itemize}
+    \item Packet information with timestamp
+\end{itemize}
+
+H-Mac-Enqueue:
+\begin{itemize}
+    \item Packet information with timestamp
+\end{itemize}
+
+H-Mac-Queue-Drop:
+\begin{itemize}
+    \item Packet information with timestamp
+\end{itemize}
+
+H-Mac-Before-Enqueue-Drop:
+\begin{itemize}
+    \item Packet information with timestamp
+\end{itemize}
+
+H-Mac-After-Dequeue-Drop:
+\begin{itemize}
+    \item Packet information with timestamp
+\end{itemize}
+
+Totally, have 13 measurement metrics.
 * Database Set-up
+
 [[id:955c1a91-a8c5-45ad-ae0a-4d95d8ce5869][TimeScaleDB]]
 
 #+begin_src sql

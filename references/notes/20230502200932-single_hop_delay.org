@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       2e64004b-38eb-435c-8af9-d413799a9209
+:END:
+#+title: Single-hop delay
+#+filetags:
+Single-hop delay measures the time it takes for a packet to be fully processed at a receiver after it has been scheduled for transmission at a sender. It contributes to the end-to-end delay, and can thus be influential in its optimization. This metric provides an indication of link congestion and is determined by adding the output queuing and processing delay at the sender ($d_{output}$), propagation delay ($d_{prop}$), transmission delay ($d_{tx}$), and input queuing and processing delay at the receiver ($d_{input}$). The formula for calculating single-hop delay is as follows: $$d = d_{output} + d_{prop} + d_{tx} + d_{input}$$
+
+The $d_{output}$ and $d_{input}$ are affected by the congestion at the sender and the receiver.
+
+* Reference List
+1. Yuan, D., Kanhere, S. S., & Hollick, M. (2017). Instrumenting Wireless Sensor Networks—A survey on the metrics that matter. Pervasive and Mobile Computing, 37, 45-62.

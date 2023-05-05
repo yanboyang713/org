@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       82a8a4f0-84de-4d4f-b6a8-1abae69f5fd7
+:END:
+#+title: single-hop packet reception rate
+#+filetags:  
+
+Single-hop packet reception rate is the most commonly used metric for evaluating link quality. Packet reception rate (PRR) represents the percentage of packets that are successfully delivered over a link. PRR is sometimes referred to as packet delivery ratio (PDR), and its complement is known as packet loss rate (PLR). Links with higher PRR are less error prone, and transmission over these links leads to shorter delay and lower energy consumption due to the lower chance of retransmissions.
+
+* Reference List
+1. Yuan, D., Kanhere, S. S., & Hollick, M. (2017). Instrumenting Wireless Sensor Networks—A survey on the metrics that matter. Pervasive and Mobile Computing, 37, 45-62.

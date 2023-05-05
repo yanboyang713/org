@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       93a2a5e3-0f41-406e-8c73-894ed61d1b42
+:END:
+#+title: K3S
+#+filetags:  
+
+Lightweight [[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]]
+
+The certified Kubernetes distribution built for IoT & [[id:5369d125-0f72-4140-86da-8c8d0583e9a5][Edge Computing]]
+
+* Reference List
+1. https://k3s.io/

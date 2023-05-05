@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       86ba284e-1095-4787-8778-545d192bbfeb
+:END:
+#+title: Single-hop jitter
+#+filetags:
+
+Single-hop jitter is a metric that calculates the variation in [[id:2e64004b-38eb-435c-8af9-d413799a9209][Single-hop delay]]. Real-time audio and video applications are very sensitive to jitter [1].
+
+* Reference List
+1. Chen, Y., Farley, T., & Ye, N. (2004). QoS requirements of network applications on the Internet. Information Knowledge Systems Management, 4(1), 55-76.

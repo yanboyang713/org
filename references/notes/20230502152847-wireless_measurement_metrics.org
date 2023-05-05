@@ -1,0 +1,23 @@
+:PROPERTIES:
+:ID:       c0eef701-9240-4890-b41a-6dc829786b77
+:END:
+#+title: wireless measurement metrics
+#+filetags:  
+
+[[id:55f23b66-c353-4562-b4bc-da3df9ddc665][wireless networks]] measurement metrics
+
+* Physical layer metrics
++ [[id:89c9c2cb-dbe0-42e0-97db-278c5276534b][Received Signal Strength Indicator (RSSI)]]
++ [[id:4f858bb0-fbb1-4518-85c4-3822728ff6bb][Link Quality Indicator (LQI)]]
++ [[id:3304be9f-4e89-42bc-95b0-afa3a9a88814][Signal to Noise Ratio (SNR)]]
++ [[id:a38ca869-1083-43f3-9789-a7abc6009dc8][Packet Corruption Rate (PCR)]]
+
+* Data link layer metrics
++ [[id:2e64004b-38eb-435c-8af9-d413799a9209][Single-hop delay]]
++ [[id:86ba284e-1095-4787-8778-545d192bbfeb][Single-hop jitter]]
++ [[id:a129eb41-726d-444f-8b9f-8520185c3d7f][Single-hop throughput]]
++ [[id:82a8a4f0-84de-4d4f-b6a8-1abae69f5fd7][Single-hop packet reception rate]]
++ [[id:d39150c5-7849-45a4-ab41-d0263ef92399][Link burstiness—the \beta factor]]
+
+* Reference List
+1. Yuan, D., Kanhere, S. S., & Hollick, M. (2017). Instrumenting Wireless Sensor Networks—A survey on the metrics that matter. Pervasive and Mobile Computing, 37, 45-62.

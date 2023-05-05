@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       8e39a1a1-ae75-45b1-a59d-1b52adb8a21d
+:END:
+#+title: Jetson
+#+filetags:  
+
+https://www.seeedstudio.com/reComputer-J1020-v2-p-5498.html

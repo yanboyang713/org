@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       89c9c2cb-dbe0-42e0-97db-278c5276534b
+:END:
+#+title: Received Signal Strength Indicator (RSSI)
+#+filetags:
+
+Received Signal Strength Indicator (RSSI)} measures the power of the frequency band of interest at the receiver. When there is active transmission during the sampling time, RSSI measures the power of the received signal. In the absence of active transmission, RSSI measures the power of the interference and background noise.
+
+* Reference List
+1. Yuan, D., Kanhere, S. S., & Hollick, M. (2017). Instrumenting Wireless Sensor Networks—A survey on the metrics that matter. Pervasive and Mobile Computing, 37, 45-62.

@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       688894e0-e6d5-4ae8-8eea-108b9139b4a9
+:END:
+#+title: UAV classification based on weight and range
+#+filetags:
+
+[[id:99ad3062-59b9-490c-bbd6-a27cf4448aad][UAV]]
+
+[[http://res.cloudinary.com/dkvj6mo4c/image/upload/v1682541060/screenshot/zfl8ydunxnugxongotrg.png]]
+
+* Reference List
+1. Singhal, G., Bansod, B., & Mathew, L. (2018). Unmanned aerial vehicle classification, applications and challenges: A review.
