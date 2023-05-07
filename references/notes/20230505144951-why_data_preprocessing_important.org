@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       138f1b9f-1688-4ddf-9f6f-aa5723bf9359
+:END:
+#+title: Why Data Preprocessing important
+#+filetags:  
+
+* Why Data Preprocessing is important
+[[id:bcbbc197-ffbb-42f2-8c6b-b18c86f4e218][Data Preprocessing]] may significantly influence the statistical conclusions based on the data. “Garbage in, garbage out (GIGO)” is a famous saying that is used to emphasis “the quality of the statistical analyses (output) always depends on the quality of the data (input)”. By preprocessing data, we can minimise the garbage that gets into our analysis so that we can minimise the amount of garbage that our analyses/models result.
+
+* Why do you learn Data Preprocessing?
+The road to becoming an expert in data analysis can be challenging and in fact, obtaining expertise in the broad range of data analysis is a career-long process. In this course, you will take a step closer to fluency in the early stages; namely in the data preprocessing step, as you need to be able to import, manage, manipulate and transform your data before performing any kind of data analysis.

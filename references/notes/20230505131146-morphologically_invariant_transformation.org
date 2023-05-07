@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       8bac4861-0caf-4b83-98f2-7a0a91062e42
+:END:
+#+title: morphologically invariant transformation
+#+filetags:  
+
+[[id:dc6c08ce-627a-4c65-9903-7f67d557a2f5][image processing]]
+
+* Common User Case
++ [[id:fb1776a7-0146-4360-a1a9-c7e94d24d90e][stereo camera match]]
++ [[id:5a6cf1f3-2f84-466d-be00-670168d92316][optical flow]]
+
+* Reference List
+1. Demetz, O., Hafner, D., & Weickert, J. (2015). Morphologically invariant matching of structures with the complete rank transform. International Journal of Computer Vision, 113, 220-232.

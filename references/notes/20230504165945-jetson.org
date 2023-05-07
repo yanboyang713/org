@@ -4,4 +4,6 @@
 #+title: Jetson
 #+filetags:  
 
+[[id:d6be6fc0-4aa7-45a7-bc65-e81f2a0723a2][Nvidia]]
+
 https://www.seeedstudio.com/reComputer-J1020-v2-p-5498.html

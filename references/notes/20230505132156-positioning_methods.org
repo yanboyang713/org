@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       615ae964-ad8c-46ff-b9dd-171b4838a549
+:END:
+#+title: positioning methods
+#+filetags:  
+
++ [[id:5a6cf1f3-2f84-466d-be00-670168d92316][optical flow]]
++ [[id:dbca623c-ee4b-41a2-b969-202f1e206c1a][GPS+RTK]]
++ [[id:5d4a108f-9744-4a7a-b26f-03c93b01f657][inertial navigation]]

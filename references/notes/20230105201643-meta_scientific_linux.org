@@ -24,7 +24,7 @@ Meta Scientific Linux based on [[id:dc13b67c-8d8b-40fd-b8cf-9ea8547e485d][Arch L
 * Meta-Emacs
 [[id:19182f6d-b637-4879-8e9c-b093f492db5c][emacs]]
 
-* Firewall
+* [[id:f7904304-e3e3-484c-b541-349030a56fe3][firewall]]
 [[id:c130e97c-6493-4e70-b9c7-957c84e4eedd][ufw]]
 
 * [[id:d10f4549-c550-4c6b-beaf-7a78e477dc32][shell]]

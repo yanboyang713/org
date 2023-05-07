@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       bcbbc197-ffbb-42f2-8c6b-b18c86f4e218
+:END:
+#+title: Data Preprocessing
+#+filetags:
+
+* What is Data Preprocessing?
+Most statistical theory concentrates on data modelling, prediction, and statistical inference while it is usually assumed that data are in the correct state for the data analysis. However, in practice, a data analyst spends most of his/her time (usually 50%-80% of an analyst time) on making ready the data before doing any statistical operation (Dasu and Johnson (2003)). Despite the amount of time it takes, there has been surprisingly very little emphasis on how to preprocess data well (Wickham and others (2014)). Real-world data are commonly incomplete, noisy, inconsistent, and don’t have all the correct labels and codes that are required for the analysis. Data Preprocessing, which is also commonly referred to as data wrangling, data manipulation, data cleaning, etc., is a process and the collection of operations needed to prepare all forms of untidy data (incomplete, noisy and inconsistent data) for statistical analysis.

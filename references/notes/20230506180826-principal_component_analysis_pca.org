@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       ac8a5358-0c56-42fa-92f5-1616b6bf83e0
+:END:
+#+title: Principal Component Analysis (PCA)
+#+filetags:  
+
+PCA forms the basis of [[id:19356e91-81f2-4293-8380-dcc0a390ad10][Multivariate Analysis]] based on projection methods. The most important use of PCA is to represent a multivariate data table as smaller set of variables (summary indices) in order to observe trends, jumps, clusters and outliers. This overview may uncover the relationships between observations and variables, and among the variables.
+
+* Reference List
+1. https://www.sartorius.com/en/knowledge/science-snippets/what-is-principal-component-analysis-pca-and-how-it-is-used-507186#:~:text=PCA%20forms%20the%20basis%20of,%2C%20jumps%2C%20clusters%20and%20outliers.

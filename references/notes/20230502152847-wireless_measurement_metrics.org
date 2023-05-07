@@ -6,6 +6,8 @@
 
 [[id:55f23b66-c353-4562-b4bc-da3df9ddc665][wireless networks]] measurement metrics
 
+[[id:19ed3063-6f83-4974-9441-837b35b2865c][measurement definition]]
+
 * Physical layer metrics
 + [[id:89c9c2cb-dbe0-42e0-97db-278c5276534b][Received Signal Strength Indicator (RSSI)]]
 + [[id:4f858bb0-fbb1-4518-85c4-3822728ff6bb][Link Quality Indicator (LQI)]]
@@ -18,6 +20,9 @@
 + [[id:a129eb41-726d-444f-8b9f-8520185c3d7f][Single-hop throughput]]
 + [[id:82a8a4f0-84de-4d4f-b6a8-1abae69f5fd7][Single-hop packet reception rate]]
 + [[id:d39150c5-7849-45a4-ab41-d0263ef92399][Link burstiness—the \beta factor]]
+
+[[id:bcbbc197-ffbb-42f2-8c6b-b18c86f4e218][Data Preprocessing]]
+[[id:19356e91-81f2-4293-8380-dcc0a390ad10][Multivariate Analysis]]
 
 * Reference List
 1. Yuan, D., Kanhere, S. S., & Hollick, M. (2017). Instrumenting Wireless Sensor Networks—A survey on the metrics that matter. Pervasive and Mobile Computing, 37, 45-62.

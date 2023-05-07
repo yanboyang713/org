@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       19ed3063-6f83-4974-9441-837b35b2865c
+:END:
+#+title: measurement definition
+#+filetags:  
+
+A *measurement* occurs when a variable is actually measured or recorded.
+
+For example, you measure a person’s heart rate (measurement). Heart rate is measured on a scale, or the unit of measurement, for example, beats per minute (BPM). A set of measurement or records from a variable is called data and can come from either a sample, a sub group of a population, or the population itself. When an entire population is measured, this is referred to as a census.

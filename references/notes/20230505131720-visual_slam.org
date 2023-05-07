@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       7da48b7b-1942-4f92-aa76-81dffa844d28
+:END:
+#+title: Visual SLAM
+#+filetags:
+
+[[id:99ad3062-59b9-490c-bbd6-a27cf4448aad][UAV]]
+
+[[id:fb1776a7-0146-4360-a1a9-c7e94d24d90e][stereo camera]]

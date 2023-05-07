@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       62b4a8da-cd3f-4a6e-a561-27a7495c8a85
+:END:
+#+title: org mode handle youtube links
+#+filetags:  
+
+[[id:305e6b72-ccc4-4d41-9458-28dd24d3c4fa][org mode]]
+
+* Reference List
+1. https://bitspook.in/blog/extending-org-mode-to-handle-youtube-links/

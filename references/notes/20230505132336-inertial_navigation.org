@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       5d4a108f-9744-4a7a-b26f-03c93b01f657
+:END:
+#+title: inertial navigation
+#+filetags:
+
+[[id:6fabbdf0-ac54-4979-83f4-9238c33a7121][imu]]
