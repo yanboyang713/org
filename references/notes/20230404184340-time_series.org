@@ -4,3 +4,4 @@
 #+title: Time Series
 #+filetags:
 
+[[id:ca02b3b4-ef28-424f-b9c9-43b2bd884aad][Notation]]

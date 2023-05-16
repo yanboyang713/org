@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       163575a1-c569-4d08-9b56-decb443b316a
+:END:
+#+title: Non-Parametric Trend Tests
+#+filetags:  
+
+[[id:b2377ddc-9d91-4c8e-a4d8-21fabf961ee8][Time Series]]
+
+* Reference List
+1. https://cran.r-project.org/web/packages/trend/vignettes/trend.pdf

@@ -11,6 +11,8 @@ It groups containers that make up an application into logical units for easy man
 * Deployment Tools
 + [[id:9d293990-ff98-47eb-93a4-556df1e7b26d][kubeadm]]
 
+* [[id:3c577bc9-0403-468a-9214-47a0c0151d6f][Kubernetes Dashboard tools]]
+
 * Publishing Services (ServiceTypes)
 For some parts of your application (for example, frontends) you may want to expose a Service onto an external IP address, that's outside of your cluster.
 

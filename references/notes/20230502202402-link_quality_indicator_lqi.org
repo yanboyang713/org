@@ -2,8 +2,10 @@
 :ID:       4f858bb0-fbb1-4518-85c4-3822728ff6bb
 :END:
 #+title: Link Quality Indicator (LQI)
-#+filetags:  
-Link Quality Indicator (LQI)} is used to assess the strength and quality of a received packet. The value of LQI is reported as an integer that should range from 0 to 255. but the implementation is vendor-specific.
+#+filetags:
+Link Quality Indicator (LQI) is used to assess the strength and quality of a received packet. The value of LQI is reported as an integer that should range from 0 to 255. A higher LQI value generally indicates a stronger and more reliable link, while a lower value suggests a weaker or less reliable link.
+
+Link Quality Indicator (LQI) is used to assess the strength and quality of a received packet. The value of LQI is reported as an integer that should range from 0 to 255. but the implementation is vendor-specific.
 
 There are different opinions on whether RSSI or LQI should be used to represent link quality.
 

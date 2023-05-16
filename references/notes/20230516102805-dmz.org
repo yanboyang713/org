@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       f608e634-f064-4645-851d-7fe488e754df
+:END:
+#+title: DMZ
+#+filetags:  
+
+[[id:c2d2bf9b-7c0e-499e-8606-ae85e8506cf0][RouterOS]]

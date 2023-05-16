@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       3c577bc9-0403-468a-9214-47a0c0151d6f
+:END:
+#+title: Kubernetes Dashboard tools
+#+filetags:
+
++ [[id:681b0fdd-d828-480f-ab95-26d64305a4f1][Openlens]]

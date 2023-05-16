@@ -38,6 +38,9 @@ Theme based on [[id:bc507e2b-e819-410e-9ec9-b6fc4bd4d082][docsy]]
 Script to install Archlinux with full disk encryption
 [[id:6e9a67f6-7338-4248-8eeb-9b742b1d5293][Install Archlinux with Full Disk Encryption]]
 
+* USB mount helper
+[[id:b84f629e-a395-4056-bdf0-f15602224d38][USB mount tools]]
+
 * Office
 [[id:e6ff9271-adf0-4fed-bdb9-29de13fc10e4][WPS Office]]
 

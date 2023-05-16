@@ -1,0 +1,22 @@
+:PROPERTIES:
+:ID:       939e3820-7674-482a-b828-41b1cbff32e5
+:END:
+#+title: Data Transformation
+#+filetags:
+
+Data transformation is an essential [[id:bcbbc197-ffbb-42f2-8c6b-b18c86f4e218][data preprocessing]] technique.
+
+After [[id:6aca677a-0040-408a-9f23-aba84decc9ca][data imputation]], data transformation must be performed before statistical analysis/modelling to provide patterns that are easier to understand. It increases the efficiency of analytic processes, and enables better data-driven decisions.
+
+Data transformation changes the format, structure, or values of the data and converts them into clean, usable data.
+
+There are several data transformation techniques that can help structure and clean up the data.
++ [[id:5b2a097b-45f4-4394-8b4f-1e48dfd84f5c][Data Smoothing]]
++ [[id:3d9a42f6-e68e-434b-9d19-420f1ba1c51a][Attribute Construction]]
++ [[id:ed019891-de06-4f99-aad8-c4c88eff7d6f][Data Aggregation]]
++ [[id:478cfc0d-adef-4b3c-bd48-b5762af89f19][Data Normalization]]
++ [[id:401617d1-839c-4ea9-9a57-d9c487216e67][Data Discretization]]
++ [[id:b01620c8-8b59-4445-b772-3f9114c35599][Data Generalization]]
+
+* Reference List
+1. https://www.javatpoint.com/data-transformation-in-data-mining#:~:text=Data%20transformation%20is%20an%20essential,them%20into%20clean%2C%20usable%20data.

@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       6aca677a-0040-408a-9f23-aba84decc9ca
+:END:
+#+title: Data Imputation
+#+filetags:  
+
+Although Data Collection become more reliable, abnormal data are found in the database due to communication failure, device malfunction, or shut down by users. Missing values and unreasonably excessive loads are considered abnormal data.

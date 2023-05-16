@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       681b0fdd-d828-480f-ab95-26d64305a4f1
+:END:
+#+title: Openlens
+#+filetags:  
+
+https://www.youtube.com/watch?v=dKOdT91USwM&ab_channel=VirtualizationHowto

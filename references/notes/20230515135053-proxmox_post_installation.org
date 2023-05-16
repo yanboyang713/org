@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       d5d856fb-7251-4864-b62e-d08a2220bf14
+:END:
+#+title: Proxmox Post-Installation
+#+filetags:  
+
+[[id:77bd7428-f1ee-4306-8d5a-62f38134dfc5][Proxmox VE]]
+
+#+begin_src bash
+wget https://raw.githubusercontent.com/tteck/Proxmox/main/misc/post-pve-install.sh
+chmod a+x post-pve-install.sh
+./post-pve-install.sh
+#+end_src

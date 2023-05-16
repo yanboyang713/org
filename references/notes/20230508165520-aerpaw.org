@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       350d51e7-a9bd-4568-931e-ee608a4d6a98
+:END:
+#+title: AERPAW
+#+filetags:  
+
+
+AERPAW User Manual
+https://sites.google.com/ncsu.edu/aerpaw-wiki/aerpaw-user-manual
+
+Experiment Web Portal (Public)
+https://152.14.188.14:8443/

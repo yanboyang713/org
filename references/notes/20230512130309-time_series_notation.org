@@ -1,0 +1,17 @@
+:PROPERTIES:
+:ID:       ca02b3b4-ef28-424f-b9c9-43b2bd884aad
+:END:
+#+title: Time Series Notation
+#+filetags:
+
+A number of different notations are in use for time-series analysis.
+
+A common notation specifying a time series $X$ that is indexed by the natural numbers is written
+
+$$X = (X_{1}, X_{2}, ...)$$
+
+Another common notation is
+
+$$Y = (Y_{t}: t \in T)$$
+
+where $T$ is the index set.
