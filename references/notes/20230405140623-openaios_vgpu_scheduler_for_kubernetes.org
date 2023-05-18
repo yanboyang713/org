@@ -4,8 +4,8 @@
 #+title: OpenAIOS vGPU scheduler for Kubernetes
 #+filetags:  
 
-[[id:c3decaeb-c3dd-4a3d-ba09-1a7bcdf6733f][vgpu unlock]]
 [[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]]
+[[id:f17baed8-4b8b-433a-a868-3b4f2f3d20c1][vGPU unblock]]
 
 * Reference List
 1. https://github.com/4paradigm/k8s-vgpu-scheduler

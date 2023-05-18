@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       99373b3e-a9a6-458c-a9e1-f2e28a8b48bd
+:END:
+#+title: Citation
+#+filetags:
+
+[[id:55a2e39e-99b6-4291-b332-2c0af8608b96][APA]]

@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       20994b50-62f8-46a1-be80-ab658aee312d
+:END:
+#+title: Logarithmic transformation
+#+filetags:  
+
+This technique applies a logarithmic transformation to the values of a feature. This can be useful for data with a wide range of values, as it can help to reduce the impact of outliers.

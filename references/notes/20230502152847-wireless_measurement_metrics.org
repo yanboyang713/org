@@ -24,5 +24,9 @@
 [[id:bcbbc197-ffbb-42f2-8c6b-b18c86f4e218][Data Preprocessing]]
 [[id:19356e91-81f2-4293-8380-dcc0a390ad10][Multivariate Analysis]]
 
+* Metrics comparative analysis
+The utilization and statistical methods used for these metrics can vary significantly, leading to fails describing their capabilities [2]. In some cases, different studies may even reach contradicting conclusions regarding the effectiveness of certain metrics.
+
 * Reference List
 1. Yuan, D., Kanhere, S. S., & Hollick, M. (2017). Instrumenting Wireless Sensor Networks—A survey on the metrics that matter. Pervasive and Mobile Computing, 37, 45-62.
+2. Liu, W., Xia, Y., Xu, J., Hu, S., & Luo, R. (2019, December). Revisiting link quality metrics for wireless sensor networks. In 2019 IEEE 5th International Conference on Computer and Communications (ICCC) (pp. 597-603). IEEE.

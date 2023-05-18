@@ -9,3 +9,4 @@
 + [[id:93a2a5e3-0f41-406e-8c73-894ed61d1b42][K3S]]
 + [[id:cf2c18b4-f9a0-412f-825f-11a0e837dab5][OpenStack]]
 + [[id:6bf33d95-36f3-44b4-9ea5-360995b13321][OpenShift]]
++ [[id:eebf10a7-c17a-4d17-a313-c9d620028cfa][OKD]]

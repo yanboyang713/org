@@ -8,5 +8,8 @@ Normalizing the data refers to scaling the data values to a much smaller range s
 
 Consider that we have a numeric attribute A and we have n number of observed values for attribute A that are $V_{1}$, $V_{2}$, $V_{3}$, ... $V_{n}$.
 
++ [[id:20994b50-62f8-46a1-be80-ab658aee312d][Logarithmic transformation]]
++ [[id:99cd8bbe-d39b-4098-8f1a-9ed84f5ccbf8][Root transformation]]
+
 * Reference List
 1. https://www.javatpoint.com/data-transformation-in-data-mining#:~:text=Data%20transformation%20is%20an%20essential,them%20into%20clean%2C%20usable%20data.

@@ -1,0 +1,19 @@
+:PROPERTIES:
+:ID:       3543b112-9d03-468c-9b9d-bcbf798907ea
+:END:
+#+title: Find NVIDIA GPU Model Name
+#+filetags:  
+
+[[id:d6be6fc0-4aa7-45a7-bc65-e81f2a0723a2][Nvidia]]
+
+please update your PCI ID database with:
+#+begin_src bash
+sudo update-pciids
+#+end_src
+
+And use the following command in your terminal:
+#+begin_src bash
+lspci -nn | grep '\[03'
+#+end_src
+
+You will see the model name of your graphic card. If it's ambiguous, you could search the PCI ID (something like [10de:11bc]) on the Internet for the corrent model name.

@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       21b03f6f-3b8c-4407-ad61-8f8c3143738a
+:END:
+#+title: vGPU
+#+filetags:
+
+[[id:d6be6fc0-4aa7-45a7-bc65-e81f2a0723a2][Nvidia]]

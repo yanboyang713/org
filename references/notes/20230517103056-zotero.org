@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       34fcc5f4-b189-4890-9934-9c780cf42578
+:END:
+#+title: Zotero
+#+filetags:  
+
+[[id:99373b3e-a9a6-458c-a9e1-f2e28a8b48bd][Citation]]

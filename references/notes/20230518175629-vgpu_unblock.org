@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       f17baed8-4b8b-433a-a868-3b4f2f3d20c1
+:END:
+#+title: vGPU unblock
+#+filetags:  
+
+[[id:21b03f6f-3b8c-4407-ad61-8f8c3143738a][vGPU]]
+
+https://docs.google.com/document/d/1pzrWJ9h-zANCtyqRgS7Vzla0Y8Ea2-5z2HEi4X75d2Q/edit
+https://github.com/DualCoder/vgpu_unlock
+https://wvthoog.nl/proxmox-7-vgpu-v2/#The_easy_way
+https://github.com/mbilker/vgpu_unlock-rs

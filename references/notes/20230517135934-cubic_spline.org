@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       e6b738b8-0d6d-4db3-872d-5a738e80fc16
+:END:
+#+title: cubic spline
+#+filetags:
+
+In [[id:99ad3062-59b9-490c-bbd6-a27cf4448aad][UAV]] smooth motion planning, the cubic spline method is the most used to fit the path point with corresponding time interval. Using cubic spline and time reallocation mechanism, we can obtain a smooth trajectory that satisfies the dynamic constraints.
+
+* Reference List
+1. Sun, Y., Zhang, C., Sun, P., & Liu, C. (2020). Safe and smooth motion planning for mecanum-wheeled robot using improved RRT and cubic spline. Arabian Journal for Science and Engineering, 45, 3075-3090.

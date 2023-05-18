@@ -45,3 +45,5 @@ Script to install Archlinux with full disk encryption
 [[id:e6ff9271-adf0-4fed-bdb9-29de13fc10e4][WPS Office]]
 
 * [[id:a120e7b9-9390-4a5b-979d-755cf6ca17a1][WM notification daemon]]
+
+* [[id:34fcc5f4-b189-4890-9934-9c780cf42578][Zotero]]

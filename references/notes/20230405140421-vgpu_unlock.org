@@ -1,4 +1,4 @@
-:PROPERTIES:
+PROPERTIES:
 :ID:       c3decaeb-c3dd-4a3d-ba09-1a7bcdf6733f
 :END:
 #+title: vgpu unlock

@@ -11,7 +11,7 @@ The concept behind data smoothing is that it will be able to identify simple cha
 We have seen how the noise is removed from the data using the techniques such as binning, regression, clustering.
 
 + Binning: This method splits the sorted data into the number of bins and smoothens the data values in each bin considering the neighborhood values around it.
-+ Regression: This method identifies the relation among two dependent attributes so that if we have one attribute, it can be used to predict the other attribute.
++ [[id:c69367ef-05db-4d51-b6fe-4d066c432358][Regression]]: This method identifies the relation among two dependent attributes so that if we have one attribute, it can be used to predict the other attribute.
 + Clustering: This method groups similar data values and form a cluster. The values that lie outside a cluster are known as outliers.
 
 * Reference List

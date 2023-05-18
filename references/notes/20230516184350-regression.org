@@ -1,0 +1,18 @@
+:PROPERTIES:
+:ID:       c69367ef-05db-4d51-b6fe-4d066c432358
+:END:
+#+title: regression
+#+filetags:  
+
+Linear
+Exponential
+piecewise linear trends
+cubic spline
+
+The best forecasts appear to come from the piecewise linear trend, while the cubic spline gives the best fit to the historical data but poor forecasts.
+
+There is an alternative formulation of cubic splines (called natural cubic smoothing splines) that imposes some constraints, so the spline function is linear at the end, which usually gives much better forecasts without compromising the fit
+
+* Reference List
+1. https://otexts.com/fpp2/nonlinear-regression.html
+2. Sun, Y., Zhang, C., Sun, P., & Liu, C. (2020). Safe and smooth motion planning for mecanum-wheeled robot using improved RRT and cubic spline. Arabian Journal for Science and Engineering, 45, 3075-3090.
