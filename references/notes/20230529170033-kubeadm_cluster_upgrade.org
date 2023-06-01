@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       0e6ec5ad-ab9b-46b5-a391-3d22984f69f4
+:END:
+#+title: Kubeadm cluster upgrade
+#+filetags:  
+
+https://devopscube.com/upgrade-kubernetes-cluster-kubeadm/

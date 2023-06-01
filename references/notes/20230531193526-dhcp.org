@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       e495805e-5687-4c21-8fbe-98c683b2fc18
+:END:
+#+title: dhcp
+#+filetags:
+
+* Request a new IP address from DHCP server
+** To release the current IP address:
+#+begin_src bash
+sudo dhclient -r
+#+end_src
+
+** To obtain a fresh lease:
+#+begin_src bash
+sudo dhclient
+#+end_src

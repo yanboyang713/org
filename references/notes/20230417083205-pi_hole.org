@@ -6,3 +6,5 @@
 
 https://pi-hole.net/
 https://github.com/pi-hole/pi-hole
+
+[[id:e495805e-5687-4c21-8fbe-98c683b2fc18][dhcp]]

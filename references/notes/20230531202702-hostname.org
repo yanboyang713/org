@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       8b8a1977-3c04-4c9e-9bb5-1d8b12be1eac
+:END:
+#+title: hostname
+#+filetags:  
+
+By default, your server is started with the server’s given name as the hostname.
+
+* Change a server’s hostname
+
+* Reference List
+1. https://docs.rackspace.com/support/how-to/linux-hostname-change/

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       0d806c5b-8218-47cc-bfc9-598ffab7f457
+:END:
+#+title: mikrotik openvpn set-up
+#+filetags:  
+
+[[id:7b3d4c7a-30a8-4f0f-a587-fdbb39109e57][mikrotik]]
+[[id:c2d2bf9b-7c0e-499e-8606-ae85e8506cf0][RouterOS]]
+
+https://mum.mikrotik.com/presentations/VN17/presentation_4102_1493726768.pdf

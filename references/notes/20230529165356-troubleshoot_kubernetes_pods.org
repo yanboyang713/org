@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       b5d6dbb1-72d7-41c7-9752-389945775249
+:END:
+#+title: Troubleshoot Kubernetes Pods
+#+filetags:  
+
+https://devopscube.com/troubleshoot-kubernetes-pods/

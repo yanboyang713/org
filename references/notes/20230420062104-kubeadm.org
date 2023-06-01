@@ -4,6 +4,534 @@
 #+title: kubeadm
 #+filetags:
 
+Kubeadm is an excellent tool to set up a working kubernetes cluster in less time. It does all the heavy lifting in terms of setting up all kubernetes cluster components. Also, It follows all the configuration best practices for a kubernetes cluster.
+
+* What is Kubeadm?
+Kubeadm is a tool to set up a minimum viable Kubernetes cluster without much complex configuration. Also, Kubeadm makes the whole process easy by running a series of prechecks to ensure that the server has all the essential components and configs to run Kubernetes.
+
+It is developed and maintained by the official Kubernetes community.
+
+But if you want to play around with the cluster components or test utilities that are part of cluster administration, Kubeadm is the best option. Also, you can create a production-like cluster locally on a workstation for development and testing purposes.
+
+* How Does Kubeadm Work?
+When you initialize a Kubernetes cluster using Kubeadm, it does the following.
+
++ When you initialize kubeadm, first it runs all the preflight checks to validate the system state and it downloads all the required cluster container images from the registry.k8s.io container registry.
++ It then generates required TLS certificates and stores them in the /etc/kubernetes/pki folder.
++ Next, it generates all the kubeconfig files for the cluster components in the /etc/kubernetes folder.
++ Then it starts the kubelet service and generates the static pod manifests for all the cluster components and saves it in the /etc/kubernetes/manifests folder.
++ Next, it starts all the control plane components from the static pod manifests.
++ Then it installs core DNS and Kubeproxy components
++ Finally, it generates the node bootstrap token.
++ Worker nodes use this token to join the control plane.
+
+[[https://devopscube.com/wp-content/uploads/2023/04/image-7.png]]
+
+As you can see all the key cluster configurations will be present under the /etc/kubernetes folder.
+
+* Kubeadm Setup Prerequisites
+Following are the prerequisites for Kubeadm Kubernetes cluster setup.
+
++ Minimum two Ubuntu nodes [One master and one worker node]. You can have more worker nodes as per your requirement.
++ The master node should have a minimum of 2 vCPU and 2GB RAM.
++ For the worker nodes, a minimum of 1vCPU and 2 GB RAM is recommended.
++ 10.X.X.X/X network range with static IPs for master and worker nodes. We will be using the 192.x.x.x series as the pod network range that will be used by the Calico network plugin. Make sure the Node IP range and pod IP range don’t overlap.
+
+*Note*: If you are setting up the cluster in the corporate network behind a proxy, ensure set the proxy variables and have access to the container registry and docker hub. Or talk to your network administrator to whitelist registry.k8s.io to pull the required images.
+
+* Kubeadm Port Requirements
+Please refer to the following image and make sure all the ports are allowed for the control plane (master) and the worker nodes. If you are setting up the kubeadm cluster cloud servers, ensure you allow the ports in the firewall configuration.
+[[https://devopscube.com/wp-content/uploads/2019/12/kuberetes-port-requirements-min.png.webp]]
+If you are using vagrant-based Ubuntu VMs, the firewall would be disabled by default. So you don’t have to do any firewall configurations.
+
+* Vagrantfile, Kubeadm Scripts & Manifests
+Also, all the commands used in this guide for master and worker nodes config are hosted in [[https://github.com/yanboyang713/kubeadm-scripts.git][GitHub]]. You can clone the repository for reference.
+
+#+begin_src bash
+git clone https://github.com/yanboyang713/kubeadm-scripts.git
+#+end_src
+
+This guide intends to make you understand each config required for the Kubeadm setup. If you don’t want to run the command one by one, you can run the script file directly.
+
+If you are a Terraform and AWS user, you can make use of the Terraform script present under the Terraform folder to spin up ec2 instances.
+
+Also, I have created a video demo of the whole kubeadm setup. You can refer it during the setup.
+[[https://www.youtube.com/watch?v=xX52dc3u2HU&t=1s&ab_channel=DevopsCube]]
+
+* Kubernetes Cluster Setup Using Kubeadm
+Following are the high-level steps involved in setting up a kubeadm-based Kubernetes cluster.
+
++ Install container runtime on all nodes- We will be using [[https://cri-o.io/][cri-o]].
++ Install Kubeadm, Kubelet, and kubectl on all the nodes.
++ Initiate Kubeadm control plane configuration on the master node.
++ Save the node join command with the token.
++ Install the Calico network plugin.
++ Join the worker node to the master node (control plane) using the join command.
++ Validate all cluster components and nodes.
++ Install Kubernetes Metrics Server
++ Deploy a sample app and validate the app
+
+All the steps given in this guide are referred from the official Kubernetes documentation and related GitHub project pages.
+
+If you want to understand every cluster component in detail, refer to the comprehensive [[id:4bbe34aa-f059-48b1-80c2-d95a96718aaa][Kubernetes Architecture]].
+
+Now let’s get started with the setup.
+
+** Enable iptables Bridged Traffic on all the Nodes
+Execute the following commands on all the nodes for IPtables to see bridged traffic.
+#+begin_src bash
+cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
+overlay
+br_netfilter
+EOF
+
+sudo modprobe overlay
+sudo modprobe br_netfilter
+
+# sysctl params required by setup, params persist across reboots
+cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
+net.bridge.bridge-nf-call-iptables  = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+net.ipv4.ip_forward                 = 1
+EOF
+
+# Apply sysctl params without reboot
+sudo sysctl --system
+#+end_src
+
+** Disable swap on all the Nodes
+For kubeadm to work properly, you need to disable swap on all the nodes using the following command.
+#+begin_src bash
+sudo swapoff -a
+(crontab -l 2>/dev/null; echo "@reboot /sbin/swapoff -a") | crontab - || true
+#+end_src
+The fstab entry will make sure the swap is off on system reboots.
+
+You can also, control swap errors using the kubeadm parameter --ignore-preflight-errors Swap we will look at it in the latter part.
+
+** Install CRI-O Runtime On All The Nodes
+The basic requirement for a Kubernetes cluster is a [[https://devopscube.com/what-is-docker/][container runtime]]. You can have any one of the following container runtimes.
+
++ CRI-O
++ containerd
++ Docker Engine (using cri-dockerd)
+
+We will be using CRI-O instead of Docker for this setup as [[https://kubernetes.io/blog/2022/02/17/dockershim-faq/][Kubernetes deprecated Docker engine]]
+
+As a first step, we need to install cri-o on all the nodes. Execute the following commands on all the nodes.
+
+Create the .conf file to load the modules at bootup
+#+begin_src bash
+cat <<EOF | sudo tee /etc/modules-load.d/crio.conf
+overlay
+br_netfilter
+EOF
+
+# Set up required sysctl params, these persist across reboots.
+cat <<EOF | sudo tee /etc/sysctl.d/99-kubernetes-cri.conf
+net.bridge.bridge-nf-call-iptables  = 1
+net.ipv4.ip_forward                 = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+EOF
+#+end_src
+
+Execute the following commands to enable overlayFS & VxLan pod communication.
+#+begin_src bash
+sudo modprobe overlay
+sudo modprobe br_netfilter
+#+end_src
+
+Set up required sysctl params, these persist across reboots.
+#+begin_src bash
+cat <<EOF | sudo tee /etc/sysctl.d/99-kubernetes-cri.conf
+net.bridge.bridge-nf-call-iptables  = 1
+net.ipv4.ip_forward                 = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+EOF
+#+end_src
+
+Reload the parameters.
+#+begin_src bash
+sudo sysctl --system
+#+end_src
+
+Enable cri-o repositories for version 1.23
+#+begin_src bash
+OS="xUbuntu_20.04"
+
+VERSION="1.23"
+
+cat <<EOF | sudo tee /etc/apt/sources.list.d/devel:kubic:libcontainers:stable.list
+deb https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/$OS/ /
+EOF
+cat <<EOF | sudo tee /etc/apt/sources.list.d/devel:kubic:libcontainers:stable:cri-o:$VERSION.list
+deb http://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable:/cri-o:/$VERSION/$OS/ /
+EOF
+#+end_src
+
+Add the gpg keys.
+#+begin_src bash
+curl -L https://download.opensuse.org/repositories/devel:kubic:libcontainers:stable:cri-o:$VERSION/$OS/Release.key | sudo apt-key --keyring /etc/apt/trusted.gpg.d/libcontainers.gpg add -
+curl -L https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/$OS/Release.key | sudo apt-key --keyring /etc/apt/trusted.gpg.d/libcontainers.gpg add -
+#+end_src
+
+Update and install crio and crio-tools.
+#+begin_src bash
+sudo apt-get update
+sudo apt-get install cri-o cri-o-runc cri-tools -y
+#+end_src
+
+Reload the systemd configurations and enable cri-o.
+#+begin_src bash
+sudo systemctl daemon-reload
+sudo systemctl enable crio --now
+#+end_src
+
+The cri-tools contain crictl, a CLI utility to interact with the containers created by the contianer runtime. When you use container runtimes other than Docker, you can use the crictl utility to debug containers on the nodes. Also, it is useful in CKS certification where you need to debug containers.
+
+** Install Kubeadm & Kubelet & Kubectl on all Nodes
+Install the required dependencies.
+#+begin_src bash
+sudo apt-get update
+sudo apt-get install -y apt-transport-https ca-certificates curl
+sudo curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-archive-keyring.gpg
+#+end_src
+
+Add the GPG key and apt repository.
+#+begin_src bash
+echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+#+end_src
+
+Update apt and install the latest version of kubelet, kubeadm, and kubectl.
+#+begin_src bash
+sudo apt-get update -y
+sudo apt-get install -y kubelet kubeadm kubectl
+#+end_src
+
+*Note*: If you are preparing for Kubernetes certification, install the specific version of kubernetes. For example, the current Kubernetes version for CKA, CKAD and CKS exams is kubernetes version 1.26
+
+You can use the following commands to find the latest versions.
+#+begin_src bash
+sudo apt update
+apt-cache madison kubeadm | tac
+#+end_src
+
+Specify the version as shown below.
+#+begin_src bash
+sudo apt-get install -y kubelet=1.26.1-00 kubectl=1.26.1-00 kubeadm=1.26.1-00
+#+end_src
+
+Add hold to the packages to prevent upgrades.
+#+begin_src bash
+sudo apt-mark hold kubelet kubeadm kubectl
+#+end_src
+
+Now we have all the required utilities and tools for configuring Kubernetes components using kubeadm.
+
+Add the node IP to KUBELET_EXTRA_ARGS.
+
+#+begin_src bash
+sudo apt-get install -y jq
+local_ip="$(ip --json a s | jq -r '.[] | if .ifname == "eth1" then .addr_info[] | if .family == "inet" then .local else empty end else empty end')"
+cat > /etc/default/kubelet << EOF
+KUBELET_EXTRA_ARGS=--node-ip=$local_ip
+EOF
+#+end_src
+
+* Initialize Kubeadm On Master Node To Setup Control Plane
+*NOTE:* make sure you have correct [[id:8b8a1977-3c04-4c9e-9bb5-1d8b12be1eac][hostname]].
+
+Here you need to consider two options.
+
++ Master Node with Private [[id:c4fd67f4-f52c-4e9c-a564-ba3a482d4c25][IP]] : If you have nodes with only private IP addresses and the API server would be accessed over the private IP of the master node.
++ Master Node With Public [[id:c4fd67f4-f52c-4e9c-a564-ba3a482d4c25][IP]]: If you are setting up a Kubeadm cluster on Cloud platforms and you need master Api server access over the Public IP of the master node server.
+
+Only the Kubeadm initialization command differs for Public and Private IPs.
+
+Execute the commands in this section only on the master node.
+
+** If you are using Private IP for master Node,
+
+Set the following environment variables. Replace 10.0.0.10 with the IP of your master node.
+#+begin_src bash
+IPADDR="10.0.0.10"
+NODENAME=$(hostname -s)
+POD_CIDR="192.168.0.0/16"
+#+end_src
+
+** If you want to use the Public IP of the master node,
+
+Set the following environment variables. The IPADDR variable will be automatically set to the server’s public IP using ifconfig.me curl call. You can also replace it with a public IP address
+
+#+begin_src bash
+IPADDR=$(curl ifconfig.me && echo "")
+NODENAME=$(hostname -s)
+POD_CIDR="192.168.0.0/16"
+#+end_src
+
+Now, initialize the master node control plane configurations using the kubeadm command.
+
+** For a Private IP address-based setup use the following init command.
+#+begin_src bash
+sudo kubeadm init --apiserver-advertise-address=$IPADDR  --apiserver-cert-extra-sans=$IPADDR  --pod-network-cidr=$POD_CIDR --node-name $NODENAME --ignore-preflight-errors Swap
+#+end_src
+
+--ignore-preflight-errors Swap is actually not required as we disabled the swap initially.
+
+** For public IP address-based setup use the following init command.
+
+Here instead of --apiserver-advertise-address we use --control-plane-endpoint parameter for the API server endpoint.
+#+begin_src bash
+sudo kubeadm init --control-plane-endpoint=$IPADDR  --apiserver-cert-extra-sans=$IPADDR  --pod-network-cidr=$POD_CIDR --node-name $NODENAME --ignore-preflight-errors Swap
+#+end_src
+
+All the other steps are the same as configuring the master node with private IP.
+
+*Note*: You can also pass the kubeadm configs as a file when initializing the cluster. See [[https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm-init/#config-file][Kubeadm Init with config file]]
+
+On a successful kubeadm initialization, you should get an output with [[https://devopscube.com/kubernetes-kubeconfig-file/][kubeconfig file]] location and the *join command with the token* as shown below. Copy that and save it to the file. we will need it for *joining the worker node to the master*.
+[[https://devopscube.com/wp-content/uploads/2021/05/kubeadm-760x428.png.webp]]
+
+Use the following commands from the output to create the kubeconfig in master so that you can use kubectl to interact with cluster API.
+
+#+begin_src bash
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+#+end_src
+
+Now, verify the kubeconfig by executing the following kubectl command to list all the pods in the kube-system namespace.
+#+begin_src bash
+kubectl get po -n kube-system
+#+end_src
+
+You should see the following output. You will see the two Coredns pods in a pending state. It is the expected behavior. Once we install the network plugin, it will be in a running state
+[[https://devopscube.com/wp-content/uploads/2021/05/pods-600x193.png.webp]]
+
+*Note*: You can copy the admin.conf file from the master to your workstation in $HOME/.kube/config location if you want to execute kubectl commands from the workstation.
+
+You verify all the cluster component health statuses using the following command.
+#+begin_src bash
+kubectl get --raw='/readyz?verbose'
+#+end_src
+
+You can get the cluster info using the following command.
+#+begin_src bash
+kubectl cluster-info
+#+end_src
+
+By default, apps won’t get scheduled on the master node. If you want to use the master node for scheduling apps, taint the master node.
+
+#+begin_src bash
+kubectl taint nodes --all node-role.kubernetes.io/control-plane-
+#+end_src
+
+* Install Calico Network Plugin for Pod Networking
+Kubeadm does not configure any network plugin. You need to install a network plugin of your choice.
+
+I am using the Calico network plugin for this setup.
+
+Note: Make sure you execute the kubectl command from where you have configured the kubeconfig file. Either from the master of your workstation with the connectivity to the kubernetes API.
+
+Execute the following command to install the calico network plugin on the cluster.
+
+#+begin_src bash
+kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.0/manifests/calico.yaml
+#+end_src
+
+After a couple of minutes, if you check the pods in kube-system namespace, you will see calico pods and running CoreDNS pods.
+[[https://devopscube.com/wp-content/uploads/2021/05/calico-pods-760x261.png.webp]]
+
+* oin Worker Nodes To Kubernetes Master Node
+We have set up cri-o, kubelet, and kubeadm utilities on the worker nodes as well.
+
+Now, let’s join the worker node to the master node using the Kubeadm join command you have got in the output while setting up the master node.
+
+If you missed copying the join command, execute the following command in the master node to recreate the token with the join command.
+
+#+begin_src bash
+kubeadm token create --print-join-command
+#+end_src
+Here is what the command looks like. Use sudo if you running as a normal user. This command performs the [[https://kubernetes.io/docs/reference/access-authn-authz/kubelet-tls-bootstrapping/][TLS bootstrapping]] for the nodes.
+
+#+begin_src bash
+sudo kubeadm join 10.128.0.37:6443 --token j4eice.33vgvgyf5cxw4u8i \
+    --discovery-token-ca-cert-hash sha256:37f94469b58bcc8f26a4aa44441fb17196a585b37288f85e22475b00c36f1c61
+#+end_src
+
+On successful execution, you will see the output saying, “This node has joined the cluster”.
+[[https://devopscube.com/wp-content/uploads/2022/09/image-25.png]]
+
+Now execute the kubectl command from the master node to check if the node is added to the master.
+#+begin_src bash
+kubectl get nodes
+#+end_src
+
+Example output,
+#+begin_src console
+root@master-node:/home/vagrant# kubectl get nodes
+NAME            STATUS   ROLES           AGE     VERSION
+master-node     Ready    control-plane   14m     v1.24.6
+worker-node01   Ready    <none>          2m13s   v1.24.6
+worker-node02   Ready    <none>          2m5s    v1.24.6
+#+end_src
+In the above command, the ROLE is <none> for the worker nodes. You can add a label to the worker node using the following command. Replace worker-node01 with the hostname of the worker node you want to label.
+
+#+begin_src bash
+kubectl label node worker-node01  node-role.kubernetes.io/worker=worker
+#+end_src
+
+You can further add more nodes with the same join command.
+* Setup Kubernetes Metrics Server
+Kubeadm doesn’t install [[https://devopscube.com/setup-prometheus-monitoring-on-kubernetes/][metrics server]] component during its initialization. We have to install it separately.
+
+To verify this, if you run the top command, you will see the Metrics API not available error.
+#+begin_src console
+root@master-node:~# kubectl top nodes
+error: Metrics API not available
+#+end_src
+
+To install the metrics server, execute the following metric server manifest file. It deploys metrics server version v0.6.2
+#+begin_src bash
+kubectl apply -f https://raw.githubusercontent.com/techiescamp/kubeadm-scripts/main/manifests/metrics-server.yaml
+#+end_src
+
+This manifest is taken from the official [[https://github.com/kubernetes-sigs/metrics-server][metrics server]] repo. I have added the --kubelet-insecure-tls flag to the container to make it work in the local setup and hosted it separately. Or else, you will get the following error.
+#+begin_src bash
+because it doesn't contain any IP SANs" node=""
+#+end_src
+
+Once the metrics server objects are deployed, it takes a minute for you to see the node and pod metrics using the top command.
+#+begin_src bash
+kubectl top nodes
+#+end_src
+
+You should be able to view the node metrics as shown below.
+#+begin_src console
+root@master-node:/home/vagrant# kubectl top nodes
+NAME            CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%
+master-node     111m         5%     1695Mi          44%
+worker-node01   28m          2%     1078Mi          57%
+worker-node02   219m         21%    980Mi           52%
+#+end_src
+
+You can also view the pod CPU and memory metrics using the following command.
+#+begin_src bash
+kubectl top pod -n kube-system
+#+end_src
+
+* Deploy A Sample Nginx Application
+Now that we have all the components to make the cluster and applications work, let’s deploy a sample Nginx application and see if we can access it over a NodePort
+
+Create an Nginx [[https://devopscube.com/kubernetes-deployment-tutorial/][deployment]]. Execute the following directly on the command line. It deploys the pod in the default namespace.
+
+#+begin_src bash
+cat <<EOF | kubectl apply -f -
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+EOF
+#+end_src
+
+Expose the Nginx deployment on a NodePort 32000
+#+begin_src bash
+cat <<EOF | kubectl apply -f -
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+spec:
+  selector:
+    app: nginx
+  type: NodePort
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 32000
+EOF
+#+end_src
+
+Check the pod status using the following command.
+#+begin_src bash
+kubectl get pods
+#+end_src
+
+Once the deployment is up, you should be able to access the Nginx home page on the allocated NodePort.
+
+For example,
+[[https://devopscube.com/wp-content/uploads/2021/05/nginx.png]]
+
+* Possible Kubeadm Issues
+Following are the possible issues you might encounter in the kubeadm setup.
+
++ Pod Out of memory and CPU: The master node should have a minimum of 2vCPU and 2 GB memory.
++ Nodes cannot connect to Master: Check the firewall between nodes and make sure all the nodes can talk to each other on the required kubernetes ports.
++ Calico Pod Restarts: Sometimes, if you use the same IP range for the node and pod network, Calico pods may not work as expected. So make sure the node and pod IP ranges don’t overlap. Overlapping [[id:c4fd67f4-f52c-4e9c-a564-ba3a482d4c25][IP addresses]] could result in issues for other applications running on the cluster as well.
+For other pod errors, check out the [[id:b5d6dbb1-72d7-41c7-9752-389945775249][Troubleshoot Kubernetes Pods]] guide.
+
+If your server doesn’t have a minimum of 2 vCPU, you will get the following error.
+#+begin_src bash
+[ERROR NumCPU]: the number of available CPUs 1 is less than the required 2
+#+end_src
+
+If you use public IP with --apiserver-advertise-address parameter, you will have failed master node components with the following error. To rectify this error, use --control-plane-endpoint parameter with the public IP address.
+
+#+begin_src bash
+kubelet-check] Initial timeout of 40s passed.
+
+
+Unfortunately, an error has occurred:
+        timed out waiting for the condition
+
+This error is likely caused by:
+        - The kubelet is not running
+        - The kubelet is unhealthy due to a misconfiguration of the node in some way (required cgroups disabled)
+
+If you are on a systemd-powered system, you can try to troubleshoot the error with the following commands:
+        - 'systemctl status kubelet'
+        - 'journalctl -xeu kubelet'
+#+end_src
+
+* Kubernetes Cluster Important Configurations
+Following are the important cluster configurations you should know.
+
+| Configuration                                                                    | Location                     |
+|----------------------------------------------------------------------------------+------------------------------|
+| Static Pods Location (etcd, api-server, controller manager and scheduler)        | /etc/kubernetes/manifests    |
+| TLS Certificates location (kubernetes-ca, etcd-ca and kubernetes-front-proxy-ca) | /etc/kubernetes/pki          |
+| Admin Kubeconfig File                                                            | /etc/kubernetes/admin.conf   |
+| Kubelet configuration                                                            | /var/lib/kubelet/config.yaml |
+
+* Upgrading Kubeadm Cluster
+Using kubeadm you can upgrade the kubernetes cluster for the same version patch or a new version.
+
+Kubeadm upgrade doesn’t introduce any downtime if you upgrade one node at a time.
+
+To do hands-on, please refer to my step-by-step guide on [[id:0e6ec5ad-ab9b-46b5-a391-3d22984f69f4][Kubeadm cluster upgrade]].
+
+* Kubeadm FAQs
+** How to use Custom CA Certificates With Kubeadm?
+By default, kubeadm creates its own CA certificates. However, if you wish to use custom CA certificates, they should be placed in the /etc/kubernetes/pki folder. When kubeadm is run, it will make use of existing certificates if they are found, and will not overwrite them.
+
+** How to generate the Kubeadm Join command?
+You can use kubeadm token create --print-join-command command to generate the join command.
+
 * Kubeadm Cluster Setup Scripts
 https://github.com/techiescamp/kubeadm-scripts
 https://github.com/mialeevs/kubernetes_installation_docker

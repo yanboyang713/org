@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       4bbe34aa-f059-48b1-80c2-d95a96718aaa
+:END:
+#+title: Kubernetes Architecture
+#+filetags:  
+
+* Reference List
+1. https://devopscube.com/kubernetes-architecture-explained/

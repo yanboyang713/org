@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       c4fd67f4-f52c-4e9c-a564-ba3a482d4c25
+:END:
+#+title: IP addresses
+#+filetags:
+
+IP Subnet Calculator: https://www.wmtips.com/tools/subnet/
+
+* Reference List
+1. https://devopscube.com/ip-address-tutorial/
