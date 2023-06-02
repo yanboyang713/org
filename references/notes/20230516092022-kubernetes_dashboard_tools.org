@@ -4,4 +4,7 @@
 #+title: Kubernetes Dashboard tools
 #+filetags:
 
+* Pre-require
+Make sure your [[id:4a30a096-d006-4351-bfe4-0b926b81ba17][console host could use kubectl interact with k8s cluster API]]
+* Tools
 + [[id:681b0fdd-d828-480f-ab95-26d64305a4f1][Openlens]]

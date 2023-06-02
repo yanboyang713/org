@@ -239,7 +239,9 @@ EOF
 #+end_src
 
 * Initialize Kubeadm On Master Node To Setup Control Plane
-*NOTE:* make sure you have correct [[id:8b8a1977-3c04-4c9e-9bb5-1d8b12be1eac][hostname]].
+*NOTE:*
+1. Make sure you have correct [[id:8b8a1977-3c04-4c9e-9bb5-1d8b12be1eac][hostname]].
+2. Recommand all of [[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]] nodes have fixed IP, you could follow [[id:9c7c6f9e-d330-437e-b9f7-99b705ba9038][Setting up Static IP address on Ubuntu Server]]
 
 Here you need to consider two options.
 
@@ -252,8 +254,7 @@ Execute the commands in this section only on the master node.
 
 ** If you are using Private IP for master Node,
 
-Set the following environment variables. Replace 10.0.0.10 with the IP of your master node.
-#+begin_src bash
+Set the following environment variables. Replace 10.0.0.10 with the IP of your master node. #+begin_src bash
 IPADDR="10.0.0.10"
 NODENAME=$(hostname -s)
 POD_CIDR="192.168.0.0/16"
@@ -308,7 +309,7 @@ kubectl get po -n kube-system
 You should see the following output. You will see the two Coredns pods in a pending state. It is the expected behavior. Once we install the network plugin, it will be in a running state
 [[https://devopscube.com/wp-content/uploads/2021/05/pods-600x193.png.webp]]
 
-*Note*: You can copy the admin.conf file from the master to your workstation in $HOME/.kube/config location if you want to execute kubectl commands from the workstation.
+*Note*: You can copy the admin.conf file from the master to your workstation in $HOME/.kube/config location if you want to execute kubectl commands from the workstation. Detail: [[id:4a30a096-d006-4351-bfe4-0b926b81ba17][console host use kubectl interact with k8s cluster API]]
 
 You verify all the cluster component health statuses using the following command.
 #+begin_src bash
@@ -342,7 +343,7 @@ kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.0/
 After a couple of minutes, if you check the pods in kube-system namespace, you will see calico pods and running CoreDNS pods.
 [[https://devopscube.com/wp-content/uploads/2021/05/calico-pods-760x261.png.webp]]
 
-* oin Worker Nodes To Kubernetes Master Node
+* Join Worker Nodes To Kubernetes Master Node
 We have set up cri-o, kubelet, and kubeadm utilities on the worker nodes as well.
 
 Now, let’s join the worker node to the master node using the Kubeadm join command you have got in the output while setting up the master node.
@@ -382,44 +383,7 @@ kubectl label node worker-node01  node-role.kubernetes.io/worker=worker
 #+end_src
 
 You can further add more nodes with the same join command.
-* Setup Kubernetes Metrics Server
-Kubeadm doesn’t install [[https://devopscube.com/setup-prometheus-monitoring-on-kubernetes/][metrics server]] component during its initialization. We have to install it separately.
-
-To verify this, if you run the top command, you will see the Metrics API not available error.
-#+begin_src console
-root@master-node:~# kubectl top nodes
-error: Metrics API not available
-#+end_src
-
-To install the metrics server, execute the following metric server manifest file. It deploys metrics server version v0.6.2
-#+begin_src bash
-kubectl apply -f https://raw.githubusercontent.com/techiescamp/kubeadm-scripts/main/manifests/metrics-server.yaml
-#+end_src
-
-This manifest is taken from the official [[https://github.com/kubernetes-sigs/metrics-server][metrics server]] repo. I have added the --kubelet-insecure-tls flag to the container to make it work in the local setup and hosted it separately. Or else, you will get the following error.
-#+begin_src bash
-because it doesn't contain any IP SANs" node=""
-#+end_src
-
-Once the metrics server objects are deployed, it takes a minute for you to see the node and pod metrics using the top command.
-#+begin_src bash
-kubectl top nodes
-#+end_src
-
-You should be able to view the node metrics as shown below.
-#+begin_src console
-root@master-node:/home/vagrant# kubectl top nodes
-NAME            CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%
-master-node     111m         5%     1695Mi          44%
-worker-node01   28m          2%     1078Mi          57%
-worker-node02   219m         21%    980Mi           52%
-#+end_src
-
-You can also view the pod CPU and memory metrics using the following command.
-#+begin_src bash
-kubectl top pod -n kube-system
-#+end_src
-
+* Setup [[id:61f51113-d2ef-4685-a47a-bcfccf7732fc][Kubernetes Metrics Server]]
 * Deploy A Sample Nginx Application
 Now that we have all the components to make the cluster and applications work, let’s deploy a sample Nginx application and see if we can access it over a NodePort
 

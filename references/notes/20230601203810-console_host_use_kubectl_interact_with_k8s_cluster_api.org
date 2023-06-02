@@ -1,0 +1,40 @@
+:PROPERTIES:
+:ID:       4a30a096-d006-4351-bfe4-0b926b81ba17
+:END:
+#+title: console host use kubectl interact with k8s cluster API
+#+filetags:
+
+[[id:dc13b67c-8d8b-40fd-b8cf-9ea8547e485d][Arch Linux]]
+
+#+begin_src bash
+paru -S kubectl
+#+end_src
+
+Copy $HOME/.kube/config file to console host
+
+#+begin_src bash
+mkdir -p $HOME/.kube/
+vim config
+# write your config file ccontext from contrl plate DIR $HOME/.kube/config
+chown $(id -u):$(id -g) $HOME/.kube/config
+#+end_src
+
+You can find server version
+#+begin_src console
+(base) [yanboyang713@archlinux .kube]$ kubectl version
+WARNING: This version information is deprecated and will be replaced with the output from kubectl version --short.  Use --output=yaml|json to get the full version.
+Client Version: version.Info{Major:"1", Minor:"27", GitVersion:"v1.27.1", GitCommit:"4c9411232e10168d7b050c49a1b59f6df9d7ea4b", GitTreeState:"archive", BuildDate:"2023-04-15T11:34:19Z", GoVersion:"go1.20.3", Compiler:"gc", Platform:"linux/amd64"}
+Kustomize Version: v5.0.1
+Server Version: version.Info{Major:"1", Minor:"26", GitVersion:"v1.26.5", GitCommit:"890a139214b4de1f01543d15003b5bda71aae9c7", GitTreeState:"clean", BuildDate:"2023-05-17T14:08:49Z", GoVersion:"go1.19.9", Compiler:"gc", Platform:"linux/amd64"}
+#+end_src
+
+Test
+#+begin_src console
+(base) [yanboyang713@archlinux .kube]$ kubectl cluster-info
+Kubernetes control plane is running at https://192.168.88.11:6443
+CoreDNS is running at https://192.168.88.11:6443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+#+end_src
+
+next I recommend you install [[id:3c577bc9-0403-468a-9214-47a0c0151d6f][Kubernetes Dashboard]]

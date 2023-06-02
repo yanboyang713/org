@@ -1,0 +1,20 @@
+:PROPERTIES:
+:ID:       6823a5e3-b88a-40ca-9f8b-2e4196713852
+:END:
+#+title: LoadBalancer
+#+filetags:
+
+A LoadBalancer service is the standard way to expose a service to the internet. On GKE, this will spin up a Network Load Balancer that will give you a single IP address that will forward all traffic to your service.
+
+[[https://miro.medium.com/v2/resize:fit:720/format:webp/1*P-10bQg_1VheU9DRlvHBTQ.png]]
+
+* When would you use this?
+If you want to directly expose a service, this is the default method. All traffic on the port you specify will be forwarded to the service. There is no filtering, no routing, etc. This means you can send almost any kind of traffic to it, like HTTP, TCP, UDP, Websockets, gRPC, or whatever.
+
+The big downside is that each service you expose with a LoadBalancer will get its own IP address, and you have to pay for a LoadBalancer per exposed service, which can get expensive!
+
+* Tools
++ [[id:bf4517d9-d2d7-437f-ae23-3bc3adc89b72][MetalLB]]
+
+* Reference List
+1. https://medium.com/google-cloud/kubernetes-nodeport-vs-loadbalancer-vs-ingress-when-should-i-use-what-922f010849e0

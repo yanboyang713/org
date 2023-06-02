@@ -1,0 +1,45 @@
+:PROPERTIES:
+:ID:       61f51113-d2ef-4685-a47a-bcfccf7732fc
+:END:
+#+title: Kubernetes Metrics Server
+#+filetags:  
+
+[[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]]
+
+* Set-up
+[[id:9d293990-ff98-47eb-93a4-556df1e7b26d][kubeadm]] doesn’t install [[https://devopscube.com/setup-prometheus-monitoring-on-kubernetes/][metrics server]] component during its initialization. We have to install it separately.
+
+To verify this, if you run the top command, you will see the Metrics API not available error.
+#+begin_src console
+root@master-node:~# kubectl top nodes
+error: Metrics API not available
+#+end_src
+
+To install the metrics server, execute the following metric server manifest file. It deploys metrics server version v0.6.2
+#+begin_src bash
+kubectl apply -f https://raw.githubusercontent.com/yanboyang713/kubeadm-scripts/main/manifests/metrics-server.yaml
+#+end_src
+
+This manifest is taken from the official [[https://github.com/kubernetes-sigs/metrics-server][metrics server]] repo. I have added the --kubelet-insecure-tls flag to the container to make it work in the local setup and hosted it separately. Or else, you will get the following error.
+#+begin_src bash
+because it doesn't contain any IP SANs" node=""
+#+end_src
+
+Once the metrics server objects are deployed, it takes a minute for you to see the node and pod metrics using the top command.
+#+begin_src bash
+kubectl top nodes
+#+end_src
+
+You should be able to view the node metrics as shown below.
+#+begin_src console
+root@master-node:/home/vagrant# kubectl top nodes
+NAME            CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%
+master-node     111m         5%     1695Mi          44%
+worker-node01   28m          2%     1078Mi          57%
+worker-node02   219m         21%    980Mi           52%
+#+end_src
+
+You can also view the pod CPU and memory metrics using the following command.
+#+begin_src bash
+kubectl top pod -n kube-system
+#+end_src

@@ -13,17 +13,7 @@ It groups containers that make up an application into logical units for easy man
 
 * [[id:3c577bc9-0403-468a-9214-47a0c0151d6f][Kubernetes Dashboard tools]]
 
-* Publishing Services (ServiceTypes)
-For some parts of your application (for example, frontends) you may want to expose a Service onto an external IP address, that's outside of your cluster.
-
-Kubernetes ServiceTypes allow you to specify what kind of Service you want.
-
-Type values and their behaviors are:
-+ [[id:f6851ac4-2947-4f36-bd09-ed2fe97995b7][ClusterIP]]
-+ [[id:fb6e83d6-b60b-4c98-837b-d4b6d91c1b56][NodePort]]
-
-* Routing
-+ [[id:bd7ebf5a-affb-476e-b7ac-50042cab09b3][Ingress]]
+* [[id:a6065697-c284-44bf-9f79-fe1e2e87fd1e][Kubernetes Publishing Services (management external traffic)]]
 
 * Reference List
 1. https://kubernetes.io/

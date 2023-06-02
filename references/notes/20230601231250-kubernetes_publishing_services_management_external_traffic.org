@@ -1,0 +1,21 @@
+:PROPERTIES:
+:ID:       a6065697-c284-44bf-9f79-fe1e2e87fd1e
+:END:
+#+title: Kubernetes Publishing Services (management external traffic)
+#+filetags:
+
+* Publishing Services (ServiceTypes)
+For some parts of your application (for example, frontends) you may want to expose a Service onto an external IP address, that's outside of your cluster.
+
+Kubernetes ServiceTypes allow you to specify what kind of Service you want.
+
+Type values and their behaviors are:
++ [[id:f6851ac4-2947-4f36-bd09-ed2fe97995b7][ClusterIP]]
++ [[id:fb6e83d6-b60b-4c98-837b-d4b6d91c1b56][NodePort]]
++ [[id:6823a5e3-b88a-40ca-9f8b-2e4196713852][LoadBalancer]]
+
+* Routing
++ [[id:bd7ebf5a-affb-476e-b7ac-50042cab09b3][Ingress]]
+
+* Reference List
+1. https://medium.com/google-cloud/kubernetes-nodeport-vs-loadbalancer-vs-ingress-when-should-i-use-what-922f010849e0
