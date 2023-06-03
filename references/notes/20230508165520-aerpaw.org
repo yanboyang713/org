@@ -2,8 +2,9 @@
 :ID:       350d51e7-a9bd-4568-931e-ee608a4d6a98
 :END:
 #+title: AERPAW
-#+filetags:  
+#+filetags:
 
+AERPAW—Aerial Experimentation and Research Platform for Advanced  Wireless—is the first [[id:55f23b66-c353-4562-b4bc-da3df9ddc665][wireless]] research platform to study the convergence of 5G technology and autonomous [[id:99ad3062-59b9-490c-bbd6-a27cf4448aad][drones]].
 
 AERPAW User Manual
 https://sites.google.com/ncsu.edu/aerpaw-wiki/aerpaw-user-manual

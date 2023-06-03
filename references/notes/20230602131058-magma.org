@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       c1e0d4da-6c9f-44ff-a3b7-bfc077212d04
+:END:
+#+title: Magma
+#+filetags:  
+
+https://github.com/magma/magma

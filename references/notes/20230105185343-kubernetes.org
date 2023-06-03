@@ -11,7 +11,7 @@ It groups containers that make up an application into logical units for easy man
 * Deployment Tools
 + [[id:9d293990-ff98-47eb-93a4-556df1e7b26d][kubeadm]]
 
-* [[id:3c577bc9-0403-468a-9214-47a0c0151d6f][Kubernetes Dashboard tools]]
+* [[id:c4645196-cab0-44ea-993f-451efc0ee682][Kubernetes Monitoring Tools]]
 
 * [[id:a6065697-c284-44bf-9f79-fe1e2e87fd1e][Kubernetes Publishing Services (management external traffic)]]
 

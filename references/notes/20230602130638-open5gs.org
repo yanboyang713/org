@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       ccd1542a-488e-430d-9eba-f24c01c26bbe
+:END:
+#+title: Open5GS
+#+filetags:  
+
+[[id:46f7d20a-27c3-4d08-bca2-83bcbef61c17][Open5GS Helm Charts Collection]]
+
+https://github.com/open5gs/open5gs
+
+* Reference List
+1. Barrachina-Muñoz, S., Payaró, M., & Mangues-Bafalluy, J. (2022, July). Cloud-native 5G experimental platform with over-the-air transmissions and end-to-end monitoring. In 2022 13th International Symposium on Communication Systems, Networks and Digital Signal Processing (CSNDSP) (pp. 692-697). IEEE.

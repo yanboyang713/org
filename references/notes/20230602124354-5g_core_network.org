@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       99370515-d845-4028-9214-6b5fdf14e6ff
+:END:
+#+title: 5G core network
+#+filetags:  
+
++ [[id:ccd1542a-488e-430d-9eba-f24c01c26bbe][Open5GS]]
++ [[id:7ac7694b-85ce-4cd8-b9b3-4423f6b58454][free5GC]]
++ [[id:c1e0d4da-6c9f-44ff-a3b7-bfc077212d04][Magma]]
+
+* Reference List
+1. https://medium.com/rahasak/deploying-5g-core-network-with-free5gc-kubernets-and-helm-charts-29741cea3922
+2. https://www.youtube.com/watch?v=plFFX_geCZs&ab_channel=COSCUP%E9%96%8B%E6%BA%90%E4%BA%BA%E5%B9%B4%E6%9C%83

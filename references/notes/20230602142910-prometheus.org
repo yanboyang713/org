@@ -1,0 +1,21 @@
+:PROPERTIES:
+:ID:       ebc7a85b-cb33-4b29-93f9-0c2d5215bc7a
+:END:
+#+title: Prometheus
+#+filetags:
+A popular monitoring tool that was developed by SoundCloud before being donated to the Cloud Native Computing Foundation (CNCF), Prometheus provides alerts with detailed metrics and analysis for Kubernetes and Docker. It is designed for monitoring container-based microservices and applications running at scale. Prometheus is often used in combination with [[id:9f3cd2be-e9b5-4c01-b457-445951a17175][Grafana]] to enable data visualization.
+
+Prometheus metrics are exposed through HTTP(S). There is no need to install a service agent. Instead, you can expose a web port. Prometheus servers regularly scrape (pull), eliminating the need to push metrics or configure remote endpoints. Prometheus uses a human-readable metrics format that is easy to understand, ensuring you can start publishing metrics quickly and easily.
+
+Some microservices use HTTP for their functionality. In this case, you can reuse the internal web server and add a folder called /metrics. Some services expose Prometheus metrics from the ground up, such as the Traefik web proxy, the Kubernetes kubelet, and the Istio microservice mesh. Services that are not natively integrated can be adapted with an exporter, a service that collects service statistics and turns them into scrape-ready Prometheus metrics.
+
+Prometheus can collect metrics related to various aspects, including Kubernetes services, orchestration status, and nodes. Here are common metrics exporters:
+
++ Node exporter – Collects host-related metrics such as CPU and memory.
++ Kube-state-metrics – Collects orchestration and cluster-level metrics such as deployments, resource reservation, and pod metrics.
++ Kubernetes control plane metrics – Collects information about the kubelet, DNS, etcd, and scheduler.
++ Prometheus uses PromQL to configure rules that trigger alerts, putting alertmanager in charge of configuring the receivers and gateways to deliver alert notifications and managing alert notification, inhibition, and grouping.
+
+* Reference List
+1. https://www.tigera.io/learn/guides/kubernetes-monitoring/#Prometheus
+2. https://prometheus.io/

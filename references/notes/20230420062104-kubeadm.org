@@ -438,6 +438,8 @@ kubectl get pods
 
 Once the deployment is up, you should be able to access the Nginx home page on the allocated NodePort.
 
+http://MASTER-IP:32000/
+
 For example,
 [[https://devopscube.com/wp-content/uploads/2021/05/nginx.png]]
 

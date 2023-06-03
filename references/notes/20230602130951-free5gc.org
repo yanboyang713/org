@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       7ac7694b-85ce-4cd8-b9b3-4423f6b58454
+:END:
+#+title: free5GC
+#+filetags:  
+
+https://github.com/free5gc/free5gc

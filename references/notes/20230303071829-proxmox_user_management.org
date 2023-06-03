@@ -21,6 +21,9 @@ Datacenter -> Permissions -> Add -> Group Permission
 * Role
 VM.Allocate VM.Audit VM.Backup VM.Clone VM.Config.CDROM VM.Config.CPU VM.Config.Cloudinit VM.Config.Disk VM.Config.HWType VM.Config.Memory VM.Config.Network VM.Config.Options VM.Console VM.Migrate VM.Monitor VM.PowerMgmt VM.Snapshot VM.Snapshot.Rollback Sys.Audit Sys.Syslog Datastore.Allocate Datastore.AllocateSpace Datastore.AllocateTemplate Datastore.Audit
 
+
+[[id:f42f4ed2-84df-463a-bae7-eb043421742c][Create Users in Linux]]
+
 * Reference List
 1. https://pve.proxmox.com/wiki/User_Management
 2. https://techviewleo.com/create-users-groups-permissions-proxmox/

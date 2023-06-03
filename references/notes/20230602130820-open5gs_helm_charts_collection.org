@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       46f7d20a-27c3-4d08-bca2-83bcbef61c17
+:END:
+#+title: Open5GS Helm Charts Collection
+#+filetags:  
+
+[[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]]
+
+https://github.com/Gradiant/openverso-charts
