@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       fd2a4c2f-4d5f-43b8-aab8-69b1ae33870e
+:END:
+#+title: Helm
+#+filetags:  
+
+[[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]]

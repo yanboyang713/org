@@ -16,6 +16,15 @@ Prometheus can collect metrics related to various aspects, including Kubernetes 
 + Kubernetes control plane metrics – Collects information about the kubelet, DNS, etcd, and scheduler.
 + Prometheus uses PromQL to configure rules that trigger alerts, putting alertmanager in charge of configuring the receivers and gateways to deliver alert notifications and managing alert notification, inhibition, and grouping.
 
+* Architecture
+This diagram illustrates the architecture of Prometheus and some of its ecosystem components:
+#+CAPTION: Prometheus Architecture
+#+NAME:   fig:Pro-Arch
+#+ATTR_HTML: :width 150px
+[[https://prometheus.io/assets/architecture.png]]
+
+Prometheus scrapes metrics from instrumented jobs, either directly or via an intermediary push gateway for short-lived jobs. It stores all scraped samples locally and runs rules over this data to either aggregate and record new time series from existing data or generate alerts. Grafana or other API consumers can be used to visualize the collected data.
+
 * Reference List
 1. https://www.tigera.io/learn/guides/kubernetes-monitoring/#Prometheus
 2. https://prometheus.io/

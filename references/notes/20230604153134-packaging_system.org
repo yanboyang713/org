@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       eb7d4abd-ba1d-40be-b189-051a85df82ca
+:END:
+#+title: Packaging System
+#+filetags:  
+
+[[id:fd2a4c2f-4d5f-43b8-aab8-69b1ae33870e][Helm]]
+[[id:b51b8a59-3767-426d-baf0-3f7149667b89][APT Packaging System]]

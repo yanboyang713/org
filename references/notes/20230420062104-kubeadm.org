@@ -99,7 +99,7 @@ EOF
 sudo sysctl --system
 #+end_src
 
-** Disable swap on all the Nodes
+** Disable [[id:bfe1d26e-95ab-4edd-9f7a-2ca0904d8484][Swap]] on all the Nodes
 For kubeadm to work properly, you need to disable swap on all the nodes using the following command.
 #+begin_src bash
 sudo swapoff -a
