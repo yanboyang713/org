@@ -15,7 +15,7 @@ Copy $HOME/.kube/config file to console host
 #+begin_src bash
 mkdir -p $HOME/.kube/
 vim config
-# write your config file ccontext from contrl plate DIR $HOME/.kube/config
+# write your config file context from contrl plate DIR $HOME/.kube/config
 chown $(id -u):$(id -g) $HOME/.kube/config
 #+end_src
 

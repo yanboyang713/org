@@ -5,4 +5,6 @@
 #+filetags:
 
 command:
+#+begin_src bash
 M-x org-id-get-create (SPC m I)
+#+end_src

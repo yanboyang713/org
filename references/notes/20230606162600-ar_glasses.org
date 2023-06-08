@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       9dd3328f-e26e-4bc3-9ff2-974528b62e28
+:END:
+#+title: AR Glasses
+#+filetags:
+
++ [[id:2e26b8b7-2b2d-45d9-a316-cb3f58f099e4][xreal]]
++ [[id:e6ef9088-2308-4857-9e5d-756e35b38456][Apple Vision Pro]]

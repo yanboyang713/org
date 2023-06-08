@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       49b2587b-d6d4-462e-b373-ed39f7fb70b7
+:END:
+#+title: research tools
+#+filetags:  
+
++ [[id:6314a4a8-8a04-492c-8a4b-de9e4ff8df00][org roam]]
++ [[id:34fcc5f4-b189-4890-9934-9c780cf42578][Zotero]]
++ [[id:ca098671-e6f9-477d-943c-317abe8dee92][research rabbit]]
++ [[id:5b9eb329-06a4-415a-bd66-b3aa4764e8cd][wanfang topic]]

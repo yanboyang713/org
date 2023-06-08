@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       311bc706-4b30-422c-b570-d13b36ae3245
+:END:
+#+title: operating system
+#+filetags:
+
+[[id:0c65c1a6-4751-4290-876f-6c5ad7694068][Debian]]
+[[id:803d821b-6f7d-4e07-9a1f-08c9736c7dec][ubuntu]]
+
+* Arch Linux
++ [[id:f6c12716-7d4f-4def-af11-73f122e5c821][Meta Scientific Linux]]
++ [[id:dc13b67c-8d8b-40fd-b8cf-9ea8547e485d][Arch Linux]]
+
+* Apple
+[[id:32bd632c-964e-4b81-897b-b26fb1556a7f][visionOS]]

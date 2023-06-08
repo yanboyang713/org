@@ -1,0 +1,27 @@
+:PROPERTIES:
+:ID:       23fbb8d6-424d-4cd0-8cea-cbef874f583e
+:END:
+#+title: Prometheus Operator
+#+filetags:
+
+* Overview
+The Prometheus Operator provides [[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]] native deployment and management of [[id:ebc7a85b-cb33-4b29-93f9-0c2d5215bc7a][Prometheus]] and related monitoring components. The purpose of this project is to simplify and automate the configuration of a Prometheus based monitoring stack for Kubernetes clusters.
+
+The [[https://github.com/prometheus-operator/prometheus-operator.git][Prometheus Operator]] facilitates the deployment and management of Prometheus and related monitoring components within Kubernetes using the core Prometheus operator pod. Its primary goal is to streamline and automate the setup of a Prometheus-based monitoring stack for Kubernetes clusters based on the Prometheus operator version.
+
+The Prometheus operator includes, but is not limited to, the following features:
++ Kubernetes Custom Resources: Use Kubernetes custom resources to deploy and manage Prometheus, Alertmanager, and related components.
++ Simplified Deployment Configuration: Configure the fundamentals of Prometheus like versions, persistence, retention policies, and replicas from a native Kubernetes resource.
++ Prometheus Target Configuration: Automatically generate monitoring target configurations based on familiar Kubernetes label queries; no need to learn a Prometheus specific configuration language.
+
+For an introduction to the Prometheus Operator, see the [[https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/user-guides/getting-started.md][getting started guide]].
+
+When one installs Prometheus operator, some of the features of the Prometheus operator include:
+
++ The ability to use Kubernetes custom resources to deploy and manage Prometheus, Alertmanager, and related components.
++ Simplified configuration for basic Prometheus functionalities such as versions, persistence, retention policies, and replicas using native Kubernetes resources.
++ Automatic generation of monitoring target configurations based on Kubernetes label queries, eliminating the need to learn a Prometheus-specific configuration language.
+
+
+* Reference List
+1. https://github.com/prometheus-operator/prometheus-operator

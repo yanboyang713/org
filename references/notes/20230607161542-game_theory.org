@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       f433c71a-6f5e-476b-a9c0-8cd37a236bcb
+:END:
+#+title: game theory
+#+filetags:
+
+Robertt Gibbons, 1999." A Primer in Game Theory,"
+
+Fudenberg, D. and Tirole, J. (1991) Game theory

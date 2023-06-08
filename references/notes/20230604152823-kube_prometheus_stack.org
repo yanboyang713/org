@@ -2,7 +2,11 @@
 :ID:       12001e11-f40c-4e7b-8a99-50695ae37d2e
 :END:
 #+title: Kube-Prometheus-Stack
-#+filetags:  
+#+filetags:
+* Pre-require understand
++ [[id:fd2a4c2f-4d5f-43b8-aab8-69b1ae33870e][Helm]]
+
+* Introduction
 The Kube-Prometheus-Stack is a great tool for monitoring your [[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]] clusters, offering comprehensive visibility into your infrastructure. This blog post covers various aspects of using the Kube-Prometheus-Stack, from getting started with Helm to ensuring optimal configurations and security measures. We will also discuss Kubernetes exporters, using federation for multiple clusters, and developing custom [[id:ebc7a85b-cb33-4b29-93f9-0c2d5215bc7a][Prometheus]] rules and [[id:9f3cd2be-e9b5-4c01-b457-445951a17175][Grafana]] dashboards.
 
 * What is the Kube-Prometheus-Stack solution?
@@ -14,27 +18,7 @@ When installing the Kube-Prometheus-Stack, you must ensure the raw.githubusercon
 
 You can use Prometheus for alerting and Prometheus rules combined to deliver observability on metrics in your Kubernetes cluster.
 
-* Get Helm Repository Info
-Before installing the Kube-Prometheus-Stack, you need to add the Prometheus community Helm repository to your Helm client:
-#+begin_src console
-(base) [yanboyang713@archlinux ~]$ helm repo add Prometheus-community https://prometheus-community.github.io/helm-charts
-"Prometheus-community" has been added to your repositories
-(base) [yanboyang713@archlinux ~]$ helm repo update
-Hang tight while we grab the latest from your chart repositories...
-...Successfully got an update from the "bitnami" chart repository
-...Successfully got an update from the "Prometheus-community" chart repository
-Update Complete. ⎈Happy Helming!⎈
-#+end_src
-
-This command adds the Prometheus community Helm charts repository and updates your Helm client with the latest charts and versions. To see your helm repos, you can use the helm repo list command:
-#+begin_src console
-(base) [yanboyang713@archlinux ~]$ helm repo list
-NAME                    URL
-bitnami                 https://charts.bitnami.com/bitnami
-Prometheus-community    https://prometheus-community.github.io/helm-charts
-#+end_src
-
-Minimal recommended Prometheus version
+* Minimal recommended Prometheus version
 
 Prometheus LTS refers to specific releases of Prometheus that receive bug fixes for an extended period, providing long-term support.
 
@@ -50,7 +34,20 @@ Kube-Prometheus-Stack is typically used for:
 + System performance monitoring: Gain insights into the performance of your Kubernetes cluster, including CPU and memory usage, network traffic, and disk space utilization.
 + Alerting and incident management: Set up alerts based on specific thresholds and metrics to proactively detect and manage incidents in your cluster.
 + Observability: Enhance your Kubernetes cluster’s health visibility, allowing you to make informed decisions and optimize your infrastructure.
+
+* Components
+The kube-prometheus-stack Helm chart is the simplest way to bring up a complete Prometheus stack inside your Kubernetes cluster. It bundles several different components in one automated deployment:
+
++ Prometheus – Prometheus is the time series database that scrapes, stores, and exposes the metrics from your Kubernetes environment and its applications.
++ [[https://github.com/prometheus/node_exporter][Node-Exporter]] – Prometheus works by scraping data from a variety of configurable sources called exporters. Node-Exporter is an exporter which collects resource utilization data from the Nodes in your Kubernetes cluster. The kube-prometheus-stack chart automatically deploys this exporter and configures your Prometheus instance to scrape it.
++ [[https://github.com/kubernetes/kube-state-metrics][Kube-State-Metrics]] – Kube-State-Metrics is another exporter that supplies data to Prometheus. It exposes information about the API objects in your Kubernetes cluster, such as Pods and containers.
++ [[id:9f3cd2be-e9b5-4c01-b457-445951a17175][Grafana]] – Although you can directly query Prometheus, this is often tedious and repetitive. [[https://grafana.com/][Grafana]] is an observability platform that works with several data sources, including Prometheus databases. You can use it to create dashboards that surface your Prometheus data.
++ [[id:5eeafe8e-f3a5-4887-b980-8b4568116f1f][Alertmanager]] – Alertmanager is a standalone Prometheus component that provides notifications when metrics change. You can use it to get an email when CPU utilization spikes or a Slack notification if a Pod is evicted, for example.
+
+Deploying, configuring, and maintaining all these components individually can be burdensome for administrators. Kube-Prometheus-Stack provides an automated solution that performs all the hard work for you.
+
 * System performance monitoring
+
 Kube-Prometheus-Stack provides out-of-the-box monitoring capabilities using Prometheus, Grafana, and Alertmanager. It collects metrics from various Kubernetes components and allows you to visualize them using chart Grafana dashboards.
 [[https://www.virtualizationhowto.com/wp-content/uploads/2023/03/80b952a6-df7f-4d73-bb75-b207fe69af59.png]]
 
@@ -58,7 +55,8 @@ Below is another Grafana dashboard displaying Kubernetes metrics.
 [[https://www.virtualizationhowto.com/wp-content/uploads/2023/03/382ef11c-47e2-43cc-8918-bc91a18c174f.png]]
 After deploying the Kube-Prometheus-Stack, you can access the Grafana UI to explore and analyze your cluster’s performance metrics. You can also set up custom dashboards tailored to your specific needs.
 
-* Ensure each container has a configured CPU limit
+* Pre-setting
+** Ensure each container has a configured CPU limit
 It is crucial to set CPU limits for each container to prevent resource contention and ensure optimal cluster performance. You can configure CPU limits in the resources section of the container specification in your Kubernetes deployment:
 #+begin_src file
 resources: limits: cpu: <CPU_LIMIT>
@@ -66,7 +64,7 @@ resources: limits: cpu: <CPU_LIMIT>
 
 Replace <CPU_LIMIT> with the desired value, such as 500m for 0.5 CPU cores.
 
-* Ensure each container has a configured memory request
+** Ensure each container has a configured memory request
 Configuring memory requests helps Kubernetes efficiently schedule and allocate resources for your workloads. Set memory requests in the resources section of the container specification:
 #+begin_src bash
 resources: requests: memory: <MEMORY_REQUEST>
@@ -74,7 +72,7 @@ resources: requests: memory: <MEMORY_REQUEST>
 
 Replace <MEMORY_REQUEST> with the desired value, such as 256Mi for 256 MB of memory.
 
-* Prevent ConfigMap security vulnerability (CVE-2021-25742)
+** Prevent ConfigMap security vulnerability (CVE-2021-25742)
 To mitigate the security vulnerability CVE-2021-25742, which affects ConfigMap usage in Kubernetes, follow these best practices:
 
 Limit the scope of RBAC permissions: Restrict access to ConfigMaps and avoid granting users or service accounts unnecessary privileges.
@@ -83,13 +81,206 @@ Use network policies: Implement network policies to isolate and secure communica
 
 Monitor and audit: Monitor your cluster for suspicious activity and perform regular audits to ensure compliance with security policies.
 
-* Ensure each container has a configured readiness probe
+** Ensure each container has a configured readiness probe
 Readiness probes help Kubernetes determine when a container is ready to start accepting traffic. Configure a readiness probe in the container specification:
 #+begin_src file
 readinessProbe: httpGet: path: /ready port: <PORT> initialDelaySeconds: 5 periodSeconds: 10
 #+end_src
 
 Replace <PORT> with the appropriate port number for your application.
+
+* Get Helm Repository Info
+
+Before installing the Kube-Prometheus-Stack, you need to add the Prometheus community Helm repository to your Helm client:
+#+begin_src console
+(base) [yanboyang713@archlinux ~]$ helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+"prometheus-community" has been added to your repositories
+#+end_src
+
+Next, update your repository lists to discover the chart:
+#+begin_src console
+(base) [yanboyang713@archlinux ~]$ helm repo update
+Hang tight while we grab the latest from your chart repositories...
+...Successfully got an update from the "bitnami" chart repository
+...Successfully got an update from the "prometheus-community" chart repository
+Update Complete. ⎈Happy Helming!⎈
+#+end_src
+
+This command adds the Prometheus community Helm charts repository and updates your Helm client with the latest charts and versions. To see your helm repos, you can use the helm repo list command:
+#+begin_src console
+(base) [yanboyang713@archlinux ~]$ helm repo list
+NAME                    URL
+bitnami                 https://charts.bitnami.com/bitnami
+prometheus-community    https://prometheus-community.github.io/helm-charts
+#+end_src
+
+
+* Installing
+Now you can run the following command to deploy the chart into a new namespace in your cluster:
+#+begin_src console
+(base) [yanboyang713@archlinux ~]$ helm install kube-prometheus-stack \
+  --create-namespace \
+  --namespace monitoring \
+  prometheus-community/kube-prometheus-stack
+NAME: kube-prometheus-stack
+LAST DEPLOYED: Wed Jun  7 22:27:41 2023
+NAMESPACE: monitoring
+STATUS: deployed
+REVISION: 1
+NOTES:
+kube-prometheus-stack has been installed. Check its status by running:
+  kubectl --namespace monitoring get pods -l "release=kube-prometheus-stack"
+
+Visit https://github.com/prometheus-operator/kube-prometheus for instructions on how to create & configure Alertmanager and Prometheus instances using the Operator.
+
+#+end_src
+
+*NOTE*: Helm [[id:29b673d1-f740-47c3-9349-69cc5bb34435][custom deployment values and agrs]], please check.
+
+It can take a couple of minutes for the chart’s components to start. Run the following command to check how they’re progressing:
+
+#+begin_src console
+(base) [yanboyang713@archlinux ~]$ kubectl -n monitoring get pods
+NAME                                                        READY   STATUS    RESTARTS   AGE
+alertmanager-kube-prometheus-stack-alertmanager-0           2/2     Running   0          3m47s
+kube-prometheus-stack-grafana-6989bc568-v2tzj               3/3     Running   0          3m48s
+kube-prometheus-stack-kube-state-metrics-677b85d988-9vmdv   1/1     Running   0          3m48s
+kube-prometheus-stack-operator-5fdc5df69b-swdrm             1/1     Running   0          3m48s
+kube-prometheus-stack-prometheus-node-exporter-g4h5s        1/1     Running   0          3m48s
+kube-prometheus-stack-prometheus-node-exporter-lsq4p        1/1     Running   0          3m48s
+kube-prometheus-stack-prometheus-node-exporter-nqrsb        1/1     Running   0          3m48s
+prometheus-kube-prometheus-stack-prometheus-0               2/2     Running   0          3m46s
+#+end_src
+
+Once all the Pods show as Running, your monitoring stack is ready to use. The data exposed by the exporters will be automatically scraped by Prometheus.
+
+Now you can start querying your metrics.
+
+* Running a Prometheus Query
+Prometheus includes a web UI that you can use to query your data. This is not exposed automatically. You can access it by using Kubectl port forwarding to redirect local traffic to the service in your cluster:
+#+begin_src console
+(base) [yanboyang713@archlinux ~]$ kubectl port-forward -n monitoring svc/kube-prometheus-stack-prometheus 9090:9090
+Forwarding from 127.0.0.1:9090 -> 9090
+Forwarding from [::1]:9090 -> 9090
+#+end_src
+
+This command redirects traffic to [[http://localhost:9090/][localhost:9090]] to the Prometheus service. Visiting this URL in your web browser will reveal the Prometheus UI:
+[[https://spacelift.io/_next/image?url=https%3A%2F%2Fspaceliftio.wpcomstaging.com%2Fwp-content%2Fuploads%2F2023%2F01%2Fprometheus-monitring-prometheus-UI.png&w=1920&q=75]]
+
+The “Expression” input at the top of the screen is where you enter your queries as [[https://prometheus.io/docs/prometheus/latest/querying/basics/][PromQL]] expressions. Start typing into the input to reveal autocomplete suggestions for the available metrics.
+
+Try selecting the node_memory_Active_bytes metric, which surfaces the memory consumption of each of the Nodes in your cluster. Press the “Execute” button to run your query. The results will be displayed in a table that provides the query’s raw output:
+[[https://spacelift.io/_next/image?url=https%3A%2F%2Fspaceliftio.wpcomstaging.com%2Fwp-content%2Fuploads%2F2023%2F01%2Fprometheus-monitoring-querys-raw-output.png&w=1920&q=75]]
+
+Most metrics are easier to interpret as graphs.
+
+Switch to the “Graph” tab at the top of the screen to see a visualization of the metric over time. You can use the controls above the graph to change the time period that’s displayed.
+[[https://spacelift.io/_next/image?url=https%3A%2F%2Fspaceliftio.wpcomstaging.com%2Fwp-content%2Fuploads%2F2023%2F01%2Fprometheus-monitoring-graphs.png&w=1920&q=75]]
+
+PromQL [[https://prometheus.io/docs/prometheus/latest/querying/basics/][queries]] allow detailed interrogation of your data. Manually running individual queries in the Prometheus UI is an inefficient form of monitoring, however.
+
+Next, let’s use Grafana to visualize metrics conveniently on live dashboards.
+
+* Using Grafana Dashboards
+Start a new Kubectl port forwarding session to access the Grafana UI. Use port 80 as the target because this is what the Grafana service binds to.
+
+You can map it to a different local port, such as 8080, in this example:
+#+begin_src console
+(base) [yanboyang713@archlinux ~]$ kubectl port-forward -n monitoring svc/kube-prometheus-stack-grafana 8080:80
+Forwarding from 127.0.0.1:8080 -> 3000
+Forwarding from [::1]:8080 -> 3000
+#+end_src
+
+Next visit http://localhost:8080 in your browser. You’ll see the Grafana login page. The default user account is admin with a password of prom-operator.
+[[https://spacelift.io/_next/image?url=https%3A%2F%2Fspaceliftio.wpcomstaging.com%2Fwp-content%2Fuploads%2F2023%2F01%2Fprometheus-monitoring-Grafana-login-page.png&w=1920&q=75]]
+
+After you’ve logged in, you’ll initially reach the Grafana welcome screen:
+[[https://spacelift.io/_next/image?url=https%3A%2F%2Fspaceliftio.wpcomstaging.com%2Fwp-content%2Fuploads%2F2023%2F01%2Fprometheus-monitoring-Grafana-welcome-page.png&w=1920&q=75]]
+
+Use the sidebar to switch to the Dashboards screen. Its icon is four squares arranged to resemble panes of glass. This is where all your saved dashboards can be found, including the prebuilt ones that come with Kube-Prometheus-Stack deployments.
+[[https://spacelift.io/_next/image?url=https%3A%2F%2Fspaceliftio.wpcomstaging.com%2Fwp-content%2Fuploads%2F2023%2F01%2Fprometheus-monitoring-Dashboards-screen.png&w=1920&q=75]]
+
+** Exploring the Grafana Prebuilt Dashboards
+There are several included dashboards that contain the metrics scraped from Node-Exporter, Kube-State-Metrics, and various Kubernetes and Prometheus components. Here are a few notable ones:
+
+*** Monitoring Cluster Utilization With “Kubernetes / Compute Resources / Cluster”
+This dashboard provides an overview of the resource utilization for your entire cluster. Headline statistics are displayed at the top, with more detailed information presented in panels below.
+[[https://spacelift.io/_next/image?url=https%3A%2F%2Fspaceliftio.wpcomstaging.com%2Fwp-content%2Fuploads%2F2023%2F01%2Fprometheus-Monitoring-Cluster-Utilization.png&w=1920&q=75]]
+
+*** Viewing a Node’s Resource Consumption With “Node Exporter / Nodes”
+Data collected by Node-Exporter is provided by this dashboard. It shows detailed resource utilization information on a per-Node basis. You can change the selected Node using the “instance” dropdown at the top of the dashboard.
+[[https://spacelift.io/_next/image?url=https%3A%2F%2Fspaceliftio.wpcomstaging.com%2Fwp-content%2Fuploads%2F2023%2F01%2Fprometheus-Viewing-a-Nodes-Resource-Consumption.png&w=1920&q=75]]
+
+*** Viewing the Resource Consumption of Individual Pods With “Kubernetes / Compute Resources / Pod”
+This dashboard shows the resource requests, limits, quotas, and utilization for individual Pods. You can select the namespace and Pod to view from the dropdowns at the top of the screen.
+[[https://spacelift.io/_next/image?url=https%3A%2F%2Fspaceliftio.wpcomstaging.com%2Fwp-content%2Fuploads%2F2023%2F01%2Fprometheus-Viewing-the-Resource-Consumption.png&w=1920&q=75]]
+
+The time frame can be customized on all Grafana dashboards using the controls in the top-right corner of the screen. You can refresh the data or change the auto-refresh interval with the button next to the time frame selector.
+
+* Configuring Alerts With Alertmanager
+Monitoring must be automated to be effective. You need to receive alerts when important metric stops meeting expectations, such as when a spike in memory consumption occurs. Otherwise, you have to continually check your dashboards or run queries to determine whether you need to take action.
+
+Prometheus includes Alertmanager to send you a notification when your metrics trigger an alert. Alertmanager supports multiple [[https://prometheus.io/docs/alerting/latest/configuration][receivers]] that act as destinations for your alerts, such as email, Slack, messaging apps, and your own webhooks.
+
+Kube-Prometheus-Stack’s bundled Alertmanager is configured by merging in custom chart values when you deploy the stack with Helm. First, prepare a [[id:4f0d79f0-60b0-4d9f-89a3-75f8dfe979fe][YAML]] file that nests your Alertmanager settings under the top-level alertmanager key. Here’s an example that sends all alerts to a webhook URL:
+#+begin_src yaml
+lertmanager:
+  config:
+    global:
+      resolve_timeout: 5m
+    route:
+      receiver: demo-webhook
+      group_wait: 5s
+      group_interval: 10s
+      repeat_interval: 1h
+    receivers:
+      - name: "null"
+      - name: demo-webhook
+        webhook_configs:
+          - url: http://example.com/webhook
+            send_resolved: true
+#+end_src
+
+The route section specifies that alerts should be directed to the demo-webhook receiver. This is configured to send a POST request to http://example.com/webhook each time an alert is triggered or resolved. The request’s payload is described in the [[https://prometheus.io/docs/alerting/latest/configuration/#webhook_config][Alertmanager documentation]]. Note that the extra "null” receiver is required due to a [[https://github.com/prometheus-community/helm-charts/issues/255][bug]] that otherwise prevents your route from working.
+
+Save your YAML file to alertmanager-config.yaml in your working directory. Next run the following command to redeploy the Prometheus stack and apply your Alertmanager settings:
+
+#+begin_src bash
+helm upgrade --reuse-values \
+  -f alertmanager-config.yaml \
+  -n monitoring \
+  kube-prometheus-stack
+  prometheus-community/kube-prometheus-stack
+#+end_src
+Don’t worry – you won’t lose any of your existing data. The command performs an in-place upgrade of your deployment.
+
+It could take a few minutes for Alertmanager to reload its configuration after the deployment completes. You’ll then begin to receive requests to your webhook URL, as alerts are triggered.
+
+To send a test alert, first start a port forwarding session to your Alertmanager instance:
+#+begin_src bash
+kubectl port-forward -n monitoring svc/kube-prometheus-stack-alertmanager 9093:9093
+#+end_src
+
+Next run the following command to simulate triggering a basic alert from a Kubernetes service in a specific namespace:
+#+begin_src bash
+curl -H 'Content-Type: application/json' -d '[{"labels":{"alertname":"alert-demo","namespace":"demo","service":"demo"}}]' http://127.0.0.1:9093/api/v1/alerts
+#+end_src
+
+After a few moments, you should receive a request to your webhook URL. The request’s body will describe the alert’s details.
+
+
+
+
+
+
+
+
+You can also run multiple Prometheus instances and manage these from a single Prometheus operator. Just install multiple Prometheus objects to your cluster with different configurations. The Prometheus operator will manage any number of Prometheus instances.
+
+You can watch the Prometheus operator install using the following command:
+#+begin_src bash
+kubectl get deploy -w --namespace kubeapps -l app.kubernetes.io/name=kube-prometheus-operator,app.kubernetes.io/instance=prometheus
+#+end_src
 
 * Upgrading Chart
 Review the release notes for any breaking changes or required manual actions when upgrading to a new major version of the Kube-Prometheus-Stack Helm chart.
@@ -114,33 +305,6 @@ You can track major chart version change using the:
 helm history command and keeping up with the versions installed and updated.
 #+begin_src console
 helm history kubeapps -n kubeapps
-#+end_src
-
-* Prometheus Operator
-The Prometheus Operator facilitates the deployment and management of Prometheus and related monitoring components within Kubernetes using the core Prometheus operator pod. Its primary goal is to streamline and automate the setup of a Prometheus-based monitoring stack for Kubernetes clusters based on the Prometheus operator version.
-
-When one installs Prometheus operator, some of the features of the Prometheus operator include:
-
-+ The ability to use Kubernetes custom resources to deploy and manage Prometheus, Alertmanager, and related components.
-+ Simplified configuration for basic Prometheus functionalities such as versions, persistence, retention policies, and replicas using native Kubernetes resources.
-+ Automatic generation of monitoring target configurations based on Kubernetes label queries, eliminating the need to learn a Prometheus-specific configuration language.
-
-The command to install the named Prometheus Operator chart by adding the repo is the following:
-#+begin_src bash
-helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
-helm repo update
-#+end_src
-
-To install the Prometheus operator release:
-#+begin_src bash
-helm install [RELEASE_NAME] prometheus-community/kube-prometheus-stack
-#+end_src
-
-You can also run multiple Prometheus instances and manage these from a single Prometheus operator. Just install multiple Prometheus objects to your cluster with different configurations. The Prometheus operator will manage any number of Prometheus instances.
-
-You can watch the Prometheus operator install using the following command:
-#+begin_src bash
-kubectl get deploy -w --namespace kubeapps -l app.kubernetes.io/name=kube-prometheus-operator,app.kubernetes.io/instance=prometheus
 #+end_src
 
 * Additional kube-prometheus recommendations
@@ -198,3 +362,5 @@ Be aware that this approach results in a temporary loss of monitoring capabiliti
 
 * Reference List
 1. https://www.virtualizationhowto.com/2023/03/kube-prometheus-stack-installation-and-configuration/
+2. https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack#kube-prometheus-stack
+3. https://spacelift.io/blog/prometheus-kubernetes

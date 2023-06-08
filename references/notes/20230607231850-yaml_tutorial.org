@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       4f0d79f0-60b0-4d9f-89a3-75f8dfe979fe
+:END:
+#+title: YAML Tutorial
+#+filetags:  
+
+* Reference List
+1. https://spacelift.io/blog/yaml

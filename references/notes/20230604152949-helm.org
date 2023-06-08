@@ -3,5 +3,526 @@
 :END:
 #+title: Helm
 #+filetags:  
+* Introduction
+Helm is a [[id:eb7d4abd-ba1d-40be-b189-051a85df82ca][Package manager]]. Package managers automate the process of installing, configuring, upgrading, and removing computer programs. Examples include the Red Hat® Package Manager (RPM), Homebrew, and Windows® PackageManagement.
 
-[[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]]
+An application in [[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]] typically consists of at least two resource types:
++ a deployment resource, which describes a set of pods to be deployed together
++ a services resource, which defines endpoints for accessing the APIs in those pods.
+
+The application can also include ConfigMaps, Secrets, and Ingress.
+
+For any deployment, you need several Kubernetes commands ([[id:4a30a096-d006-4351-bfe4-0b926b81ba17][kubectl]]) to create and configure resources. Instead of manually creating each resource separately, you can create many resources with one command. A Helm chart defines several Kubernetes resources as a set. A default chart has a minimum of a deployment template and a service template.
+
+* Helm components and terminology
+Helm has two elements, a client (Helm) and a server (Tiller). The server element runs inside a Kubernetes cluster and manages the installation of charts. This diagram shows how Helm components are related to each other:
+[[https://www.ibm.com/cloud/architecture/images/courses/helm-fundamentals/helm-1-small.jpg]]
++ Helm: A command-line interface (CLI) that installs charts into Kubernetes, creating a release for each installation. To find new charts, you search Helm chart repositories.
++ Chart: An application package that contains templates for a set of resources that are necessary to run the application. A template uses variables that are substituted with values when the manifest is created. The chart includes a values file that describes how to configure the resources.
++ Repository: Storage for Helm charts. The namespace of the hub for official charts is stable.
++ Release: An instance of a chart that is running in a Kubernetes cluster. You can install the same chart multiple times to create many releases.
++ Tiller: The Helm server-side templating engine, which runs in a pod in a Kubernetes cluster. Tiller processes a chart to generate Kubernetes resource manifests, which are YAML-formatted files that describe a resource. YAML is a human-readable structured data format. Tiller then installs the release into the cluster. Tiller stores each release as a Kubernetes ConfigMap.
+* Why use Helm?
+Helm can make deployments easier and repeatable because all resources for an application are deployed by running one command:
+#+begin_src bash
+helm install <chart>
+#+end_src
+
+With Helm, configuration settings are kept separate from the manifest formats. You can edit the configuration values without changing the rest of the manifest. Configuration settings are in a values.yaml file. You update the runtime parameters in that file to deploy each application instance differently.
+
+You can use single commands for installing, upgrading, and deleting releases.
+[[https://www.ibm.com/cloud/architecture/images/courses/helm-fundamentals/helm-2.png]]
+
+* Installing Helm
+Helm runs as a command-line interface (CLI) and is typically installed on your notebook. You have several options for installing Helm:
+[[https://github.com/kubernetes/helm/releases][Download the release]], including the binary.
+Use Homebrew on MacOS:
+#+begin_src bash
+brew install kubernetes-helm
+#+end_src
+Use an installer script:
+#+begin_src bash
+curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get > get_helm.sh
+#+end_src
+
+For more information about [[https://docs.helm.sh/using_helm/#installing-helm][installing Helm]], see Installing Helm in the Helm documentation.
+
+* What is a chart repository?
+A chart repository is an HTTP server that houses packaged charts and an index.yaml file. That file has an index of all the charts in the repository. A chart repository can be any HTTP server that can serve YAML and .tar files and can answer GET requests. Therefore, you have many options for hosting your chart repository. You can use a Google Cloud Storage bucket, an Amazon S3 bucket, GitHub pages, or you can create a web server.
+** Commands for working with repositories
+#+begin_src console
+$ helm repo list
+
+NAME      URL
+stable    https://kubernetes-charts.storage.googleapis.com/
+$ helm search jenkins
+
+NAME                VERSION       DESCRIPTION
+stable/jenkins      0.1.14        A Jenkins Helm chart for Kubernetes.
+$ helm repo add my-charts https://my-charts.storage.googleapis.com
+
+$ helm repo list
+
+NAME           URL
+stable        https://kubernetes-charts.storage.googleapis.com/
+my-charts     https://my-charts.storage.googleapis.com
+#+end_src
+
+* Deploying an application
+The Helm install command deploys an application. The command output includes details about the release and resources. For the chart in this example, stable/mysql, the release name is loping-toad. One resource of each type exists, all named loping-toad-mysql:
++ Secret
++ Service
++ Deployment
++ PersistentVolumeClaim
+
+#+begin_src console
+$ helm search mysql
+
+NAME          VERSION                DESCRIPTION
+stable/mysql    0.1.1                 Chart for MySQL
+$ helm install stable/mysql
+
+Fetched stable/mysql to mysql-0.1.1.tgz
+NAME: loping-toad
+LAST DEPLOYED: Thu Oct 20 14:54:24 2016
+NAMESPACE: default
+STATUS: DEPLOYED
+
+RESOURCES:
+==> v1/Secret
+NAME TYPE              DATA           AGE
+loping-toad-mysql      Opaque    2        3s
+
+==> v1/Service
+NAME                   CLUSTER-IP             EXTERNAL-IP          PORT(S)   AGE
+loping-toad-mysql    192.168.1.5             <none>                3306/TCP  3s
+
+==> extensions/Deployment
+NAME                   DESIRED      CURRENT   UP-TO-DATE     AVAILABLE    AGE
+loping-toad-mysql    1             0              0         0               3s
+
+==> v1/PersistentVolumeClaim
+NAME          STATUS    VOLUME  CAPACITY    ACCESSMODES AGE
+loping-toad-mysql Pending
+#+end_src
+
+* Default and custom deployment values
+:PROPERTIES:
+:ID:       29b673d1-f740-47c3-9349-69cc5bb34435
+:END:
+The default values for a deployment are stored in the values.yaml file in the chart. You can customize aspects of the deployment by overriding those values.
+
+First, the Helm CLI uses the Kubernetes CLI's configuration([[id:4a30a096-d006-4351-bfe4-0b926b81ba17][kubectl]]) to connect to your current cluster.
+#+begin_src bash
+~/.kube/config
+#+end_src
+
+#+begin_src bash
+kubectl config view
+#+end_src
+
+After it connects to your cluster, you use Helm installation commands to specify the attributes of the release.
+To specify a release's name, use the --name flag:
+#+begin_src bash
+helm install --name CustomerDB stable/mysql
+#+end_src
+
+To deploy the release into a Kubernetes namespace, use the --namespace flag:
+#+begin_src bash
+$ helm install --namespace ordering-system stable/mysql
+#+end_src
+
+To override a value, use the --set flag:
+#+begin_src bash
+helm install --set user.name='student',user.password='passw0rd' stable/mysql
+#+end_src
+
+To override values with a values file, use the --values or the --f flag:
+#+begin_src bash
+helm install --values myvalues.yaml stable/mysql
+#+end_src
+
+* Helm command reference
+Helm provides many commands for managing charts and Helm repositories. This list shows examples of the more common commands. After you configure a connection, you must add the --tls option to Helm commands that access the server through Tiller.
+
++ Install Tiller:
+#+begin_src bash
+helm init
+#+end_src
+
++ Create a chart:
+#+begin_src bash
+helm create <chart>
+#+end_src
+
++ List the repositories:
+#+begin_src bash
+helm repo list
+#+end_src
+
++ Search for a chart:
+#+begin_src bash
+helm search <keyword>
+#+end_src
+
++ Get information about a chart:
+#+begin_src bash
+helm inspect <chart>
+#+end_src
+
++ Deploy a chart (creates a release):
+#+begin_src bash
+helm install <chart>
+#+end_src
+
++ List all releases:
+#+begin_src bash
+helm list --all
+#+end_src
+
++ Get the status of a release:
+#+begin_src bash
+$ helm status <release>
+#+end_src
+
++ Get the details about a release:
+#+begin_src bash
+helm get <release>
+#+end_src
+
++ Upgrade a release:
+#+begin_src bash
+helm upgrade <release> <chart>
+#+end_src
+
++ Roll back a release:
+#+begin_src bash
+helm rollback <release> <revision>
+#+end_src
+
++ Delete a release:
+#+begin_src bash
+helm delete <release>
+#+end_src
+
+* Charts and the chart lifecycle
+The Helm create command generates a chart with sample files. By default, a chart starts with sample templates for a Kubernetes deployment and service. In the simplest case, you edit the values.yaml file to modify the default configuration for your application.
+[[https://www.ibm.com/cloud/architecture/images/courses/helm-fundamentals/create_chart.jpg]]
+
+After you run an installation command in the Helm CLI, these actions occur:
+1. Helm CLI loads the chart into Tiller.
+2. Tiller renders the chart templates.
+3. Each template generates a Kubernetes resource manifest file (YAML). Tiller runs each of the template files, generating the resource files. Tiller then loads the resources as described by the manifests into the Kubernetes cluster.
+4. Tiller loads the resulting resources into Kubernetes.
+5. Tiller returns the release data to the client.
+6. The client exits.
+
+** Chart lifecycle hooks
+Throughout the steps in the chart lifecycle, you can specify hooks, which are predefined actions to be run at specific times. Hooks can be any Kubernetes resource, often a Kubernetes job. Hooks are in the templates directory of the chart.
+
+For example, Tiller runs preinstall hooks before step 2 of the lifecycle and post-install hooks after step 2. The lifecycle hooks for Helm are as follows:
+
++ Preinstall hooks run after templates are rendered and before any resources are created in Kubernetes.
++ Post-install hooks run after all resources are loaded into Kubernetes.
++ Pre-delete hooks run before any resources are deleted from Kubernetes.
++ Post-delete hooks run after all the release’s resources are deleted.
++ Pre-upgrade hooks run after templates are rendered and before any resources are loaded into Kubernetes.
++ Post-upgrade hooks run after all resources are upgraded.
++ Pre-rollback hooks run after templates are rendered and before any resources are rolled back.
++ Post-rollback hooks run after all resources are modified.
+
+* Packaging charts
+A chart is a directory. A Helm client can use chart directories on the same computer, but it's difficult to share with other users on other computers.
+
+You package a chart by bundling the chart.yaml and related files into a .tar file and then installing the chart into a chart file:
+
+#+begin_src bash
+helm package <chart-path>
+
+helm install <chart-name>.tgz
+#+end_src
+
+To add a chart to a repository, copy it to the directory and regenerate the index:
+#+begin_src bash
+helm repo index <charts-path>  # Generates index of the charts in the repo
+#+end_src
+
+* Templates and settings files
+Creating a chart consists of implementing a template and populating a settings file, which is the configuration file that the template uses. Settings files, specifically the values.yaml file, define the chart's API. The settings files list the variables that the templates can use. For examples of chart templates, see https://github.com/kubernetes/charts/.
+
+Each file is a [[https://golang.org/pkg/text/template][Golang template]]. The template includes functions from the [[https://godoc.org/github.com/Masterminds/sprig][Sprig template library]]. A template can create the manifest for any type of Kubernetes resource.
+
+Each file in a chart’s templates directory is expected to be a template and to generate a Kubernetes resource manifest. The file name can be anything. Ideally, it describes the resource that it defines. A few exceptions exist:
+
+The notes file, NOTES.txt, provides instructions to the chart's users.
+
+Files whose names begin with an underscore, such as _helpers.tpl, are expected to contain partials. A partial, which is also called a subtemplate, is a template in a file that can be used by other templates. For example, a partial can contain utility functions.
+
+* Deployment and service template examples
+In these examples, the Helm deployment and service templates are shown with the corresponding Kubernetes manifest files.
+
+** Helm deployment template
+#+begin_src yaml
+
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: {{ template "fullname" . }}
+  labels:
+    app: {{ template "name" . }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version }}
+    heritage: {{ .Release.Service }}
+    release: {{ .Release.Name }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  template:
+    metadata:
+{{- if .Values.podAnnotations }}
+      annotations:
+{{ toYaml .Values.podAnnotations | indent 8 }}
+{{- end }}
+      labels:
+        app: {{ template "name" . }}
+        release: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: {{ template "name" . }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+           ports:
+          - name: http
+            containerPort: 80
+            protocol: TCP
+. . .
+#+end_src
+
+** Kubernetes deployment manifest
+#+begin_src yaml
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+    name: nginx-deployment
+spec:
+    replicas: 3
+    template:
+        metadata:
+            labels:
+                app: nginx
+        spec:
+            containers:
+                - name: nginx
+                image: nginx:1.7.9
+                ports:
+                    - containerPort: 80
+#+end_src
+
+** Helm service template
+#+begin_src yaml
+apiVersion: v1
+kind: Service
+metadata:
+{{- if .Values.service.annotations }}
+    annotations:{{ toYaml .Values.service.annotations | indent 4 }}
+{{- end }}
+    name: {{ template "fullname" . }}
+    labels:
+        app: {{ template "name" . }}
+        chart: {{ .Chart.Name }}-{{ .Chart.Version }}
+        heritage: {{ .Release.Service }}
+        release: {{ .Release.Name }}
+spec:
+    selector:
+        app: {{ template "name" . }}
+        release: {{ .Release.Name }}
+    ports:
+        - name: http
+          protocol: TCP
+          port: {{ .Values.service.port }}
+          targetPort: http
+          {{- if (and (eq .Values.service.type "NodePort") ...) }}
+          nodePort: {{ .Values.service.nodePort }}
+          {{- end }}
+. . .
+#+end_src
+
+** Kubernetes service manifest
+#+begin_src yaml
+apiVersion: v1
+kind: Service
+metadata:
+    name: my-service
+spec:
+    selector:
+        app: MyApp
+    ports:
+        - protocol: TCP
+          port: 80
+          targetPort: 9376
+#+end_src
+
+* YAML file examples
+Helm uses values in the values.yaml and chart.yaml files to populate the chart's templates.
+
+** Values (values.yaml)
+The values.yaml file is the chart's API.
+#+begin_src yaml
+
+replicaCount: 1
+restartPolicy: Never
+# Evaluated by the post-install hook
+sleepyTime: "10"
+index: >-
+    <h1>Hello</h1>
+    <p>This is a test</p>
+image:
+    repository: nginx
+    tag: 1.11.0
+    pullPolicy: IfNotPresent
+service:
+    annotations: {}
+    clusterIP: ""
+    externalIPs: []
+    loadBalancerIP: ""
+    loadBalancerSourceRanges: []
+    type: ClusterIP
+    port: 8888
+    nodePort: ""
+podAnnotations: {}
+resources: {}
+nodeSelector: {}
+#+end_src
+
+** Helm deployment template
+#+begin_src yaml
+
+. . .
+spec:
+    replicas: {{ .Values.replicaCount }}
+    template:
+        metadata:
+{{- if .Values.podAnnotations }}
+            annotations:
+{{ toYaml .Values.podAnnotations | indent 8 }}
+{{- end }}
+. . .
+#+end_src
+
+** Helm service template
+#+begin_src yaml
+. . .
+spec:
+    ports:
+        - name: http
+          protocol: TCP
+          port: {{ .Values.service.port }}
+          targetPort: http
+          {{- if (and (eq .Values.service.type "NodePort") ...) }}
+          nodePort: {{ .Values.service.nodePort }}
+          {{- end }}
+. . .
+#+end_src
+
+** Chart (chart.yaml)
+The chart.yaml file is the chart's metainformation.
+#+begin_src yaml
+
+name: nginx
+description: A basic NGINX HTTP server
+version: 0.1.0
+keywords:
+    - http
+    - nginx
+    - www
+    - web
+home: https://github.com/kubernetes/helm
+sources:
+    - https://hub.docker.com/_/nginx/
+maintainers:
+    - name: technosophos
+      email: mbutcher@deis.com
+#+end_src
+
+** Helm template
+#+begin_src yaml
+. . .
+metadata:
+{{- if .Values.service.annotations }}
+    annotations:{{ toYaml .Values.service.annotations | indent 4 }}
+{{- end }}
+    name: {{ template "fullname" . }}
+    labels:
+        app: {{ template "name" . }}
+        chart: {{ .Chart.Name }}-{{ .Chart.Version }}
+        heritage: {{ .Release.Service }}
+        release: {{ .Release.Name }}
+. . .
+#+end_src
+
+* Chart template helper and predefined value examples
+This example shows a helper file used by a Helm template to construct the "full name" and "name" of the template. The example shows only part of the Helm template.
+
+** Helpers (templates/_helpers.tpl)
+#+begin_src yaml
+{{/* vim: set filetype=mustache: */}}
+{{/* Expand the name of the chart. */}}
+{{- define "name" -}}
+{{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" -}}
+{{- end -}}
+{{/* Create a default fully qualified app name. We truncate at 63 chars because . . . */}}
+{{- define "fullname" -}}
+{{- $name := default .Chart.Name .Values.nameOverride -}}
+{{- printf "%s-%s" .Release.Name $name | trunc 63 | trimSuffix "-" -}}
+{{- end -}}
+#+end_src
+
+** Helm template
+#+begin_src yaml
+. . .
+metadata:
+    name: {{ template "fullname" . }}
+    labels:
+        app: {{ template "name" . }}
+        chart: {{ .Chart.Name }}-{{ .Chart.Version }}
+        heritage: {{ .Release.Service }}
+        release: {{ .Release.Name }}
+. . .
+#+end_src
+
+** Chart predefined values
+This summary shows the predefined values that Helm uses when it renders Kubernetes manifest files.
+
++ Release – Information about the release being created
++ Release.Name – The name of the release (not the chart)
++ Release.Service – The service that conducted the release, normally Tiller
++ Release.Revision – The revision number. Begins at 1, and increments with each helm upgrade
++ Chart – The contents of the chart.yaml
++ Chart.Name
++ Chart.Version
++ Chart.Maintainers
++ Files – Map of all non-special files in the chart
++ Capabilities – Map of info about Kubernetes and Helm
++ Capabilities.KubeVersion
++ Capabilities.TillerVersion
++ Capabilities.APIVersions
++ Template – Information about the current template
+
+** Helm template
+#+begin_src yaml
+. . .
+metadata:
+{{- if .Values.service.annotations }}
+    annotations:{{ toYaml .Values.service.annotations | indent 4 }}
+{{- end }}
+    name: {{ template "fullname" . }}
+    labels:
+        app: {{ template "name" . }}
+        chart: {{ .Chart.Name }}-{{ .Chart.Version }}
+        heritage: {{ .Release.Service }}
+        release: {{ .Release.Name }}
+. . .
+#+end_src
+
+* Reference List
+1. https://getbetterdevops.io/helm-quickstart-tutorial/
+2. https://devopscube.com/create-helm-chart/
+3. https://www.ibm.com/cloud/architecture/content/course/helm-fundamentals/helm-install

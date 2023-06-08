@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       62b831b3-50ec-4e00-ab7d-5b25bd6cb6e6
+:END:
+#+title: network metrology
+#+filetags:  
+
+[[id:c0eef701-9240-4890-b41a-6dc829786b77][wireless measurement metrics]]

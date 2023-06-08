@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       d3d1882c-8ba1-44ec-b6f5-7029e332c08c
+:END:
+#+title: game theory applications in wireless networks
+#+filetags:  
+
+[[id:f433c71a-6f5e-476b-a9c0-8cd37a236bcb][game theory]]
+[[id:55f23b66-c353-4562-b4bc-da3df9ddc665][wireless networks]]
+
+Charilas, D. E., & Panagopoulos, A. D. (2010). A survey on game theory applications in wireless networks. Computer Networks, 54(18), 3421-3430.

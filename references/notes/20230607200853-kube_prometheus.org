@@ -1,0 +1,77 @@
+:PROPERTIES:
+:ID:       76d59c83-05cd-4bd0-a794-4a38473b487b
+:END:
+#+title: kube-prometheus
+#+filetags:
+
+The easiest way of starting with the [[id:23fbb8d6-424d-4cd0-8cea-cbef874f583e][Prometheus Operator]] is by deploying it as part of kube-prometheus. kube-prometheus deploys the Prometheus Operator and already schedules a Prometheus called prometheus-k8s with alerts and rules by default.
+
+*Note*: the [[https://github.com/prometheus-operator/kube-prometheus#compatibility][Kubernetes compatibility matrix]] in order to choose a compatible branch.
+
+* Get the kube-prometheus project
+For a quick start we are going to deploy a compiled version of the Kubernetes manifests.
+
+You can either clone the kube-prometheus from GitHub
+#+begin_src bash
+git clone https://github.com/prometheus-operator/kube-prometheus.git
+#+end_src
+
+Once you have the files on your machine change into the project’s root directory.
+
+* Deploy kube-prometheus
+#+begin_src bash
+# Create the namespace and CRDs, and then wait for them to be availble before creating the remaining resources
+kubectl create -f manifests/setup
+
+# Wait until the "servicemonitors" CRD is created. The message "No resources found" means success in this context.
+until kubectl get servicemonitors --all-namespaces ; do date; sleep 1; echo ""; done
+
+kubectl create -f manifests/
+#+end_src
+
+We create the namespace and CustomResourceDefinitions first to avoid race conditions when deploying the monitoring components. Alternatively, the resources in both folders can be applied with a single command
+
+#+begin_src bash
+kubectl create -f manifests/setup -f manifests
+#+end_src
+
+but it may be necessary to run the command multiple times for all components to be created successfullly.
+
+* Access [[id:ebc7a85b-cb33-4b29-93f9-0c2d5215bc7a][Prometheus]]
+Prometheus, Alertmanager, and Grafana dashboards can be accessed quickly using kubectl port-forward after running the quickstart via the commands below.
+
+You can also learn how to [[https://prometheus-operator.dev/docs/kube/exposing-prometheus-alertmanager-grafana-ingress/][expose via an Ingress]]
+#+begin_src bash
+kubectl --namespace monitoring port-forward svc/prometheus-k8s 9090
+#+end_src
+
+Open Prometheus on [[http://localhost:9090/][localhost:9090]] in your browser.
+
+Check out the [[http://localhost:9090/alerts][alerts]] and [[http://localhost:9090/rules][rules]] pages with the pre-configured rules and alerts!
+This Prometheus is supposed to monitor your Kubernetes cluster and make sure to alert you if there’s a problem with it.
+
+For your own applications we recommend running one or more other instances.
+
+* Access [[id:5eeafe8e-f3a5-4887-b980-8b4568116f1f][Alertmanager]]
+#+begin_src bash
+kubectl --namespace monitoring port-forward svc/alertmanager-main 9093
+#+end_src
+
+Open Alertmanager on [[http://localhost:9093/][localhost:9093]] in your browser.
+
+* Access [[id:9f3cd2be-e9b5-4c01-b457-445951a17175][Grafana]]
+#+begin_src bash
+kubectl --namespace monitoring port-forward svc/grafana 3000
+#+end_src
+
+Open Grafana on [[http://localhost:3000/][localhost:3000]] in your browser.
+You can login with the *username* admin and *password* admin.
+
+* Remove kube-prometheus
+If you’re done experimenting with kube-prometheus and the Prometheus Operator you can simply teardown the deployment by running:
+#+begin_src bash
+kubectl delete --ignore-not-found=true -f manifests/ -f manifests/setup
+#+end_src
+
+* Reference List
+1. https://prometheus-operator.dev/docs/prologue/quick-start/

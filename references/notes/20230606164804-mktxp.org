@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       654771c4-63fa-49e0-bedf-29985e7e4375
+:END:
+#+title: MKTXP
+#+filetags:  
+MKTXP is a [[id:ebc7a85b-cb33-4b29-93f9-0c2d5215bc7a][Prometheus]] Exporter for [[id:7b3d4c7a-30a8-4f0f-a587-fdbb39109e57][Mikrotik]] [[id:c2d2bf9b-7c0e-499e-8606-ae85e8506cf0][RouterOS]] devices.
+
+It gathers and exports a rich set of metrics across multiple routers, all easily configurable via built-in CLI interface.
+
+While simple to use, MKTXP supports advanced features such as automatic IP address resolution with both local & remote DHCP servers, concurrent exports across multiple router devices, configurable data processing & transformations, etc.
+
+* Reference List
+1. https://github.com/akpw/mktxp.git
