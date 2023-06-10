@@ -4,7 +4,6 @@
 #+title: Ceil and Floor functions in C++
 #+filetags:
 
-[[id:4cb9c502-be4e-49c5-9900-ebcbbdba2b10][c++]]
-
+[[id:7efe38ee-a4b5-49f4-ae9f-d560f563935d][C++]]
 * Reference List
 1. https://www.geeksforgeeks.org/ceil-floor-functions-cpp/

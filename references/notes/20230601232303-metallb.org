@@ -13,6 +13,15 @@ Bare-metal cluster operators are left with two lesser tools to bring user traffi
 
 MetalLB aims to redress this imbalance by offering a network load balancer implementation that integrates with standard network equipment, so that external services on bare-metal clusters also “just work” as much as possible.
 
+* Requirements
+MetalLB requires the following to function:
+
++ A [[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]] cluster, running Kubernetes 1.13.0 or later, that does not already have network load-balancing functionality. You could deploy by [[id:9d293990-ff98-47eb-93a4-556df1e7b26d][kubeadm]].
++ A [[https://metallb.universe.tf/installation/network-addons/][cluster network configuration]] that can coexist with MetalLB.
++ Some IPv4 addresses for MetalLB to hand out.
++ When using the BGP operating mode, you will need one or more routers capable of speaking [[id:e7b30b16-d942-4c41-ba19-14245c12a572][BGP]].
++ When using the L2 operating mode, traffic on port 7946 (TCP & UDP, other port can be configured) must be allowed between nodes, as required by [[https://github.com/hashicorp/memberlist][memberlist]].
+
 * Installation With [[id:fd2a4c2f-4d5f-43b8-aab8-69b1ae33870e][Helm]]
 You can install MetallLB with Helm by using the Helm chart repository: https://metallb.github.io/metallb
 #+begin_src bash

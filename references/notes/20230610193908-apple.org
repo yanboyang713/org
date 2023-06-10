@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       2a1ad7d7-7467-4fca-b228-c1fbc0217fbd
+:END:
+#+title: Apple
+#+filetags:

@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       56aa2a9a-1b75-4b3b-abe2-238454ab3c3d
+:END:
+#+title: networking measurement metrics
+#+filetags:  
+
+[[id:c0eef701-9240-4890-b41a-6dc829786b77][wireless measurement metrics]]
+
+[[id:7e878b44-2e33-4308-9ffe-368067ba9640][CPU cycles per packet (CPP)]]

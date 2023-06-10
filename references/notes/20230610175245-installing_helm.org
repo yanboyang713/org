@@ -1,0 +1,31 @@
+:PROPERTIES:
+:ID:       5ca9d7b7-39db-4fd8-a8f0-54f93504a5e8
+:END:
+#+title: Installing Helm
+#+filetags: installing Helm
+
+[[id:fd2a4c2f-4d5f-43b8-aab8-69b1ae33870e][Helm]] runs as a command-line interface (CLI) and is typically installed on your notebook.
+
+You have several options for installing Helm:
+
+* Using the Binary Releases
+   https://helm.sh/docs/intro/install/#from-the-binary-releases
+
+[[https://github.com/kubernetes/helm/releases][Download the release]], including the binary.
+
+* Through Package Managers
+** [[id:3a6998a0-3977-47ad-9714-be03316f5464][Homebrew]] ([[id:3b83621b-b66a-42f4-bebb-b6dbb2b6e68f][macOS]])
+Members of the Helm community have contributed a Helm formula build to Homebrew. This formula is generally up to date.
+#+begin_src bash
+brew install helm
+#+end_src
+(Note: There is also a formula for [[id:26c24b4d-a5b3-46fb-93b5-6e9f40e477a0][emacs-helm]], which is a different project.)
+
+* Using [[https://helm.sh/docs/intro/install/#from-script][Script]]
+
+Use an installer script:
+#+begin_src bash
+curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get > get_helm.sh
+#+end_src
+
+For more information about [[https://docs.helm.sh/using_helm/#installing-helm][installing Helm]], see Installing Helm in the Helm documentation.

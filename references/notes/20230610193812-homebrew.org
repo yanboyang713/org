@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       3a6998a0-3977-47ad-9714-be03316f5464
+:END:
+#+title: Homebrew
+#+filetags:
+
+[[id:2a1ad7d7-7467-4fca-b228-c1fbc0217fbd][Apple]]

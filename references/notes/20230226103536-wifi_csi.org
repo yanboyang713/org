@@ -10,7 +10,7 @@
 + [[https://wands.sg/research/wifi/AtherosCSI/][Atheros CSI Tool]]] Revamped CSI tool enables various Qualcomm Atheros NIC to extract CSI data. It supports 114 subcarriers for a pair of antennas running on 40MHz.
 + [[https://github.com/seemoo-lab/nexmon_csi][Nexmon CSI Tool]] Mobile CSI Tool enables mobile phone and embedded device ([[id:2d0fe0c8-6612-4dea-a224-e4ddb3697003][RasPi]]) to extract CSI data of up to 256 subcarriers for a pair of antennas running on 80MHz.
 + [[https://stevenmhernandez.github.io/ESP32-CSI-Tool/][ESP32 CSI Tool]] The [[id:84c34a37-5e53-403f-97bf-da4fb34c6784][ESP32]] CSI Toolkit provides researchers access to Channel State Information (CSI) directly from the [[id:84c34a37-5e53-403f-97bf-da4fb34c6784][ESP32]] microcontroller[[id:84c34a37-5e53-403f-97bf-da4fb34c6784][ESP32]].
-+ [[https://www.ettus.com/][Software Defined Radio (SDR)]] platforms, such as Universal Software Radio Peripheral (USRP) and [[https://warpproject.org/trac][Wireless Open Access Research Platform (WARP)]], provide CSI measurements at 2.4GHz, 5GHz, and 60GHz.
++ [[https://www.ettus.com/][Software Defined Radio]] [[id:74ae1e6f-a5df-4727-8b32-b321ab7b1d5f][(SDR)]] platforms, such as Universal Software Radio Peripheral ([[id:5dfc7a97-ebf7-4ba0-b331-facbd7de10ee][USRP]]) and [[https://warpproject.org/trac][Wireless Open Access Research Platform (WARP)]], provide CSI measurements at 2.4GHz, 5GHz, and 60GHz.
 
 * Reference List
 1. https://github.com/Marsrocky/Awesome-WiFi-CSI-Sensing#csi-tool

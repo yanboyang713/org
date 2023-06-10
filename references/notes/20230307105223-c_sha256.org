@@ -4,6 +4,8 @@
 #+title: c++ sha256
 #+filetags:  
 
+[[id:7efe38ee-a4b5-49f4-ae9f-d560f563935d][C++]]
+
 #+begin_src c++ cc
 #include <cstring>
 #include <fstream>

@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       d32ea6f0-e086-4619-91b3-1b78433366bb
+:END:
+#+title: decompiler
+#+filetags:  
+
+[[id:278645d6-efd7-4127-a748-e309c118efbe][security]]
+
+software reverse engineering
+
+* [[id:7efe38ee-a4b5-49f4-ae9f-d560f563935d][C++]]
+https://github.com/NationalSecurityAgency/ghidra
+* Java
+https://github.com/skylot/jadx

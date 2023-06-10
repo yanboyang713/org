@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       552aff3a-a951-4952-9b55-e25294ddc2f5
+:END:
+#+title: HackRF
+#+filetags:
+
+HackRF One is a wide band software defined radio ([[id:74ae1e6f-a5df-4727-8b32-b321ab7b1d5f][SDR]]) half-duplex transceiver created and manufactured by Great Scott Gadgets. It is able to send and receive signals. Its principal designer, Michael Ossmann, launched a successful Kickstarter campaign in 2014 with a first run of the project called HackRF.[1] The hardware and software's open source nature has attracted hackers, amateur radio enthusiasts, and information security practitioners.
+
+* Reference List
+1. https://en.wikipedia.org/wiki/HackRF_One

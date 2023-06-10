@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       ac6cbfa7-3cd8-43ab-bf51-3f238946ac24
+:END:
+#+title: Cilium Service Mesh
+#+filetags: Cilium
+
+[[id:821508c4-77cf-4cb3-a518-0911cecd5f71][Cilium]]
+[[id:4f0a7a3e-db3c-4d39-b776-4b746f564347][mesh service]]
+
+* Reference List
+1. https://docs.cilium.io/en/v1.13/network/servicemesh/
+2. https://www.solo.io/blog/cilium-service-mesh-in-action/
+3. https://isovalent.com/blog/post/cilium-service-mesh/

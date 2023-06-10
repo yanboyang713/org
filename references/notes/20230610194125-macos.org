@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       3b83621b-b66a-42f4-bebb-b6dbb2b6e68f
+:END:
+#+title: macOS
+#+filetags:  
+
+[[id:2a1ad7d7-7467-4fca-b228-c1fbc0217fbd][Apple]]

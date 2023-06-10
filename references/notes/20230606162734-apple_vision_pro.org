@@ -3,7 +3,7 @@
 :END:
 #+title: Apple Vision Pro
 #+filetags:  
-
+[[id:2a1ad7d7-7467-4fca-b228-c1fbc0217fbd][Apple]]
 [[id:32bd632c-964e-4b81-897b-b26fb1556a7f][visionOS]]
 
 https://www.apple.com/newsroom/2023/06/introducing-apple-vision-pro/

@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       b0518341-1b7b-40c4-a7c7-da5de4968534
+:END:
+#+title: logs system
+#+filetags:
+
++ Elasticsearch
++ [[https://github.com/grafana/loki][Loki]] is a new project that claims "like Prometheus, but for logs."

@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       9b168294-23a1-47dc-b079-09813a78859b
+:END:
+#+title: Tools for distributed systems monitoring
+#+filetags:  
+
++ [[id:02a1e877-d51e-4f53-a11d-510fc171d800][Datadog]]
++ [[id:ebc7a85b-cb33-4b29-93f9-0c2d5215bc7a][Prometheus]]
+
+* Reference List
+1. Kufel, Ł. (2016). Tools for distributed systems monitoring. Foundations of computing and decision sciences, 41(4), 237-260.

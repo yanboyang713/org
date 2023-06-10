@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       e6102c19-12f8-4243-9b68-b787ada54244
+:END:
+#+title: MetalLB issues with Calico
+#+filetags:  
+
+[[id:bf4517d9-d2d7-437f-ae23-3bc3adc89b72][MetalLB]]
+
+[[id:1a09eb00-17ea-48d4-a293-d626552df79c][Calico]]
+
+https://metallb.universe.tf/configuration/calico/

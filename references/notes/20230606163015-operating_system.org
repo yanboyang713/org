@@ -11,5 +11,5 @@
 + [[id:f6c12716-7d4f-4def-af11-73f122e5c821][Meta Scientific Linux]]
 + [[id:dc13b67c-8d8b-40fd-b8cf-9ea8547e485d][Arch Linux]]
 
-* Apple
-[[id:32bd632c-964e-4b81-897b-b26fb1556a7f][visionOS]]
+* [[id:2a1ad7d7-7467-4fca-b228-c1fbc0217fbd][Apple]]
++ [[id:32bd632c-964e-4b81-897b-b26fb1556a7f][visionOS]]
