@@ -2,8 +2,10 @@
 :ID:       56aa2a9a-1b75-4b3b-abe2-238454ab3c3d
 :END:
 #+title: networking measurement metrics
-#+filetags:  
+#+filetags: metrics
 
+[[id:be33e291-88cf-41b3-ada2-1019f6511d55][metrics system]]
 [[id:c0eef701-9240-4890-b41a-6dc829786b77][wireless measurement metrics]]
+[[id:62b831b3-50ec-4e00-ab7d-5b25bd6cb6e6][network metrology]]
 
 [[id:7e878b44-2e33-4308-9ffe-368067ba9640][CPU cycles per packet (CPP)]]

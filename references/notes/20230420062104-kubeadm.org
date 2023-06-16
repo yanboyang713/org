@@ -383,7 +383,7 @@ kubectl label node worker-node01  node-role.kubernetes.io/worker=worker
 #+end_src
 
 You can further add more nodes with the same join command.
-* Setup [[id:61f51113-d2ef-4685-a47a-bcfccf7732fc][Kubernetes Metrics Server]]
+
 * Deploy A Sample Nginx Application
 Now that we have all the components to make the cluster and applications work, let’s deploy a sample Nginx application and see if we can access it over a NodePort
 

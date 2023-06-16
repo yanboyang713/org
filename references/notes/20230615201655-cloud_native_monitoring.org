@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       223f3165-18c6-4cdc-845f-1869f5bc1baa
+:END:
+#+title: cloud native monitoring
+#+filetags:  
+
+[[id:414f560c-36fc-4208-b250-0808516ad67c][Kubernetes Monitoring]]
+
+[[id:e3a5986f-2ff5-4a8e-a194-008edb9c50ec][On Challenges of Cloud Monitoring]]
+
+[[id:ebc7a85b-cb33-4b29-93f9-0c2d5215bc7a][Prometheus]]
+
+* Reference List
+1. https://www.crowdstrike.com/cybersecurity-101/observability/observability-vs-monitoring/

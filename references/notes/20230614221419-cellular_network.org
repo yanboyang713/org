@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       60bc45fd-dfc3-4b53-852a-46ff8d77f94c
+:END:
+#+title: Cellular Network
+#+filetags:
+
+[[id:55f23b66-c353-4562-b4bc-da3df9ddc665][wireless networks]]

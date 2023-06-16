@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       fb3d788b-4a99-40e1-885b-467397f6e06e
+:END:
+#+title: midhaul
+#+filetags:  
+
+Midhaul is the link between DU and CU.. Midhaul has relaxed latency requirements, which means we can place CU further closer to the core node.
+
+* Reference List
+1. https://telcocloudbridge.com/blog/c-ran-vs-cloud-ran-vs-vran-vs-o-ran/

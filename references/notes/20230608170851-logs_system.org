@@ -6,3 +6,5 @@
 
 + Elasticsearch
 + [[https://github.com/grafana/loki][Loki]] is a new project that claims "like Prometheus, but for logs."
+
++ [[id:02a1e877-d51e-4f53-a11d-510fc171d800][Datadog]]

@@ -1,11 +1,56 @@
 :PROPERTIES:
 :ID:       9b168294-23a1-47dc-b079-09813a78859b
 :END:
-#+title: Tools for distributed systems monitoring
-#+filetags:  
+#+title: cloud native observability
+#+filetags: monitoring observability
 
-+ [[id:02a1e877-d51e-4f53-a11d-510fc171d800][Datadog]]
-+ [[id:ebc7a85b-cb33-4b29-93f9-0c2d5215bc7a][Prometheus]]
+* What Is Observability?
+According to Wikipedia, “observability is the measure of how well internal states of a system can be inferred from knowledge of its external outputs.”
+
+Think of it in terms of a patient receiving routine medical care after experiencing a nagging pain.
+
+From an IT perspective, the goal of observability is to analyze external outputs—like symptoms—that provide windows into how the system is functioning internally. Observability examines effects and then correlates that to a specific cause.
+
+* Why has observability become such a hot concept in the IT world?
+Since 2005, cloud computing—and the use of distributed apps—has exploded in popularity. Gone are the days when one could monitor a single cluster of VMs and call it a day.
+
+In the modern IT world, an app might span multiple clouds, using containers and microservices. These services may be both distributed and multi-layered.
+
+This is the key difference between the need for simple [[id:223f3165-18c6-4cdc-845f-1869f5bc1baa][cloud native monitoring]] versus observability. Having a multi-tiered environment requires a holistic view of the overall infrastructure—a view that only observability can provide.
+
+* objective of observability
+The objective of observability is to deliver a comprehensive view of infrastructure, more than what individual system monitoring can provide. It helps to determine the root cause of a problem with much more certainty, particularly in a distributed, complex system.
+
+An observable system’s external outputs include [[id:be33e291-88cf-41b3-ada2-1019f6511d55][metrics]], [[id:6bfa41ee-6c60-46dc-89d8-7ddcad0cfc88][events]], [[id:d2539ed1-6e0e-4c66-9a46-96f44502abfb][Traces]] and [[id:b0518341-1b7b-40c4-a7c7-da5de4968534][logs]]. Some examples of how DevOps engineers can take advantage of observability include:
+
++ Security anomaly detection
++ Cost analysis of cloud resources
++ Call trace analysis to determine how specific input values are impacting program failure
++ Identification of seasonal spikes in system load and tying that back to a suboptimal load balancer
+
+Most observability platforms provide the detailed information a user needs to easily identify the root cause of a problem. Some can also suggest fixes to the problem. A few platforms even take it a step further by performing the corrective measures themselves.
+
+* Difference between Metrics, Tracing and Logging
+#+CAPTION: Venn diagram for difference between Metrics, Tracing and Logging
+#+NAME: fig:VennDiagramMTL
+#+ATTR_HTML: :width 300px
+[[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1686602669/k8s/monitoring_li2gch.png]]
+
+* observability platform
++ [[id:dadb9f9a-8851-4c4c-9885-1b4b0aadd935][OpenObserve]]
++ [[id:d37a9e07-b6d0-4df7-a1e7-d32e0e2a00fd][Azure Monitor]]
++ [[id:203cb959-208a-4abe-8fc4-8eb80f6e6770][Amazon CloudWatch]]
+
+* [[id:5affaba8-8e7e-4aa9-b650-4dc361bce3bb][Analytics on top of Service Mesh]]
+
 
 * Reference List
 1. Kufel, Ł. (2016). Tools for distributed systems monitoring. Foundations of computing and decision sciences, 41(4), 237-260.
+
+* Reference List
+1. https://www.splunk.com/en_us/blog/learn/logs-vs-metrics.html
+2. https://www.sumologic.com/blog/logs-metrics-overview/
+3. https://logz.io/blog/logs-or-metrics/#:~:text=Metrics%20can%20be%20used%20to,variety%20of%20additional%20use%20cases.
+4. https://medium.com/@surfd1001/things-to-know-about-observability-mechanisms-a52876e421c7
+5. https://microsoft.github.io/code-with-engineering-playbook/observability/log-vs-metric-vs-trace/
+6. https://www.crowdstrike.com/cybersecurity-101/observability/observability-vs-monitoring/#:~:text=Monitoring%20tells%20you%20that%20something,problem%2C%20and%20locate%20the%20error.

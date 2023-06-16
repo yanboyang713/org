@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       45dec5e6-620b-404b-a02a-bf9b0af9460d
+:END:
+#+title: 5G use cases
+#+filetags: 5G
+
+[[id:c8f358c2-d824-4c17-b02b-9aaa423b1871][5G]]
+https://cloud.google.com/blog/transform/5g-and-cloud-technology-for-cios

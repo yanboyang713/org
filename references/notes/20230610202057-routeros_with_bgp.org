@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       225f39ed-1555-4a2e-93b7-7fcadd09651e
+:END:
+#+title: RouterOS with BGP
+#+filetags:  
+
+[[id:c2d2bf9b-7c0e-499e-8606-ae85e8506cf0][RouterOS]]
+[[id:e7b30b16-d942-4c41-ba19-14245c12a572][BGP]]
+
+* Reference List
+1. https://wiki.mikrotik.com/wiki/Manual:Routing/BGP
+2. https://help.mikrotik.com/docs/display/ROS/BGP

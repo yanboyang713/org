@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       faaa6a3c-1eb7-4f83-aef9-b54b64d7ff49
+:END:
+#+title: Service-Oriented Computing (SOC)
+#+filetags:  
+
+[[id:10682b04-b1f4-4200-a3a6-23a5d82c2795][micro service]]
+
+The Service-Oriented Computing (SOC) paradigm aims to use services as basic blocks to develop applications. Services are self-described, reusable, and portable - and support rapid, low-cost, secure, and reliable distributed applications [1], [2].

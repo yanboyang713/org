@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       1c7cfebb-f4aa-42b4-a67c-1d88e5f07211
+:END:
+#+title: Sidecar Proxy
+#+filetags:  
+
+[[id:4f0a7a3e-db3c-4d39-b776-4b746f564347][service mesh]]
+
+* Reference List
+1. https://iximiuz.com/en/posts/service-proxy-pod-sidecar-oh-my/

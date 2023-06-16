@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       82d33a5e-b2c0-4188-9fa3-9d0e4709c8c5
+:END:
+#+title: fronthaul
+#+filetags: fronthaul
+
+Fronthaul is the link between RRU and BBU (or RRU and DU). It has a strict latency requirements of 100 to 250 µs (one way)
+
+* Reference List
+1. https://telcocloudbridge.com/blog/c-ran-vs-cloud-ran-vs-vran-vs-o-ran/

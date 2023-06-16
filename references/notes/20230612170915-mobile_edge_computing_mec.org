@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       357e09dc-e3a7-4b09-a2d2-fb1da880d190
+:END:
+#+title: Mobile Edge Computing (MEC)
+#+filetags:

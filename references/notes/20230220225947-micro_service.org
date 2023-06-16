@@ -1,9 +1,20 @@
 :PROPERTIES:
 :ID:       10682b04-b1f4-4200-a3a6-23a5d82c2795
 :END:
-#+title: micro service
+#+title: microservices
 #+filetags:
 
 [[id:a2da1c32-ba1a-4c2c-9374-1bd8896920fa][rust]]
 
 [[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]]
+
+rather than on-premises design, modern applications are more commonly to be designed with cloud-native [1] architectures, enabling executions in orchestrated environments. One major outcome of these shifts is the trend of DevOps [2], which has already become mainstream in the enterprise [3]. Its coalescence of development and operations can be attributed to the recent technology development towards microservices [1] which effectively standardize the patterns for software packaging and deployment, and thus significantly improve the speed and agility of software service delivery.
+
+The core proposition of microservices is to break down a complex monolith into small services that can be independently deployed and maintained. Driven by advantages of microservices, e.g., flexibility, simplicity, and scalability, there has been a massive adoption of microservices in different areas, e.g., for big data processing [4], [5], for IoT applications [6], [7], and for high performance computing (HPC) [8], [9]. Advocates of microservices have come to believe that this can not only solve enterprise application integration problems but also simplify the plumbing required to build service-oriented architectures (SOA).
+
+* methodologies of microservices
+The methodologies of microservices can dramatically reduce the incremental operational burden to software service deployment and that is how cloud-native defined. In essence, a cloud-native architecture is a design methodology that allows dynamic and agile application development techniques that take a modular approach to building, running, and updating software through a suite of cloud-based microservices. However, despite significant improvements in both efficiency and productivity during the development and deployment phases, the operational complexity during service runtime has not been mitigated as a result.
+
+* Reference List
+1. Li, W., Lemieux, Y., Gao, J., Zhao, Z., & Han, Y. (2019, April). Service mesh: Challenges, state of the art, and future research opportunities. In 2019 IEEE International Conference on Service-Oriented System Engineering (SOSE) (pp. 122-1225). IEEE.
+2. Sedghpour, M. R. S., & Townend, P. (2022, August). Service Mesh and eBPF-Powered Microservices: A Survey and Future Directions. In 2022 IEEE International Conference on Service-Oriented System Engineering (SOSE) (pp. 176-184). IEEE.

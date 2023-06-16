@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       203cb959-208a-4abe-8fc4-8eb80f6e6770
+:END:
+#+title: Amazon CloudWatch
+#+filetags:
+
+[[id:dcf5e347-8a8a-4c63-a822-53f558025f8c][AWS]]
+https://docs.aws.amazon.com/OAM/latest/APIReference/Welcome.html

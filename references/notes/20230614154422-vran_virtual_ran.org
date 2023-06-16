@@ -1,0 +1,19 @@
+:PROPERTIES:
+:ID:       fc55d9e0-251a-4558-9f4a-c92df3f3e43f
+:END:
+#+title: vRAN (Virtual RAN)
+#+filetags:
+* What is vRAN or Virtual RAN?
+vRAN decouples the software from Hardware by virtualizing Network Functions. It uses virtualization technologies such as NFV or containers to deploy [[id:fea1dd7c-fe96-474d-af03-935b09b6ef4e][CU]] and [[id:50f525c2-9912-4a1a-972a-59626c963d51][DU]] over x86 server. (or virtual [[id:1329f1c2-a4a3-456b-b114-2220d3e990db][BBU]] on a server). This is like running Functions in software.
+
+* Difference between vRAN and [[id:bb9686f3-3e83-466a-a3b5-2a2a20a361d5][C-RAN (Cloud RAN)]]
+So there is no difference between vRAN and [[id:bb9686f3-3e83-466a-a3b5-2a2a20a361d5][C-RAN (Cloud RAN)]] except that traditionally [[id:bb9686f3-3e83-466a-a3b5-2a2a20a361d5][C-RAN (Cloud RAN)]] uses proprietary hardware while vRAN uses Network Functions on the server platform. vRAN is infact a type of [[id:bb9686f3-3e83-466a-a3b5-2a2a20a361d5][C-RAN (Cloud RAN)]].
+
+[[https://telcocloudbridge.com/wp-content/uploads/2021/04/image-3-1024x513.png?ezimgfmt=ng:webp/ngcb1]]
+
+Because of vRAN HW/SW decoupling flexibility, we can achieve scalability. This can cause a decrease in hardware costs and application agility as application can be upgraded easily or swapped altogether (which is not easier with traditional hardware).
+
+However, vRAN puts servers to new limits because of the performance expectation. There has been quite an innovation on enhancing server platform to meet the performance needs of vRAN.
+
+* Reference List
+1. https://telcocloudbridge.com/blog/c-ran-vs-cloud-ran-vs-vran-vs-o-ran/

@@ -62,7 +62,7 @@ drwxr-xr-x 4 root     root     4096 Dec 11 11:23 ..
 
 Within the home directory, the user can write, edit and delete files and directories.
 
-* Adding User to the sudo Group
+* Adding User to the [[id:b48da282-af6f-4668-9592-db9cc83bbea0][sudo]] Group
 On Ubuntu, the easiest way to grant sudo privileges to a user is by adding the user to the “sudo” group. Members of this group can execute any command as root via sudo and prompted to authenticate themselves with their password when using sudo.
 
 We’re assuming that the user already exists. If you want to create a new user, check this guide.

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       a9e2019b-3961-4a56-952e-92822b13dac0
+:END:
+#+title: AWS Private 5G
+#+filetags: 5G AWS
+
+[[id:dcf5e347-8a8a-4c63-a822-53f558025f8c][AWS]]
+[[id:99370515-d845-4028-9214-6b5fdf14e6ff][5G core network]]
+
+https://aws.amazon.com/private5g/

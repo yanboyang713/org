@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       5affaba8-8e7e-4aa9-b650-4dc361bce3bb
+:END:
+#+title: Analytics on top of Service Mesh
+#+filetags:
+
+the service mesh layer is able to collect the core monitoring data in software systems, i.e., metrics, logging, and traces, as identified by Peter Bourgon [34].
+
+Current existing [[id:4f0a7a3e-db3c-4d39-b776-4b746f564347][service mesh]] solutions have extensive integration support respectively for each category.
+
+* Reference List
+1. Li, W., Lemieux, Y., Gao, J., Zhao, Z., & Han, Y. (2019, April). Service mesh: Challenges, state of the art, and future research opportunities. In 2019 IEEE International Conference on Service-Oriented System Engineering (SOSE) (pp. 122-1225). IEEE.

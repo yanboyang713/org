@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       6bfa41ee-6c60-46dc-89d8-7ddcad0cfc88
+:END:
+#+title:  events system
+#+filetags:
+
+and Fluentd [38] for event logging.

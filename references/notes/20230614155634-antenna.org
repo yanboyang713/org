@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       5be8e9fc-0ae7-40dd-8839-22492874a751
+:END:
+#+title: antenna
+#+filetags:  
+
+Antenna: It interfaces a cell phone wirelessly and transmits/receives RF signal. It decides the “SHAPE” of the coverage.
+
+* Reference List
+1. https://telcocloudbridge.com/blog/c-ran-vs-cloud-ran-vs-vran-vs-o-ran/

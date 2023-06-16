@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       1329f1c2-a4a3-456b-b114-2220d3e990db
+:END:
+#+title: BBU
+#+filetags:
+
+Baseband unit. Manages the whole base station, including operating/maintenance and signaling processing. It decides the “CAPACITY” of the system.
+
+* Reference List
+1. https://telcocloudbridge.com/blog/c-ran-vs-cloud-ran-vs-vran-vs-o-ran/

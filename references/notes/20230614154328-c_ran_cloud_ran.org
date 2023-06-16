@@ -1,0 +1,26 @@
+:PROPERTIES:
+:ID:       bb9686f3-3e83-466a-a3b5-2a2a20a361d5
+:END:
+#+title: C-RAN (Cloud RAN)
+#+filetags: C-RAN
+
+C-RAN (Also CRAN) stands for Centralized RAN or Cloud RAN. In fact, I have seen the industry uses these terms interchangeably.
+
+* Option 1
+In C-RAN (Cloud RAN) the [[id:1329f1c2-a4a3-456b-b114-2220d3e990db][BBU]] moves to a centralized location and the cell site only has the [[id:5be8e9fc-0ae7-40dd-8839-22492874a751][antenna]] and the [[id:4fb3287a-23fb-4585-bd87-be76e4b4077f][Radio Unit (RU)]]. This centralization of BBU functionality (also called BBU pool) results in the name centralized RAN or C-RAN.
+
+[[https://telcocloudbridge.com/wp-content/uploads/2021/04/image-1.png?ezimgfmt=ng:webp/ngcb1]]
+
+This results in a new interface called [[id:82d33a5e-b2c0-4188-9fa3-9d0e4709c8c5][fronthaul]], which is between the RRU and BBU pool.
+
+The benefits of C-RAN includes CAPEX and OPEX reduction as deployment and maintenance cost per cell site are reduced because of [[id:1329f1c2-a4a3-456b-b114-2220d3e990db][BBUs]] centralization.
+
+In addition, it improves spectral efficiency and reduces inter channel interferences, as centralized BBUs can share the resources dynamically among the multiple RRUs. The inter-channel interference is eased because of the joint scheduling and processing.
+
+* Option 2: C-RAN with BBU Split
+In addition, a second option of the centralized RAN architecture has a further split in [[id:1329f1c2-a4a3-456b-b114-2220d3e990db][BBUs]] into [[id:50f525c2-9912-4a1a-972a-59626c963d51][DU]] and [[id:fea1dd7c-fe96-474d-af03-935b09b6ef4e][CU]]. Here, [[id:fea1dd7c-fe96-474d-af03-935b09b6ef4e][CU]] is further towards the core network resulting in a new interface called [[id:fb3d788b-4a99-40e1-885b-467397f6e06e][midhaul]].
+
+[[https://telcocloudbridge.com/wp-content/uploads/2021/04/image-2.png?ezimgfmt=ng:webp/ngcb1]]
+
+* Reference List
+1. https://telcocloudbridge.com/blog/c-ran-vs-cloud-ran-vs-vran-vs-o-ran/

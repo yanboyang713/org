@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       b48da282-af6f-4668-9592-db9cc83bbea0
+:END:
+#+title: sudo
+#+filetags:

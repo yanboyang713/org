@@ -5,3 +5,5 @@
 #+filetags:  
 
 [[http://res.cloudinary.com/dkvj6mo4c/image/upload/v1675803089/screenshot/jtxexk0xogxutlvsrt12.png]]
+
+[[id:eab0bd77-d15c-4ac6-846a-9b3ca9664ac0][Orchestration system]]

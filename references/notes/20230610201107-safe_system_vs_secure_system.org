@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       dce6150a-1d16-4833-aedb-40319710e907
+:END:
+#+title: safe system VS secure system
+#+filetags:  
+[[id:278645d6-efd7-4127-a748-e309c118efbe][security]]
+[[id:b3ed4190-bd82-404d-8212-d2d4fd3fcc17][safety]]
+
+Safety and security are two reliability properties of a system.
+A "safe" system provides protection against errors of trusted users
+A "secure" system protects against errors introduced by untrusted users.
+
+There is considerable overlap between mechanisms to support each property.
+
+* Reference List
+1. Alexander, S., Arbaugh, W. A., Keromytis, A. D., & Smith, J. M. (1998). Safety and security of programmable network infrastructures. IEEE Communications Magazine, 36(10), 84-92.

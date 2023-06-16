@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       065ea098-bfba-4cda-9bde-aa169ffe79fa
+:END:
+#+title: RAN architecture
+#+filetags: RAN
+
+* Hostory
+From [[id:a2e2a06e-d915-4a99-aef5-e51f4b0e48b0][D-RAN (traditional RAN)]] to [[id:bb9686f3-3e83-466a-a3b5-2a2a20a361d5][C-RAN (Cloud RAN)]] to [[id:fc55d9e0-251a-4558-9f4a-c92df3f3e43f][vRAN (Virtual RAN)]] to [[id:ef47832f-5edc-4c6a-bd2d-8e02c4bd5d9a][Open-RAN]]
+[[https://telcocloudbridge.com/wp-content/uploads/2021/04/image-13-768x258.png?ezimgfmt=ng:webp/ngcb1]]
+
+* Reference List
+1. https://telcocloudbridge.com/blog/c-ran-vs-cloud-ran-vs-vran-vs-o-ran/
+2. https://www.redhat.com/architect/mobile-architecture-cloud-ran

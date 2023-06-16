@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       b3ed4190-bd82-404d-8212-d2d4fd3fcc17
+:END:
+#+title: safety
+#+filetags:
+
+[[id:4f0a7a3e-db3c-4d39-b776-4b746f564347][service mesh]]

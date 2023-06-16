@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       131bcc20-5b39-4c22-aa80-e43e5f3bd748
+:END:
+#+title: SOFAMesh
+#+filetags:
+SOFAMesh [25] replaces Envoy [26] with MOSN [27] (written in GoLang) for further performance improvements at data plane. It also makes modification to other components, e.g., moving Mixer [28] from the control plan to the data plane, in order to avoid potential performance bottleneck

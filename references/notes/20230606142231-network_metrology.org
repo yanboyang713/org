@@ -5,3 +5,6 @@
 #+filetags:  
 
 [[id:c0eef701-9240-4890-b41a-6dc829786b77][wireless measurement metrics]]
+
+* Reference List
+1. Toro, F. G., & Lehmann, H. (2021). Brief overview of the future of metrology. Measurement: Sensors, 18, 100306.

@@ -1,9 +1,0 @@
-:PROPERTIES:
-:ID:       41d4621f-665d-4ad0-a5c1-6561db1e577b
-:END:
-#+title: Cloud RAN
-#+filetags:  
-
-[[id:ef47832f-5edc-4c6a-bd2d-8e02c4bd5d9a][open-RAN]]
-
-https://www.redhat.com/architect/mobile-architecture-cloud-ran

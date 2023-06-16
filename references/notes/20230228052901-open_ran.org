@@ -1,8 +1,21 @@
 :PROPERTIES:
 :ID:       ef47832f-5edc-4c6a-bd2d-8e02c4bd5d9a
 :END:
-#+title: open-RAN
-#+filetags:  
+#+title: Open-RAN
+#+filetags: Open-RAN O-RAN
+
+[[id:60bc45fd-dfc3-4b53-852a-46ff8d77f94c][Cellular Network]]
+
+Open RAN/O-RAN (from [[https://www.o-ran.org/][O-RAN alliance]]) takes [[id:fc55d9e0-251a-4558-9f4a-c92df3f3e43f][vRAN (Virtual RAN)]] to the next level. While traditionally [[id:fc55d9e0-251a-4558-9f4a-c92df3f3e43f][vRAN (Virtual RAN)]] is a closed network, as [[id:4fb3287a-23fb-4585-bd87-be76e4b4077f][Radio Unit (RU)]], [[id:50f525c2-9912-4a1a-972a-59626c963d51][DU]] and [[id:fea1dd7c-fe96-474d-af03-935b09b6ef4e][CU]], which are all part of the RAN must be bought from the same vendor.
+
+The O-RAN alliance is working on specifications to open the interface between [[id:4fb3287a-23fb-4585-bd87-be76e4b4077f][Radio Unit (RU)]] and [[id:50f525c2-9912-4a1a-972a-59626c963d51][DU]] and further between [[id:50f525c2-9912-4a1a-972a-59626c963d51][DU]] and [[id:fea1dd7c-fe96-474d-af03-935b09b6ef4e][CU]]. This means that a customer can mix and match the components from different vendors without being locked to one vendor for all these three components, thus resulting in an open RAN network.
+
+[[https://telcocloudbridge.com/wp-content/uploads/2021/04/image-4.png?ezimgfmt=ng:webp/ngcb1]]
+
+These new open components as per O-RAN alliance’s specs are called O-RU, O-DU and O-CU (where O stands for Open) which is actually a modular base station software stack on off-the-shelf server hardware.
+
+* Slicing Architecture
+https://orandownloadsweb.azurewebsites.net/specifications
 
 [[id:87f25fec-23bd-4c2e-89fe-6a6aed910d76][SMO (Service Management and Orchestration)]]
 [[id:d93186c8-94fe-43f1-8996-a32aabc5df4e][Near real-time RIC]]
@@ -11,3 +24,4 @@
 
 * Reference List
 1. Polese, M., Bonati, L., D'Oro, S., Basagni, S., & Melodia, T. (2022). Understanding O-RAN: Architecture, interfaces, algorithms, security, and research challenges. arXiv preprint arXiv:2202.01032.
+2. https://telcocloudbridge.com/blog/c-ran-vs-cloud-ran-vs-vran-vs-o-ran/

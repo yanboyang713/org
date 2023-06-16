@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       0c6f164c-854c-4e11-8a60-f1f3260c8987
+:END:
+#+title: Kibana
+#+filetags:  
+
+* Reference List
+1. https://www.elastic.co/kibana/

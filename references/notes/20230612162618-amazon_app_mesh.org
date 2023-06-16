@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       97ea99f6-84d9-4403-9c76-ee1b820763fc
+:END:
+#+title: Amazon App Mesh
+#+filetags:
+
+ (On 28, Nov 2018), Amazon, the largest cloud vendor, also announced [[id:dcf5e347-8a8a-4c63-a822-53f558025f8c][AWS]] App Mesh, a service mesh solution for microservices on AWS. The best and worst part of AWS App Mesh is its native compatibility with Amazon Web Services. This might guarantee a minimum integration effort from users and probably provides best-effort performance, but at the same time, it might also result in vendor lock-in issues and inapplicability to hybrid cloud environments.

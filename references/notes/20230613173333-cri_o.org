@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       01bbbfa5-43aa-4bd6-9d4a-44c50a1db6cb
+:END:
+#+title: CRI-O
+#+filetags: CRI-O
+
+* Reference List
+1. “Lightweight Container Runtime for Kubernetes.” [Online]. Available:https://cri-o.io/

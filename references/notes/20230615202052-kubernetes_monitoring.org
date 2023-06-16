@@ -1,12 +1,15 @@
 :PROPERTIES:
-:ID:       c4645196-cab0-44ea-993f-451efc0ee682
+:ID:       414f560c-36fc-4208-b250-0808516ad67c
 :END:
-#+title: Kubernetes Monitoring Tools
-#+filetags:  
+#+title: Kubernetes Monitoring
+#+filetags:
+
+* Kubernetes Monitoring Tools
 
 [[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]] is a complex environment, and containerized applications can be distributed across multiple environments. Monitoring solutions must be able to aggregate metrics from across the distributed environment, and deal with the ephemeral nature of containerized resources. The following are popular monitoring tools designed for a containerized environment.
 
 + [[id:3c577bc9-0403-468a-9214-47a0c0151d6f][Kubernetes Dashboard tools]]
+
 The Kubernetes dashboard will give you a bird’s eye view of what’s going on in your clusters, but it’s not enough for production monitoring. This requires a dedicated Kubernetes monitoring tool such as [[id:ebc7a85b-cb33-4b29-93f9-0c2d5215bc7a][Prometheus]].
 
 * Reference List

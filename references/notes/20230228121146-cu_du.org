@@ -5,3 +5,5 @@
 #+filetags:
 
 [[id:6275398f-b777-4d06-8398-3e509a0cacf7][Base Station]]
+
+[[id:50f525c2-9912-4a1a-972a-59626c963d51][DU]]

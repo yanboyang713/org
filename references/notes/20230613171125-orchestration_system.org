@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       eab0bd77-d15c-4ac6-846a-9b3ca9664ac0
+:END:
+#+title: Orchestration system
+#+filetags:  
+[[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]]
+
+Orchestration system research addresses many different subject areas, including scheduling, automation, and security. However, the key characteristic that is common throughout is the complex and dynamic nature of distributed, multi-tenant cloudbased microservice systems that must be orchestrated. This complexity has led to many challenges in areas such as interservice communication, observability, reliability, single cluster to multi-cluster, hybrid environments, and multi-tenancy.
+
+The concept of [[id:4f0a7a3e-db3c-4d39-b776-4b746f564347][service mesh]] has been introduced to handle this complexity.

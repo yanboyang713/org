@@ -2,7 +2,9 @@
 :ID:       99370515-d845-4028-9214-6b5fdf14e6ff
 :END:
 #+title: 5G core network
-#+filetags:  
+#+filetags: 5G
+
+[[id:c8f358c2-d824-4c17-b02b-9aaa423b1871][5G]]
 
 + [[id:ccd1542a-488e-430d-9eba-f24c01c26bbe][Open5GS]]
 + [[id:7ac7694b-85ce-4cd8-b9b3-4423f6b58454][free5GC]]

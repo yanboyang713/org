@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       d2539ed1-6e0e-4c66-9a46-96f44502abfb
+:END:
+#+title: Tracing System
+#+filetags:
+
+Jaeger [36] and Zipkin [37] for distributed tracing

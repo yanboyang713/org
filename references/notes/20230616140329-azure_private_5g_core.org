@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       b2cc1f1a-84a8-4a56-98ee-019ff6bb3e15
+:END:
+#+title: Azure Private 5G Core
+#+filetags: azure 5G
+
+[[id:c40c4861-f09d-4bc2-a606-d2b62cc533f9][Azure]]
+[[id:99370515-d845-4028-9214-6b5fdf14e6ff][5G core network]]
+
+https://azure.microsoft.com/en-us/products/private-5g-core

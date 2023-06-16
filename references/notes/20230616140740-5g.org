@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       c8f358c2-d824-4c17-b02b-9aaa423b1871
+:END:
+#+title: 5G
+#+filetags:

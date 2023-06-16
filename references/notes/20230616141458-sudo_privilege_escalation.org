@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       70790a6a-4693-4199-9b5f-97729a09d3a4
+:END:
+#+title: sudo privilege escalation
+#+filetags:
+
+[[id:278645d6-efd7-4127-a748-e309c118efbe][security]]
+[[id:b48da282-af6f-4668-9592-db9cc83bbea0][sudo]]
+
+* Reference List
+1. https://www.thehacker.recipes/infra/privilege-escalation/unix/sudo

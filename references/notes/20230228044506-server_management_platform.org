@@ -1,8 +1,8 @@
 :PROPERTIES:
 :ID:       3d7a3738-41a1-4ade-9b8b-47394109135a
 :END:
-#+title: Server Management Platform
-#+filetags:  
+#+title: cluster Management Platform
+#+filetags: cluster
 
 + [[id:77bd7428-f1ee-4306-8d5a-62f38134dfc5][Proxmox VE]]
 + [[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]]
@@ -10,3 +10,4 @@
 + [[id:cf2c18b4-f9a0-412f-825f-11a0e837dab5][OpenStack]]
 + [[id:6bf33d95-36f3-44b4-9ea5-360995b13321][OpenShift]]
 + [[id:eebf10a7-c17a-4d17-a313-c9d620028cfa][OKD]]
++ [[id:74e60694-52a6-4eb9-8f1f-1be12893be65][Mesos]]

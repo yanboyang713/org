@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       f22ff557-f43d-4746-990a-0ec875de9eec
+:END:
+#+title: Difference between Cellular and Wi-Fi Networks
+#+filetags:  
+[[id:60bc45fd-dfc3-4b53-852a-46ff8d77f94c][Cellular Network]]
+[[id:632cf3c1-f7dc-4e2f-9ca7-e701322621bd][WIFI]]
+
+* Reference List
+1. https://www.tutorialspoint.com/difference-between-cellular-and-wi-fi-networks#:~:text=The%20basic%20difference%20between%20the,internet%20access%20on%20the%20device.

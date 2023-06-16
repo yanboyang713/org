@@ -1,0 +1,19 @@
+:PROPERTIES:
+:ID:       74a02c97-3ac5-41d6-a42c-7630e4cae5c6
+:END:
+#+title: Service Mesh in Edge Computing Environments
+#+filetags:  
+
+[[id:4f0a7a3e-db3c-4d39-b776-4b746f564347][service mesh]]
+[[id:5369d125-0f72-4140-86da-8c8d0583e9a5][edge computing]]
+
+existing service mesh solutions are mainly designed for centralized cloud environments which are typically located within a single data center, and thus have very limited support for distributed cloud scenarios.
+
+This situation is exaggerated for the emerging edge cloud paradigm [44] which advocates to distribute resources along the path between centralized data centers and the logical endpoints of a network (that may have an increasingly large number of devices) in order to improve the performance, operating cost and reliability of applications and services. On the other hand, the rising adoption of container technologies [45], [46] and microservices methodology [47], [48] in edge computing [49], has indicated the need and trend of exploration of service mesh in this area as the merging applications running on edge clouds are expected to be designed cloud-natively.
+
+It would be even more interesting and challenging to explore how service mesh can be applied in [[id:357e09dc-e3a7-4b09-a2d2-fb1da880d190][Mobile Edge Computing (MEC)]] [50] environments.
+
+deployment of a mobile edge cloud may consist of multiple sites, which usually are heterogeneous in their HW/SW setup, geographically distributed, and typically structured hierarchically. Besides, multiple VNFs2 (Virtual Network Functions [51], which may belong to different tenants) reside within the same sites where the services are provisioned. In consequence, such complexities will result in extensive effort to identify the problems and issues when migrating the service mesh into the mobile edge cloud, and design the required extensions on top of existing service mesh solutions in order to tackle the identified problems and make them optimized for mobile edge cloud environments. Example of such extensions could be optimized load balancing or service routing mechanism, with support for multi-tenancy, multi-protocol, and flexible networking typologies.
+
+* Reference List
+1. Li, W., Lemieux, Y., Gao, J., Zhao, Z., & Han, Y. (2019, April). Service mesh: Challenges, state of the art, and future research opportunities. In 2019 IEEE International Conference on Service-Oriented System Engineering (SOSE) (pp. 122-1225). IEEE.
