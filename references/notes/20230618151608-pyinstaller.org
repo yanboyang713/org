@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       64160907-b3b5-4bc8-bce9-33234ac00d7c
+:END:
+#+title: PyInstaller
+#+filetags: PyInstaller
+
+[[id:80d07df5-6da1-4c77-800c-dceeefd47f98][python]]
+
+* Reference List
+1. https://pyinstaller.org/en/stable/

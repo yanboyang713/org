@@ -1,0 +1,21 @@
+:PROPERTIES:
+:ID:       dc1ddca6-8e40-43ed-a760-8b7aaa2e1a08
+:END:
+#+title: git submodule push
+#+filetags:  
+
+[[id:efd01d0c-9fbb-4978-83f8-8e9d886f895b][git submodule]]
+
+#+begin_src bash
+$ cd your_submodule
+$ git checkout master
+<hack,edit>
+$ git commit -a -m "commit in submodule"
+$ git push
+$ cd ..
+$ git add your_submodule
+$ git commit -m "Updated submodule"
+#+end_src
+
+* Reference List
+1. https://stackoverflow.com/questions/5814319/git-submodule-push

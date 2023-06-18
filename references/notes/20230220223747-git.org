@@ -2,7 +2,7 @@
 :ID:       28776313-f579-466f-9a3d-216fc14a5308
 :END:
 #+title: git
-#+filetags:  
+#+filetags: git
 
 Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
 

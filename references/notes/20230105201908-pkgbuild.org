@@ -2,7 +2,7 @@
 :ID:       917be974-9940-4719-97e3-1e40141e88cc
 :END:
 #+title: PKGBUILD
-#+filetags:  
+#+filetags: PKGBUILD
 
 PKGBUILD is a shell script containing the build information required by Arch Linux packages.
 

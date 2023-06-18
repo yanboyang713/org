@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       a160ce9d-6662-49f1-82c3-f824002cdc07
+:END:
+#+title: rust PKGBUILD
+#+filetags: rust PKGBUILD
+
+[[id:a2da1c32-ba1a-4c2c-9374-1bd8896920fa][rust]]
+[[id:917be974-9940-4719-97e3-1e40141e88cc][PKGBUILD]]
+
+* Reference List
+1. https://wiki.archlinux.org/title/Rust_package_guidelines

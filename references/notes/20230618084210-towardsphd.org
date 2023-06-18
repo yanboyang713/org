@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       4b9512b3-8e37-4a61-8ada-2212ff99fbcb
+:END:
+#+title: towardsphd
+#+filetags:
+
+[[id:49b2587b-d6d4-462e-b373-ed39f7fb70b7][research tools]]
+
+https://towardsphd.com/
