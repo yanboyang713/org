@@ -1,0 +1,25 @@
+:PROPERTIES:
+:ID:       a971d7fa-18f7-4cdc-abc5-63ff662ffdb0
+:END:
+#+title: paru
+#+filetags:
+
+Paru is your standard pacman wrapping AUR helper with lots of features and minimal interaction for [[id:dc13b67c-8d8b-40fd-b8cf-9ea8547e485d][Arch Linux]].
+
+* Installation
+#+begin_src bash
+sudo pacman -S --needed base-devel
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -si
+#+end_src
+
+* --overwrite install conflicting package
+#+begin_src bash
+paru -S dockerfile-language-server-bin --overwrite '*'
+paru -Syu --overwrite '*'
+#+end_src
+
+* Reference List
+1. https://github.com/Morganamilo/paru/issues/309
+2. https://github.com/Morganamilo/paru
