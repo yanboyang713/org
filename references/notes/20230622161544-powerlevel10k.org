@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       ef30a8c0-36f1-4e3c-bd69-f475bede470b
+:END:
+#+title: Powerlevel10k
+#+filetags:  
+
+https://github.com/romkatv/powerlevel10k#arch-linux

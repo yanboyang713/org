@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       d93f7ea8-4254-4640-8845-bfd6f23bce16
+:END:
+#+title: arch linux kernel
+#+filetags:  
+
+[[id:dc13b67c-8d8b-40fd-b8cf-9ea8547e485d][Arch Linux]]
+[[id:fc1c07c3-0d30-4eeb-a145-c018ddf16463][kernel]]
+
+* Reference List
+1. https://towardsdatascience.com/how-to-ditching-ubuntu-in-favor-of-arch-linux-for-a-deep-learning-workstation-c7ffae120f32

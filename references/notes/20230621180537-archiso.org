@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       e09df7bb-802c-4ab3-bc41-7e1376fcc57a
+:END:
+#+title: Archiso
+#+filetags:  
+
+https://wiki.archlinux.org/title/archiso
+
+[[id:f6c12716-7d4f-4def-af11-73f122e5c821][Meta Scientific Linux]]

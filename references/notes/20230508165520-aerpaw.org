@@ -11,3 +11,6 @@ https://sites.google.com/ncsu.edu/aerpaw-wiki/aerpaw-user-manual
 
 Experiment Web Portal (Public)
 https://152.14.188.14:8443/
+
+* Devices
++ [[id:b87f3ad0-ed95-4b61-8cd2-995fceb7fb57][terragraph]]

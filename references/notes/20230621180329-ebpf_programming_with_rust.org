@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       432ef50d-2903-4aa9-8c82-370cfcd38dc9
+:END:
+#+title: eBPF programming with Rust
+#+filetags:  
+
+[[id:bf5b14f3-8e4c-4706-aea0-102268c418d3][eBPF]]
+[[id:a2da1c32-ba1a-4c2c-9374-1bd8896920fa][rust]]
+
+https://www.amazon.com/Oxidize-eBPF-programming-Rust/dp/B0BPR28518
+https://konghq.com/blog/engineering/writing-an-ebpf-xdp-load-balancer-in-rust

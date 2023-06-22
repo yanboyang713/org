@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       fae6fbc4-5a94-474e-b47a-901ae0572c21
+:END:
+#+title: Extract horizontal and vertical lines
+#+filetags:  
+
+[[id:dc6c08ce-627a-4c65-9903-7f67d557a2f5][image processing]]
+
+* Reference List
+1. https://docs.opencv.org/3.4/dd/dd7/tutorial_morph_lines_detection.html

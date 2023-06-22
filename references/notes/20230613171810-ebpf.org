@@ -12,3 +12,6 @@ In addition to several architectural improvements, eBPF introduces the capabilit
 
 * Reference List
 1. Sedghpour, M. R. S., & Townend, P. (2022, August). Service Mesh and eBPF-Powered Microservices: A Survey and Future Directions. In 2022 IEEE International Conference on Service-Oriented System Engineering (SOSE) (pp. 176-184). IEEE.
+2. https://www.youtube.com/watch?v=ThtRT8dhu8c&ab_channel=CodingTech
+3. https://www.tigera.io/learn/guides/ebpf/
+4. https://www.oreilly.com/library/view/learning-ebpf/9781098135119/ch01.html

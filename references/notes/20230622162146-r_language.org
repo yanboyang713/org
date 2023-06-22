@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       802cbd39-a5b4-4659-98ca-5a2a2eeb1b03
+:END:
+#+title: r language
+#+filetags:  
+
+IDE
+RStudio is becoming Posit
+https://posit.co/blog/rstudio-is-becoming-posit/

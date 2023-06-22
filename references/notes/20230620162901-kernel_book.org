@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       0461f886-b028-4656-b423-3881cfabf9ac
+:END:
+#+title:  kernel book
+#+filetags:  
+
+[[id:fc1c07c3-0d30-4eeb-a145-c018ddf16463][kernel]]
+
+* Reference List
+1. https://computingforgeeks.com/best-linux-kernel-programming-books/

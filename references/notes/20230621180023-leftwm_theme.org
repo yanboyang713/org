@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       d81ccc22-75cc-4db8-84fc-5d1d16a562e7
+:END:
+#+title: LeftWM theme
+#+filetags:  
+
+[[id:a92001c0-973c-4ffc-b3d3-f20253d4ab3e][leftWM]]
+
+https://github.com/di-effe/catppuccin
+https://github.com/di-effe/amber
+https://github.com/AethanFoot/leftwm-theme-dracula-rounded
+https://github.com/taylor85345/leftwm-theme-garden
+https://github.com/b4skyx/leftwm-soothe

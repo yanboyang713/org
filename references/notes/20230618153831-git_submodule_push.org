@@ -9,7 +9,7 @@
 #+begin_src bash
 $ cd your_submodule
 $ git checkout master
-<hack,edit>
+git add *
 $ git commit -a -m "commit in submodule"
 $ git push
 $ cd ..

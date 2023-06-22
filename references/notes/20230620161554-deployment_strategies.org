@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       4828849a-85cc-4739-a65a-bb8057845103
+:END:
+#+title: Deployment Strategies
+#+filetags:  
+
+[[id:30e9c78c-eabe-45af-8618-ead8b41f8ad4][Canary Deployment]]
+
+* Reference List
+1. https://www.youtube.com/watch?v=AWVTKBUnoIg&ab_channel=ByteByteGo

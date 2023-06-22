@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       fc1c07c3-0d30-4eeb-a145-c018ddf16463
+:END:
+#+title: kernel
+#+filetags: kernel linux
+
+[[id:bf5b14f3-8e4c-4706-aea0-102268c418d3][eBPF]]

@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       964c723c-7e9e-47c5-902c-321bca23c1be
+:END:
+#+title: zsh theme
+#+filetags:
+
+[[id:ccf63974-d736-4927-92d7-41f6c1a5ea06][zsh]]
+
++ [[id:ef30a8c0-36f1-4e3c-bd69-f475bede470b][Powerlevel10k]]

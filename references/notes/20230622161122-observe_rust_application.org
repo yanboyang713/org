@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       5893fa85-de33-45ad-9b5d-2e3dbf078755
+:END:
+#+title: Observe Rust application
+#+filetags:  
+
+[[id:9b168294-23a1-47dc-b079-09813a78859b][cloud native observability]]
+[[id:a2da1c32-ba1a-4c2c-9374-1bd8896920fa][rust]]
+
+* Reference List
+1. https://quickwit.io/blog/observing-rust-app-with-quickwit-jaeger-grafana

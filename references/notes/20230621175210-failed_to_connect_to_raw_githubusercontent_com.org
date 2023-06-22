@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       2ecccb51-f013-46d4-a9e1-65f63b59938a
+:END:
+#+title: Failed to connect to raw.githubusercontent.com
+#+filetags:  
+
+[[id:29337d81-6b02-4a62-bd87-6e9d5d454af4][github]]
+
+https://www.debugpoint.com/failed-connect-raw-githubusercontent-com-port-443/

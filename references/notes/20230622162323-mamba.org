@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       23515ee9-4914-41e6-b3b9-fd5f52bcd84a
+:END:
+#+title: mamba
+#+filetags:  
+
+[[id:80d07df5-6da1-4c77-800c-dceeefd47f98][python]]
+
+https://mamba.readthedocs.io/en/latest/index.html

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       71838dcc-b8fd-4fe0-8ff2-bc13d0deaf26
+:END:
+#+title: API Architecture
+#+filetags:  
+
++ [[id:8aeb67cf-d0e4-44d2-a3d4-8e4d9f71748b][RESTful]]
+
+* Reference List
+1. https://www.youtube.com/watch?v=4vLxWqE94l4&ab_channel=ByteByteGo

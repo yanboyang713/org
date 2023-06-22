@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       4ad7ca6e-cf61-41f2-94af-33e01518569c
+:END:
+#+title: Distributed System Patterns
+#+filetags:  
+
+https://www.youtube.com/watch?v=nH4qjmP2KEE&ab_channel=ByteByteGo

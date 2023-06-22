@@ -1,0 +1,30 @@
+:PROPERTIES:
+:ID:       88636381-3a96-47bd-b97b-d61c65f9d03b
+:END:
+#+title: git submodule delete
+#+filetags:  
+
+[[id:efd01d0c-9fbb-4978-83f8-8e9d886f895b][git submodule]]
+
+In modern git (I'm writing this in 2022, with an updated git installation), this has become quite a bit simpler:
+
+Run:
+#+begin_src bash
+git rm <path-to-submodule>
+#+end_src
+
+and commit.
+
+This removes the filetree at <path-to-submodule>, and the submodule's entry in the .gitmodules file. I.e. all traces of the submodule in your repository proper are removed.
+
+As the [[https://git-scm.com/docs/gitsubmodules][docs note]] however, the .git dir of the submodule is kept around (in the modules/ directory of the main project's .git dir), "to make it possible to checkout past commits without requiring fetching from another repository".
+
+If you nonetheless want to remove this info, manually delete the submodule's directory in .git/modules/, and remove the submodule's entry in the file .git/config. These steps can be automated using the commands
+
+#+begin_src bash
+rm -rf .git/modules/<path-to-submodule>
+git config --remove-section submodule.<path-to-submodule>
+#+end_src
+
+* Reference List
+1. https://stackoverflow.com/questions/1260748/how-do-i-remove-a-submodule

@@ -6,5 +6,8 @@
 
 [[id:b1cf8bef-07d8-44c4-bb19-c3362a74463f][machine learning]] Operations (MLOps), derived from [[id:df1d63a9-ab91-406c-bd99-e37b9db2a645][DevOps]]
 
+
+[[id:8aeb67cf-d0e4-44d2-a3d4-8e4d9f71748b][RESTful]]
+
 * Reference List
 1. https://helda.helsinki.fi/bitstream/handle/10138/356945/Luo_Yumo_thesis_2023.pdf?sequence=2&isAllowed=y

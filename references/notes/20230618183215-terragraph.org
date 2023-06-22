@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       b87f3ad0-ed95-4b61-8cd2-995fceb7fb57
+:END:
+#+title: terragraph
+#+filetags: terragraph
+
+[[id:7530cc6e-e1dd-4b0d-ba77-34f317669ea7][Meta]] created Terragraph.
+
+[[id:a663f0da-be79-4371-a8d7-8f02576edc81][60 GHz]]
+
+* Reference List
+1. https://terragraph.com/

@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       a92001c0-973c-4ffc-b3d3-f20253d4ab3e
+:END:
+#+title: leftWM
+#+filetags: leftWM
+
+LeftWM is a [[id:61372015-240c-40a5-abb5-ab42d9221b28][tiling window manager]] written in [[id:a2da1c32-ba1a-4c2c-9374-1bd8896920fa][Rust]] that aims to be stable and performant. LeftWM is designed to do one thing and to do that one thing well: be a window manager.
+
+[[id:d81ccc22-75cc-4db8-84fc-5d1d16a562e7][LeftWM theme]]
+
+* Reference List
+1. https://github.com/leftwm/leftwm

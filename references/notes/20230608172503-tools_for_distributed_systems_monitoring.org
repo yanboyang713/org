@@ -43,7 +43,6 @@ Most observability platforms provide the detailed information a user needs to ea
 
 * [[id:5affaba8-8e7e-4aa9-b650-4dc361bce3bb][Analytics on top of Service Mesh]]
 
-
 * Reference List
 1. Kufel, Ł. (2016). Tools for distributed systems monitoring. Foundations of computing and decision sciences, 41(4), 237-260.
 
@@ -54,3 +53,4 @@ Most observability platforms provide the detailed information a user needs to ea
 4. https://medium.com/@surfd1001/things-to-know-about-observability-mechanisms-a52876e421c7
 5. https://microsoft.github.io/code-with-engineering-playbook/observability/log-vs-metric-vs-trace/
 6. https://www.crowdstrike.com/cybersecurity-101/observability/observability-vs-monitoring/#:~:text=Monitoring%20tells%20you%20that%20something,problem%2C%20and%20locate%20the%20error.
+7. https://newrelic.com/blog/best-practices/what-is-cloud-native-observability
