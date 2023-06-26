@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       20954157-6416-4289-bc7c-248bdfad167e
+:END:
+#+title: programming language
+#+filetags:  
+
+[[id:802cbd39-a5b4-4659-98ca-5a2a2eeb1b03][r language]]
+[[id:80d07df5-6da1-4c77-800c-dceeefd47f98][python]]
+[[id:a2da1c32-ba1a-4c2c-9374-1bd8896920fa][rust]]
+[[id:7efe38ee-a4b5-49f4-ae9f-d560f563935d][C++]]

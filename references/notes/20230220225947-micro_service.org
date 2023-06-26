@@ -15,6 +15,8 @@ The core proposition of microservices is to break down a complex monolith into s
 * methodologies of microservices
 The methodologies of microservices can dramatically reduce the incremental operational burden to software service deployment and that is how cloud-native defined. In essence, a cloud-native architecture is a design methodology that allows dynamic and agile application development techniques that take a modular approach to building, running, and updating software through a suite of cloud-based microservices. However, despite significant improvements in both efficiency and productivity during the development and deployment phases, the operational complexity during service runtime has not been mitigated as a result.
 
+[[id:4ad7ca6e-cf61-41f2-94af-33e01518569c][Distributed System Patterns]]
+
 * Reference List
 1. Li, W., Lemieux, Y., Gao, J., Zhao, Z., & Han, Y. (2019, April). Service mesh: Challenges, state of the art, and future research opportunities. In 2019 IEEE International Conference on Service-Oriented System Engineering (SOSE) (pp. 122-1225). IEEE.
 2. Sedghpour, M. R. S., & Townend, P. (2022, August). Service Mesh and eBPF-Powered Microservices: A Survey and Future Directions. In 2022 IEEE International Conference on Service-Oriented System Engineering (SOSE) (pp. 176-184). IEEE.

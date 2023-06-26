@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       476dea5f-9293-4c15-83b3-4152fa6f39c9
+:END:
+#+title: digital twin
+#+filetags:  
+
+[[id:baa44c0a-396c-4ffc-93bc-0d3f2bb46819][Blue-Green Deployment]] + simulation + analysis

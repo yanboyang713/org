@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       1c29a4fe-e243-4d11-ba5c-5e204c09501d
+:END:
+#+title: eBPF book
+#+filetags: eBPF
+
+[[id:bf5b14f3-8e4c-4706-aea0-102268c418d3][eBPF]]

@@ -6,4 +6,6 @@
 
 [[id:80d07df5-6da1-4c77-800c-dceeefd47f98][python]]
 
-https://mamba.readthedocs.io/en/latest/index.html
+* Reference List
+1. https://blog.hpc.qmul.ac.uk/mamba.html#:~:text=mamba%20is%20a%20re%2Dimplementation,Red%20Hat%2C%20Fedora%20and%20OpenSUSE
+2. https://mamba.readthedocs.io/en/latest/index.html

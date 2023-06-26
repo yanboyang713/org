@@ -2,9 +2,14 @@
 :ID:       4828849a-85cc-4739-a65a-bb8057845103
 :END:
 #+title: Deployment Strategies
-#+filetags:  
+#+filetags:
 
-[[id:30e9c78c-eabe-45af-8618-ead8b41f8ad4][Canary Deployment]]
+* History
++ [[id:a1f0a0b0-c168-47d3-9478-40abea343cf7][Big Bang Deployment]] (earliest)
++ [[id:55392bf6-b873-4c80-899b-4bd959064539][Rolling Deployment]]
++ [[id:baa44c0a-396c-4ffc-93bc-0d3f2bb46819][Blue-Green Deployment]]
++ [[id:30e9c78c-eabe-45af-8618-ead8b41f8ad4][Canary Deployment]]
++ [[id:cdc89053-bb94-4f64-a378-eae4c62e2b0b][Feature Toggle]]
 
 * Reference List
 1. https://www.youtube.com/watch?v=AWVTKBUnoIg&ab_channel=ByteByteGo
