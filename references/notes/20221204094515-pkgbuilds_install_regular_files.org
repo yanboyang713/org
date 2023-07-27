@@ -10,6 +10,7 @@ It depends what folder contains. if it only contains regular files (non-executab
 install -d ${pkgdir}/opt/
 install -m 644 ${srcdir}/${pkgname}-${pkgver}/folder/* ${pkgdir}/opt/
 #+end_src
+
 If it contains subdirectories:
 #+begin_src bash
 install -d ${pkgdir}/opt/

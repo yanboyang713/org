@@ -2,7 +2,7 @@
 :ID:       605f9bc6-7c2d-4ce0-91d3-b001f279323e
 :END:
 #+title: Virtual Machine
-#+filetags: Virtual Machine
+#+filetags: Virtual Machine vm
 
 * What is a virtual machine?
 A Virtual Machine (VM) is a compute resource that uses software instead of a physical computer to run programs and deploy apps. One or more virtual “guest” machines run on a physical “host” machine.  Each virtual machine runs its own operating system and functions separately from the other VMs, even when they are all running on the same host. This means that, for example, a virtual MacOS virtual machine can run on a physical PC.
@@ -40,6 +40,7 @@ Users can choose from two different types of virtual machines—process VMs and 
 + [[id:cf2c18b4-f9a0-412f-825f-11a0e837dab5][OpenStack]]
 + [[id:e6303bdc-b166-486e-8e76-f45b619a376b][multipass]]
 + [[id:77bd7428-f1ee-4306-8d5a-62f38134dfc5][Proxmox VE]]
++ [[id:f321be5e-be49-453c-8939-e5246ab88190][VirtualBox]]
 
 * Reference List
 1. https://www.vmware.com/topics/glossary/content/virtual-machine.html

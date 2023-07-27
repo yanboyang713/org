@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       c516b0cb-faaf-42fc-9b36-328dc36c1f79
+:END:
+#+title: embedded database
+#+filetags:
+
+* NoSQL
++ [[id:bc80aa9f-22c2-4289-8c65-9abbbd9d535d][PoloDB]]
++ [[id:a690b1e3-0284-41ce-8a21-878b335a69b4][Elmo]]

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       f1825306-e4ce-4f46-b82c-b0766939a3c0
+:END:
+#+title: Wrapper for bitwarden CLI
+#+filetags:  
+
+[[id:066fe726-e405-428e-967e-3702cfa374da][bitwarden]]
+
+* Reference List
+1. https://forum.endeavouros.com/t/wrapper-for-bitwardencli-in-bash/16381

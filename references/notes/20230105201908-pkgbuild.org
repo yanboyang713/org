@@ -9,6 +9,7 @@ PKGBUILD is a shell script containing the build information required by Arch Lin
 Packages in Arch Linux are built using the makepkg utility. When makepkg is run, it searches for a PKGBUILD file in the current directory and follows the instructions therein to either compile or otherwise acquire the files to build a package archive (pkgname.pkg.tar.zst). The resulting package contains binary files and installation instructions, readily installable with pacman.
 
 [[id:bf45a0e9-97e0-499e-8597-65ce23618425][PKGBUILDs install regular files]]
+[[id:e3f304fa-6c92-4569-967a-38ec59404ca6][Linux Directory Structure]]
 
 * Check sha256sums
 [[id:ffe1dad4-f8b9-4089-95ae-becfd572bd80][SHA256 checksum]]

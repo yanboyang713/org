@@ -5,3 +5,8 @@
 #+filetags:  
 
 [[id:278645d6-efd7-4127-a748-e309c118efbe][security]]
+
+* Instation
+#+begin_src bash
+paru -S bitwarden-cli-bin
+#+end_src

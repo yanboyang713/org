@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       1c71bd7f-d70e-49dd-a732-3879d7288d2f
+:END:
+#+title: display server protocol
+#+filetags:
+
++ [[id:11743715-9a10-4732-9081-68d0a614cf20][Wayland]]
++ [[id:fe1f3869-8620-4fad-8b01-f2fa6aa75331][Xorg]]

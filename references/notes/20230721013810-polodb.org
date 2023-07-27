@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       bc80aa9f-22c2-4289-8c65-9abbbd9d535d
+:END:
+#+title: PoloDB
+#+filetags:  
+PoloDB is a library written in [[id:a2da1c32-ba1a-4c2c-9374-1bd8896920fa][Rust]] that implements a lightweight MongoDB.
+
+* Reference List
+1. https://github.com/PoloDB/PoloDB

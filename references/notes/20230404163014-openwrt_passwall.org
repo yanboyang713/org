@@ -4,8 +4,11 @@
 #+title: openwrt passwall
 #+filetags:  
 
-[[id:dfedb92d-7290-4643-b06b-088a497746b3][Openwrt]]
-
+* [[id:dfedb92d-7290-4643-b06b-088a497746b3][Openwrt]] Client
 bypass chinese [[id:f7904304-e3e3-484c-b541-349030a56fe3][firewall]]
 
-https://github.com/xiaorouji/openwrt-passwall
+* Server
+[[id:ce2da6cf-af1b-4da7-a059-4bbe38bdbf20][v2ray]]
+
+* Reference List
+1. https://github.com/xiaorouji/openwrt-passwall

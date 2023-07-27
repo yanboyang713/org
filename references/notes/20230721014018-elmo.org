@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       a690b1e3-0284-41ce-8a21-878b335a69b4
+:END:
+#+title: Elmo
+#+filetags:
+
+[[id:a2da1c32-ba1a-4c2c-9374-1bd8896920fa][rust]]
+
+* Reference List
+1. https://github.com/zumero/Elmo
