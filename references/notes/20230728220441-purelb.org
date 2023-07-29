@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       2354c245-044c-4705-90ed-944ab2168d0b
+:END:
+#+title: PureLB
+#+filetags:  
+
+* Reference List
+1. https://github.com/purelb/purelb
+2. https://gitlab.com/purelb/purelb

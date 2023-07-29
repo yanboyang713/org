@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       f009c17a-000d-47e8-a2bb-456e2ee595f1
+:END:
+#+title: cAP ax
+#+filetags:  
+
+* Reference List
+1. https://mikrotik.com/product/cap_ax
+2. https://www.wavonline.com/products/mikrotik-capgi-5haxd2haxd-us/p-224700/

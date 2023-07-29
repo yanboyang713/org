@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       9e995513-6ee6-45d8-b224-080c85d13264
+:END:
+#+title: L009UiGS-RM
+#+filetags:
+
+* Reference List
+1. https://mikrotik.com/product/l009uigs_rm
+2. https://www.wavonline.com/products/mikrotik-l009uigs-rm/p-226400/

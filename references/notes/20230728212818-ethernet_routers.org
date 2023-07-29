@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       c665360e-5667-498f-a4dd-39702adc7baa
+:END:
+#+title: ethernet routers
+#+filetags:  
+
+* [[id:7b3d4c7a-30a8-4f0f-a587-fdbb39109e57][mikrotik]]
++ [[id:9e995513-6ee6-45d8-b224-080c85d13264][L009UiGS-RM]]
