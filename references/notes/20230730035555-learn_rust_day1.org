@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       e2cfbd51-71a9-4a32-82cc-1c41654ee281
+:END:
+#+title: learn rust Day1
+#+filetags:
+
+[[id:9d91bf12-660c-42df-9b76-5bafdd255251][Cargo]]
+
+* IDE
++ [[id:bc46bd19-7e0a-416e-980b-f253a2a5ecd8][VS Code]]
++ [[id:4ccdaeff-fd9f-4767-aa32-161a2862f2aa][Configuring Emacs for Rust development]]
+
+* Reference List
+1. https://google.github.io/comprehensive-rust/cargo.html

@@ -3,3 +3,24 @@
 :END:
 #+title: monolithic kernel
 #+filetags:
+
+* Introduction
+Monolithic Kernel is another classification of [[id:fc1c07c3-0d30-4eeb-a145-c018ddf16463][Kernel]]. Like [[id:0a48adc4-8a91-48b7-bb10-8c4b9d0cef6f][microkernel]], this one also manages system resources between application and hardware, but user services and kernel services are implemented under the same address space. It increases the size of the kernel, thus increasing the size of the operating system as well.  This kernel provides CPU scheduling, memory management, file management, and other operating system functions through system calls. As both services are implemented under the same address space, this makes operating system execution faster.
+
+Below is the diagrammatic representation of the Monolithic Kernel:
+
+[[https://media.geeksforgeeks.org/wp-content/uploads/20230111170517/monolithic_kernel.jpeg]]
+
+If any service fails the entire system crashes, and it is one of the drawbacks of this kernel. The entire operating system needs modification if the user adds a new service.
+
+* Advantages of Monolithic Kernel
++ One of the major advantages of having a monolithic kernel is that it provides CPU scheduling, memory management, file management, and other operating system functions through system calls.
++ The other one is that it is a single large process running entirely in a single address space.
++ It is a single static binary file. Examples of some Monolithic Kernel-based OSs are Unix, Linux, Open VMS, XTS-400, z/TPF, [[id:f6c12716-7d4f-4def-af11-73f122e5c821][Meta Scientific Linux]], [[id:dc13b67c-8d8b-40fd-b8cf-9ea8547e485d][Arch Linux]].
+
+* Disadvantages of Monolithic Kernel
++ One of the major disadvantages of a monolithic kernel is that if anyone service fails it leads to an entire system failure.
++ If the user has to add any new service. The user needs to modify the entire operating system.
+
+* Reference List
+1. https://www.geeksforgeeks.org/monolithic-kernel-and-key-differences-from-microkernel/

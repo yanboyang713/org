@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       25cbff65-69b4-4fae-ba0a-1057a8b4451f
+:END:
+#+title: Git Forks and Upstreams
+#+filetags:
+
+[[id:28776313-f579-466f-9a3d-216fc14a5308][git]]
+https://www.atlassian.com/git/tutorials/git-forks-and-upstreams

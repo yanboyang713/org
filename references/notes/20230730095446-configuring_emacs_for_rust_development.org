@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       4ccdaeff-fd9f-4767-aa32-161a2862f2aa
+:END:
+#+title: configuring Emacs for Rust development
+#+filetags:
+
+[[id:19182f6d-b637-4879-8e9c-b093f492db5c][emacs]]
+[[id:a2da1c32-ba1a-4c2c-9374-1bd8896920fa][rust]]
+
+* Reference List
+1. https://robert.kra.hn/posts/rust-emacs-setup/

@@ -3,9 +3,11 @@
 :END:
 #+title: magit
 #+filetags:
+Magit is a complete text-based user interface to [[id:28776313-f579-466f-9a3d-216fc14a5308][Git]] based on [[id:19182f6d-b637-4879-8e9c-b093f492db5c][emacs]]. It fills the glaring gap between the Git command-line interface and various GUIs, letting you perform trivial as well as elaborate version control tasks with just a couple of mnemonic key presses. Magit looks like a prettified version of what you get after running a few Git commands but in Magit every bit of visible information is also actionable to an extent that goes far beyond what any Git GUI provides and it takes care of automatically refreshing this output when it becomes outdated. In the background Magit just runs Git commands and if you wish you can see what exactly is being run, making it possible for you to learn the git command-line by using Magit.
 
-[[id:19182f6d-b637-4879-8e9c-b093f492db5c][emacs]]
-[[id:37b5d73b-d976-401c-b2ad-5d78678edaa3][git rebase]]
+Using Magit for a while will make you a more effective version control user. Magit supports and streamlines the use of Git features that most users and developers of other Git clients apparently thought could not be reasonably mapped to a non-command-line interface. Magit is both faster and more intuitive than either the command line or any GUI and these holds for both Git beginners and experts alike.
+
+[[id:3c448b4f-1241-4066-8c7b-16776e4fe38e][A walk through the Magit interface]]
 
 * Reference List
 1. https://magit.vc/manual/magit/Rebasing.html

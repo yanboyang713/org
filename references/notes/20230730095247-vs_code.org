@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       bc46bd19-7e0a-416e-980b-f253a2a5ecd8
+:END:
+#+title: VS Code
+#+filetags:

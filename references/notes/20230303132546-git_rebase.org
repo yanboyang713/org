@@ -2,7 +2,9 @@
 :ID:       37b5d73b-d976-401c-b2ad-5d78678edaa3
 :END:
 #+title: git rebase
-#+filetags:  
+#+filetags: git
+
+[[id:28776313-f579-466f-9a3d-216fc14a5308][git]]
 
 Rebase itself has 2 main modes: "manual" and "interactive" mode.
 

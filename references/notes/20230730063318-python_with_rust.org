@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       ffc59881-a09e-4120-8356-02400e86777f
+:END:
+#+title: Python with Rust
+#+filetags:  
+
+[[id:a2da1c32-ba1a-4c2c-9374-1bd8896920fa][rust]]
+[[id:80d07df5-6da1-4c77-800c-dceeefd47f98][python]]
+
+[[id:7d02ab4d-ba9f-401e-a82a-3743a9407664][Rust with Python]]
+
+* Reference List
+1. https://www.infoworld.com/article/3664124/how-to-use-rust-with-python-and-python-with-rust.html

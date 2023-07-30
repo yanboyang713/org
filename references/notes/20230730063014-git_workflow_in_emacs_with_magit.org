@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       5df59cfa-cf8e-44f8-9722-15a48de63402
+:END:
+#+title: Git Workflow in Emacs with Magit
+#+filetags:  
+
+[[id:28776313-f579-466f-9a3d-216fc14a5308][git]]
+[[id:57c2901e-fc29-4286-ac12-5bdc179b4247][magit]]
+
+* Reference List
+1. https://systemcrafters.net/mastering-git-with-magit/everyday-git-workflow/

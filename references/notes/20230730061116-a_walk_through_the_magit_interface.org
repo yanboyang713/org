@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       3c448b4f-1241-4066-8c7b-16776e4fe38e
+:END:
+#+title: A walk through the Magit interface
+#+filetags:  
+
+* Reference List
+1. https://emacsair.me/2017/09/01/magit-walk-through/

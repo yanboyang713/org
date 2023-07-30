@@ -4,10 +4,11 @@
 #+title: rust learning
 #+filetags: rust book
 
-https://github.com/sunface/rust-course
+[[id:e2cfbd51-71a9-4a32-82cc-1c41654ee281][learn rust Day1]]
 
-https://github.com/sunface/rust-by-practice
-
-https://github.com/rustlang-cn/rusty-book
-
-https://zhuanlan.zhihu.com/p/411524054?utm_id=0
+* Reference List
+1. https://google.github.io/comprehensive-rust/
+2. https://github.com/sunface/rust-course
+3. https://github.com/sunface/rust-by-practice
+4. https://github.com/rustlang-cn/rusty-book
+5. https://zhuanlan.zhihu.com/p/411524054?utm_id=0
