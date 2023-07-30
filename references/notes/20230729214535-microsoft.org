@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       3e2293f1-d2bf-4bdb-88b7-58bd751db578
+:END:
+#+title: microsoft
+#+filetags:  
+
+Boyang Yan/boyyan's employee number is 1417998

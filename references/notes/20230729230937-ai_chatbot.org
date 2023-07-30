@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       f7a3a149-16bd-4a00-ad27-0edc68d9a4a5
+:END:
+#+title: AI chatbot
+#+filetags:  
+
++ [[id:41607733-bee3-4525-b956-478fc5bb7e68][ChatGPT]]
++ [[id:71a3e25a-0942-4f01-a665-7de65fbeb9f4][Google Bard]]

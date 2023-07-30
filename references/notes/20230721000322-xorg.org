@@ -1,7 +1,7 @@
 :PROPERTIES:
 :ID:       fe1f3869-8620-4fad-8b01-f2fa6aa75331
 :END:
-#+title: Xorg
+#+title: Xorg/X11
 #+filetags:  
 
 https://wiki.archlinux.org/title/Xorg

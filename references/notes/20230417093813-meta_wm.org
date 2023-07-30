@@ -3,5 +3,7 @@
 :END:
 #+title: meta-wm
 #+filetags:  
+[[id:fe1f3869-8620-4fad-8b01-f2fa6aa75331][Xorg/X11]]
 
-https://github.com/yanboyang713/meta-wm
+* Reference List
+1. https://github.com/yanboyang713/meta-wm

@@ -1,0 +1,67 @@
+:PROPERTIES:
+:ID:       9556f3e2-8e6b-4cd6-b614-1669fbce67af
+:END:
+#+title: Chinese support
+#+filetags:
+
+[[id:f6c12716-7d4f-4def-af11-73f122e5c821][Meta Scientific Linux]] To properly display Chinese, you must set the locale correctly and install the appropriate Chinese fonts.
+
+* locale settings
+** Install Chinese locale
+In Linux, locales are used to set up different environments for running programs. Commonly used Chinese locales are (the most intuitive is the number of words that can be displayed):
+#+begin_src file
+zh_CN.GB2312
+zh_CN.GBK
+zh_CN.GB18030
+zh_CN.UTF-8
+zh_TW.BIG-5
+zh_TW.UTF-8
+#+end_src
+
+It is recommended to use *UTF-8* locale. You need to modify */etc/locale.gen* to set the locales that can be used in the system (erase the comment symbol "#" before the corresponding item):
+#+begin_src file
+en_US.UTF-8 UTF-8
+zh_CN.UTF-8 UTF-8
+#+end_src
+
+After executing *locale-gen*, the selected locales can be used in the system. You may use *locale* to view the currently used locale(s), and *locale -a* to view the currently available locales.
+
+** Enable Chinese locales
+Warning: Globally setting Chinese locales in /etc/locale.conf will cause tty to display garbled texts due to the tty glyph limitation of Linux kernel. To properly display Chinese characters under tty, install and configure [[https://aur.archlinux.org/packages/zhcon][zhcon]].
+
+Set the global default locale to English (optional)
+
+To avoid the tty garbled text issue mentioned above, globally set the LANG locale to en_US.UTF-8 in /etc/locale.conf:
+
+#+begin_src file
+LANG=en_US.UTF-8
+#+end_src
+
+** User-specific locales
+You may set your own user environment variables in ~/.bashrc, ~/.xinitrc, or ~/.xprofile.
++ .bashrc: Settings are applied everytime you log in using the terminal.
++ .xinitrc: Settings are applied everytime you use startx or SLiM to start the X interface.
++ .xprofile: Settings are applied everytime you log in using a display manager such as GDM.
+
+*** Set Chinese locales for graphical interfaces
+It is not recommended to set a global Chinese locale in /etc/locale.conf because it causes tty to display garbled characters.
+
+As mentioned earlier, Chinese locale can be set separately in ~/.xinitrc or ~/.xprofile. Prepend the following two lines to one of the two files (if you are not sure which file to use, prepend to both):
+#+begin_src file
+export LANG=zh_CN.UTF-8
+export LANGUAGE=zh_CN:en_US
+#+end_src
+
+*Note*:
++ Be sure to put them before the exec _example_WM_or_DE_ line in ~/.xinitrc.
++ This method is suitable for SLiM users or for people who do not use a graphical login interface (aka greeter). GDM and SDDM users can configure the display language in GNOME or KDE settings.
++ It is not recommended to override all locale settings with a global export LC_ALL. LC_ALL should be reserved for diagnostic debugging purposes only. LC_ALL will bring unnecessary difficulties for diagnosing language settings issues.
+
+* Chinese fonts
+** Install fonts
+#+begin_src bash
+paru -S adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts noto-fonts-cjk wqy-microhei wqy-microhei-lite wqy-bitmapfont wqy-zenhei ttf-arphic-ukai ttf-arphic-uming
+#+end_src
+
+* Reference List
+1. https://wiki.archlinux.org/title/Localization/Simplified_Chinese

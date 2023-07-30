@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       febd27ca-44cd-45d8-86ba-a260843b367c
+:END:
+#+title: ChatAll
+#+filetags:
+
+Chat with ALL [[id:f7a3a149-16bd-4a00-ad27-0edc68d9a4a5][AI chatbot]] Concurrently, Discover the Best.
+
+* [[id:dc13b67c-8d8b-40fd-b8cf-9ea8547e485d][Arch Linux]]
+#+begin_src bash
+paru -S chatall-bin
+#+end_src
+
+* Reference List
+1. https://github.com/sunner/ChatALL

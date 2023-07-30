@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       71a3e25a-0942-4f01-a665-7de65fbeb9f4
+:END:
+#+title: Google Bard
+#+filetags:
+
+* Reference List
+1. https://bard.google.com/
