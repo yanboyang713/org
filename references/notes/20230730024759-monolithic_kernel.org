@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       f67fabdd-5544-4375-b131-06ff31cf19b8
+:END:
+#+title: monolithic kernel
+#+filetags:

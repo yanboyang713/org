@@ -1,0 +1,22 @@
+:PROPERTIES:
+:ID:       0a48adc4-8a91-48b7-bb10-8c4b9d0cef6f
+:END:
+#+title: microkernel
+#+filetags:  
+
+* Introduction
+A microkernel is a type of operating system [[id:fc1c07c3-0d30-4eeb-a145-c018ddf16463][kernel]] that is designed to provide only the most basic services required for an operating system to function, such as memory management and process scheduling.Other services, such as device drivers and file systems, are implemented as user-level processes that communicate with the microkernel via message passing. This design allows the operating system to be more modular and flexible than traditional monolithic kernels, which implement all operating system services in kernel space.
+
+* advantage
+The main advantage of a microkernel architecture is that it provides a more secure and stable operating system. Since only the most essential services run in kernel space, the attack surface of the operating system is reduced, making it more difficult for an attacker to exploit vulnerabilities. Additionally, if a user-level process crashes, it will not affect the stability of the entire system, since the microkernel is responsible only for managing processes and memory.
+
+Another advantage of a microkernel architecture is that it makes the operating system more modular and flexible. Since services are implemented as user-level processes, it is easier to add, remove, or replace services without affecting other parts of the system. This makes it easier to customize the operating system to meet specific requirements.
+
+* disadvantages
+However, there are also some disadvantages to a microkernel architecture. One major disadvantage is that message passing between user-level processes can be slower than direct system calls in a [[id:f67fabdd-5544-4375-b131-06ff31cf19b8][monolithic kernel]]. This can affect the performance of the operating system, especially in high-performance applications. Additionally, the modular design of a microkernel can lead to increased complexity, which can make it more difficult to develop and maintain the operating system.
+
+* Overall
+Overall, a microkernel architecture can provide a more secure and flexible operating system, but it may also come with some performance and complexity trade-offs. The choice between a microkernel and a monolithic kernel architecture depends on the specific needs and requirements of the operating system being developed.
+
+* Reference List
+1. https://www.geeksforgeeks.org/microkernel-in-operating-systems/

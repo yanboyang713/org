@@ -47,10 +47,18 @@ You may set your own user environment variables in ~/.bashrc, ~/.xinitrc, or ~/.
 It is not recommended to set a global Chinese locale in /etc/locale.conf because it causes tty to display garbled characters.
 
 As mentioned earlier, Chinese locale can be set separately in ~/.xinitrc or ~/.xprofile. Prepend the following two lines to one of the two files (if you are not sure which file to use, prepend to both):
+
++ Chinese as primary
 #+begin_src file
 export LANG=zh_CN.UTF-8
 export LANGUAGE=zh_CN:en_US
 #+end_src
+
++ English as primary
+  #+begin_src file
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US:zh_CN
+  #+end_src
 
 *Note*:
 + Be sure to put them before the exec _example_WM_or_DE_ line in ~/.xinitrc.
