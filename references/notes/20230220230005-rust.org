@@ -4,6 +4,95 @@
 #+title: rust
 #+filetags:  
 
-[[id:278645d6-efd7-4127-a748-e309c118efbe][security]]
+* What is Rust?
+:PROPERTIES:
+:ID:       0846cde0-573f-4346-b80b-94ef2abde4bc
+:END:
+Rust is a new programming language which had its 1.0 release in 2015:
++ Rust is a statically compiled language in a similar role as C++
+  + rustc uses LLVM as its backend.
++ Rust supports many [[https://doc.rust-lang.org/nightly/rustc/platform-support.html][platforms and architectures]]:
+  + x86, ARM, WebAssembly, …
+  + Linux, Mac, Windows, …
++ Rust is used for a wide range of devices:
+  + firmware and boot loaders,
+  + smart displays,
+  + mobile phones,
+  + desktops,
+  + servers.
 
-[[id:48d11b5f-8c43-4b43-966b-c214fb57c9ae][rust learning]]
+* Why Rust?
+:PROPERTIES:
+:ID:       c1a51ac0-18b1-4a01-9090-b109c0127b4c
+:END:
+Some unique selling points of Rust:
++ Compile time memory [[id:b3ed4190-bd82-404d-8212-d2d4fd3fcc17][safety]].
++ Lack of undefined runtime behavior.
++ Modern language features.
+
+*Notes*:
+Experience with C or [[id:7efe38ee-a4b5-49f4-ae9f-d560f563935d][C++]]: Rust eliminates a whole class of runtime errors via the borrow checker. You get performance like in C and C++, but you don’t have the memory unsafety issues. In addition, you get a modern language with constructs like pattern matching and built-in dependency management.
+
+Experience with Java, Go, Python, JavaScript…: You get the same memory safety as in those languages, plus a similar high-level language feeling. In addition you get fast and predictable performance like C and C++ (no garbage collector) as well as access to low-level hardware (should you need it)
+
+** Compile Time Guarantees
+Static memory management at compile time:
++ No uninitialized variables.
++ No memory leaks (mostly, see notes).
++ No double-frees.
++ No use-after-free.
++ No NULL pointers.
++ No forgotten locked mutexes.
++ No data races between threads.
++ No iterator invalidation.
+
+*Notes*
++ It is possible to produce memory leaks in (safe) Rust. Some examples are:
++ You can use [[https://doc.rust-lang.org/std/boxed/struct.Box.html#method.leak][Box::leak]] to leak a pointer. A use of this could be to get runtime-initialized and runtime-sized static variables
++ You can use [[https://doc.rust-lang.org/std/mem/fn.forget.html][std::mem::forget]] to make the compiler “forget” about a value (meaning the destructor is never run).
++ You can also accidentally create a [[id:7a41e51d-b1d9-497a-9444-e66f5469c7b8][reference cycle]] with Rc or Arc.
++ In fact, some will consider infinitely populating a collection a memory leak and Rust does not protect from those.
++ For the purpose of this course, “No memory leaks” should be understood as “Pretty much no accidental memory leaks”.
+
+** Runtime Guarantees
+No undefined behavior at runtime:
++ Array access is bounds checked.
++ Integer overflow is defined (panic or wrap-around).
+
+*Notes*
++ Integer overflow is defined via the overflow-checks compile-time flag. If enabled, the program will panic (a controlled crash of the program), otherwise you get wrap-around semantics. By default, you get panics in debug mode (cargo build) and wrap-around in release mode (cargo build --release).
++ Bounds checking cannot be disabled with a compiler flag. It can also not be disabled directly with the unsafe keyword. However, unsafe allows you to call functions such as slice::get_unchecked which does not do bounds checking.
+
+** Modern Features
+Rust is built with all the experience gained in the last decades.
+
+Language Features
++ Enums and pattern matching.
++ Generics.
++ No overhead FFI.
++ Zero-cost abstractions.
++ Tooling
++ Great compiler errors.
++ Built-in dependency manager.
++ Built-in support for testing.
++ Excellent Language Server Protocol support.
+
+*Notes*
++ Zero-cost abstractions, similar to C++, means that you don’t have to ‘pay’ for higher-level programming constructs with memory or CPU. For example, writing a loop using for should result in roughly the same low level instructions as using the .iter().fold() construct.
++ It may be worth mentioning that Rust enums are ‘Algebraic Data Types’, also known as ‘sum types’, which allow the type system to express things like Option<T> and Result<T, E>.
++ Remind people to read the errors — many developers have gotten used to ignore lengthy compiler output. The Rust compiler is significantly more talkative than other compilers. It will often provide you with actionable feedback, ready to copy-paste into your code.
++ The Rust standard library is small compared to languages like Java, Python, and Go. Rust does not come with several things you might consider standard and essential:
+  + a random number generator, but see [[https://docs.rs/rand/latest/rand/][rand]].
+  + support for SSL or TLS, but see [[https://docs.rs/rustls/latest/rustls/][rusttls]].
+  + support for JSON, but see [[https://docs.rs/serde_json/latest/serde_json/][serde_json]]. The reasoning behind this is that functionality in the standard library cannot go away, so it has to be very stable. For the examples above, the Rust community is still working on finding the best solution — and perhaps there isn’t a single “best solution” for some of these things.
+
+Rust comes with a built-in package manager in the form of [[id:9d91bf12-660c-42df-9b76-5bafdd255251][Cargo]] and this makes it trivial to download and compile third-party crates. A consequence of this is that the standard library can be smaller.
+
+Discovering good third-party crates can be a problem. Sites like https://lib.rs/ help with this by letting you compare health metrics for crates to find a good and trusted one.
+
+[[id:5f3ccffe-8956-417d-9da0-85d20513d8c6][rust-analyzer]] is a well supported LSP implementation used in major IDEs and text editors.
+
+* [[id:48d11b5f-8c43-4b43-966b-c214fb57c9ae][rust learning]]
+
+* Reference List
+1. https://google.github.io/comprehensive-rust/why-rust.html

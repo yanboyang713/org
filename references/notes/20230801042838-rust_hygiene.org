@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       afb8ee44-e7c0-43be-8a38-35d59b3fae2e
+:END:
+#+title: rust hygiene
+#+filetags:  
+
+https://veykril.github.io/tlborm/decl-macros/minutiae/hygiene.html

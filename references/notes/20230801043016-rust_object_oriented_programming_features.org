@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       3f45dccf-ef89-410b-862c-ae538cd1f604
+:END:
+#+title: rust Object-Oriented Programming Features
+#+filetags:  
+
+https://doc.rust-lang.org/book/ch17-00-oop.html

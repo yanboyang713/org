@@ -4,6 +4,7 @@
 #+title: rust first example
 #+filetags:
 
+* Create Project
 1. Use cargo new exercise to create a new exercise/ directory for your code:
 #+begin_src console
 (base) [yanboyang713@archlinux ~]$ cargo new exercise
@@ -35,5 +36,28 @@ Edit me!
 5. Use *cargo check* to quickly check your project for errors, use cargo build to compile it without running it. You will find the output in target/debug/ for a normal debug build. Use cargo build --release to produce an optimized release build in target/release/.
    *NOTE*: You can add dependencies for your project by editing Cargo.toml. When you run cargo commands, it will automatically download and compile missing dependencies for you.
 
+* Hello World
+Let us jump into the simplest possible Rust program, a classic Hello World program:
+#+begin_src rust
+fn main() {
+    println!("Hello 🌍!");
+}
+#+end_src
+
+What you see:
++ Functions are introduced with fn.
++ Blocks are delimited by curly braces like in C and C++.
++ The main function is the entry point of the program.
++ Rust has hygienic macros, println! is an example of this.
++ Rust strings are UTF-8 encoded and can contain any Unicode character.
+
+* language characteristic
++ Rust is very much like other languages in the C/C++/Java tradition. It is imperative and it doesn’t try to reinvent things unless absolutely necessary.
++ Rust is modern with full support for things like Unicode.
++ Rust uses macros for situations where you want to have a variable number of arguments (no [[id:127bfd4f-33d6-4ca2-bab0-6b2db3ac1c04][Function Overloading]]).
++ Macros being ‘hygienic’ means they don’t accidentally capture identifiers from the scope they are used in. Rust macros are actually only partially [[id:afb8ee44-e7c0-43be-8a38-35d59b3fae2e][hygienic]].
++ Rust is multi-paradigm. For example, it has powerful [[id:3f45dccf-ef89-410b-862c-ae538cd1f604][Object-Oriented Programming Features]], and, while it is not a functional language, it includes a range of [[id:59932d16-379f-4092-a9dc-48861bf1ad2d][Functional Language Features]].
+
 * Reference List
 1. https://google.github.io/comprehensive-rust/cargo/running-locally.html
+2. https://google.github.io/comprehensive-rust/hello-world.html

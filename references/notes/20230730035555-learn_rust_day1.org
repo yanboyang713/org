@@ -16,6 +16,13 @@ We suggest using any LSP compatible editor works with rust-analyzer3
 ** [[id:5072129b-fbb0-45d1-8b88-eca1259d9b9f][Rust first example]]
 
 * Content
++ Basic Rust syntax: variables, scalar and compound types, enums, structs, references, functions, and methods.
++ Memory management: stack vs heap, manual memory management, scope-based memory management, and garbage collection.
++ Ownership: move semantics, copying and cloning, borrowing, and lifetimes.
+
+[[id:0846cde0-573f-4346-b80b-94ef2abde4bc][What is Rust?]]
+[[id:c1a51ac0-18b1-4a01-9090-b109c0127b4c][Why Rust?]]
+[[id:eef7b4e5-3d04-4f77-a991-878e87226f01][Rust Basic Syntax]]
 
 * Reference List
 1. https://google.github.io/comprehensive-rust/cargo.html

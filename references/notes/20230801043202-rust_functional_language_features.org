@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       59932d16-379f-4092-a9dc-48861bf1ad2d
+:END:
+#+title: rust Functional Language Features
+#+filetags:  
+
+https://doc.rust-lang.org/book/ch13-00-functional-features.html
