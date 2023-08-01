@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       b3075796-f0ae-4bb2-a415-7f28bb06b48b
+:END:
+#+title: Run GitHub Actions locally
+#+filetags:  
+
+[[id:b0ffda2b-ff06-47ee-9e0a-7a922b026155][Github Action]]
+
+* Reference List
+1. https://github.com/nektos/act

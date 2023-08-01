@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       eb1800d9-92f0-4a7d-a14b-c6d2d7849907
+:END:
+#+title: lab599
+#+filetags:
+
+Full remote-control command set (with Kenwood emulates) on [[id:b50d6d4b-e38b-4d57-bfd6-452385c814d6][RS-232]]
+
+* Reference List
+1. http://lab599.com/

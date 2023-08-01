@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       96d58db8-165d-4340-8c21-f9535e62b8dc
+:END:
+#+title: UAV digital twin
+#+filetags:  
+
+[[id:9af21282-5cb8-4433-a4f2-a05fe80c6300][AirSim]]
+[[id:476dea5f-9293-4c15-83b3-4152fa6f39c9][digital twin]]

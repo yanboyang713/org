@@ -4,11 +4,18 @@
 #+title: learn rust Day1
 #+filetags:
 
-[[id:9d91bf12-660c-42df-9b76-5bafdd255251][Cargo]]
+* Prepare
+** [[id:9d91bf12-660c-42df-9b76-5bafdd255251][Cargo]]
+When you start reading about Rust, you will soon meet [[id:9d91bf12-660c-42df-9b76-5bafdd255251][Cargo]], the standard tool used in the [[id:a2da1c32-ba1a-4c2c-9374-1bd8896920fa][Rust]] ecosystem to build and run Rust applications.
 
-* IDE
+** IDE
+We suggest using any LSP compatible editor works with rust-analyzer3
 + [[id:bc46bd19-7e0a-416e-980b-f253a2a5ecd8][VS Code]]
 + [[id:4ccdaeff-fd9f-4767-aa32-161a2862f2aa][Configuring Emacs for Rust development]]
+
+** [[id:5072129b-fbb0-45d1-8b88-eca1259d9b9f][Rust first example]]
+
+* Content
 
 * Reference List
 1. https://google.github.io/comprehensive-rust/cargo.html

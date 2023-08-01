@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       4f68cc09-4bb6-465d-ac10-b225ba2b4e06
+:END:
+#+title: cargo book
+#+filetags:
+
+https://doc.rust-lang.org/cargo/

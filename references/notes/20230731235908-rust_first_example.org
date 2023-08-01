@@ -1,0 +1,39 @@
+:PROPERTIES:
+:ID:       5072129b-fbb0-45d1-8b88-eca1259d9b9f
+:END:
+#+title: rust first example
+#+filetags:
+
+1. Use cargo new exercise to create a new exercise/ directory for your code:
+#+begin_src console
+(base) [yanboyang713@archlinux ~]$ cargo new exercise
+     Created binary (application) `exercise` package
+#+end_src
+2. Navigate into exercise/ and use cargo run to build and run your binary:
+#+begin_src console
+(base) [yanboyang713@archlinux ~]$ cd exercise/
+(base) [yanboyang713@archlinux exercise]$ cargo run
+   Compiling exercise v0.1.0 (/home/yanboyang713/exercise)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.33s
+     Running `target/debug/exercise`
+Hello, world!
+#+end_src
+3. Replace the boiler-plate code in src/main.rs with your own code. For example, using the example on the previous page, make src/main.rs look like
+#+begin_src rust
+fn main() {
+    println!("Edit me!");
+}
+#+end_src
+4. Use *cargo run* to build and run your updated binary:
+#+begin_src console
+(base) [yanboyang713@archlinux exercise]$ cargo run
+   Compiling exercise v0.1.0 (/home/yanboyang713/exercise)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.33s
+     Running `target/debug/exercise`
+Edit me!
+#+end_src
+5. Use *cargo check* to quickly check your project for errors, use cargo build to compile it without running it. You will find the output in target/debug/ for a normal debug build. Use cargo build --release to produce an optimized release build in target/release/.
+   *NOTE*: You can add dependencies for your project by editing Cargo.toml. When you run cargo commands, it will automatically download and compile missing dependencies for you.
+
+* Reference List
+1. https://google.github.io/comprehensive-rust/cargo/running-locally.html

@@ -12,3 +12,4 @@
 
 * Reference List
 1. https://tinychen.com/20220524-k8s-08-loadbalancer-purelb/
+2. https://tinychen.com/categories/cloudnative/

@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       c92e9613-241a-4b61-9a22-f1c301bc5dfe
+:END:
+#+title: Federated Learning in Azure ML
+#+filetags:  
+
+[[id:89f17787-d184-4f30-972a-a90e3312f5df][Federated Learning]]
+[[id:6d0d99c1-cbb6-4e88-8bae-275748a45e90][Azure Machine Learning]]
+
+* Reference List
+1. https://github.com/Azure-Samples/azure-ml-federated-learning

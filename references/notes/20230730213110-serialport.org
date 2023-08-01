@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       38dec11f-0893-479e-8422-01459988da27
+:END:
+#+title: serialport
+#+filetags:
+
+which is based on [[id:12174ed7-969c-4d4b-90c9-36c13a583c56][serial]].
+
+[[id:a2da1c32-ba1a-4c2c-9374-1bd8896920fa][rust]]
+
+* Reference List
+1. https://crates.io/crates/serialport

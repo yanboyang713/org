@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       b7b2e8f2-691a-4be6-96ab-e3d34e7a1e1d
+:END:
+#+title: FT8CN
+#+filetags:  
+
+https://github.com/N0BOY/FT8CN.git

@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       e50cab8e-5f5e-422a-9f2f-a53237491dcd
+:END:
+#+title: cargo workspace
+#+filetags:  
+
+https://doc.rust-lang.org/cargo/reference/workspaces.html

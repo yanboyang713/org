@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       12174ed7-969c-4d4b-90c9-36c13a583c56
+:END:
+#+title: serial
+#+filetags:
+
+[[id:039f69d2-084a-4a5e-958a-075ae6d7c1e2][Rust library]] for accessing serial ports.
+
+* Reference List
+1. https://crates.io/crates/serial

@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       b08c25e0-dba1-4f14-953c-fd4feb80eb80
+:END:
+#+title: cargo clippy
+#+filetags:  
+
+* Reference List
+1. https://github.com/rust-lang/rust-clippy

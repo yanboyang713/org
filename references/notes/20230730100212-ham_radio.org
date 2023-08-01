@@ -1,0 +1,17 @@
+:PROPERTIES:
+:ID:       570e8e32-4ec7-463c-9c1f-54f803d2c0e8
+:END:
+#+title: Ham Radio
+#+filetags:  
+
+[[id:55f23b66-c353-4562-b4bc-da3df9ddc665][wireless networks]]
+
+* Digital Mode
++ [[id:d06c8e37-8880-4518-83a7-14ee405e3786][FT8]]
++ [[id:a9778bb4-38c4-4e5f-8d25-2d21d6043a96][APRS]]
+
+* HF Radio
++ [[id:eb1800d9-92f0-4a7d-a14b-c6d2d7849907][lab599]]
+
+* HF antenna
++ [[id:6d8e8f1a-9111-4d4d-aa3f-03ad191973ba][End Fed Half Wave (EFHW)]]

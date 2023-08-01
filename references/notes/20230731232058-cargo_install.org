@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       b98dfac4-6a0e-4e24-86d8-5b2c9b88ce3d
+:END:
+#+title: cargo install
+#+filetags:  
+
+https://doc.rust-lang.org/cargo/commands/cargo-install.html

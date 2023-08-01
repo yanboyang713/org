@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       549f260d-d3be-4ad0-97c1-1c76b6727585
+:END:
+#+title: Rust Edition
+#+filetags:  
+
+* Reference List
+1. https://doc.rust-lang.org/edition-guide/

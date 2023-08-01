@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       9176c5fc-75e8-42f7-824d-ab43f090e63b
+:END:
+#+title: cargo registries
+#+filetags:  
+
+* Reference List
+1. https://doc.rust-lang.org/cargo/reference/registries.html

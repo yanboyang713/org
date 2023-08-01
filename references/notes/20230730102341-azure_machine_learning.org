@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       6d0d99c1-cbb6-4e88-8bae-275748a45e90
+:END:
+#+title: Azure Machine Learning
+#+filetags:  
+
+[[id:c40c4861-f09d-4bc2-a606-d2b62cc533f9][Azure]]

@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       039f69d2-084a-4a5e-958a-075ae6d7c1e2
+:END:
+#+title: rust library
+#+filetags:
+[[id:a2da1c32-ba1a-4c2c-9374-1bd8896920fa][rust]]

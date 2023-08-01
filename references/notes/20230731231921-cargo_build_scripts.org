@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       aeb03cfd-41d6-4824-93bf-c1a75999c22d
+:END:
+#+title: cargo build Scripts
+#+filetags:  
+
+https://doc.rust-lang.org/cargo/reference/build-scripts.html

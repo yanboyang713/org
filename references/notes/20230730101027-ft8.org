@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       d06c8e37-8880-4518-83a7-14ee405e3786
+:END:
+#+title: FT8
+#+filetags:  
+
+[[id:b7b2e8f2-691a-4be6-96ab-e3d34e7a1e1d][FT8CN]]
