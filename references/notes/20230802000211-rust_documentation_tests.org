@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       9bee393b-dcff-4f6c-93b1-36a0f12c4f36
+:END:
+#+title: rust documentation tests
+#+filetags:  
+
+https://google.github.io/comprehensive-rust/testing/doc-tests.html

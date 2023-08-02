@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       92683c63-7dd1-436f-83a3-9f8e15a8b0ed
+:END:
+#+title: rust Rc
+#+filetags:  
+
+https://doc.rust-lang.org/std/rc/struct.Rc.html

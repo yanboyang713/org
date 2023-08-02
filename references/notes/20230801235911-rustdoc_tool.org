@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       4b362bd3-1b77-4cb4-bac2-6cccddcb3bfb
+:END:
+#+title: rustdoc tool
+#+filetags:  
+
+https://doc.rust-lang.org/rustdoc/what-is-rustdoc.html

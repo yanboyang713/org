@@ -23,6 +23,9 @@ We suggest using any LSP compatible editor works with rust-analyzer3
 [[id:0846cde0-573f-4346-b80b-94ef2abde4bc][What is Rust?]]
 [[id:c1a51ac0-18b1-4a01-9090-b109c0127b4c][Why Rust?]]
 [[id:eef7b4e5-3d04-4f77-a991-878e87226f01][Rust Basic Syntax]]
+[[id:2f699fda-157f-48bf-aa63-a83a8ad98770][Variables]]
+[[id:f57c76ee-9d8d-4ad4-ba54-cb5621f37fdc][Memory Management]]
+[[id:dd300cbb-7558-4589-90b9-f8a1a697bceb][Ownership]]
 
 * Reference List
 1. https://google.github.io/comprehensive-rust/cargo.html

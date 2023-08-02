@@ -15,6 +15,10 @@ The big downside is that each service you expose with a LoadBalancer will get it
 
 * Tools
 + [[id:bf4517d9-d2d7-437f-ae23-3bc3adc89b72][MetalLB]]
++ [[id:dc736784-a95b-4f96-a5b5-7499bf9a9e33][OpenELB]]
++ [[id:2354c245-044c-4705-90ed-944ab2168d0b][PureLB]]
 
 * Reference List
-1. https://medium.com/google-cloud/kubernetes-nodeport-vs-loadbalancer-vs-ingress-when-should-i-use-what-922f010849e0
+1. https://tinychen.com/20220524-k8s-08-loadbalancer-purelb/
+2. https://tinychen.com/categories/cloudnative/
+3. https://medium.com/google-cloud/kubernetes-nodeport-vs-loadbalancer-vs-ingress-when-should-i-use-what-922f010849e0

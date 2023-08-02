@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       dd300cbb-7558-4589-90b9-f8a1a697bceb
+:END:
+#+title: rust Ownership
+#+filetags:
+
+* Reference List
+1. https://google.github.io/comprehensive-rust/ownership.html

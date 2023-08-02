@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       388e0682-0ca4-4977-8dd5-7214a46436f2
+:END:
+#+title: rust Box
+#+filetags:
+
+https://doc.rust-lang.org/std/boxed/struct.Box.html

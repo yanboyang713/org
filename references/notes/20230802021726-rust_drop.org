@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       85f92ae3-8104-4959-9542-84c075dbba55
+:END:
+#+title: rust Drop
+#+filetags:  
+
+https://doc.rust-lang.org/std/ops/trait.Drop.html

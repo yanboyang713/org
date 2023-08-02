@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       fdc4eef1-2489-42be-b711-bece8b641215
+:END:
+#+title: rust Arc
+#+filetags:  
+
+https://doc.rust-lang.org/std/sync/struct.Arc.html

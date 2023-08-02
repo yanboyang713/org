@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       1c6e103d-c29c-4e1b-b4cc-4ce0d3865af0
+:END:
+#+title: rust Mutable Static Variables
+#+filetags:  
+
+https://google.github.io/comprehensive-rust/unsafe/mutable-static-variables.html

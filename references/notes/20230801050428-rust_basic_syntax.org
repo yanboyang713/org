@@ -10,85 +10,12 @@ Much of the Rust syntax will be familiar to you from C, C++ or Java:
 + Line comments are started with //, block comments are delimited by /* ... */.
 + Keywords like if and while work the same.
 + Variable assignment is done with =, comparison is done with ==.
-* Scalar Types
-|                        | Types                          | Literals               |
-|------------------------+--------------------------------+------------------------|
-| Signed integers        | i8, i16, i32, i64, i128, isize | -10, 0, 1_000, 123_i64 |
-| Unsigned integers      | u8, u16, u32, u64, u128, usize | 0, 123, 10_u16         |
-| Floating point numbers | f32, f64                       | 3.14, -10.0e20, 2_f32  |
-| Strings                | &str                           | "foo", "two\nlines"    |
-| Unicode scalar values  | char                           | 'a', 'α', '∞'           |
-| Booleans               | bool                           | true, false            |
 
-The types have widths as follows:
-+ iN, uN, and fN are N bits wide,
-+ isize and usize are the width of a pointer,
-+ char is 32 bits wide,
-+ bool is 8 bits wide.
-
-*Notes*
-There are a few syntaxes which are not shown above:
-+ Raw strings allow you to create a &str value with escapes disabled: r"\n" == "\\n". You can embed double-quotes by using an equal amount of # on either side of the quotes:
-#+begin_src rust
-fn main() {
-    println!(r#"<a href="link.html">link</a>"#);
-    println!("<a href=\"link.html\">link</a>");
-}
-#+end_src
-#+begin_src output
-<a href="link.html">link</a>
-<a href="link.html">link</a>
-#+end_src
-
-+ Byte strings allow you to create a &[u8] value directly:
-#+begin_src rust
-fn main() {
-    println!("{:?}", b"abc");
-    println!("{:?}", &[97, 98, 99]);
-}
-#+end_src
-#+begin_src output
-[97, 98, 99]
-[97, 98, 99]
-#+end_src
-
-+ All underscores in numbers can be left out, they are for legibility only. So 1_000 can be written as 1000 (or 10_00), and 123_i64 can be written as 123i64.
-
-* Compound Types
-Types	Literals
-Arrays	[T; N]	[20, 30, 40], [0; 3]
-Tuples	(), (T,), (T1, T2), …	(), ('x',), ('x', 1.2), …
-Array assignment and access:
-
-a: [42, 42, 42, 42, 42, 0, 42, 42, 42, 42]
-Tuple assignment and access:
-
-1st index: 7
-2nd index: true
-Speaker Notes
-Key points:
-
-Arrays:
-
-A value of the array type [T; N] holds N (a compile-time constant) elements of the same type T. Note that the length of the array is part of its type, which means that [u8; 3] and [u8; 4] are considered two different types.
-
-We can use literals to assign values to arrays.
-
-In the main function, the print statement asks for the debug implementation with the ? format parameter: {} gives the default output, {:?} gives the debug output. We could also have used {a} and {a:?} without specifying the value after the format string.
-
-Adding #, eg {a:#?}, invokes a “pretty printing” format, which can be easier to read.
-
-Tuples:
-
-Like arrays, tuples have a fixed length.
-
-Tuples group together values of different types into a compound type.
-
-Fields of a tuple can be accessed by the period and the index of the value, e.g. t.0, t.1.
-
-The empty tuple () is also known as the “unit type”. It is both a type, and the only valid value of that type - that is to say both the type and its value are expressed as (). It is used to indicate, for example, that a function or expression has no return value, as we’ll see in a future slide.
-
-You can think of it as void that can be familiar to you from other programming languages.
+* [[id:c62b87cf-7aeb-4b36-a2e8-4c6ccce553b3][Scalar Types]]
+* [[id:d8f44c0b-60ed-44c9-8bf8-c075a35606ef][Compound Types]]
+* [[id:6963c97b-f99c-4036-a674-f11f71df5da8][rust References]]
+* [[id:13cdb54d-1c6a-489b-8272-29c21aaf26a9][Slices]]
+* [[id:7a62a8ec-fd12-4777-b02c-6b6e25cbbd4e][rust Functions]]
 
 * Reference List
 1. https://google.github.io/comprehensive-rust/basic-syntax.html

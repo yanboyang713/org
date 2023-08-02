@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       8d5ca94c-410b-46ec-8185-91ae622b3080
+:END:
+#+title: rust Vec
+#+filetags:  
+
+https://doc.rust-lang.org/std/vec/struct.Vec.html

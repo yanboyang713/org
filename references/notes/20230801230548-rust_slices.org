@@ -1,0 +1,66 @@
+:PROPERTIES:
+:ID:       13cdb54d-1c6a-489b-8272-29c21aaf26a9
+:END:
+#+title: rust Slices
+#+filetags:
+* Slices
+A slice gives you a view into a larger collection:
+#+begin_src rust
+fn main() {
+    let mut a: [i32; 6] = [10, 20, 30, 40, 50, 60];
+    println!("a: {a:?}");
+
+    let s: &[i32] = &a[2..4];
+
+    println!("s: {s:?}");
+}
+#+end_src
+#+begin_src output
+a: [10, 20, 30, 40, 50, 60]
+s: [30, 40]
+#+end_src
+
+*Notes*:
++ We create a slice by borrowing a and specifying the starting and ending indexes in brackets.
++ If the slice starts at index 0, Rust’s range syntax allows us to drop the starting index, meaning that &a[0..a.len()] and &a[..a.len()] are identical.
++ The same is true for the last index, so &a[2..a.len()] and &a[2..] are identical.
++ To easily create a slice of the full array, we can therefore use &a[..].
++ s is a reference to a slice of i32s. Notice that the type of s (&[i32]) no longer mentions the array length. This allows us to perform computation on slices of different sizes.
++ Slices always borrow from another object. In this example, a has to remain ‘alive’ (in scope) for at least as long as our slice.
++ Question: What happens if you modify a[3] right before printing s? Modifying a[3] can spark an interesting discussion, but the answer is that for memory safety reasons you cannot do it through a at this point in the execution, but you can read the data from both a and s safely. It works before you created the slice, and again after the println, when the slice is no longer used. More details will be explained in the borrow checker section.
+
+* String vs str
+We can now understand the two string types in Rust:
+#+begin_src rust
+fn main() {
+    let s1: &str = "World";
+    println!("s1: {s1}");
+
+    let mut s2: String = String::from("Hello ");
+    println!("s2: {s2}");
+    s2.push_str(s1);
+    println!("s2: {s2}");
+
+    let s3: &str = &s2[6..];
+    println!("s3: {s3}");
+}
+#+end_src
+#+begin_src output
+s1: World
+s2: Hello
+s2: Hello World
+s3: World
+#+end_src
+Rust terminology:
++ &str an immutable reference to a string slice.
++ String a mutable string buffer.
+*Notes*
++ &str introduces a string slice, which is an immutable reference to UTF-8 encoded string data stored in a block of memory. String literals (”Hello”), are stored in the program’s binary.
++ Rust’s String type is a wrapper around a vector of bytes. As with a Vec<T>, it is owned.
++ As with many other types String::from() creates a string from a string literal; String::new() creates a new empty string, to which string data can be added using the push() and push_str() methods.
++ The format!() macro is a convenient way to generate an owned string from dynamic values. It accepts the same format specification as println!().
++ You can borrow &str slices from String via & and optionally range selection.
++ For C++ programmers: think of &str as const char* from C++, but the one that always points to a valid string in memory. Rust String is a rough equivalent of std::string from C++ (main difference: it can only contain UTF-8 encoded bytes and will never use a small-string optimization).
+
+* Reference List
+1. https://google.github.io/comprehensive-rust/basic-syntax/slices.html
