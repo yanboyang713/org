@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       7df4198e-5a8e-4487-853c-8c1099d3ef2f
+:END:
+#+title: rust error handling
+#+filetags:

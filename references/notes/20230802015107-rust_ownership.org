@@ -301,6 +301,7 @@ fn main() {
 Highlight("quick brown fox")
 Highlight("lazy dog")
 #+end_src
+
 *Notes*
 + In the above example, the annotation on Highlight enforces that the data underlying the contained &str lives at least as long as any instance of Highlight that uses that data.
 + If text is consumed before the end of the lifetime of fox (or dog), the borrow checker throws an error.
@@ -310,3 +311,4 @@ Highlight("lazy dog")
 
 * Reference List
 1. https://google.github.io/comprehensive-rust/ownership.html
+2. https://zhuanlan.zhihu.com/p/132869544

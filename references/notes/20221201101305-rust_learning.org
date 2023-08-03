@@ -5,6 +5,7 @@
 #+filetags: rust book
 
 [[id:e2cfbd51-71a9-4a32-82cc-1c41654ee281][learn rust Day1]]
+[[id:c8f619c8-7669-43c9-af7f-d16556506e0a][learn rust Day2]]
 
 * Reference List
 1. https://google.github.io/comprehensive-rust/

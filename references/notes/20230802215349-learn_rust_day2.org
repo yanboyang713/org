@@ -1,0 +1,18 @@
+:PROPERTIES:
+:ID:       c8f619c8-7669-43c9-af7f-d16556506e0a
+:END:
+#+title: learn rust Day2
+#+filetags:
+Now that we have seen a fair amount of Rust, we will continue with:
++ Structs, enums, methods.
++ Pattern matching: destructuring enums, structs, and arrays.
++ Control flow constructs: if, if let, while, while let, break, and continue.
++ The Standard Library: String, Option and Result, Vec, HashMap, Rc and Arc.
++ Modules: visibility, paths, and filesystem hierarchy.
+
+[[id:c4243073-8fc2-4983-b30d-d5e6d8f7c06b][Structs]]
+[[id:ba8f5a8d-21a4-4849-a376-8dc038d59c98][Enums]]
+[[id:b0e36991-2e3c-4fb4-b685-4df853e1384a][Methods]]
+[[id:e89477e0-efed-4973-b0c0-10e197080773][Pattern Matching]]
+[[id:a596da81-faf0-49f8-9b6a-1e40a7d7105d][Control Flow]]
+[[id:13440ce3-0962-44aa-b0ec-335ec18609ee][Standard Library]]

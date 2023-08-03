@@ -1,0 +1,25 @@
+:PROPERTIES:
+:ID:       13440ce3-0962-44aa-b0ec-335ec18609ee
+:END:
+#+title: rust Standard Library
+#+filetags:  
+* Standard Library
+Rust comes with a standard library which helps establish a set of common types used by Rust library and programs. This way, two libraries can work together smoothly because they both use the same String type.
+
+The common vocabulary types include:
++ [[id:31a6f71f-513f-4ea4-9fbc-670b35b7cfb5][Option and Result]] types: used for optional values and [[id:7df4198e-5a8e-4487-853c-8c1099d3ef2f][error handling]].
++ [[id:875ff4fc-45d5-4461-9d1d-fa5bb459585d][String]]: the default string type used for owned data.
++ [[id:8d5ca94c-410b-46ec-8185-91ae622b3080][Vec]]: a standard extensible vector.
++ [[id:3d7c0a6e-df56-4379-a618-287bb14e19d6][HashMap]]: a hash map type with a configurable hashing algorithm.
++ [[id:388e0682-0ca4-4977-8dd5-7214a46436f2][Box]]: an owned pointer for heap-allocated data.
++ [[id:92683c63-7dd1-436f-83a3-9f8e15a8b0ed][Rc]]: a shared reference-counted pointer for heap-allocated data.
+
+*Notes*
+In fact, Rust contains several layers of the Standard Library: core, alloc and std.
+core includes the most basic types and functions that don’t depend on libc, allocator or even the presence of an operating system.
+alloc includes types which require a global heap allocator, such as Vec, Box and Arc.
+Embedded Rust applications often only use core, and sometimes alloc.
+
+* Reference List
+1. https://google.github.io/comprehensive-rust/std.html
+2. https://github.com/Warrenren/inside-rust-std-library
