@@ -16,3 +16,4 @@ Now that we have seen a fair amount of Rust, we will continue with:
 [[id:e89477e0-efed-4973-b0c0-10e197080773][Pattern Matching]]
 [[id:a596da81-faf0-49f8-9b6a-1e40a7d7105d][Control Flow]]
 [[id:13440ce3-0962-44aa-b0ec-335ec18609ee][Standard Library]]
+[[id:4b59ead9-7d40-4fb2-91ac-ba46cc4c6e62][rust Modules]]

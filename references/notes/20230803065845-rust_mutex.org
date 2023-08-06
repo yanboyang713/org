@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       eeef3c16-10dc-4afd-b7b6-81fc891e1d56
+:END:
+#+title: rust Mutex
+#+filetags:  
+
+* Reference List
+1. https://google.github.io/comprehensive-rust/concurrency/shared_state/mutex.html

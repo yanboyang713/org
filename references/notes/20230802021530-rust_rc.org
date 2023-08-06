@@ -2,6 +2,83 @@
 :ID:       92683c63-7dd1-436f-83a3-9f8e15a8b0ed
 :END:
 #+title: rust Rc
-#+filetags:  
+#+filetags: rust
+* Rc
+[[https://doc.rust-lang.org/std/rc/struct.Rc.html][Rc]] is a reference-counted shared pointer. Use this when you need to refer to the same data from multiple places:
+#+begin_src rust
+use std::rc::Rc;
 
-https://doc.rust-lang.org/std/rc/struct.Rc.html
+fn main() {
+    let mut a = Rc::new(10);
+    let mut b = Rc::clone(&a);
+
+    println!("a: {a}");
+    println!("b: {b}");
+}
+#+end_src
+#+begin_src output
+a: 10
+b: 10
+#+end_src
+
++ If you need to mutate the data inside an Rc, you will need to wrap the data in a type such as [[id:62db996f-dd05-4ca1-954e-3f8b86c53be7][Cell or RefCell]].
++ See [[id:fdc4eef1-2489-42be-b711-bece8b641215][Arc]] and [[id:eeef3c16-10dc-4afd-b7b6-81fc891e1d56][Mutex]] if you are in a multi-threaded context.
++ You can downgrade a shared pointer into a [[https://doc.rust-lang.org/std/rc/struct.Weak.html][Weak]] pointer to create cycles that will get dropped.
+
+*Notes*
++ Rc’s count ensures that its contained value is valid for as long as there are references.
++ Rc in Rust is like std::shared_ptr in C++.
++ Rc::clone is cheap: it creates a pointer to the same allocation and increases the reference count. Does not make a deep clone and can generally be ignored when looking for performance issues in code.
++ make_mut actually clones the inner value if necessary (“clone-on-write”) and returns a mutable reference.
++ Use Rc::strong_count to check the reference count.
++ Compare the different datatypes mentioned. Box enables (im)mutable borrows that are enforced at compile time. RefCell enables (im)mutable borrows that are enforced at run time and will panic if it fails at runtime.
++ Rc::downgrade gives you a weakly reference-counted object to create cycles that will be dropped properly (likely in combination with RefCell).
+  #+begin_src rust
+use std::rc::{Rc, Weak};
+use std::cell::RefCell;
+
+#[derive(Debug)]
+struct Node {
+    value: i64,
+    parent: Option<Weak<RefCell<Node>>>,
+    children: Vec<Rc<RefCell<Node>>>,
+}
+
+fn main() {
+    let mut root = Rc::new(RefCell::new(Node {
+        value: 42,
+        parent: None,
+        children: vec![],
+    }));
+    let child = Rc::new(RefCell::new(Node {
+        value: 43,
+        children: vec![],
+        parent: Some(Rc::downgrade(&root))
+    }));
+    root.borrow_mut().children.push(child);
+
+    println!("graph: {root:#?}");
+}
+  #+end_src
+  #+begin_src output
+graph: RefCell {
+    value: Node {
+        value: 42,
+        parent: None,
+        children: [
+            RefCell {
+                value: Node {
+                    value: 43,
+                    parent: Some(
+                        (Weak),
+                    ),
+                    children: [],
+                },
+            },
+        ],
+    },
+}
+  #+end_src
+
+* Reference List
+1. https://doc.rust-lang.org/std/rc/struct.Rc.html

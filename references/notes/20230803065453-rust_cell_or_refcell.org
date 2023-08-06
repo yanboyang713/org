@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       62db996f-dd05-4ca1-954e-3f8b86c53be7
+:END:
+#+title: rust Cell or RefCell
+#+filetags: rust
+
+* Reference List
+1. https://doc.rust-lang.org/std/cell/index.html

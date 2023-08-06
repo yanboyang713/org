@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       8ee3c59e-9dc5-42d2-84c9-9493f78e9e6a
+:END:
+#+title: learn rust Day3
+#+filetags: rust
+* Welcome to Day 3
+Today, we will cover some more advanced topics of Rust:
++ Traits: deriving traits, default methods, and important standard library traits.
++ [[id:a63c7d23-0e32-4163-bba8-ed1e043e3f1b][Generics]]: generic data types, generic methods, monomorphization, and trait objects.
++ Error handling: panics, Result, and the try operator ?.
++ Testing: unit tests, documentation tests, and integration tests.
++ Unsafe Rust: raw pointers, static variables, unsafe functions, and extern functions.

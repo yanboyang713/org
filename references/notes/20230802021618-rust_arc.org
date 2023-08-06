@@ -4,4 +4,6 @@
 #+title: rust Arc
 #+filetags:  
 
-https://doc.rust-lang.org/std/sync/struct.Arc.html
+* Reference List
+1. https://google.github.io/comprehensive-rust/concurrency/shared_state/arc.html
+2. https://doc.rust-lang.org/std/sync/struct.Arc.html
