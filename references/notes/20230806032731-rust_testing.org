@@ -1,0 +1,103 @@
+:PROPERTIES:
+:ID:       3079b78d-c265-40c3-9bb5-ad8b337eed13
+:END:
+#+title: rust Testing
+#+filetags:  
+* Testing
+Rust and Cargo come with a simple unit test framework:
++ Unit tests are supported throughout your code.
++ Integration tests are supported via the tests/ directory.
+
+* Unit Tests
+Mark unit tests with #[test]:
+#+begin_src rust
+fn first_word(text: &str) -> &str {
+    match text.find(' ') {
+        Some(idx) => &text[..idx],
+        None => &text,
+    }
+}
+
+#[test]
+fn test_empty() {
+    assert_eq!(first_word(""), "");
+}
+
+#[test]
+fn test_single_word() {
+    assert_eq!(first_word("Hello"), "Hello");
+}
+
+#[test]
+fn test_multiple_words() {
+    assert_eq!(first_word("Hello World"), "Hello");
+}
+#+end_src
+Use cargo test to find and run the unit tests.
+* Test Modules
+Unit tests are often put in a nested module
+#+begin_src rust
+fn helper(a: &str, b: &str) -> String {
+    format!("{a} {b}")
+}
+
+pub fn main() {
+    println!("{}", helper("Hello", "World"));
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_helper() {
+        assert_eq!(helper("foo", "bar"), "foo bar");
+    }
+}
+#+end_src
+#+begin_src output
+Hello World
+#+end_src
++ This lets you unit test private helpers.
++ The #[cfg(test)] attribute is only active when you run cargo test.
+* Documentation Tests
+Rust has built-in support for documentation tests:
+#+begin_src rust
+/// Shortens a string to the given length.
+///
+/// ```
+/// use playground::shorten_string;
+/// assert_eq!(shorten_string("Hello World", 5), "Hello");
+/// assert_eq!(shorten_string("Hello World", 20), "Hello World");
+/// ```
+pub fn shorten_string(s: &str, length: usize) -> &str {
+    &s[..std::cmp::min(length, s.len())]
+}
+#+end_src
++ Code blocks in /// comments are automatically seen as Rust code.
++ The code will be compiled and executed as part of cargo test.
+
+* Integration Tests
+If you want to test your library as a client, use an integration test.
+
+Create a .rs file under tests/:
+#+begin_src rust
+use my_library::init;
+
+#[test]
+fn test_init() {
+    assert!(init().is_ok());
+}
+#+end_src
+These tests only have access to the public API of your crate.
+* Useful crates for writing tests
+Rust comes with only basic support for writing tests.
+
+Here are some additional crates which we recommend for writing tests:
+
++ [[https://docs.rs/googletest/latest/googletest/][googletest]]: Comprehensive test assertion library in the tradition of GoogleTest for C++.
++ [[https://docs.rs/proptest/latest/proptest/][proptest]]: Property-based testing for Rust.
++ [[https://docs.rs/rstest/latest/rstest/][rstest]]: Support for fixtures and parameterised tests.
+
+* Reference List
+1. https://google.github.io/comprehensive-rust/testing.html

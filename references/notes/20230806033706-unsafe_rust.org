@@ -1,0 +1,227 @@
+:PROPERTIES:
+:ID:       27f526c3-6ce1-45c3-9ec7-041d3be588d0
+:END:
+#+title: Unsafe Rust
+#+filetags:  
+* Unsafe Rust
+The Rust language has two parts:
+
++ Safe Rust: memory safe, no undefined behavior possible.
++ Unsafe Rust: can trigger undefined behavior if preconditions are violated.
+
+We will be seeing mostly safe Rust in this course, but it’s important to know what Unsafe Rust is.
+
+Unsafe code is usually small and isolated, and its correctness should be carefully documented. It is usually wrapped in a safe abstraction layer.
+
+Unsafe Rust gives you access to five new capabilities:
++ Dereference raw pointers.
++ Access or modify mutable static variables.
++ Access union fields.
++ Call unsafe functions, including extern functions.
++ Implement unsafe traits.
+
+We will briefly cover unsafe capabilities next. For full details, please see [[https://doc.rust-lang.org/book/ch19-01-unsafe-rust.html][Chapter 19.1 in the Rust Book]] and the [[https://doc.rust-lang.org/nomicon/][Rustonomicon]].
+
+*Notes*
++ Unsafe Rust does not mean the code is incorrect. It means that developers have turned off the compiler safety features and have to write correct code by themselves. It means the compiler no longer enforces Rust’s memory-safety rules.
+* Dereferencing Raw Pointers
+Creating pointers is safe, but dereferencing them requires unsafe:
+#+begin_src rust
+fn main() {
+    let mut num = 5;
+
+    let r1 = &mut num as *mut i32;
+    let r2 = r1 as *const i32;
+
+    // Safe because r1 and r2 were obtained from references and so are
+    // guaranteed to be non-null and properly aligned, the objects underlying
+    // the references from which they were obtained are live throughout the
+    // whole unsafe block, and they are not accessed either through the
+    // references or concurrently through any other pointers.
+    unsafe {
+        println!("r1 is: {}", *r1);
+        *r1 = 10;
+        println!("r2 is: {}", *r2);
+    }
+}
+#+end_src
+#+begin_src output
+r1 is: 5
+r2 is: 10
+#+end_src
+*Notes*
+In the case of pointer dereferences, this means that the pointers must be [[https://doc.rust-lang.org/std/ptr/index.html#safety][valid]], i.e.:
++ The pointer must be non-null.
++ The pointer must be dereferenceable (within the bounds of a single allocated object).
++ The object must not have been deallocated.
++ There must not be concurrent accesses to the same location.
++ If the pointer was obtained by casting a reference, the underlying object must be live and no reference may be used to access the memory.
+
+In most cases the pointer must also be properly aligned.
+* Mutable Static Variables
+It is safe to read an immutable static variable:
+#+begin_src rust
+static HELLO_WORLD: &str = "Hello, world!";
+
+fn main() {
+    println!("HELLO_WORLD: {HELLO_WORLD}");
+}
+#+end_src
+#+begin_src output
+HELLO_WORLD: Hello, world!
+#+end_src
+However, since data races can occur, it is unsafe to read and write mutable static variables:
+#+begin_src rust
+static mut COUNTER: u32 = 0;
+
+fn add_to_counter(inc: u32) {
+    unsafe { COUNTER += inc; }  // Potential data race!
+}
+
+fn main() {
+    add_to_counter(42);
+
+    unsafe { println!("COUNTER: {COUNTER}"); }  // Potential data race!
+}
+#+end_src
+#+begin_src output
+COUNTER: 42
+#+end_src
+*Notes*
++ Using a mutable static is generally a bad idea, but there are some cases where it might make sense in low-level no_std code, such as implementing a heap allocator or working with some C APIs.
+* Unions
+Unions are like enums, but you need to track the active field yourself:
+#+begin_src rust
+#[repr(C)]
+union MyUnion {
+    i: u8,
+    b: bool,
+}
+
+fn main() {
+    let u = MyUnion { i: 42 };
+    println!("int: {}", unsafe { u.i });
+    println!("bool: {}", unsafe { u.b });  // Undefined behavior!
+}
+#+end_src
+#+begin_src output
+int: 42
+bool: true
+#+end_src
+*Notes*
+Unions are very rarely needed in Rust as you can usually use an enum. They are occasionally needed for interacting with C library APIs.
+
+If you just want to reinterpret bytes as a different type, you probably want [[https://doc.rust-lang.org/stable/std/mem/fn.transmute.html][std::mem::transmute]] or a safe wrapper such as the [[https://crates.io/crates/zerocopy][zerocopy]] crate.
+* Calling Unsafe Functions
+A function or method can be marked unsafe if it has extra preconditions you must uphold to avoid undefined behaviour:
+#+begin_src rust
+fn main() {
+    let emojis = "🗻∈🌏";
+
+    // Safe because the indices are in the correct order, within the bounds of
+    // the string slice, and lie on UTF-8 sequence boundaries.
+    unsafe {
+        println!("emoji: {}", emojis.get_unchecked(0..4));
+        println!("emoji: {}", emojis.get_unchecked(4..7));
+        println!("emoji: {}", emojis.get_unchecked(7..11));
+    }
+
+    println!("char count: {}", count_chars(unsafe { emojis.get_unchecked(0..7) }));
+
+    // Not upholding the UTF-8 encoding requirement breaks memory safety!
+    // println!("emoji: {}", unsafe { emojis.get_unchecked(0..3) });
+    // println!("char count: {}", count_chars(unsafe { emojis.get_unchecked(0..3) }));
+}
+
+fn count_chars(s: &str) -> usize {
+    s.chars().map(|_| 1).sum()
+}
+#+end_src
+#+begin_src output
+emoji: 🗻
+emoji: ∈
+emoji: 🌏
+char count: 2
+#+end_src
+** Writing Unsafe Functions
+You can mark your own functions as unsafe if they require particular conditions to avoid undefined behaviour.
+#+begin_src rust
+/// Swaps the values pointed to by the given pointers.
+///
+/// # Safety
+///
+/// The pointers must be valid and properly aligned.
+unsafe fn swap(a: *mut u8, b: *mut u8) {
+    let temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+fn main() {
+    let mut a = 42;
+    let mut b = 66;
+
+    // Safe because ...
+    unsafe {
+        swap(&mut a, &mut b);
+    }
+
+    println!("a = {}, b = {}", a, b);
+}
+#+end_src
+#+begin_src output
+a = 66, b = 42
+#+end_src
+*Notes*
++ We wouldn’t actually use pointers for this because it can be done safely with references.
++ Note that unsafe code is allowed within an unsafe function without an unsafe block. We can prohibit this with #[deny(unsafe_op_in_unsafe_fn)]. Try adding it and see what happens.
+** Calling External Code
+Functions from other languages might violate the guarantees of Rust. Calling them is thus unsafe:
+#+begin_src rust
+extern "C" {
+    fn abs(input: i32) -> i32;
+}
+
+fn main() {
+    unsafe {
+        // Undefined behavior if abs misbehaves.
+        println!("Absolute value of -3 according to C: {}", abs(-3));
+    }
+}
+#+end_src
+#+begin_src output
+Absolute value of -3 according to C: 3
+#+end_src
+*Notes*
+This is usually only a problem for extern functions which do things with pointers which might violate Rust’s memory model, but in general any C function might have undefined behaviour under any arbitrary circumstances.
+
+The "C" in this example is the ABI; [[https://doc.rust-lang.org/reference/items/external-blocks.html][other ABIs are available too]].
+** Implementing Unsafe [[id:647a7542-51f1-4c7c-aaa9-eb7ca71ad451][Traits]]
+Like with functions, you can mark a trait as unsafe if the implementation must guarantee particular conditions to avoid undefined behaviour.
+
+For example, the zerocopy crate has an unsafe trait that looks [[https://docs.rs/zerocopy/latest/zerocopy/trait.AsBytes.html][something like this]]:
+#+begin_src rust
+use std::mem::size_of_val;
+use std::slice;
+
+/// ...
+/// # Safety
+/// The type must have a defined representation and no padding.
+pub unsafe trait AsBytes {
+    fn as_bytes(&self) -> &[u8] {
+        unsafe {
+            slice::from_raw_parts(self as *const Self as *const u8, size_of_val(self))
+        }
+    }
+}
+
+// Safe because u32 has a defined representation and no padding.
+unsafe impl AsBytes for u32 {}
+#+end_src
+*Notes*
++ There should be a # Safety section on the Rustdoc for the trait explaining the requirements for the trait to be safely implemented.
++ The actual safety section for AsBytes is rather longer and more complicated.
++ The built-in Send and Sync traits are unsafe.
+
+* Reference List
+1. https://google.github.io/comprehensive-rust/unsafe.html

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       0c3b3846-44b8-474e-b031-bac13dc01c88
+:END:
+#+title: Rust in Android
+#+filetags:  
+[[id:a2da1c32-ba1a-4c2c-9374-1bd8896920fa][rust]]
+[[id:0a2027ba-65fc-4d34-8983-10df4bcfde15][Android]]
+
+* Reference List
+1. https://google.github.io/comprehensive-rust/android.html

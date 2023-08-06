@@ -5,6 +5,7 @@
 #+filetags: rust
 * Generics
 Rust support generics, which lets you abstract algorithms or data structures (such as sorting or a binary tree) over the types used or stored.
+
 * Generic Data Types
 You can use generics to abstract over the concrete field type:
 #+begin_src rust
