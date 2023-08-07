@@ -3,3 +3,5 @@
 :END:
 #+title: RESTful
 #+filetags:
+* Definition of a REST API
+Let's define the APIs that we will use in our microservice infrastructure using the REST methodology. In this example, our microservices will have minimal APIs for demonstration purposes; real microservices might not be quite so "micro". Let's explore the REST specifications of the [[id:10682b04-b1f4-4200-a3a6-23a5d82c2795][microservices]] of our application. We will start by looking at a microservice for user registration and go through every part of the application.

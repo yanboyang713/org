@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       61a1fc0c-bb19-47eb-ae12-8048157d0de8
+:END:
+#+title: image registry
+#+filetags:
+
+a registry—the place where you can upload and download images of containers with applications. The public registry is Docker Hub (https://hub.docker.com/explore/), but you can have a private registry for a private or permissioned software.
+
+* private registry
++ [[id:72a6522c-9a77-46d2-b394-71565c65bffe][azure container registry]]

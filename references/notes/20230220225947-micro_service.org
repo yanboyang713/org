@@ -4,8 +4,38 @@
 #+title: microservices
 #+filetags:
 
-[[id:a2da1c32-ba1a-4c2c-9374-1bd8896920fa][rust]]
+* What are microservices?
+Modern users interact with microservices every day; not directly, but by using web applications. Microservices are a flexible software development technique that help to implement applications as a collection of independent services with weak relations.
 
+* Why we need microservices
+Microservices are a modern software development approach that refers to the splitting of software into a suite of small services that are easier to develop, debug, deploy, and maintain. Microservices are tiny, independent servers that act as single business functions. For example, if you have an e-commerce suite that works as a monolith, you could split it into small servers that have limited responsibility and carry out the same tasks. One microservice could handle user authorization, the other could handle the users' shopping carts, and the remaining services could handle features such as search functionality, social-media integration, or recommendations.
+
+Microservices can either interact with a database or be connected to other microservices. To interact with a database, microservices can use different protocols. These might include HTTP or REST, Thrift, ZMQ, AMQP for the messaging communication style, WebSockets for streaming data, and even the old-fashioned Simple Object Access Protocol (SOAP) to integrate them with the existing infrastructure. More details: [[id:71838dcc-b8fd-4fe0-8ff2-bc13d0deaf26][API Architecture]]
+
++ [[id:f3570345-fddd-49f8-b4f7-f6fdc9798b8e][microservices advantages over monolithic]]
++ [[id:a88010ec-37d0-48d6-b5fc-995879ee88a9][drawbacks of microservices]]
+
+A microservices architecture is a modern approach that can help you achieve the goal of having loosely coupling elements. This is where the servers are independent from one another, helping you to release and scale your application faster than a [[id:c5d789cf-3642-4b2a-a316-4edb622b2212][monolithic]] approach, in which you put all your eggs in one basket.
+
+* How to deploy a microservice
+
+Since a microservice is a small but complete web server, you have to deploy it as a complete server. But since it has a narrow scope of features, it's also simpler to configure. [[id:6795991e-6e79-40f8-a72c-28e23b3d10ef][Containers]] can help you pack your binaries into an image of the operating system with the necessary dependencies to simplify deployment.
+
+This differs from the case with monoliths, in which you have a system administrator who installs and configures the server. Microservices need a new role to carry out this function—DevOps. [[id:df1d63a9-ab91-406c-bd99-e37b9db2a645][DevOps]] is not just a job role, but a whole software engineering culture in which developers become system administrators and vice versa. DevOps engineers are responsible for packing and delivering the software to the end user or market. Unlike system administrators, DevOps engineers work with clouds and clusters and often don't touch any hardware except their own laptop.
+
+[[id:df1d63a9-ab91-406c-bd99-e37b9db2a645][DevOps]] uses a lot of automation and carries the application through various stages of the delivery process: building, testing, packaging, releasing, or deployment, and the monitoring of the working system. This helps to reduce the time it takes both to market a particular software and to release new versions of it. It's impossible to use a lot of automation for [[id:c5d789cf-3642-4b2a-a316-4edb622b2212][monolithic]] servers, because they are too complex and fragile. Even if you want to pack a monolith to a container, you have to deliver it as a large bundle and run the risk that any part of the application could fail.
+
+* How to split a traditional server into multiple microservices
+
+Around 10 years ago, developers used to use the Apache web server with a scripting programming language to create web applications, rendering the views on the server-side. This meant that there was no need to split applications into pieces and it was simpler to keep the code together. With the emergence of Single-Page Applications (SPAs), we only needed server-side rendering for special cases and applications were divided into two parts: frontend and backend. Another tendency was that servers changed processing method from synchronous (where every client interaction lives in a separate thread) to asynchronous (where one thread processes many clients simultaneously using non-blocking, input-output operations). This trend promotes the better performance of single server units, meaning they can serve thousands of clients. This means that we don't need special hardware, proprietary software, or a special toolchain or compiler to write a tiny server with great performance.
+
+The invasion of microservices happened when scripting programming languages become popular. By this, we are not only referring to languages for server-side scripting, but general-purpose high-level programming languages such as Python or Ruby. The adoption of JavaScript for backend needs, which had previously always been asynchronous, was particularly influential.
+
+If writing your own server wasn't hard enough, you could create a separate server for special cases and use them directly from the frontend application. This would not require rendering procedures on the server. This section has provided a short description of the evolution from [[id:c5d789cf-3642-4b2a-a316-4edb622b2212][monolithic]] servers to microservices. We are now going to examine how to break a monolithic server into small pieces.
+
+* [[id:ce57a410-5aa2-49b7-846b-7cd34da48751][Why Rust is a great tool for creating microservices]]
+
+* Platform
 [[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]]
 
 rather than on-premises design, modern applications are more commonly to be designed with cloud-native [1] architectures, enabling executions in orchestrated environments. One major outcome of these shifts is the trend of DevOps [2], which has already become mainstream in the enterprise [3]. Its coalescence of development and operations can be attributed to the recent technology development towards microservices [1] which effectively standardize the patterns for software packaging and deployment, and thus significantly improve the speed and agility of software service delivery.
@@ -20,3 +50,4 @@ The methodologies of microservices can dramatically reduce the incremental opera
 * Reference List
 1. Li, W., Lemieux, Y., Gao, J., Zhao, Z., & Han, Y. (2019, April). Service mesh: Challenges, state of the art, and future research opportunities. In 2019 IEEE International Conference on Service-Oriented System Engineering (SOSE) (pp. 122-1225). IEEE.
 2. Sedghpour, M. R. S., & Townend, P. (2022, August). Service Mesh and eBPF-Powered Microservices: A Survey and Future Directions. In 2022 IEEE International Conference on Service-Oriented System Engineering (SOSE) (pp. 176-184). IEEE.
+3. Hands-On Microservices with Rust: Build, test, and deploy scalable and reactive microservices with Rust 2018

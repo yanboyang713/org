@@ -3,6 +3,13 @@
 :END:
 #+title: docker
 #+filetags:  
+* Docker
+
+When we refer to containers, we almost always mean Docker containers (https://www.docker.com/). Docker is the most popular software tool for running programs in containers, which are isolated environments.
+
+Containerization is a kind of virtualization where the scope of the application's resources is limited. This means the application works at its maximum performance level. This is different from full virtualization, where you have to run the full operating system with the corresponding overhead and run your application inside that isolated operating system.
+
+[[id:61a1fc0c-bb19-47eb-ae12-8048157d0de8][image registry]]
 
 * Arch Installation
 #+begin_src bash

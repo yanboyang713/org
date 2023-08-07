@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       d8d4c79f-3930-4445-8bb3-c441afa47637
+:END:
+#+title: application scaling
+#+filetags:
+
+There are two common approaches to scaling an application:
+
++ [[id:a72a6129-3a79-4ade-af79-2fdd32813ce2][horizontally]]: Where you start a new instance of application
++ [[id:f33de583-8091-4e87-9a7e-579a5f9e0e3d][Vertically]]: Where you improve an independent application layer that has a bottleneck
+
+The simplest way to scale a backend is to start another instance of the server. This will solve the issue, but in many cases it is a waste of hardware resources. For example, imagine you have a bottleneck in an application that collects or logs statistics. This might only use 15% of your CPU, because logging might include multiple IO operations but no intensive CPU operations. However, to scale this auxiliary function, you will have to pay for the whole instance.

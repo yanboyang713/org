@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       a88010ec-37d0-48d6-b5fc-995879ee88a9
+:END:
+#+title: drawbacks of microservices
+#+filetags:  
+
+There are, however, a few drawbacks of [[id:10682b04-b1f4-4200-a3a6-23a5d82c2795][microservices]]. These include the following:
++ Too many microservices overload the development process
++ You have to design interaction protocols
++ They can be expensive for small teams

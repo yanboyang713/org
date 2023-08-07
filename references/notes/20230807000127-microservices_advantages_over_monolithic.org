@@ -1,0 +1,19 @@
+:PROPERTIES:
+:ID:       f3570345-fddd-49f8-b4f7-f6fdc9798b8e
+:END:
+#+title: microservices advantages over monolithic
+#+filetags:
+
+* [[id:10682b04-b1f4-4200-a3a6-23a5d82c2795][Microservices]] have the following advantages over [[id:c5d789cf-3642-4b2a-a316-4edb622b2212][monolithic]] servers:
++ You can use different programming languages
++ The code base of a single server is smaller
++ They have an independent DevOps process to build and deploy activities
++ They can be scaled depending on their implementation
++ If one microservice fails, the rest will continue to work
++ They work well within containers
++ Increased isolation between elements leads to better security
++ They are suitable for projects involving the Internet of Things
++ They are in line with the [[id:df1d63a9-ab91-406c-bd99-e37b9db2a645][DevOps]] philosophy
++ They can be outsourced
++ They can be orchestrated after development
++ They are reusable

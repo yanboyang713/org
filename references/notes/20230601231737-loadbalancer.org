@@ -17,6 +17,7 @@ The big downside is that each service you expose with a LoadBalancer will get it
 + [[id:bf4517d9-d2d7-437f-ae23-3bc3adc89b72][MetalLB]]
 + [[id:dc736784-a95b-4f96-a5b5-7499bf9a9e33][OpenELB]]
 + [[id:2354c245-044c-4705-90ed-944ab2168d0b][PureLB]]
++ [[id:4e1ed1d3-0d83-4bfc-871f-d81fd264ac8d][traefik]]
 
 * Reference List
 1. https://tinychen.com/20220524-k8s-08-loadbalancer-purelb/
