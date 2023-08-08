@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       08cd34a3-21e6-4370-94b9-0d2f2cfbd6e5
+:END:
+#+title: VSCodium
+#+filetags:
+
+VSCodium — Community open-source release. Nullifies telemetry in the source code [1], also ships configuration with Open VSX.
+
+* Install on [[id:dc13b67c-8d8b-40fd-b8cf-9ea8547e485d][Arch Linux]]
+VSCodium is available on the AUR (Arch User Repository), and can be installed with an AUR Helper.
+#+begin_src bash
+paru -S vscodium-bin
+#+end_src
+
+* Reference List
+1. https://vscodium.com/

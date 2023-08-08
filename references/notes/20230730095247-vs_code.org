@@ -3,3 +3,8 @@
 :END:
 #+title: VS Code
 #+filetags:
+Code is a cross-platform text editor developed by Microsoft, built on the Electron framework.
++ [[id:08cd34a3-21e6-4370-94b9-0d2f2cfbd6e5][VSCodium]]
+
+* Reference List
+1. https://wiki.archlinux.org/title/Visual_Studio_Code

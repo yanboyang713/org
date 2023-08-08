@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       006ac0e3-e609-4782-a48b-694d6f931186
+:END:
+#+title: cargo-watch
+#+filetags:
+[[id:9d91bf12-660c-42df-9b76-5bafdd255251][Cargo]]

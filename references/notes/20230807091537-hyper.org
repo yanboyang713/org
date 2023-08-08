@@ -4,7 +4,139 @@
 #+title: hyper
 #+filetags: rust
 
-[[id:a2da1c32-ba1a-4c2c-9374-1bd8896920fa][rust]]
+* Introduction
+hyper is a fast HTTP implementation written in and for [[id:a2da1c32-ba1a-4c2c-9374-1bd8896920fa][Rust]].
++ A Client for talking to web services.
++ A Server for building those web services.
++ Blazing fast* thanks to Rust.
++ High concurrency with non-blocking sockets.
++ HTTP/1 and HTTP/2 support.
+
+* Binding a Tiny Server
+In this section, we'll create a Tiny Server from scratch. We'll start with the necessary dependencies, declare a main function, and then try to build and run it.
+** Adding necessary dependencies
+First, we need to create a new folder where we'll add the necessary dependencies to create our first microservice. Use cargo to make a new project called hyper-microservice:
+#+begin_src console
+cargo new hyper-microservice
+#+end_src
+
+Open the created folder and add dependencies to your Cargo.toml file:
+#+begin_src toml
+[dependencies]
+hyper = "0.14"
+#+end_src
+
+The single dependency is the hyper crate. The latest release of this crate is asynchronous and lies on top of the futures crate. It also uses the tokio crate for runtime, which includes the scheduler, reactor, and asynchronous sockets. Some of the necessary types of the tokio crate are re-exported in the hyper::rt module. The main purpose of hyper is to operate with the HTTP protocol, which means that the crate can support other runtimes in the future.
+
+** The main function of the server
+Let's start with the main function and add the necessary dependencies one by one, looking in detail at why we need each one. A minimal HTTP server needs the following:
++ An address to bind to
++ A server instance to handle incoming requests
++ A default handler for any request
++ A reactor (runtime) where the server instance will operate
+
+*** Address of the server
+The first thing we need is an address. A socket address consists of an IP address and a port number. We'll use IPv4 because it's widely supported.
+
+The standard Rust library contains an IpAddr type to represent the IP address. We'll use the SocketAddr struct, which contains both the IpAddr and the u16 for the port number. We can construct the SocketAddr from a tuple of the ([u8; 4], u16) type. Add the following code to our main function:
+
+#+begin_src rust
+let addr = ([127, 0, 0, 1], 8080).into();
+#+end_src
+
+We used an implementation of the impl<I: Into<IpAddr>> From<(I, u16)> for SocketAddr trait here, which, in turn, uses impl From<[u8; 4]> for IpAddr. This lets us use the .into() method call to construct a socket address from the tuple. Similarly, we can create new SocketAddr instances with a constructor. In production applications, we will parse the socket addresses from external strings (command-line parameters or environment variables), and if no variants are set, we'll create SocketAddr from a tuple with default values.
+
+*** Server instances
+
+Now we can create a server instance and bind to this address:
+#+begin_src rust
+let builder = Server::bind(&addr);
+#+end_src
+
+The preceding line creates a *hyper::server::Server* instance with a bind constructor that actually returns Builder, not a Server instance. The Server struct implements the Future trait. It has similar role to Result, but describes a value that isn't available immediately.
+
+*** Setting the requests handler
+
+The Builder struct provides methods to tweak the parameters of the server created. For example, hyper's server supports both HTTP1 and HTTP2. You can use a builder value to choose either one protocol or both. In the following example, we're using builder to attach a service for handling incoming HTTP requests using the serve method:
+#+begin_src rust
+let server = builder.serve(|| {
+    service_fn_ok(|_| {
+        Response::new(Body::from("Almost microservice..."))
+    })
+});
+#+end_src
+
+Here, we're using the builder instance to attach a function that generates a Service instance. This function implements the *hyper::service::NewService* trait. The generated item then has to implement the *hyper::service::Service* trait. A service in a hyper crate is a function that takes a request and gives a response back. We haven't implemented this trait in this example; instead, we'll use the *service_fn_ok* function, which turns a function with suitable types into a service handler.
+
+There are two corresponding structs: *hyper::Request* and *hyper::Response*. In the preceding code, we ignored a request argument and constructed the same response for every request. The response contains a body of static text.
+
+*** Adding the server instance to a runtime
+
+Since we now have a handler, we can start the server. The runtime expects a *Future* instance with the *Future<Item = (), Error = ()>* type, but the Server struct implements a Future with the *hyper::Error error* type. We can use this error to inform the user about issues, but in our example we'll just drop any error. As you might remember, the drop function expects a single argument of any type and returns a unit empty type. The Future trait uses the *map_err* method. It changes the error type using a function, which expects the original error type and returns a new one. Drop an error from the server using the following:
+#+begin_src rust
+let server = server.map_err(drop);
+#+end_src
+
+We now have everything we need and can start the server with the specific runtime. Use the *hyper::rt::run* function to start the server:
+#+begin_src rust
+hyper::rt::run(server);
+#+end_src
+
+Don't compile it yet, because we haven't imported types. Add it to the head of a source file:
+#+begin_src rust
+use hyper::{Body, Response, Server};
+use hyper::rt::Future;
+use hyper::service::service_fn_ok;
+#+end_src
+
+We need to import the different hyper types that we are using: *Server*, *Response*, and *Body*. In the final line, we're using the *service_fn_ok* function. The Future import needs special attention; it's the re-exported trait of the futures crate and it's used everywhere in the hyper crate.
+
+*** Full Example
+#+begin_src rust
+use hyper::{Body, Response, Server};
+use hyper::rt::Future;
+use hyper::service::service_fn_ok;
+
+fn main() {
+    let addr = ([127, 0, 0, 1], 8080).into();
+    let builder = Server::bind(&addr);
+    let server = builder.serve(|| {
+        service_fn_ok(|_| {
+            Response::new(Body::from("Rust Microservice"))
+        })
+    });
+    let server = server.map_err(drop);
+    hyper::rt::run(server);
+}
+#+end_src
+
+** Building and running
+You can now compile the code and start the server with the following command:
+#+begin_src bash
+cargo run
+#+end_src
+
+Use your browser to connect to the server. Enter *http://localhost:8080/* in the browser's address bar and the browser will connect to your server and show you a page with the text you entered in the previous code.
+
+** Rebuilding on changes
+
+When you're working on developing web servers, it's useful to have instant access to compiled and running applications. It's tiresome to have to restart cargo run manually whenever you change the code. I recommend that you install and use the *cargo-watch* subcommand on cargo. This will monitor the changes made to the files of your project and restart the other commands you have chosen.
+
+To install cargo-watch, perform the following steps:
+1. Type the following command in the console:
+   #+begin_src bash
+cargo install cargo-watch
+   #+end_src
+2. Use the run command with watch:
+   #+begin_src bash
+cargo watch -x "run"
+   #+end_src
+
+You can add extra arguments to the run command between quotes or add extra arguments after the -- characters.
+
+* Handling incoming requests
+We've created a server, but it isn't very useful until it can respond to real requests. In this section, we'll add handlers to the requests and use the principles of [[id:8aeb67cf-d0e4-44d2-a3d4-8e4d9f71748b][RESTful]].
+
 
 * Reference List
 1. https://hyper.rs/

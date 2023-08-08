@@ -50,7 +50,6 @@ The Rust ecosystem consists of a number of tools, of which the main ones are:
 + cargo: the Rust dependency manager and build tool. Cargo knows how to download dependencies, usually hosted on https://crates.io, and it will pass them to rustc when building your project. Cargo also comes with a built-in test runner which is used to execute unit tests.
 + rustup: the Rust toolchain installer and updater. This tool is used to install and update rustc and cargo when new versions of Rust is released. When a new version of Rust is released, simply type *rustup update* to update. In addition, rustup can also download documentation for the standard library. You can have multiple versions of Rust installed at once and rustup will let you switch between them as needed.
 
-
 *Notes*:
 + Rust has a rapid release schedule with a new release coming out every six weeks. New releases maintain backwards compatibility with old releases — plus they enable new functionality.
 + There are three release channels: “stable”, “beta”, and “nightly”.
@@ -68,5 +67,8 @@ The Rust ecosystem consists of a number of tools, of which the main ones are:
     + [[id:aeb03cfd-41d6-4824-93bf-c1a75999c22d][build scripting]]
     + [[id:b98dfac4-6a0e-4e24-86d8-5b2c9b88ce3d][global installation]]
     + It is also extensible with sub command plugins as well (such as [[id:b08c25e0-dba1-4f14-953c-fd4feb80eb80][cargo clippy]]).
+
+* Subcommand
++ [[id:006ac0e3-e609-4782-a48b-694d6f931186][cargo-watch]]
 
 Read more from the official [[id:4f68cc09-4bb6-465d-ac10-b225ba2b4e06][Cargo Book]].
