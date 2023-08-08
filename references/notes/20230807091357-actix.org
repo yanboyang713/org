@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       03d86b2c-fd6c-4bd8-a87c-406d3660ea5a
+:END:
+#+title: actix
+#+filetags: rust
+
+[[id:a2da1c32-ba1a-4c2c-9374-1bd8896920fa][rust]]
+
+* Reference List
+1. https://actix.rs/

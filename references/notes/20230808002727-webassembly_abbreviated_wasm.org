@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       60149f1c-ac5c-4956-9163-2dfcbd244818
+:END:
+#+title: WebAssembly (abbreviated WASM)
+#+filetags:  
+
+* Reference List
+1. https://webassembly.org/

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       273e4267-392e-4db3-8e03-8be5bbcbd3a2
+:END:
+#+title: futures-rs
+#+filetags: rust
+
+futures-rs is a library providing the foundations for asynchronous programming in [[id:a2da1c32-ba1a-4c2c-9374-1bd8896920fa][Rust]]. It includes key trait definitions like Stream, as well as utilities like join!, select!, and various futures combinator methods which enable expressive asynchronous control flow.
+
+* Reference List
+1. https://github.com/rust-lang/futures-rs

@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       ff0acfa0-f0ff-445e-ba57-d948d6807b42
+:END:
+#+title: GPGPU
+#+filetags:  
+
+[[id:d6be6fc0-4aa7-45a7-bc65-e81f2a0723a2][Nvidia]]
+[[id:a2da1c32-ba1a-4c2c-9374-1bd8896920fa][Rust]]
+
+* Reference List
+1. https://bheisler.github.io/post/state-of-gpgpu-in-rust/

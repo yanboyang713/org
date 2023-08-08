@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       d725c9d3-62bd-45c8-bd1e-859ba3d32853
+:END:
+#+title: libc
+#+filetags: rust
+
+[[id:a2da1c32-ba1a-4c2c-9374-1bd8896920fa][rust]]
+
+libc - Raw FFI bindings to platforms' system libraries
+
+* Reference List
+1. https://github.com/rust-lang/libc

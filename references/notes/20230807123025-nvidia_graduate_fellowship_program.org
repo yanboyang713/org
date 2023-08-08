@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       32916109-d8b6-4f52-9dd6-1b84cad97603
+:END:
+#+title: NVIDIA Graduate Fellowship Program
+#+filetags:  
+
+[[id:d6be6fc0-4aa7-45a7-bc65-e81f2a0723a2][Nvidia]]
+
+https://research.nvidia.com/graduate-fellowships#gf-section-testimonials-

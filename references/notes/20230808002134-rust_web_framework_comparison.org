@@ -1,0 +1,25 @@
+:PROPERTIES:
+:ID:       9a65a593-2bcd-4b41-be52-8314cf94a19b
+:END:
+#+title: Rust web framework comparison
+#+filetags:  
+* Rust web framework comparison
+A comparison of some web frameworks written in [[id:a2da1c32-ba1a-4c2c-9374-1bd8896920fa][Rust]].
+
+* Frontend frameworks ([[id:60149f1c-ac5c-4956-9163-2dfcbd244818][WebAssembly (abbreviated WASM)]])
+Since WASM support is available in most browsers we can use Rust to build web applications :)
+
+* Server frameworks
+** High-Level Server Frameworks
++ [[id:03d86b2c-fd6c-4bd8-a87c-406d3660ea5a][actix-web]]
+
+** Low-Level Frameworks
++ [[id:03d86b2c-fd6c-4bd8-a87c-406d3660ea5a][actix-http]]
++ [[id:f7358c45-e531-4209-9a16-8150515b07e8][hyper]]
+
+* Client frameworks
+To build web clients with Rust, you can choose between these libraries:
++ [[id:f7358c45-e531-4209-9a16-8150515b07e8][hyper]]
+
+* Reference List
+1. https://github.com/flosse/rust-web-framework-comparison

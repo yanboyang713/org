@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       ddbaa5f7-e61c-4fa7-84b9-c3ded16b5d91
+:END:
+#+title: rocket
+#+filetags: rust
+
+Rocket is a web framework for [[id:a2da1c32-ba1a-4c2c-9374-1bd8896920fa][Rust]] that makes it simple to write fast, secure web applications without sacrificing flexibility, usability, or type safety.
+
+* Reference List
+1. https://rocket.rs/
