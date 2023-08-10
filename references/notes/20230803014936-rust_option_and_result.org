@@ -27,5 +27,6 @@ idx: Ok(0)
 + binary_search returns Result<usize, usize>.
     + If found, Result::Ok holds the index where the element is found.
     + Otherwise, Result::Err contains the index where such an element should be inserted.
+
 * Reference List
 1. https://google.github.io/comprehensive-rust/std/option-result.html

@@ -1,7 +1,0 @@
-:PROPERTIES:
-:ID:       a0182e62-5324-42d8-a422-c01f0eb05b88
-:END:
-#+title: rust mutex
-#+filetags:  
-
-https://doc.rust-lang.org/std/sync/struct.Mutex.html

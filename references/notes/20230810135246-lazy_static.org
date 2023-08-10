@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       12d71710-072c-4126-904c-e8e8c62021ba
+:END:
+#+title: lazy_static
+#+filetags:  
+
+[[id:a2da1c32-ba1a-4c2c-9374-1bd8896920fa][rust]]
+
+* Reference List
+1. https://docs.rs/lazy_static/latest/lazy_static/

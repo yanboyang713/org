@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       30f3c501-1683-46d9-96a0-d9afa771403a
+:END:
+#+title: rust collections
+#+filetags: rust
+
++ [[id:a51e3b88-bfdb-4447-ab96-f4e576a496ff][slab]]
++ [[id:8d5ca94c-410b-46ec-8185-91ae622b3080][Vec]]
