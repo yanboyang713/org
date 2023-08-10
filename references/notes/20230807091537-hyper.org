@@ -26,6 +26,19 @@ Open the created folder and add dependencies to your Cargo.toml file:
 hyper = "0.14"
 #+end_src
 
+Full Cargo.toml
+#+begin_src toml
+[package]
+name = "hyper-microservice"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+hyper = "0.14"
+#+end_src
+
 The single dependency is the hyper crate. The latest release of this crate is asynchronous and lies on top of the futures crate. It also uses the tokio crate for runtime, which includes the scheduler, reactor, and asynchronous sockets. Some of the necessary types of the tokio crate are re-exported in the hyper::rt module. The main purpose of hyper is to operate with the HTTP protocol, which means that the crate can support other runtimes in the future.
 
 ** The main function of the server
@@ -118,25 +131,42 @@ cargo run
 
 Use your browser to connect to the server. Enter *http://localhost:8080/* in the browser's address bar and the browser will connect to your server and show you a page with the text you entered in the previous code.
 
-** Rebuilding on changes
-
-When you're working on developing web servers, it's useful to have instant access to compiled and running applications. It's tiresome to have to restart cargo run manually whenever you change the code. I recommend that you install and use the *cargo-watch* subcommand on cargo. This will monitor the changes made to the files of your project and restart the other commands you have chosen.
-
-To install cargo-watch, perform the following steps:
-1. Type the following command in the console:
-   #+begin_src bash
-cargo install cargo-watch
-   #+end_src
-2. Use the run command with watch:
-   #+begin_src bash
-cargo watch -x "run"
-   #+end_src
-
-You can add extra arguments to the run command between quotes or add extra arguments after the -- characters.
+If you want to check [[id:26296a91-d2aa-4be2-8f4e-840f36b90961][Rebuilding on changes]], Please check here.
 
 * Handling incoming requests
 We've created a server, but it isn't very useful until it can respond to real requests. In this section, we'll add handlers to the requests and use the principles of [[id:8aeb67cf-d0e4-44d2-a3d4-8e4d9f71748b][RESTful]].
 
+** Adding a service function
+In the previous section, we implemented simple services based on *service_fn_ok* functions, which expect the service function not to throw any errors. There are also *service_fn* functions, which can be used to create handlers that can return an error. These are more suitable for asynchronous [[id:4d0090f7-636c-4305-b205-3c8515da230f][Future]] results.
+
+As we saw previously, the Future trait has two associated types: one for a successful result and one for an error. The *service_fn* function expects the result to be converted into future with the *IntoFuture* trait. You can read more about the *futures* crate and its types in the next chapter.
+
+Let's change the previous service function into one that returns the Future instance:
+#+begin_src rust
+let server = builder.serve(|| service_fn(microservice_handler));
+#+end_src
+
+Then add this unimplemented service function:
+#+begin_src rust
+fn microservice_handler(req: Request<Body>)
+    -> impl Future<Item=Response<Body>, Error=Error>
+{
+    unimplemented!();
+}
+#+end_src
+
+Similar to the previous one, this function expects a Request, but it doesn't return a simple Response instance. Instead, it returns a future result. Since Future is a trait (which doesn't have a size), we can't return an unsized entity from the function and we have to wrap it in a Box. However, in this case, we used a brand new approach, which is the impl trait. This allows us to return an implementation of the trait by value, rather than by reference. Our future can be resolved to a *hyper::Response<Body>* item or a *hyper::Error* error type. You should import the necessary types if you've started a project from scratch and aren't using the code examples included with this book:
+#+begin_src rust
+use futures::{future, Future};
+use hyper::{Body, Error, Method, Request, Response, Server, StatusCode};
+use hyper::service::service_fn;
+#+end_src
+
+We also imported the Future trait from the futures crate. Make sure you're either using edition = "2018" in the Cargo.toml file, or importing the crates in main.rs:
+#+begin_src rust
+extern crate futures;
+extern crate hyper;
+#+end_src
 
 * Reference List
 1. https://hyper.rs/

@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       9fb984e7-4b69-40fa-a4a1-d7a7f7c598eb
+:END:
+#+title: Tauri
+#+filetags:  
+
+[[id:a2da1c32-ba1a-4c2c-9374-1bd8896920fa][rust]]

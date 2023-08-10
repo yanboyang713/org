@@ -4,3 +4,22 @@
 #+title: cargo-watch
 #+filetags:
 [[id:9d91bf12-660c-42df-9b76-5bafdd255251][Cargo]]
+
+* Rebuilding on changes
+:PROPERTIES:
+:ID:       26296a91-d2aa-4be2-8f4e-840f36b90961
+:END:
+
+When you're working on developing web servers, it's useful to have instant access to compiled and running applications. It's tiresome to have to restart cargo run manually whenever you change the code. I recommend that you install and use the *cargo-watch* subcommand on cargo. This will monitor the changes made to the files of your project and restart the other commands you have chosen.
+
+To install cargo-watch, perform the following steps:
+1. Type the following command in the console:
+   #+begin_src bash
+cargo install cargo-watch
+   #+end_src
+2. Use the run command with watch:
+   #+begin_src bash
+cargo watch -x "run"
+   #+end_src
+
+You can add extra arguments to the run command between quotes or add extra arguments after the -- characters.

@@ -4,9 +4,11 @@
 #+title: rust learning
 #+filetags: rust book
 
-[[id:e2cfbd51-71a9-4a32-82cc-1c41654ee281][learn rust Day1]]
-[[id:c8f619c8-7669-43c9-af7f-d16556506e0a][learn rust Day2]]
-[[id:8ee3c59e-9dc5-42d2-84c9-9493f78e9e6a][learn rust Day3]]
+* Learning
++ [[id:e2cfbd51-71a9-4a32-82cc-1c41654ee281][learn rust Day1]]
++ [[id:c8f619c8-7669-43c9-af7f-d16556506e0a][learn rust Day2]]
++ [[id:8ee3c59e-9dc5-42d2-84c9-9493f78e9e6a][learn rust Day3]]
++ [[id:ae0b8d17-f407-4c66-a97b-17f592961b9f][learn rust Day4]]
 
 * Reference List
 1. https://google.github.io/comprehensive-rust/

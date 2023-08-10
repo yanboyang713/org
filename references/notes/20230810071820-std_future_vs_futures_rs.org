@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       500f9f07-28c2-48b4-8bbb-972a3170f42c
+:END:
+#+title: std::future vs futures-rs
+#+filetags:  
+* std::future and futures-rs
+Rust has two kinds of types commonly referred to as Future:
++ the first is std::future::[[id:4d0090f7-636c-4305-b205-3c8515da230f][Future]] from [[id:13440ce3-0962-44aa-b0ec-335ec18609ee][Rust's Standard Library]].
++ the second is futures::future::Future from the [[id:273e4267-392e-4db3-8e03-8be5bbcbd3a2][futures-rs]] crate.
+
+* Reference List
+1. https://book.async.rs/overview/std-and-library-futures.html

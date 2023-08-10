@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       114bd9e9-3778-4618-b70d-6b077e6055ab
+:END:
+#+title: Tauri vs Flutter
+#+filetags:
+
+[[id:9fb984e7-4b69-40fa-a4a1-d7a7f7c598eb][Tauri]]
+[[id:83573b6a-8655-4bde-9b22-79d61336c852][Flutter]]
+
+* Reference List
+1. https://www.frontendmag.com/insights/tauri-vs-flutter/

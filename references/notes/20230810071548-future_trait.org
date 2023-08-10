@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       4d0090f7-636c-4305-b205-3c8515da230f
+:END:
+#+title: Future Trait
+#+filetags:  
+* The Future Trait
+The Future trait is at the center of asynchronous programming in [[id:a2da1c32-ba1a-4c2c-9374-1bd8896920fa][Rust]].
+A Future is an asynchronous computation that can produce a value (although that value may be empty, e.g. ()). A simplified version of the future trait might look something like this:
+
+
+* Reference List
+1. https://rust-lang.github.io/async-book/02_execution/02_future.html

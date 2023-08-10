@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       306dab2b-1ca7-4740-b2c7-ef2ea69a2baa
+:END:
+#+title: async-std
+#+filetags: rust
+
+* Reference List
+1. https://async.rs/

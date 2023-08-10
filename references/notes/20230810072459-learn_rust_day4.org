@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       ae0b8d17-f407-4c66-a97b-17f592961b9f
+:END:
+#+title: learn rust Day4
+#+filetags:  
+
+[[id:a38cc45a-5bef-4a45-9dde-2d29f6535029][Asynchronous Programming in Rust]]
