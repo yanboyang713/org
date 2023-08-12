@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       48e8a1c1-f8af-4646-9848-a6a7701bf93e
+:END:
+#+title: eBPF/XDP load-balancer
+#+filetags:  
+
+[[id:bf5b14f3-8e4c-4706-aea0-102268c418d3][eBPF]]
+[[id:a2da1c32-ba1a-4c2c-9374-1bd8896920fa][rust]]
+
+* Reference List
+1. https://konghq.com/blog/engineering/writing-an-ebpf-xdp-load-balancer-in-rust

@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       dc89fa62-eb88-46a2-a061-b8a9dc8c0717
+:END:
+#+title: Rust Libraries
+#+filetags:  
+
+[[id:a2da1c32-ba1a-4c2c-9374-1bd8896920fa][rust]]
+* Logging
++ estk/log4rs — highly configurable logging framework modeled after Java's Logback and log4j libraries CircleCI
++ jesusprubio/leg — Elegant print for lazy devs. Make your CLIs nicer with minimal effort. Build Status
++ rbatis/fast_log — Rust async log High-performance asynchronous logging
++ [[id:88e00c71-1aed-4109-94fb-a868d0e00c95][rust-lang/log]] — Logging implementation for Rust
++ seanmonstar/pretty-env-logger — A pretty, easy-to-use logger for Rust.
++ slog-rs/slog — Structured, composable logging for Rust
++ tokio-rs/tracing — An application level tracing framework for async-aware structured logging, error handling, metrics, and more Build Status
