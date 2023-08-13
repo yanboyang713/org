@@ -2,7 +2,9 @@
 :ID:       b821d984-6246-4bf7-b214-49942bb502ef
 :END:
 #+title: parsing command-line arguments
-#+filetags:
+#+filetags: rust
+
+[[id:a2da1c32-ba1a-4c2c-9374-1bd8896920fa][rust]]
 
 + clap-rs [clap] — A simple to use, full featured command-line argument parser
 + cliparser — Simple command line parser. build badge

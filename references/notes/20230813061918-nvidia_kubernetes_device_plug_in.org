@@ -1,0 +1,29 @@
+:PROPERTIES:
+:ID:       619e8939-57f4-46a0-bf4f-8bdce724b748
+:END:
+#+title: NVIDIA Kubernetes Device Plug-in
+#+filetags:
+
+* [[id:d6be6fc0-4aa7-45a7-bc65-e81f2a0723a2][Nvidia]] [[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]] Device Plug-in Brings Temporal GPU [[id:acbac621-3c98-4f2a-b3db-76095a86873d][Concurrency]]
+provisioning the right-sized GPU acceleration for each workload is key to improving utilization and reducing the operational costs of deployment, whether on-premises or in the cloud.
+
+To address the challenge of GPU utilization in Kubernetes (K8s) clusters, NVIDIA offers multiple GPU concurrency and sharing mechanisms to suit a broad range of use cases. The latest addition is the new GPU time-slicing APIs, now broadly available in Kubernetes with NVIDIA K8s Device Plugin 0.12.0 and the NVIDIA GPU Operator 1.11. Together, they enable multiple GPU-accelerated workloads to time-slice and run on a single NVIDIA GPU.
+
+* When to share NVIDIA GPUs
+Here are some example workloads that can benefit from sharing GPU resources for better utilization:
++ Low-batch inference serving, which may only process one input sample on the GPU
++ High-performance computing (HPC) applications, such as simulating photon propagation, that balance computation between the CPU (to read and process inputs) and GPU (to perform computation). Some HPC applications may not achieve high throughput on the GPU portion due to bottlenecks on the CPU core performance.
++ Interactive development for ML model exploration using Jupyter notebooks
++ Spark-based data analytics applications, where some tasks, or the smallest units of work, are run concurrently and benefit from better GPU utilization
++ Visualization or offline rendering applications that may be bursty in nature
++ Continuous integration/continuous delivery ([[id:8e6e76d5-c2b0-43ba-b837-1a0a68933c23][CI/CD]]) pipelines that want to use any available GPUs for testing
+
+* GPU concurrency mechanisms
+The NVIDIA GPU hardware, in conjunction with the CUDA programming model, provides a number of different concurrency mechanisms for improving GPU utilization. The mechanisms range from programming model APIs, where the applications need code changes to take advantage of concurrency, to system software and hardware partitioning including virtualization, which are transparent to applications (Figure 1).
+[[https://developer-blogs.nvidia.com/wp-content/uploads/2022/06/GPU-Concurrency-Mechanisms-1024x482.png]]
+
++ [[id:2ac626b3-c65d-4ecc-8e56-adc900d70c1c][CUDA streams]]
++ [[id:427c1bb9-2154-4e91-a89a-7631f4c12370][Time-slicing]]
+
+* Reference List
+1. https://www.infoq.com/news/2022/12/k8s-gpu-time-slicing/

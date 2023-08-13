@@ -2,7 +2,9 @@
 :ID:       f2fdbf79-8ed3-4efd-9691-ed042f6cfe4b
 :END:
 #+title: rust configuration file
-#+filetags:
+#+filetags: rust
+
+[[id:a2da1c32-ba1a-4c2c-9374-1bd8896920fa][rust]]
 
 * Reading the configuration from file
 Environment variables and command-line arguments are useful to add temporary change parameters for a single run. They are a more convenient way to configure servers to use configuration files. This approach doesn't conform to The Twelve-Factor App methodology, but it's useful in cases when you need to set long parameters.

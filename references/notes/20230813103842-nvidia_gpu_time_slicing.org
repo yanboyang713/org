@@ -1,0 +1,31 @@
+:PROPERTIES:
+:ID:       427c1bb9-2154-4e91-a89a-7631f4c12370
+:END:
+#+title: nvidia GPU Time-slicing
+#+filetags:  
+
+
+* Time-slicing
+When dealing with multiple CUDA applications, each of which may not fully utilize the GPU’s resources, you can use a simple oversubscription strategy to leverage the GPU’s time-slicing scheduler. This is supported by compute preemption starting with the Pascal architecture. This technique, sometimes called temporal GPU sharing, does carry a cost for context-switching between the different CUDA applications, but some underutilized applications can still benefit from this strategy.
+
+Since CUDA 11.1 (R455+ drivers), the time-slice duration for CUDA applications is configurable through the nvidia-smi utility:
+#+begin_src console
+$ nvidia-smi compute-policy --help
+
+    Compute Policy -- Control and list compute policies.
+
+    Usage: nvidia-smi compute-policy [options]
+
+    Options include:
+    [-i | --id]: GPU device ID's. Provide comma
+                 separated values for more than one device
+
+    [-l | --list]: List all compute policies
+
+    [ | --set-timeslice]: Set timeslice config for a GPU:
+                          0=DEFAULT, 1=SHORT, 2=MEDIUM, 3=LONG
+
+    [-h | --help]: Display help information
+#+end_src
+
+The tradeoffs with time-slicing are increased latency, jitter, and potential out-of-memory (OOM) conditions when many different applications are time-slicing on the GPU. This mechanism is what we focus on in the second part of this post.

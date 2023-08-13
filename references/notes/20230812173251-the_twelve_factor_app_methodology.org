@@ -19,7 +19,7 @@ Any developer building applications which run as a service. Ops engineers who de
 * The Twelve Factors
 + Codebase: One codebase tracked in revision control, many deploys
 + Dependencies: Explicitly declare and isolate dependencies
-+ Config: Store config in the environment
++ [[id:a9d4474f-29b4-4eb8-aba7-9008fedc4110][Config]]: Store config in the environment
 + Backing services: Treat backing services as attached resources
 + Build, release, run: Strictly separate build and run stages
 + Processes: Execute the app as one or more stateless processes
