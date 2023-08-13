@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       919f3009-2155-4fe0-8054-158b86549d2c
+:END:
+#+title: rust environment variable
+#+filetags:

@@ -1,0 +1,34 @@
+:PROPERTIES:
+:ID:       81899fe6-9ec0-4234-b303-5e282af6cb3c
+:END:
+#+title: the twelve-factor app methodology
+#+filetags:
+* Introduction
+In the modern era, software is commonly delivered as a service: called web apps, or [[id:1e4094e3-9183-4879-94d3-267fa2d3107a][Software as a Service (SaaS)]]. The twelve-factor app is a methodology for building software-as-a-service apps that:
++ Use declarative formats for setup automation, to minimize time and cost for new developers joining the project;
++ Have a clean contract with the underlying operating system, offering maximum portability between execution environments;
++ Are suitable for deployment on modern cloud platforms, obviating the need for servers and systems administration;
++ Minimize divergence between development and production, enabling [[id:addfac26-87d4-4676-9d39-a89fe51cc217][Continuous Deployment]] for maximum agility;
++ And can scale up without significant changes to tooling, architecture, or development practices.
+
+The twelve-factor methodology can be applied to apps written in any programming language, and which use any combination of backing services (database, queue, memory cache, etc).
+
+* Who should read this document?
+Any developer building applications which run as a service. Ops engineers who deploy or manage such applications.
+
+* The Twelve Factors
++ Codebase: One codebase tracked in revision control, many deploys
++ Dependencies: Explicitly declare and isolate dependencies
++ Config: Store config in the environment
++ Backing services: Treat backing services as attached resources
++ Build, release, run: Strictly separate build and run stages
++ Processes: Execute the app as one or more stateless processes
++ Port binding: Export services via port binding
++ Concurrency: Scale out via the process model
++ Disposability: Maximize robustness with fast startup and graceful shutdown
++ Dev/prod parity: Keep development, staging, and production as similar as possible
++ [[id:892a38ae-73e2-4262-985a-a83c8a62fe69][Logging]]: Treat logs as event streams
++ Admin processes: Run admin/management tasks as one-off processes
+
+* Reference List
+1. https://12factor.net/

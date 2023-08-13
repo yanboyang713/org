@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       a9d4474f-29b4-4eb8-aba7-9008fedc4110
+:END:
+#+title: software configurable variable
+#+filetags:  
+
+[[id:f2fdbf79-8ed3-4efd-9691-ed042f6cfe4b][rust configuration file]]
+[[id:b821d984-6246-4bf7-b214-49942bb502ef][parsing command-line arguments]]
+[[id:919f3009-2155-4fe0-8054-158b86549d2c][rust environment variable]]

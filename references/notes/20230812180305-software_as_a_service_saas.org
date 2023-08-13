@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       1e4094e3-9183-4879-94d3-267fa2d3107a
+:END:
+#+title: Software as a Service (SaaS)
+#+filetags:  
+
+* Reference List
+1. https://www.techtarget.com/searchcloudcomputing/definition/Software-as-a-Service?Offer=abt_pubpro_AI-Insider
