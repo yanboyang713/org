@@ -27,3 +27,4 @@ The NVIDIA GPU hardware, in conjunction with the CUDA programming model, provide
 
 * Reference List
 1. https://www.infoq.com/news/2022/12/k8s-gpu-time-slicing/
+2. https://developer.nvidia.com/blog/improving-gpu-utilization-in-kubernetes/

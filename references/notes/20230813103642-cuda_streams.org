@@ -1,7 +1,7 @@
 :PROPERTIES:
 :ID:       2ac626b3-c65d-4ecc-8e56-adc900d70c1c
 :END:
-#+title: #+title: CUDA streams
+#+title: CUDA streams
 #+filetags:  
 
 * CUDA streams
