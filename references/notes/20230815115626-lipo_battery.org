@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       dd4f3e0b-b1e7-4d19-88ba-8d28569e6465
+:END:
+#+title: LiPo battery
+#+filetags:  
+
+[[id:99ad3062-59b9-490c-bbd6-a27cf4448aad][UAV]]
+[[id:35d4276c-a7bf-4dde-9bbd-3dea58d44efc][C-rating]]

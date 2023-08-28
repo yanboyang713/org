@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       f87c592c-f684-401a-8889-85ba6ecc1f69
+:END:
+#+title: JavaMOP
+#+filetags:
+JavaMOP already has
+support for finite state machines (FSM)
+extended regular expressions (ERE)
+context-free grammars (CFG)
+past time (specific) linear temporal logic (PTLTL)
+a linear temporal logic supporting both future and past operators simultaneously (LTL)
+past time linear temporal logic with calls and returns (PTCaRet).
+
+ERE, CFG, FSM, LTL, SRS

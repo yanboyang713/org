@@ -1,7 +1,12 @@
 :PROPERTIES:
 :ID:       21b03f6f-3b8c-4407-ad61-8f8c3143738a
 :END:
-#+title: vGPU
+#+title: Virtualization with vGPU
 #+filetags:
 
-[[id:d6be6fc0-4aa7-45a7-bc65-e81f2a0723a2][Nvidia]]
+[[id:d6be6fc0-4aa7-45a7-bc65-e81f2a0723a2][Nvidia]] vGPU enables virtual machines with full input-output memory management unit (IOMMU) protection to have simultaneous, direct access to a single physical GPU. Apart from security, NVIDIA vGPU brings in other benefits such as VM management with live VM migration and the ability to run mixed VDI and compute workloads, as well as integration with a number of industry hypervisors.
+
+On GPUs that support MIG, each GPU partition is exposed as a single-root I/O virtualization (SR-IOV) virtual function for a VM. All VMs can run in parallel as opposed to being time-sliced (on GPUs that do not support MIG).
+
+* Reference List
+1. https://developer.nvidia.com/blog/improving-gpu-utilization-in-kubernetes/

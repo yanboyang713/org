@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       0d57e555-dad8-4bf3-8b0c-404a92ef160e
+:END:
+#+title: Data Synthesis
+#+filetags:
+
+Data synthesis brings together results and examines the findings together for patterns of agreement, convergence, divergence, or discrepancy.
+
+* Reference List
+1. https://vetoviolence.cdc.gov/apps/evaluaction/assets/pdf/Data-Analysis-Synthesis-and-Interpretation.pdf

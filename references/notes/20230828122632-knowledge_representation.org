@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       72485e34-a45e-4c8c-a6ff-beb0647a10aa
+:END:
+#+title: Knowledge representation
+#+filetags:  
+
+Knowledge representation is the process of encoding information about the world in a form that a computer can use to solve problems.
+
+* Reference List
+1. https://www.aiforanyone.org/glossary/knowledge-representation-and-reasoning
