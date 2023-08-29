@@ -1,0 +1,30 @@
+:PROPERTIES:
+:ID:       a5eb7531-75de-4648-b86b-87f66d50a143
+:END:
+#+title: Industry 1.0-4.0
+#+filetags:
+* Industry 1.0
+:PROPERTIES:
+:ID:       4e598564-fb79-4694-8f25-73efd01a6fd3
+:END:
+Industry 1.0 was about mechanization and steam power,
+* Industry 2.0
+:PROPERTIES:
+:ID:       c87f6d1f-a5dd-4527-8058-fdfa7fec68f7
+:END:
+and then mass production and assembly line which was known as Industry 2.0,
+* Industry 3.0
+:PROPERTIES:
+:ID:       29d7af62-6a18-4b55-a8d4-4469466c416f
+:END:
+and digitalization and automation are Industry 3.0,
+* Industry 4.0
+:PROPERTIES:
+:ID:       8feddd36-d37b-4fe8-9b70-96b97f63ae8f
+:END:
+and finally, Industry 4.0 is planned for the distributed engender through shared amenities in the combined global industrial structure for on-demand manufacturing to succeed personalization and resource efficiency
+The smart factory approach is part of Industry 4.0 and is divided into three categories
+including smart production, smart services, and smart energy
+
+* Reference List
+1. Cicconi, P.; Russo, A.C.; Germani, M.; Prist, M.; Pallotta, E.; Monteriu, A. Cyber-physical system integration for industry 4.0: Modelling and simulation of an induction heating process for aluminium-steel molds in footwear soles manufacturing. In Proceedings of the 2017 IEEE 3rd International Forum on Research and Technologies for Society and Industry (RTSI), Modena, Italy, 11–13 September 2017; pp. 1–6.
