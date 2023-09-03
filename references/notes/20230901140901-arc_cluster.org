@@ -1,0 +1,35 @@
+:PROPERTIES:
+:ID:       59d7305d-15fa-4e3a-a7d6-cb8a7ee7b1a5
+:END:
+#+title: Arc Cluster
+#+filetags:
+
+[[id:687b233f-bf60-4e28-93df-af75f4a94dac][NCSU]] CSC Cluster
+
+* Login
+[[id:b091635c-19ca-4bf6-88c3-a672a46dc66d][ssh key]]
+
+@arc.csc.ncsu.edu
+
+ssh -i byan4 byan4@arc.csc.ncsu.edu
+
+* List Nodes
+#+begin_src bash
+sinfo
+#+end_src
+
+* Access
+salloc - give me assess rand
+
+salloc -w c(node number)
+
+https://github.com/yrahul3910/convenience-scripts/blob/master/run-template.sh
+
+* Run as batch
+sbatch run.sh
+
+* Cancel
+scancel (job number)
+
+* Helper bash scripts
+https://github.com/yrahul3910/convenience-scripts/tree/master

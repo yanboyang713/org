@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       2c1eff23-df16-430c-a780-3f79ea55e3f0
+:END:
+#+title: relibility of simulated distributed systems
+#+filetags:
+
+[[id:da630b90-238e-4d5e-962a-e1092f57e976][Metamorphic Testing]]
+
+* Reference List
+1. Núñez, A., Cañizares, P. C., Gómez-Abajo, P., Guerra, E., & de Lara, J. (2022, May). Analyzing the reliability of simulated distributed systems using Metamorphic Testing. In Proceedings of the 7th International Workshop on Metamorphic Testing (pp. 34-41).

@@ -1,0 +1,17 @@
+:PROPERTIES:
+:ID:       b091635c-19ca-4bf6-88c3-a672a46dc66d
+:END:
+#+title: ssh key
+#+filetags:
+
+[[id:278645d6-efd7-4127-a748-e309c118efbe][security]]
+
+* Create
+#+begin_src bash
+ssh-keygen -f username -t rsa -b 4096 -C 'username'
+#+end_src
+
+* login
+#+begin_src bash
+ssh -i private_key username@server
+#+end_src

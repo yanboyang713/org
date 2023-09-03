@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       e9c6d988-29bc-4e7b-b4c1-0cf80e177c6c
+:END:
+#+title: relational database
+#+filetags:
+
++ [[id:97a5c070-1745-4002-b5fe-0d170877ba3f][PostgreSQL]]

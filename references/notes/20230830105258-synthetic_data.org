@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       a2ac28b2-6932-45a9-83d0-405b22f60061
+:END:
+#+title: synthetic data
+#+filetags:
+This synthetic data must meet two requirements: First, it must somewhat resemble the original data statistically, to ensure realism and keep problems engaging for data scientists. Second, it must also formally and structurally resemble the original data, so that any software written on top of it can be reused.
+
+* Reference List
+1. Patki, N., Wedge, R., & Veeramachaneni, K. (2016, October). The synthetic data vault. In 2016 IEEE International Conference on Data Science and Advanced Analytics (DSAA) (pp. 399-410). IEEE.

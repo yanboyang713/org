@@ -11,3 +11,5 @@
 + [[id:6bf33d95-36f3-44b4-9ea5-360995b13321][OpenShift]]
 + [[id:eebf10a7-c17a-4d17-a313-c9d620028cfa][OKD]]
 + [[id:74e60694-52a6-4eb9-8f1f-1be12893be65][Mesos]]
+
++ [[id:59d7305d-15fa-4e3a-a7d6-cb8a7ee7b1a5][Arc Cluster]]

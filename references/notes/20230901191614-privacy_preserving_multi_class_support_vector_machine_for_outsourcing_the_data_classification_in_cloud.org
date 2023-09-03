@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       2a6b7641-6227-4574-8075-35fd29ef2435
+:END:
+#+title: Privacy-Preserving Multi-Class Support Vector Machine for Outsourcing the Data Classification in Cloud
+#+filetags:
+In the cloud computing architecture-based IIoT, the authors proposed a multi-class support vector machine data classification method combined with homomorphic encryption, which could ensure the confidentiality of the data uploaded by the client and
+the classification training set and parameters in data classification.
+
+* Reference List
+1. Chen, Y., Mao, Q., Wang, B., Duan, P., Zhang, B., & Hong, Z. (2022). Privacy-preserving multi-class support vector machine model on medical diagnosis. IEEE Journal of Biomedical and Health Informatics, 26(7), 3342-3353.
