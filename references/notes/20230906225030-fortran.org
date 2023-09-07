@@ -1,0 +1,51 @@
+:PROPERTIES:
+:ID:       fdd30d62-47a8-44ee-925a-b56daa50030f
+:END:
+#+title: fortran
+#+filetags:
+* What is GFortran?
+GNU Fortran is a part of GCC, the GNU Compiler Collection. GCC consists of a collection of front ends for various languages, which translate the source code into a language-independent form called GENERIC. This is then processed by a common middle end which provides optimization, and then passed to one of a collection of back ends which generate code for different computer architectures and operating systems. Additional information regarding what GFortran is can be found here.
+
+This short tutorial is a guide to help familiarize you with writing a simple Hello World program using the GFortran compiler.
+
+* Install gFortran
+#+begin_src bash
+paru -S gcc-fortran
+#+end_src
+
+* Check to see if you have gfortran installed.
+To check whether you have gfortran already installed type in the command:
+#+begin_src console
+(base) [yanboyang713@archlinux ~]$ which gfortran
+/usr/bin/gfortran
+#+end_src
+
+If nothing is returned then gfortran is not installed.
+
+* Let’s create our first program
+Note: It is important to include the ‘.f’ after every file that you wish to compile using the gfortran compiler.
+#+begin_src bash
+vim fortran.f
+#+end_src
+
+#+begin_src fortran
+program helloworld
+
+print *, “Hello World”
+
+end program helloworld
+#+end_src
+
+* compiling the file
+#+begin_src bash
+gfortran fortran.f
+#+end_src
+
+* Run
+#+begin_src bash
+./a.out
+#+end_src
+
+* Reference List
+1. https://laptops.eng.uci.edu/engineering-software/programming-basics/gfortran-hello-world
+2. https://ubuntu-archive-team.ubuntu.com/madison.cgi?package=gfortran&a=&c=&s=
