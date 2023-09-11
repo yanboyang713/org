@@ -8,7 +8,13 @@
 You need install [[id:012ee935-1a96-4a7d-bb5f-fd95d83438a8][conda]] first.
 
 #+begin_src bash
-conda create -n myenv python=3.7.7
+conda create -n myenv -y python=3.7.7
+#check which shell I am using?
+echo $0
+conda init bash
+source /root/.bashrc
+RUN bash -c "source /root/.bashrc"
+
 conda activate myenv
 conda install notebook ipykernel
 ipython kernel install --user --name myenv --display-name "Python (myenv)"
@@ -17,6 +23,7 @@ ipython kernel install --user --name myenv --display-name "Python (myenv)"
 Start the notebook server from the command line:
 #+begin_src bash
 jupyter notebook --ip='*' --NotebookApp.token='' --NotebookApp.password=''
+jupyter notebook --ip='*' --NotebookApp.token='' --NotebookApp.password='' --allow-root
 #+end_src
 
 A notebook server runs locally at 127.0.0.1:8888 and is accessible only from localhost. You may access the notebook server from the browser using http://127.0.0.1:8888.
