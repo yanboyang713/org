@@ -5,4 +5,5 @@
 #+filetags: 5G
 
 [[id:c8f358c2-d824-4c17-b02b-9aaa423b1871][5G]]
+
 https://cloud.google.com/blog/transform/5g-and-cloud-technology-for-cios
