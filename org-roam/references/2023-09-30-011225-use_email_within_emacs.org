@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       b47d41ad-0283-4376-8f15-1a28a0b3d3f0
+:END:
+#+title: Use Email within Emacs
+
+[[id:19182f6d-b637-4879-8e9c-b093f492db5c][emacs]]
+
+* Reference List
+1. https://www.maketecheasier.com/use-email-within-emacs/

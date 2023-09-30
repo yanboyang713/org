@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       cc91b284-a710-4b0f-9645-b1512ecdd0e4
+:END:
+#+title: emacs JSON-RPC
+
+[[id:19182f6d-b637-4879-8e9c-b093f492db5c][emacs]]
+
+* Reference list
+1. https://egh0bww1.com/posts/2023-07-31-42-emacs-jsonrpc/

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       21107fca-ee1e-4ab9-8e20-3d252267abd7
+:END:
+#+title: Send Emails with Rust
+
+[[id:a2da1c32-ba1a-4c2c-9374-1bd8896920fa][rust]]
+
+* Reference List
+1. https://www.courier.com/guides/rust-send-email/
+2. https://github.com/lettre/lettre
