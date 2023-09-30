@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       eac0c95c-13f2-4be4-8c34-e43a5d75afbc
+:END:
+#+title: java language
+
+

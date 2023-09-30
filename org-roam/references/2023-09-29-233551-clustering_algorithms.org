@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       2a3bfdcc-4049-411c-89e0-1d47be248320
+:END:
+#+title: Clustering Algorithms
+
+* Types of Clustering
+Several approaches to clustering exist. For an exhaustive list, see [[https://link.springer.com/article/10.1007/s40745-015-0040-1][A Comprehensive Survey of Clustering Algorithms Xu, D. & Tian, Y. Ann. Data. Sci. (2015)]] 2: 165. Each approach is best suited to a particular data distribution. Below is a short discussion of four common approaches, focusing on centroid-based clustering using k-means.
+
++ [[id:3956d11e-6a94-4f47-8b82-9d5d66e11d63][Centroid-based Clustering]]
++ [[id:64db6b8c-4212-4fe4-bbe4-f199b3946836][Density-based Clustering]]
++ [[id:3d0ade0b-6012-47ad-8a0f-5b1e97703671][Distribution-based Clustering]]
++ [[id:be2cb1b4-34ed-49f8-8e7a-1b75d6a37f8e][Hierarchical Clustering]]
+  
+* Reference List
+1. https://developers.google.com/machine-learning/clustering/clustering-algorithms
+   

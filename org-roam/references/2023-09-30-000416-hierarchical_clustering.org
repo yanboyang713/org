@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       be2cb1b4-34ed-49f8-8e7a-1b75d6a37f8e
+:END:
+#+title: Hierarchical Clustering
+
+Hierarchical clustering creates a tree of clusters. Hierarchical clustering, not surprisingly, is well suited to hierarchical data, such as taxonomies. See [[https://www.researchgate.net/figure/Pan-genome-clustering-of-E-coli-black-and-related-species-colored-based-on-the_fig1_45152238][Comparison of 61 Sequenced Escherichia coli Genomes]] by Oksana Lukjancenko, Trudy Wassenaar & Dave Ussery for an example. In addition, another advantage is that any number of clusters can be chosen by cutting the tree at the right level.
+
+* Reference list
+1. https://developers.google.com/machine-learning/clustering/clustering-algorithms

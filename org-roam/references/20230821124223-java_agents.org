@@ -5,7 +5,7 @@
 #+filetags:  
 
 * Introduction
-Java agents are a special type of class which, by using the Java Instrumentation API, can intercept applications running on the JVM, modifying their bytecode. Java agents aren’t a new piece of technology. On the contrary, they’ve existed since Java 5. But even after all of this time, many developers still have misconceptions about this feature—and others don’t even know about it.
+Java agents are a special type of class which, by using the [[id:eac0c95c-13f2-4be4-8c34-e43a5d75afbc][Java]] Instrumentation API, can intercept applications running on the JVM, modifying their bytecode. Java agents aren’t a new piece of technology. On the contrary, they’ve existed since Java 5. But even after all of this time, many developers still have misconceptions about this feature—and others don’t even know about it.
 * Defining Java Agents
 Java agents are part of the Java Instrumentation API. So to understand agents, we need to understand what instrumentation is.
 

@@ -3,6 +3,9 @@
 :END:
 #+title: JavaMOP
 #+filetags:
+
+[[id:eac0c95c-13f2-4be4-8c34-e43a5d75afbc][java language]]
+
 JavaMOP already has
 support for finite state machines (FSM)
 extended regular expressions (ERE)

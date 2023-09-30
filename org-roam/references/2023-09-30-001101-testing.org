@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       448936c0-8d80-440c-8908-4011bdd56330
+:END:
+#+title: testing
+
++ [[id:da630b90-238e-4d5e-962a-e1092f57e976][Metamorphic Testing]]
++ [[id:8ae291f4-18f1-4641-b1a3-a63289a27da3][runtime verification]] 
+
