@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       94739156-8740-4a4d-9560-55dccd52d184
+:END:
+#+title: Rust-Based Terminal
+
+[[id:a2da1c32-ba1a-4c2c-9374-1bd8896920fa][rust]]
+
++ [[id:ed50c842-ced5-4098-b85d-e6132d0c9752][alacritty]]
+  
+* Reference List
+1. 

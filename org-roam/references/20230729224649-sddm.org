@@ -6,5 +6,38 @@
 
 Simple Desktop Display Manager (SDDM) is a [[id:9f8e5ab1-cbcb-4290-a8ca-7941a0a9b821][display manager]] (a graphical login program and session manager) for the [[id:fe1f3869-8620-4fad-8b01-f2fa6aa75331][Xorg/X11]] and [[id:11743715-9a10-4732-9081-68d0a614cf20][Wayland]] windowing systems. SDDM was written from scratch in C++11 and supports theming via QML.
 
+* Installation
+#+begin_src bash
+  yay -S sddm
+#+end_src
+
+* Loading the display manager
+To enable graphical login, enable the appropriate systemd service.
+For example, for SDDM, enable sddm.service
+#+begin_src bash
+  systemctl enable sddm.service
+#+end_src
+
+Failed to enable unit: File /etc/systemd/system/display-manager.service already exists and is a symlink to /usr/lib/systemd/system/lightdm.service.
+
+You may need to use --force to override old symlinks.
+
+#+begin_src console
+[yanboyang713@boyang-mini-pc ~]$ systemctl --force enable sddm.service
+Removed "/etc/systemd/system/display-manager.service".
+Created symlink /etc/systemd/system/display-manager.service → /usr/lib/systemd/system/sddm.service.
+#+end_src
+
+#+begin_src console
+[yanboyang713@boyang-mini-pc ~]$ file /etc/systemd/system/display-manager.service
+/etc/systemd/system/display-manager.service: symbolic link to /usr/lib/systemd/system/sddm.service
+#+end_src
+
+* Configuration
+The default configuration file for SDDM can be found at /usr/lib/sddm/sddm.conf.d/default.conf.
+
+For any changes, create configuration file(s) in /etc/sddm.conf.d/ [[https://man.archlinux.org/man/sddm.conf.5][check details]]
+
 * Reference List
 1. https://wiki.archlinux.org/title/SDDM
+2. https://wiki.archlinux.org/title/Display_manager#Loading_the_display_manager

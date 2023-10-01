@@ -6,6 +6,18 @@
 
 Hyprland is a wlroots-based tiling [[id:11743715-9a10-4732-9081-68d0a614cf20][Wayland]] compositor written in C++. Noteworthy features of Hyprland include dynamic tiling, tabbed windows, a clean and readable C++ code-base, and a custom renderer that provides window animations, rounded corners, and Dual-Kawase Blur on transparent windows. General usage and configuration is thoroughly documented at Hyprland wiki.
 
+* Installation
+** Packages
+#+begin_src bash
+  yay -S hyprland-git
+#+end_src
+** CMake (recommended)
+#+begin_src bash
+  git clone --recursive https://github.com/hyprwm/Hyprland
+  cd Hyprland
+  sudo make install
+#+end_src
+
 * [[id:9f8e5ab1-cbcb-4290-a8ca-7941a0a9b821][display manager]]
 users have reported success launching from GDM, [[id:10b87869-fc06-4593-82cd-602772885553][SDDM]], and others.
 

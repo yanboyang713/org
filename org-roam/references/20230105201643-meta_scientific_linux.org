@@ -19,6 +19,8 @@ Meta Scientific Linux based on [[id:dc13b67c-8d8b-40fd-b8cf-9ea8547e485d][Arch L
 * Packages Manger
 + [[id:917be974-9940-4719-97e3-1e40141e88cc][PKGBUILD]]
 
+* [[id:94739156-8740-4a4d-9560-55dccd52d184][Rust-Based Terminal]]
+
 * File Manger
 + [[id:9ca3ce07-9795-46f2-9a99-4d99b71de2f0][Ranger]]
 
