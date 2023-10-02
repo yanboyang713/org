@@ -38,6 +38,18 @@ The default configuration file for SDDM can be found at /usr/lib/sddm/sddm.conf.
 
 For any changes, create configuration file(s) in /etc/sddm.conf.d/ [[https://man.archlinux.org/man/sddm.conf.5][check details]]
 
+* Running under Wayland
+SDDM can run rootless under Wayland, since sddm 0.20.0.
+
+Create a new config file in the /etc/sddm.conf.d/ directory, name it something like /etc/sddm.conf.d/10-wayland.conf.
+
+Add the following to the new file:
+/etc/sddm.conf.d/10-wayland.conf
+#+begin_src file
+[General]
+DisplayServer=wayland
+#+end_src
+
 * Reference List
 1. https://wiki.archlinux.org/title/SDDM
 2. https://wiki.archlinux.org/title/Display_manager#Loading_the_display_manager
