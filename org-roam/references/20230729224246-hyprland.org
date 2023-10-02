@@ -24,5 +24,14 @@ users have reported success launching from GDM, [[id:10b87869-fc06-4593-82cd-602
 * Configure
 https://codeberg.org/JustineSmithies/hyprland-dotfiles
 
+** Monitors
+Arrange workspace on multiple monitors (Hyprland)
+https://gist.github.com/Diaoul/4a33dfec9d80763a7f74ce8086bf5237
+
+hypr-dynamic-monitors.sh
+https://gist.github.com/Diaoul/c6fc23fa2ab0a02ef6576f528bb93d75
+
+ln -s ~/Documents/meta-hyprland ~/.config/hypr
+
 * Reference List
 1. https://wiki.archlinux.org/title/Hyprland
