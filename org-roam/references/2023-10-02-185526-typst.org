@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       e1cc122a-757a-4366-a275-4b81c3ba8477
+:END:
+#+title: typst
+
+[[id:c0cf7ac4-128f-4f83-ad39-865465f8b7e9][latex]]
+
+* Reference List
+1. https://typst.app/
