@@ -36,6 +36,12 @@ Type=Application
 ** Monitors
 [[id:9b887d2b-d5be-495a-84fe-1b72721ddf1e][kanshi]]
 
+nwg-displays require wlr-randr
+#+begin_src bash
+  yay -S wlr-randr-git nwg-displays
+#+end_src
+https://github.com/nwg-piotr/nwg-displays/tree/master
+
 Installation [[id:819fb752-f18a-4c7b-a2c3-12d7c0db3ac1][socat]]
 
 #+begin_src bash

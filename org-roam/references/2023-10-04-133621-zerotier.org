@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       4174804e-33a4-4d9f-85b1-0f62ab6c946b
+:END:
+#+title: zerotier
+
+ZeroTier lets you build modern, secure multi-point virtualized networks of almost any type. From robust [[id:71cbbf7c-0eea-4f8d-8ffa-52eb2d9e40a5][peer-to-peer (P2P) network]] to multi-cloud mesh infrastructure, we enable global connectivity with the simplicity of a local network.
+
+* Reference List
+1. https://www.zerotier.com/
