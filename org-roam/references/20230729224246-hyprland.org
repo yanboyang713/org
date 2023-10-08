@@ -33,6 +33,10 @@ Exec=Hyprland
 Type=Application
 #+end_src
 
+* waybar
+#+begin_src bash
+  yay -S waybar
+#+end_src
 ** Monitors
 [[id:9b887d2b-d5be-495a-84fe-1b72721ddf1e][kanshi]]
 

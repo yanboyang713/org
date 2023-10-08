@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       8b49ff81-008c-40c5-86e7-2bef45d79559
+:END:
+#+title: Alpha AWUS036ACH Wi-Fi Adapter
+
+rtl88xxau-aircrack-dkms-git
+
