@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       357a8804-df10-4907-b1eb-850a4dcf9f69
+:END:
+#+title: data science
+
++ [[id:ed0e122b-f60d-424d-83e3-5f22cd31fe8d][dimension reduction]]
++ [[id:ca712e09-e52d-4a74-b794-dc514e126e50][classification Algorithms]]
++ [[id:2a3bfdcc-4049-411c-89e0-1d47be248320][Clustering Algorithms]] 

@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       748be669-c5e5-4c6c-9832-068d098ce55c
+:END:
+#+title: software testing
+
+[[id:b94f1e71-888a-4fff-91f7-620898a4e601][Monitoring-Oriented Programming(MOP)]]
+
+[[id:da630b90-238e-4d5e-962a-e1092f57e976][Metamorphic Testing]]

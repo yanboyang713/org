@@ -2,7 +2,10 @@
 :ID:       3079b78d-c265-40c3-9bb5-ad8b337eed13
 :END:
 #+title: rust Testing
-#+filetags:  
+#+filetags:
+
+[[id:748be669-c5e5-4c6c-9832-068d098ce55c][software testing]]
+
 * Testing
 Rust and Cargo come with a simple unit test framework:
 + Unit tests are supported throughout your code.

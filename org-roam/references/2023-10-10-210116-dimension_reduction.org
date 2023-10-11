@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       ed0e122b-f60d-424d-83e3-5f22cd31fe8d
+:END:
+#+title: dimension reduction
+
+* Reference List
+1. https://zhuanlan.zhihu.com/p/159285110?utm_id=0
+2. https://zhuanlan.zhihu.com/p/62470700?utm_id=0

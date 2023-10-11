@@ -1,0 +1,23 @@
+:PROPERTIES:
+:ID:       9fa6c501-730e-446e-b4c3-2dc35f30a9de
+:END:
+#+title: evaluation indicators
+
+The main purpose of evaluation indicator is to test the validity of algorithm.
+
+Evaluation indicators can be divided into two categories: the internal evaluation indicators and the external evaluation indicators.
+
+** the internal evaluation indicators
+It can’t absolutely judge which algorithm is better when the scores of two algorithms are not equal based on the internal evaluation indicators.
+
+** the external evaluation indicators
+The external evaluation, which is called as the gold standard for testing method, takes the external data to test the validity of algorithm.
++ [[id:4725039d-5eba-4d3c-8249-343488b3b3d9][Rand indicator]]
++ [[id:73802d62-3cfb-4d40-974e-dfb758e81ab5][F indicator]]
++ [[id:714354f9-4d5e-420f-84e8-6efba1f03fb8][Jaccard indicator]]
++ [[id:f6b28b0f-3cd8-4893-ad4c-d191c0c14b23][Fowlkes–Mallows indicator]]
++ [[id:2b41c4e8-1f6c-4db5-9dfa-033ca2249c10][Mutual information]]
++ [[id:ca650d64-ee97-4ee3-a32a-f628c0e1fe4d][Confusion matrix]] 
+
+* Reference List
+1. [[https://link.springer.com/article/10.1007/s40745-015-0040-1][A Comprehensive Survey of Clustering Algorithms Xu, D. & Tian, Y. Ann. Data. Sci. (2015)]] 

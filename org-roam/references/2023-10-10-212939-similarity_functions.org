@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       88fb4715-79e6-487f-adfe-59142eb4d0a3
+:END:
+#+title: Similarity functions
+
+* Reference List
+1. [[https://link.springer.com/article/10.1007/s40745-015-0040-1][A Comprehensive Survey of Clustering Algorithms Xu, D. & Tian, Y. Ann. Data. Sci. (2015)]] 

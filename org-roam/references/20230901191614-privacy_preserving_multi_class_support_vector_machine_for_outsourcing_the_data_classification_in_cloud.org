@@ -3,7 +3,10 @@
 :END:
 #+title: Privacy-Preserving Multi-Class Support Vector Machine for Outsourcing the Data Classification in Cloud
 #+filetags:
-In the cloud computing architecture-based IIoT, the authors proposed a multi-class support vector machine data classification method combined with homomorphic encryption, which could ensure the confidentiality of the data uploaded by the client and
+
+[[id:56e1bcab-97ff-4fbe-acdf-9573a142d697][Privacy]]
+
+In the [[id:1aa632ef-587c-4d13-9b30-92a1c258dd5f][cloud computing]] architecture-based [[id:9a80f403-b018-4fd3-8b0b-0114ed3495e8][Industrial Internet of Things (IIoT)]], the authors proposed a multi-class support vector machine data [[id:ca712e09-e52d-4a74-b794-dc514e126e50][classification]] method combined with [[id:b1951c1f-0537-426a-b09d-843bdf2b89c4][homomorphic encryption]], which could ensure the confidentiality of the data uploaded by the client and
 the classification training set and parameters in data classification.
 
 * Reference List

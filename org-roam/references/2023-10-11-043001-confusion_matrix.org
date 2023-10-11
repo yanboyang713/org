@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       ca650d64-ee97-4ee3-a32a-f628c0e1fe4d
+:END:
+#+title: Confusion matrix
+  
+* Reference List
+1. [[https://link.springer.com/article/10.1007/s40745-015-0040-1][A Comprehensive Survey of Clustering Algorithms Xu, D. & Tian, Y. Ann. Data. Sci. (2015)]] 
+

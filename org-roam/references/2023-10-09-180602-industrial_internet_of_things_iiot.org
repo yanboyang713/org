@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       9a80f403-b018-4fd3-8b0b-0114ed3495e8
+:END:
+#+title: Industrial Internet of Things (IIoT)
+
+
+[[id:bad0d692-0e7a-4c8e-8780-ad8ad06da02c][Cyber-Physical System (CPS)]]

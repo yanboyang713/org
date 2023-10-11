@@ -3,5 +3,7 @@
 :END:
 #+title: Alpha AWUS036ACH Wi-Fi Adapter
 
+[[id:55f23b66-c353-4562-b4bc-da3df9ddc665][wireless networks]]
+
 rtl88xxau-aircrack-dkms-git
 

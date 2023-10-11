@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       f6b28b0f-3cd8-4893-ad4c-d191c0c14b23
+:END:
+#+title: Fowlkes–Mallows indicator
+
+  
+* Reference List
+1. [[https://link.springer.com/article/10.1007/s40745-015-0040-1][A Comprehensive Survey of Clustering Algorithms Xu, D. & Tian, Y. Ann. Data. Sci. (2015)]] 

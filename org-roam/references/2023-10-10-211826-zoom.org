@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       cdbec007-4441-4fb3-8e39-f9c841990aef
+:END:
+#+title: zoom
+
+#+begin_src bash
+  paru -S zoom
+#+end_src
+* Reference List
+1. https://wiki.archlinux.org/title/Zoom_Meetings

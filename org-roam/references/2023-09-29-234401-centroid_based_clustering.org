@@ -1,13 +1,21 @@
 :PROPERTIES:
 :ID:       3956d11e-6a94-4f47-8b82-9d5d66e11d63
 :END:
-#+title: Centroid-based Clustering
+#+title: Centroid-based Clustering (Clustering Algorithm Based on Partition)
 
-Centroid-based clustering organizes the data into non-hierarchical clusters, in contrast to hierarchical clustering defined below. k-means is the most widely-used centroid-based clustering algorithm. Centroid-based algorithms are efficient but sensitive to initial conditions and outliers. This course focuses on k-means because it is an efficient, effective, and simple clustering algorithm.
+Centroid-based clustering organizes the data into non-hierarchical clusters, in contrast to hierarchical clustering defined below.
+
+
+Centroid-based algorithms are efficient but sensitive to initial conditions and outliers. This course focuses on k-means because it is an efficient, effective, and simple clustering algorithm.
 
 [[https://developers.google.com/static/machine-learning/clustering/images/CentroidBasedClustering.svg]]
 Example of centroid-based clustering
 
+K-means and K-medoids are the two most famous ones of this kind of clustering algorithms.
+* Algorithm
++ [[id:089b9a6d-7cfb-4ad4-933a-897d90e63650][K-means]]
++ [[id:d677b210-448c-4cf8-b3c9-ee724e35da50][k-medoids]] 
 
 * Reference List
 1. https://developers.google.com/machine-learning/clustering/clustering-algorithms
+2. [[https://link.springer.com/article/10.1007/s40745-015-0040-1][A Comprehensive Survey of Clustering Algorithms Xu, D. & Tian, Y. Ann. Data. Sci. (2015)]]

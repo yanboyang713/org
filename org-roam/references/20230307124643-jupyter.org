@@ -28,5 +28,12 @@ jupyter notebook --ip='*' --NotebookApp.token='' --NotebookApp.password='' --all
 
 A notebook server runs locally at 127.0.0.1:8888 and is accessible only from localhost. You may access the notebook server from the browser using http://127.0.0.1:8888.
 
+* Single Node base on [[id:23515ee9-4914-41e6-b3b9-fd5f52bcd84a][mamba]]
+#+begin_src bash
+  mamba create -n myjlabenv jupyterlab -c conda-forge
+  mamba activate myjlabenv  # activate our environment
+  jupyter lab               # this will start up jupyter lab and open a browser
+#+end_src
+
 * [[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]]
 https://z2jh.jupyter.org/en/stable/

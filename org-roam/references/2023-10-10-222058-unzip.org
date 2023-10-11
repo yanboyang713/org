@@ -1,0 +1,22 @@
+:PROPERTIES:
+:ID:       7b3552a4-8d66-4645-b706-0ebe18d31f98
+:END:
+#+title: unzip
+
+#+begin_src bash
+  paru -S unzip
+#+end_src
+
+After installing the unzip utility, if you want to extract to a particular destination folder, you can use:
+#+begin_src bash
+unzip file.zip -d destination_folder
+#+end_src
+
+If you want to extract to a directory with the same name as the zip in your current working directory, you can simply do:
+
+#+begin_src bash
+unzip file.zip
+#+end_src
+
+* Reference List
+1. https://askubuntu.com/questions/86849/how-to-unzip-a-zip-file-from-the-terminal

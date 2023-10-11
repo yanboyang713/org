@@ -6,5 +6,13 @@
 
 Data synthesis brings together results and examines the findings together for patterns of agreement, convergence, divergence, or discrepancy.
 
++ [[id:56e1bcab-97ff-4fbe-acdf-9573a142d697][Privacy]]
+
+ [[id:2a3bfdcc-4049-411c-89e0-1d47be248320][Clustering Algorithms]]
+ 
+[[id:ca712e09-e52d-4a74-b794-dc514e126e50][classification]]
+
+[[id:d4f709b9-ba62-4d0a-af70-289b8a7b34d7][Differential Privacy]]
+
 * Reference List
 1. https://vetoviolence.cdc.gov/apps/evaluaction/assets/pdf/Data-Analysis-Synthesis-and-Interpretation.pdf

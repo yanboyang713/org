@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       256d2de7-4f72-41ec-9e15-67be3007902d
+:END:
+#+title: Bern Simple Climate Model (BernSCM)
+
+https://docs.google.com/document/d/1ysHpXGzfprZuVg0V-CMAQqFnVbBuWaN48931F4Zn8JE/edit?pli=1#heading=h.fyltvlf8wds2
+
+[[id:fcf2b398-73af-40dc-8a9e-f09cd10787ae][impulse response function]]
+
+[[id:fdd30d62-47a8-44ee-925a-b56daa50030f][fortran]]

@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       1aa632ef-587c-4d13-9b30-92a1c258dd5f
+:END:
+#+title: cloud computing
+
+

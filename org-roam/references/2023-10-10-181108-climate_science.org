@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       15dc42d3-8e71-4527-bae6-fe8b374e4009
+:END:
+#+title: climate science
+
+[[id:256d2de7-4f72-41ec-9e15-67be3007902d][Bern Simple Climate Model (BernSCM)]]
+
