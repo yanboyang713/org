@@ -12,7 +12,7 @@ Centroid-based algorithms are efficient but sensitive to initial conditions and 
 Example of centroid-based clustering
 
 K-means and K-medoids are the two most famous ones of this kind of clustering algorithms.
-* Algorithm
+* Algorithms
 + [[id:089b9a6d-7cfb-4ad4-933a-897d90e63650][K-means]]
 + [[id:d677b210-448c-4cf8-b3c9-ee724e35da50][k-medoids]] 
 

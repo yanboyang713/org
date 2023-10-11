@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       842b848c-2c66-4cbf-ac28-2ab59067972a
+:END:
+#+title: CURE
+
+* Reference List
+1. Guha S, Rastogi R, Shim K (1998) CURE: an efficient clustering algorithm for large databases. ACM SIGMOD Rec 27:73–84
