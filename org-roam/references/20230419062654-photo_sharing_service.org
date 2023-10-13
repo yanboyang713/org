@@ -5,7 +5,7 @@
 #+filetags:
 
 + [[id:b72c6af6-e8a2-4859-a192-670fb56a2276][Pixlr]]
-+ cloudinary
++ [[id:663f3970-902b-4447-8ebe-d49c61dc29cf][cloudinary]]
 
 * Make OWN
 + [[id:966dde6b-ab1c-4834-9d8c-bd71184a1297][Azure Blob]]

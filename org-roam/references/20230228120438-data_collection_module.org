@@ -8,4 +8,4 @@
 [[id:363cd982-b188-4e15-97af-0c18a73e2746][ardupilot]]
 [[id:cc4d5749-c647-406e-a08d-ef4850406219][ns3]]
 
-Using [[id:6273d6bc-897e-4b7e-8bb6-11fa09a26a22][risingwave]]
+[[id:5bbb57a3-9c5d-4a19-adbe-fa8404792f25][DATA STREAM INGESTION LAYER]]

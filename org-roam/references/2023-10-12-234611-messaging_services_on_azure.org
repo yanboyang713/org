@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       caf9392e-912f-400a-ba57-f6ffd23bd983
+:END:
+#+title: Messaging services on Azure
+
+[[id:c40c4861-f09d-4bc2-a606-d2b62cc533f9][Azure]]
+
+* Reference List
+1. https://azure.microsoft.com/en-us/solutions/messaging-services

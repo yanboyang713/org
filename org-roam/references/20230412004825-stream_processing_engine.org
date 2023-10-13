@@ -1,8 +1,0 @@
-:PROPERTIES:
-:ID:       e04b75c5-56df-4f72-a586-967a80311414
-:END:
-#+title: stream processing engine
-#+filetags:  
-
-+ [[id:6273d6bc-897e-4b7e-8bb6-11fa09a26a22][risingwave]]
-+ [[id:8a4f62de-9f94-4db1-bc20-d4407351be9a][Arroyo]]
