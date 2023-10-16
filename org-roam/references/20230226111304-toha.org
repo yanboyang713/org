@@ -23,7 +23,14 @@ Once you have forked and renamed the repository, you can now clone the forked re
 git clone git@github.com:<your username>/<forked repo name>
 #+end_src
 
-** Step 3: Change config.yaml file
+** Step 3: Update the module file
+pre-requires: [[id:3a0479b8-3cf1-41b1-ac92-4aa4523e9270][Go language]] 
+You should see go.mod and go.sum files in the root of the repository. Update the first line of the go.mod file as below:
+#+begin_src file
+module github.com/<your username>/<forked repo name>
+#+end_src
+
+** Step 4: Change config.yaml file
 Now, open the repository in an editor and change the following configurations in your *config.yaml* file located at the root of your repository.
 
 *** Change the baseURL
@@ -58,7 +65,7 @@ newsletter:
   enable: false
 #+end_src
 
-** Step 4: Run the site locally
+** Step 5: Run the site locally
 Now, run the following commands to run your site locally:
 
 a. Load Hugo modules
@@ -82,7 +89,7 @@ If everything goes right, you should see an output similar to this.
 
 Now, go to *localhost:1313* in your browser and you should see your site running.
 
-** Step 5: Push the changes to Github
+** Step 6: Push the changes to Github
 If you have come this far, it means your site is running locally without any issue. Let’s push these changes to Github.
 #+begin_src bash
 # stage all the changes
@@ -95,7 +102,7 @@ git commit -m "Initial site setup" -s
 git push origin HEAD
 #+end_src
 
-** Step 6: Deployment to Github Pages
+** Step 7: Deployment to Github Pages
 Firstly, you need change Default Permissions, fllowing [[id:f3de75f6-5454-4453-b84a-8e16aa1b8a58][Github Action Change Default Permissions]].
 [[id:8471a070-5676-4ec2-adf8-170bcd894987][GitHub Pages Action]]
 

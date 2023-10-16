@@ -1,0 +1,37 @@
+:PROPERTIES:
+:ID:       3a0479b8-3cf1-41b1-ac92-4aa4523e9270
+:END:
+#+title: Go language
+
+* Install Go
+https://go.dev/doc/install
+
+* Write some code
+Get started with Hello, World.
+
+1. Open a command prompt and cd to your home directory.
+On Linux or Mac:
+#+begin_src bash
+cd
+#+end_src
+2. Create a hello directory for your first Go source code.
+For example, use the following commands:
+#+begin_src bash
+mkdir hello
+cd hello
+#+end_src
+3. Enable dependency tracking for your code.
+When your code imports packages contained in other modules, you manage those dependencies through your code's own module. That module is defined by a go.mod file that tracks the modules that provide those packages. That go.mod file stays with your code, including in your source code repository.
+
+To enable dependency tracking for your code by creating a go.mod file, run the *go mod init* [[https://go.dev/ref/mod#go-mod-init][command]], giving it the name of the module your code will be in. The name is the module's module path.
+
+In actual development, the module path will typically be the repository location where your source code will be kept. For example, the module path might be github.com/mymodule. If you plan to publish your module for others to use, the module path must be a location from which Go tools can download your module. For more about naming a module with a module path, see [[https://go.dev/doc/modules/managing-dependencies#naming_module][Managing dependencies]].
+
+For the purposes of this tutorial, just use example/hello.
+#+begin_src bash
+$ go mod init example/hello
+go: creating new go.mod: module example/hello
+#+end_src
+
+* Reference List
+1. https://go.dev/doc/tutorial/getting-started

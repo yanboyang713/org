@@ -2,7 +2,39 @@
 :ID:       ca650d64-ee97-4ee3-a32a-f628c0e1fe4d
 :END:
 #+title: Confusion matrix
-  
+
+To figure out the difference between a cluster and a gold-standard cluster.
+
+A confusion matrix is typically used for supervised learning tasks, especially classification, to visualize the performance of an algorithm. It shows the actual versus predicted classifications. For clustering, which is an unsupervised learning task, the concept of a confusion matrix doesn't directly apply because there isn't a "true" label against which to compare cluster assignments.
+
+However, in some cases, you might have ground truth labels for your data and wish to see how well your clustering algorithm grouped similar items. In this case, you could use something similar to a confusion matrix to understand the correspondence between true labels and cluster assignments.
+
+To do this, you would:
+
+1. Assign each cluster to a ground truth label based on the majority label in the cluster.
+2. Count the number of data points for each combination of true label and assigned cluster.
+
+The resulting matrix would show you how many data points of each true label ended up in each cluster.
+
+Here's an example:
+
+Imagine you have a dataset with three true labels: A, B, and C. After clustering, you have three clusters: X, Y, and Z. 
+
+Your "confusion matrix" might look like this:
+
+```
+      |  X  |  Y  |  Z  |
+-------------------------
+  A   | 50  |  5  |  3  |
+  B   |  2  | 48  |  2  |
+  C   |  1  |  4  | 52  |
+```
+
+This table shows that 50 data points with true label A were assigned to cluster X, 5 to cluster Y, and 3 to cluster Z, and so on for labels B and C.
+
+Keep in mind, though, that clustering isn't about finding a 1:1 mapping between clusters and true labels. A good clustering might still distribute a single true label across multiple clusters if there are sub-groups within that label. So, while this kind of table can be helpful, it's not a definitive measure of clustering quality.
+
+For evaluating clustering performance, other metrics like Silhouette Score, Davies-Bouldin Index, and Adjusted Rand Index might be more appropriate. If you have ground truth labels, the Adjusted Rand Index (ARI) in particular can provide a measure of similarity between the true labels and the cluster assignments.
 * Reference List
 1. [[https://link.springer.com/article/10.1007/s40745-015-0040-1][A Comprehensive Survey of Clustering Algorithms Xu, D. & Tian, Y. Ann. Data. Sci. (2015)]] 
 

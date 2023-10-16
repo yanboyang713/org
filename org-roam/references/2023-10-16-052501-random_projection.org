@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       736d3f80-e509-46a6-9133-c8e215875918
+:END:
+#+title: random projection
+
+In mathematics and statistics, random projection is a technique used to reduce the dimensionality of a set of points which lie in Euclidean space. According to experimental results, random projection preserves distances well, but empirical results are sparse.
+
+* Reference list
+1. https://en.wikipedia.org/wiki/Random_projection

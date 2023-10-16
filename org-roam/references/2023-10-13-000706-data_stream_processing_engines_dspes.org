@@ -15,5 +15,10 @@
 * Comparison
 [[https://www.risingwave.com/wp-content/uploads/2023/09/%E6%88%AA%E5%B1%8F2023-09-26-10.51.28.png]]
 
+| Engines    | User Infterface |
+|------------+-----------------|
+| [[id:6273d6bc-897e-4b7e-8bb6-11fa09a26a22][risingwave]] | [[id:eac0c95c-13f2-4be4-8c34-e43a5d75afbc][java]]/[[id:80d07df5-6da1-4c77-800c-dceeefd47f98][python]] UDF |
+| [[id:8a4f62de-9f94-4db1-bc20-d4407351be9a][Arroyo]]     | [[id:a2da1c32-ba1a-4c2c-9374-1bd8896920fa][rust]] UDF        |
+
 * Reference List
 1. https://www.risingwave.com/blog/top-7-apache-flink-alternatives-a-deep-dive/

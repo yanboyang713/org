@@ -3,6 +3,18 @@
 :END:
 #+title: dimension reduction
 
+Traditional dimensionality reduction approaches:
++ [[id:ac8a5358-0c56-42fa-92f5-1616b6bf83e0][Principal Component Analysis (PCA)]]
++ [[id:a0518fc0-a76d-40bf-ab1d-c5bf3f534a8a][linear discriminant analysis (LDA)]]
+the dimensionality of data increases, the computational cost of traditional dimensionality reduction methods grows exponentially, and the computation becomes prohibitively intractable.
+
+These drawbacks have triggered the development 
++ [[id:736d3f80-e509-46a6-9133-c8e215875918][random projection]] reduced time cost
+
+However, the RP transformation matrix is generated without considering the intrinsic structure of the original data and usually leads to relatively high distortion.
+
 * Reference List
 1. https://zhuanlan.zhihu.com/p/159285110?utm_id=0
 2. https://zhuanlan.zhihu.com/p/62470700?utm_id=0
+3. Xie, H., Li, J., & Xue, H. (2017). A survey of dimensionality reduction techniques based on random projection. arXiv preprint arXiv:1706.04371.
+4. Boutsidis, C., Zouzias, A., & Drineas, P. (2010). Random projections for $ k $-means clustering. Advances in neural information processing systems, 23.

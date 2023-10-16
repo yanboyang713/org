@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       a0518fc0-a76d-40bf-ab1d-c5bf3f534a8a
+:END:
+#+title: linear discriminant analysis (LDA)
+

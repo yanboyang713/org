@@ -10,11 +10,17 @@ Evaluation indicators can be divided into two categories: the internal evaluatio
 ** the internal evaluation indicators
 It can’t absolutely judge which algorithm is better when the scores of two algorithms are not equal based on the internal evaluation indicators.
 
+There are three commonly used internal indicators.
++ [[id:b9c24dda-9af4-4fef-bab2-7b153773df56][Davies–Bouldin indicator]] the data that has even density and distribution
++ [[id:7cbfb9d7-f63d-480d-98b6-ea87375bd90e][Dunn indicator]] requires computing distances between all pairs of clusters and within all clusters. This can be a limiting factor for very large datasets.
++ [[id:aaecb84f-2c40-4ffa-aa10-c0e6d8c7e11d][Silhouette coefficient]] 
+
 ** the external evaluation indicators
 The external evaluation, which is called as the gold standard for testing method, takes the external data to test the validity of algorithm.
++ [[id:714354f9-4d5e-420f-84e8-6efba1f03fb8][Jaccard indicator ]]is a measure of similarity between two sets
++ [[id:1f0b9022-db7c-46ba-81d4-3980884953b3][Hamming similarity]] for the data of string
 + [[id:4725039d-5eba-4d3c-8249-343488b3b3d9][Rand indicator]]
 + [[id:73802d62-3cfb-4d40-974e-dfb758e81ab5][F indicator]]
-+ [[id:714354f9-4d5e-420f-84e8-6efba1f03fb8][Jaccard indicator]]
 + [[id:f6b28b0f-3cd8-4893-ad4c-d191c0c14b23][Fowlkes–Mallows indicator]]
 + [[id:2b41c4e8-1f6c-4db5-9dfa-033ca2249c10][Mutual information]]
 + [[id:ca650d64-ee97-4ee3-a32a-f628c0e1fe4d][Confusion matrix]] 
