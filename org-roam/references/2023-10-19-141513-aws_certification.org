@@ -1,0 +1,17 @@
+:PROPERTIES:
+:ID:       a22f98ce-6c11-49cb-a09b-610643f9eaf6
+:END:
+#+title: AWS certification
+
+[[id:dcf5e347-8a8a-4c63-a822-53f558025f8c][AWS]]
+
+* Training and Certification
+https://www.aws.training/certification
+
+Training
+https://digitalcloud.training/
+
+https://d1.awsstatic.com/training-and-certification/docs/AWS_certification_paths.pdf?fbclid=IwAR3osu1Y_iHRcPf_rYuJDMoIzW--3iv45kNAgw_0tmyQWPdnYPxl_5mSGno
+
+https://aws.amazon.com/certification/exams/?fbclid=IwAR34sQFKhC5KZEtuexPYX39rgbRaGc3FDJwcETRMr16KjiSUAtSOa1bM5Cc
+

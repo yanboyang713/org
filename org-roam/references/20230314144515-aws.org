@@ -4,8 +4,3 @@
 #+title: AWS
 #+filetags:  
 
-* Training and Certification
-https://www.aws.training/certification
-
-Training
-https://digitalcloud.training/

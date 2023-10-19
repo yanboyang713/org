@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       e3d66322-1aa6-4742-815b-b3f9bec76c47
+:END:
+#+title: azure certification
+
+[[id:c40c4861-f09d-4bc2-a606-d2b62cc533f9][Azure]]
+
+https://learn.microsoft.com/en-us/credentials/browse/

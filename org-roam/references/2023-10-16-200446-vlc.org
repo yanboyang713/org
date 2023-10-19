@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       f0b5bcd4-4b11-4ba1-9143-cdce3d770761
+:END:
+#+title: vlc
+
+#+begin_src bash
+  
+#+end_src

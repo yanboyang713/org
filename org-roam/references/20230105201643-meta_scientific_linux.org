@@ -54,4 +54,5 @@ Script to install Archlinux with full disk encryption
 * common software
 + wget
 + [[id:cdbec007-4441-4fb3-8e39-f9c841990aef][zoom]]
-+ [[id:7b3552a4-8d66-4645-b706-0ebe18d31f98][unzip]] 
++ [[id:7b3552a4-8d66-4645-b706-0ebe18d31f98][unzip]]
++ [[id:f0b5bcd4-4b11-4ba1-9143-cdce3d770761][vlc]] 

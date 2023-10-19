@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       64dffc0a-edec-4365-a9bb-afa7bffdc009
+:END:
+#+title: cloud certification
+
++ [[id:f6cef80d-6600-4e1e-af48-ec2aed16246f][kubernetes certification]]
++ [[id:a22f98ce-6c11-49cb-a09b-610643f9eaf6][AWS certification]]
++ [[id:e3d66322-1aa6-4742-815b-b3f9bec76c47][azure certification]]
