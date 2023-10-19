@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       f70db7e6-fec3-49f2-8645-70782ba3aea4
+:END:
+#+title: Radius
+
+[[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]]
+
+* Reference List
+1. https://azure.microsoft.com/en-us/blog/the-microsoft-azure-incubations-team-launches-radius-a-new-open-application-platform-for-the-cloud/
+2. https://mp.weixin.qq.com/s/cMjpkJhO2zoAyhLfXiplxw?fbclid=IwAR3fOTAFi3Lr_Mj5MF9pxg3GguJwyCeeKh8Sw4-BeJUYUWGIucw8EY1cH3w

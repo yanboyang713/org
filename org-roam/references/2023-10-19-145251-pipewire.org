@@ -1,0 +1,115 @@
+:PROPERTIES:
+:ID:       388bccf8-83e8-41ea-8440-f8758cc5146b
+:END:
+#+title: pipewire
+PipeWire saw itself as a powerful contender to replace PulseAudio.
+
+* Installing PipeWire
+If you want to take the plunge and install PipeWire on your system, you first have to make sure you're not already running it!
+
+Type pactl info into a terminal and see what it gives you under "Server Name." If it gives you "on PipeWire" in parentheses, you're already running PipeWire.
+#+begin_src console
+yanboyang713@Meta-Scientific-Linux ~ % pactl info
+Server String: /run/user/1000/pulse/native
+Library Protocol Version: 35
+Server Protocol Version: 35
+Is Local: yes
+Client Index: 85
+Tile Size: 65472
+User Name: yanboyang713
+Host Name: Meta-Scientific-Linux
+Server Name: PulseAudio (on PipeWire 0.3.82)
+Server Version: 15.0.0
+Default Sample Specification: float32le 2ch 48000Hz
+Default Channel Map: front-left,front-right
+Default Sink: alsa_output.pci-0000_00_1f.3.analog-stereo
+Default Source: alsa_input.pci-0000_00_1f.3.analog-stereo
+Cookie: 0380:3b9d
+#+end_src
+If the terminal only shows you "PulseAudio" without anything following it, your system isn't running PipeWire.
+
+** Installing The Service
+Every PipeWire installation starts with the base service. There's a chance this may have already been installed with your distro, but just in case it isn't, you can install it with the following commands.
+
+On Arch-based systems:
+#+begin_src bash
+  sudo pacman -S pipewire pipewire-alsa
+#+end_src
+
+** Installing The Session Manager
+PipeWire doesn't have its own connection logic, so you have to install a session manager. WirePlumber is one that offers more granular configuration as well as extra plugins that can enhance your experience:
+
+On Arch-based systems:
+#+begin_src bash
+sudo pacman -S wireplumber
+#+end_src
+
+If you prefer a simpler version or your distro's official repositories don't have WirePlumber, you can simply install PipeWire Media Session:
+
+On Arch-based systems:
+#+begin_src bash
+sudo pacman -S pipewire-media-session
+#+end_src
+
+** Installing The PulseAudio Daemon
+Since a large proportion of your system's applications still send out calls to PulseAudio, if you want your audio to work properly, you'll have to install PipeWire's daemon that listens for PulseAudio stuff.
+
+On Arch-based systems:
+
+#+begin_src bash
+sudo pacman -S pipewire-pulse
+#+end_src
+
+** Removing Traces of PulseAudio
+If you had to confirm the removal of PulseAudio because of a conflict with something else you were installing during this process (usually pipewire-pulse), then you can skip this step.
+
+Otherwise, it's important now to remove PulseAudio from your system so that it doesn't try to query it.
+
+On Arch-based systems:
+#+begin_src bash
+sudo pacman -Rns pulseaudio
+#+end_src
+
+** Getting Services Ready
+With all the packages you've installed and uninstalled, it is time to get PipeWire up and running.
+
+First, remove remnants of pulseaudio's services:
+#+begin_src bash
+systemctl --user --now disable pulseaudio.service pulseaudio.socket
+systemctl --user mask pulseaudio
+#+end_src
+
+Enable PipeWire's services. If you installed WirePlumber:
+#+begin_src bash
+systemctl --user --now enable pipewire pipewire-pulse wireplumber
+#+end_src
+
+If you installed PipeWire Media Session, use:
+#+begin_src bash
+systemctl --user --now enable pipewire pipewire-pulse pipewire-media-session
+#+end_src
+PipeWire should now work perfectly after you reboot your system!
+
+* Settings
+** keyboard volume control for [[id:46ff078d-0aa4-42a8-a300-07c444184f27][Hyprland]] or others
+[[https://github.com/smasher164/pw-volume][pw-volume]]
+
+** Simultaneous output
+https://askubuntu.com/questions/1379376/how-to-achieve-automated-simultaneous-outputs-with-pipewire
+
+Run:
+#+begin_src bash
+  pactl load-module module-combine-sink
+#+end_src
+
+permanent:
+copying /usr/share/pipewire/pipewire-pulse.conf to ~/.config/pipewire/pipewire-pulse.conf and adding:
+#+begin_src file
+context.exec = [
+    { path = "pactl"  args = "load-module module-combine-sink" }
+]
+#+end_src
+Then saving the file.
+
+* Reference List
+1. https://www.maketecheasier.com/install-configure-pipewire-linux/

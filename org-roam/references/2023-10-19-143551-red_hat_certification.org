@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       713d9651-7ddd-4827-a955-04cf8bc759a9
+:END:
+#+title: Red Hat certification
+[[id:b43d8d6b-8b65-468b-ae66-d3bbb4aad1ef][red hat]]
+
+https://www.redhat.com/en/services/certifications?type=role

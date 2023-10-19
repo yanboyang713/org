@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       b43d8d6b-8b65-468b-ae66-d3bbb4aad1ef
+:END:
+#+title: red hat
+
+
