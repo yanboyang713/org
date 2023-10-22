@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       bcce4e6c-02bc-405c-990a-8364a5db157e
+:END:
+#+title: Pre-industrial control (piControl) simulation
+
+CO2 Pulse experiments
+* Pre-require:
++ [[id:399eec9a-22df-431d-91c9-2faf1d935310][control theory]]
++ [[id:15dc42d3-8e71-4527-bae6-fe8b374e4009][climate science]]
+
+

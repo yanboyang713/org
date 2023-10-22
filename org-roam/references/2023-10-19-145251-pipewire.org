@@ -90,6 +90,15 @@ systemctl --user --now enable pipewire pipewire-pulse pipewire-media-session
 #+end_src
 PipeWire should now work perfectly after you reboot your system!
 
+** GUI
+qpwgraph — Qt-based Graph/Patchbay for PipeWire, inspired by the JACK tool QjackCtl. Saves wire sets.
+#+begin_src bash
+paru -S qpwgraph
+#+end_src
+
+* Configuration
+The PipeWire package provides an initial set of configuration files in /usr/share/pipewire. You should not edit these files directly, as package updates will overwrite your changes. To configure PipeWire, you can copy files from /usr/share/pipewire to the alternate system-wide location /etc/pipewire, or to the user location ~/.config/pipewire. An equally named file in a directory with a higher precedence makes the analogous files ignored.
+
 * Settings
 ** keyboard volume control for [[id:46ff078d-0aa4-42a8-a300-07c444184f27][Hyprland]] or others
 [[https://github.com/smasher164/pw-volume][pw-volume]]
@@ -103,7 +112,11 @@ Run:
 #+end_src
 
 permanent:
-copying /usr/share/pipewire/pipewire-pulse.conf to ~/.config/pipewire/pipewire-pulse.conf and adding:
+copying /usr/share/pipewire/pipewire-pulse.conf to ~//.config/pipewire/pipewire-pulse.conf and adding:
+#+begin_src bash
+  mkdir -p ~/.config/pipewire/ && cp -p /usr/share/pipewire/pipewire-pulse.conf ~/.config/pipewire/pipewire-pulse.conf
+#+end_src
+
 #+begin_src file
 context.exec = [
     { path = "pactl"  args = "load-module module-combine-sink" }
@@ -113,3 +126,4 @@ Then saving the file.
 
 * Reference List
 1. https://www.maketecheasier.com/install-configure-pipewire-linux/
+2. https://wiki.archlinux.org/title/PipeWire

@@ -3,5 +3,9 @@
 :END:
 #+title: climate science
 
-[[id:256d2de7-4f72-41ec-9e15-67be3007902d][Bern Simple Climate Model (BernSCM)]]
+* climate models
+** Globle models
++ [[id:256d2de7-4f72-41ec-9e15-67be3007902d][Bern Simple Climate Model (BernSCM)]]
+** column mode
++ [[id:e30e8463-ece2-4d34-a6e8-7438e3143a5f][E3SM]] 
 
