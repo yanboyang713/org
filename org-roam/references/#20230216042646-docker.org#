@@ -13,8 +13,8 @@ Containerization is a kind of virtualization where the scope of the application'
 
 * Arch Installation
 #+begin_src bash
-pacman -S docker
-systemctl start docker.service
+sudo pacman -S docker
+sudo systemctl start docker.service
 #+end_src
 
 If you want to avoid typing sudo whenever you run the docker command, add your username to the docker group:
@@ -50,12 +50,6 @@ sudo usermod -aG docker username
 
 The rest of this article assumes you are running the docker command as a user in the docker group. If you choose not to, please prepend the commands with sudo.
 
-#+begin_src bash
-  sudo systemctl status docker.service
-  sudo systemctl start docker.service
-  sudo systemctl status docker.service
-  sudo systemctl enable docker.service
-#+end_src
 Let’s explore the docker command next.
 
 Test Docker

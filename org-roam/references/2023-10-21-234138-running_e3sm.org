@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       849722f3-f5f8-4ca2-b724-53d73ca8f1fc
+:END:
+#+title: running E3SM
+
+[[id:e30e8463-ece2-4d34-a6e8-7438e3143a5f][E3SM]]
+
+* Installing E3SM on a cluster or HPC platform
+These instructions assume the machine you're using has already installed all the necessary software such as fortran compilers, MPI libraries, netcdf libraries, pnetcdf libraries, etc.  See /wiki/spaces/ED/pages/1867951 for a list of necessary software to build/run ACME.
+
++ Installing [[id:9f1cda7a-e227-4cb3-8623-a7576d3814f8][E3SM on a supported cluster]].
++ Installing [[id:77693ee1-e119-4451-9c6a-1bdb3c62231a][E3SM on an un-supported cluster or machine]].
+
+* Reference List
+1. https://acme-climate.atlassian.net/wiki/spaces/DOC/pages/7996902/Installing+E3SM+on+a+cluster+or+HPC+platform

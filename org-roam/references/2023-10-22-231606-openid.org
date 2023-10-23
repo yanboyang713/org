@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       822564cf-eb02-4777-8d76-3ecd7243da5d
+:END:
+#+title: OpenID
+
+* ESGF-CoG Login
+https://esgf-node.llnl.gov/esgf-idp/openid/byan4

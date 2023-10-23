@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       b6541a63-2c2c-44c7-9821-48cb762c6732
+:END:
+#+title: Azure OpenAI Service
+
+[[id:c40c4861-f09d-4bc2-a606-d2b62cc533f9][Azure]]
+[[id:9ba0d288-3248-4c80-a20a-57c3cfbd97f3][openAI]]
+
+1. Request Access to Azure OpenAI Service
+   https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR7en2Ais5pxKtso_Pz4b1_xUOFA5Qk1UWDRBMjg0WFhPMkIzTzhKQ1dWNyQlQCN0PWcu
+
+* Reference List
+1. https://azure.microsoft.com/en-us/products/ai-services/openai-service/

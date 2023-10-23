@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       21ed2e35-2394-4ab3-89d6-b001c3250c4f
+:END:
+#+title: NVIDIA Maxine
+
+[[id:d6be6fc0-4aa7-45a7-bc65-e81f2a0723a2][Nvidia]]
+
+https://catalog.ngc.nvidia.com/orgs/nvidia/teams/maxine/collections/maxine

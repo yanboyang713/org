@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       13a66bc7-8d4d-47cb-bce9-fca376ae642e
+:END:
+#+title: singularity
+
+* Install Singularity
+#+begin_src bash
+  paru -S singularity-ce
+#+end_src

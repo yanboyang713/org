@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       4bb76999-835c-41f8-a6f7-e07a24c036b9
+:END:
+#+title: pipewire NVIDIA denoiser
+
+[[id:388bccf8-83e8-41ea-8440-f8758cc5146b][pipewire]]
+
+[[id:d6be6fc0-4aa7-45a7-bc65-e81f2a0723a2][Nvidia]]
+
+[[id:21ed2e35-2394-4ab3-89d6-b001c3250c4f][NVIDIA Maxine]]

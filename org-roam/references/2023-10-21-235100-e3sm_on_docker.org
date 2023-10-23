@@ -1,0 +1,84 @@
+:PROPERTIES:
+:ID:       76136570-31de-462f-b98c-cc23633a1b1f
+:END:
+#+title: E3SM on Docker
+
+* Pre-required
++ [[id:e4fa2843-dc6e-4303-a209-40df1bd10a0f][docker]]
+
+* Get the Code
+The [[https://github.com/E3SM-Project/E3SM.git][E3SM code]] is available from Github.
+
+We only support obtaining the code with “git clone“.  You need at least version 2.0 or later of git.
+
+For access to all code versions, [[https://docs.github.com/en/authentication/connecting-to-github-with-ssh][add an ssh key to github]].  We will not be making .tar.gz or .zip files available at this time.
+
+Open a terminal and issue the following commands:
+Pre-required
++ Add an ssh key to github
+Load the key into the ssh agent
+#+begin_src bash
+ssh-add ./id_ed25519
+ssh-add -l
+#+end_src
+
+#+begin_src bash
+  cd ~/Documents
+#+end_src
+
+#+begin_src bash
+git clone -b <ref> --recursive https://github.com/E3SM-Project/E3SM.git
+where <ref> is one of the following:
+maint-1.0
+maint-1.1
+maint-1.2
+maint-2.0
+maint-2.1
+#+end_src
+
+#+begin_src bash
+mkdir -p $HOME/Documents/E3SM/cesm-inputdata
+#+end_src
+
+#+begin_src bash
+docker run -it \
+--mount type=bind,source=$HOME/.ssh,target=/home/e3sm/.ssh \
+--mount type=bind,source=$HOME/Documents/E3SM,target=/home/e3sm/Documents/E3SM \
+--hostname singularity \
+--shm-size=512m \
+lukaszlacinski/e3sm:2021.03.19 /bin/su - e3sm
+#+end_src
+
+grep -rni "text string" .
+
+./cime/config/e3sm/machines/userdefined_laptop_template/config_machines.xml
+
+#+begin_src bash
+  cd E3SM/cime/scripts/
+  
+#+end_src
+** Running with run_e3sm script
+Instructions for E3SM v1.0
+#+begin_src bash
+wget https://web.lcrc.anl.gov/public/e3sm/run_e3sm.DECKv1b_piControl.ne30_oEC.cori-knl.csh
+chmod +x run_e3sm.DECKv1b_piControl.ne30_oEC.cori-knl.csh
+#+end_src
+If you want to keep all the default settings (a reasonable first choice), you can then simply execute it:
+#+begin_src bash
+./run_e3sm.DECKv1b_piControl.ne30_oEC.cori-knl.csh
+#+end_src
+
+https://www.nersc.gov/users/accounts/allocations/first-allocation/
+
+* New Test
+#+begin_src bash
+docker run -it \
+--mount type=bind,source=$HOME/.ssh,target=/home/e3sm/.ssh \
+--mount type=bind,source=$HOME/projects/e3sm,target=/home/e3sm/projects/e3sm \
+--hostname singularity \
+--shm-size=512m \
+lukaszlacinski/e3sm:2021.03.19 /bin/su - e3sm
+#+end_src
+
+* Reference List
+1. https://acme-climate.atlassian.net/wiki/spaces/DOC/pages/2488401938/Docker+container

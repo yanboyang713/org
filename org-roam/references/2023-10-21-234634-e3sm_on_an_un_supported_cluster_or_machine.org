@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       77693ee1-e119-4451-9c6a-1bdb3c62231a
+:END:
+#+title: E3SM on an un-supported cluster or machine
+
+If you don't want to do a complete port of E3SM to your machine, you can use a "container" which has everything you need to develop and run.
+
+We have development containers for [[id:76136570-31de-462f-b98c-cc23633a1b1f][Docker]] and [[id:dd12a0b4-2878-4294-bae5-d90d6d192f85][Singularity]].
+
+* Reference List
+1. https://acme-climate.atlassian.net/wiki/spaces/DOC/pages/7996902/Installing+E3SM+on+a+cluster+or+HPC+platform#InstallingE3SMonaclusterorHPCplatform-Installingonanun-supportedclusterormachine.

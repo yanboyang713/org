@@ -124,6 +124,9 @@ context.exec = [
 #+end_src
 Then saving the file.
 
+** out default switch
+https://gist.github.com/miyl/40cdf1a66b360ad8ec0b19e2ffa56194
+
 * Reference List
 1. https://www.maketecheasier.com/install-configure-pipewire-linux/
 2. https://wiki.archlinux.org/title/PipeWire
