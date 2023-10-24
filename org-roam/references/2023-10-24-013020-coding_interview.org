@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       1fc471c4-bc9e-421b-8910-18fd982b76b8
+:END:
+#+title: coding interview
+
+https://github.com/jwasham/coding-interview-university.git
+https://zhuanlan.zhihu.com/p/384846877?fbclid=IwAR3YqBxIlt3JygDHYIQ2Fs8SvABLk9RV7o1qrGC9Ocnu1sfvQpAyrjFENCQ
+https://www.open-open.com/lib/view/open1422241166232.html?fbclid=IwAR3eHfZD2MWCxOrIfV21aqkWr9f9A7AgkKdb5QwsbniTvZBo9LpcLQBczbw

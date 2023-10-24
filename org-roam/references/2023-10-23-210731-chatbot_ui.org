@@ -1,0 +1,23 @@
+:PROPERTIES:
+:ID:       c7915315-1b77-4ac7-b422-9cf1506f7a2c
+:END:
+#+title: chatbot-ui
+* Pre-required
++ [[id:0b6ed9e0-3147-48fe-a9bc-669481799c77][OpenAI API]]
+  
+* clone
+#+begin_src bash
+  git clone https://github.com/mckaywrigley/chatbot-ui.git
+  cd chatbot-ui
+#+end_src
+
+
+* [[id:e4fa2843-dc6e-4303-a209-40df1bd10a0f][docker]]
+Build locally:
+#+begin_src bash
+docker build -t chatgpt-ui .
+docker run -e OPENAI_API_KEY=xxxxxxxx -p 3000:3000 chatgpt-ui
+#+end_src
+
+* Reference List
+1. https://github.com/mckaywrigley/chatbot-ui

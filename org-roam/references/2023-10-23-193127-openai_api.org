@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       0b6ed9e0-3147-48fe-a9bc-669481799c77
+:END:
+#+title: OpenAI API
+
+* Create new secret key
+https://platform.openai.com/account/api-keys
+
+* Save key using [[id:066fe726-e405-428e-967e-3702cfa374da][bitwarden]]
+
+* Reference List
+1. https://openai.com/blog/openai-api

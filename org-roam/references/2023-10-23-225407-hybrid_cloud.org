@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       95f60fde-c21f-4c11-adc0-003b696e9106
+:END:
+#+title: Hybrid Cloud
+
+A hybrid deployment is a way to connect infrastructure and applications between cloud-based resources and existing resources that are not located in the cloud.
+
+The most common method of hybrid deployment is between the cloud and existing on-premises infrastructure to extend, and grow, an organization’s infrastructure into the cloud while connecting cloud resources to the internal system.

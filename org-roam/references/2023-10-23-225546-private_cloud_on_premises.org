@@ -1,0 +1,19 @@
+:PROPERTIES:
+:ID:       1988535e-9c15-4464-aa96-061b051e4370
+:END:
+#+title: Private Cloud (on-premises)
+#+filetags: cluster
+
+The deployment of resources on-premises, using virtualization and resource management tools, is sometimes called the “private cloud.”
+
+On-premises deployment doesn’t provide many of the benefits of cloud computing but is sometimes sought for its ability to provide dedicated resources. In most cases this deployment model is the same as legacy IT infrastructure while using application management and virtualization technologies to try and increase resource utilization.
+
++ [[id:77bd7428-f1ee-4306-8d5a-62f38134dfc5][Proxmox VE]]
++ [[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]]
++ [[id:93a2a5e3-0f41-406e-8c73-894ed61d1b42][K3S]]
++ [[id:cf2c18b4-f9a0-412f-825f-11a0e837dab5][OpenStack]]
++ [[id:6bf33d95-36f3-44b4-9ea5-360995b13321][OpenShift]]
++ [[id:eebf10a7-c17a-4d17-a313-c9d620028cfa][OKD]]
++ [[id:74e60694-52a6-4eb9-8f1f-1be12893be65][Mesos]]
++ [[id:f70db7e6-fec3-49f2-8645-70782ba3aea4][Radius]] 
++ [[id:59d7305d-15fa-4e3a-a7d6-cb8a7ee7b1a5][Arc Cluster]]

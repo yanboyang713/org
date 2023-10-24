@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       83918a70-3722-4c43-9103-e1d42412bebe
+:END:
+#+title: Platform as a service (PaaS)
+
+Platform as a Service (PaaS) removes the need for your organization to manage the underlying infrastructure (usually hardware and operating systems) and allows you to focus on the deployment and management of your applications.
+
+This helps you be more efficient as you don’t need to worry about resource procurement, capacity planning, software maintenance, patching, or any of the other undifferentiated heavy lifting involved in running your application.

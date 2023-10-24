@@ -5,6 +5,10 @@
 #+filetags:  
 
 [[id:19182f6d-b637-4879-8e9c-b093f492db5c][emacs]]
+[[id:41607733-bee3-4525-b956-478fc5bb7e68][ChatGPT]]
+[[id:0b6ed9e0-3147-48fe-a9bc-669481799c77][OpenAI API]]
 
 * Reference List
-1. https://github.com/joshcho/ChatGPT.el
+1. https://github.com/joshcho/ChatGPT.el2.
+2. https://github.com/emacs-openai/chatgpt
+3. https://notes.alexkehayias.com/using-chatgpt-with-emacs/

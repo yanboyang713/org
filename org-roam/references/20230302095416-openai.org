@@ -5,4 +5,7 @@
 #+filetags:  
 
 [[id:6248d05c-1e34-404a-8696-ba76ca245587][copilot]]
+
 [[id:41607733-bee3-4525-b956-478fc5bb7e68][chatgpt]]
+
+[[id:0b6ed9e0-3147-48fe-a9bc-669481799c77][OpenAI API]]

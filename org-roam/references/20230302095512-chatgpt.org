@@ -5,3 +5,6 @@
 #+filetags:  
 
 [[id:c6faa742-e4a8-4d49-b6e3-3f99bbf9e2f0][emacs chatgpt]]
+
+[[id:c7915315-1b77-4ac7-b422-9cf1506f7a2c][chatbot-ui]]
+

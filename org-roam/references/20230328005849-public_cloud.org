@@ -3,6 +3,8 @@
 :END:
 #+title: Public Cloud
 #+filetags:
+A cloud-based application is fully deployed in the cloud and all parts of the application run in the cloud. Applications in the cloud have either been created in the cloud or have been migrated from an existing infrastructure to take advantage of the benefits of cloud computing. Cloud-based applications can be built on low-level infrastructure pieces or can use higher level services that provide abstraction from the management, architecting, and scaling requirements of core infrastructure.
 
-[[id:dcf5e347-8a8a-4c63-a822-53f558025f8c][AWS]]
-[[id:c40c4861-f09d-4bc2-a606-d2b62cc533f9][Azure]]
++ [[id:dcf5e347-8a8a-4c63-a822-53f558025f8c][AWS]]
++ [[id:c40c4861-f09d-4bc2-a606-d2b62cc533f9][Azure]]
++ [[id:1702aab3-b922-4f90-9dc9-abb890844574][Google Cloud Platform (GCP)]] 
