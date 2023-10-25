@@ -5,7 +5,6 @@
 
 a lightweight, high-performance, powerful intranet penetration proxy server, with a powerful web management terminal.
 
-[[id:4174804e-33a4-4d9f-85b1-0f62ab6c946b][zerotier]]
-
 * Reference List
 1. https://github.com/ehang-io/nps.git
+2. https://mp.weixin.qq.com/s/VWf_-oRBBafT2tmUEZhBNA?fbclid=IwAR2uYnqYhh5urSVeH9cHsrJCcpPh4wHxKXtYZuf4vza6083nESurMnO8ooM

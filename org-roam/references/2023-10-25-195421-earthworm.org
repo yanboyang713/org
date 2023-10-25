@@ -1,9 +1,8 @@
 :PROPERTIES:
-:ID:       39985768-289c-4ea0-b4e6-f81ff002effe
+:ID:       527e4811-268e-425b-9a39-0c69fc99deff
 :END:
-#+title: frp
-#+filetags:  
+#+title: Earthworm
 
 * Reference List
-1. https://github.com/fatedier/frp
+1. https://rootkiter.com/EarthWorm/index.html
 2. https://mp.weixin.qq.com/s/VWf_-oRBBafT2tmUEZhBNA?fbclid=IwAR2uYnqYhh5urSVeH9cHsrJCcpPh4wHxKXtYZuf4vza6083nESurMnO8ooM

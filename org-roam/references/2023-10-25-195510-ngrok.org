@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       60ede6bc-f414-4906-9d3f-2b868b14b710
+:END:
+#+title: ngrok
+
+* Reference List
+1. https://mp.weixin.qq.com/s/VWf_-oRBBafT2tmUEZhBNA?fbclid=IwAR2uYnqYhh5urSVeH9cHsrJCcpPh4wHxKXtYZuf4vza6083nESurMnO8ooM
+2. https://github.com/bubenshchykov/ngrok
+3. https://ngrok.com/
