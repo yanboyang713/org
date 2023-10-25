@@ -8,3 +8,4 @@
 
 [[id:c7915315-1b77-4ac7-b422-9cf1506f7a2c][chatbot-ui]]
 
+https://github.com/taishi-i/awesome-ChatGPT-repositories

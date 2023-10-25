@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       2e106c65-e1e4-4331-bb9e-7c1994b0a3d6
+:END:
+#+title: OSI Model
+
+* Reference List
+1. https://www.cloudflare.com/en-gb/learning/ddos/glossary/open-systems-interconnection-model-osi/

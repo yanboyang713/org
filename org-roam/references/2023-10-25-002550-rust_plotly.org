@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       64bb58a8-90dd-47e2-b3e5-6bcdb656f9e5
+:END:
+#+title: rust plotly
+
+[[id:a2da1c32-ba1a-4c2c-9374-1bd8896920fa][rust]]
+
+[[id:4cba3923-d80e-4fb9-9d19-df35d524d78b][plotly]]

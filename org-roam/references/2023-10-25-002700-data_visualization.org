@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       63c959b8-f6aa-4b1c-8f0a-17ba8914282e
+:END:
+#+title: data visualization
+
+[[id:4cba3923-d80e-4fb9-9d19-df35d524d78b][plotly]]
+[[id:ebc7a85b-cb33-4b29-93f9-0c2d5215bc7a][Prometheus]]
