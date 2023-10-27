@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       03ffb0f8-a0e9-4eae-b48a-ce94624f6831
+:END:
+#+title: D2lang
+
+* [[https://d2lang.com/tour/install#install-script][Install]]
+
+* Playground
+https://play.d2lang.com/?script=qlDQtVOo5AIEAAD__w%3D%3D&
+
+* Reference List
+1. https://github.com/terrastruct/d2
+2. https://d2lang.com/

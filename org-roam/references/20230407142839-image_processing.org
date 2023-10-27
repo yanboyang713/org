@@ -4,5 +4,4 @@
 #+title: image processing
 #+filetags:
 
-[[id:b9f1d55d-0a3c-4d8c-997a-52639a2302d1][free PNG image]]
 [[id:b72c6af6-e8a2-4859-a192-670fb56a2276][Pixlr]]

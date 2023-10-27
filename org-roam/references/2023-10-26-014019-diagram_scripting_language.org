@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       74215517-6939-4b30-ac01-7e9bca522863
+:END:
+#+title: diagram scripting language
+
+A modern diagram scripting language that turns text to diagrams.
++ [[id:03ffb0f8-a0e9-4eae-b48a-ce94624f6831][D2]]
+
+* Reference List
+1. https://icepanel.io/blog/2023-02-07-top-7-diagrams-as-code-tools-for-software-architecture

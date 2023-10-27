@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       55c26e8d-3444-41ec-9196-38a1ef88ce59
+:END:
+#+title: grim
+
+https://archlinux.org/packages/extra/x86_64/grim/

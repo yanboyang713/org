@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       82543e78-5257-4eb8-9319-2b6f63f4506a
+:END:
+#+title: scrot
+
+#+begin_src bash
+paru -S scrot
+#+end_src
+
+#+begin_src bash
+scrot -s ~/Pictures/%Y-%m-%d-%T-screenshot.png
+#+end_src
+
+* Reference List
+1. https://wiki.archlinux.org/title/Screen_capture#scrot

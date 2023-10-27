@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       3d43c060-4a6b-4d05-9c99-278dc9e865a4
+:END:
+#+title: screen capture
+
+* [[id:fe1f3869-8620-4fad-8b01-f2fa6aa75331][Xorg/X11]]
++ [[id:82543e78-5257-4eb8-9319-2b6f63f4506a][scrot]]
+
+* [[id:11743715-9a10-4732-9081-68d0a614cf20][Wayland]]
++ [[id:55c26e8d-3444-41ec-9196-38a1ef88ce59][grim]] 

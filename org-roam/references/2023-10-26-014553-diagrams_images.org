@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       060d0720-e4c1-4dde-8297-663413cf1453
+:END:
+#+title: diagrams/images
+
+* Draw images/diagrams
+[[id:74215517-6939-4b30-ac01-7e9bca522863][diagram scripting language]]
+
+* Image processing
+[[id:dc6c08ce-627a-4c65-9903-7f67d557a2f5][image processing]]
+
+* Sharing
+[[id:95cacace-0194-462d-bc25-a18fad3a32cb][photo sharing service]]
+
+* free image sources
++ [[id:b9f1d55d-0a3c-4d8c-997a-52639a2302d1][free PNG image]]
