@@ -4,6 +4,6 @@
 #+title: mountpoint-s3
 #+filetags:  
 
-[[id:dcf5e347-8a8a-4c63-a822-53f558025f8c][AWS]]
+[[id:bc7360d3-a192-48ca-83e8-d856b7edee99][Amazon Simple Storage Service (S3)]]
 
 https://github.com/awslabs/mountpoint-s3

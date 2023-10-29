@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       40278c80-1789-454e-8571-478cffd509f8
+:END:
+#+title: AWS Storage
+
++ [[id:bc7360d3-a192-48ca-83e8-d856b7edee99][Amazon Simple Storage Service (S3)]]
++ [[id:0017e184-1ef8-420f-8419-b10648323184][Amazon Elastic Block Store (Amazon EBS)]]
++ [[id:e0bcac5f-0c1c-42c5-aa5d-d893b66841df][AWS Instance store volumes]]
++ [[id:c3303854-5155-4610-8fb6-78ce873c5595][AWS Elastic File System (EFS)]]
++ [[id:43de53de-51db-4460-8671-12db641607b0][AWS Storage Gateway]] 

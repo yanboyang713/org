@@ -1,0 +1,29 @@
+:PROPERTIES:
+:ID:       7a02db7f-7ae5-4e70-9a4a-62c3e6b2ce52
+:END:
+#+title: AWS Snowball (Snowball)
+[[id:dcf5e347-8a8a-4c63-a822-53f558025f8c][AWS]]
+
+With AWS Snowball (Snowball), you can transfer hundreds of terabytes or petabytes of data between your [[id:1988535e-9c15-4464-aa96-061b051e4370][Private Cloud (on-premises)]] and [[id:bc7360d3-a192-48ca-83e8-d856b7edee99][Amazon Simple Storage Service (S3)]].
+
+Uses a secure storage device for physical transportation.
+
+AWS Snowball Client is software that is installed on a local computer and is used to identify, compress, encrypt, and transfer data.
+
+Uses 256-bit encryption (managed with the AWS KMS) and tamper-resistant enclosures with TPM.
+
+The table below describes the AWS Snow offerings at a high-level:
+| Service        | What it Is                                                                             |
+|----------------+----------------------------------------------------------------------------------------|
+| AWS Snowball   | Bulk data transfer, edge storage, and edge compute                                     |
+| AWS Snowmobile | A literal shipping container full of storage (up to 100PB) and a truck to transport it |
+| AWS Snowcone   | The smallest device in the range that is best suited for outside the data center       |
+
+Snowball can import to S3 or export from S3.
+
+Import/export is when you send your own disks into AWS – this is being deprecated in favor of Snowball.
+
+Snowball must be ordered from and returned to the same region.
+
+To speed up data transfer it is recommended to run simultaneous instances of the AWS Snowball Client in multiple terminals and transfer small files as batches.
+

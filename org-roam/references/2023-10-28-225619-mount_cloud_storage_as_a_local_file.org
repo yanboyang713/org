@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       dde92a00-c952-402f-89a1-77458dee5c63
+:END:
+#+title: Transfer data between cloud Storage and on-premises
+
+* fuses
++ [[id:1720562e-5a89-4e10-8da0-fbb5b806a936][mountpoint-s3]]
++ [[id:57775ed0-ba6a-40ab-bb6f-e2e0adb9ae61][Azure Storage Fuse]]
+
+* Client
++ [[id:7a02db7f-7ae5-4e70-9a4a-62c3e6b2ce52][AWS Snowball (Snowball)]]
++ [[id:6d8f71ef-afee-49b0-8915-48e9a5dd9cce][Azure Storage Explorer]] 

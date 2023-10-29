@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       e0bcac5f-0c1c-42c5-aa5d-d893b66841df
+:END:
+#+title: AWS Instance store volumes
+
+Instance store volumes are high performance local disks that are physically attached to the host computer on which an [[id:f92ab341-b10b-4ec5-9034-e124dda3f081][AWS EC2]] instance runs.
+
+Instance stores are ephemeral which means the data is lost when powered off (non-persistent).
+
+Instances stores are ideal for temporary storage of information that changes frequently, such as buffers, caches, or scratch data.
+
+Instance store volume root devices are created from [[id:96951fb9-fd78-4965-b329-39459a36c455][Amazon Machine Image (AMI)]] templates stored on [[id:bc7360d3-a192-48ca-83e8-d856b7edee99][Amazon Simple Storage Service (S3)]].
+
+Instance store volumes cannot be detached/reattached.

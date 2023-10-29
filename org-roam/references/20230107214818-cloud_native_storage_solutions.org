@@ -23,7 +23,7 @@
 
 * Public Cloud Solutions
 + [[id:be42aaf3-a82d-4dfc-b885-fba7c9676dff][Azure Data Lake]]
-+ [[id:11588fb2-4527-4e25-8e14-2ff76822f3b3][Amazon S3]]
++ [[id:bc7360d3-a192-48ca-83e8-d856b7edee99][Amazon Simple Storage Service (S3)]] 
 
 * Reference List
 1. https://anarsolutions.com/10-popular-cloud-native-storage-solutions-%F0%9F%93%8C/

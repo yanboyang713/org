@@ -2,6 +2,7 @@
 :ID:       388bccf8-83e8-41ea-8440-f8758cc5146b
 :END:
 #+title: pipewire
+
 PipeWire saw itself as a powerful contender to replace PulseAudio.
 
 * Installing PipeWire
@@ -126,6 +127,14 @@ Then saving the file.
 
 ** out default switch
 https://gist.github.com/miyl/40cdf1a66b360ad8ec0b19e2ffa56194
+
+** set default sink
+https://www.reddit.com/r/archlinux/comments/ozcxpa/pipewire_how_to_set_default_sink_persistently/
+
+#+begin_src bash
+pactl list short sinks    # get sink name
+pactl set-default-sink <set default sink>
+#+end_src
 
 * Reference List
 1. https://www.maketecheasier.com/install-configure-pipewire-linux/

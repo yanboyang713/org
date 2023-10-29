@@ -1,9 +1,0 @@
-:PROPERTIES:
-:ID:       11588fb2-4527-4e25-8e14-2ff76822f3b3
-:END:
-#+title: Amazon S3
-#+filetags:  
-
-[[id:dcf5e347-8a8a-4c63-a822-53f558025f8c][AWS]]
-
-[[id:1720562e-5a89-4e10-8da0-fbb5b806a936][mountpoint-s3]]
