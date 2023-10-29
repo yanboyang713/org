@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       ea93443e-f344-4492-a1f1-62d86ae066df
+:END:
+#+title: Azure AD vs AWS IAM 
+
+[[id:597d714a-0025-4ce6-8a12-6f61b18c4143][Azure Active Directory (AAD)]]
+[[id:dccfa146-6975-45c8-84d9-0fb0d683b9d3][AWS Identity and Access Management (IAM)]]
+
+* Reference List
+1. https://jumpcloud.com/blog/aad-vs-aws-iam

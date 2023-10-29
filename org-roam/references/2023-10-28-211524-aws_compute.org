@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       2a0594fd-a9da-44d6-8839-8a2d967be28a
+:END:
+#+title: AWS Compute
+
+[[id:dcf5e347-8a8a-4c63-a822-53f558025f8c][AWS]]
+
++ [[id:f92ab341-b10b-4ec5-9034-e124dda3f081][AWS EC2]]
++ [[id:dc2effe7-f844-4fd1-a3ac-c7600328309d][Amazon Elastic Container Service (ECS)]]
++ [[id:34236e33-876e-4520-aa0e-da6f3b4b10bc][AWS Lambda]]
++ [[id:d11720d6-b8b9-45c6-aca5-e678d369619c][Amazon LightSail Instances]]
++ [[id:5c24b647-5226-4aa4-98dd-89263acb1c81][Amazon LightSail databases]]
++ [[id:920150b7-a80b-4d45-a826-c33d9ee8d654][AWS Elastic Beanstalk]]
++ [[id:431f637a-848d-4335-b293-db3660417063][AWS Batch]] 
+

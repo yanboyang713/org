@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       326306af-1c32-4eda-82ad-d4c80900d477
+:END:
+#+title: API Gateway
+
+[[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]]
+
+* Reference List
+1. https://github.com/apache/apisix
+2. https://mp.weixin.qq.com/s?__biz=Mzg3MDg5NTU3MQ==&mid=2247484762&idx=1&sn=bd35cee354e7153e3dbed91502ac0e53&chksm=ce879fe6f9f016f048f58fc422d15cd6646584e397ddcac824782509ae4938fe7f7efff9be66&mpshare=1&scene=1&srcid=1027XThglC95vP8yQNX8hTa3&sharer_shareinfo=50a7523485159ca0e502e63332c26c83&sharer_shareinfo_first=50a7523485159ca0e502e63332c26c83&exportkey=n_ChQIAhIQLBiPLGyGQorrcUBTLXXv1xKWAgIE97dBBAEAAAAAADZQBH2HuhQAAAAOpnltbLcz9gKNyK89dVj0upFs3EGNFOvMsam7qdw1XJkUK9DRz3lT4ck7ZQbVFgIF3JxFQ%2FVjZhDn7ZjLDYIeX1b%2F2hNYViO8Me87DJD1rcGdS5Nw8kjQoVTo2yYy0adLz7i7ow142QXlwVxdpILpXgWySrF2uzqddwKWRDvONudYsF%2FjrUA%2BF4m3yjGauBUpdi4ZjYAdTO7gV9e01UKAkMwH2TOVkhjTAeohXT9qsJ9NhFFBjFXy%2BQO%2FOrNlgtFS0khOI1047VHZoWU4zDRuNyhj9tLDi62Bk7fR1Lt5LuhWl6osmgECMMaIbgOXX0BqEyE%2B19%2FeX8NKJrPX6V%2BF&acctmode=0&pass_ticket=p6SNBeoKaczVt2U7gaWYEn3ljSOvrGKCwPfMXvIdHolM6EEzbVo80BdmcUfb0Z4O&wx_header=0#rd

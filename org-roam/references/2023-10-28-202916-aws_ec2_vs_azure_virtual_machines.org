@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       ab8186f1-90c2-45d4-922e-4e40df71651d
+:END:
+#+title: AWS EC2 vs Azure Virtual Machines
+
+[[id:d8339730-cb09-4a1b-8018-655fdd454fb5][Amazon EC2]]
+
+[[id:7727f75a-9e14-4245-8ae1-364b71a6f5f3][Azure Virtual Machines]]

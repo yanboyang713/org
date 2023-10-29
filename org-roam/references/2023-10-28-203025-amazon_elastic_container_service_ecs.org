@@ -1,0 +1,35 @@
+:PROPERTIES:
+:ID:       dc2effe7-f844-4fd1-a3ac-c7600328309d
+:END:
+#+title: Amazon Elastic Container Service (ECS)
+
+[[id:dcf5e347-8a8a-4c63-a822-53f558025f8c][AWS]]
+
+Amazon Elastic Container Service (ECS) is another product in the AWS Compute category. It provides a highly scalable, high performance container management service that supports Docker containers and allows you to easily run applications on a managed cluster of Amazon EC2 instances.
+
+Amazon ECS eliminates the need for you to install, operate, and scale your own cluster management infrastructure.
+
+Using API calls you can launch and stop container-enabled applications, query the complete state of clusters, and access many familiar features like security groups, Elastic Load Balancing, EBS volumes and IAM roles.
+
+Amazon ECS can be used to schedule the placement of containers across clusters based on resource needs and availability requirements.
+
+An Amazon ECS launch type determines the type of infrastructure on which your tasks and services are hosted.
+
+There are two launch types, and the table below describes some of the differences between the two launch types:
+
+| [[id:d8339730-cb09-4a1b-8018-655fdd454fb5][Amazon EC2]]                                                   | Amazon Fargate                                                            |
+|--------------------------------------------------------------+---------------------------------------------------------------------------|
+| You explicitly provision EC2 instances                       | The control plane asks for resources and Fargate automatically provisions |
+| You’re responsible for upgrading, patching, care of EC2 pool | Fargate provisions compute as needed                                      |
+| You must handle cluster optimization                         | Fargate handles cluster optimization                                      |
+| More granular control over infrastructure                    | Limited control, as infrastructure is automated                           |
+
+* The Elastic container registry (ECR)
+:PROPERTIES:
+:ID:       61637d3e-86a8-485f-8fb9-705e051c4d03
+:END:
+The Elastic container registry (ECR) is a managed AWS Docker registry service for storing, managing, and deploying Docker images.
+
+There is no additional charge for Amazon ECS. You pay for AWS resources (e.g. EC2 instances or EBS volumes) you create to store and run your application. Amazon ECR is integrated with Amazon EC2 Container Service (ECS).
+
+With Amazon ECR, there are no upfront fees or commitments. You pay only for the amount of data you store in your repositories and data transferred to the Internet.

@@ -27,6 +27,7 @@ Data ingestion is the process of getting data streams from its source to its pro
 There are many sources of input data streams [28]. These include data streams from various IoT devices such as sensors, video and other electronic monitors, social network Application Programming Interfaces (APIs), [[id:05606c57-c902-4b2d-a514-d375ff30ce31][WebSockets]], Representational State Transfer ([[id:8aeb67cf-d0e4-44d2-a3d4-8e4d9f71748b][RESTful]]) Web services, service usage logs, other stream processing systems, or any object which can collect and transmit time-sensitive data.
 
 Queueing systems encompass the spectrum of messaging services, from the traditional message queuing products such as MQTT, RabbitMQ, and ActiveMQ to the newer products such as NSQ and ZeroMQ [9], [29]. Apache [[id:d69b2b54-a569-43ea-b13b-d692c2cf652f][Kafka]] and DistributedLog have grown to embody more than a message system, and both currently support publishing and subscribing to streams of records [8]. There are also many commercial stream ingestion systems including Scribe [26] developed at Facebook, Kinesis Data Firehose managed by Amazon Web Services (AWS), IBM WebSphere MQ and [[id:caf9392e-912f-400a-ba57-f6ffd23bd983][Messaging services on Azure]] [29].
+[[id:d2901d4e-232e-4731-92c4-045612f3baea][Message Queue]]
 
 ** data stream processing layer
 :PROPERTIES:

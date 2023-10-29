@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       be6a0807-1c46-4525-b339-883a320905e6
+:END:
+#+title: API Gateway vs Load Balancer
+
+[[id:6823a5e3-b88a-40ca-9f8b-2e4196713852][LoadBalancer]]
+
+[[id:326306af-1c32-4eda-82ad-d4c80900d477][API Gateway]]
+
+* Reference List
+1. https://konghq.com/blog/engineering/api-gateway-vs-load-balancer
