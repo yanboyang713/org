@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       4954074a-267b-4af2-ae95-784c147d9e8c
+:END:
+#+title: AWS Networking
+
++ [[id:7aed7e4c-350e-4322-b5f7-52b860fe75cb][AWS virtual private cloud (VPC)]]
++ [[id:14edbd72-03e3-4a63-a505-734599673a88][AWS Subnet]]
++ [[id:9cc79b36-66de-4cb9-bd45-cef1464cecbe][AWS Firewalls]]
++ [[id:bfe1a6fe-1430-4f3a-b597-ec07eb1080e2][VPC Wizard]]
++ [[id:7a5dff25-376f-4d3a-b489-81508f6e1960][AWS NAT instances]]
++ [[id:abad1ae7-5904-4a20-b8e1-b3ad129d5fb8][AWS Direct Connect (DX)]]
++ [[id:7f5ab730-a333-407a-9736-1d856a026d63][AWS Global Accelerator]]
++ [[id:1689a7bc-b828-406a-aaf5-133290837345][AWS Outposts]]
+

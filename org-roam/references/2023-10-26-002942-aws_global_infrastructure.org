@@ -102,6 +102,23 @@ You can use the same AWS APIs, tools, and infrastructure across [[id:1988535e-9c
 
 AWS Outposts is designed for connected environments and can be used to support workloads that need to remain on-premises due to low latency or local data processing needs.
 
+AWS Outposts is a fully managed service that offers the same AWS infrastructure, AWS services, APIs, and tools to virtually any datacenter, co-location space, or on-premises facility for a truly consistent hybrid experience.
+
+AWS Outposts is ideal for workloads that require low latency access to on-premises systems, local data processing, data residency, and migration of applications with local system interdependencies.
+
+AWS compute, storage, database, and other services run locally on Outposts, and you can access the full range of AWS services available in the Region to build, manage, and scale your on-premises applications using familiar AWS services and tools.
+
+Outposts is available as a 42U rack that can scale from 1 rack to 96 racks to create pools of compute and storage capacity.
+
+Services you can run on AWS Outposts include:
++ [[id:f92ab341-b10b-4ec5-9034-e124dda3f081][AWS EC2]]
++ [[id:0017e184-1ef8-420f-8419-b10648323184][Amazon Elastic Block Store (Amazon EBS)]]
++ [[id:bc7360d3-a192-48ca-83e8-d856b7edee99][Amazon Simple Storage Service (S3)]]
++ [[id:7aed7e4c-350e-4322-b5f7-52b860fe75cb][AWS virtual private cloud (VPC)]]
++ [[id:dc2effe7-f844-4fd1-a3ac-c7600328309d][Amazon Elastic Container Service (ECS)]]/[[id:91ce7793-c4cb-4d28-bc30-1fc4e0939e74][Amazon Elastic Kubernetes Service (EKS)]].
++ RDS.
++ EMR.
+
 * Edge locations and regional edge caches
 :PROPERTIES:
 :ID:       c4c7e3dc-2c6e-43a8-9ecd-ed6cf39c57df
