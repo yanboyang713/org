@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       65f2cce4-159f-490f-9dc8-a24bba0f5cbd
+:END:
+#+title: SWAY
+* Code
+https://github.com/XiaoLing941212/random_projecttion.git
+
+* Reference List
+1. Chen, J., Nair, V., Krishna, R., & Menzies, T. (2018). “Sampling” as a baseline optimizer for search-based software engineering. IEEE Transactions on Software Engineering, 45(6), 597-614.

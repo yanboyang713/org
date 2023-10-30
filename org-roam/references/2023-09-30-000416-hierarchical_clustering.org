@@ -7,8 +7,9 @@ Hierarchical clustering creates a tree of clusters. Hierarchical clustering, not
 * Typical algorithms
 + [[id:bd8f4d99-62d6-42f4-8c79-6a6d4b969736][BIRCH]]
 + [[id:842b848c-2c66-4cbf-ac28-2ab59067972a][CURE]]
-ROCK
-Chameleon
++ ROCK
++ Chameleon
++ [[id:65f2cce4-159f-490f-9dc8-a24bba0f5cbd][SWAY]] 
 
 * Reference list
 1. https://developers.google.com/machine-learning/clustering/clustering-algorithms
