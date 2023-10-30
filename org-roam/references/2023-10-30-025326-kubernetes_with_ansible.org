@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       ad196ba6-1e64-4bb0-a4be-b45f588d1cbe
+:END:
+#+title: Kubernetes with Ansible
+
+[[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]]
+
+[[id:81e61fe5-4e8a-4610-861a-e356efb82f7a][Ansible]]
+
+* Reference List
+1. https://gist.github.com/allanger/84db2647578316f8e721f7219052788f

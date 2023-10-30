@@ -4,6 +4,8 @@
 #+title: OpenStack-Ansible
 #+filetags: OpenStack
 
+[[id:81e61fe5-4e8a-4610-861a-e356efb82f7a][Ansible]]
+
 OpenStack-Ansible provides Ansible playbooks and roles for the deployment and configuration of an OpenStack environment.
 
 * Reference List

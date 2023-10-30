@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       62a88943-3bee-4ff4-be2f-87d87b32dfcd
+:END:
+#+title: first-order logic
+
+https://en.wikipedia.org/wiki/First-order_logic

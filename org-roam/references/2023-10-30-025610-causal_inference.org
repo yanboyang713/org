@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       6c86c3c7-8187-4116-b348-7986761dd924
+:END:
+#+title: Causal Inference
+
+* Reference List
+1. https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/
