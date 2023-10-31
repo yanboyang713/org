@@ -3,5 +3,8 @@
 :END:
 #+title: Causal Inference
 
+causal inference is a subset of [[id:7102dc5c-9d18-4e59-8bed-a47366a227f9][Statistical Inference]]
+
 * Reference List
 1. https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/
+2. https://netcause.github.io/AAAI2022-Tutorial-final.pdf 

@@ -1,7 +1,7 @@
 :PROPERTIES:
 :ID:       7f82ddc1-f703-4677-b2fa-fa75af944640
 :END:
-#+title: relational learning
+#+title: statistical relational learning (SRL)
 Statistical relational learning (SRL) is a subdiscipline of artificial intelligence and [[id:b1cf8bef-07d8-44c4-bb19-c3362a74463f][machine learning]] that is concerned with domain models that exhibit both uncertainty (which can be dealt with using statistical methods) and complex, relational structure.
 
 Note that SRL is sometimes called Relational Machine Learning (RML) in the literature.
@@ -10,9 +10,16 @@ Typically, the [[id:72485e34-a45e-4c8c-a6ff-beb0647a10aa][Knowledge representati
 
 As is evident from the characterization above, the field is not strictly limited to learning aspects; it is equally concerned with [[id:91554788-4dbd-4e5d-82f6-6509aac8fb7f][reasoning]] (specifically probabilistic inference) and knowledge representation. Therefore, alternative terms that reflect the main foci of the field include statistical relational learning and reasoning (emphasizing the importance of reasoning) and first-order probabilistic languages (emphasizing the key properties of the languages with which models are represented).
 
+SRL systems typically support the learning of the SRL model from data, and support the ability to answer queries using [[id:511c7df2-096a-4a59-bc8a-cdf14bffea27][probabilistic inference]].
+
 * Canonical tasks
 + link-based [[id:2a3bfdcc-4049-411c-89e0-1d47be248320][clustering]], i.e. the grouping of similar objects, where similarity is determined according to the links of an object, and the related task of collaborative filtering, i.e. the filtering for information that is relevant to an entity (where a piece of information is considered relevant to an entity if it is known to be relevant to a similar entity)
 
+* Book
++ Introduction to Statistical Relational Learning (Adaptive Computation and Maching Learning) by Lise Getoor (Editor)
+  
 * Reference List
 1. https://blog.csdn.net/PolarisRisingWar/article/details/127395263
 2. https://en.wikipedia.org/wiki/Statistical_relational_learning
+3. Getoor, L., & Mihalkova, L. (2011, June). Learning statistical models from relational data. In Proceedings of the 2011 ACM SIGMOD International Conference on Management of data (pp. 1195-1198).
+   

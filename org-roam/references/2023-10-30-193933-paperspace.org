@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       c7ab7e4e-7bb7-487d-9ba9-747f6244dc97
+:END:
+#+title: paperspace
+
+[[id:f67a83ed-53e2-4e33-bbd4-9bf528bf9e42][GPU]]
+
+https://www.paperspace.com/

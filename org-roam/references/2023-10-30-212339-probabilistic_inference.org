@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       511c7df2-096a-4a59-bc8a-cdf14bffea27
+:END:
+#+title: probabilistic inference
+
+Probabilistic inference is a type of [[id:7102dc5c-9d18-4e59-8bed-a47366a227f9][Statistical Inference]]
+
+* Reference List
+1. https://stats.stackexchange.com/questions/243746/what-is-probabilistic-inference#:~:text=In%20answer%20to%202%3A%20Probabilistic,hypothesis%20rejection%2C%20clustering%20and%20classification.

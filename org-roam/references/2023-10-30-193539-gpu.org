@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       f67a83ed-53e2-4e33-bbd4-9bf528bf9e42
+:END:
+#+title: GPU
+

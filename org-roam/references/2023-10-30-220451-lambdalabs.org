@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       b3c4bf1f-9b20-46d0-b825-68dc63620c19
+:END:
+#+title: lambdalabs
+
+https://lambdalabs.com/

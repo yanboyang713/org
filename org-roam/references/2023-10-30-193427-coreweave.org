@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       d98645ac-dd32-406f-812d-ca319bd687cb
+:END:
+#+title: coreweave
+
+[[id:f67a83ed-53e2-4e33-bbd4-9bf528bf9e42][GPU]]
+
+https://www.coreweave.com/

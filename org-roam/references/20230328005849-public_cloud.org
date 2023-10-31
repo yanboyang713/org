@@ -7,4 +7,13 @@ A cloud-based application is fully deployed in the cloud and all parts of the ap
 
 + [[id:dcf5e347-8a8a-4c63-a822-53f558025f8c][AWS]]
 + [[id:c40c4861-f09d-4bc2-a606-d2b62cc533f9][Azure]]
-+ [[id:1702aab3-b922-4f90-9dc9-abb890844574][Google Cloud Platform (GCP)]] 
++ [[id:1702aab3-b922-4f90-9dc9-abb890844574][Google Cloud Platform (GCP)]]
++ [[id:d98645ac-dd32-406f-812d-ca319bd687cb][coreweave]]
++ [[id:c7ab7e4e-7bb7-487d-9ba9-747f6244dc97][paperspace]]
++ [[id:959f0eaf-6de1-4f2f-a22a-38385879b4e8][Vultr]]
++ [[id:619c5d24-d521-4437-a203-ea12651cb330][cirrascale]]
++ [[id:b3c4bf1f-9b20-46d0-b825-68dc63620c19][lambdalabs]]
++ [[id:c1a8bf70-3a41-41cb-b02e-09a0555ca528][colovore]] 
+
+* Reference List
+1. https://www.cnitom.com/dc/202309/75957.html
