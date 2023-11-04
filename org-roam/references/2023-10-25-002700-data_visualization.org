@@ -3,5 +3,7 @@
 :END:
 #+title: data visualization
 
-[[id:4cba3923-d80e-4fb9-9d19-df35d524d78b][plotly]]
-[[id:ebc7a85b-cb33-4b29-93f9-0c2d5215bc7a][Prometheus]]
++ [[id:4cba3923-d80e-4fb9-9d19-df35d524d78b][plotly]]
++ [[id:ebc7a85b-cb33-4b29-93f9-0c2d5215bc7a][Prometheus]]
++ [[id:8add029c-7974-4d37-8ae7-b4c1670a26c0][Apache Superset]]
+  

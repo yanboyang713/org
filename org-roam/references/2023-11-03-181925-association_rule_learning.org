@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       ed03a348-8a07-44b4-97ac-2f6c608ed896
+:END:
+#+title: association rule learning
+
+nystrom
+
+Association rule learning
+
+apriori
+

@@ -55,11 +55,11 @@ The resource management layer coordinates actions among compute and storage node
 
 [[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]]
 
-** output layer
+** Data Stream Output Layer
 :PROPERTIES:
 :ID:       a445997b-8062-418b-ab83-e7b6bc2f3baf
 :END:
-The results from data stream processing pipelines can be directed to an application, another workflow, a visualization tool, or an alert or monitoring dashboard [8].
+The results from [[id:64603a3a-d53b-4cd3-9acc-a1f967e18262][data stream processing]] pipelines can be directed to an application, another workflow, a [[id:63c959b8-f6aa-4b1c-8f0a-17ba8914282e][data visualization]] tool, or an alert or monitoring dashboard [8].
 
 [[id:ebc7a85b-cb33-4b29-93f9-0c2d5215bc7a][Prometheus]]
 
