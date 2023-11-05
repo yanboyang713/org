@@ -5,4 +5,7 @@
 #+filetags: RPC Rust
 
 [[id:a2da1c32-ba1a-4c2c-9374-1bd8896920fa][rust]]
-https://github.com/cloudwego/volo
+
++ [[id:056e54e5-c167-44c7-8a66-c469d3c1b188][volo]]
++ [[id:2b22b424-d1d6-40c1-b148-068a424a6677][tonic]]
+  

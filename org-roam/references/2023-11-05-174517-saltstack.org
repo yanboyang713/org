@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       48dba1e1-00a9-4c3a-9700-be00001ed98f
+:END:
+#+title: SaltStack
+
+https://saltproject.io/index.html
+https://github.com/saltstack/salt

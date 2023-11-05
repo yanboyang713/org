@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       8c53599d-b68d-4f85-bdeb-99864c09ef89
+:END:
+#+title: microsoft active directory
+
+[[id:597d714a-0025-4ce6-8a12-6f61b18c4143][Azure Active Directory (AAD)]]
