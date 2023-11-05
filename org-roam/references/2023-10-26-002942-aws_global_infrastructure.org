@@ -123,7 +123,7 @@ Services you can run on AWS Outposts include:
 :PROPERTIES:
 :ID:       c4c7e3dc-2c6e-43a8-9ecd-ed6cf39c57df
 :END:
-Edge locations are [[id:4aab71ba-64f3-4c16-80ca-1d9db66c7c98][Content Delivery Network (CDN)]] endpoints for CloudFront.
+Edge locations are [[id:4aab71ba-64f3-4c16-80ca-1d9db66c7c98][Content Delivery Network (CDN)]] endpoints for [[id:9c1cb1fa-28bc-4cad-ad69-af8ef16e5162][Amazon CloudFront]].
 
 There are many more edge locations than regions.
 

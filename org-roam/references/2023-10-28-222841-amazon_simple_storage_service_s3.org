@@ -107,3 +107,16 @@ Additional capabilities offered by Amazon S3 include:
 | Static Web Hosting       | Simple and massively scalable static website hosting                                                              |
 | BitTorrent               | Use the BitTorrent protocol to retrieve any publicly available object by automatically generating a .torrent file |
 
+* [[id:c86ab8d3-fefe-4081-8221-79c1b5b7b472][Pricing]]
+Storage pricing is determined by:
++ Storage class – e.g., Standard or IA.
++ Storage quantity – data volume stored in your buckets on a per GB basis.
++ Number of requests – the number and type of requests, e.g., GET, PUT, POST, LIST, COPY.
++ Lifecycle transitions requests – moving data between storage classes.
++ Data transfer – data transferred out of an S3 region is charged.
+  
+Amazon Glacier pricing
++ Extremely low cost and you pay only for what you need with no commitments of upfront fees.
++ Charged for requests and data transferred out of Glacier.
++ “Amazon Glacier Select” pricing allows queries to run directly on data stored on Glacier without having to retrieve the archive. Priced on amount of data scanned, returned, and number of requests initiated.
+  

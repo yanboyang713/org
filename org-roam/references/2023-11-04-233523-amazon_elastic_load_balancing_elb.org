@@ -1,0 +1,19 @@
+:PROPERTIES:
+:ID:       a8227869-53d5-4d38-a9dc-edbf2d6a8bcd
+:END:
+#+title: Amazon Elastic Load Balancing (ELB)
+
+[[id:dcf5e347-8a8a-4c63-a822-53f558025f8c][AWS]]
+
+ELB automatically distributes incoming application traffic across multiple targets, such as Amazon EC2 instances, containers, and IP addresses.
+
+ELB can handle the varying load of your application traffic in a single Availability Zone or across multiple Availability Zones.
+
+ELB features high availability, automatic scaling, and robust security necessary to make your applications fault tolerant.
+
+There are four types of Elastic Load Balancer (ELB) on AWS:
++ [[id:9502afe1-be99-4ac4-b647-baa4231fe1a2][Application Load Balancer (ALB)]] – layer 7 load balancer that routes connections based on the content of the request.
++ [[id:f2123bf1-b72c-4b3c-9741-dda358b397fe][Network Load Balancer (NLB)]] – layer 4 load balancer that routes connections based on IP protocol data.
++ Classic Load Balancer (CLB) – this is the oldest of the three and provides basic load balancing at both layer 4 and layer 7 (not on the exam anymore).
++ Gateway Load Balancer (GLB) – distributes connections to virtual appliances and scales them up or down (not on the exam).
+

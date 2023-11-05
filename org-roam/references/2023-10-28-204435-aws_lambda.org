@@ -23,4 +23,7 @@ Primary use cases for AWS Lambda:
 + Real-time stream processing.
 + Build serverless backends for web, mobile, IOT, and 3rd party API requests.
 
+* [[id:c86ab8d3-fefe-4081-8221-79c1b5b7b472][Pricing]]
+Pay only for what you use and charged based on the number of requests for functions and the time it takes to execute the code.
+Price is dependent on the amount of memory allocated to the function.
 

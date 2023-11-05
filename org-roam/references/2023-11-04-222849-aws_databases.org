@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       fd9fc710-20ed-404d-a8e6-01c9fcf72edd
+:END:
+#+title: AWS Databases
+
+[[id:dcf5e347-8a8a-4c63-a822-53f558025f8c][AWS]]
+
++ [[id:6195639e-892f-470e-b165-29b9dc236bc4][Amazon Relational Database Service (Amazon RDS)]]
++ [[id:d9d8f137-cd09-4c0c-a21f-07d0330b941b][Amazon DynamoDB]]
++ [[id:4364cb6a-d511-47ea-a75e-8aa88c6841e1][Amazon Redshift]]
++ [[id:523b28e0-9367-4cfd-ae4e-277e4eca0caf][Amazon ElastiCache]]
++ [[id:bdc27a9c-6f72-4b51-ac1c-d511af9f3c0f][Amazon EMR]] 
+
+* Reference list
+1. https://www.youtube.com/watch?v=lqSvmnUiAqk

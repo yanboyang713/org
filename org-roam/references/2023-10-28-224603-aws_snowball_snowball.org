@@ -27,3 +27,8 @@ Snowball must be ordered from and returned to the same region.
 
 To speed up data transfer it is recommended to run simultaneous instances of the AWS Snowball Client in multiple terminals and transfer small files as batches.
 
+* [[id:c86ab8d3-fefe-4081-8221-79c1b5b7b472][Pricing]]
+Pay a service fee per data transfer job and the cost of shipping the appliance.
+Each job allows use of Snowball appliance for 10 days onsite for free.
+Data transfer into AWS is free and outbound is charged (per region pricing).
+

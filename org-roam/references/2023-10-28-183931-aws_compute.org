@@ -54,16 +54,35 @@ Metadata and User Data:
   
 The Instance Metadata Query tool allows you to query the instance metadata without having to type out the full URI or category names.
 
-* [[id:d8339730-cb09-4a1b-8018-655fdd454fb5][Amazon EC2]] Pricing
+* [[id:d8339730-cb09-4a1b-8018-655fdd454fb5][Amazon EC2]] [[id:c86ab8d3-fefe-4081-8221-79c1b5b7b472][Pricing]]
 :PROPERTIES:
 :ID:       aea583e0-41d1-48db-a581-33b2aa539be8
 :END:
-On-demand:
+
+EC2 pricing is based on:
++ Clock hours of server uptime.
++ Instance configuration.
++ Instance type.
++ Number of instances.
++ Load balancing.
++ Detailed monitoring.
++ Auto Scaling (resources created).
++ Elastic IP addresses (charged if allocated but not used).
++ Operating systems and software packages.
+  
+There are several pricing models for AWS services, these include:
+
+** On-demand
 + Good for users that want the low cost and flexibility of EC2 without any up-front payment or long-term commitment.
 + Applications with short term, spiky, or unpredictable workloads that cannot be interrupted.
 + Applications being developed or tested on EC2 for the first time.
+  
+Means you pay for compute or database capacity with no long-term commitments of upfront payments.
+You pay for the computer capacity per hour or per second (Linux only, and applies to On-Demand, Reserved and Spot instances).
+Recommended for users who prefer low cost and flexibility without upfront payment or long-term commitments.
+Good for applications with short-term, spiky, or unpredictable workloads that cannot be interrupted.
 
-Reserved:
+** Reserved
 + Applications with steady state or predictable usage.
 + Applications that require reserved capacity.
 + Users can make up-front payments to reduce their total computing costs even further.
@@ -71,13 +90,33 @@ Reserved:
 + Convertible RIs provide up to 54% off on-demand price – provides the capability to change the attributes of the RI if the exchange results in the creation of RIs of equal or greater value.
 + Scheduled RIs are available to launch within the time window you reserve. This option allows you to match your capacity reservation to a predictable recurring schedule that only requires a fraction of a day, a week, or a month.
 
-Spot:
+Reserved instances provide significant discounts, up to 75% compared to On-Demand pricing, by paying for capacity ahead of time.
+Provide a capacity reservation when applied to a specific Availability Zone.
+Good for applications that have predictable usage, that need reserved capacity, and for customers who can commit to a 1 or 3-year term.
+
+Reservations apply to various services, including:
++ Amazon EC2 Reserved Instances.
++ Amazon DynamoDB Reserved Capacity.
++ Amazon ElastiCache Reserved Nodes.
++ Amazon RDS Reserved Instances.
++ Amazon RedShift Reserved Instances.
+
+Reservation options include no upfront, partial upfront and all upfront.
+Reservation terms are 1 or 3 years.
+
+** Spot
 + Applications that have flexible start and end times.
 + Applications that are only feasible at very low compute prices.
 + Users with an urgent need for a large amount of additional compute capacity.
 + If Amazon terminate your instances, you do not pay, if you terminate you pay for the hour.
 
-Dedicated hosts:
+Purchase spare computing capacity with no upfront commitment at discounted hourly rates.
+Provides up to 90% off the On-Demand price.
+Recommended for applications that have flexible start and end times, applications that are only feasible at very low compute prices, and users with urgent computing needs for a lot of additional capacity.
+In the old model Spot instances were terminated because of higher competing bids, in the new model this does not happen, but instances still may be terminated (with a 2-minute warning) when EC2 needs the capacity back – note: the exam may not be updated to reflect this yet.
+[[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1699169605/aws/2023-11-05-02_32_02-screenshot_wvchin.png]]
+
+** Dedicated hosts
 + Physical servers dedicated just for your use.
 + You then have control over which instances are deployed on that host.
 + Available as On-Demand or with Dedicated Host Reservation.
@@ -89,7 +128,12 @@ Dedicated hosts:
 + Most expensive option.
 + Billing is per host.
 
-Dedicated instances:
+A dedicated host is an EC2 servers dedicated to a single customer.
+Runs in your VPC.
+Good for when you want to leverage existing server-bound software licenses such as Windows Server, SQL Server, and SUSE Linux Enterprise Server.
+Also good for meeting compliance requirements.
+
+** Dedicated instances
 + Virtualized instances on hardware just for you.
 + Also uses physically dedicated EC2 servers.
 + Does not provide the additional visibility and controls of dedicated hosts (e.g. how instances are placed on a server).
@@ -98,10 +142,16 @@ Dedicated instances:
 + Available as On-Demand, Reserved Instances, and Spot Instances.
 + Cost additional $2 per hour per region.
 
-Savings Plans:
+ Dedicated Instances are Amazon EC2 instances that run in a VPC on hardware that’s dedicated to a single customer.
+ Dedicated instances are physically isolated at the host hardware level from instances that belong to other AWS accounts.
+ Dedicated instances may share hardware with other instances from the same AWS account that are not Dedicated instances.
+ 
+** Savings Plans
 + Savings Plans is a flexible pricing model that provides savings of up to 72% on your AWS compute usage.
 + This pricing model offers lower prices on Amazon EC2 instances usage, regardless of instance family, size, OS, tenancy, or AWS Region.
 + Also applies to AWS Fargate and AWS Lambda usage.
+
+Commitment to a consistent amount of usage (EC2 + Fargate + Lambda); Pay by $/hour; 1 or 3-year commitment.
 
 * [[id:d8339730-cb09-4a1b-8018-655fdd454fb5][Amazon EC2]] Instance Types
 :PROPERTIES:

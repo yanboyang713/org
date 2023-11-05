@@ -1,0 +1,22 @@
+:PROPERTIES:
+:ID:       b735716b-8941-4fea-973e-9aead9412af6
+:END:
+#+title: resource groups and tagging
+
+[[id:dcf5e347-8a8a-4c63-a822-53f558025f8c][AWS]]
+
+Tags are key / value pairs that can be attached to AWS resources.
+Tags contain metadata (data about data).
+Tags can sometimes be inherited – e.g. resources created by Auto Scaling, CloudFormation or Elastic Beanstalk.
+Resource groups make it easy to group resources using the tags that are assigned to them.
+You can group resources that share one or more tags.
+Resource groups contain general information, such as:
++ Region.
++ Name.
++ Health Checks.
+  
+And specific information, such as:
++ Public & private IP addresses (for EC2).
++ Port configurations (for ELB).
++ Database engine (for RDS).
+  

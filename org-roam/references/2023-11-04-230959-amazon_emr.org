@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       bdc27a9c-6f72-4b51-ac1c-d511af9f3c0f
+:END:
+#+title: Amazon EMR
+
+Amazon EMR is a web service that enables businesses, researchers, data analysts, and developers to process vast amounts of data easily and cost-effectively.
+
+EMR utilizes a hosted [[id:89ffb30b-234e-47e5-8bab-a14cfb016062][Hadoop]] framework running on [[id:f92ab341-b10b-4ec5-9034-e124dda3f081][AWS EC2]] and [[id:bc7360d3-a192-48ca-83e8-d856b7edee99][Amazon Simple Storage Service (S3)]].
+
+Managed Hadoop framework for processing huge amounts of data.
+
+Also support Apache Spark, HBase, Presto and [[id:394ba301-aac1-4f7a-8ead-44744e602934][flink]].
+
+Most commonly used for log analysis, financial analysis, or extract, translate and loading (ETL) activities.
+

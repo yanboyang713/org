@@ -1,0 +1,32 @@
+:PROPERTIES:
+:ID:       1770586a-a0b8-4f29-8914-0569c91f65df
+:END:
+#+title: Amazon Route 53
+
+Amazon Route 53 is the AWS [[id:7bab7928-237d-4784-a42f-b85ef6874b9b][Domain Name Service (DNS)]].
+Route 53 performs three main functions:
++ [[id:a34e9772-bb80-4069-b44d-487991824b98][Domain Registration]] – Route 53 allows you to register domain names.
++ Domain Name Service ([[id:7bab7928-237d-4784-a42f-b85ef6874b9b][DNS]]) – Route 53 translates name to IP addresses using a global network of authoritative DNS servers.
++ Health checking – Route 53 sends automated requests to your application to verify that it’s reachable, available, and functional.
+
+You can use any combination of these functions.
+Route 53 benefits:
++ Domain registration.
++ DNS service.
++ Traffic Flow (send users to the best endpoint).
++ Health checking.
++ DNS failover (automatically change domain endpoint if system fails).
++ Integrates with [[id:a8227869-53d5-4d38-a9dc-edbf2d6a8bcd][Amazon Elastic Load Balancing (ELB)]], [[id:bc7360d3-a192-48ca-83e8-d856b7edee99][Amazon Simple Storage Service (S3)]], and [[id:9c1cb1fa-28bc-4cad-ad69-af8ef16e5162][Amazon CloudFront]] as endpoints.
+  
+Routing policies determine how Route 53 DNS responds to queries.
+The following table highlights the key function of each type of routing policy:
+| Policy            | What it Does                                                                        |
+|-------------------+-------------------------------------------------------------------------------------|
+| Simple            | Simple DNS response providing the IP address associated with a name                 |
+| Failover          | If primary is down (based on health checks), routes to secondary destination        |
+| Geolocation       | Uses geographic location you’re in (e.g. Europe) to route you to the closest region |
+| Geoproximity      | Routes you to the closest region within a geographic area                           |
+| Latency           | Directs you based on the lowest latency route to resources                          |
+| Multivalue answer | Returns several IP addresses and functions as a basic load balancer                 |
+| Weighted          | Uses the relative weights assigned to resources to determine which to route to      |
+

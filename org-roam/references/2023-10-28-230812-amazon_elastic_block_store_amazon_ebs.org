@@ -52,3 +52,9 @@ EBS Snapshots:
 
 [[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1698550280/aws/2023-10-28-23_30_30-screenshot_lb2r0q.png]]
 
+* [[id:c86ab8d3-fefe-4081-8221-79c1b5b7b472][Pricing]]
+Pricing is based on three factors:
++ Volumes – volume storage for all EBS volumes type is charged by the amount of GB provisioned per month.
++ Snapshots – based on the amount of space consumed by snapshots in S3. Copying snapshots is charged on the amount of data copied across regions.
++ Data transfer – inbound data transfer is free, outbound data transfer charges are tiered.
+  
