@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       c4d76bcc-1b01-48ac-aa22-afb2679e20a1
+:END:
+#+title: SETM algorithm
+
+* Reference list
+1. Kumbhare, T. A., & Chobe, S. V. (2014). An overview of association rule mining algorithms. International Journal of Computer Science and Information Technologies, 5(1), 927-930.

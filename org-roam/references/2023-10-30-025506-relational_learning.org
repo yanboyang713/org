@@ -15,6 +15,8 @@ SRL systems typically support the learning of the SRL model from data, and suppo
 * Canonical tasks
 + link-based [[id:2a3bfdcc-4049-411c-89e0-1d47be248320][clustering]], i.e. the grouping of similar objects, where similarity is determined according to the links of an object, and the related task of collaborative filtering, i.e. the filtering for information that is relevant to an entity (where a piece of information is considered relevant to an entity if it is known to be relevant to a similar entity)
 
++ [[id:dea7a3b1-0396-422f-92df-b2dc89efdeb1][Markov Logic Networks (MLN)]] [4]
+  
 * Book
 + Introduction to Statistical Relational Learning (Adaptive Computation and Maching Learning) by Lise Getoor (Editor)
   
@@ -22,4 +24,5 @@ SRL systems typically support the learning of the SRL model from data, and suppo
 1. https://blog.csdn.net/PolarisRisingWar/article/details/127395263
 2. https://en.wikipedia.org/wiki/Statistical_relational_learning
 3. Getoor, L., & Mihalkova, L. (2011, June). Learning statistical models from relational data. In Proceedings of the 2011 ACM SIGMOD International Conference on Management of data (pp. 1195-1198).
+4. Khosravi, H., & Bina, B. (2010). A survey on statistical relational learning. In Advances in Artificial Intelligence: 23rd Canadian Conference on Artificial Intelligence, Canadian AI 2010, Ottawa, Canada, May 31–June 2, 2010. Proceedings 23 (pp. 256-268). Springer Berlin Heidelberg.
    

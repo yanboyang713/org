@@ -4,6 +4,8 @@
 #+title: reverse proxy
 #+filetags:
 
+[[id:bafa2053-e0a1-4f2b-8c13-c8be0c838e9a][nat]]
+
 A reverse proxy server is a type of proxy server that typically sits behind the [[id:f7904304-e3e3-484c-b541-349030a56fe3][firewall]] in a private network and directs client requests to the appropriate backend server. A reverse proxy provides an additional level of abstraction and control to ensure the smooth flow of network traffic between clients and servers.
 
 + [[id:a2f01c03-7a18-485d-ad1b-ae7aefc86dd4][Fuso]]
@@ -11,7 +13,8 @@ A reverse proxy server is a type of proxy server that typically sits behind the 
 + [[id:6eb00ce0-e2a8-45ed-9dd9-7b21331dd92e][nps]]
 + [[id:4174804e-33a4-4d9f-85b1-0f62ab6c946b][zerotier]]
 + [[id:527e4811-268e-425b-9a39-0c69fc99deff][Earthworm]]
-+ [[id:60ede6bc-f414-4906-9d3f-2b868b14b710][ngrok]] 
++ [[id:60ede6bc-f414-4906-9d3f-2b868b14b710][ngrok]]
++ [[id:4b128d18-9a72-4e48-ad5d-deb5addcfce0][natpass]] 
 
 * Reference List
 1. https://www.nginx.com/resources/glossary/reverse-proxy-server/#:~:text=A%20reverse%20proxy%20server%20is,traffic%20between%20clients%20and%20servers.

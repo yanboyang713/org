@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       3f4435db-dd60-40e5-b9b1-57473da353e6
+:END:
+#+title: AIS algorithm
+
+* Reference list
+1. Kumbhare, T. A., & Chobe, S. V. (2014). An overview of association rule mining algorithms. International Journal of Computer Science and Information Technologies, 5(1), 927-930.

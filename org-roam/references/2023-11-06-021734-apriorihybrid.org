@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       0fec921f-82e1-4462-9c4d-7b5199f7bf04
+:END:
+#+title: apriorihybrid
+
+* Reference list
+1. Kumbhare, T. A., & Chobe, S. V. (2014). An overview of association rule mining algorithms. International Journal of Computer Science and Information Technologies, 5(1), 927-930.
+

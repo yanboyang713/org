@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       dbe981e1-8f24-4215-b6f6-1ec0a2f83a58
+:END:
+#+title: aprioritid
+
+* Reference list
+1. Kumbhare, T. A., & Chobe, S. V. (2014). An overview of association rule mining algorithms. International Journal of Computer Science and Information Technologies, 5(1), 927-930.
+

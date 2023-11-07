@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       152edc8f-ee09-4d83-9fd9-38318e2afa17
+:END:
+#+title: ntex
+
+[[id:a2da1c32-ba1a-4c2c-9374-1bd8896920fa][rust]]
+
+[[id:133683b9-7b81-41f9-b5aa-f04e1026c743][grpc]]
+[[id:8beebcea-e815-47f6-b7cf-4a162e1e5fda][mqtt]]
+[[id:c7733834-76c6-4b87-b531-d0259b627f3c][Redis]]
+
+* Reference List
+1. https://mp.weixin.qq.com/s?__biz=MzI3NTAwNjk4Mg==&mid=2648596639&idx=1&sn=efee99551427f157dfba6460f1a59c98&chksm=f32193f6c4561ae07a974642e82ed27bb536a092702243ab65200fe0ee45bb5d694e47c60e72&mpshare=1&scene=1&srcid=1107hW16wj7zzaX2mt4aOaQk&sharer_shareinfo=901d1a5e32a349d20bfda071af618c60&sharer_shareinfo_first=901d1a5e32a349d20bfda071af618c60&exportkey=n_ChQIAhIQ2sfvraWxenpQEBXVId57gRKWAgIE97dBBAEAAAAAAKRHBA7V7w8AAAAOpnltbLcz9gKNyK89dVj0Bjb5XJbUQOY8iUx%2Flkl5oezq3a7RTimxaFBRhx4bP7b0VzXYV9qHgemMU%2F5ykAcvb7USpIgCD5LKolaaK2tBmhELPdx%2FxR%2FXBwmKrZIDB7LuiCo%2FWIEl4ytyXwviVIYiklb%2BiMI01Bj7sql3znSaAwjxTFi328D61kiJveOjSs9ha7SxWoO3KOUEE%2FVUbFroM9KcveY91bRLMt2IxHXCwlpvT93wBfPsQHi9Va0FIHl2ogngXReyw0qaTQbdz6VMI%2FkOexKAryP1bbrXPP7Jv8jnUkW3UfBDfthJRrQJNjLxCK8AdTKViyiFK0pSNtI5&acctmode=0&pass_ticket=tjLioq1kV4ZlG%2FUJASTafEK3qS1%2BV8Nuu7r7qKKaK39nGLG9vO%2FgsxNdSngkzclpi3xyq2Q2J2zdhwlDnAqTDA%3D%3D&wx_header=0#rd

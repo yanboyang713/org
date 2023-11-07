@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       dea7a3b1-0396-422f-92df-b2dc89efdeb1
+:END:
+#+title: Markov Logic Networks (MLN)
+

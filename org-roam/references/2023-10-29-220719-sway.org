@@ -12,66 +12,11 @@ https://github.com/XiaoLing941212/random_projecttion.git
     import os
     import pandas as pd
     import time
-
-    def cluster(candidates, enough, res):
-      if len(candidates) < enough:
-          res.append(candidates)
-          return res
-
-      east, west, east_items, west_items = split(candidates)
-      res = cluster(east_items, enough, res)
-      res = cluster(west_items, enough, res)
-
-      return res
-
-
-  def split(candidates):
-      pivot = random.choice(candidates)
-      east_pivot = find_farest(pivot, candidates)
-      west_pivot = find_farest(east_pivot, candidates)
-      c = cal_distance(east_pivot, west_pivot)
-
-      if c == 0:
-          east_items = candidates[:len(candidates)//2]
-          west_items = candidates[len(candidates)//2:]
-          return east_pivot, west_pivot, east_items, west_items
-
-      all_distance = []
-      for candidate in candidates:
-          a = cal_distance(candidate, west_pivot)
-          b = cal_distance(candidate, east_pivot)
-          d = (a ** 2 + c ** 2 - b ** 2) / (2 * c)
-          all_distance.append((d, candidate))
-
-      all_distance.sort(key=lambda x: x[0])
-      sorted_candidates = [item[1] for item in all_distance]
-      east_items = sorted_candidates[:len(sorted_candidates)//2]
-      west_items = sorted_candidates[len(sorted_candidates)//2:]
-
-      return east_pivot, west_pivot, east_items, west_items
-
-
-  def find_farest(pivot, candidates):
-      max_d = 0
-      most_point = pivot
-
-      for candidate in candidates:
-          cur_d = cal_distance(pivot, candidate)
-          if  cur_d > max_d:
-              max_d = cur_d
-              most_point = candidate
-      
-      return most_point
-
-
-  def cal_distance(p1, p2):
-      return math.sqrt(sum([(v1 - v2) ** 2 for v1, v2 in zip(p1[:-1], p2[:-1])]))
-
-  class random_projection:
+class random_projection:
     def __init__(self, data, stop_depth):
         self.data = data.to_numpy()
         self.stop_depth = stop_depth
-        self.res = cluster(self.data, self.stop_depth, [])
+        self.res = self.cluster(self.data, self.stop_depth, [])
         #print (self.res)
         self.NumOfCluster = self.setNumOfCluster()
         #print (self.NumOfCluster)
@@ -82,17 +27,21 @@ https://github.com/XiaoLing941212/random_projecttion.git
     def setLabels(self):
         for m in range(self.NumOfCluster):
             #print(m)
-            for n in range(len(res[m])):
-                row = getMatchedRowsIndices(self.res[m][n], self.data)
+            for n in range(len(self.res[m])):
+                row = self.getMatchedRowsIndices(self.res[m][n], self.data)
                 #print (row)
                 self.labels[row] = m
                 
     def getLabels(self):
         return self.labels
         
+    def getNumOfCluster(self):
+        return self.NumOfCluster
+        
     def setNumOfCluster(self):
         return len(self.res)
         
+    @staticmethod    
     def getMatchedRowsIndices(target_row, array):
         # Make sure the target row has the right shape
         if target_row.shape[0] != array.shape[1]:
@@ -105,23 +54,95 @@ https://github.com/XiaoLing941212/random_projecttion.git
             row_indices = np.where(matches)[0]
     
             return row_indices
+            
+    def cluster(self, candidates, enough, res):
+        if len(candidates) < enough:
+            res.append(candidates)
+            return res
+    
+        east, west, east_items, west_items = self.split(candidates)
+        res = self.cluster(east_items, enough, res)
+        res = self.cluster(west_items, enough, res)
+    
+        return res
+
+
+    def split(self, candidates):
+        pivot = random.choice(candidates)
+        east_pivot = self.find_farest(pivot, candidates)
+        west_pivot = self.find_farest(east_pivot, candidates)
+        c = self.cal_distance(east_pivot, west_pivot)
+    
+        if c == 0:
+            east_items = candidates[:len(candidates)//2]
+            west_items = candidates[len(candidates)//2:]
+            return east_pivot, west_pivot, east_items, west_items
+    
+        all_distance = []
+        for candidate in candidates:
+            a = self.cal_distance(candidate, west_pivot)
+            b = self.cal_distance(candidate, east_pivot)
+            d = (a ** 2 + c ** 2 - b ** 2) / (2 * c)
+            all_distance.append((d, candidate))
+    
+        all_distance.sort(key=lambda x: x[0])
+        sorted_candidates = [item[1] for item in all_distance]
+        east_items = sorted_candidates[:len(sorted_candidates)//2]
+        west_items = sorted_candidates[len(sorted_candidates)//2:]
+    
+        return east_pivot, west_pivot, east_items, west_items
+    
+    @staticmethod
+    def find_farest(pivot, candidates):
+        max_d = 0
+        most_point = pivot
+    
+        for candidate in candidates:
+            cur_d = random_projection.cal_distance(pivot, candidate)
+            if  cur_d > max_d:
+                max_d = cur_d
+                most_point = candidate
+        
+        return most_point
+    
+    @staticmethod
+    def cal_distance(p1, p2):
+        return math.sqrt(sum([(v1 - v2) ** 2 for v1, v2 in zip(p1[:-1], p2[:-1])]))
+
+#+end_src
+
+#+begin_src python
+def add_labels_to_df(df, labels_data, labels_name):
+    if len(labels_data) == len(df):
+        # Adding the new column
+        df[labels_name] = labels_data
+    else:
+        print("The length of the ndarray does not match the number of DataFrame rows.")
+
+    # Convert 'my_column' to int
+    df[labels_name] = df[labels_name].astype(int)
 #+end_src
 
 Example how to use:
-#+begin_src python
-      selected_columns = data[['monthly_commits', 'monthly_contributors','monthly_stargazer', 'monthly_forks', 'monthly_watchers']]
-      activity = random_projection(selected_columns, 17)
-      activity_labels = activity.getLabels()
 
-      # Check if the length of the ndarray matches the number of rows in the DataFrame
-    if len(activity_labels) == len(selected_columns):
-        # Adding the new column
-        selected_columns['activity_labels'] = my_labels
-    else:
-        print("The length of the ndarray does not match the number of DataFrame rows.")
-    # Convert 'my_column' to int
- selected_columns['activity_labels'] = selected_columns['activity_labels'].astype(int)
+#+begin_src python
+  # Let's assume we have data for sales in a week across three departments
+data = {
+    'Electronics': [2350, 3200, 1530, 2050, 2980, 4200, 3700],
+    'Clothing': [1500, 1700, 900, 1200, 2100, 2600, 1800],
+    'Groceries': [5400, 6200, 5900, 5100, 6200, 6800, 7100]
+}
+
+# Create DataFrame
+df = pd.DataFrame(data)
 #+end_src
+
+#+begin_src python
+test = random_projection(df, 7)
+df_labels = test.getLabels()
+add_labels_to_df(df, df_labels, 'df_labels')
+#+end_src
+
 
 * Reference List
 1. Chen, J., Nair, V., Krishna, R., & Menzies, T. (2018). “Sampling” as a baseline optimizer for search-based software engineering. IEEE Transactions on Software Engineering, 45(6), 597-614.

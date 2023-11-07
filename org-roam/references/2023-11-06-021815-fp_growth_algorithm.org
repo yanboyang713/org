@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       3e01722d-90af-41bf-aad7-98f9423761a2
+:END:
+#+title: FP-growth algorithm
+
+* Reference list
+1. Kumbhare, T. A., & Chobe, S. V. (2014). An overview of association rule mining algorithms. International Journal of Computer Science and Information Technologies, 5(1), 927-930.
+

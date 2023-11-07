@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       535827be-f93f-476d-b8df-4ab8bb2701bd
+:END:
+#+title: apriori
+
+* Reference List
+1. https://medium.com/edureka/apriori-algorithm-d7cc648d4f1e#:~:text=Apriori%20algorithm%20uses%20frequent%20itemsets,a%20threshold%20value(support).
+2. https://intellipaat.com/blog/data-science-apriori-algorithm/
+3. https://www.javatpoint.com/apriori-algorithm-in-machine-learning

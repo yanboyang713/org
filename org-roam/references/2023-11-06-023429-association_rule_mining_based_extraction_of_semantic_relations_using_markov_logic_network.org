@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       fa9a014c-8f80-4143-bbc5-d490221a2b4f
+:END:
+#+title: Association Rule Mining Based Extraction of Semantic Relations Using Markov Logic Network
+
+[[id:ed03a348-8a07-44b4-97ac-2f6c608ed896][association rule mining]]
+
+[[id:dea7a3b1-0396-422f-92df-b2dc89efdeb1][Markov Logic Networks (MLN)]]
+
+* Reference List
+1. Karthikeyan, K., & Karthikeyani, V. (2014). Association Rule Mining Based Extraction of Semantic Relations Using Markov Logic Network. International Journal of Web & Semantic Technology (IJWesT) Vol, 5.

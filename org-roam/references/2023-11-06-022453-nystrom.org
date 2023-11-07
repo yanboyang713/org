@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       a652b2ab-b1dd-4ea5-bb6f-430652792c04
+:END:
+#+title: Nyström method
+
+* Reference list
+1. Xia, J. (2023). Making the Nystr\" om method highly accurate for low-rank approximations. arXiv preprint arXiv:2307.05785.
+2. Kumar, S., Mohri, M., & Talwalkar, A. (2012). Sampling methods for the Nyström method. The Journal of Machine Learning Research, 13(1), 981-1006.
