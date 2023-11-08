@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       ebe66751-8a28-4e76-9f6d-1ab4f34f0754
+:END:
+#+title: Nyströmformer
+
+[[id:c6c7cc2a-3b40-47dd-b9c7-80717ab66daa][nyström approximation]]
+
+* Reference List
+1. https://hugocisneros.com/notes/xiongnystromformernystr2021/

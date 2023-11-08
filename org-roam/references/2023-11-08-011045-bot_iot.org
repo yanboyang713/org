@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       16f9a84e-a97f-47ef-be52-186faa4f4b8d
+:END:
+#+title: BoT-IoT
+
+* Reference List
+1. Koroniotis N, Moustafa N, Sitnikova E, Turnbull B (2018) Towards the development of realistic botnet dataset in the internet of things for network forensic analytics: Bot-iot dataset. arXiv:1811.00701

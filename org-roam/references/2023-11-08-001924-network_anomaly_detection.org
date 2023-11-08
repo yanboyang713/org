@@ -1,0 +1,32 @@
+:PROPERTIES:
+:ID:       36616abc-198d-4433-9f37-3cb2e5c7d472
+:END:
+#+title: network anomaly detection
+
+[[id:d65974e5-d0d4-4bb0-9449-2551e188a576][Anomaly detection]]
+
+* Datasets
++ [[id:05f77573-07b9-4d8c-b86a-038662b30356][Network Intrusion Detection System Datasets]]
+  
+* using [[id:b1cf8bef-07d8-44c4-bb19-c3362a74463f][machine learning]]
+existent ML approaches for anomaly detection
+** Supervised
+*** Tree-based
++ Decision Tree-based algorithms have been used individually to classify some types of attacks: [[id:5e809c4d-be61-4efb-8188-f2ec5cc2a1dd][decision tree-based detection of denial of service and command injection attacks]]
++ [[id:7fce08c3-961c-47a8-9e6c-06bd16746652][hybrid classification systems]]
+*** [[id:8c552dd6-11e4-4908-8b99-b023ff539e0a][support-vector machine (SVM)]]-based
++ SVM-based algorithms for anomaly detection: Mehdi Hosseinzadeh, Amir Rahmani, Bay Vo, Moazam Bidaki, Mohammad Masdari, and Mehran Zangakani. Improving security using svmbased anomaly detection: issues and challenges. Soft Computing, 25:1–29, 02 2021.
++ binary classification model: Xuedan Miao, Ying Liu, Haiquan Zhao, and Chunguang Li. Distributed online one-class support vector machine for anomaly detection over networks. IEEE Transactions on Cybernetics, 49(4):1475–1488, 2019.
+
+** Unsupervised
++ [[id:089b9a6d-7cfb-4ad4-933a-897d90e63650][K-means clustering algorithm]]
++ [[id:8099112b-c32b-40b4-96d1-e818848cf070][Anomaly Detection by Using Streaming K-Means and Batch K-Means]] 
++ [[id:12c3bd17-2457-4062-a715-456dd106a660][Hidden Markov Model (HMM)]]
+
+* using [[id:ad5ee03e-bc10-4428-9a7e-7f8ab5db8d01][Reinforcement Learning]]
+* using DL
+* Hybrid Approaches for Network Anomaly Detection
+
+* Reference List
+1. https://estudogeral.uc.pt/bitstream/10316/102166/4/PedroRafaelBarataNinharelhosTom%c3%a1s.pdf
+2. Soldani, J., & Brogi, A. (2022). Anomaly detection and failure root cause analysis in (micro) service-based cloud applications: A survey. ACM Computing Surveys (CSUR), 55(3), 1-39.

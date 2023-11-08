@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       a49ac1b3-d74b-4d5e-a8f0-73f614a88011
+:END:
+#+title: kernel method
+
+kernel machines are a class of algorithms for [[id:4cc11f48-db4b-47bf-8da1-1219e9134e84][pattern recognition]], whose best known member is the [[id:8c552dd6-11e4-4908-8b99-b023ff539e0a][support-vector machine (SVM)]]. These methods involve using linear classifiers to solve nonlinear problems.
+
+Kernel machines are slow to compute for datasets larger than a couple of thousand examples without parallel processing. The [[id:c6c7cc2a-3b40-47dd-b9c7-80717ab66daa][nyström approximation]] can allow a significant speed-up of the computations.
+
+Algorithms capable of operating with kernels include the kernel perceptron, support-vector machines (SVM), Gaussian processes, [[id:ac8a5358-0c56-42fa-92f5-1616b6bf83e0][Principal Component Analysis (PCA)]], canonical correlation analysis, ridge regression, spectral clustering, linear adaptive filters and many others.
+
+* Reference List
+1. https://en.wikipedia.org/wiki/Kernel_method
+

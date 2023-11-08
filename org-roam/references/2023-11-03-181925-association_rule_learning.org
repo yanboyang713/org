@@ -33,9 +33,5 @@ The rule $X \Rightarrow Y$ in this context implies that whenever $X$ occurs, $Y$
 + [[id:0fec921f-82e1-4462-9c4d-7b5199f7bf04][apriorihybrid]]
 + [[id:3e01722d-90af-41bf-aad7-98f9423761a2][FP-growth algorithm]]
   
-[[id:a652b2ab-b1dd-4ea5-bb6f-430652792c04][Nyström]]
-
-
-
 * Reference list
 1. Kumbhare, T. A., & Chobe, S. V. (2014). An overview of association rule mining algorithms. International Journal of Computer Science and Information Technologies, 5(1), 927-930.

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       c6c7cc2a-3b40-47dd-b9c7-80717ab66daa
+:END:
+#+title: nyström approximation
+
+The method is named "Nyström approximation" because it can be interpreted as a case of the [[id:a652b2ab-b1dd-4ea5-bb6f-430652792c04][Nyström method]] from [[id:60a508ce-2e56-4004-bf2a-eeb3f0363867][integral equations]] theory.
+
+* Reference List
+1. https://en.wikipedia.org/wiki/Low-rank_matrix_approximations
+2. Petros Drineas and Michael W. Mahoney (2005). "On the Nyström Method for Approximating a Gram Matrix for Improved Kernel-Based Learning". Journal of Machine Learning Research 6, pp. 2153–2175.

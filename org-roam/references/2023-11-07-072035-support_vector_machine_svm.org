@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       8c552dd6-11e4-4908-8b99-b023ff539e0a
+:END:
+#+title: support-vector machine (SVM)
+

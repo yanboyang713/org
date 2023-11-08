@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       5f4ae7fe-c19d-4a95-bb45-3bd33fd0eaee
+:END:
+#+title: NetFlow
+NetFlow is an industry-standard protocol for network traffic collection[2].
+
+NetFlow is a protocol used to collect metadata on IP traffic flows traversing a network device.
+
+Developed by Cisco Systems, NetFlow is used to record metadata about IP traffic flows traversing a network device such as a router, switch, or host. A NetFlow-enabled device generates metadata at the interface level and sends flow data information to a flow collector, where the flow records are stored to enable network traffic analytics and management. A network operator can use NetFlow data to determine network throughput, packet loss, and traffic congestion at a specific interface level. NetFlow data also supports other network-level [[id:223f3165-18c6-4cdc-845f-1869f5bc1baa][monitoring]] use cases such as [[id:a4bb00d1-e7a7-437e-8ca6-9664a28f838a][Denial of Service (DDoS)]] detection and [[id:e7b30b16-d942-4c41-ba19-14245c12a572][BGP]] peering.
+
+* Reference List
+1. https://www.kentik.com/kentipedia/what-is-netflow-overview/#:~:text=NetFlow%20is%20a%20protocol%20used,router%2C%20switch%2C%20or%20host.
+2.  Claise B, Sadasivan G, Valluri V, Djernaes M (2004) Cisco systems netflow services export version, 9

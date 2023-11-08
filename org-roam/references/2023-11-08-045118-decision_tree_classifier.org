@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       1f7a4a2f-79fa-4ccf-b6db-f3e2a3c0bd29
+:END:
+#+title: Decision Tree Classifier
+
+https://www.geeksforgeeks.org/decision-tree-introduction-example/

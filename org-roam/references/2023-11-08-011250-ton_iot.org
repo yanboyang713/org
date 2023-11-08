@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       68c5e364-785f-4d95-adc9-87a57e3ec118
+:END:
+#+title: ToN-IoT
+
+* Reference List
+1. Alsaedi A, Moustafa N, Tari Z, Mahmood A, Anwar A (2020) Ton iot telemetry dataset: A new generation dataset of iot and iiot for data-driven intrusion detection systems. IEEE Access 8:165130–165150. https://doi.org/10.1109/ACCESS.2020.3022862

@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       12c3bd17-2457-4062-a715-456dd106a660
+:END:
+#+title: Hidden Markov Model (HMM)
+

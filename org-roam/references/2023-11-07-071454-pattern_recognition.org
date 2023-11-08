@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       4cc11f48-db4b-47bf-8da1-1219e9134e84
+:END:
+#+title: pattern recognition
+
+Pattern recognition is the automated recognition of patterns and regularities in data.
+
+* Reference List
+1. https://en.wikipedia.org/wiki/Pattern_recognition

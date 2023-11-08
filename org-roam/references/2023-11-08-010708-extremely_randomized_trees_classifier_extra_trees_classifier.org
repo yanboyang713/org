@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       af4e2887-ecc6-45bb-916c-a9b839155b22
+:END:
+#+title: Extremely Randomized Trees Classifier(Extra Trees Classifier)
+
+* Prerequisites
+[[id:1f7a4a2f-79fa-4ccf-b6db-f3e2a3c0bd29][Decision Tree Classifier]]
+
+* Reference List
+1. https://www.geeksforgeeks.org/ml-extra-tree-classifier-for-feature-selection/

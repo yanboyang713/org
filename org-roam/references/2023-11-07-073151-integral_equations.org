@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       60a508ce-2e56-4004-bf2a-eeb3f0363867
+:END:
+#+title: integral equations
+

@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       8099112b-c32b-40b4-96d1-e818848cf070
+:END:
+#+title: Anomaly Detection by Using Streaming K-Means and Batch K-Means
+
+[[id:d65974e5-d0d4-4bb0-9449-2551e188a576][Anomaly detection]]
+
+* Reference List
+1. Wang, Z., Zhou, Y., & Li, G. (2020, May). Anomaly detection by using streaming K-means and batch K-means. In 2020 5th IEEE international conference on big data analytics (ICBDA) (pp. 11-17). IEEE.

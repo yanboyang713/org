@@ -1,0 +1,38 @@
+:PROPERTIES:
+:ID:       05f77573-07b9-4d8c-b86a-038662b30356
+:END:
+#+title: Network Intrusion Detection System Datasets
+
+evaluates standard [[id:d35651b0-7d1f-4301-9507-9277ccce20a8][Network Intrusion Detection Systems (NIDSs)]] feature sets based on the [[id:5f4ae7fe-c19d-4a95-bb45-3bd33fd0eaee][NetFlow]] network meta-data collection protocol and system.
+
+* Datasets
+Where the UNSW-NB15 and CSE-CIC-IDS2018 datasets have very high benign-toattack ratios, whereas the ToN-IoT and BoT-IoT datasets are mainly made up of attack samples, which do not represent a realistic network behaviour.
+some of the features in the UNSW-NB15, BoT-IoT, and CSE-CIC-IDS2018 datasets are handcrafted features that are not originally found in network packets but are statistically calculated based on other features, such as the total number of bytes transferred over the last 100 seconds.
+
++ [[id:942620c6-21c1-441e-8bce-e5d15a470e8a][UNSW-NB15]]
++ [[id:16f9a84e-a97f-47ef-be52-186faa4f4b8d][BoT-IoT]]
++ [[id:68c5e364-785f-4d95-adc9-87a57e3ec118][ToN-IoT]] 
++ [[id:53b11a72-c061-4123-83f4-b421790a4e1a][CICIDS2017 dataset]]
+
+#+CAPTION: Networking datasets
+#+NAME:   fig:SED-HR4049
+#+ATTR_HTML: :width 300px
+[[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1699424660/networking%20datasets/Towards-a-Standard-Feature-Set-for-Network-Intrusion-Detection-System-Datasets_sc3srk.png]]
+
+** NetFlow features
+If a data flow is located in the attack events it would be labelled as an attack (class 1) in the binary label and its respective attack’s type would be recorded in the attack label, otherwise, the sample is labelled as a benign flow (class 0).
+
+** [[id:bcbbc197-ffbb-42f2-8c6b-b18c86f4e218][Data Preprocessing]] 
+As part of the data pre-processing, the flow identifiers such as IDs, source/destination IP and ports, timestamps, and start/end time are dropped to avoid learning bias towards attacking and victim end nodes. For the UNSW-NB15 and NF-UNSW-NB15-v2 datasets, The Time To Live (TTL)-based features are dropped due to their extreme correlation with the labels. Additionally, the minmax normalisation technique has been applied to scale all datasets’ values between 0 and the datasets have been split into 70%-30% for training and testing purposes.
+
+** Binary-class classification
+
+Extra Tree classifier to compare the predictive power of our proposed NetFlow based feature set, with the proprietary features sets provided with the original benchmark NIDS datasets.
+[[id:af4e2887-ecc6-45bb-916c-a9b839155b22][Extremely Randomized Trees Classifier(Extra Trees Classifier)]]
+
+** Multi-class classification
+
+* Reference List
+1. https://link.springer.com/article/10.1007/s11036-021-01843-0
+2. https://staff.itee.uq.edu.au/marius/NIDS_datasets/
+3. Sarhan, M., Layeghy, S., & Portmann, M. (2022). Towards a standard feature set for network intrusion detection system datasets. Mobile networks and applications, 1-14.
