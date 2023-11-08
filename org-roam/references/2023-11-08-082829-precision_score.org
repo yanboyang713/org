@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       7a79369b-ce0a-40ee-97a7-7c1f58494995
+:END:
+#+title: precision score
+
+Precision is the fraction of predicted positives events that are actually positive as shown below:
+[[https://miro.medium.com/v2/resize:fit:640/format:webp/1*M7LtRth4_A4Hwa_lgRDeIg.png]]
+
+We can obtain the accuracy score from scikit-learn, which takes as inputs the actual labels and the predicted labels
+#+begin_src python
+from sklearn.metrics import precision_score
+precision_score(df.actual_label.values, df.predicted_RF.values)
+#+end_src
+
+what would you do if one model was better at recall and the other was better at precision. One method that some data scientists use is called the [[id:db48b1d7-cfe2-46df-ac13-c4c1afb1ea32][F1 score]].

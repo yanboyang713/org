@@ -3,5 +3,12 @@
 :END:
 #+title: classification metrics
 
++ [[id:ca650d64-ee97-4ee3-a32a-f628c0e1fe4d][Confusion matrix]]
++ [[id:f8b7a51f-5afd-4f2c-aa38-2b6fad0b3e10][accuracy score]]
++ [[id:e767928c-2227-47aa-a0c5-1965ec047c9b][recall]]
++ [[id:7a79369b-ce0a-40ee-97a7-7c1f58494995][precision score]]
++ [[id:db48b1d7-cfe2-46df-ac13-c4c1afb1ea32][F1 score]]
++ [[id:4a7884e7-58ce-4bb6-b1e6-55d1b99a969d][receiver operating characteristic (ROC) curve and roc auc score]] 
+  
 * Reference List
 1. https://towardsdatascience.com/understanding-data-science-classification-metrics-in-scikit-learn-in-python-3bc336865019

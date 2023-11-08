@@ -1,0 +1,17 @@
+:PROPERTIES:
+:ID:       f8b7a51f-5afd-4f2c-aa38-2b6fad0b3e10
+:END:
+#+title: accuracy score
+
+The most common metric for classification is accuracy, which is the fraction of samples predicted correctly as shown below:
+[[https://miro.medium.com/v2/resize:fit:640/format:webp/1*N4Lo9Miw397g3XpX7o0CDw.png]]
+We can obtain the accuracy score from scikit-learn, which takes as inputs the actual labels and the predicted labels
+#+begin_src python
+from sklearn.metrics import accuracy_score
+accuracy_score(df.actual_label.values, df.predicted_RF.values)
+#+end_src
+
+Using accuracy as a performance metric, the RF model is more accurate (0.67) than the LR model (0.62). So should we stop here and say RF model is the best model? No! Accuracy is not always the best metric to use to assess classification models. For example, let’s say that we are trying to predict something that only happens 1 out of 100 times. We could build a model that gets 99% accuracy by saying the event never happened. However, we catch 0% of the events we care about. The 0% measure here is another performance metric known as [[id:e767928c-2227-47aa-a0c5-1965ec047c9b][recall]].
+
+* Reference List
+1. https://towardsdatascience.com/understanding-data-science-classification-metrics-in-scikit-learn-in-python-3bc336865019

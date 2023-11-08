@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       db48b1d7-cfe2-46df-ac13-c4c1afb1ea32
+:END:
+#+title: F1 score
+
+The f1 score is the harmonic mean of recall and precision, with a higher score as a better model. The f1 score is calculated using the following formula:
+[[https://miro.medium.com/v2/resize:fit:640/format:webp/1*WaXly05rd5MIWLE5QI3cvg.png]]
+We can obtain the f1 score from scikit-learn, which takes as inputs the actual labels and the predicted labels
+#+begin_src python
+from sklearn.metrics import f1_score
+f1_score(df.actual_label.values, df.predicted_RF.values)
+#+end_src
+How do we assess a model if we haven’t picked a threshold? One very common method is using the [[id:4a7884e7-58ce-4bb6-b1e6-55d1b99a969d][receiver operating characteristic (ROC) curve and roc auc score]].
+
+* Reference List
+1. https://towardsdatascience.com/understanding-data-science-classification-metrics-in-scikit-learn-in-python-3bc336865019
