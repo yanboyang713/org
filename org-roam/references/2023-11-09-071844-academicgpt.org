@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       6d4393c0-28cd-4f74-8ff1-503d1b3578e9
+:END:
+#+title: AcademicGPT
+
+[[id:9c5331e0-a86b-42f8-9bbb-9916da9c3193][gpt]]
+https://academicgpt.net/
