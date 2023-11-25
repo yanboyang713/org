@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       428988ba-6665-49f8-8f84-3138f076f021
+:END:
+#+title: ssh
+
+* Reference List
+1. https://www.makeuseof.com/fix-ssh-connection-refused-error-linux/
+

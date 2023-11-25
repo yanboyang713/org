@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       8efd5679-019f-4008-8803-1f0123b3689b
+:END:
+#+title: vlan
+
+[[id:7b3d4c7a-30a8-4f0f-a587-fdbb39109e57][mikrotik]]
+
+* Reference List
+1. https://www.udemy.com/course/vlan-on-mikrotik-with-labs-routeros-swos/
+2. https://major.io/p/mikrotik-vlan/
+3. https://blog.scottlowe.org/2015/07/02/vlan-trunking-mikrotik-routeros/

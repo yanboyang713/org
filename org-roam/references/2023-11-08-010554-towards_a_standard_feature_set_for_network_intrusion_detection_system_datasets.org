@@ -3,7 +3,7 @@
 :END:
 #+title: Network Intrusion Detection System Datasets
 
-evaluates standard [[id:d35651b0-7d1f-4301-9507-9277ccce20a8][Network Intrusion Detection Systems (NIDSs)]] feature sets based on the [[id:5f4ae7fe-c19d-4a95-bb45-3bd33fd0eaee][NetFlow]] network meta-data collection protocol and system.
+evaluates standard [[id:02ca942c-1c1b-4719-8539-b952f2074e12][Network Intrusion Detection Systems (NIDSs)]] feature sets based on the [[id:5f4ae7fe-c19d-4a95-bb45-3bd33fd0eaee][NetFlow]] network meta-data collection protocol and system.
 
 * Datasets
 Where the UNSW-NB15 and CSE-CIC-IDS2018 datasets have very high benign-toattack ratios, whereas the ToN-IoT and BoT-IoT datasets are mainly made up of attack samples, which do not represent a realistic network behaviour.

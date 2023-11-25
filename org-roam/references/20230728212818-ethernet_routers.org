@@ -6,3 +6,7 @@
 
 * [[id:7b3d4c7a-30a8-4f0f-a587-fdbb39109e57][mikrotik]]
 + [[id:9e995513-6ee6-45d8-b224-080c85d13264][L009UiGS-RM]]
+
+* ISP
++ [[id:1b0f9a53-8350-4ce3-a838-e83d0aeb4dfd][Spectrum SAX1V1K]]
+  

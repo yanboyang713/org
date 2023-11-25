@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       bb40bdda-db4a-4e46-9b3c-5487cb8c827a
+:END:
+#+title: Amazon Neptune
+
+[[id:fd9fc710-20ed-404d-a8e6-01c9fcf72edd][AWS Databases]]
+
+Serverless graph database designed for superior scalability and availability.
+
+* Reference List
+1. https://aws.amazon.com/neptune/

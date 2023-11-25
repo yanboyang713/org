@@ -7,11 +7,21 @@
 [[id:55f23b66-c353-4562-b4bc-da3df9ddc665][wireless networks]]
 
 * Digital Mode
+:PROPERTIES:
+:ID:       7d730dc8-f4a5-4087-b88c-fb17b91c58e0
+:END:
 + [[id:d06c8e37-8880-4518-83a7-14ee405e3786][FT8]]
 + [[id:a9778bb4-38c4-4e5f-8d25-2d21d6043a96][APRS]]
 
 * HF Radio
+:PROPERTIES:
+:ID:       e59d2f77-d6ea-4dff-8d74-32e112968fa3
+:END:
 + [[id:eb1800d9-92f0-4a7d-a14b-c6d2d7849907][lab599]]
++ [[id:3c70bcba-5dd6-425e-91b6-c4c90cc63b98][SunSDR2]] 
 
 * HF antenna
+:PROPERTIES:
+:ID:       d3d3f07f-bcd8-42bd-bcd5-4dce50a32d25
+:END:
 + [[id:6d8e8f1a-9111-4d4d-aa3f-03ad191973ba][End Fed Half Wave (EFHW)]]

@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       7b68d350-c5dc-4b30-87d0-75432a7c0673
+:END:
+#+title: types of database 
+
+* graph database
+:PROPERTIES:
+:ID:       fac64e37-1193-4e37-861d-0a4769b45320
+:END:
+A graph database is defined as a specialized, single-purpose platform for creating and manipulating graphs. Graphs contain nodes, edges, and properties, all of which are used to represent and store data in a way that relational databases are not equipped to do.
++ [[id:a809ffb8-c47d-4b21-9b1c-3c26fa9381e4][Neo4j]]
++ [[id:bb40bdda-db4a-4e46-9b3c-5487cb8c827a][Amazon Neptune]]
+  
+* Reference List
+1. https://www.oracle.com/autonomous-database/what-is-graph-database/

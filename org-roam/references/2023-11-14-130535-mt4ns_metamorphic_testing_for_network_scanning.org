@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       5d60e325-1c02-45fe-9596-b7a423debd1f
+:END:
+#+title: MT4NS: Metamorphic Testing for Network Scanning
+
+[[id:da630b90-238e-4d5e-962a-e1092f57e976][Metamorphic Testing]]
+
+[[id:02ca942c-1c1b-4719-8539-b952f2074e12][Network Intrusion Detection Systems (NIDSs)]]
+
+[[id:305a06b5-3b7d-4ff8-95c1-9d51fc0985dd][Nmap]]
+[[id:5fc8da77-0f7a-4de9-b2cc-f64924816f2c][Masscan]]
+
+* Reference List
+1. Zhang, Z., Towey, D., Ying, Z., Zhang, Y., & Zhou, Z. Q. (2021, June). MT4NS: Metamorphic testing for network scanning. In 2021 IEEE/ACM 6th International Workshop on Metamorphic Testing (MET) (pp. 17-23). IEEE.
+2. https://docs.google.com/presentation/d/1mCvWuu2LgiDvdkNmJNDjOBAAuptt9Kb8bp2xdBc2eZQ/edit?usp=sharing

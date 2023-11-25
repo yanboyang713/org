@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       1b0f9a53-8350-4ce3-a838-e83d0aeb4dfd
+:END:
+#+title: Spectrum SAX1V1K
+
+
+static username/password in there.
+
+ThylacineGone and password 4p@ssThats10ng
+
+* Reference List
+1. https://forum.openwrt.org/t/spectrum-sax1v1k-askey-rt5010w-openwrt-support/149923/32
+2. https://github.com/MeisterLone/Askey-RT5010W-D187-REV6/tree/master

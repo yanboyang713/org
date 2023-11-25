@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       3b135a99-6372-4f65-821e-be830bba2cb9
+:END:
+#+title: DNS Check Propagation
+[[id:7bab7928-237d-4784-a42f-b85ef6874b9b][Domain Name Service (DNS)]]
+
+https://dnschecker.org/#AAAA/minipc.yanboyang.com

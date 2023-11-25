@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       0f00bcff-4a6b-4f9f-b7b2-3ae5a794769a
+:END:
+#+title: External Reference (GPS)
+
+[[id:475fbfa9-0956-4bf6-9450-c2839426ad09][LeoBodnar Precision Frequency Reference (GPS Clock)]]

@@ -6,4 +6,5 @@
 
 [[id:49b2587b-d6d4-462e-b373-ed39f7fb70b7][research tools]]
 
-https://towardsphd.com/
+* Reference List
+1. https://towardsphd.cn/

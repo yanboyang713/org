@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       3c70bcba-5dd6-425e-91b6-c4c90cc63b98
+:END:
+#+title: SunSDR2
+
+[[id:0f00bcff-4a6b-4f9f-b7b2-3ae5a794769a][External Reference (GPS)]]
+
+https://www.gigaparts.com/sunsdr2-pro-transceiver.html

@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       33d5212e-0939-4c7a-b757-fc9d0cc3726b
+:END:
+#+title: research
+
+[[id:49b2587b-d6d4-462e-b373-ed39f7fb70b7][research tools]]
+
+[[id:0b1845af-ccc5-47a8-b791-a022d303eaef][PhD Dissertation]]

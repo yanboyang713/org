@@ -9,7 +9,9 @@
 + [[id:d9d8f137-cd09-4c0c-a21f-07d0330b941b][Amazon DynamoDB]]
 + [[id:4364cb6a-d511-47ea-a75e-8aa88c6841e1][Amazon Redshift]]
 + [[id:523b28e0-9367-4cfd-ae4e-277e4eca0caf][Amazon ElastiCache]]
-+ [[id:bdc27a9c-6f72-4b51-ac1c-d511af9f3c0f][Amazon EMR]] 
++ [[id:bdc27a9c-6f72-4b51-ac1c-d511af9f3c0f][Amazon EMR]]
+* [[id:fac64e37-1193-4e37-861d-0a4769b45320][graph database]] 
++ [[id:bb40bdda-db4a-4e46-9b3c-5487cb8c827a][Amazon Neptune]] 
 
 * Reference list
 1. https://www.youtube.com/watch?v=lqSvmnUiAqk

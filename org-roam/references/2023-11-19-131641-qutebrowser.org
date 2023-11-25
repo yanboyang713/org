@@ -1,0 +1,21 @@
+:PROPERTIES:
+:ID:       a1a2599b-83dd-4d1d-9ff4-7ce8a2035be8
+:END:
+#+title: qutebrowser
+[[id:f6c12716-7d4f-4def-af11-73f122e5c821][Meta Scientific Linux]]
+
+* Installation
+#+begin_src bash
+paru -S qutebrowser
+#+end_src
+
+* Usages
+** close tab
+To close a tab in qutebrowser, you can use the following keyboard shortcut:
+
+Press d
+
+* Reference List
+1. https://wiki.archlinux.org/title/qutebrowser
+2. https://codeberg.org/JustineSmithies/hyprland-dotfiles/src/branch/master/.config/qutebrowser
+   

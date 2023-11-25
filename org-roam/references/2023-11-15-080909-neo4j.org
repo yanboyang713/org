@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       a809ffb8-c47d-4b21-9b1c-3c26fa9381e4
+:END:
+#+title: Neo4j
+
+[[id:fac64e37-1193-4e37-861d-0a4769b45320][graph database]]
+
+* Reference List
+1. https://neo4j.com/whitepapers/graph-databases-beginners-ebook/

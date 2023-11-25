@@ -104,3 +104,4 @@ userdel -r user's username
 
 * Reference List
 1. https://linuxize.com/post/how-to-create-users-in-linux-using-the-useradd-command/
+2. https://ostechnix.com/add-delete-and-grant-sudo-privileges-to-users-in-arch-linux/

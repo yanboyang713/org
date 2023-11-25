@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       7b0d7a7a-913d-4452-9633-21c54a0462bd
+:END:
+#+title: Pairwise Testing
+
+[[id:748be669-c5e5-4c6c-9832-068d098ce55c][software testing]]
+
+https://www.developsense.com/resource/pairwiseTesting.html

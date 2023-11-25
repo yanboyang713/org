@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       0b1845af-ccc5-47a8-b791-a022d303eaef
+:END:
+#+title: PhD Dissertation
+
+* Reference List
+1. https://blog.wordvice.com/dissertation-vs-thesis-key-differences/
