@@ -1,0 +1,95 @@
+:PROPERTIES:
+:ID:       45d9359f-7dcd-4464-a615-5b338f6d5ca2
+:END:
+#+title: Amazon Kinesis
+
+Amazon Kinesis makes it easy to collect, process, and analyze real-time, streaming data so you can get timely insights and react quickly to new information.
+
+Collection of services for processing streams of various data.
+
+Data is processed in “shards”.
+
+There are four types of Kinesis service, and these are detailed below.
+
+* Kinesis Video Streams
+:PROPERTIES:
+:ID:       5f2dffe5-a1cb-4a58-8ed9-6a76f169996a
+:END:
+Kinesis Video Streams makes it easy to securely stream video from connected devices to AWS for analytics, machine learning (ML), and other processing.
+
+Durably stores, encrypts, and indexes video data streams, and allows access to data through easy-to-use APIs.
+
+Producers provide data streams.
+
+Stores data for 24 hours by default, up to 7 days.
+
+Consumers receive and process data.
+
+Can have multiple shards in a stream.
+
+Supports encryption at rest with server-side encryption (KMS) with a customer master key.
+
+* Kinesis Data Streams
+:PROPERTIES:
+:ID:       95bbcd1f-b3f8-4501-9354-90264f9e34b0
+:END:
+Kinesis Data Streams enables you to build custom applications that process or analyze streaming data for specialized needs.
+
+Kinesis Data Streams enables real-time processing of streaming big data.
+
+Kinesis Data Streams is useful for rapidly moving data off data producers and then continuously processing the data.
+
+Kinesis Data Streams stores data for later processing by applications (key difference with Firehose which delivers data directly to AWS services).
+
+Common use cases include:
++ Accelerated log and data feed intake.
++ Real-time metrics and reporting.
++ Real-time data analytics.
++ Complex stream processing.
+
+* Kinesis Data Firehose
+:PROPERTIES:
+:ID:       8f24d566-666d-4f8b-87dc-2540a62b75b3
+:END:
+Kinesis Data Firehose is the easiest way to load streaming data into data stores and analytics tools.
+
+Captures, transforms, and loads streaming data.
+
+Enables near real-time analytics with existing business intelligence tools and dashboards.
+
+Kinesis Data Streams can be used as the source(s) to Kinesis Data Firehose.
+
+You can configure Kinesis Data Firehose to transform your data before delivering it.
+
+With Kinesis Data Firehose you don’t need to write an application or manage resources.
+
+Firehose can batch, compress, and encrypt data before loading it.
+
+Firehose synchronously replicates data across three AZs as it is transported to destinations.
+
+Each delivery stream stores data records for up to 24 hours.
+
+* Amazon Kinesis Data Analytics
+:PROPERTIES:
+:ID:       166b931d-bf07-4392-9bc1-631ba8e88a84
+:END:
+Amazon Kinesis Data Analytics is the easiest way to process and analyze real-time, streaming data.
+
+Can use standard SQL queries to process Kinesis data streams.
+
+Provides real-time analysis.
+
+Use cases:
++ Generate time-series analytics.
++ Feed real-time dashboards.
++ Create real-time alerts and notifications.
+  
+Quickly author and run powerful SQL code against streaming sources.
+
+Can ingest data from Kinesis Streams and Kinesis Firehose.
+
+Output to S3, RedShift, Elasticsearch and Kinesis Data Streams.
+
+Sits over Kinesis Data Streams and Kinesis Data Firehose.
+
+

@@ -1,0 +1,1 @@
+With AWS Config rules you will also know if some component was out of compliance even for a brief period.

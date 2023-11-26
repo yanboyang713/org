@@ -1,0 +1,22 @@
+:PROPERTIES:
+:ID:       9e7d7454-f46f-412f-9b02-ef2b033c26f7
+:END:
+#+title: AWS application integration services
+
+The AWS application integration services are a family of services that enable decoupled communication between applications.
+
+These services provide decoupling for microservices, distributed systems, and serverless applications.
+
+AWS application integration services allow you to connect apps, without needing to write custom code to enable interoperability.
+
+Decoupled applications can interoperate whilst being resilient to the failure or overload of any individual component.
+
+The following services are involved with application integration:
+| Service                                         | What it does                                                               | Example use cases                                                                              |
+| [[id:a7289b94-47b5-4e78-80dc-802018bccbca][Simple Queue Service (SQS)]]                      | Messaging queue; store and forward patterns                                | Building distributed / decoupled applications                                                  |
+| [[id:98fb0462-344b-4de7-82f7-45710bfddf85][Amazon Simple Notification Service (Amazon SNS)]] | Set up, operate, and send notifications from the cloud                     | Send email notification when CloudWatch alarm is triggered                                     |
+| [[id:848bff37-5ac1-460f-9bf3-420bc01f6f5e][AWS Step Functions]]                              | Out-of-the-box coordination of AWS service components with visual workflow | Order processing workflow                                                                      |
+| [[id:44baaa59-bb45-4d69-9eb1-3da01492ade9][Amazon Simple Workflow Service (SWF)]]            | Need to support external processes or specialized execution logic          | Human-enabled workflows like an order fulfilment system or for procedural requests             |
+| [[id:b2455583-d52c-470e-8ce4-9ba6c4990e70][Amazon MQ]]                                       | Message broker service for [[id:52ed93b8-167d-4800-82c3-2b79c9572ddc][Apache Active MQ]] and [[id:e4baf6ff-df8f-4391-8df5-08630bc580fd][RabbitMQ]]                   | Need a message queue that supports industry standard APIs and protocols; migrate queues to AWS |
+
+

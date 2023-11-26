@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       b2455583-d52c-470e-8ce4-9ba6c4990e70
+:END:
+#+title: Amazon MQ
+
+Amazon MQ is a managed message broker service for [[id:52ed93b8-167d-4800-82c3-2b79c9572ddc][Apache Active MQ]].
+
+Amazon MQ supports industry-standard APIs and protocols so you can migrate messaging and applications without rewriting code.
+
+Amazon MQ provides cost-efficient and flexible messaging capacity.
+
+Amazon MQ manages the administration and maintenance of ActiveMQ brokers and automatically provisions infrastructure for high availability.
+

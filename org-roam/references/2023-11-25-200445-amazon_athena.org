@@ -1,0 +1,18 @@
+:PROPERTIES:
+:ID:       c03a6146-3675-4e77-bf80-258dfcef5ba1
+:END:
+#+title: Amazon Athena
+
+Amazon Athena is an interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL.
+
+Athena is serverless, so there is no infrastructure to manage, and you pay only for the queries that you run.
+
+Athena is easy to use – simply point to your data in Amazon S3, define the schema, and start querying using standard SQL.
+
+Amazon Athena uses Presto with full standard SQL support and works with a variety of standard data formats, including CSV, JSON, ORC, Apache Parquet and Avro.
+
+While Amazon Athena is ideal for quick, ad-hoc querying and integrates with Amazon QuickSight for easy visualization, it can also handle complex analysis, including large joins,window functions, and arrays.
+
+Amazon Athena uses a managed Data Catalog to store information and schemas about the databases and tables that you create for your data stored in [[id:bc7360d3-a192-48ca-83e8-d856b7edee99][Amazon Simple Storage Service (S3)]].
+
+

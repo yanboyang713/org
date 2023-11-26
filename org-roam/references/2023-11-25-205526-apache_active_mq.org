@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       52ed93b8-167d-4800-82c3-2b79c9572ddc
+:END:
+#+title: Apache Active MQ
+

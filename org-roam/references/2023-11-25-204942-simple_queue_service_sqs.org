@@ -1,0 +1,19 @@
+:PROPERTIES:
+:ID:       a7289b94-47b5-4e78-80dc-802018bccbca
+:END:
+#+title: Amazon Simple Queue Service (SQS)
+
+Amazon Simple Queue Service (SQS) is a distributed queue system.
+
+Amazon SQS enables you to send, store, and receive messages between software components.
+
+An Amazon SQS queue is a temporary repository for messages that are awaiting processing.
+
+The SQS queue acts as a buffer between the component producing and saving data, and the component receiving the data for processing.
+
+[[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1700965803/aws/2023-11-25-21_28_53-screenshot_de9xmj.png]]
+
+This is known as decoupling / loose coupling and helps to enable elasticity for your application.
+
+Amazon SQS is pull-based, not push-based (like [[id:98fb0462-344b-4de7-82f7-45710bfddf85][Amazon Simple Notification Service (Amazon SNS)]]).
+

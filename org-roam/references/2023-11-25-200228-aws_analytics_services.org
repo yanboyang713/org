@@ -1,0 +1,27 @@
+:PROPERTIES:
+:ID:       1611448b-d8d5-41ef-9233-124faf9fa6f3
+:END:
+#+title: AWS Analytics services
+
+The are several AWS Analytics services and these include:
++ [[id:c03a6146-3675-4e77-bf80-258dfcef5ba1][Amazon Athena]]
++ [[id:bdc27a9c-6f72-4b51-ac1c-d511af9f3c0f][Amazon EMR]]
++ Amazon CloudSearch
++ Amazon Elasticsearch Service
++ [[id:45d9359f-7dcd-4464-a615-5b338f6d5ca2][Amazon Kinesis]]
++ Amazon QuickSight
++ Amazon Data Pipeline
++ [[id:7a535449-2731-494f-af4f-4215ec67bb8b][AWS Glue]]
++ AWS Lake Formation
++ Amazon MSK
+  
+* Data Analysis And Query Use Cases
+Query services like Amazon Athena, data warehouses like Amazon Redshift, and sophisticated data processing frameworks like Amazon EMR, all address different needs and use cases.
+
+| AWS Service     | Primary Use Case | When to use                                                                                                                                                                                                                        |
+|-----------------+------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [[id:c03a6146-3675-4e77-bf80-258dfcef5ba1][Amazon Athena]]   | Query            | Run interactive queries against data directly in Amazon S3 without worrying about formatting data or managing infrastructure. Can use with other services such as [[id:4364cb6a-d511-47ea-a75e-8aa88c6841e1][Amazon Redshift]]                                                  |
+| [[id:4364cb6a-d511-47ea-a75e-8aa88c6841e1][Amazon Redshift]] | Data warehouse   | Pull data from many sources, format and organize it, store it, and support complex, high speed queries that produce business reports.                                                                                              |
+| [[id:bdc27a9c-6f72-4b51-ac1c-d511af9f3c0f][Amazon EMR]]      | Data Processing  | Highly distributed processing frameworks such as Hadoop, Spark, and Presto. Run a wide variety of scale-out data processing tasks for applications such as machine learning, graph analytics, data transformation, streaming data. |
+| [[id:7a535449-2731-494f-af4f-4215ec67bb8b][AWS Glue]]        | ETL Service      | Transform and move data to various destinations. Used to prepare and load data for analytics. Data source can be S3, RedShift or another database. Glue Data Catalog can be queried by Athena, EMR and RedShift Spectrum           |
+
