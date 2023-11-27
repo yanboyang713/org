@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       9ca149ea-9da0-404b-83be-52eb896f0d22
+:END:
+#+title: AWS CodeStar
+
+AWS CodeStar enables you to quickly develop, build, and deploy applications on AWS. AWS CodeStar provides a unified user interface, enabling you to easily manage your software development activities in one place.
+
+With AWS CodeStar, you can set up your entire [[id:28e0ef10-92a9-4b77-b618-3cd171236a44][Continuous Delivery]] toolchain in minutes, allowing you to start releasing code faster. AWS CodeStar makes it easy for your whole team to work together securely, allowing you to easily manage access and add owners, contributors, and viewers to your projects.
+
+With AWS CodeStar, you can use a variety of project templates to start developing applications on [[id:f92ab341-b10b-4ec5-9034-e124dda3f081][AWS EC2]], [[id:34236e33-876e-4520-aa0e-da6f3b4b10bc][AWS Lambda]], and [[id:920150b7-a80b-4d45-a826-c33d9ee8d654][AWS Elastic Beanstalk]].
+
+AWS CodeStar projects support many popular programming languages including Java, JavaScript, PHP, Ruby, and Python.
+
+https://aws.amazon.com/codestar/features/

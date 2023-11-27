@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       825bddba-70d5-4bff-bf44-049100288b5b
+:END:
+#+title: AWS CodePipeline
+
+AWS CodePipeline is a fully managed [[id:28e0ef10-92a9-4b77-b618-3cd171236a44][Continuous Delivery]] service that helps you automate your release pipelines for fast and reliable application and infrastructure updates.
+
+CodePipeline automates the build, test, and deploy phases of your release process every time there is a code change, based on the release model you define.
+
+This enables you to deliver features and updates rapidly and reliably.
+
+You can easily integrate AWS CodePipeline with third-party services such as GitHub or with your own custom plugin.
+
+* Reference List
+1. https://aws.amazon.com/codepipeline/features/

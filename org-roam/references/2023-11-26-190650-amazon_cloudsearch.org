@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       9bc8559a-8303-49e8-af8b-9129d2448ad9
+:END:
+#+title: Amazon CloudSearch
+
+Amazon CloudSearch is a managed service in the AWS Cloud that makes it simple and cost-effective to set up, manage, and scale a search solution for your website or application.
+Amazon CloudSearch supports 34 languages and popular search features such as highlighting, autocomplete, and geospatial search.
+
+* Reference List
+1. https://aws.amazon.com/cloudsearch/
+   

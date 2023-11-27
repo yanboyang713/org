@@ -7,5 +7,7 @@
 [[id:b0518341-1b7b-40c4-a7c7-da5de4968534][logs system]]
 [[id:0c6f164c-854c-4e11-8a60-f1f3260c8987][Kibana]]
 
+[[id:8e2af5fe-4e4c-467c-8d19-2bd4361a0001][Amazon Elasticsearch]]
+
 * Reference List
 1. https://www.elastic.co/

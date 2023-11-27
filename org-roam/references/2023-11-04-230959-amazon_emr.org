@@ -1,7 +1,7 @@
 :PROPERTIES:
 :ID:       bdc27a9c-6f72-4b51-ac1c-d511af9f3c0f
 :END:
-#+title: Amazon EMR
+#+title: Amazon Elastic Map Reduce (EMR)
 
 Amazon EMR is a web service that enables businesses, researchers, data analysts, and developers to process vast amounts of data easily and cost-effectively.
 
@@ -29,3 +29,11 @@ You can access Amazon EMR by using the AWS Management Console, Command Line Tool
 
 With EMR you have access to the underlying operating system (you can [[id:428988ba-6665-49f8-8f84-3138f076f021][ssh]] in).
 
+Amazon Elastic Map Reduce (EMR) provides a managed Hadoop framework that makes it easy, fast, and cost-effective to process vast amounts of data across dynamically scalable Amazon EC2 instances.
+
+You can also run other popular distributed frameworks such as Apache Spark, HBase, Presto, and Flink in Amazon EMR, and interact with data in other AWS data stores such as Amazon S3 and Amazon DynamoDB.
+
+Amazon EMR securely and reliably handles a broad set of big data use cases, including log analysis, web indexing, data transformations (ETL), machine learning, financial analysis, scientific simulation, and bioinformatic.
+
+* Reference List
+1. https://aws.amazon.com/emr/features/

@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       dd281cd2-39c9-41d2-824b-3c464ac84dba
+:END:
+#+title: AWS CodeCommit
+
+AWS CodeCommit is a fully managed source control service that hosts secure [[id:28776313-f579-466f-9a3d-216fc14a5308][Git]]-based repositories.
+
+It makes it easy for teams to collaborate on code in a secure and highly scalable ecosystem.
+
+CodeCommit eliminates the need to operate your own source control system or worry about scaling its infrastructure.
+
+You can use CodeCommit to securely store anything from source code to binaries, and it works seamlessly with your existing Git tools.
+
+https://aws.amazon.com/codecommit/features/

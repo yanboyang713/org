@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       f916f84d-4f97-49db-91af-e7e71f48e619
+:END:
+#+title: AWS AppStream
+
+[[id:dcf5e347-8a8a-4c63-a822-53f558025f8c][AWS]]
+
+Fully managed non-persistent application streaming service.
+Alternative to popular products such as Citrix XenApp.
+
+* Reference List
+1. https://aws.amazon.com/appstream2/features/
+   

@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       67af51fb-2b48-4cea-9ea4-ae002b62bda1
+:END:
+#+title: AWS WorkLink
+
+[[id:dcf5e347-8a8a-4c63-a822-53f558025f8c][AWS]]
+
+Provides secure, one-click access to your internal websites and web apps using mobile phone browsers.
+Does not require VPN client or App.
+
+* Reference List
+1. https://aws.amazon.com/worklink/features/

@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       fbc918c5-9799-423c-9f8c-020264ff2a74
+:END:
+#+title: AWS Data Pipeline
+
+[[id:dcf5e347-8a8a-4c63-a822-53f558025f8c][AWS]]
+
+AWS Data Pipeline is a web service that helps you reliably process and move data between different AWS compute and storage services, as well as [[id:1988535e-9c15-4464-aa96-061b051e4370][Private Cloud (on-premises)]] data sources, at specified intervals.
+
+With AWS Data Pipeline, you can regularly access your data where it’s stored, transform, and process it at scale, and efficiently transfer the results to AWS services such as [[id:bc7360d3-a192-48ca-83e8-d856b7edee99][Amazon Simple Storage Service (S3)]], [[id:6195639e-892f-470e-b165-29b9dc236bc4][Amazon Relational Database Service (Amazon RDS)]], [[id:d9d8f137-cd09-4c0c-a21f-07d0330b941b][Amazon DynamoDB]], and [[id:bdc27a9c-6f72-4b51-ac1c-d511af9f3c0f][Amazon Elastic Map Reduce (EMR)]].
+
+AWS Data Pipeline helps you easily create complex data processing workloads that are fault tolerant, repeatable, and highly available.
+
+* Reference List
+1. https://aws.amazon.com/datapipeline/

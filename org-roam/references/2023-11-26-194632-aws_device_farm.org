@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       012c99d2-778a-4f87-bcab-7dd8e196a939
+:END:
+#+title: AWS Device Farm
+
+[[id:dcf5e347-8a8a-4c63-a822-53f558025f8c][AWS]]
+
+AWS Device Farm is an app testing service that lets you test and interact with your Android, iOS, and web apps on many devices at once, or reproduce issues on a device in real time.
+
+View video, screenshots, logs, and performance data to pinpoint and fix issues and increase quality before shipping your app.
+
+* Reference List
+1. https://aws.amazon.com/device-farm/

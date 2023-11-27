@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       32379b4f-1bc7-4cb7-b42a-985c62784f80
+:END:
+#+title: AWS WorkDocs
+[[id:dcf5e347-8a8a-4c63-a822-53f558025f8c][AWS]]
+
+Fully managed, secure content creation, storage, and collaboration service Create, edit, and share content that’s centrally stored on AWS.
+
+* Reference List
+1. https://aws.amazon.com/workdocs/features/
+   

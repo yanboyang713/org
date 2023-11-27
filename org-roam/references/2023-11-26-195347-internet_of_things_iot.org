@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       1fea6a57-253e-46f0-8532-92501f9b4d90
+:END:
+#+title: Internet of Things (IOT)
+
+[[id:8de0e821-c709-4f11-9515-de1c66036ca1][AWS IOT Core]]

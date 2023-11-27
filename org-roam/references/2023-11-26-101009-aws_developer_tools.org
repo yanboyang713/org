@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       8fe88ab1-2a27-486d-8886-e294e5140c05
+:END:
+#+title: AWS Developer Tools
+
++ [[id:9ca149ea-9da0-404b-83be-52eb896f0d22][AWS CodeStar]]
++ [[id:dd281cd2-39c9-41d2-824b-3c464ac84dba][AWS CodeCommit]]
++ [[id:9b71870c-209d-4f28-a205-a2d838e5efea][AWS CodeBuild]]
++ [[id:c64c2f21-82c3-4ac0-86fa-09301ceda449][AWS CodeDeploy]]
++ [[id:825bddba-70d5-4bff-bf44-049100288b5b][AWS CodePipeline]]
++ [[id:46e76b72-4e19-4265-a54e-11f41d0f3fb5][AWS X-Ray]] 
+
+  

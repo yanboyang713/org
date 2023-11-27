@@ -11,4 +11,5 @@
 + [[id:abad1ae7-5904-4a20-b8e1-b3ad129d5fb8][AWS Direct Connect (DX)]]
 + [[id:7f5ab730-a333-407a-9736-1d856a026d63][AWS Global Accelerator]]
 + [[id:1689a7bc-b828-406a-aaf5-133290837345][AWS Outposts]]
++ [[id:8520e0dc-377d-400a-8fec-2295c95412eb][Amazon API Gateway]] 
 

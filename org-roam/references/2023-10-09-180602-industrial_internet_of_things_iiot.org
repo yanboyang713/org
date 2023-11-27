@@ -3,5 +3,7 @@
 :END:
 #+title: Industrial Internet of Things (IIoT)
 
-
+[[id:1fea6a57-253e-46f0-8532-92501f9b4d90][Internet of Things (IOT)]]
 [[id:bad0d692-0e7a-4c8e-8780-ad8ad06da02c][Cyber-Physical System (CPS)]]
+
+

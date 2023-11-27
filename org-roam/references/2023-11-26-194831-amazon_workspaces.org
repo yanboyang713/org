@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       0a19e6b5-7fba-40ab-a3f0-ebe0ecfae1e1
+:END:
+#+title: Amazon WorkSpaces
+
+[[id:dcf5e347-8a8a-4c63-a822-53f558025f8c][AWS]]
+
+Amazon WorkSpaces is a managed, secure cloud desktop service. You can use Amazon WorkSpaces to provision either Windows or Linux desktops in just a few minutes and quickly scale to provide thousands of desktops to workers across the globe.
+
+Amazon WorkSpaces offers you an easy way to provide a secure, managed, cloud-based virtual desktop experience to your end-users.
+
+Unlike traditional on-premises Virtual Desktop Infrastructure (VDI) solutions, you don’t have to worry about procuring, deploying, and managing a complex environment – Amazon WorkSpaces takes care of the heavy lifting and provides a fully managed service.
+
+* Reference List
+1. https://aws.amazon.com/workspaces/features/
