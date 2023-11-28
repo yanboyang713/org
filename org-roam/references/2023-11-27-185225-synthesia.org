@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       fd8476b6-e9e3-460c-8b81-1072fb2bdd7f
+:END:
+#+title: synthesia
+
+* Reference List
+1. https://www.synthesia.io/home
