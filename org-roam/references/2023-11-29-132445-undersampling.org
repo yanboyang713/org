@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       2f27b388-d95c-4791-badb-a8ef1a4b0656
+:END:
+#+title: undersampling
+Undersampling is a technique where the majority class instances are reduced to bring balance to the dataset. Depending on the resampling type, the majority class samples may be analyzed before removing them from the distribution. Brute force approaches to the resampling include Random Undersampling (RU), where the algorithm does not know whether the data points being removed (by RU) are critical.
+
+[[id:1aa014cf-13ee-4f4c-a1dd-ed750bf22cc8][feature selection]]
+
+* Reference List
+1. Bagui, S. S., Mink, D., Bagui, S. C., & Subramaniam, S. (2023). Determining Resampling Ratios Using BSMOTE and SVM-SMOTE for Identifying Rare Attacks in Imbalanced Cybersecurity Data. Computers, 12(10), 204.
