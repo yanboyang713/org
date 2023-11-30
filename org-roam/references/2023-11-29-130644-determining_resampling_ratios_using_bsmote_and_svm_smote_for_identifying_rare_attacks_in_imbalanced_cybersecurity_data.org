@@ -9,9 +9,7 @@
 * Why
 The ratio of actual attacks to benign data is significantly high and as such forms highly imbalanced datasets.
 though network attacks are increasing steadily, the ratio of attacks to regular network traffic is still significantly less, creating highly imbalanced datasets.
-And this leads to the problem of effectively training ML models to detect and classify
-malicious traffic, especially rare malicious (attacks) traffic. Hence, predicting rare attacks
-in imbalanced datasets has become a significant problem.
+And this leads to the problem of effectively training ML models to detect and classify malicious traffic, especially rare malicious (attacks) traffic. Hence, predicting rare attacks in imbalanced datasets has become a significant problem.
 
 * How
 In this work, we address this issue using data resampling techniques. Though there are several oversampling and undersampling techniques available, how these oversampling and undersampling techniques are most effectively used is addressed in this paper.
@@ -23,7 +21,7 @@ also analyzed
 + random undersampling is used for undersampling majority data.
 + Random Forest is used for classification of the rare attacks.
 
-Intrusion Detection Systems (IDS) were comprised of either Signature Based Detection or Behavior Based Detection. The former relied on the signature of the attack to be similar to the known signatures while the later compared the profile of the attack and compared it with the normal behavior of the standard profiles [3].
+[[id:02ca942c-1c1b-4719-8539-b952f2074e12][Network Intrusion Detection Systems (NIDSs)]] were comprised of either Signature Based Detection or Behavior Based Detection. The former relied on the signature of the attack to be similar to the known signatures while the later compared the profile of the attack and compared it with the normal behavior of the standard profiles [3].
 
 * Reference List
 1. Bagui, S. S., Mink, D., Bagui, S. C., & Subramaniam, S. (2023). Determining Resampling Ratios Using BSMOTE and SVM-SMOTE for Identifying Rare Attacks in Imbalanced Cybersecurity Data. Computers, 12(10), 204.
