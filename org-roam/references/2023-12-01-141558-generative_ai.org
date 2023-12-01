@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       0c9cade2-4434-47db-81dd-02ea9bba7aac
+:END:
+#+title: Generative AI
+[[id:ab03a99b-2c97-4664-a1e6-680a86721f3a][LLMs]]
+[[id:311ce3cf-68fc-4211-acb4-d67b1d747959][Stable Diffusion]]
+[[id:6b748c79-d3e9-40b3-82ea-5667a0d88ab3][ControlNet]]

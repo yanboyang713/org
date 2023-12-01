@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       4bc530be-0325-47fc-8da3-18520e494076
+:END:
+#+title: Meta-Prompt
+
+* Reference List
+1. https://cobusgreyling.medium.com/meta-prompt-60d4925b4347

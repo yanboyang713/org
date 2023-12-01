@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       311ce3cf-68fc-4211-acb4-d67b1d747959
+:END:
+#+title: Stable Diffusion
+
+* Reference List
+1. https://en.wikipedia.org/wiki/Stable_Diffusion

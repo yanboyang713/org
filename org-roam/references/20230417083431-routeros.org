@@ -6,6 +6,12 @@
 
 [[id:7b3d4c7a-30a8-4f0f-a587-fdbb39109e57][mikrotik]]
 
+* Mikrotik RouterOS GUI Configurator
+#+begin_src bash
+paru -S winbox
+#+end_src
+
 IP/[[id:7bab7928-237d-4784-a42f-b85ef6874b9b][DNS]]
 
-https://wiki.mikrotik.com/wiki/Manual:IP/DNS
+* Reference List
+1. https://wiki.mikrotik.com/wiki/Manual:IP/DNS

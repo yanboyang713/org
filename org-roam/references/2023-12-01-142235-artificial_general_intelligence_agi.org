@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       45912b65-1d6b-41dd-9b43-61447fc1585a
+:END:
+#+title: artificial general intelligence (AGI)
+
+* Reference List
+1. https://en.wikipedia.org/wiki/Artificial_general_intelligence

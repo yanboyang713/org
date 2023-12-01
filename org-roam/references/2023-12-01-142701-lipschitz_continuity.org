@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       fbbe33f0-5ec6-42c3-aa04-9a65d3c3304a
+:END:
+#+title: Lipschitz continuity
+
+* Reference List
+1. https://en.wikipedia.org/wiki/Lipschitz_continuity
