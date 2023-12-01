@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       9a61fafd-9b02-4548-87fb-4b3259cc1b50
+:END:
+#+title: MLOps management tools
+
++ [[id:64aa42dc-14c2-48c4-8360-45a31aa73f7f][MLFlow]]
+  
+* Reference List
+1. https://www.datacamp.com/blog/top-mlops-tools

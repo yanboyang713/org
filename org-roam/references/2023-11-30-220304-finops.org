@@ -1,0 +1,27 @@
+:PROPERTIES:
+:ID:       6e415bf4-a5dd-4f60-88d2-eb971e8d31fd
+:END:
+#+title: FinOps
+
+FinOps is a cloud financial discipline that unify finance with [[id:df1d63a9-ab91-406c-bd99-e37b9db2a645][DevOps]], which is the combination of development and operations teams, creating new cross-discipline teams. This practice objective is helping companies in managing better their cloud costs, and making financial team cooperate with developers.
+
+Therefore, FinOps is not only a simple way of saving money, but it’s a complex discipline that can lead companies to make the best decisions over multiple aspects of the cloud computing.
+
+* six principles
+FinOps practices are based on six principles, that acts as a guide for teams representing the main goals that need to be reached and adopted:
+
+- Collaboration: financial, business, technology, production teams need to cooperate in real time, improving their efficiency and innovation.
+- Cloud business value: all the decisions will not be based only on cloud costs, but on trade-off among cost, quality and development rapidity.
+- Resource ownership: each team in the company, will be the direct owner of the deployed resources, being also the direct interested in the accountability of them. In this way there will be decentralized decisions over the costs and teams will be more responsible of how they spend.
+- Data visibility: all the FinOps data have to be accessible, processable and sharable at real time, with the possibility of generating periodical reports or spent monitor.
+- Centralization: the FinOps team should be centralized, so that it can provide help for all the other team with the FinOps practices and also get advantage from discount optimization due to economies of scale.
+- Variable cost model: FinOps team have to use a variable cost model to optimise company’s instances and services finding the best quality price.
+
+* Tools
++ [[id:f3ddbabc-8108-4033-b2dc-511630c288db][kube-green]]
++ [[id:1f2bf0f0-fb12-4940-a0ac-61fe69c01be1][kubectl-cost]]
++ [[id:ff2a4411-b633-499f-813c-5190f217fa21][cloud custodian]]
++ [[id:88c54b3a-e764-41fd-9003-89f241694445][apptio cloudability]]
+  
+* Reference List
+1. Castellana, L. (2023). Development and analysis of FinOps processes for a Multi-Cloud environment (Doctoral dissertation, Politecnico di Torino).

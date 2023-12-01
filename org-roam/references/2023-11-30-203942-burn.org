@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       1c948ae6-b46d-45fb-a742-38093deb1dbb
+:END:
+#+title: burn
+
+[[id:0846cde0-573f-4346-b80b-94ef2abde4bc][Rust]]
+[[id:a40e3787-6e62-4176-80ae-56b9af015ddb][deep neural network]]
+
+* Reference List
+1. https://github.com/Tracel-AI/burn
