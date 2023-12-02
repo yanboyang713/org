@@ -6,8 +6,11 @@
 
 [[id:77bd7428-f1ee-4306-8d5a-62f38134dfc5][Proxmox VE]]
 
+* Run tteck's Proxmox VE Helper-Scripts for post PVE install
 #+begin_src bash
 wget https://raw.githubusercontent.com/tteck/Proxmox/main/misc/post-pve-install.sh
 chmod a+x post-pve-install.sh
 ./post-pve-install.sh
 #+end_src
+* [[id:03756f80-0902-42fe-ab6d-ca11f3953a2d][prevent laptop lid suspending]] 
+

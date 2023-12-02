@@ -17,5 +17,7 @@ Currently, the latest version is 8.1-1.
 
 [[id:f20563f8-caeb-40db-aea0-a9dd263c0107][Make USB Flash Drive as Installation Medium]]
 
+* [[id:d5d856fb-7251-4864-b62e-d08a2220bf14][Proxmox Post-Installation]] 
+
 * Reference List
 1. https://www.proxmox.com/en/proxmox-ve
