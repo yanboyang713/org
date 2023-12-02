@@ -8,8 +8,12 @@
 
 * Mikrotik RouterOS GUI Configurator
 #+begin_src bash
-paru -S winbox
+paru -S winbox wine-wow64-for-wechat
 #+end_src
+
+* First Time Configuration
+https://help.mikrotik.com/docs/display/ROS/First+Time+Configuration#FirstTimeConfiguration-RouterOS7.13+wirelesssetup
+
 
 IP/[[id:7bab7928-237d-4784-a42f-b85ef6874b9b][DNS]]
 

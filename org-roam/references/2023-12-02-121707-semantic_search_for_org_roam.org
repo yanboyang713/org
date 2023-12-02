@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       511ea797-43e7-4e9b-bd4e-ea4e4e5e8f44
+:END:
+#+title: semantic search for org roam
+
+[[id:6314a4a8-8a04-492c-8a4b-de9e4ff8df00][org roam]]
+
+* Reference List
+1. https://lgmoneda.github.io/2023/04/08/semantic-search-for-org-roam.html

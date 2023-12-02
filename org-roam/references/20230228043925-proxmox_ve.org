@@ -8,8 +8,12 @@
 Proxmox VE is a complete, open-source server management platform for enterprise virtualization. Based on [[id:0c65c1a6-4751-4290-876f-6c5ad7694068][Debian]]. It tightly integrates the KVM hypervisor and Linux Containers (LXC), software-defined storage and networking functionality, on a single platform. With the integrated web-based user interface you can manage VMs and containers, high availability for clusters, or the integrated disaster recovery tools with ease.
 
 * Installation
+:PROPERTIES:
+:ID:       ec7f6749-8bea-4d77-9bf7-a1d53bf264fd
+:END:
 Download the installer ISO image
-You can download ISO image from: https://www.proxmox.com/en/downloads/category/iso-images-pve Currently, the latest version is 7.3-1.
+You can download ISO image from: https://www.proxmox.com/en/downloads/category/iso-images-pve
+Currently, the latest version is 8.1-1.
 
 [[id:f20563f8-caeb-40db-aea0-a9dd263c0107][Make USB Flash Drive as Installation Medium]]
 
