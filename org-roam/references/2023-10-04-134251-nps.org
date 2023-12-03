@@ -5,6 +5,33 @@
 
 a lightweight, high-performance, powerful intranet penetration proxy server, with a powerful web management terminal.
 
+[[id:d1218245-569c-4ba1-8e66-486f115ee007][nginx proxy manager]]
+
+* Server install
+#+begin_src bash
+curl http://vum.wooomooo.com/vum/NPSNPM/npsnpm -o npsnpm && chmod +x npsnpm && ./npsnpm
+#+end_src
+
+* Client install
+** [[id:dc13b67c-8d8b-40fd-b8cf-9ea8547e485d][Arch Linux]] 
+#+begin_src bash
+  paru -S npc
+#+end_src
+** [[id:0a2027ba-65fc-4d34-8983-10df4bcfde15][Android]]
+https://github.com/ehang-io/nps/releases
+
+* connect
+https://www.youtube.com/watch?v=oCViERAkdLc
+** [[id:dc13b67c-8d8b-40fd-b8cf-9ea8547e485d][Arch Linux]] 
+*** no config file
+#+begin_src bash
+  npc -server=155.138.195.37:8024 -vkey=passwork-show-in-web
+#+end_src
+
+** [[id:0a2027ba-65fc-4d34-8983-10df4bcfde15][Android]]
+choice: tcp
+
 * Reference List
 1. https://github.com/ehang-io/nps.git
 2. https://mp.weixin.qq.com/s/VWf_-oRBBafT2tmUEZhBNA?fbclid=IwAR2uYnqYhh5urSVeH9cHsrJCcpPh4wHxKXtYZuf4vza6083nESurMnO8ooM
+3. https://ehang-io.github.io/nps/#/?id=nps

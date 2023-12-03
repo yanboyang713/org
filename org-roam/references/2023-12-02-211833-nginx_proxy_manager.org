@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       d1218245-569c-4ba1-8e66-486f115ee007
+:END:
+#+title: nginx proxy manager
+
+* Reference List
+1. https://nginxproxymanager.com/
+2. https://www.youtube.com/watch?v=oCViERAkdLc
