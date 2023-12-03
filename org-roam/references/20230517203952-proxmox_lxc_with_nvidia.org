@@ -3,10 +3,12 @@
 :END:
 #+title: proxmox LXC with nvidia
 #+filetags:  
-
-[[id:77bd7428-f1ee-4306-8d5a-62f38134dfc5][Proxmox VE]]
-[[id:d6be6fc0-4aa7-45a7-bc65-e81f2a0723a2][Nvidia]]
-
+* Pre-requires
++ [[id:6795991e-6e79-40f8-a72c-28e23b3d10ef][Container Runtimes]]
++ [[id:77bd7428-f1ee-4306-8d5a-62f38134dfc5][Proxmox VE]]
++ [[id:b0ce2dca-a29b-4bb0-b064-ea56912cd394][proxmox LXC]]
++ [[id:d6be6fc0-4aa7-45a7-bc65-e81f2a0723a2][Nvidia]]
+ 
 * [[id:3543b112-9d03-468c-9b9d-bcbf798907ea][Find NVIDIA GPU Model Name]]
 
 * Prepare proper driver download link

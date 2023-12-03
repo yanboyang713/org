@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       2c382716-6c15-4385-945f-e5f64e0c0b6e
+:END:
+#+title: Linux Containers (LXC)
+
+Linux Containers (LXC) is an operating-system-level virtualization method for running multiple isolated Linux systems (containers) on a control host using a single Linux kernel.
+
+* Reference List
+1. https://en.wikipedia.org/wiki/LXC

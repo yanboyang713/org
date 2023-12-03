@@ -6,18 +6,7 @@
 
 [[id:77bd7428-f1ee-4306-8d5a-62f38134dfc5][Proxmox VE]]
 
-* Create Cluster
-Datacentre -> Cluster -> Create Cluster
-
-** Get Join Information
-Cluster -> Join Information
-
-** In others node
-Datacentre -> Cluster -> Join Cluster
-
-** Finishd
-All nodes shows in Datacentre
-
+* [[id:7e392a97-1686-4335-bb9e-6efd9efb4f32][create proxmox cluster]]
 * [[id:c625aa5e-187f-4776-b28c-0bb4b7df9198][Ceph]] Set-up
 Datacentre -> Ceph -> Install Ceph
 
@@ -27,7 +16,9 @@ Datacentre -> Ceph -> Install Ceph
 choice public network
 
 Install Ceph on other nodes
+
 Create additional Ceph Monitors
+
 ** Create Ceph OSDs
 
 ** Create Ceph Pools

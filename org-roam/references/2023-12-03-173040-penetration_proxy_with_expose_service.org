@@ -1,0 +1,18 @@
+:PROPERTIES:
+:ID:       6a107708-cda7-497e-aade-c78e0aacee16
+:END:
+#+title: penetration proxy with expose service
+
+
+[[id:6eb00ce0-e2a8-45ed-9dd9-7b21331dd92e][nps]]
+
+[[id:d1218245-569c-4ba1-8e66-486f115ee007][nginx proxy manager]]
+
+* Server combine packages
+#+begin_src bash
+curl http://vum.wooomooo.com/vum/NPSNPM/npsnpm -o npsnpm && chmod +x npsnpm && ./npsnpm
+#+end_src
+
+* Reference List
+1. https://www.youtube.com/watch?v=oCViERAkdLc&t=651s
+   

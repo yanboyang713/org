@@ -1,7 +1,7 @@
 :PROPERTIES:
 :ID:       605f9bc6-7c2d-4ce0-91d3-b001f279323e
 :END:
-#+title: Virtual Machine
+#+title: Virtual Machine (vm)
 #+filetags: Virtual Machine vm
 
 * What is a virtual machine?

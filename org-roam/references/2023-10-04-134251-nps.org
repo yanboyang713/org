@@ -5,13 +5,10 @@
 
 a lightweight, high-performance, powerful intranet penetration proxy server, with a powerful web management terminal.
 
-[[id:d1218245-569c-4ba1-8e66-486f115ee007][nginx proxy manager]]
-
 * Server install
-#+begin_src bash
-curl http://vum.wooomooo.com/vum/NPSNPM/npsnpm -o npsnpm && chmod +x npsnpm && ./npsnpm
-#+end_src
-
+** [[id:e4fa2843-dc6e-4303-a209-40df1bd10a0f][docker]]
+ https://hub.docker.com/r/ffdfgdfg/nps
+ 
 * Client install
 ** [[id:dc13b67c-8d8b-40fd-b8cf-9ea8547e485d][Arch Linux]] 
 #+begin_src bash
@@ -30,6 +27,9 @@ https://www.youtube.com/watch?v=oCViERAkdLc
 
 ** [[id:0a2027ba-65fc-4d34-8983-10df4bcfde15][Android]]
 choice: tcp
+
+** [[id:e4fa2843-dc6e-4303-a209-40df1bd10a0f][docker]]
+https://hub.docker.com/r/ffdfgdfg/npc
 
 * Reference List
 1. https://github.com/ehang-io/nps.git

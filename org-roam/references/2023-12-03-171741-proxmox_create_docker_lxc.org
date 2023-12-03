@@ -1,0 +1,32 @@
+:PROPERTIES:
+:ID:       34b80a73-ba9a-4e21-a47a-b8e0c73d5188
+:END:
+#+title: proxmox create docker lxc
+* Pre-requires
++ [[id:77bd7428-f1ee-4306-8d5a-62f38134dfc5][Proxmox VE]]
++ [[id:2c382716-6c15-4385-945f-e5f64e0c0b6e][Linux Containers (LXC)]]
++ [[id:e4fa2843-dc6e-4303-a209-40df1bd10a0f][docker]]
+
+* Helper
+If the LXC is created Privileged, the script will automatically set up USB passthrough.
+
+To create a new Proxmox VE Docker LXC, run the command below in the Proxmox VE Shell.
+#+begin_src bash
+bash -c "$(wget -qLO - https://github.com/tteck/Proxmox/raw/main/ct/docker.sh)"
+#+end_src
+⚡ Default Settings: 2GB RAM - 4GB Storage - 2vCPU ⚡
+
+As an alternative option, you can use Alpine Linux and the Docker package to create a Docker LXC container with faster creation time and minimal system resource usage.
+
+To create a new Proxmox VE Alpine-Docker LXC, run the command below in the Proxmox VE Shell.
+#+begin_src bash
+bash -c "$(wget -qO - https://github.com/tteck/Proxmox/raw/main/ct/alpine-docker.sh)"
+#+end_src
+⚡ Default Settings: 1GB RAM - 2GB Storage - 1vCPU ⚡
+
+⚠ Run Compose V2 by replacing the hyphen (-) with a space, using docker compose, instead of docker-compose.
+
+Portainer Interface: IP:9443
+
+* Reference list
+1. https://tteck.github.io/Proxmox/
