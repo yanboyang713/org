@@ -6,7 +6,11 @@
 
 [[id:21b03f6f-3b8c-4407-ad61-8f8c3143738a][vGPU]]
 
-https://docs.google.com/document/d/1pzrWJ9h-zANCtyqRgS7Vzla0Y8Ea2-5z2HEi4X75d2Q/edit
-https://github.com/DualCoder/vgpu_unlock
-https://wvthoog.nl/proxmox-7-vgpu-v2/#The_easy_way
-https://github.com/mbilker/vgpu_unlock-rs
+* Reference List
+1. https://docs.google.com/document/d/1pzrWJ9h-zANCtyqRgS7Vzla0Y8Ea2-5z2HEi4X75d2Q/edit
+2. https://github.com/DualCoder/vgpu_unlock
+3. https://wvthoog.nl/proxmox-7-vgpu-v2/#The_easy_way
+4. https://github.com/mbilker/vgpu_unlock-rs
+5. https://en.wikipedia.org/wiki/List_of_Nvidia_graphics_processing_units#GeForce_20_series
+6. https://github.com/VGPU-Community-Drivers/vGPU-Unlock-patcher
+7. https://gitlab.com/polloloco/vgpu-proxmox
