@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       9adbdc36-b227-46dc-8cbe-d03deb21794d
+:END:
+#+title: Azure DevOps
+
+https://learn.microsoft.com/en-us/training/modules/migrate-to-devops/

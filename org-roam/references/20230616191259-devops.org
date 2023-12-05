@@ -5,3 +5,5 @@
 #+filetags:
 
 [[id:b8267a8a-b450-46b8-850a-99d4260eb543][Continuous Integration (CI)]]
+
+[[id:9adbdc36-b227-46dc-8cbe-d03deb21794d][Azure DevOps]]

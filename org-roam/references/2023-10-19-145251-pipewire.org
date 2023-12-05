@@ -102,6 +102,7 @@ The PipeWire package provides an initial set of configuration files in /usr/shar
 
 * Settings
 ** keyboard volume control for [[id:46ff078d-0aa4-42a8-a300-07c444184f27][Hyprland]] or others
+https://wiki.archlinux.org/title/WirePlumber#Keyboard_volume_control
 [[https://github.com/smasher164/pw-volume][pw-volume]]
 
 ** Simultaneous output
