@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       a539c529-5769-4f17-9fb3-c75ef7bd84c4
+:END:
+#+title: retrieval augmented generation (RAG)
+
+https://www.youtube.com/watch?v=nPG_jKrSpi0
+
+https://www.youtube.com/watch?v=0naqpH93eEU

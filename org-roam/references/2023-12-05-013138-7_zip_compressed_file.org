@@ -1,0 +1,27 @@
+:PROPERTIES:
+:ID:       ecb1371a-d573-4c67-89a6-d5f2cdffca45
+:END:
+#+title: 7-Zip compressed file
+* install
+** [[id:803d821b-6f7d-4e07-9a1f-08c9736c7dec][ubuntu]] 
+#+begin_src bash
+  sudo apt-get install p7zip-full
+#+end_src
+** [[id:dc13b67c-8d8b-40fd-b8cf-9ea8547e485d][Arch Linux]]
+https://wiki.archlinux.org/title/p7zip
+#+begin_src bash
+  paru -S p7zip
+#+end_src
+* 7-Zip Extract
+:PROPERTIES:
+:ID:       440a19fe-c158-4147-93e7-9c25b95a4065
+:END:
+extract a .7z file with the following command:
+#+begin_src bash
+  7z x yourfile.7z
+#+end_src
+
+If you want to extract the contents to a specific directory, you can use the -o option. For example:
+#+begin_src bash
+  7z x yourfile.7z -o/path/to/extract/directory/
+#+end_src

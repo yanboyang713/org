@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       4cc4b314-1fd9-44e7-a320-91816bbf8425
+:END:
+#+title: Open vSwitch (OVS)
+
+[[id:77bd7428-f1ee-4306-8d5a-62f38134dfc5][Proxmox VE]]
+
+https://mp.weixin.qq.com/s?__biz=Mzg4Mjg4NjYwNg==&mid=2247484026&idx=1&sn=bd6a7418fcd5b871332555aa3af8d407&chksm=cf4e90dbf83919cd4d870567de6c4817ae89514b0395db475bcecd01b0bf8a08f1b928aed4e3&mpshare=1&scene=1&srcid=1207rkFK4JLNRmkr0RYuCYkV&sharer_shareinfo=da8a1857bf7a67e2adcad1ec6d2b3f29&sharer_shareinfo_first=da8a1857bf7a67e2adcad1ec6d2b3f29&exportkey=n_ChQIAhIQIZVS%2Bd9hvuanqVYOXIccnRKWAgIE97dBBAEAAAAAABYUGYni0kAAAAAOpnltbLcz9gKNyK89dVj0hC2gvZTZzEgbwFYAg43oA%2Fww4jGfSl1%2FAfJRZYdPETpfnkLsBwAU7qVd4tc5LYhgBfG3Z7tVK6oVSwziVnJgcZLUz4gy2sz5Gk1WpF5Z2oW92L%2B9syuGaIu5nvsOsVQPKsFcay5qQoCTASQYkfO5cG2%2FVun%2BYqxeGMwTaP4zz1T%2Fh8DpBdrY0HsJjpsekVAMNltzePe9sTTzjp%2Fo9Je0gDVHqA%2Bm78cuEmL5sjQnRzXYjbUrfmdbwEtAZhFEOCW%2BQYa%2BR0RaLgT5WAE0AEtcPuueaYnlyRd9AKuXSXaxsGk7svMyaV95fPBOOjAhhos9&acctmode=0&pass_ticket=1%2BYiiSKYScCouAi1%2B59Z25fG%2BK%2B3RiKA0SqdRJVrvZmvpKnsLZlvjBt2RTgl3JcTp%2F%2BepdT%2FDTt1bnY3ddraog%3D%3D&wx_header=0#rd

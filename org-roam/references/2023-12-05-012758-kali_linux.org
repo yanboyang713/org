@@ -1,0 +1,21 @@
+:PROPERTIES:
+:ID:       e4a1c3ba-b329-4b89-af93-bb06938a3a38
+:END:
+#+title: kali linux
+
+* download
+https://www.kali.org/get-kali/#kali-platforms
+
+** [[id:af2e3e89-7f89-43f6-a215-284137fc3267][qemu]] image
+https://www.kali.org/get-kali/#kali-virtual-machines
+
+download file in [[id:ecb1371a-d573-4c67-89a6-d5f2cdffca45][7-Zip compressed file]]
+
+[[id:440a19fe-c158-4147-93e7-9c25b95a4065][7-Zip Extract]] get [[id:4dc395f3-2b5a-45a6-887c-d43b215e50d9][qcow2]] file
+
+[[id:7e4c30dc-e427-4cec-9a86-444cf0d48bc3][md5sum]]
+[[id:64f9f612-1713-48ea-a3a4-3da2c803be64][get MD5 checksum]]
+
+[[id:77bd7428-f1ee-4306-8d5a-62f38134dfc5][Proxmox VE]] image upload
+
+

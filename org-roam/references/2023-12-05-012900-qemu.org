@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       af2e3e89-7f89-43f6-a215-284137fc3267
+:END:
+#+title: qemu
+

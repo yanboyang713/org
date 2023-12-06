@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       a56cb5a2-1d39-43f3-a4b5-69c6a5302d04
+:END:
+#+title: nginx
+
+[[id:d1218245-569c-4ba1-8e66-486f115ee007][nginx proxy manager]]

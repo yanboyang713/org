@@ -1,0 +1,23 @@
+:PROPERTIES:
+:ID:       7e4c30dc-e427-4cec-9a86-444cf0d48bc3
+:END:
+#+title: md5sum
+
+* get MD5 checksum
+:PROPERTIES:
+:ID:       64f9f612-1713-48ea-a3a4-3da2c803be64
+:END:
+To get the MD5 checksum of the file, use the following command:
+#+begin_src bash
+  md5sum filename
+#+end_src
+
+Check Output:
+The output will display the MD5 hash followed by the file name.
+
+It will look something like this:
+#+begin_src bash
+  d41d8cd98f00b204e9800998ecf8427e  filename
+#+end_src
+
+Here, d41d8cd98f00b204e9800998ecf8427e is the MD5 checksum of the file named filename.

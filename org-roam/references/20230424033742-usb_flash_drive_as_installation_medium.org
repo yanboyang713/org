@@ -6,7 +6,10 @@
 
 * Download the installer ISO image
 * Prepare a USB Flash Drive as Installation Medium
-** Linux :fdisk:lsblk:
+** list Disk in Linux :fdisk:lsblk:
+:PROPERTIES:
+:ID:       7b96783c-3904-4859-a1d0-9cc66e2fcc96
+:END:
 Find the Correct USB Device Name
 
 There are two ways to find out the name of the USB flash drive.
