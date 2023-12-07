@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       9a86b257-bffb-4c06-88a1-602d8ac7c03c
+:END:
+#+title: CSRankings
+
+https://csrankings.org/#/fromyear/2019/toyear/2023/index?soft&northamerica
