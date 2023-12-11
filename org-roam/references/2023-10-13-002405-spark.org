@@ -17,4 +17,5 @@ Project Lightspeed is a significant undertaking, but it has the potential to mak
 
 * Reference List
 1. https://www.risingwave.com/blog/top-7-apache-flink-alternatives-a-deep-dive/
-2. https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html#overview 
+2. https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html#overview
+3. https://www.amazon.com/Scaling-Machine-Learning-Spark-Distributed/dp/1098106822/ref=asc_df_1098106822/?tag=hyprod-20&linkCode=df0&hvadid=598233665925&hvpos=&hvnetw=g&hvrand=12428709593327702844&hvpone=&hvptwo=&hvqmt=&hvdev=m&hvdvcmdl=&hvlocint=&hvlocphy=9009731&hvtargid=pla-1723190686221&psc=1&mcid=c4560dcb5aac36d3ada275b9fa49b8a9&gclid=CjwKCAiAmsurBhBvEiwA6e-WPP7TGSWVshnb0RkzFwSqGAgWubhJcHowzsYkeScjRNVtsg79uCccdxoCUjsQAvD_BwE

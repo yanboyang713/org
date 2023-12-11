@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       f6c3d65b-493d-4fa1-8638-1c7c4af21fd2
+:END:
+#+title: deep learning
+
+* Reference List
+1. https://www.amazon.com/dp/1633439860/ref=sspa_mw_detail_0?ie=UTF8&psc=1&sp_csd=d2lkZ2V0TmFtZT1zcF9waG9uZV9kZXRhaWwp13NParams

@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       58ef99b9-e519-432a-a27a-96e0369046c4
+:END:
+#+title: Job scheduling
+
++ [[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]]
++ [[id:822ba079-5358-4814-94f5-66a7f741b41a][slurm]]
++ [[id:0104c798-3712-4036-8ac6-5573bdebd0f3][IBM Platform Load Sharing Facility (LSF)]]
+  
+* Reference List
+1. https://www.run.ai/guides/slurm/slurm-vs-lsf-vs-kubernetes-scheduler-which-is-right-for-you

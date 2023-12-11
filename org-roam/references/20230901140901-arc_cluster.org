@@ -6,6 +6,8 @@
 
 [[id:687b233f-bf60-4e28-93df-af75f4a94dac][NCSU]] CSC Cluster
 
+[[id:822ba079-5358-4814-94f5-66a7f741b41a][slurm]]
+
 * Login
 [[id:b091635c-19ca-4bf6-88c3-a672a46dc66d][ssh key]]
 

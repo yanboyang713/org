@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       babffabc-aa4e-4ccd-aad4-0fa5b2239952
+:END:
+#+title:  Dockerfile
+
+[[id:e4fa2843-dc6e-4303-a209-40df1bd10a0f][docker]]

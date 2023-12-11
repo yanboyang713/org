@@ -6,6 +6,8 @@
 
 [[id:dc6c08ce-627a-4c65-9903-7f67d557a2f5][image processing]]
 
+Morphologically invariant transformations represent a crucial concept in the field of computer vision, particularly for enhancing robustness against significant illumination changes. These transformations are characterized by their extraordinary ability to remain consistent under any global, monotonically increasing rescaling of the input signal. This characteristic is referred to as morphological invariance. Such invariance ensures that the transformed signal maintains its essential features regardless of variations in intensity, thereby enabling algorithms to perform consistently in diverse lighting conditions. Morphologically invariant transformations are designed to encapsulate the maximum amount of information possible, which is pivotal for accurate and reliable matching of structures in computer vision applications. Among the algorithms that leverage this property, the [[id:b09e99fd-eff0-48f8-adee-40c819fc6e50][rank transform]] and [[id:3e5e155b-519a-4bbb-8fcf-cba6366cef7a][census transform]] are the most prominent. Both algorithms utilize the principle of morphological invariance to efficiently handle variations in illumination, thus playing a significant role in the development of robust computer vision systems.
+
 * Common User Case
 + [[id:fb1776a7-0146-4360-a1a9-c7e94d24d90e][stereo camera match]]
 + [[id:5a6cf1f3-2f84-466d-be00-670168d92316][optical flow]]

@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       822ba079-5358-4814-94f5-66a7f741b41a
+:END:
+#+title: slurm
+
+* Reference List
+1. https://www.youtube.com/watch?v=51SyuTBk72k
+2. https://slurm.schedmd.com/

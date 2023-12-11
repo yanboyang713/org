@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       5c47a3bb-9e5c-4e56-84f4-0ef50afceda2
+:END:
+#+title: Privileged Access Management (PAM)
+
++ [[id:d2f2e153-26c6-4f2a-997c-5f92486157a4][JumpServer]]
++ [[id:dccfa146-6975-45c8-84d9-0fb0d683b9d3][AWS Identity and Access Management (IAM)]] 

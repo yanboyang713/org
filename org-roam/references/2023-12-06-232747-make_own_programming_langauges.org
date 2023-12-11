@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       c1e59dd0-b6e3-42b4-81e9-1dfa0c306309
+:END:
+#+title: make own programming langauges
+
+
+https://beautifulracket.com/

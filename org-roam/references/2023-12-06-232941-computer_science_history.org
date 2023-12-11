@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       c4fcb237-5465-40c4-9c3d-174bd124b72f
+:END:
+#+title: computer science history
+
+https://www.amazon.com/Turings-Cathedral-Origins-Digital-Universe/dp/1400075998
