@@ -14,3 +14,4 @@
 
 * Reference List
 1. https://helda.helsinki.fi/bitstream/handle/10138/356945/Luo_Yumo_thesis_2023.pdf?sequence=2&isAllowed=y
+2. Shankar, S., Garcia, R., Hellerstein, J. M., & Parameswaran, A. G. (2022). Operationalizing machine learning: An interview study. arXiv preprint arXiv:2209.09125.

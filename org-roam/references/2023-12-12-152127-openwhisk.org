@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       ffa22278-4d82-41c6-ac65-969f0f9de07c
+:END:
+#+title: OpenWhisk
+
+[[id:a48b2650-4a85-4f91-b7d7-dde90fb45639][serverless computing]]
+
+* Reference List
+1. https://openwhisk.apache.org/
