@@ -4,7 +4,7 @@
 #+title: AWS Migration Services
 
 * AWS Migration Hub
-AWS Migration Hub provides a single location to track the progress of application migrations across multiple AWS and partner solutions.
+[[id:dcf5e347-8a8a-4c63-a822-53f558025f8c][AWS]] Migration Hub provides a single location to track the progress of application migrations across multiple AWS and partner solutions.
 Using Migration Hub allows you to choose the AWS and partner migration tools that best fit your needs, while providing visibility into the status of migrations across your portfolio of applications.
 For example, you might use AWS Database Migration Service, AWS Server Migration Service, and partner migration tools such as ATADATA ATAmotion, CloudEndure Live Migration, or RiverMeadow Server Migration SaaS to migrate an application comprised of a database, virtualized web servers, and a bare metal server.
 Using Migration Hub, you can view the migration progress of all the resources in the application.

@@ -6,5 +6,7 @@
 
 [[id:dc6c08ce-627a-4c65-9903-7f67d557a2f5][image processing]]
 
+[[id:bf4bb8b3-51c1-4018-b9c5-9a75febf03d7][vertical line feature extraction]]
+
 * Reference List
 1. https://docs.opencv.org/3.4/dd/dd7/tutorial_morph_lines_detection.html
