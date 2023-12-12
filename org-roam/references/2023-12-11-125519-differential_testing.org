@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       2d95e1da-d412-442a-8c58-c0f0e4a0a4aa
+:END:
+#+title: differential testing
+
+[[id:748be669-c5e5-4c6c-9832-068d098ce55c][software testing]]
+
+* Reference List
+1. https://en.wikipedia.org/wiki/Differential_testing
