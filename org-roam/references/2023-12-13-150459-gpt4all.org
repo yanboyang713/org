@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       0eb01ddc-b2f9-4f22-9b3b-d4335a2664c9
+:END:
+#+title: gpt4all
+
+[[id:ab03a99b-2c97-4664-a1e6-680a86721f3a][LLMs]]
+
+* Reference List
+1. https://gpt4all.io/index.html

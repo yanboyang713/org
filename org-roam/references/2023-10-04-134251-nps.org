@@ -29,7 +29,14 @@ https://www.youtube.com/watch?v=oCViERAkdLc
 choice: tcp
 
 ** [[id:e4fa2843-dc6e-4303-a209-40df1bd10a0f][docker]]
+
+[[id:34b80a73-ba9a-4e21-a47a-b8e0c73d5188][proxmox create docker lxc]]
+
 https://hub.docker.com/r/ffdfgdfg/npc
+
+#+begin_src bash
+  docker run -d --name npc --net=host ffdfgdfg/npc -server=155.138.195.37:8024 -vkey=<web界面中显示的密钥>
+#+end_src
 
 * Reference List
 1. https://github.com/ehang-io/nps.git
