@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       a7541725-b1c9-4861-984a-a4c03b48e2ce
+:END:
+#+title: scp
+
+* Reference List
+1. https://linuxize.com/post/how-to-use-scp-command-to-securely-transfer-files/

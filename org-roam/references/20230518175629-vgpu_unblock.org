@@ -1,10 +1,482 @@
 :PROPERTIES:
 :ID:       f17baed8-4b8b-433a-a868-3b4f2f3d20c1
 :END:
-#+title: vGPU unblock
+#+title: NVIDIA vGPU on Proxmox
 #+filetags:  
 
 [[id:21b03f6f-3b8c-4407-ad61-8f8c3143738a][vGPU]]
+[[id:77bd7428-f1ee-4306-8d5a-62f38134dfc5][Proxmox VE]]
+
+* Install vGPU unlock Packages
+:PROPERTIES:
+:ID:       9b1a2e41-999c-4e1a-9500-c8c426a291aa
+:END:
+** Update and upgrade
+#+begin_src bash
+apt update
+apt dist-upgrade
+#+end_src
+
+** We need to install a few more packages like git, a compiler and some other tools.
+#+begin_src bash
+apt install -y git build-essential dkms pve-headers mdevctl
+#+end_src
+
+** Git repos and Rust compiler
+First, clone this repo to your home folder (in this case /root/)
+#+begin_src bash
+git clone https://gitlab.com/polloloco/vgpu-proxmox.git
+#+end_src
+You also need the *vgpu_unlock-rs* repo
+#+begin_src bash
+cd /opt
+git clone https://github.com/mbilker/vgpu_unlock-rs.git
+#+end_src
+After that, install the rust compiler
+#+begin_src bash
+curl https://sh.rustup.rs -sSf | sh -s -- -y --profile minimal
+#+end_src
+Now make the rust binaries available in your $PATH (you only have to do it the first time after installing rust)
+#+begin_src bash
+source $HOME/.cargo/env
+#+end_src
+Enter the *vgpu_unlock-rs* directory and compile the library. Depending on your hardware and internet connection that may take a while
+#+begin_src bash
+cd vgpu_unlock-rs/
+cargo build --release
+#+end_src
+** Create files for vGPU unlock
+The *vgpu_unlock-rs* library requires a few files and folders in order to work properly, lets create those
+First create the folder for your vgpu unlock config and create an empty config file
+#+begin_src bash
+mkdir /etc/vgpu_unlock
+touch /etc/vgpu_unlock/profile_override.toml
+#+end_src
+Then, create folders and files for systemd to load the *vgpu_unlock-rs* library when starting the nvidia vgpu services
+#+begin_src bash
+mkdir /etc/systemd/system/{nvidia-vgpud.service.d,nvidia-vgpu-mgr.service.d}
+echo -e "[Service]\nEnvironment=LD_PRELOAD=/opt/vgpu_unlock-rs/target/release/libvgpu_unlock_rs.so" > /etc/systemd/system/nvidia-vgpud.service.d/vgpu_unlock.conf
+echo -e "[Service]\nEnvironment=LD_PRELOAD=/opt/vgpu_unlock-rs/target/release/libvgpu_unlock_rs.so" > /etc/systemd/system/nvidia-vgpu-mgr.service.d/vgpu_unlock.conf
+#+end_src
+
+* Enabling IOMMU
+:PROPERTIES:
+:ID:       5609bf35-9a2b-457a-b591-0e19fdacdb71
+:END:
+Note: Usually this isn't required for vGPU to work, but it doesn't hurt to enable it. You can skip this section, but if you run into problems later on, make sure to enable IOMMU.
+To enable IOMMU you have to enable it in your BIOS/UEFI first. Due to it being vendor specific, I am unable to provide instructions for that, but usually for Intel systems the option you are looking for is called something like "Vt-d", AMD systems tend to call it "IOMMU".
+After enabling it in your BIOS/UEFI, you also have to enable it in your kernel. Depending on how your system is booting, there are two ways to do that.
+If you installed your system with ZFS-on-root and in UEFI mode, then you are using systemd-boot, everything else is GRUB. GRUB is way more common so if you are unsure, you are probably using that.
+Depending on which system you are using to boot, you have to chose from the following two options:
+*** GRUB
+Open the file /etc/default/grub in your favorite editor
+#+begin_src bash
+vi /etc/default/grub
+#+end_src
+The kernel parameters have to be appended to the variable *GRUB_CMDLINE_LINUX_DEFAULT*. On a clean installation that line should look like this
+#+begin_src bash
+GRUB_CMDLINE_LINUX_DEFAULT="quiet"
+#+end_src
+If you are using an Intel system, append this after quiet:
+#+begin_src bash
+intel_iommu=on iommu=pt
+#+end_src
+
+On AMD systems, append this after quiet:
+#+begin_src bash
+amd_iommu=on iommu=pt
+#+end_src
+The result should look like this (for intel systems):
+#+begin_src bash
+GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on iommu=pt"
+#+end_src
+Now, save and exit from the editor then apply your changes:
+#+begin_src bash
+update-grub
+#+end_src
+
+*** systemd-boot
+
+** Loading required kernel modules and blacklisting the open source nvidia driver
+We have to load the *vfio*, *vfio_iommu_type1*, *vfio_pci* and *vfio_virqfd* kernel modules to get vGPU working
+#+begin_src bash
+echo -e "vfio\nvfio_iommu_type1\nvfio_pci\nvfio_virqfd" >> /etc/modules
+#+end_src
+Proxmox comes with the open source nouveau driver for nvidia gpus, however we have to use our patched nvidia driver to enable vGPU. The next line will prevent the nouveau driver from loading
+#+begin_src bash
+echo "blacklist nouveau" >> /etc/modprobe.d/blacklist.conf
+#+end_src
+** Applying our kernel configuration
+I'm not sure if this is needed, but it doesn't hurt :)
+#+begin_src bash
+update-initramfs -u -k all
+#+end_src
+...and reboot
+#+begin_src bash
+reboot
+#+end_src
+** Check if IOMMU is enabled
+Note: See section "Enabling IOMMU", this is optional
+Wait for your server to restart, then type this into a root shell
+
+#+begin_src bash
+dmesg | grep -e DMAR -e IOMMU
+#+end_src
+
+Depending on your mainboard and cpu, the output will be different, in my output the important line is the third one: DMAR: IOMMU enabled. If you see something like that, IOMMU is enabled.
+
+* NVIDIA vGPU Driver
+:PROPERTIES:
+:ID:       f6c0c49f-7eec-497e-886b-8126ea1bc6da
+:END:
+This repo contains patches that allow you to use vGPU on not-qualified-vGPU cards (consumer GPUs). Those patches are binary patches, which means that each patch works ONLY for a specific driver version.
+I've created patches for the following driver versions:
+
+16.2 (535.129.03) - Use this if you are on pve 8.0 (kernel 6.2, 6.5 should work too)
+16.1 (535.104.06)
+16.0 (535.54.06)
+15.1 (525.85.07)
+15.0 (525.60.12)
+14.4 (510.108.03)
+14.3 (510.108.03)
+14.2 (510.85.03)
+
+You can choose which of those you want to use, but generally its recommended to use the latest, most up-to-date version (16.2 in this case).
+If you have a vGPU qualified GPU, you can use other versions too, because you don't need to patch the driver. However, you still have to make sure they are compatible with your proxmox version and kernel. Also I would not recommend using any older versions unless you have a very specific requirement.
+
+** Obtaining the driver
+NVIDIA doesn't let you freely download vGPU drivers like they do with GeForce or normal Quadro drivers, instead you have to download them through the NVIDIA Licensing Portal (see: https://www.nvidia.com/en-us/drivers/vgpu-software-driver/). You can sign up for a free evaluation to get access to the download page.
+NB: When applying for an eval license, do NOT use your personal email or other email at a free email provider like gmail.com. You will probably have to go through manual review if you use such emails. I have very good experience using a custom domain for my email address, that way the automatic verification usually lets me in after about five minutes.
+
+Software Download -> Product Family: vGPU -> Platform (Linux KVM) -> Platform Version (All Support) -> Product Version (16.2)
+
+After downloading, extract the zip file
+
+[[id:7b3552a4-8d66-4645-b706-0ebe18d31f98][unzip]]
+
+and then copy the file called *NVIDIA-Linux-x86_64-DRIVERVERSION-vgpu-kvm.run* (where DRIVERVERSION is a string like 535.129.03) from the *Host_Drivers* folder to your Proxmox host into the /root/ folder using tools like FileZilla, WinSCP, [[id:a7541725-b1c9-4861-984a-a4c03b48e2ce][scp]] or rsync.
+
+** Patching the driver
+Now, on the proxmox host, make the driver executable
+
+#+begin_src bash
+chmod +x NVIDIA-Linux-x86_64-535.129.03-vgpu-kvm.run
+#+end_src
+And then patch it
+#+begin_src bash
+./NVIDIA-Linux-x86_64-535.129.03-vgpu-kvm.run --apply-patch ~/vgpu-proxmox/535.129.03.patch
+#+end_src
+That should output a lot of lines ending with
+#+begin_src bash
+Self-extractible archive "NVIDIA-Linux-x86_64-535.129.03-vgpu-kvm-custom.run" successfully created.
+#+end_src
+
+You should now have a file called *NVIDIA-Linux-x86_64-535.129.03-vgpu-kvm-custom.run*, that is your patched driver.
+
+** Installing the driver
+Now that the required patch is applied, you can install the driver
+#+begin_src bash
+./NVIDIA-Linux-x86_64-535.129.03-vgpu-kvm-custom.run --dkms
+#+end_src
+The installer will ask you Would you like to register the kernel module sources with DKMS? This will allow DKMS to automatically build a new module, if you install a different kernel later., answer with *Yes*.
+
+Depending on your hardware, the installation could take a minute or two.
+If everything went right, you will be presented with this message.
+
+#+begin_src bash
+Installation of the NVIDIA Accelerated Graphics Driver for Linux-x86_64 (version: 535.129.03) is now complete.
+#+end_src
+
+Click Ok to exit the installer.
+To finish the installation, reboot.
+#+begin_src bash
+reboot
+#+end_src
+
+** Finishing touches
+Wait for your server to reboot, then type this into the shell to check if the driver install worked
+#+begin_src console
+root@server4:~# nvidia-smi
+Tue Dec 19 15:34:40 2023       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.129.03             Driver Version: 535.129.03   CUDA Version: N/A      |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA GeForce RTX 2070        On  | 00000000:01:00.0 Off |                  N/A |
+| 31%   33C    P8              18W / 175W |     60MiB /  8192MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+#+end_src
+To verify if the vGPU unlock worked, type this command
+#+begin_src console
+root@server4:~# mdevctl types
+0000:01:00.0
+  nvidia-256
+    Available instances: 24
+    Device API: vfio-pci
+    Name: GRID RTX6000-1Q
+    Description: num_heads=4, frl_config=60, framebuffer=1024M, max_resolution=5120x2880, max_instance=24
+  nvidia-257
+    Available instances: 12
+    Device API: vfio-pci
+    Name: GRID RTX6000-2Q
+    Description: num_heads=4, frl_config=60, framebuffer=2048M, max_resolution=7680x4320, max_instance=12
+  nvidia-258
+    Available instances: 8
+    Device API: vfio-pci
+    Name: GRID RTX6000-3Q
+    Description: num_heads=4, frl_config=60, framebuffer=3072M, max_resolution=7680x4320, max_instance=8
+  nvidia-259
+    Available instances: 6
+    Device API: vfio-pci
+    Name: GRID RTX6000-4Q
+    Description: num_heads=4, frl_config=60, framebuffer=4096M, max_resolution=7680x4320, max_instance=6
+  nvidia-260
+    Available instances: 4
+    Device API: vfio-pci
+    Name: GRID RTX6000-6Q
+    Description: num_heads=4, frl_config=60, framebuffer=6144M, max_resolution=7680x4320, max_instance=4
+  nvidia-261
+    Available instances: 3
+    Device API: vfio-pci
+    Name: GRID RTX6000-8Q
+    Description: num_heads=4, frl_config=60, framebuffer=8192M, max_resolution=7680x4320, max_instance=3
+  nvidia-262
+    Available instances: 2
+    Device API: vfio-pci
+    Name: GRID RTX6000-12Q
+    Description: num_heads=4, frl_config=60, framebuffer=12288M, max_resolution=7680x4320, max_instance=2
+  nvidia-263
+    Available instances: 1
+    Device API: vfio-pci
+    Name: GRID RTX6000-24Q
+    Description: num_heads=4, frl_config=60, framebuffer=24576M, max_resolution=7680x4320, max_instance=1
+  nvidia-435
+    Available instances: 24
+    Device API: vfio-pci
+    Name: GRID RTX6000-1B
+    Description: num_heads=4, frl_config=45, framebuffer=1024M, max_resolution=5120x2880, max_instance=24
+  nvidia-436
+    Available instances: 12
+    Device API: vfio-pci
+    Name: GRID RTX6000-2B
+    Description: num_heads=4, frl_config=45, framebuffer=2048M, max_resolution=5120x2880, max_instance=12
+  nvidia-437
+    Available instances: 24
+    Device API: vfio-pci
+    Name: GRID RTX6000-1A
+    Description: num_heads=1, frl_config=60, framebuffer=1024M, max_resolution=1280x1024, max_instance=24
+  nvidia-438
+    Available instances: 12
+    Device API: vfio-pci
+    Name: GRID RTX6000-2A
+    Description: num_heads=1, frl_config=60, framebuffer=2048M, max_resolution=1280x1024, max_instance=12
+  nvidia-439
+    Available instances: 8
+    Device API: vfio-pci
+    Name: GRID RTX6000-3A
+    Description: num_heads=1, frl_config=60, framebuffer=3072M, max_resolution=1280x1024, max_instance=8
+  nvidia-440
+    Available instances: 6
+    Device API: vfio-pci
+    Name: GRID RTX6000-4A
+    Description: num_heads=1, frl_config=60, framebuffer=4096M, max_resolution=1280x1024, max_instance=6
+  nvidia-441
+    Available instances: 4
+    Device API: vfio-pci
+    Name: GRID RTX6000-6A
+    Description: num_heads=1, frl_config=60, framebuffer=6144M, max_resolution=1280x1024, max_instance=4
+  nvidia-442
+    Available instances: 3
+    Device API: vfio-pci
+    Name: GRID RTX6000-8A
+    Description: num_heads=1, frl_config=60, framebuffer=8192M, max_resolution=1280x1024, max_instance=3
+  nvidia-443
+    Available instances: 2
+    Device API: vfio-pci
+    Name: GRID RTX6000-12A
+    Description: num_heads=1, frl_config=60, framebuffer=12288M, max_resolution=1280x1024, max_instance=2
+  nvidia-444
+    Available instances: 1
+    Device API: vfio-pci
+    Name: GRID RTX6000-24A
+    Description: num_heads=1, frl_config=60, framebuffer=24576M, max_resolution=1280x1024, max_instance=1
+
+#+end_src
+If this command doesn't return any output, vGPU unlock isn't working.
+Another command you can try to see if your card is recognized as being vgpu enabled is this one:
+If everything worked right with the unlock, the output should be similar to this:
+#+begin_src console
+root@server4:~# nvidia-smi vgpu
+Tue Dec 19 15:39:34 2023       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 535.129.03             Driver Version: 535.129.03                |
+|---------------------------------+------------------------------+------------+
+| GPU  Name                       | Bus-Id                       | GPU-Util   |
+|      vGPU ID     Name           | VM ID     VM Name            | vGPU-Util  |
+|=================================+==============================+============|
+|   0  NVIDIA GeForce RTX 2070    | 00000000:01:00.0             |   0%       |
++---------------------------------+------------------------------+------------+
+#+end_src
+However, if you get this output, then something went wrong
+#+begin_src bash
+No supported devices in vGPU mode
+#+end_src
+
+* vGPU overrides/settings
+:PROPERTIES:
+:ID:       0c4c4d3b-e65c-47db-8312-d6456ca7182d
+:END:
+Further up we have created the file */etc/vgpu_unlock/profile_override.toml* and I didn't explain what it was for yet. Using that file you can override lots of parameters for your vGPU instances: For example you can change the maximum resolution, enable/disable the frame rate limiter, enable/disable support for CUDA or change the vram size of your virtual gpus.
+
+If we take a look at the output of mdevctl types we see lots of different types that we can choose from. However, if we for example chose GRID RTX6000-4Q which gives us 4GB of vram in a VM, we are locked to that type for all of our VMs. Meaning we can only have 4GB VMs, its not possible to mix different types to have one 4GB VM, and two 2GB VMs.
+
+*Important notes*
+Q profiles can give you horrible performance in OpenGL applications/games. To fix that, switch to an equivalent A or B profile (for example GRID RTX6000-4B)
+C profiles (for example GRID RTX6000-4C) only work on Linux, don't try using those on Windows, it will not work - at all.
+A profiles (for example GRID RTX6000-4A) will NOT work on Linux, they only work on Windows.
+
+All of that changes with the override config file. Technically we are still locked to only using one profile, but now its possible to change the vram of the profile on a VM basis so even though we have three GRID RTX6000-4Q instances, one VM can have 4GB or vram but we can override the vram size for the other two VMs to only 2GB.
+Lets take a look at this example config override file (its in TOML format)
+#+begin_src file
+[profile.nvidia-259]
+num_displays = 1          # Max number of virtual displays. Usually 1 if you want a simple remote gaming VM
+display_width = 1920      # Maximum display width in the VM
+display_height = 1080     # Maximum display height in the VM
+max_pixels = 2073600      # This is the product of display_width and display_height so 1920 * 1080 = 2073600
+cuda_enabled = 1          # Enables CUDA support. Either 1 or 0 for enabled/disabled
+frl_enabled = 1           # This controls the frame rate limiter, if you enable it your fps in the VM get locked to 60fps. Either 1 or 0 for enabled/disabled
+framebuffer = 0x74000000
+framebuffer_reservation = 0xC000000   # In combination with the framebuffer size
+                                      # above, these two lines will give you a VM
+                                      # with 2GB of VRAM (framebuffer + framebuffer_reservation = VRAM size in bytes).
+                                      # See below for some other sizes
+
+[vm.100]
+frl_enabled = 0
+# You can override all the options from above here too. If you want to add more overrides for a new VM, just copy this block and change the VM ID
+
+#+end_src
+There are two blocks here, the first being [profile.nvidia-259] and the second [vm.100].
+The first one applies the overrides to all VM instances of the nvidia-259 type (thats GRID RTX6000-4Q) and the second one applies its overrides only to one specific VM, that one with the proxmox VM ID 100.
+The proxmox VM ID is the same number that you see in the proxmox webinterface, next to the VM name.
+You don't have to specify all parameters, only the ones you need/want. There are some more that I didn't mention here, you can find them by going through the source code of the *vgpu_unlock-rs* repo.
+For a simple 1080p remote gaming VM I recommend going with something like this
+
+#+begin_src file
+[profile.nvidia-259] # choose the profile you want here
+num_displays = 1
+display_width = 1920
+display_height = 1080
+max_pixels = 2073600
+#+end_src
+
+** Common VRAM sizes
+Here are some common framebuffer sizes that you might want to use:
+*** 512MB
+#+begin_src file
+framebuffer = 0x1A000000
+framebuffer_reservation = 0x6000000
+#+end_src
+*** 1GB
+#+begin_src file
+framebuffer = 0x38000000
+framebuffer_reservation = 0x8000000
+#+end_src
+*** 2GB
+#+begin_src file
+framebuffer = 0x74000000
+framebuffer_reservation = 0xC000000
+#+end_src
+*** 3GB
+#+begin_src file
+framebuffer = 0xB0000000
+framebuffer_reservation = 0x10000000
+#+end_src
+*** 4GB
+#+begin_src file
+framebuffer = 0xEC000000
+framebuffer_reservation = 0x14000000
+#+end_src
+*** 5GB
+#+begin_src file
+framebuffer = 0x128000000
+framebuffer_reservation = 0x18000000
+#+end_src
+*** 6GB
+#+begin_src file
+framebuffer = 0x164000000
+framebuffer_reservation = 0x1C000000
+#+end_src
+*** 8GB
+#+begin_src file
+framebuffer = 0x1DC000000
+framebuffer_reservation = 0x24000000
+#+end_src
+*** 10GB
+#+begin_src file
+framebuffer = 0x254000000
+framebuffer_reservation = 0x2C000000
+#+end_src
+*** 12GB
+#+begin_src file
+framebuffer = 0x2CC000000
+framebuffer_reservation = 0x34000000
+#+end_src
+*** 16GB
+#+begin_src file
+framebuffer = 0x3BC000000
+framebuffer_reservation = 0x44000000
+#+end_src
+*** 20GB
+#+begin_src file
+framebuffer = 0x4AC000000
+framebuffer_reservation = 0x54000000
+#+end_src
+*** 24GB
+#+begin_src file
+framebuffer = 0x59C000000
+framebuffer_reservation = 0x64000000
+#+end_src
+*** 32GB
+#+begin_src file
+framebuffer = 0x77C000000
+framebuffer_reservation = 0x84000000
+#+end_src
+*** 48GB
+#+begin_src file
+framebuffer = 0xB2D200000
+framebuffer_reservation = 0xD2E00000
+#+end_src
+*framebuffer* and *framebuffer_reservation* will always equal the VRAM size in bytes when added together.
+
+* Adding a vGPU to a Proxmox VM
+:PROPERTIES:
+:ID:       5bb91c8f-3c4b-40c0-bb43-7c6bf56e795c
+:END:
+Go to the proxmox webinterface, go to your VM, then to *Hardware*, then to *Add* and select *PCI Device*.
+You should be able to choose from a list of pci devices. Choose your GPU there, its entry should say *Yes* in the *Mediated Devices* column.
+Now you should be able to also select the *MDev Type*. Choose whatever profile you want, if you don't remember which one you want, you can see the list of all available types with *mdevctl types*.
+Finish by clicking Add, start the VM and install the required drivers. After installing the drivers you can shut the VM down and remove the virtual display adapter by selecting Display in the Hardware section and selecting none (none). ONLY do that if you have some other way to access the Virtual Machine like Parsec or Remote Desktop because the Proxmox Console won't work anymore.
+Enjoy your new vGPU VM :)
+
+* vGPU Licensing
+:PROPERTIES:
+:ID:       e14fe0f0-96f9-4a7b-a555-1e5718df00d3
+:END:
+Usually a license is required to use vGPU, but luckily the community found several ways around that. Spoofing the vGPU instance to a Quadro GPU used to be very popular, but I don't recommend it anymore. I've also removed the related sections from this guide. If you still want it for whatever reason, you can go back in the commit history to find the instructions on how to use that.
+The recommended way to get around the license is to set up your own license server. Follow the instructions [[https://git.collinwebdesigns.de/oscar.krause/fastapi-dls][here]] (or here if the other link is down).
 
 * Reference List
 1. https://docs.google.com/document/d/1pzrWJ9h-zANCtyqRgS7Vzla0Y8Ea2-5z2HEi4X75d2Q/edit

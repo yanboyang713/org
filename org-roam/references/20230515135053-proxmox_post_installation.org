@@ -14,5 +14,7 @@ chmod a+x post-pve-install.sh
 #+end_src
 * [[id:03756f80-0902-42fe-ab6d-ca11f3953a2d][prevent laptop lid suspending]]
 
-* [[id:db39af8b-657f-4b11-83fa-f3510dad3198][Proxmox VE High Availability Cluster Set-up]]  
+* [[id:db39af8b-657f-4b11-83fa-f3510dad3198][Proxmox VE High Availability Cluster Set-up]]
+
+* [[id:f17baed8-4b8b-433a-a868-3b4f2f3d20c1][vGPU unblock]]   
 
