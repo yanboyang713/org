@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       281732d8-ae70-43a7-a9dc-461ecc953705
+:END:
+#+title: Z390 PLUS
+
+https://au.msi.com/Motherboard/Z390-PLUS/support#bios

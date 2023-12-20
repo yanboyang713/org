@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       7032d5b9-4044-47fc-b034-a563d906b012
+:END:
+#+title: Git Large File Storage(LFS)
+
+[[id:28776313-f579-466f-9a3d-216fc14a5308][git]]
+* Install
+#+begin_src bash
+paru -S git-lfs
+#+end_src
+
+https://github.com/git-lfs/git-lfs?tab=readme-ov-file#example-usage
+
+* Reference List
+1. https://github.com/git-lfs/git-lfs

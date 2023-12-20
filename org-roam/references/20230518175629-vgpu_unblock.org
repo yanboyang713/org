@@ -471,6 +471,8 @@ Now you should be able to also select the *MDev Type*. Choose whatever profile y
 Finish by clicking Add, start the VM and install the required drivers. After installing the drivers you can shut the VM down and remove the virtual display adapter by selecting Display in the Hardware section and selecting none (none). ONLY do that if you have some other way to access the Virtual Machine like Parsec or Remote Desktop because the Proxmox Console won't work anymore.
 Enjoy your new vGPU VM :)
 
+the best compatibility is reached when using q35 as machine type, OVMF (UEFI for VMs) instead of SeaBIOS and PCIe instead of PCI.
+
 * vGPU Licensing
 :PROPERTIES:
 :ID:       e14fe0f0-96f9-4a7b-a555-1e5718df00d3
