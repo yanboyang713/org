@@ -7,9 +7,12 @@
 [[id:7b3d4c7a-30a8-4f0f-a587-fdbb39109e57][mikrotik]]
 
 * Mikrotik RouterOS GUI Configurator
+** [[id:dc13b67c-8d8b-40fd-b8cf-9ea8547e485d][Arch Linux]] 
 #+begin_src bash
 paru -S winbox wine-wow64-for-wechat
 #+end_src
+** [[id:803d821b-6f7d-4e07-9a1f-08c9736c7dec][ubuntu]] 
+https://snapcraft.io/install/winbox/ubuntu
 
 * First Time Configuration
 https://help.mikrotik.com/docs/display/ROS/First+Time+Configuration#FirstTimeConfiguration-RouterOS7.13+wirelesssetup
