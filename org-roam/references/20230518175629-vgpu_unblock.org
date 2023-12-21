@@ -468,10 +468,31 @@ framebuffer_reservation = 0xD2E00000
 Go to the proxmox webinterface, go to your VM, then to *Hardware*, then to *Add* and select *PCI Device*.
 You should be able to choose from a list of pci devices. Choose your GPU there, its entry should say *Yes* in the *Mediated Devices* column.
 Now you should be able to also select the *MDev Type*. Choose whatever profile you want, if you don't remember which one you want, you can see the list of all available types with *mdevctl types*.
-Finish by clicking Add, start the VM and install the required drivers. After installing the drivers you can shut the VM down and remove the virtual display adapter by selecting Display in the Hardware section and selecting none (none). ONLY do that if you have some other way to access the Virtual Machine like Parsec or Remote Desktop because the Proxmox Console won't work anymore.
+
+Finish by clicking Add, start the VM and install the required drivers.
+[[id:a7541725-b1c9-4861-984a-a4c03b48e2ce][scp]]
+#+begin_src bash
+    cd /home/yanboyang713/Downloads/vGPU/Guest_Drivers
+  scp NVIDIA-Linux-x86_64-535.129.03-grid.run yanboyang713@192.168.88.234:/home/yanboyang713
+    scp nvidia-linux-grid-535_535.129.03_amd64.deb yanboyang713@192.168.88.255:/home/yanboyang713
+    cd /home/yanboyang713/Downloads/vGPU/Signing_Keys
+    scp vgpu_debian_publickey.pub yanboyang713@192.168.88.234:/home/yanboyang713
+
+    sudo apt install ./nvidia-linux-grid-535_535.129.03_amd64.deb
+  sudo apt --fix-broken install
+
+
+  sudo apt install build-essential
+  sudo bash NVIDIA-Linux-x86_64-535.129.03-grid.run
+
+  nvidia-smi
+#+end_src
+After installing the drivers you can shut the VM down and remove the virtual display adapter by selecting Display in the Hardware section and selecting none (none). ONLY do that if you have some other way to access the Virtual Machine like Parsec or Remote Desktop because the Proxmox Console won't work anymore.
 Enjoy your new vGPU VM :)
 
-the best compatibility is reached when using q35 as machine type, OVMF (UEFI for VMs) instead of SeaBIOS and PCIe instead of PCI.
+the best compatibility is reached when using q35 as machine type, must be *SeaBIOS*, without secure boot and PCIe instead of PCI.
+
+https://cloud.google.com/compute/docs/gpus/install-drivers-gpu?hl=zh-cn
 
 * vGPU Licensing
 :PROPERTIES:
