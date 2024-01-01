@@ -42,7 +42,6 @@ Following are the prerequisites for Kubeadm Kubernetes cluster setup.
 * Kubeadm Port Requirements
 Please refer to the following image and make sure all the ports are allowed for the control plane (master) and the worker nodes. If you are setting up the kubeadm cluster cloud servers, ensure you allow the ports in the firewall configuration.
 [[https://devopscube.com/wp-content/uploads/2019/12/kuberetes-port-requirements-min.png.webp]]
-If you are using vagrant-based Ubuntu VMs, the firewall would be disabled by default. So you don’t have to do any firewall configurations.
 
 * Vagrantfile, Kubeadm Scripts & Manifests
 Also, all the commands used in this guide for master and worker nodes config are hosted in [[https://github.com/yanboyang713/kubeadm-scripts.git][GitHub]]. You can clone the repository for reference.
@@ -60,7 +59,6 @@ Also, I have created a video demo of the whole kubeadm setup. You can refer it d
 
 * Kubernetes Cluster Setup Using Kubeadm
 Following are the high-level steps involved in setting up a kubeadm-based Kubernetes cluster.
-
 + Install container runtime on all nodes- We will be using [[https://cri-o.io/][cri-o]].
 + Install Kubeadm, Kubelet, and kubectl on all the nodes.
 + Initiate Kubeadm control plane configuration on the master node.
@@ -254,7 +252,8 @@ Execute the commands in this section only on the master node.
 
 ** If you are using Private IP for master Node,
 
-Set the following environment variables. Replace 10.0.0.10 with the IP of your master node. #+begin_src bash
+Set the following environment variables. Replace 10.0.0.10 with the IP of your master node.
+#+begin_src bash
 IPADDR="10.0.0.10"
 NODENAME=$(hostname -s)
 POD_CIDR="192.168.0.0/16"
@@ -327,7 +326,7 @@ By default, apps won’t get scheduled on the master node. If you want to use th
 kubectl taint nodes --all node-role.kubernetes.io/control-plane-
 #+end_src
 
-* Install Calico Network Plugin for Pod Networking
+* Install [[id:1a09eb00-17ea-48d4-a293-d626552df79c][Calico]] Network Plugin for Pod Networking
 Kubeadm does not configure any network plugin. You need to install a network plugin of your choice.
 
 I am using the Calico network plugin for this setup.
