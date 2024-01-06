@@ -653,13 +653,10 @@ By default, kubeadm creates its own CA certificates. However, if you wish to use
 ** How to generate the Kubeadm Join command?
 You can use kubeadm token create --print-join-command command to generate the join command.
 
-* Kubeadm Cluster Setup Scripts
-https://github.com/techiescamp/kubeadm-scripts
-https://github.com/mialeevs/kubernetes_installation_docker
-
 * Reference List
 1. https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/
 2. https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
 3. https://www.youtube.com/watch?v=j5rmtgyP8vY&ab_channel=%E9%BA%A6%E5%85%9C%E6%90%9EIT
 4. https://www.youtube.com/watch?v=u4-Hp-Zxhck&ab_channel=CloudGuru
 5. https://github.com/mialeevs/kubernetes_installation_docker
+6. https://github.com/techiescamp/kubeadm-scripts
