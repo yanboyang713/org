@@ -96,3 +96,4 @@ Discovering good third-party crates can be a problem. Sites like https://lib.rs/
 
 * Reference List
 1. https://google.github.io/comprehensive-rust/why-rust.html
+2. https://apatisandor.hu/tags/dog-shelter/

@@ -22,6 +22,7 @@ When one installs Prometheus operator, some of the features of the Prometheus op
 + Simplified configuration for basic Prometheus functionalities such as versions, persistence, retention policies, and replicas using native Kubernetes resources.
 + Automatic generation of monitoring target configurations based on Kubernetes label queries, eliminating the need to learn a Prometheus-specific configuration language.
 
-
 * Reference List
 1. https://github.com/prometheus-operator/prometheus-operator
+2. https://mp.weixin.qq.com/s?__biz=MzkwODIxNDI1Mg==&mid=2247484256&idx=1&sn=9ea7d2e0b34a6965a0624e97c58bd415&chksm=c0cc29e3f7bba0f562b4f1b15c208a6105a530c18f7d638188662afdc79ad7381c2e6bc70b27&mpshare=1&scene=1&srcid=0104ZdulFjRKsG96qHYtGPXG&sharer_shareinfo=eaf5acb25358541d501f3fa847c9e12e&sharer_shareinfo_first=eaf5acb25358541d501f3fa847c9e12e&exportkey=n_ChQIAhIQLUmoDwkMC1Ul%2BuNwLymtMxKWAgIE97dBBAEAAAAAALxPEKcLQh4AAAAOpnltbLcz9gKNyK89dVj0pw4CXKj5cgV%2F6J1uYqaWxtP8CJWZJlUYY2h9CwrBoOnLaI99yhhPE99s%2FMsf0%2FbnG8KQmhxTJ7TOvz3Dy2dPG%2BuDc1RfErOIAkkqnp6DKNgWDljZBH809yO6%2BBoljfchZVcPTppKRuwjM22NgJ8iMzPH0Y4NjGLTl%2FhbjIGEscRx3jokiyIDS69162BcgjAk%2Be5WfdT69DYX6q3mSJtAVai89XymJa1DSDwgqG%2BRd7tlTNGiDGnSM0BSSRyZkzvvH2v5RVKojJZqU%2FUbvzblHt3giHsSnmtncVLqGPP7NE49qSAw6PfkkRt9iIfCMNDY&acctmode=0&pass_ticket=KlX9YRhWoRoRgsKCmFs2f%2BzM7upft%2BvaRmy%2F4oiMRgB%2BvKk%2BeXS%2F21JTkm9pdgBPuiZ2NuxmLu8CLXHwbcXthQ%3D%3D&wx_header=0#rd
+   
