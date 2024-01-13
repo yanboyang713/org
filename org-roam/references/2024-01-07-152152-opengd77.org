@@ -1,0 +1,35 @@
+:PROPERTIES:
+:ID:       412ffbe2-c592-4a78-aed6-c080456e360d
+:END:
+#+title: opengd77
+
+[[id:570e8e32-4ec7-463c-9c1f-54f803d2c0e8][Ham Radio]]
+
+[[id:a05949f5-a740-415a-b934-4cecfbc5d54f][DMR]]
+
+#+begin_src console
+root@server2:~# lsusb
+Bus 002 Device 003: ID 1199:9013 Sierra Wireless, Inc. Sierra Wireless Gobi 3000 Modem device (MC8355)
+Bus 002 Device 002: ID 8087:0024 Intel Corp. Integrated Rate Matching Hub
+Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 004: ID 04f2:b221 Chicony Electronics Co., Ltd integrated camera
+Bus 001 Device 003: ID 0a5c:217f Broadcom Corp. BCM2045B (BDC-2.1)
+Bus 001 Device 002: ID 8087:0024 Intel Corp. Integrated Rate Matching Hub
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+root@server2:~# lsusb
+Bus 002 Device 003: ID 1199:9013 Sierra Wireless, Inc. Sierra Wireless Gobi 3000 Modem device (MC8355)
+Bus 002 Device 005: ID 0483:df11 STMicroelectronics STM Device in DFU Mode
+Bus 002 Device 002: ID 8087:0024 Intel Corp. Integrated Rate Matching Hub
+Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 004: ID 04f2:b221 Chicony Electronics Co., Ltd integrated camera
+Bus 001 Device 003: ID 0a5c:217f Broadcom Corp. BCM2045B (BDC-2.1)
+Bus 001 Device 002: ID 8087:0024 Intel Corp. Integrated Rate Matching Hub
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+#+end_src
+
+* Reference List
+1. https://www.opengd77.com/

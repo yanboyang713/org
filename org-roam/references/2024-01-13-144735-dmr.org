@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       a05949f5-a740-415a-b934-4cecfbc5d54f
+:END:
+#+title: DMR
+
+[[id:7f9431c2-e859-4aab-b8b2-821cc6b72102][DMR Radio ID]]
