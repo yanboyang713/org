@@ -1,0 +1,181 @@
+:PROPERTIES:
+:ID:       0fd2aae3-2ddf-4f49-97b8-70b89ab61cc4
+:END:
+#+title: Artificial Intelligence
+
+* What is AI?
+** Think like humans
+Cognitive science, cognitive modeling
+** Act like humans
+The Turing Test: 
++ natural language processing,
++ knowledge representation,
++ automated reasoning,
++ machine learning,
++ vision,
++ robotics.
+** Think rationally
+Law of Thought Aristotle and other Greeks, logic Problem: representing knowledge, complexity
+** Act rationally
+More general than the Laws of Thought Needs all the Turing Test requirements, plus Agents, etc.
+** Summary
+Computational Rationality:
++ Maximize Your Expected Utility
+
+* Complex Environments
+Value alignment problem
+* Foundation of AI
++ Philosophy
++ Mathematics
++ Economics
++ Neuroscience
++ Psychology
++ Computer Engineering
++ Control Theory
++ Linguistics
+* History of AI
++ 1940-1950: Early days
+- 1943: McCulloch & Pitts: Boolean circuit model of brain
+- 1950: Turing's “Computing Machinery and Intelligence”
+
++ 1950—70: Excitement: Look, Ma, no hands!
+- 1950s: Early AI programs, including Samuel's checkers program, Newell & Simon's Logic Theorist, Gelernter's Geometry Engine
+- 1956: Dartmouth meeting: “Artificial Intelligence” adopted
+- 1965: Robinson's complete algorithm for logical reasoning
+
++ 1970—90: Knowledge-based approaches
+- 1969—79: Early development of knowledge-based systems
+- 1980—88: Expert systems industry booms
+- 1988—93: Expert systems industry busts: “AI Winter”
+
++ 1990—: Statistical approaches
+- Resurgence of probability, focus on uncertainty
+- General increase in technical depth
+- Agents and learning systems… “AI Spring”?
+
++ 2000—: Where are we now?     
+* State of the Art
++ Robotics/Robotic Vehicles
+Self-driving cars
+Soccer/Rescue…
++ Natural Language Processing
+Machine Translation
+Speech Recognition
+IBM Watson
++ Autonomous Planning and Scheduling
+Airline routing
+Factory pipeline
++ Game Playing
+Alpha Go
+Alpha Star
++ Logistic Planning
+Theorem Provers
+Betty’s Brain
++ Vision
+Object and face recognition
+Image classification
++ Humanities
+Education
+Healthcare
+
+* Agents & Environments
+** The Agent/Environment Architecture
+Agents *perceive* their *environments* through *sensors* and act upon it through *actuators*
+
+The *environments* outputs values that the agent perceives through its sensors
+
+The values are passed to the agent’s *agent function* to decide how to respond
+
+Upon a decision, the agent uses its *actuators* to execute the particular action
+** Agents and Environments
+Agents *perceive* their *environments* through *sensors* and act upon it through *actuators*
+** Sensors
+*Sensors* receive perceptual inputs from the environment
+** Actuators
+*Actuators* allow the agent to then act upon the environment in some way
+
+A self-cleaning agent perceives the neighboring tile is dirty
+A self-cleaning agent perceives the neighboring tile is dirty and acts to clean it
+** Percept Sequences
+The *complete history* of everything the agent has perceived
+
+An agent’s action can depend on the entire percept sequence to date
+** Agent Function
+A mapping of actions to take for a given percept
+| Percept                         | Action          |
+|---------------------------------+-----------------|
+| [A1, CleanTile]                 | *MOVE_RIGHT*      |
+| [A1, DirtyTile]                 | CLEAN           |
+| [B1, CleanTile]                 | *MOVE_LEFT*       |
+| [B1, DirtyTile]                 | CLEAN           |
+| [A1, DirtyTile], [A1,CleanTile] | // Do Something |
+
+We can expand this mapping to also store the complete history of percepts as well
+** Performance Measures
+Evaluates any given sequence of *environment states*
+
+No universal measure and dependent on the designer
+
+Performance measures can be learned
+
+If our cleaning robot’s performance measure was simply how many tiles it clean, what would a “smart” robot do?
+* Rational Agents
++ Four considerations for rationality
++ The performance measure
++ The agent’s prior knowledge
++ Possible actions
++ The percept sequence available to the agent to date.
+** Rationality vs. Omniscience
+Rational agents *maximize expected outcomes*, because we cannot account for everything
+** Rational Agent
+For each possible percept sequence, a rational agent should select an action that is expected to maximize its performance measure, given the evidence provided by the percept sequence and whatever built-in knowledge the agent has.
+
++ *P*erformance measure
++ Knowledge of *E*nvironment
++ Actions (*A*ctuators)
++ Perceptions (*S*ensors)
+
+*PEAS*: Specification of the task environment.
+
+For example:
+| Agent Type  | Performance Measure                                       | Environment                                  | Actuators                                           | Sensors                                                                             |
+|-------------+-----------------------------------------------------------+----------------------------------------------+-----------------------------------------------------+-------------------------------------------------------------------------------------|
+| Taxi Driver | Safe, fast, legal, comfortable trips that maximize profit | Roads, other traffic, pedestrians, customers | Steering, accelerator, brake, signal, horn, display | Cameras, sonar, speedometer, GPS, odometer, accelerometer, engine sensors, keyboard |
+
+* Properties of Task
+** Fully vs. Partially Observable
+If the sensors give the agent a complete state of the environment, then it is completely observable
+
+The agent may not sense everything, giving it a partially observable environment
+
+** Deterministic vs. Stochastic
+The next state of the environment is *completely determined* by the current state and action of the agent
+If the environment is deterministic except for the actions of other agents, it is considered *strategic*
+
+** Episodic vs. Sequential
++ Agent’s experience is divided into atomic “episodes” (or time steps)
+- Each “episode” consists of the agent perceiving and then acting
++ The choice of the action in each episode depends *only on that episode alone*
+
+** Static vs. Dynamic
++ The environment is *static* is it does not change while the agent is thinking
+- Solving a crossword puzzle
++ The environment is *semi-dynamic*, if its state doesn’t change with time, but the agent’s performance score *does*
+- Playing chess with a clock
+
+** Discrete vs. Continuous
++ A limited number of clearly defined percepts and actions
+- Checkers have a discrete environment
+- Self-driving cars would be continuous
+
+** Known vs. Unknown
++ The designer of the agent may/may not have knowledge about the environment makeup
++ In the environment is *unknown*, the agent will need to know how it works to decide
++ *Different* from observable and unobservable
+
+** Single vs Multi-agent
++ Other agents can be *competitive* or *cooperative*
++ Agents can also *communicate* with each other
++ Should any single agent treat another agent as *an agent* or *part of the environment*?
+
+
