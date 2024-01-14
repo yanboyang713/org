@@ -1,7 +1,7 @@
 :PROPERTIES:
 :ID:       0fd2aae3-2ddf-4f49-97b8-70b89ab61cc4
 :END:
-#+title: Artificial Intelligence
+#+title: Artificial Intelligence(AI)
 
 * What is AI?
 ** Think like humans
