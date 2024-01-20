@@ -4,3 +4,4 @@
 #+title: DMR
 
 [[id:7f9431c2-e859-4aab-b8b2-821cc6b72102][DMR Radio ID]]
+[[id:a894b35d-c2b0-44c5-a07f-23886b833a7d][MMDVM pi-star]]

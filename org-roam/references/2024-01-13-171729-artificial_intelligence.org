@@ -4,6 +4,9 @@
 #+title: Artificial Intelligence(AI)
 
 * What is AI?
+:PROPERTIES:
+:ID:       ed893e1b-1df6-4d08-bd92-f093fe66bc05
+:END:
 ** Think like humans
 Cognitive science, cognitive modeling
 ** Act like humans
@@ -22,9 +25,10 @@ More general than the Laws of Thought Needs all the Turing Test requirements, pl
 Computational Rationality:
 + Maximize Your Expected Utility
 
-* Complex Environments
-Value alignment problem
 * Foundation of AI
+:PROPERTIES:
+:ID:       e143e9ff-5029-485f-ada8-57a88c3de2d1
+:END:
 + Philosophy
 + Mathematics
 + Economics
@@ -34,6 +38,9 @@ Value alignment problem
 + Control Theory
 + Linguistics
 * History of AI
+:PROPERTIES:
+:ID:       55a3fdf7-78db-49f6-a01e-9daf13d66eb5
+:END:
 + 1940-1950: Early days
 - 1943: McCulloch & Pitts: Boolean circuit model of brain
 - 1950: Turing's “Computing Machinery and Intelligence”
@@ -55,6 +62,9 @@ Value alignment problem
 
 + 2000—: Where are we now?     
 * State of the Art
+:PROPERTIES:
+:ID:       9e30ad78-1f29-4ab3-ac92-265e5915abe7
+:END:
 + Robotics/Robotic Vehicles
 Self-driving cars
 Soccer/Rescue…
@@ -79,6 +89,9 @@ Education
 Healthcare
 
 * Agents & Environments
+:PROPERTIES:
+:ID:       f47cefa9-6430-4020-8080-df388259bed1
+:END:
 ** The Agent/Environment Architecture
 Agents *perceive* their *environments* through *sensors* and act upon it through *actuators*
 
@@ -178,4 +191,124 @@ If the environment is deterministic except for the actions of other agents, it i
 + Agents can also *communicate* with each other
 + Should any single agent treat another agent as *an agent* or *part of the environment*?
 
+* Agents Programs
+:PROPERTIES:
+:ID:       a1235bb4-a901-4ec6-bb57-e7e18526495e
+:END:
+** Designing Agent Programs
+An agent program takes in *just the current percepts* instead of maintaining its entire history. This is because storing the entire history could grow very large and become difficult to traverse.
+
+The agent program takes in the current percept of the environment from the sensors of the agent and returns an action to be performed by the actuators. If you need to depend on the entire percept sequence, the agent will have to remember the percepts.
+
+To process video from a camera shooting at 30fps, 640x480, 24 bit color would grow exponentially
+
+In a simple Table-driven Agent, a lookup table is used to match every possible percept sequence to the corresponding action. It is the most effective form of implementing the desired agent function, but it comes with a penalty of occupying humongous amounts of space. Even for a small game of chess requires 150th power of 10 entries in the lookup table, forget about the lookup table for the taxi driving agent(for comparison, the number of atoms in the observable universe is less than 80th power of 10). This huge requirement of space means that: 1) There is not much space in the entire universe to store this huge amount of data. 2) The designer will not have time to fill up the table. 3) Even if you make a learning agent to fill the lookup table on itself, it’ll take ages for it.
+
+*** Simple Reflex Agents
+:PROPERTIES:
+:ID:       cffd1c51-1c53-4831-8fcb-739c8c9e6bce
+:END:
++ Select an action based on the current state and ignore the percept history
++ Simple but limited
++ Only work if the environment is *fully observable*
+
+A simple condition-action rule governs the actions taken by the agent:
+if condition, then action
+[[https://miro.medium.com/v2/resize:fit:720/format:webp/1*HVisXcuybnJ69ts4iOq51g.png]]
+
+[[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1705711592/ai/simple-reflex-2_ghm5b6.png]]
+
+#+begin_src python
+def agent_func(Percept):
+Rules	= {"p0" : "a0", "p1" : "a3", ...}
+Action = Rules[Percept]
+return Action
+#+end_src
+
+#+begin_src python
+  def agent_func(Percept):
+  Rules = {"p0" : ["a0", "a4", ...],
+    "p1" : ["a3", ...]}
+  Actions = Rules[Percept]
+  Choice  = random.choice(Actions)
+  return Choice
+#+end_src
+
+*** Model-based Agents
+:PROPERTIES:
+:ID:       a7c55607-ee51-4ee5-acc9-617403e75701
+:END:
++ Handle *partial observability* by tracking part of the world it cannot see.
++ Internal state depends on the percept history (its *best guess*)
+
+[[https://miro.medium.com/v2/resize:fit:720/format:webp/1*Tnl5lHVVxCPz4YN84si2jQ.png]]
+
+#+begin_src python
+  def agent_func(Percept, Curr_State, Last_Action):
+  Rules	= {"s0" : "a0", "s1" : "a3", ...}
+  New_State = update_state(Curr_State, Last_Action,
+  Percept, Model.                      Action = Rules[New_State]
+  return (Action, New_State)
+#+end_src
+
+*** Goal-based Agents
+:PROPERTIES:
+:ID:       1ef9e48d-6bc0-42fd-b376-8d00465d82c0
+:END:
+Knowing the environment is not *enough*, and needs a *goal*
+- Combines goal and environment information to achieve that goal
+[[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1705712126/ai/goal-based-agents_xjrase.png]]
+#+begin_src python
+  def agent_func(Percept, Curr_State, Last_Action):
+    New_State = update_state(Curr_State, Last_Action, Percept, Model)
+    for Act in Possible_Actions:
+      Possible_State = check_act(New_State, Act)
+      if (Possible_State == Goal_State):
+        return (Act, New_State)
+#+end_src
+
+*** Utility-based Agents
+:PROPERTIES:
+:ID:       33b22941-abe6-4640-be3e-6f27177219e9
+:END:
+Goal isn’t enough to generate high-quality behavior in some of the environments, and so some addition utility is required
+- This focuses on maximizing the goal by reducing costs
+
+The performance measure should allow a comparison of the different states based on how “happy” the agent would be at that stage. This is defined as utility by the computer scientists. The utility-based agents maintains a utility function, which the agents try to maximize based on the external performance measure.
+
+[[https://miro.medium.com/v2/resize:fit:720/format:webp/1*MPmd5UvttvHBuFFmGEMSPw.png]]
+
+Utility, similar to defining a goal, is not the only way to be rational (we can’t define the utility function for a vacuum cleaning agent) but, like the goal-based agent, utility-based agent is flexible and adaptable to changing environments. Furthermore, utility-based agents can make rational decisions even when the goal-based agents fail to do so — this could happen in two cases: 1) When there are conflicting goals (safety vs speed in taxi-driving situation). 2) When there are multiple goals where none of them could be achieved with certainty. In both the cases, the utility-based agent specifies the appropriate trade-off (if the goals are conflicting), or the appropriate likelihood of success (if the goals are co-operative).
+
+Utility-based agents fair well in partially observable environments, as it maximizes the expected utility to counteract the lack of observation. A reflex agent will also try to maximize the external performance measure based on the rules defined, but it doesn’t maintain an internal utility function to make up for the partial observability of the environment.
+
+*** Learning Agents
+:PROPERTIES:
+:ID:       67f47ca0-3955-41e4-8bae-00a82864c3f6
+:END:
+Currently, in many fields of AI, the idea of how to initiate the agent (make the agent come into being) is solved by the technique of building the learning models and then training them, as proposed by Alan Turing (the great) in 1950. Learning also allows the agent to operate in initially unknown environments and to become more competent than its initial knowledge alone might allow.
+[[https://miro.medium.com/v2/resize:fit:720/format:webp/1*a81je9FfLJxfmw20GhRbuw.png]]
+**** General Learning Agent
++ Learning Element 
+  - responsible for making improvements
++ Performance Element 
+  - responsible for selection actions
++ Critic 
+  - how well the agent is doing wrt performance standard
++ Problem Generator 
+  - allows the agent to explore
+    
+A learning agent can be divided into four conceptual components. The previously discussed agents comes under the performance element, which takes in percepts and returns actions. The learning element is responsible for modifying the behavior of the agent. It uses feedback from the critic on how the agent is doing and determines how the performance element should be modified to do better in the future.
+
+The problem generator is responsible for suggesting actions that will lead to new and informative experiences. The performance measure commands the agent to do the best action, given what it knows of the current situation. But if the agent is willing to explore a little and do some perhaps suboptimal actions in the short run, it might discover much better actions for the long run.
+
+The critic has to distinguish the performance standard from the percepts, and return a reward (or penalty) that provides a direct feedback on the performance of the agent. For example, Hard-wired performance standards such as pain and hunger in animals can be understood in this way.
+
+Learning in intelligent agents can be summarized as the modification of agent’s behavior based on the available feedback information to improve the overall performance of the agent.
+
+[[id:d080f04d-9123-40da-9a3d-53847db3829e][Container Allocation in Cloud Environment Using Multi-Agent Deep Reinforcement Learning]]
+
+* Reference List
+1. https://medium.com/kredo-ai-engineering/agents-and-environment-part-2-structure-of-agents-33a0e1a1c75
+2. https://medium.com/kredo-ai-engineering/agents-and-environment-part-1-the-nature-of-the-environment-4faaec5ec5ca
 

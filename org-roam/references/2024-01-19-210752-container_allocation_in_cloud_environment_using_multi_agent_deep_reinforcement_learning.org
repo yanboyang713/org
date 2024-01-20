@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       d080f04d-9123-40da-9a3d-53847db3829e
+:END:
+#+title: Container Allocation in Cloud Environment Using Multi-Agent Deep Reinforcement Learning
+
+[[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]]
+[[id:67f47ca0-3955-41e4-8bae-00a82864c3f6][Learning Agents]]
+
+* Reference List
+1. Danino, T., Ben-Shimol, Y., & Greenberg, S. (2023). Container Allocation in Cloud Environment Using Multi-Agent Deep Reinforcement Learning. Electronics, 12(12), 2614.

@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       a894b35d-c2b0-44c5-a07f-23886b833a7d
+:END:
+#+title: Pi-Star
+
+
+* Reference List
+1. https://www.pistar.uk/
+2. https://amateurradionotes.com/pi-star.htm

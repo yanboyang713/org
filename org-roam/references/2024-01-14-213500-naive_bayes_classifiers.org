@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       b133f5a2-d381-4baa-a9d4-1ee632501f7a
+:END:
+#+title: Naive Bayes Classifiers
+
+* Reference List
+1. https://www.geeksforgeeks.org/naive-bayes-classifiers/

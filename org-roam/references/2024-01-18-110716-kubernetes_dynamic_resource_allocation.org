@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       c8770e9a-a3d4-442f-a214-2ac5527573d1
+:END:
+#+title: kubernetes dynamic resource allocation
+
+[[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]]
+
+* Reference List
+1. Danino, T., Ben-Shimol, Y., & Greenberg, S. (2023). Container Allocation in Cloud Environment Using Multi-Agent Deep Reinforcement Learning. Electronics, 12(12), 2614.

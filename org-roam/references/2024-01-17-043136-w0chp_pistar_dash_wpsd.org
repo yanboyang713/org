@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       4b7b6f92-1183-4ea4-8ac1-94d098408eb7
+:END:
+#+title: W0CHP-PiStar-Dash (WPSD)
+
+a fork of [[id:a894b35d-c2b0-44c5-a07f-23886b833a7d][Pi-Star]] that is being very actively developed by Chip, W0CHP
+
+it has many significant changes and new features compared to the legacy Pi-Star image
+
+* Reference List
+1. https://w0chp.radio/wpsd/
