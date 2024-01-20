@@ -1,8 +1,8 @@
-:PROPERTIES:
+fPROPERTIES:
 :ID:       e21dd64b-ea43-46a7-b251-ebbad431e863
 :END:
 #+title: Murphy's law
 #+filetags:  
 
-"Anything that can go wrong will go wrong."
+Anything that can go wrong will go wrong."
 https://en.wikipedia.org/wiki/Murphy%27s_law
