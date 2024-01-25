@@ -1,13 +1,41 @@
 :PROPERTIES:
 :ID:       ffc59881-a09e-4120-8356-02400e86777f
 :END:
-#+title: Python with Rust
+#+title: Python with Rust(PyO3, maturin)
 #+filetags:  
 
-[[id:a2da1c32-ba1a-4c2c-9374-1bd8896920fa][rust]]
-[[id:80d07df5-6da1-4c77-800c-dceeefd47f98][python]]
+* Introduction
+[[id:a2da1c32-ba1a-4c2c-9374-1bd8896920fa][rust]] provides the speed, plus guarantees of memory safety, but requires that you learn a new paradigm for handling memory operations.
+[[id:80d07df5-6da1-4c77-800c-dceeefd47f98][python]], interpreted at runtime, offers developers a flexible and comfortable programming environment, but at the cost of raw speed.
 
-[[id:7d02ab4d-ba9f-401e-a82a-3743a9407664][Rust with Python]]
+In theory, these languages shouldn't compete; they should cooperate. And in practice, they can. Rust can benefit from Python's ease of use, and Python can benefit from Rust's speed and safety.
+
+* Calling Rust from Python with PyO3
+If Python is your primary language, integrating with Rust works in conceptually the same way as integrating Python with C. The default implementation of Python, written in C, uses extensions either written in C or using a C-compatible ABI. Extensions written in Rust that use the same ABI will also work, although that isn't automatic—you have to use crates designed to provide bindings for Rust functions to the Python C API.
+
+* Creating Rust bindings in Python
+The most widely recognized project for creating Rust bindings in Python is [[https://github.com/PyO3/pyo3][PyO3]]. It can be used to write Python modules in Rust, or to embed the Python runtime in a Rust binary.
+
+PyO3 leverages another project, Maturin, which is a tool for authoring Rust crates with Python packaging and bindings. When installed in a Python virtual environment, [[https://www.maturin.rs/][Maturin]] can be used from the command line to initialize a new Rust project with Python bindings enabled. The developer uses directives in the Rust code to indicate what Rust functions to expose to Python, and how to expose the whole of the Rust project to Python as an importable module.
+
+* Mapping Rust and Python types
+One of PyO3's useful aspects is its mappings between Rust and Python types. Functions written in Rust can accept either native Python types or Rust types converted from Python types. For instance, a bytearray or bytes object in Python maps elegantly to a Vec<u8> in Rust, and a str in Python can be rendered as a Rust String.
+
+More complex types, like a Python dictionary or an integer that is too big for a machine-native integer, also have Rust conversions, but some require optional components. For instance, if you want to use Python integers of arbitrary size, you'd install the num-bigint optional feature in PyO3, and have those integers expressed in Rust as num_bigint::BigInt or num_bigint::BigUint types.
+
+Converting from Python to Rust incurs a per-call cost, but it frees you from having to use Python types entirely in the Rust code. In the Cython world, this is akin to the conversions to C types: there's a cost for each conversion, but they bring major speedups if your goal is numerical processing entirely in C.
+
+* Performance tip
+An important caveat with PyO3 is to always minimize the number of times data is passed back and forth between the two languages. Each call from Python to Rust or vice versa incurs some overhead. If the overhead outweighs the work you're doing in Rust, you won't see any significant performance improvement.
+
+As an example, if you're looping over an object collection, send the object to Rust and perform the looping there. This is more efficient than looping on the Python side and calling the Rust code with each iteration of the loop.
+
+This guideline also applies generally to integrations between Python and other code that uses the Python C ABI, such as Cython modules.
+
+* Using Rust from Python
+PyO3 can be used to generate a native Python module. The easiest way to try this out for the first time is to use maturin. maturin is a tool for building and publishing Rust-based Python packages with minimal configuration. The following steps install maturin, use it to generate and build a new Python package, and then launch Python to import and execute a function from the package.
+
+https://github.com/PyO3/pyo3?tab=readme-ov-file#using-rust-from-python
 
 * Reference List
 1. https://www.infoworld.com/article/3664124/how-to-use-rust-with-python-and-python-with-rust.html

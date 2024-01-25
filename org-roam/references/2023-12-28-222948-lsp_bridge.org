@@ -48,7 +48,7 @@ If you are using straight to install, you should use the following configuration
 #+end_src
 
 * Configure
-acm-enable-copilot: Enable copilot support, firstly, purchase the Copilot service by https://github.com/features/copilot , when enable need install agent first
+acm-enable-copilot: Enable [[id:6248d05c-1e34-404a-8696-ba76ca245587][copilot]] support, firstly, purchase the Copilot service by https://github.com/features/copilot , when enable need install agent first
 
 *NOTE:* using [[id:1c5504b0-db54-4d4b-813f-6cb445752adf][nvm]] install node(npm)
 
