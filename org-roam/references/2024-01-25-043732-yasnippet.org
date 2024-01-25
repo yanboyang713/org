@@ -1,0 +1,17 @@
+:PROPERTIES:
+:ID:       ee6f2573-1c2d-4621-a507-21e81d144fa1
+:END:
+#+title: yasnippet
+* Intro
+YASnippet is a template system for Emacs. It allows you to type an abbreviation and automatically expand it into function templates. Bundled language templates include: C, C++, C#, Perl, Python, Ruby, SQL, LaTeX, HTML, CSS and more.
+
+* snippets
+YASnippet no longer bundles snippets directly, but it's very easy to get some!
+
+[[id:c3ca3f91-1388-4daf-b9ff-63b7949f565b][yasnippet-snippets]] - a snippet collection package maintained by AndreaCrotti.
+
+It can be installed with M-x package-install RET yasnippet-snippets if you have added MELPA to your package sources.
+
+* Reference List
+1. https://github.com/joaotavora/yasnippet
+2. https://jdhao.github.io/2021/10/06/yasnippet_setup_emacs/

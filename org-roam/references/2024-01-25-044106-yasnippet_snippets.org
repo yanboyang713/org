@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       c3ca3f91-1388-4daf-b9ff-63b7949f565b
+:END:
+#+title: yasnippet-snippets
+
+
+* Reference List
+1. https://github.com/AndreaCrotti/yasnippet-snippets

@@ -7,6 +7,7 @@
 Unmanned Aerial Vehicles (UAVs), also known as Autonomous Aerial Vehicles (AAVs), Remotely Operated Aerial Vehicles (RPVs), remotely piloted vehicles, unmanned aerial vehicles, and unmanned aerial vehicles are an essential part of the urban low-altitude network due to UAVs convenience and flexibility in executing a variety of missions compared to manned aircraft.
 
 [[id:615ae964-ad8c-46ff-b9dd-171b4838a549][positioning methods]]
+
 [[id:5c9f33ba-667e-4356-b82b-9e60d27a0c64][No Drone Zone Areas]]
 
 [[id:9dd3328f-e26e-4bc3-9ff2-974528b62e28][AR Glasses]]

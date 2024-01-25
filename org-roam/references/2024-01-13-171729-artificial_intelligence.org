@@ -218,6 +218,12 @@ if condition, then action
 
 [[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1705711592/ai/simple-reflex-2_ghm5b6.png]]
 
+Choose action based on current percept 
+
+Do not consider the future consequences of their actions
+
+Consider how the world IS
+
 #+begin_src python
 def agent_func(Percept):
 Rules	= {"p0" : "a0", "p1" : "a3", ...}
@@ -307,6 +313,112 @@ The critic has to distinguish the performance standard from the percepts, and re
 Learning in intelligent agents can be summarized as the modification of agent’s behavior based on the available feedback information to improve the overall performance of the agent.
 
 [[id:d080f04d-9123-40da-9a3d-53847db3829e][Container Allocation in Cloud Environment Using Multi-Agent Deep Reinforcement Learning]]
+
+* State Representations
+[[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1706088049/ai/Picture1_dtlumg.png]]
+
+* Problem-Solving Agents
+Planning Agents
++ Ask “what if”
++ Decisions based on (hypothesized) consequences of actions
++ Must have a model of how the world evolves in response to actions
++ Must formulate a goal (test)
+  
+Consider how the world WOULD BE
+
+Optimal vs complete planning
+
+Planning vs re-planning
+
+** Search Problems
+difficult problems require searching
+More than one alternative needs to be explored
+The number of alternatives can be very large / infinite
+
+*** Search space
+The set of objects which we search for a solution
+
+*** Goal condition
+The characteristics of the object we want to find in the search space
+*** Search
+1. The process of exploration of the search space
+2. Efficiency depends on
++ Search space and its size
++ Method used to explore/traverse
++ Condition to test the satisfaction of the goal
+3. Goal formulation
++ Limits the objectives the agent is trying to achieve
++ Context
++ Agent’s performance measure
+4. Problem formulation
+   An abstraction of the real world
++ State space
++ Initial State
++ Actions
++ Transition model (successor function)
++ Goal test
++ Path cost
+
+*** What’s in a State Space?
+The world state includes every last detail of the environment
+
+A search state keeps only the details needed for planning (abstraction)
+For example:
+Pacman Game
+#+begin_src file
+Problem: Pathing
+States: (x,y) location
+Actions: NSEW
+Successor: update location only
+Goal test: is (x,y)=END
+#+end_src
+
+#+begin_src file
+Problem: Eat-All-Dots
+States: {(x,y), dot booleans}
+Actions: NSEW
+Successor: update location and possibly a dot boolean
+Goal test: dots all false
+#+end_src
+*** State Space Sizes?
+World state:
++ Agent positions: 120
++ Food count: 30
++ Ghost positions: 12
++ Agent facing: NSEW
+  
+How many
++ World states?
+	120x(230)x(122)x4
++ States for pathing?
+	120
++ States for eat-all-dots?
+	120x(230)
+*** Example Problems
+Toy Problems
+
+8-queen problem
++ State space
++ Initial State
++ Actions
++ Transition model (successor function)
++ Goal test
++ Path cost
+  
+8-Queen
++ State space: Arrangement of the Queen’s on the board or a status of the board
++ Initial State: It could be anything. Particular arrangement of the Queen’s on the board
++ Actions: Placing one queen in a different place. Could move only one queen or all of queen
++ Transition model (successor function): updated the location of the queens
++ Goal test: Check whether the queen is attract with each other
++ Path cost: how many steps you’re moving your queen. About your performance goals or performance measures
+
+8 Puzzle
+
+
+** The N-Queen Problem
+Given N queens on an N×N board, position the queens so no queen can attack another.
+
 
 * Reference List
 1. https://medium.com/kredo-ai-engineering/agents-and-environment-part-2-structure-of-agents-33a0e1a1c75

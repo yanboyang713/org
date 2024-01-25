@@ -21,3 +21,37 @@ For more information about these matters, see the file named COPYING.
    #+begin_src bash
   paru -S python-epc python-orjson python-sexpdata python-six python-setuptools python-paramiko python-rapidfuzz
    #+end_src
+
+3. Install Elisp dependencies: markdown-mode, [[id:ee6f2573-1c2d-4621-a507-21e81d144fa1][yasnippet]]
+
+4. Download this repository using git clone, and replace the load-path path in the configuration below.
+
+5. Add the following code to your configuration file ~/.emacs:
+   #+begin_src emacs-lisp
+(add-to-list 'load-path "<path-to-lsp-bridge>")
+
+(require 'yasnippet)
+(yas-global-mode 1)
+
+(require 'lsp-bridge)
+(global-lsp-bridge-mode)
+
+   #+end_src
+If you are using straight to install, you should use the following configuration to install:
+#+begin_src emacs-lisp
+(use-package lsp-bridge
+  :straight '(lsp-bridge :type git :host github :repo "manateelazycat/lsp-bridge"
+            :files (:defaults "*.el" "*.py" "acm" "core" "langserver" "multiserver" "resources")
+            :build (:not compile))
+  :init
+  (global-lsp-bridge-mode))
+#+end_src
+
+* Configure
+acm-enable-copilot: Enable copilot support, firstly, purchase the Copilot service by https://github.com/features/copilot , when enable need install agent first
+
+*NOTE:* using [[id:1c5504b0-db54-4d4b-813f-6cb445752adf][nvm]] install node(npm)
+
+npm install -g copilot-node-server
+
+, then execute lsp-bridge-copilot-login, lsp-bridge will display User Code in the Minibuffer, copy the User Code to the opened Copilot page to complete the login.
