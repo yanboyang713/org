@@ -11,3 +11,12 @@ Flight controller also called Autopilot, or FC for short, stabilizes and control
 * Hardware
 + [[id:5f44d918-1e45-4819-a973-53a2eb7185ee][CUAV Pixhawk]]
 + [[id:81a307fc-3733-4a2d-9b2e-fac47bad99f2][Cubepilot]]
+
+  LEFEI SN-L+
+  https://www.aliexpress.us/item/3256806186926961.html?src=google&src=google&albch=shopping&acnt=708-803-3821&slnk=&plac=&mtctp=&albbt=Google_7_shopping&albagn=888888&isSmbAutoCall=false&needSmbHouyi=false&albcp=19108282527&albag=&trgt=&crea=en3256806186926961&netw=x&device=c&albpg=&albpd=en3256806186926961&gad_source=4&gclid=Cj0KCQiAqsitBhDlARIsAGMR1Rh7SbafHDi1ohCT7g9utdIycoMJAGz1hUUsux1IfcJwb2B_TmUAyTQaAqNkEALw_wcB&gclsrc=aw.ds&aff_fcid=24d9584897e045eea080aa8f3075fe57-1706200396515-08356-UneMJZVf&aff_fsk=UneMJZVf&aff_platform=aaf&sk=UneMJZVf&aff_trace_key=24d9584897e045eea080aa8f3075fe57-1706200396515-08356-UneMJZVf&terminal_id=aebb846c0cd44cde9a49f1435240e9bd&afSmartRedirect=y&gatewayAdapt=glo2usa
+
+  https://github.com/HelloLeFei/SN_L/tree/master
+
+
+MyFlyDream MFD Crosshair
+https://myflydream.com/flight-controllers-c-5/crosshair-autopilot-p-2

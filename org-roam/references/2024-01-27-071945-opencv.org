@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       f702f9df-d820-4e5b-8d78-d8dafed7a97f
+:END:
+#+title: openCV
+

@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       e18a0bcc-0fc8-47c5-8a08-70d4bc3f0564
+:END:
+#+title: UAV fixed wing
+
+[[id:99ad3062-59b9-490c-bbd6-a27cf4448aad][UAV]]
+
++ [[id:c92254af-1e20-478d-8678-62c9362c7568][skywalker 1800MM]]

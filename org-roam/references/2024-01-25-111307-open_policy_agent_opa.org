@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       54b000e4-1557-48aa-97f0-f0139ab293df
+:END:
+#+title: Open Policy Agent (OPA)
+
+https://github.com/open-policy-agent/opa

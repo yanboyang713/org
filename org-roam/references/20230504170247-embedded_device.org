@@ -4,7 +4,16 @@
 #+title: Edge device
 #+filetags:  
 
+* [[id:f67a83ed-53e2-4e33-bbd4-9bf528bf9e42][GPU]] 
 + [[id:8e39a1a1-ae75-45b1-a59d-1b52adb8a21d][Jetson]]
+  
 + [[id:84c34a37-5e53-403f-97bf-da4fb34c6784][ESP32]]
-+ [[id:2d0fe0c8-6612-4dea-a224-e4ddb3697003][RasPi]]
++ [[id:2d0fe0c8-6612-4dea-a224-e4ddb3697003][Raspberry Pi]]
++ [[id:29fb0ade-395e-416d-a834-6b137896e9a7][Radxa]]
++ [[id:e14319eb-b98e-459c-8509-9911e399665f][RISC-V]]
++ [[id:afa458e0-d808-4eb3-81fe-bd3af6e44866][MangoPi]]
++ [[id:5dc983df-ab7c-47e4-a87f-94cfab54ec86][OrangePi]] 
 + [[id:ab024519-7f4d-410e-b270-04809fc3f78d][UAV Flight Controller]]
+
+* Reference List
+1. https://bret.dk/pi-zero-showdown/

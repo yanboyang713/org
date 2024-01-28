@@ -1,5 +1,5 @@
 :PROPERTIES:
 :ID:       2d0fe0c8-6612-4dea-a224-e4ddb3697003
 :END:
-#+title: RasPi
+#+title: Raspberry Pi
 #+filetags:

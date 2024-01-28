@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       afa458e0-d808-4eb3-81fe-bd3af6e44866
+:END:
+#+title: MangoPi
+

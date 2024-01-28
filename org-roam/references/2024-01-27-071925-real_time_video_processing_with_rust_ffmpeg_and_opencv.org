@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       a0cdb8b8-284a-410d-a1e0-a28e75962c83
+:END:
+#+title: Real-time video processing with Rust, FFmpeg and OpenCV
+
+[[id:d26a926d-9af4-47e2-a0b4-71d3b9299f68][ffmpeg]]
+[[id:f702f9df-d820-4e5b-8d78-d8dafed7a97f][openCV]]
+[[id:a2da1c32-ba1a-4c2c-9374-1bd8896920fa][rust]]
+
+* Reference List
+1. https://subvisual.com/blog/posts/real-time-video-processing-with-rust-ffmpeg-opencv/

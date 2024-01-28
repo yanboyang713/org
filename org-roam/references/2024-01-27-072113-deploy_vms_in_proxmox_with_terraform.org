@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       cddc3d76-e900-42e7-9dbc-01adfff7689d
+:END:
+#+title: deploy VMs in Proxmox with Terraform
+
+[[id:77bd7428-f1ee-4306-8d5a-62f38134dfc5][Proxmox VE]]
+
+[[id:492f1743-53d6-4726-be27-ce2c0fe9468e][terraform]]
+
+* Reference List
+1. https://austinsnerdythings.com/2021/09/01/how-to-deploy-vms-in-proxmox-with-terraform/
