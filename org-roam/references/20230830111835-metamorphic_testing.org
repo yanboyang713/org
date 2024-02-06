@@ -5,30 +5,11 @@
 #+filetags:
 
 * Cloud
-TEA-Cloud: A Formal Framework for Testing Cloud Computing Systems
-2021
-https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9165965
-Proposes a framework that integrates simulation with testing methods for validating both functional and nonfunctional aspects of cloud systems, utilizing metamorphic testing to overcome the lack of an oracle for result verification. This framework, TEA-Cloud, was evaluated through empirical studies using fault seeding and metamorphic relations (MRs) for different cloud configurations, demonstrating its potential in finding all seeded faults
-
-CloudSim-Plus
-
-MT-EA4Cloud: A Methodology For Testing and Optimising Energy-Aware Cloud Systems
-2020
-https://www.sciencedirect.com/science/article/pii/S0164121220300054
-Presents a formal approach combining metamorphic testing, evolutionary algorithms, and simulation to check the correctness of cloud systems from an energy-aware perspective and optimize their energy consumption. This methodology uses metamorphic testing to model the underlying cloud infrastructure in the form of metamorphic relations and addresses the oracle problem by generating appropriate test suites focused on the features reflected in the metamorphic relations
-
-METAMORPHIC TESTING-AS-A-SERVICE: A NEW DESIGN PATTERN OF CLOUD SERVERLESS SYSTEMS FOR METAMORPHIC TESTING
-2022
-Discusses the development of a new MTaaS design pattern for cloud serverless systems to improve the software code quality metrics. This pattern facilitates metamorphic testing in the cloud by decomposing metamorphic relations into individual parts with automatic code generation, thereby improving the maintainability and class coupling metrics without worsening other metrics
-http://journals.khnu.km.ua/vestnik/wp-content/uploads/2022/04/vknu-ts-2022-n1-305-107-115.pdf
-
-A methodology for validating cloud models using metamorphic testing
-2015
-https://link.springer.com/article/10.1007/s12243-014-0442-7
-Proposes a methodology to test and validate cloud models by integrating simulation techniques and metamorphic testing. This approach addresses the challenges of testing cloud systems due to the many parameters and the difficulty in determining correct behavior. Metamorphic relations are used to semi-automatically generate and validate test cases for cloud models
++ [[id:156a5e12-2240-43ab-bed3-4923daffdb19][TEA-Cloud: A Formal Framework for Testing Cloud Computing Systems]]
++ [[id:bf2e6fd4-23b4-47b0-b8c6-464783e1eac1][MT-EA4Cloud: A Methodology For Testing and Optimising Energy-Aware Cloud Systems]]
++ [[id:1eb61819-2649-45a3-ae82-76d651bd9c51][METAMORPHIC TESTING-AS-A-SERVICE: A NEW DESIGN PATTERN OF CLOUD SERVERLESS SYSTEMS FOR METAMORPHIC TESTING]]
++ [[id:449479e0-4d20-4759-8cbe-03f96324bf93][A methodology for validating cloud models using metamorphic testing]] 
 
 * Networking
-Statistical Metamorphic Testing of Neural Network Based Intrusion Detection Systems
-2021
-https://www.cs.montana.edu/izurieta/pubs/IEEE_CSR_2021.pdf
-This paper proposes a statistical metamorphic testing technique to test neural network-based Network Intrusion Detection Systems (N-IDSs) in nondeterministic environments. The approach addresses the stochastic nature of these applications where multiple runs with the same input can produce slightly different results. The method demonstrated strong defect detection capabilities, effectively identifying implementation bugs in two neural network-based N-IDSs and a cancer prediction system
++ [[id:9bd33054-00db-4dd6-9382-c7f19fa432c9][Statistical Metamorphic Testing of Neural Network Based Intrusion Detection Systems]]
++ [[id:5d60e325-1c02-45fe-9596-b7a423debd1f][MT4NS: Metamorphic Testing for Network Scanning]]
