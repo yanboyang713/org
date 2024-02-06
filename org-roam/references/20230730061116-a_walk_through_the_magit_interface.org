@@ -9,7 +9,10 @@
 git clone git@github.com:yanboyang713/personalblog.git
 #+end_src
 
-* add upstream repository
+* Add upstream repository
+:PROPERTIES:
+:ID:       f01e0f3f-fb45-4de0-9b45-da3cee7dc1a4
+:END:
 1. Open Emacs and use Magit to navigate to your local repository.
    You can open Magit status by typing:
    #+begin_src bash
@@ -23,9 +26,12 @@ git clone git@github.com:yanboyang713/personalblog.git
 7. Set 'remote.pushDefault' to "upsream"? (y or n): I choice n
 8. Finally, press RET (return/enter) to add the remote.
 
-* merge upstream repository
+* Merge upstream repository
+:PROPERTIES:
+:ID:       3c4ea884-caf0-49e2-9ee5-262e53297d52
+:END:
 Ensure Upstream is Added
-Before merging, ensure that the upstream repository is added as a remote, as explained in the previous message. If it's not, add it using Magit as described earlier.
+Before merging, ensure that the upstream repository is added as a remote, as explained in the previous [[id:f01e0f3f-fb45-4de0-9b45-da3cee7dc1a4][Add upstream repository]]. If it's not, add it using Magit as described earlier.
 
 ** Fetching Upstream Changes
 Open your repository's magit-status by typing M-x magit-status and navigating to your repository if needed.
@@ -65,6 +71,7 @@ You'll be prompted to specify the branch to merge into the current branch. To me
 
 If there have been updates in the upstream repository that you fetched, this will merge them into your local branch.
 
+** Merge Conflicts
 If there are merge conflicts, Magit will notify you, and you’ll need to resolve these conflicts before completing the merge.
 
 Press e on a file in the "Unmerged" section to open the ediff merging tool, or RET to open it in the regular buffer.

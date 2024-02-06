@@ -9,3 +9,4 @@
 
 * Reference List
 1. https://www.orgroam.com/manual.html
+2. https://honnef.co/articles/my-org-roam-workflows-for-taking-notes-and-writing-articles/

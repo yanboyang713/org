@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       cdef4572-0bfb-439a-8392-0fc8de6514fc
+:END:
+#+title: Denial of Service (DDoS) eBPF guard
+
+[[id:a4bb00d1-e7a7-437e-8ca6-9664a28f838a][Denial of Service (DDoS)]]
+[[id:bf5b14f3-8e4c-4706-aea0-102268c418d3][eBPF]]
+
+* Reference List
+1. https://douglasmakey.medium.com/in-my-last-article-we-embarked-on-an-xdp-adventure-creating-a-basic-firewall-that-filtered-ssh-37e9baa7078c

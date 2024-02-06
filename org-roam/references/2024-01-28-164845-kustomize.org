@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       78d82248-9bc3-420b-82b1-3d83f829e809
+:END:
+#+title: kustomize
+

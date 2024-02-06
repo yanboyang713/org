@@ -4,9 +4,13 @@
 #+title: Setting up Static IP address on Ubuntu Server
 #+filetags:  
 
-[[id:c4fd67f4-f52c-4e9c-a564-ba3a482d4c25][IP addresses]]
-[[id:803d821b-6f7d-4e07-9a1f-08c9736c7dec][ubuntu]]
+* Pre-required
++ [[id:c4fd67f4-f52c-4e9c-a564-ba3a482d4c25][IP addresses]]
++ [[id:803d821b-6f7d-4e07-9a1f-08c9736c7dec][ubuntu]]
 
+* Alternative method
++ [[id:ade0a7ca-50e2-4b07-8be5-b1841cc1bedf][Set a static IP address based on nmcli]]
+  
 * Setting up Static IP address on Ubuntu Server
 Login to your Ubuntu server 22.04, look for the netplan configuration file. It is located under /etc/netplan directory.
 #+begin_src console

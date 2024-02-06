@@ -19,6 +19,9 @@ https://help.mikrotik.com/docs/display/ROS/First+Time+Configuration#FirstTimeCon
 
 
 IP/[[id:7bab7928-237d-4784-a42f-b85ef6874b9b][DNS]]
+[[id:aac33da1-41f1-491f-9cfa-bad9a695b153][PoE-Out]]
+[[id:f208d569-b287-413a-b54b-fa7bd627d2cc][routeros reset]]
+[[id:cff18499-6583-4eb7-bf83-b35e8c4f714b][AP Controller (CAPsMAN)]]
 
 * Reference List
 1. https://wiki.mikrotik.com/wiki/Manual:IP/DNS

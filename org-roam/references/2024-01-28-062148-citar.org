@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       09824cf8-f2d3-4478-83eb-545b4ee38578
+:END:
+#+title: citar
+
+[[id:6314a4a8-8a04-492c-8a4b-de9e4ff8df00][org roam]]
+
+* Reference List
+1. https://www.riccardopinosio.com/blog/posts/zotero_notes_article.html

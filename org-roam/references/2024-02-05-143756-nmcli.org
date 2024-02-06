@@ -1,0 +1,55 @@
+:PROPERTIES:
+:ID:       cb489e71-02c4-40e3-ac26-48f07d466e2e
+:END:
+#+title: nmcli
+
+* Pre-requires
++ [[id:c4fd67f4-f52c-4e9c-a564-ba3a482d4c25][IP addresses]]
+  
+* List available connections
+:PROPERTIES:
+:ID:       095acf42-5c69-4c96-8b30-3bda32e18d83
+:END:
+#+begin_src bash
+nmcli con show
+#+end_src
+
+* Show details of a specific connection
+:PROPERTIES:
+:ID:       bab175cd-c37b-43cc-8c95-5e52d025136f
+:END:
+To show details by connection name, use:
+#+begin_src bash
+nmcli con show "connection-name"
+#+end_src
+To show details by UUID, use:
+#+begin_src bash
+nmcli con show uuid "connection-uuid"
+#+end_src
+
+* Remove the connection
+:PROPERTIES:
+:ID:       294cc7df-6e8f-4d6c-9e85-96ba930681be
+:END:
+specifying its name or UUID. You can remove a connection using either its name or UUID. Here's how to remove a connection by its name:
+#+begin_src bash
+nmcli con delete "connection-name"
+#+end_src
+
+If you prefer to use the UUID, the command is similar:
+#+begin_src bash
+nmcli con delete uuid "connection-uuid"
+#+end_src
+
+* Set a static IP address
+:PROPERTIES:
+:ID:       ade0a7ca-50e2-4b07-8be5-b1841cc1bedf
+:END:
+specific connection (replace placeholders with your actual data):
+#+begin_src bash
+nmcli con mod "connection-name" ipv4.addresses "192.168.1.10/24" ipv4.gateway "192.168.1.1" ipv4.dns "8.8.8.8,8.8.4.4" ipv4.method manual
+#+end_src
+Restart the network connection to apply the changes:
+#+begin_src bash
+nmcli con down "connection-name" && nmcli con up "connection-name"
+#+end_src

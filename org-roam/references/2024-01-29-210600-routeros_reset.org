@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       f208d569-b287-413a-b54b-fa7bd627d2cc
+:END:
+#+title: routeros reset
+
+https://help.mikrotik.com/docs/display/ROS/Reset+Button

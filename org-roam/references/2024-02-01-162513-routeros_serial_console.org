@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       677f49bc-1e85-4c05-9eac-cce1c68d202d
+:END:
+#+title: RouterOS Serial Console
+
+* Pre-required
++ [[id:c2d2bf9b-7c0e-499e-8606-ae85e8506cf0][RouterOS]]
++ [[id:a9f16acd-db03-44db-a2d1-261370ddde63][Connect to Serial Consoles]]
+
+* Settings
+Default settings of the router's serial port are 115200 bits/s (for x86 default is 9600 bits/s), 8 data bits, 1 stop bit, no parity, hardware (RTS/CTS) flow control.
+
+* Reference List
+1. https://help.mikrotik.com/docs/display/ROS/Serial+Console
