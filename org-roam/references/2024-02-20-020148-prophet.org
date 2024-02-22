@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       f52ff303-8c32-4adc-97c1-a1c56eadb461
+:END:
+#+title: Prophet
+
+Prophet is a forecasting procedure developed by Facebook's Core Data Science team. It is invented for [[id:b2377ddc-9d91-4c8e-a4d8-21fabf961ee8][Time Series]] data based on an additive model that can fit non-linear trends with yearly seasonality, weekly seasonality, and even daily seasonality, together with holiday effects.
+
+* Reference List
+1. https://machinelearningmastery.com/time-series-forecasting-with-prophet-in-python/
+2. https://facebook.github.io/prophet/
+3. Application of facebook's prophet algorithm for successful sales forecasting based on real-world data
+   

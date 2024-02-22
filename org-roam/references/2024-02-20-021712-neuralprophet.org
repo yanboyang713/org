@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       32d21d2e-4e59-4115-aa25-d2d5cf39c4ef
+:END:
+#+title: NeuralProphet
+
+NeuralProphet is an extension and improvement of the original [[id:f52ff303-8c32-4adc-97c1-a1c56eadb461][Prophet]] forecasting tool. While Prophet was designed for forecasting time series data with an emphasis on simplicity and interpretability, NeuralProphet builds on this foundation by incorporating more advanced features from machine learning and deep learning. NeuralProphet aims to address some of Prophet's limitations by introducing a neural network-based approach to forecasting. It is implemented in Python and utilizes PyTorch, a popular deep-learning framework, to model time series data. It allows for more complex modeling capabilities.
+
+* Reference List
+1. Neuralprophet: Explainable forecasting at scale
+2. https://github.com/ourownstory/neural_prophet
+   

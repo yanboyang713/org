@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       864a0ff4-a626-455e-b247-7d62fa10a263
+:END:
+#+title: A kubernetes Dataset For Misuse Detection
+
+* Reference List
+1. Sever, Y., & Dogan, A. H. (2023). A Kubernetes dataset for misuse detection.
+2. https://github.com/yigitsever/kubernetes-dataset.git

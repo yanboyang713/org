@@ -16,3 +16,6 @@
 
 * Performance
 + [[id:42fb3097-bcd7-4411-9031-3abf2ebb00a7][Metamorphic Relations for Detection of Performance Anomalies]] 
+
+* Automatically Discovered (Automatic Discovery)
+

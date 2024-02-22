@@ -419,6 +419,11 @@ Toy Problems
 ** The N-Queen Problem
 Given N queens on an N×N board, position the queens so no queen can attack another.
 
+* midtern 1
+https://www.coursehero.com/sitemap/schools/1714-North-Carolina-State-University/courses/367271-CSC520/
+https://www.coursehero.com/file/190939216/midterm1-2pdf/
+https://www.coursehero.com/file/190939034/midterm1pdf/
+https://www.coursehero.com/file/190938913/midterm1-20181217210415pdf/
 
 * Reference List
 1. https://medium.com/kredo-ai-engineering/agents-and-environment-part-2-structure-of-agents-33a0e1a1c75

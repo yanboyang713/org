@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       163c12c6-26fe-4fc1-bcc3-68177f9a1778
+:END:
+#+title: Awesome CV
+
+
+* Reference List
+1. https://github.com/posquit0/Awesome-CV
+   
