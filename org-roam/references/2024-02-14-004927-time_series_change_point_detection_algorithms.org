@@ -1,5 +1,0 @@
-:PROPERTIES:
-:ID:       2007f976-127a-411c-ba8d-870f6d029d2d
-:END:
-#+title: time-series change point detection algorithms
-

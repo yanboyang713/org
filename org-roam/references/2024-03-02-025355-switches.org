@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       cb271be1-fb60-4806-b8dd-3874d16c0528
+:END:
+#+title: switches
+
++ [[id:40ef7d31-a235-44de-a575-20b1d1e4cb62][P4 Programmable Switches]]
++ [[id:4cc4b314-1fd9-44e7-a320-91816bbf8425][Open vSwitch (OVS)]]

@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       632ab9ee-b7d2-4504-97e2-25009469c495
+:END:
+#+title: time series forecasting
+
+[[id:b2377ddc-9d91-4c8e-a4d8-21fabf961ee8][Time Series]]
+
+* Methods
++ [[id:32d21d2e-4e59-4115-aa25-d2d5cf39c4ef][NeuralProphet]]
++ [[id:f52ff303-8c32-4adc-97c1-a1c56eadb461][Prophet]]
++ [[id:b5f627fa-6b5d-4854-a017-858fc050005b][ARMA]] 
+  

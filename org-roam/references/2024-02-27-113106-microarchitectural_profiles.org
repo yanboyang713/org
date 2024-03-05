@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       e7fa3916-5c51-4c93-920e-2ca4fa520507
+:END:
+#+title: microarchitectural profiles
+
+[[id:10682b04-b1f4-4200-a3a6-23a5d82c2795][microservices]]
+
