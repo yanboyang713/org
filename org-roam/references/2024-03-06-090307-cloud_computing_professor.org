@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       e6147580-433a-464c-b742-7c7ffe6d6747
+:END:
+#+title: cloud computing professor
+
+[[id:1aa632ef-587c-4d13-9b30-92a1c258dd5f][cloud computing]]
+
++ [[id:513ece01-0886-4a9f-a155-ad0116986c4c][Christos Kozyrakis]]
++ [[id:21d6f11b-6b31-4c07-8dbe-651c259608a9][Haiying Shen]]
++ [[id:41e18f40-728e-47e0-96f5-b672a7fa1f60][Christina Delimitrou]] 
