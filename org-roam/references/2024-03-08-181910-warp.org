@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       0de034f2-53b7-4756-851e-d8176564ee71
+:END:
+#+title: warp
+
+* Installation
+** [[https://docs.warp.dev/getting-started/getting-started-with-warp#installing-and-running-warp][Arch Linux-based distributions]]
+
+* Reference List
+1. https://www.warp.dev/
