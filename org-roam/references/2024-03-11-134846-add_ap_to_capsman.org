@@ -1,0 +1,19 @@
+:PROPERTIES:
+:ID:       fc8a2d63-e0db-46d9-92e3-63f50c9a08de
+:END:
+#+title: add AP to CAPsMAN
+
+* Enable CAPsMAN
+Wireless -> Remote CAP -> CAPsMAN -> enabled -> apply
+* [[id:aac33da1-41f1-491f-9cfa-bad9a695b153][RouterOS power on PoE-Out]]
+* [[id:f208d569-b287-413a-b54b-fa7bd627d2cc][routeros reset]]
+make sure AP Enabling CAPs mode
+* add Security profile
+Wireless -> Security
+
+* provisioning
+Wireless -> Remote CAP -> choice device -> Provision
+
+* Reference List
+1. https://mikrotikusers.com/controlling-access-points-with-capsman/
+2. https://systemzone.net/mikrotik-capsman-and-cap-basic-configuration-using-winbox/

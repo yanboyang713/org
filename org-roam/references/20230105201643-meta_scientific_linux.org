@@ -54,6 +54,8 @@ Script to install Archlinux with full disk encryption
 
 * [[id:34fcc5f4-b189-4890-9934-9c780cf42578][Zotero]]
 
+* [[id:505fbe5a-c138-4c13-8ba9-ed80bd95d57d][Network Printer]]
+
 * Common Software
 + wget
 + [[id:cdbec007-4441-4fb3-8e39-f9c841990aef][zoom]]

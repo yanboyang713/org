@@ -6,7 +6,7 @@
 
 [[id:7b3d4c7a-30a8-4f0f-a587-fdbb39109e57][mikrotik]]
 
-* Mikrotik RouterOS GUI Configurator
+* Mikrotik RouterOS GUI Configurator :winbox:
 ** [[id:dc13b67c-8d8b-40fd-b8cf-9ea8547e485d][Arch Linux]] 
 #+begin_src bash
 paru -S winbox wine-wow64-for-wechat
@@ -15,13 +15,18 @@ paru -S winbox wine-wow64-for-wechat
 https://snapcraft.io/install/winbox/ubuntu
 
 * First Time Configuration
-https://help.mikrotik.com/docs/display/ROS/First+Time+Configuration#FirstTimeConfiguration-RouterOS7.13+wirelesssetup
+[[id:677f49bc-1e85-4c05-9eac-cce1c68d202d][RouterOS Serial Console]]
 
+https://help.mikrotik.com/docs/display/ROS/First+Time+Configuration#FirstTimeConfiguration-RouterOS7.13+wirelesssetup
 
 IP/[[id:7bab7928-237d-4784-a42f-b85ef6874b9b][DNS]]
 [[id:aac33da1-41f1-491f-9cfa-bad9a695b153][PoE-Out]]
 [[id:f208d569-b287-413a-b54b-fa7bd627d2cc][routeros reset]]
 [[id:cff18499-6583-4eb7-bf83-b35e8c4f714b][AP Controller (CAPsMAN)]]
+[[id:8efd5679-019f-4008-8803-1f0123b3689b][vlan]]
+
+* Wifi setup
+[[id:fc8a2d63-e0db-46d9-92e3-63f50c9a08de][add AP to CAPsMAN]]
 
 * Reference List
 1. https://wiki.mikrotik.com/wiki/Manual:IP/DNS

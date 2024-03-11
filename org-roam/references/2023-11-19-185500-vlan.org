@@ -3,8 +3,6 @@
 :END:
 #+title: vlan
 
-[[id:7b3d4c7a-30a8-4f0f-a587-fdbb39109e57][mikrotik]]
-
 * Reference List
 1. https://www.udemy.com/course/vlan-on-mikrotik-with-labs-routeros-swos/
 2. https://major.io/p/mikrotik-vlan/

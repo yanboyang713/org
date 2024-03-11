@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       505fbe5a-c138-4c13-8ba9-ed80bd95d57d
+:END:
+#+title: Network Printer
+
+
+* Reference List
+1. https://kb.adamsdesk.com/operating_system/arch_linux_install_network_printer/
+   

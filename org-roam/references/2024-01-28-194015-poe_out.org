@@ -1,7 +1,9 @@
 :PROPERTIES:
 :ID:       aac33da1-41f1-491f-9cfa-bad9a695b153
 :END:
-#+title: PoE-Out
+#+title: RouterOS power on PoE-Out
+
+[[id:c2d2bf9b-7c0e-499e-8606-ae85e8506cf0][RouterOS]]
 
 * PoE-Out Modes
 Some model does NOT support auto-on mode
@@ -20,6 +22,9 @@ When power is applied, PSE still continuously checks if an overload or short cir
 After the cable is unplugged, the power still remains enabled on the port.
 ** off mode
 If off mode is used, PoE-Out on the port will be turned off, no detection will take place, and the interface will behave like a simple Ethernet port.
+
+* Steps settings
+Interfaces -> Interface -> choice interface -> PoE
 
 * Reference List
 1. https://help.mikrotik.com/docs/display/ROS/PoE-Out
