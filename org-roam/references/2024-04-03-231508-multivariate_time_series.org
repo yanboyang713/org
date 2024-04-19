@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       e9a34320-104e-41a8-b82e-d5df0f4f0596
+:END:
+#+title: Multivariate Time Series
+
+[[id:19356e91-81f2-4293-8380-dcc0a390ad10][Multivariate Analysis]]
+[[id:b2377ddc-9d91-4c8e-a4d8-21fabf961ee8][Time Series]]
+
+[[id:b9e2ceb1-4eec-4b38-97d0-6bf65203f7c4][Vector Auto Regression (VAR)]]
+[[id:844738f8-b853-42e9-a5f3-8bdcf009caf1][Large Bayesian vector auto regressions]]

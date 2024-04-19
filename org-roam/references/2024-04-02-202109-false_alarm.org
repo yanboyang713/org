@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       daacfcb3-b982-4193-9491-ac4efb5dffea
+:END:
+#+title: false alarm
+
+\item {\bf false alarm} = $\frac{FP}{FP + TN}$, which is the ratio of the number of wrong prediction of negative classes and the number of actual negative classes.

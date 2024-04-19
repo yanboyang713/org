@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       844738f8-b853-42e9-a5f3-8bdcf009caf1
+:END:
+#+title: Large Bayesian vector auto regressions
+
+* Reference List
+1. 

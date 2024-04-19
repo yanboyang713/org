@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       2eef10e7-06a8-43a9-8909-110ea468903d
+:END:
+#+title: G-score
+
+\item {\bf G-score} is the harmonic mean of recall and the complement of false alarm and is calculated using \text{G\_score} = 2 * \text{recall} * (1 - \text{fpr}) / (\text{recall} + 1 - \text{fpr}).

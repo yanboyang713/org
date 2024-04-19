@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       de2fcdc2-42a5-46f4-8167-9bf929fe6444
+:END:
+#+title: GPU Profiling with BPF
+
+[[id:f67a83ed-53e2-4e33-bbd4-9bf528bf9e42][GPU]]
+[[id:bf5b14f3-8e4c-4706-aea0-102268c418d3][eBPF]]
+
+* Reference List
+1. https://www.youtube.com/watch?v=5xAghByteYc

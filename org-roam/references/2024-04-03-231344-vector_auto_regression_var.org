@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       b9e2ceb1-4eec-4b38-97d0-6bf65203f7c4
+:END:
+#+title: Vector Auto Regression (VAR)
+
+* Reference List
+1. https://www.analyticsvidhya.com/blog/2018/09/multivariate-time-series-guide-forecasting-modeling-python-codes/
+   
