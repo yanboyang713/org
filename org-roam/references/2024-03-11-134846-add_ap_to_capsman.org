@@ -3,16 +3,69 @@
 :END:
 #+title: add AP to CAPsMAN
 
+CAPsMAN stands for Controlled Access Point System Manager. It is a feature in MikroTik RouterOS that allows you to centralize the management and configuration of multiple MikroTik wireless access points (APs) from a single point, known as the CAPsMAN controller.
+
+With CAPsMAN, you can configure and manage wireless networks more efficiently, especially in scenarios where you have multiple access points spread across an area. The CAPsMAN controller can handle tasks such as channel assignment, transmit power control, security settings, and more for all connected access points. This centralized approach simplifies the deployment and maintenance of wireless networks.
+
+Here's a brief overview of how CAPsMAN works:
+1. CAPsMAN Controller: This is the central point that manages and controls one or more CAPs (Controlled Access Points). The controller is typically a MikroTik router or access point.
+2. CAPs (Controlled Access Points): These are the wireless devices that are managed by the CAPsMAN controller. Each CAP connects to the controller, and the controller takes care of configuring and controlling the settings of each CAP.
+3. Centralized Configuration: Instead of configuring each individual access point separately, you can define configurations on the CAPsMAN controller, and it will push these settings to the connected CAPs.
+4. Simplified Management: CAPsMAN provides a centralized point for monitoring and managing the entire wireless network. Changes to configurations, such as adding a new SSID or updating security settings, can be done on the CAPsMAN controller and applied to all connected CAPs simultaneously.
+   
+This setup is particularly useful in scenarios like large office buildings, hotels, or public spaces where multiple access points are needed for adequate coverage. Instead of manually configuring each access point, administrators can use CAPsMAN to streamline the management process.
+
 * Enable CAPsMAN
-Wireless -> Remote CAP -> CAPsMAN -> enabled -> apply
-* [[id:aac33da1-41f1-491f-9cfa-bad9a695b153][RouterOS power on PoE-Out]]
-* [[id:f208d569-b287-413a-b54b-fa7bd627d2cc][routeros reset]]
-make sure AP Enabling CAPs mode
+WiFi -> Remote CAP -> CAPsMAN -> enabled -> apply
+
+* AP [[id:f208d569-b287-413a-b54b-fa7bd627d2cc][routeros reset]]
+make sure AP Enabling CAPs mode.
+
+** Enabling CAPs mode
+To connect this device to a wireless network managed by CAPsMAN, keep holding the button for 5 more seconds, LED turns solid, release now to turn on CAPs mode. It is also possible to enable CAPs mode via the command line, to do so run the command "/system reset-configuration caps-mode=yes";
+
 * add Security profile
 Wireless -> Security
 
+Before we can create our CAPs Configuration file, we will need to create additional configurations for security, and data paths. This way, when we set up the configuration file, we simply just point to those configurations as part of the setup. (It is possible to create a configuration by including these settings directly in the configuration file itself but doing it this way allows us to re-use these settings should we decide to create additional configuration files in the future. It's a glass half-full vs glass half-empty argument. Do it whichever way you choose.)
+
+First, we are going to configure security. This is the equivalent of setting the password on your SSID. To do so, from the CAPsMAN Configuration window, select Security Cfg. and hit the + to create a new security configuration.
+
+Set the Name, Authentication Type, Encryption, and the Passphrase, and hit OK when complete to save the security configuration.
+
+* setup a datapath
+Next we are going to setup a datapath. This specifies what bridge and/or vlan the CAP will attach to. Under the CAPsMAN menu click Datapaths and hit the + button to create a new configuration. Set the Name, and the bridge to attach to, and hit OK when complete to save the security configuration.
+
+* create a new configuration file
+We are going to create a new configuration file. To do so, go into Configurations and hit the + button to create a new configuration. Please note that you will need a separate configuration for 2GHz vs 5GHz if you choose to specify the channel settings.
+
+On the CAPs Configuration Wireless tab, enter the following:
+Mode: Set mode to ap as shown
+SSID: Enter your Wireless SSID, in our case CAPsTEST and we specify our country
+
+On the Datapath page, under Datapath, select the datapath that we just created.
+
+On the CAPsMAN Security page, specify the Security configuration that we created earlier.
+
+Once all these have been completed, click OK to create the configuration.
+
 * provisioning
+Now we need to provision the configuration files. Provisioning allows us to determine which configuration files get assigned to which CAPs.
+
+To do so we are going to open the provisioning tab and hit the + to create a new provision file.
+
+For this example, we are going to simply assign the configuration files to any device that gets assigned to the CAPsMAN controller.
+
+In the provision file, set the Master Configuration to cfg1 and set the slave configuration to cfg2.
+Action set as create dynamic enabled
+
+Our configuration on the CAPsMAN server is complete. Now, we will go to our AP and attach it to our CAPsMAN controller.
+
 Wireless -> Remote CAP -> choice device -> Provision
+
+Now, if we look at our CAPsMAN manager, you will see that all our wireless interfaces are now listed.
+
+* [[id:aac33da1-41f1-491f-9cfa-bad9a695b153][RouterOS power on PoE-Out]]
 
 * Reference List
 1. https://mikrotikusers.com/controlling-access-points-with-capsman/
