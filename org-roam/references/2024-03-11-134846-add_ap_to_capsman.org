@@ -3,17 +3,8 @@
 :END:
 #+title: add AP to CAPsMAN
 
-CAPsMAN stands for Controlled Access Point System Manager. It is a feature in MikroTik RouterOS that allows you to centralize the management and configuration of multiple MikroTik wireless access points (APs) from a single point, known as the CAPsMAN controller.
-
-With CAPsMAN, you can configure and manage wireless networks more efficiently, especially in scenarios where you have multiple access points spread across an area. The CAPsMAN controller can handle tasks such as channel assignment, transmit power control, security settings, and more for all connected access points. This centralized approach simplifies the deployment and maintenance of wireless networks.
-
-Here's a brief overview of how CAPsMAN works:
-1. CAPsMAN Controller: This is the central point that manages and controls one or more CAPs (Controlled Access Points). The controller is typically a MikroTik router or access point.
-2. CAPs (Controlled Access Points): These are the wireless devices that are managed by the CAPsMAN controller. Each CAP connects to the controller, and the controller takes care of configuring and controlling the settings of each CAP.
-3. Centralized Configuration: Instead of configuring each individual access point separately, you can define configurations on the CAPsMAN controller, and it will push these settings to the connected CAPs.
-4. Simplified Management: CAPsMAN provides a centralized point for monitoring and managing the entire wireless network. Changes to configurations, such as adding a new SSID or updating security settings, can be done on the CAPsMAN controller and applied to all connected CAPs simultaneously.
-   
-This setup is particularly useful in scenarios like large office buildings, hotels, or public spaces where multiple access points are needed for adequate coverage. Instead of manually configuring each access point, administrators can use CAPsMAN to streamline the management process.
+* Per-requested
+[[id:cff18499-6583-4eb7-bf83-b35e8c4f714b][AP Controller (CAPsMAN)]]
 
 * Enable CAPsMAN
 WiFi -> Remote CAP -> CAPsMAN -> enabled -> apply

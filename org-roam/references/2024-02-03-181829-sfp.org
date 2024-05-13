@@ -1,7 +1,7 @@
 :PROPERTIES:
 :ID:       4a3a5aa0-abd1-47c2-8b34-6b75d1bd660b
 :END:
-#+title: SFP
+#+title: SFP module
 
 * Reference List
 1. https://forum.mikrotik.com/viewtopic.php?t=201877

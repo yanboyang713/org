@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       105bf0c2-2618-42ed-8701-568d3bc8ba1d
+:END:
+#+title: bridge 2 mikrotik routers as one network
+
+[[id:7b3d4c7a-30a8-4f0f-a587-fdbb39109e57][mikrotik]]
+[[id:af3f9466-13e1-4e1b-a9cf-bb8b6b20bed5][Removing and Installing SFP Modules]]
+
+

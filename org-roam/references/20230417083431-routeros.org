@@ -11,6 +11,7 @@
 #+begin_src bash
 paru -S winbox wine-wow64-for-wechat
 #+end_src
+
 ** [[id:803d821b-6f7d-4e07-9a1f-08c9736c7dec][ubuntu]] 
 https://snapcraft.io/install/winbox/ubuntu
 
@@ -19,11 +20,16 @@ https://snapcraft.io/install/winbox/ubuntu
 
 https://help.mikrotik.com/docs/display/ROS/First+Time+Configuration#FirstTimeConfiguration-RouterOS7.13+wirelesssetup
 
+* DNS
 IP/[[id:7bab7928-237d-4784-a42f-b85ef6874b9b][DNS]]
+
+* PoE
 [[id:aac33da1-41f1-491f-9cfa-bad9a695b153][PoE-Out]]
+
+* reset
 [[id:f208d569-b287-413a-b54b-fa7bd627d2cc][routeros reset]]
-[[id:cff18499-6583-4eb7-bf83-b35e8c4f714b][AP Controller (CAPsMAN)]]
-[[id:8efd5679-019f-4008-8803-1f0123b3689b][vlan]]
+
+* [[id:8efd5679-019f-4008-8803-1f0123b3689b][vlan]]
 
 * Wifi setup
 [[id:fc8a2d63-e0db-46d9-92e3-63f50c9a08de][add AP to CAPsMAN]]
