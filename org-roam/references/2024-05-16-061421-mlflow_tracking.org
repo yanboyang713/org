@@ -1,0 +1,136 @@
+:PROPERTIES:
+:ID:       21320dd2-7534-401b-ad71-b11446021da9
+:END:
+#+title: MLflow Tracking (Runs, Datasets)
+
+The [[id:64aa42dc-14c2-48c4-8360-45a31aa73f7f][MLFlow]] Tracking is an API and UI for logging parameters, code versions, metrics, and output files when running your machine learning code and for later visualizing the results. MLflow Tracking provides [[id:80d07df5-6da1-4c77-800c-dceeefd47f98][python]], [[id:8aeb67cf-d0e4-44d2-a3d4-8e4d9f71748b][RESTful]], [[id:802cbd39-a5b4-4659-98ca-5a2a2eeb1b03][r language]], and [[id:eac0c95c-13f2-4be4-8c34-e43a5d75afbc][java language]] APIs.
+
+* Concepts
+** Runs
+MLflow Tracking is organized around the concept of runs, which are executions of some piece of data science code, for example, a single python train.py execution. Each run records metadata (various information about your run such as metrics, parameters, start and end times) and artifacts (output files from the run such as model weights, images, etc).
+** Experiments
+An experiment groups together runs for a specific task. You can create an experiment using the CLI, API, or UI. The MLflow API and UI also let you create and search for experiments.
+
+* Tracking Runs
+MLflow Tracking APIs provide a set of functions to track your runs. For example, you can call *mlflow.start_run()* to start a new run, then call Logging Functions such as *mlflow.log_param()* and *mlflow.log_metric()* to log a parameters and metrics respectively.
+
+Please visit the [[https://mlflow.org/docs/latest/tracking/tracking-api.html][Tracking API documentation]] for more details about using these APIs.
+
+** Example
+*** [[id:085d21e2-2710-4378-84cd-05eb860a86f0][start a local MLflow server]]
+*** Set the Tracking Server URI
+#+begin_src python
+import mlflow
+
+mlflow.set_tracking_uri(uri="http://<host>:<port>")
+#+end_src
+
+** Train a model and prepare metadata for logging
++ Load and prepare the Iris dataset for modeling.
++ Train a Logistic Regression model and evaluate its performance.
++ Prepare the model hyperparameters and calculate metrics for logging.
+
+#+begin_src python
+import mlflow
+from mlflow.models import infer_signature
+
+import pandas as pd
+from sklearn import datasets
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+
+
+# Load the Iris dataset
+X, y = datasets.load_iris(return_X_y=True)
+
+# Split the data into training and test sets
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
+
+# Define the model hyperparameters
+params = {
+    "solver": "lbfgs",
+    "max_iter": 1000,
+    "multi_class": "auto",
+    "random_state": 8888,
+}
+
+# Train the model
+lr = LogisticRegression(**params)
+lr.fit(X_train, y_train)
+
+# Predict on the test set
+y_pred = lr.predict(X_test)
+
+# Calculate metrics
+accuracy = accuracy_score(y_test, y_pred)
+#+end_src
+
+*** Log the model and its metadata to MLflow
+we’re going to use the model that we trained, the hyperparameters that we specified for the model’s fit, and the loss metrics that were calculated by evaluating the model’s performance on the test data to log to MLflow.
+
+The steps that we will take are:
++ Initiate an MLflow run context to start a new run that we will log the model and metadata to.
++ Log model parameters and performance metrics.
++ Tag the run for easy retrieval.
++ Register the model in the MLflow Model Registry while logging (saving) the model.
+
+#+begin_src python
+# Set our tracking server uri for logging
+mlflow.set_tracking_uri("http://127.0.0.1:5000")
+
+# Create a new MLflow Experiment
+mlflow.set_experiment("MLflow Quickstart")
+
+# Start an MLflow run
+with mlflow.start_run():
+    # Log the hyperparameters
+    mlflow.log_params(params)
+
+    # Log the loss metric
+    mlflow.log_metric("accuracy", accuracy)
+
+    # Set a tag that we can use to remind ourselves what this run was for
+    mlflow.set_tag("Training Info", "Basic LR model for iris data")
+
+    # Infer the model signature
+    signature = infer_signature(X_train, lr.predict(X_train))
+
+    # Log the model
+    model_info = mlflow.sklearn.log_model(
+        sk_model=lr,
+        artifact_path="iris_model",
+        signature=signature,
+        input_example=X_train,
+        registered_model_name="tracking-quickstart",
+    )
+#+end_src
+
+*** Load the model as a Python Function (pyfunc) and use it for inference
+After logging the model, we can perform inference by:
++ Loading the model using MLflow’s pyfunc flavor.
++ Running Predict on new data using the loaded model.
+#+begin_src python
+# Load the model back for predictions as a generic Python Function model
+loaded_model = mlflow.pyfunc.load_model(model_info.model_uri)
+
+predictions = loaded_model.predict(X_test)
+
+iris_feature_names = datasets.load_iris().feature_names
+
+result = pd.DataFrame(X_test, columns=iris_feature_names)
+result["actual_class"] = y_test
+result["predicted_class"] = predictions
+
+result[:4]
+#+end_src
+
+* Tracking Datasets
+MLflow offers the ability to track datasets that are associated with model training events. These metadata associated with the Dataset can be stored through the use of the *mlflow.log_input()* API.
+
+https://mlflow.org/docs/latest/tracking/data-api.html
+
+* Reference List
+1. https://mlflow.org/docs/latest/tracking.html#mlflow-tracking

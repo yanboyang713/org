@@ -1,0 +1,76 @@
+:PROPERTIES:
+:ID:       085d21e2-2710-4378-84cd-05eb860a86f0
+:END:
+#+title: start a local MLflow server
+
+* Start a Local MLflow Server
+
+** Create environment and install mlflow
+#+begin_src bash
+  mamba create -n mlflow jupyterlab -c conda-forge
+  mamba activate mlflow
+  pip install mlflow
+#+end_src
+** start a local MLflow server with UI by running the command below 
+#+begin_src bash
+  mlflow ui
+#+end_src
+
+Or,
+#+begin_src bash
+mlflow server --host 127.0.0.1 --port 8080
+#+end_src
+There are many options to configure the server, refer to https://mlflow.org/docs/latest/tracking/server.html#configure-server
+
+** Run jupyter lab
+#+begin_src bash
+  jupyter lab
+#+end_src
+
+** Create a new notebook
+
+** Connect MLflow Session to Your Server
+Now that the server is spun up, let’s connect our MLflow session to the local server.
+#+begin_src python
+import mlflow
+mlflow.set_tracking_uri("http://127.0.0.1:5000")
+#+end_src
+
+Next, let’s try logging some dummy metrics. We can view these test metrics on the local hosted UI.
+Test connection
+#+begin_src python
+mlflow.set_experiment("/check-localhost-connection")
+
+with mlflow.start_run():
+    mlflow.log_metric("foo", 1)
+    mlflow.log_metric("bar", 2)
+#+end_src
+
+Another, example for [[id:80d07df5-6da1-4c77-800c-dceeefd47f98][python]] 
+#+begin_src python
+import mlflow
+
+remote_server_uri = "..."  # set to your server URI
+mlflow.set_tracking_uri(remote_server_uri)
+mlflow.set_experiment("/my-experiment")
+with mlflow.start_run():
+    mlflow.log_param("a", 1)
+    mlflow.log_metric("b", 2)
+#+end_src
+
+Another, example for [[id:802cbd39-a5b4-4659-98ca-5a2a2eeb1b03][r language]]
+#+begin_src r
+library(mlflow)
+install_mlflow()
+remote_server_uri = "..." # set to your server URI
+mlflow_set_tracking_uri(remote_server_uri)
+mlflow_set_experiment("/my-experiment")
+mlflow_log_param("a", "1")
+#+end_src
+
+** View Experiment on Your MLflow Server
+Now let’s view your experiment on the local server. Open the URL in your browser, which is http://localhost:5000 in our case. In the UI, inside the left sidebar you should see the experiment with name “check-localhost-connection”. Clicking on this experiment name should bring you to the experiment view
+
+* Reference List
+1. https://mlflow.org/docs/latest/getting-started/tracking-server-overview/index.html#start-a-local-mlflow-server
+   

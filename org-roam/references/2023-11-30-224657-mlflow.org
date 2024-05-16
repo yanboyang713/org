@@ -3,12 +3,31 @@
 :END:
 #+title: MLFlow
 
+* What is MLflow?
+Whether you’re an individual researcher, a member of a large team, or somewhere in between, MLflow provides a unified platform to navigate the intricate maze of model development, deployment, and management. MLflow aims to enable innovation in ML solution development by streamlining otherwise cumbersome logging, organization, and lineage concerns that are unique to model development. This focus allows you to ensure that your ML projects are robust, transparent, and ready for real-world challenges.
+
+* Start MLflow Server
+https://mlflow.org/docs/latest/getting-started/tracking-server-overview/index.html#method-1-start-your-own-mlflow-server
+** [Method 1] Start your own MLflow server.
+[[id:085d21e2-2710-4378-84cd-05eb860a86f0][start a local MLflow server]]
+
+** [Method 2] Use a free hosted tracking server - Databricks Community Edition.
+
+** [Method 3] Use production Databricks/AzureML.
+
+* [[id:21320dd2-7534-401b-ad71-b11446021da9][MLflow Tracking]](Runs, Datasets)
+
+* [[id:9e0dbde4-42a1-4d4d-9a81-89a0390a5f00][MLflow System Metrics]] 
+
 * Introduction To MLflow | Track Your Machine Learning Experiments
 https://www.youtube.com/watch?v=ksYIVDue8ak
+
 * Setting Up MLflow Experiments To a Remote Server | DagsHub
 https://www.youtube.com/watch?v=K9se7KQON5k
+
 * How To Setup MLflow Experiments with AWS
 https://www.youtube.com/watch?v=XEZ7Hx2NrO8
+
 * Deplyment
 [[id:e08c11c2-8a7a-4684-86a4-d299733a8694][deploy MLFlow on Kubernetes]]
 
@@ -17,3 +36,4 @@ https://www.youtube.com/watch?v=XEZ7Hx2NrO8
 2. https://www.youtube.com/watch?v=X2XxeLTkv0w
 3. https://www.youtube.com/watch?v=X2XxeLTkv0w
 4. https://github.com/dmatrix/tmls-workshop
+5. https://mlflow.org/docs/latest/introduction/index.html

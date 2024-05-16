@@ -42,6 +42,18 @@ conda 23.3.1
 
 * Quickstart
 https://mamba.readthedocs.io/en/latest/user_guide/mamba.html#mamba
+* Example
+#+begin_src bash
+mamba create -n myjlabenv jupyterlab -c conda-forge
+mamba activate myjlabenv  # activate our environment
+jupyter lab               # this will start up jupyter lab and open a browser
+#+end_src
+
+#+begin_src bash
+mamba activate myjlabenv
+mamba install bqplot  # now you can use bqplot in myjlabenv
+mamba install "matplotlib>=3.5.0" cartopy  # now you installed matplotlib with version>=3.5.0 and default version of cartopy
+#+end_src
 
 * Reference List
 1. https://blog.hpc.qmul.ac.uk/mamba.html#:~:text=mamba%20is%20a%20re%2Dimplementation,Red%20Hat%2C%20Fedora%20and%20OpenSUSE
