@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       6868e554-62b5-4a18-8f33-65620246602b
+:END:
+#+title: RouterOS Controller Bridge and Port Extender
+
+[[id:c2d2bf9b-7c0e-499e-8606-ae85e8506cf0][RouterOS]]
+
+* Reference List
+1. https://help.mikrotik.com/docs/display/ROS/Controller+Bridge+and+Port+Extender

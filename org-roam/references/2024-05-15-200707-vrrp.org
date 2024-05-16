@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       e3bd261e-34a6-4c7a-9945-529fb8a363b7
+:END:
+#+title: VRRP
+
+* Reference List
+1. https://www.juniper.net/documentation/us/en/software/junos/high-availability/topics/concept/vrrp-overview-ha.html
+2. https://en.wikipedia.org/wiki/Virtual_Router_Redundancy_Protocol#:~:text=The%20Virtual%20Router%20Redundancy%20Protocol,selections%20on%20an%20IP%20subnetwork.
+   

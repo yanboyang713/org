@@ -1,0 +1,18 @@
+:PROPERTIES:
+:ID:       73bf5737-6e5a-47e9-80a1-bdc4ed90b931
+:END:
+#+title: switch stacking
+
+Switch stacking in networking is a technique used to connect multiple network switches together to form a single logical unit. This setup simplifies management and expands the network's capacity without requiring separate configurations for each switch.
+
+multiple physical switches would function and be managed as if they were a single larger switch.
+
+
+[[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1715803503/switch%20stacking/30154491_upjpff.jpg]]
+[[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1715803512/switch%20stacking/178052186_mvvlad.jpg]]
+
+[[id:007190d0-1183-4447-bf07-e02afe55ffdc][traditional switch stacking]]
+
+[[id:6868e554-62b5-4a18-8f33-65620246602b][RouterOS Controller Bridge and Port Extender]]
+
+

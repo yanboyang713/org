@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       007190d0-1183-4447-bf07-e02afe55ffdc
+:END:
+#+title: traditional switch stacking
+
+[[id:e3bd261e-34a6-4c7a-9945-529fb8a363b7][VRRP]] with [[id:d8de04e1-fec3-4fab-8cf2-6ebd6aca80dc][MSTP]]
+
+[[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1715803503/switch%20stacking/30154491_upjpff.jpg]]
+
+* Reference List
+1. https://www.youtube.com/watch?v=Qf0d2rZ9Vqo

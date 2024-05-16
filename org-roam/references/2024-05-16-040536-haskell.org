@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       46e636b6-9aaa-4340-a24f-72f953930c02
+:END:
+#+title: Haskell
+
+[[id:20954157-6416-4289-bc7c-248bdfad167e][programming language]]
+
+Getting Started with Haskell Data Analysis
+https://www.packtpub.com/product/getting-started-with-haskell-data-analysis/9781789802863

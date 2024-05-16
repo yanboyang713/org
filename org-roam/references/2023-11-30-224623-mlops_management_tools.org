@@ -4,6 +4,7 @@
 #+title: MLOps management tools
 
 + [[id:64aa42dc-14c2-48c4-8360-45a31aa73f7f][MLFlow]]
++ [[id:7439a6a6-d78d-4a5d-b569-6972623d8a27][kubeflow]] 
   
 * Reference List
 1. https://www.datacamp.com/blog/top-mlops-tools
