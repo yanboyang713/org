@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       6773c62d-c676-4817-88e9-9419fcd0a37c
+:END:
+#+title: Aether
+
+[[id:c8f358c2-d824-4c17-b02b-9aaa423b1871][5G]]
+
+https://aether-project.square.site/
+
+https://docs.aetherproject.org/aether-2.0/edge_deployment/pronto.html

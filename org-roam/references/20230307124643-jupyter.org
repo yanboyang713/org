@@ -37,3 +37,6 @@ A notebook server runs locally at 127.0.0.1:8888 and is accessible only from loc
 
 * [[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]]
 https://z2jh.jupyter.org/en/stable/
+
+* [[id:e4fa2843-dc6e-4303-a209-40df1bd10a0f][docker]] 
+https://docs.docker.com/guides/use-case/jupyter/

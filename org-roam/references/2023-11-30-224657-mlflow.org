@@ -15,9 +15,12 @@ https://mlflow.org/docs/latest/getting-started/tracking-server-overview/index.ht
 
 ** [Method 3] Use production Databricks/AzureML.
 
-* [[id:21320dd2-7534-401b-ad71-b11446021da9][MLflow Tracking]](Runs, Datasets)
-
-* [[id:9e0dbde4-42a1-4d4d-9a81-89a0390a5f00][MLflow System Metrics]] 
+* [[id:21320dd2-7534-401b-ad71-b11446021da9][MLflow Tracking]](Runs)
+* [[id:238de291-6416-4ac7-aeaf-57011e528f1c][MLflow Tracking (datasets)]] 
+* [[id:9e0dbde4-42a1-4d4d-9a81-89a0390a5f00][MLflow System Metrics]]
+* [[id:7c599534-6ad9-45d6-bfcf-70170fc4dd5e][Hyperparameter Tuning with MLflow and Optuna]] 
+* [[id:526c4f39-0de6-4273-a353-beb774585c14][MLflow Recipes]] 
+* [[id:2a1dbc6c-bee0-4fae-becd-c8d479915ff8][mlflow simulataneous runs in the experiment]]  
 
 * Introduction To MLflow | Track Your Machine Learning Experiments
 https://www.youtube.com/watch?v=ksYIVDue8ak

@@ -1,0 +1,19 @@
+:PROPERTIES:
+:ID:       7c599534-6ad9-45d6-bfcf-70170fc4dd5e
+:END:
+#+title: Hyperparameter Tuning with MLflow and Optuna
+
+[[id:64aa42dc-14c2-48c4-8360-45a31aa73f7f][MLFlow]]
+[[id:eddad456-1d3b-46f0-8f90-39efca21fd6a][optuna]]
+we venture into a frequent use case of MLflow Tracking: hyperparameter tuning
+
+our focal points will be:
++ Introducing the capabilities of MLflow for tracking hyperparameter tuning
++ Understanding the distinction between parent and child runs in MLflow
++ Delving into the components of MLflow and their relevance in our workflow
++ Discovering and navigating experiments, parent runs, and child runs in the MLflow UI
++ Conducting a comparative analysis of runs to understand the nuances of hyperparameter tuning
+
+
+* Reference List
+1. https://mlflow.org/docs/latest/traditional-ml/hyperparameter-tuning-with-child-runs/index.html

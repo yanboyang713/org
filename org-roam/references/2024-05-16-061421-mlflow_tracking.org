@@ -127,10 +127,6 @@ result["predicted_class"] = predictions
 result[:4]
 #+end_src
 
-* Tracking Datasets
-MLflow offers the ability to track datasets that are associated with model training events. These metadata associated with the Dataset can be stored through the use of the *mlflow.log_input()* API.
-
-https://mlflow.org/docs/latest/tracking/data-api.html
 
 * Reference List
 1. https://mlflow.org/docs/latest/tracking.html#mlflow-tracking

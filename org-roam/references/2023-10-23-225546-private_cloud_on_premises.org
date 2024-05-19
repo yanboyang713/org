@@ -6,7 +6,7 @@
 
 The deployment of resources on-premises, using virtualization and resource management tools, is sometimes called the “private cloud.”
 
-On-premises deployment doesn’t provide many of the benefits of cloud computing but is sometimes sought for its ability to provide dedicated resources. In most cases this deployment model is the same as legacy IT infrastructure while using application management and virtualization technologies to try and increase resource utilization.
+On-premises deployment doesn’t provide many of the benefits of cloud computing but is sometimes sought for its ability to provide dedicated resources. In most cases this deployment model is the same as legacy IT [[id:cbe6815a-231b-489c-b8ff-c46622549b37][data centre infrastructure]] while using application management and virtualization technologies to try and increase resource utilization.
 
 + [[id:77bd7428-f1ee-4306-8d5a-62f38134dfc5][Proxmox VE]]
 + [[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]]

@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       26c2f250-b650-486c-9226-cfe3c9241e8f
+:END:
+#+title: Adam Belay
+
+datacenter networking
+
+http://www.abelay.me/

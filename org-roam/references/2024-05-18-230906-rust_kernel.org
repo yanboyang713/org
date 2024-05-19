@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       719ef0bc-0b08-4985-a032-a90788a1f2a5
+:END:
+#+title: rust kernel
+
+[[id:fc1c07c3-0d30-4eeb-a145-c018ddf16463][kernel]]
+
+[[id:a2da1c32-ba1a-4c2c-9374-1bd8896920fa][rust]]
+
++ [[id:df042318-77a9-4181-9373-cf7601c19bac][dragonos]] 

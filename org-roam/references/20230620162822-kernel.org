@@ -23,3 +23,5 @@ User programs’ attempts to execute illegal instructions ( privileged or non-ex
 * Types
 + [[id:0a48adc4-8a91-48b7-bb10-8c4b9d0cef6f][microkernel]]
 + [[id:f67fabdd-5544-4375-b131-06ff31cf19b8][monolithic kernel]]
+
+* [[id:719ef0bc-0b08-4985-a032-a90788a1f2a5][rust kernel]] 

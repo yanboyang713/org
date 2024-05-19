@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       cbe6815a-231b-489c-b8ff-c46622549b37
+:END:
+#+title: data centre infrastructure
+
+
+[[id:df7fa8ff-d336-4a39-ae3d-06cc03883312][refurbished server choice]]
+[[id:2bd7f620-f2f2-44a0-9437-397c9c7cd911][RAID Controller]]
