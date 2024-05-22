@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       16f1b152-2e3e-4d99-b92f-817253163668
+:END:
+#+title: Clock Offset Estimation for Systems With Asymmetric Packet Delays
+
+[[id:93e22f97-3c6f-4c96-a8aa-b9b9849d533e][hyperparameter tuning]]
+
+[[id:1ac8dc0c-837f-4168-83cc-0ff7d5eb86ba][Precision Time Protocol (PTP)]]
+
+* Reference List
+1. Ha, Y., Pak, E., Park, J., Kim, T., & Yoon, J. W. (2023). Clock Offset Estimation for Systems With Asymmetric Packet Delays. IEEE/ACM Transactions on Networking.

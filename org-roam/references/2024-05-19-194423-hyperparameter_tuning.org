@@ -1,0 +1,113 @@
+:PROPERTIES:
+:ID:       93e22f97-3c6f-4c96-a8aa-b9b9849d533e
+:END:
+#+title: hyperparameter tuning
+
+Choosing the correct hyperparameters for machine learning or deep learning models is one of the best ways to extract the last juice out of your models.
+
+* [[id:eab434d2-58de-418e-a9ca-7b14bd5fe6b9][The difference between parameter and hyperparameter]]
+* What is hyperparameter tuning and why it is important?
+:PROPERTIES:
+:ID:       486afb55-604b-42db-a9fd-46776298aa47
+:END:
+Hyperparameter tuning (or hyperparameter optimization) is the process of determining the right combination of hyperparameters that maximizes the model performance. It works by running multiple trials in a single training process. Each trial is a complete execution of your training application with values for your chosen hyperparameters, set within the limits you specify. This process once finished will give you the set of hyperparameter values that are best suited for the model to give optimal results.  
+
+Needless to say, It is an important step in any Machine Learning project since it leads to optimal results for a model. If you wish to see it in action, here’s a research paper that talks about the importance of hyperparameter optimization by experimenting on datasets.
+https://arxiv.org/pdf/2007.07588
+https://towardsdatascience.com/hyperparameter-tuning-c5619e7e6624
+* How to do hyperparameter tuning? How to find the best hyperparameters?
+:PROPERTIES:
+:ID:       f8c2a759-7b58-43c8-8af3-db5e704038fc
+:END:
+Choosing the right combination of hyperparameters requires an understanding of the hyperparameters and the business use-case. However, technically, there are two ways to set them.
+
+** Manual hyperparameter tuning
+:PROPERTIES:
+:ID:       cdc0aa5d-71ab-4db6-a0b6-c0aa635b764c
+:END:
+Manual hyperparameter tuning involves experimenting with different sets of hyperparameters manually i.e. each trial with a set of hyperparameters will be performed by you. This technique will require a robust experiment tracker which could track a variety of variables from images, logs to system metrics.
+
+There are a few experiment trackers that tick all the boxes. [[https://neptune.ai/][neptune.ai]] is one of them. It offers an intuitive interface and an open-source package neptune-client to facilitate logging into your code. You can easily log hyperparameters and see all types of data results like images, metrics, etc. Head over to the docs to see how you can [[https://docs.neptune.ai/logging/what_you_can_log/][log different metadata to Neptune]]. 
+
+Alternative solutions include W&B, Comet, or [[id:64aa42dc-14c2-48c4-8360-45a31aa73f7f][MLFlow]]. [[https://neptune.ai/blog/best-ml-experiment-tracking-tools][Check more tools for experiment tracking & management here]].
+
+*** Advantages of manual hyperparameter optimization:
++ Tuning hyperparameters manually means more control over the process.
++ If you’re researching or studying tuning and how it affects the network weights then doing it manually would make sense.
+
+*** Disadvantages of manual hyperparameter optimization:
++ Manual tuning is a tedious process since there can be many trials and keeping track can prove costly and time-consuming.
++ This isn’t a very practical approach when there are a lot of hyperparameters to consider.
+
+Read about [[https://machinelearningmastery.com/manually-optimize-hyperparameters/][how to manually optimize Machine Learning model hyperparameters here]].
+
+** Automated hyperparameter tuning
+:PROPERTIES:
+:ID:       ac07aaf6-3c83-42c3-83ce-b601f80834f2
+:END:
+Automated hyperparameter tuning utilizes already existing algorithms to automate the process. The steps you follow are:
++ First, specify a set of hyperparameters and limits to those hyperparameters’ values (note: every algorithm requires this set to be a specific data structure, e.g. dictionaries are common while working with algorithms). 
++ Then the algorithm does the heavy lifting for you. It runs those trials and fetches you the best set of hyperparameters that will give optimal results.
+In the blog, we will talk about some of the algorithms and tools you could use to achieve automated tuning. Let’s get to it.
+
+* Hyperparameter tuning methods 
+In this section, I will introduce all of the hyperparameter optimization methods that are popular today. 
+
+** Random Search
+:PROPERTIES:
+:ID:       154c3650-5fa8-4fee-932d-48398ae34e1c
+:END:
+In the [[https://www.jmlr.org/papers/volume13/bergstra12a/bergstra12a.pdf][random search method]], we create a grid of possible values for hyperparameters. Each iteration tries a random combination of hyperparameters from this grid, records the performance, and lastly returns the combination of hyperparameters that provided the best performance.
+
+** Grid Search
+:PROPERTIES:
+:ID:       9459660a-f078-4abd-99b0-39ebdfb4945c
+:END:
+In the [[https://towardsdatascience.com/grid-search-for-model-tuning-3319b259367e][grid search method]], we create a grid of possible values for hyperparameters. Each iteration tries a combination of hyperparameters in a specific order. It fits the model on each and every combination of hyperparameters possible and records the model performance. Finally, it returns the best model with the best hyperparameters.
+[[https://i0.wp.com/neptune.ai/wp-content/uploads/2022/10/grid_random.png?resize=569%2C301&ssl=1]]
+
+** Bayesian Optimization
+:PROPERTIES:
+:ID:       abd1ad31-346b-4399-90e1-315764e14628
+:END:
+Tuning and finding the right hyperparameters for your model is an optimization problem. We want to minimize the loss function of our model by changing model parameters. Bayesian optimization helps us find the minimal point in the minimum number of steps. [[https://towardsdatascience.com/a-conceptual-explanation-of-bayesian-model-based-hyperparameter-optimization-for-machine-learning-b8172278050f][Bayesian optimization]] also uses an acquisition function that directs sampling to areas where an improvement over the current best observation is likely.
+
+** Tree-structured Parzen estimators (TPE)
+:PROPERTIES:
+:ID:       9a81e3a1-a6be-4b13-bf4e-8ca5f2bd0feb
+:END:
+The idea of [[https://optunity.readthedocs.io/en/latest/user/solvers/TPE.html][Tree-based Parzen optimization]] is similar to Bayesian optimization. Instead of finding the values of p(y|x) where y is the function to be minimized (e.g., validation loss) and x is the value of hyperparameter the TPE models P(x|y) and P(y). One of the great drawbacks of tree-structured Parzen estimators is that they do not model interactions between the hyper-parameters. That said TPE works extremely well in practice and was battle-tested across most domains.
+
+* Hyperparameter tuning algorithms
+These are the algorithms developed specifically for doing hyperparameter tuning.
+
+** Hyperband
+:PROPERTIES:
+:ID:       7f125872-f4ef-4a09-9a8c-3962ee1e6a56
+:END:
+Hyperband is a variation of random search, but with some explore-exploit theory to find the best time allocation for each of the configurations. You can check this [[https://arxiv.org/abs/1603.06560][research paper]] for further references.
+** Population-based training (PBT)
+:PROPERTIES:
+:ID:       cdc2cb25-3c65-46a9-b0f2-277ec9190608
+:END:
+This technique is a hybrid of the two most commonly used search techniques: Random Search and manual tuning applied to Neural Network models.
+
+PBT starts by training many neural networks in parallel with random hyperparameters. But these networks aren’t fully independent of each other. 
+
+It uses information from the rest of the population to refine the hyperparameters and determine the value of hyperparameter to try. You can check this [[https://deepmind.google/discover/blog/population-based-training-of-neural-networks/][article]] for more information on PBT.
+[[https://i0.wp.com/neptune.ai/wp-content/uploads/2022/10/population-based-training.png?ssl=1]]
+** BOHB
+:PROPERTIES:
+:ID:       6568a390-00c1-4537-a7eb-4266e0fc88fb
+:END:
+BOHB (Bayesian Optimization and HyperBand) mixes the Hyperband algorithm and Bayesian optimization. You can check this [[https://www.automl.org/blog_bohb/][article]] for further reference.
+https://neptune.ai/blog/hyperband-and-bohb-understanding-state-of-the-art-hyperparameter-optimization-algorithms
+
+* Tools for hyperparameter optimization
+Now that you know what are the methods and algorithms let’s talk about tools, and there are a lot of those out there.
+
+Some of the best hyperparameter optimization libraries are:
++ [[id:eddad456-1d3b-46f0-8f90-39efca21fd6a][optuna]]
+  
+* Reference List
+1. https://neptune.ai/blog/hyperparameter-tuning-in-python-complete-guide

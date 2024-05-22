@@ -17,7 +17,19 @@ Currently, the latest version is 8.1-1.
 
 [[id:f20563f8-caeb-40db-aea0-a9dd263c0107][Make USB Flash Drive as Installation Medium]]
 
-* [[id:d5d856fb-7251-4864-b62e-d08a2220bf14][Proxmox Post-Installation]] 
+* [[id:d5d856fb-7251-4864-b62e-d08a2220bf14][Proxmox Post-Installation]]
+* Proxmox update and upgrade
+:PROPERTIES:
+:ID:       e623bc73-466c-4a20-b3df-ff9e25189f9a
+:END:
+#+begin_src bash
+apt-get update && apt-get dist-upgrade
+#+end_src
+* proxmox hangs on load kernel
+remove GPU driver first
+https://askubuntu.com/questions/219942/how-to-uninstall-manually-installed-nvidia-drivers
+
+https://forum.proxmox.com/threads/after-upgrading-kernel-6-5-11-4-pve-does-not-boot.137071/
 
 * Reference List
 1. https://www.proxmox.com/en/proxmox-ve

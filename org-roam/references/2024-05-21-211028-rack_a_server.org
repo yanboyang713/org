@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       80394ed8-79f0-45c8-9472-526ae26226be
+:END:
+#+title: rack a server
+
+https://www.youtube.com/watch?v=5iC20AWPQ1I

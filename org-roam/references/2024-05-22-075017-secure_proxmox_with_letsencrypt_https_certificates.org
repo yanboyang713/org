@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       e506bf84-f019-4a36-b472-4d92a487f6d5
+:END:
+#+title: Secure Proxmox with LetsEncrypt HTTPS Certificates
+[[id:77bd7428-f1ee-4306-8d5a-62f38134dfc5][Proxmox VE]]
+
+* Reference List
+1. https://www.youtube.com/watch?v=2_PhwHOxytM&t=667s

@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       1ac8dc0c-837f-4168-83cc-0ff7d5eb86ba
+:END:
+#+title: Precision Time Protocol (PTP)
+

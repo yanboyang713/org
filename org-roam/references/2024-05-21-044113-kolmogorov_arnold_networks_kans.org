@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       60eaef95-de13-48fa-a371-50345bd1f49b
+:END:
+#+title: Kolmogorov-Arnold Networks (KANs)
+[[id:b1cf8bef-07d8-44c4-bb19-c3362a74463f][machine learning]]
+
+* Reference List
+1. https://blog.paperspace.com/kolmogorov-arnold-networks-kan-revolutionizing-deep-learning/

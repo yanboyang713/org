@@ -5,6 +5,8 @@
 
 [[id:64aa42dc-14c2-48c4-8360-45a31aa73f7f][MLFlow]]
 [[id:eddad456-1d3b-46f0-8f90-39efca21fd6a][optuna]]
+[[id:93e22f97-3c6f-4c96-a8aa-b9b9849d533e][hyperparameter tuning]]
+
 we venture into a frequent use case of MLflow Tracking: hyperparameter tuning
 
 our focal points will be:
