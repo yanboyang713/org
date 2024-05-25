@@ -8,5 +8,16 @@
 
 The Community Distribution of [[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]] that powers Red Hat [[id:6bf33d95-36f3-44b4-9ea5-360995b13321][OpenShift]]
 
+OKD (Origin Community Distribution) is the open-source upstream community project for Red Hat OpenShift. OpenShift is an enterprise Kubernetes platform that helps developers to build, deploy, and manage containerized applications. OKD is essentially the open-source version of OpenShift, providing a Kubernetes distribution that includes additional tools and features for container orchestration.
+
+Here are some key points about OKD:
+1. Kubernetes-Based: OKD is built on Kubernetes, which means it provides all the core features of Kubernetes, along with additional tools and features for managing containerized applications.
+2. Open-Source: As an upstream open-source project, OKD is freely available to the community. It serves as a testing ground for new features and enhancements before they are included in the enterprise-grade OpenShift product.
+3. Developer and Operator Tools: OKD includes a range of tools to help developers build and deploy applications, such as source-to-image (S2I) for creating container images from source code. It also includes operator tools for managing applications and infrastructure.
+4. Community Driven: The OKD community is active and contributes to the development, testing, and documentation of the project. It provides a collaborative environment for users and developers to share knowledge and improve the platform.
+5. Compatibility: OKD aims to be compatible with the broader Kubernetes ecosystem, allowing users to leverage a wide range of Kubernetes tools and extensions.
+6. Documentation and Support: While OKD has extensive community-driven documentation, support is primarily through community forums and channels, as opposed to the enterprise support available with Red Hat OpenShift.
+   
 * Reference List
 1. https://www.okd.io/
+2. https://github.com/okd-project/okd.git

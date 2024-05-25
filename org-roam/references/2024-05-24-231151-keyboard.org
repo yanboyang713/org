@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       1f80201e-5e99-4026-af2c-0eb0c045f635
+:END:
+#+title: keyboard
+
+[[id:becf26d9-cc07-42a1-af48-491643545ba6][gh60]]

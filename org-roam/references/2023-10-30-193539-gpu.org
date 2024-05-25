@@ -3,3 +3,4 @@
 :END:
 #+title: GPU
 
+[[id:440cbb9d-7f83-4b6f-b5ec-a3e0bf996152][amd]]

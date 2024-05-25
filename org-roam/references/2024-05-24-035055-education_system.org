@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       4414c42d-fed2-4f8e-b81e-e3798f89fafa
+:END:
+#+title: education system
+
+[[id:6b903cab-f3df-473e-8ee1-32ac73a11199][vocareum]]
+

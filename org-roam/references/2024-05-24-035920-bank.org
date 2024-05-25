@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       f3f7b7d1-7780-4b67-b6e9-d0a2eed3ac54
+:END:
+#+title: bank
+
+[[id:2b69f059-2d2d-4696-83e6-a6688b254308][check guide]]

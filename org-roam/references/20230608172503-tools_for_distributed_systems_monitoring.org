@@ -40,7 +40,8 @@ Most observability platforms provide the detailed information a user needs to ea
 + [[id:dadb9f9a-8851-4c4c-9885-1b4b0aadd935][OpenObserve]]
 + [[id:d37a9e07-b6d0-4df7-a1e7-d32e0e2a00fd][Azure Monitor]]
 + [[id:203cb959-208a-4abe-8fc4-8eb80f6e6770][Amazon CloudWatch]]
-+ [[id:bbd8298b-f46c-4170-a3eb-190d2809999f][deepflow]] 
++ [[id:bbd8298b-f46c-4170-a3eb-190d2809999f][deepflow]]
++ [[id:09726163-130e-449d-aed3-4ddf51f2e32b][Telemetry]] 
 
 * [[id:5affaba8-8e7e-4aa9-b650-4dc361bce3bb][Analytics on top of Service Mesh]]
 

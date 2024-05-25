@@ -3,12 +3,17 @@
 :END:
 #+title: data centre infrastructure
 
+[[id:3dbb8a35-912c-45f7-ba5a-ef853e339058][server rack]]
 
 [[id:df7fa8ff-d336-4a39-ae3d-06cc03883312][refurbished server choice]]
 
 [[id:2bd7f620-f2f2-44a0-9437-397c9c7cd911][RAID Controller]]
 
 [[id:80394ed8-79f0-45c8-9472-526ae26226be][rack a server]]
+
+[[id:8161b042-7e3b-4399-9c17-6f32619e52eb][hard disk health check linux]]
+
+[[id:281732d8-ae70-43a7-a9dc-461ecc953705][Z390 PLUS]]
 
 * Dell PowerEdge R730
 ** Changing the boot order

@@ -3,3 +3,5 @@
 :END:
 #+title: Google Cloud Platform (GCP)
 
+[[id:6e89164a-db14-4ed4-9ef0-a1bc88f0e815][Google Associate Cloud Engineer]]
+[[id:71a3e25a-0942-4f01-a665-7de65fbeb9f4][Google Bard]]

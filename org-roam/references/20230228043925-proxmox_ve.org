@@ -25,6 +25,7 @@ Currently, the latest version is 8.1-1.
 #+begin_src bash
 apt-get update && apt-get dist-upgrade
 #+end_src
+
 * proxmox hangs on load kernel
 remove GPU driver first
 https://askubuntu.com/questions/219942/how-to-uninstall-manually-installed-nvidia-drivers

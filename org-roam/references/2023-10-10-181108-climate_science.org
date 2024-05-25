@@ -3,6 +3,8 @@
 :END:
 #+title: climate science
 
+[[id:822564cf-eb02-4777-8d76-3ecd7243da5d][OpenID]]
+
 * climate models
 ** Globle models
 + [[id:256d2de7-4f72-41ec-9e15-67be3007902d][Bern Simple Climate Model (BernSCM)]]

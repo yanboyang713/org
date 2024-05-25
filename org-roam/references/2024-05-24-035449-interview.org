@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       890d0790-9b81-46c2-8271-8a7b2ae951f1
+:END:
+#+title: job interview
+
+[[id:1fc471c4-bc9e-421b-8910-18fd982b76b8][coding interview]]
+
+[[id:163c12c6-26fe-4fc1-bcc3-68177f9a1778][Awesome CV]]

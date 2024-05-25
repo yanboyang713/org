@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       8161b042-7e3b-4399-9c17-6f32619e52eb
+:END:
+#+title: hard disk health check linux
+
+sudo badblocks -v /dev/sda -s
+
+* Reference List
+1. https://www.baeldung.com/linux/storage-device-check-health

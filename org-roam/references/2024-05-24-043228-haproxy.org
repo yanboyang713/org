@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       db9fa997-e5f8-45c4-a27a-2b57e85b5f53
+:END:
+#+title: HAproxy
+
+* Reference List
+1. https://www.haproxy.org/

@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       9e8c64d3-9226-4ef5-bf43-78744699c1fd
+:END:
+#+title: networking
+
+[[id:2e106c65-e1e4-4331-bb9e-7c1994b0a3d6][OSI Model]]
+
+[[id:55f23b66-c353-4562-b4bc-da3df9ddc665][wireless networks]]
+

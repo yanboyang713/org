@@ -10,3 +10,5 @@
 + [[id:7efe38ee-a4b5-49f4-ae9f-d560f563935d][C++]]
 + [[id:eac0c95c-13f2-4be4-8c34-e43a5d75afbc][java language]]
 + [[id:3a0479b8-3cf1-41b1-ac92-4aa4523e9270][Go language]] 
+
+[[id:c1e59dd0-b6e3-42b4-81e9-1dfa0c306309][make own programming langauges]] 

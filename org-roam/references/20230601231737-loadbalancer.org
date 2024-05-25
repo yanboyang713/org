@@ -1,7 +1,7 @@
 :PROPERTIES:
 :ID:       6823a5e3-b88a-40ca-9f8b-2e4196713852
 :END:
-#+title: LoadBalancer
+#+title: Load Balancer
 #+filetags:
 
 A LoadBalancer service is the standard way to expose a service to the internet. On GKE, this will spin up a Network Load Balancer that will give you a single IP address that will forward all traffic to your service.
@@ -18,6 +18,7 @@ The big downside is that each service you expose with a LoadBalancer will get it
 + [[id:dc736784-a95b-4f96-a5b5-7499bf9a9e33][OpenELB]]
 + [[id:2354c245-044c-4705-90ed-944ab2168d0b][PureLB]]
 + [[id:4e1ed1d3-0d83-4bfc-871f-d81fd264ac8d][traefik]]
++ [[id:db9fa997-e5f8-45c4-a27a-2b57e85b5f53][HAproxy]] 
 
 * Reference List
 1. https://tinychen.com/20220524-k8s-08-loadbalancer-purelb/

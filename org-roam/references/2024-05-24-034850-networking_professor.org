@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       d7a1076d-1efb-43b0-9f83-6e80ecf8358b
+:END:
+#+title: networking professor
+
+[[id:9e8c64d3-9226-4ef5-bf43-78744699c1fd][networking]]
+
++ [[id:26c2f250-b650-486c-9226-cfe3c9241e8f][Adam Belay]]
++ [[id:abef7d17-5cb7-4041-a642-494833e9d914][Seo Jin Park]]
++ [[id:a6a5e4b4-eb36-4c56-bec8-263278152c71][Ryan Huang]]
++ [[id:ab531c60-dd05-4124-a5d3-c589b67ef72e][Chang Lou]] 

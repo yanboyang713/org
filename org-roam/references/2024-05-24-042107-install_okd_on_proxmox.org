@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       2d01097c-918f-4572-8714-c2f2c847b98b
+:END:
+#+title: install OKD on Proxmox
+[[id:eebf10a7-c17a-4d17-a313-c9d620028cfa][OKD]]
+[[id:77bd7428-f1ee-4306-8d5a-62f38134dfc5][Proxmox VE]]
+[[id:b146304d-43f2-4187-9859-2aa6016bf873][OKD Bootstrap]]
+
+* Reference List
+1. https://github.com/gardart/okd-proxmox-scripts
+2. https://github.com/pvelati/okd-proxmox-scripts
+3. https://github.com/pvelati/ansible-okd-proxmox
+4. https://www.pivert.org/deploy-openshift-okd-on-proxmox-ve-or-bare-metal-tutorial/
