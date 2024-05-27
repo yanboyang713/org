@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       75c5f8ae-af95-4d5f-846c-8ca6209e5c81
+:END:
+#+title: ResolFuzz: Differential Fuzzing of DNS Resolvers
+
+[[id:2d95e1da-d412-442a-8c58-c0f0e4a0a4aa][differential testing]]
+
+* Reference List
+1. Bushart, J., & Rossow, C. (2023, September). ResolFuzz: Differential Fuzzing of DNS Resolvers. In European Symposium on Research in Computer Security (pp. 62-80). Cham: Springer Nature Switzerland.

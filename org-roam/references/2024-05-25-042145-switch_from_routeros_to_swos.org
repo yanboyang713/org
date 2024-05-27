@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       d99740a6-171a-43b0-80d5-4b3014021990
+:END:
+#+title: Switch from RouterOS to SWOS
+[[id:7f304899-ad1d-4841-ac55-a71f961575cf][backing up license key]]
+
+[[id:c2d2bf9b-7c0e-499e-8606-ae85e8506cf0][RouterOS]]
+[[id:a1d722ae-1566-4ecc-b0d8-bc860a3ee3ab][MikroTik SwOS]]
+
+* Reference List
+1. https://www.youtube.com/watch?v=Lklh_xdnsKk

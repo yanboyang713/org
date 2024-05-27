@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       43fc30cb-b0eb-4dc1-877b-8bb4b084cf2d
+:END:
+#+title: Mikrotik SwOS exporter for Prometheus
+
+[[id:a1d722ae-1566-4ecc-b0d8-bc860a3ee3ab][MikroTik SwOS]]
+[[id:ebc7a85b-cb33-4b29-93f9-0c2d5215bc7a][Prometheus]]
+[[id:16e58436-7b21-4b5f-a858-bdadc203abb2][Simple Network Management Protocol (SNMP)]]
+
+* Reference List
+1. https://github.com/patagonaa/prometheus-mikrotik-swos-exporter

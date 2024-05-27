@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       d90d5b89-0fc3-45f4-82eb-10927a0fec99
+:END:
+#+title: Mikrotik import dhcp client names into dns
+
+[[id:7b3d4c7a-30a8-4f0f-a587-fdbb39109e57][mikrotik]]
+[[id:7bab7928-237d-4784-a42f-b85ef6874b9b][Domain Name Service (DNS)]]
+
+* Reference List
+1. https://github.com/f3rr/mikrotik-dhcpdns

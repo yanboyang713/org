@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       1160d647-45bb-41ab-9f04-5f13cf66ec1c
+:END:
+#+title: Azure Container Instances(ACI)
+[[id:c40c4861-f09d-4bc2-a606-d2b62cc533f9][Azure]]

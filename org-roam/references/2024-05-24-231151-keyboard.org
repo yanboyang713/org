@@ -4,3 +4,7 @@
 #+title: keyboard
 
 [[id:becf26d9-cc07-42a1-af48-491643545ba6][gh60]]
+
+[[id:9e7ba531-f3a0-4785-95a3-b539e8aafefb][Tokyo60]]
+
+[[id:79f5b1b0-f64b-4cd5-b743-b355de4122e3][QMK Vim]]

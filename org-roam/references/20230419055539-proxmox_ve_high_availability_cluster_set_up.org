@@ -7,6 +7,7 @@
 [[id:77bd7428-f1ee-4306-8d5a-62f38134dfc5][Proxmox VE]]
 
 * [[id:7e392a97-1686-4335-bb9e-6efd9efb4f32][create proxmox cluster]]
+
 * [[id:c625aa5e-187f-4776-b28c-0bb4b7df9198][Ceph]] Set-up
 Datacentre -> Ceph -> Install Ceph
 
@@ -26,3 +27,4 @@ Create additional Ceph Monitors
 
 * Reference List
 1. https://www.youtube.com/watch?v=JfZuZ6zE7AI&ab_channel=RaidOwl
+2. https://jon.sprig.gs/blog/post/2885

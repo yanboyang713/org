@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       24a125f1-6b7d-46a0-ae44-09b5d55b16e5
+:END:
+#+title: DNS over QUIC
+
+[[id:7bab7928-237d-4784-a42f-b85ef6874b9b][Domain Name Service (DNS)]]
+[[id:c4552fd7-8f46-4bb1-b559-9385aba23ce9][QUIC]]
+
+* Reference List
+1. Batenburg, B. (2022). Performance of DNS over QUIC (Bachelor's thesis, University of Twente).

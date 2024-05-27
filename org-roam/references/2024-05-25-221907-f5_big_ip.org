@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       6d6c024f-31b2-4ab0-963d-692a3f637200
+:END:
+#+title: F5 BIG-IP
+
+[[id:42aac0ce-3635-4bda-92e4-22695ab979bb][F5]]
+
+* Reference List
+1. https://www.f5.com/products/big-ip-services/big-ip-dns

@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       a1d722ae-1566-4ecc-b0d8-bc860a3ee3ab
+:END:
+#+title: MikroTik SwOS
+
+[[id:7b3d4c7a-30a8-4f0f-a587-fdbb39109e57][mikrotik]]

@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       ddd3165b-403e-4f88-965e-433b95a68701
+:END:
+#+title: Deploy MLFlow Tracking Server on Azure Container Instances
+[[id:64aa42dc-14c2-48c4-8360-45a31aa73f7f][MLFlow]]
+[[id:1160d647-45bb-41ab-9f04-5f13cf66ec1c][Azure Container Instances(ACI)]]
+
+* Reference List
+1. https://github.com/devlace/mlflow-tracking-azure/blob/master/deploy-aci/README.md

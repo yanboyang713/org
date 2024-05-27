@@ -20,8 +20,14 @@ https://snapcraft.io/install/winbox/ubuntu
 
 https://help.mikrotik.com/docs/display/ROS/First+Time+Configuration#FirstTimeConfiguration-RouterOS7.13+wirelesssetup
 
-* DNS
+* [[id:7bab7928-237d-4784-a42f-b85ef6874b9b][Domain Name Service (DNS)]] Setup on MikroTik
+:PROPERTIES:
+:ID:       3ce06931-ce6e-44ed-af00-d043c861210b
+:END:
 IP/[[id:7bab7928-237d-4784-a42f-b85ef6874b9b][DNS]]
+https://cloudzy.com/blog/mikrotik-dns-server/
+https://help.mikrotik.com/docs/display/ROS/DNS
+https://forum.mikrotik.com/viewtopic.php?t=73989
 
 * PoE
 [[id:aac33da1-41f1-491f-9cfa-bad9a695b153][PoE-Out]]

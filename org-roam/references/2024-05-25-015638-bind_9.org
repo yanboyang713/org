@@ -1,0 +1,19 @@
+:PROPERTIES:
+:ID:       66901bf0-4a13-4d45-bcfc-34be8deb8248
+:END:
+#+title: BIND 9
+
+* Bind 9 GUI management interface
+If you would prefer a GUI management interface, you might consider a [[https://www.isc.org/commercialproducts/][Commercial Product]] based on BIND.
++ [[id:6d6c024f-31b2-4ab0-963d-692a3f637200][F5 BIG-IP]]
+
+* Install
+https://launchpad.net/~isc/+archive/ubuntu/bind
+https://hub.docker.com/r/internetsystemsconsortium/bind9/tags
+https://www.cherryservers.com/blog/how-to-install-and-configure-a-private-bind-dns-server-on-ubuntu-22-04
+https://www.digitalocean.com/community/tutorials/how-to-configure-bind-as-a-private-network-dns-server-on-ubuntu-20-04
+* Reference List
+1. https://www.isc.org/bind/
+2. https://gitlab.isc.org/isc-projects/bind9/-/blob/main/CONTRIBUTING.md
+3. https://www.digitalocean.com/community/tutorials/how-to-configure-bind-as-a-private-network-dns-server-on-ubuntu-20-04
+   

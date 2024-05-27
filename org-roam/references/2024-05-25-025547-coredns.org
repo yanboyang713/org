@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       06940f0b-84f1-4242-8020-466517313eda
+:END:
+#+title: CoreDNS
+
+* Reference List
+1. https://coredns.io/

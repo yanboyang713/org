@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       9db7f7b7-dafb-4660-9c76-e5dff69cc6ed
+:END:
+#+title: Hickory DNS
+
+[[id:a2da1c32-ba1a-4c2c-9374-1bd8896920fa][rust]]
+
+* Reference List
+1. https://github.com/hickory-dns/hickory-dns

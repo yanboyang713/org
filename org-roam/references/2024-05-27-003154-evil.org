@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       3dfaacec-3249-4185-aa7c-302e900ed2a2
+:END:
+#+title: evil
+[[id:19182f6d-b637-4879-8e9c-b093f492db5c][emacs]]
+
+[[id:d33ceb0b-0e57-44d8-9bd2-756993e092f9][vim]]
+
+https://www.emacswiki.org/emacs/Evil

@@ -6,4 +6,31 @@
 
 + [[id:fe5ea5bb-bd21-451b-be0d-239e91361dfa][Pi-hole]]
 + [[id:1770586a-a0b8-4f29-8914-0569c91f65df][Amazon Route 53]]
-+ [[id:b39b111e-23f8-4f41-81b2-ee6bd95896d8][cloudflare]] 
++ [[id:b39b111e-23f8-4f41-81b2-ee6bd95896d8][cloudflare]]
++ [[id:66901bf0-4a13-4d45-bcfc-34be8deb8248][BIND 9]]
++ [[id:d15d64c4-08d3-48a4-88b1-184a56710400][PowerDNS]]
++ [[id:06940f0b-84f1-4242-8020-466517313eda][CoreDNS]]
++ [[id:9db7f7b7-dafb-4660-9c76-e5dff69cc6ed][Hickory DNS]]
+
+* DNS security
+:PROPERTIES:
+:ID:       06d20645-11e9-4801-a0f6-b075565c7838
+:END:
++ [[id:75c5f8ae-af95-4d5f-846c-8ca6209e5c81][ResolFuzz: Differential Fuzzing of DNS Resolvers]]
+
+* DNS Benchmarking
+:PROPERTIES:
+:ID:       2717f92c-3c41-478c-a490-39dbabff8f04
+:END:
+Lencse, G. (2020). Benchmarking authoritative DNS servers. IEEE Access, 8, 130224-130238.
+
+* public DNS resolver
+:PROPERTIES:
+:ID:       5526cfe1-0077-49de-bbb6-439a3ce2c3f2
+:END:
++ [[id:b39b111e-23f8-4f41-81b2-ee6bd95896d8][cloudflare]]
+  1.1.1.1
+  https://www.cloudflare.com/en-gb/learning/dns/what-is-1.1.1.1/
+  While Google’s 8.8.8.8 DNS server is more popular, according to DNSPerf, Cloudflare’s 1.1.1.1 DNS server is faster. In addition, the 1.1.1.1 DNS server does not store user data, offering more privacy.
+  https://www.redswitches.com/blog/best-dns-server-for-gaming/#:~:text=While%20Google's%208.8.8.8%20DNS,user%20data%2C%20offering%20more%20privacy.
+  

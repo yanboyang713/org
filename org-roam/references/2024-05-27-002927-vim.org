@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       d33ceb0b-0e57-44d8-9bd2-756993e092f9
+:END:
+#+title: vim
+

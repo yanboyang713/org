@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       7f304899-ad1d-4841-ac55-a71f961575cf
+:END:
+#+title: backing up license key
+
+https://wiki.mikrotik.com/wiki/Manual:License

@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       d15d64c4-08d3-48a4-88b1-184a56710400
+:END:
+#+title: PowerDNS
+
+* Reference List
+1. https://www.powerdns.com/

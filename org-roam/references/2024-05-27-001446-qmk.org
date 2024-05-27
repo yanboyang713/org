@@ -1,0 +1,32 @@
+:PROPERTIES:
+:ID:       6e61bf85-9479-462b-b935-017ce023e87f
+:END:
+#+title: QMK
+
+* Setting Up Your QMK Environment
+https://docs.qmk.fm/#/getting_started_build_tools
+
+* QMK Configurator
+https://config.qmk.fm/#/tokyo60/LAYOUT_60_hhkb
+
+* QMK Toolbox
+https://github.com/qmk/qmk_toolbox
+
+1. Download and install QMK Toolbox for your operating system.
+2. Use the QMK Configurator to define keycodes in your keymap.
++ Read the docs to learn about keycodes.
++ Your keymap should define L_SHIFT, R_SHIFT and PAUSE
++ There is no FN key for function, try MO(1) instead.
++ Give your keymap a name to make it easier to find.
+3. Click Compile, wait and then Download Firmware.
+4. Start QMK Toolbox
++ Click Open and select your downloaded firmware.
++ Select atmega32u4 in the microcontroller pulldown menu.
+5. Put your Tokyo60 into boot loader mode using L_SHIFT+R_SHIFT+PAUSE.
+6. The default keymap defines PAUSE as FN+p.
++ You should see "DFU device connected" in QMK Toolbox.
+7. Click the Flash button in QMK Toolbox.
+8. Wait for a "device disconnected" message.
+9. Test out your new keymap!
+
+

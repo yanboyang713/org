@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       79f5b1b0-f64b-4cd5-b743-b355de4122e3
+:END:
+#+title: QMK Vim
+
+[[id:6e61bf85-9479-462b-b935-017ce023e87f][QMK]]
+[[id:d33ceb0b-0e57-44d8-9bd2-756993e092f9][vim]]
+
+https://github.com/andrewjrae/qmk-vim
+

@@ -3,6 +3,18 @@
 :END:
 #+title: gh60
 
+* Satan GH60
+https://github.com/qmk/qmk_firmware/tree/master/keyboards/gh60/satan
+
+
+* [[id:3b83621b-b66a-42f4-bebb-b6dbb2b6e68f][macOS]] install
+#+begin_src bash
+  brew install dfu-programmer
+  brew install Caskroom/cask/crosspack-avr
+#+end_src
+
+https://yang.tkg.io/
+
 * Reference List
 1. https://blog.csdn.net/u010129448/article/details/78568581
 2. http://www.keyboard-layout-editor.com/#/gists/8ded2317b1cd16386b99c7a49b48027e
