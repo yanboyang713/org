@@ -3,8 +3,9 @@
 :END:
 #+title: start a local MLflow server
 
+https://towardsdatascience.com/deploy-mlflow-with-docker-compose-8059f16b6039
 * Start a Local MLflow Server
-
+[[id:23515ee9-4914-41e6-b3b9-fd5f52bcd84a][mamba]]
 ** Create environment and install mlflow
 #+begin_src bash
   mamba create -n mlflow jupyterlab -c conda-forge

@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       79f1db82-a34b-4c80-88b4-c2c8a4199487
+:END:
+#+title: AlphaFlow
+
+* Reference List
+1. Volk, A. A., Epps, R. W., Yonemoto, D. T., Masters, B. S., Castellano, F. N., Reyes, K. G., & Abolhasani, M. (2023). AlphaFlow: autonomous discovery and optimization of multi-step chemistry using a self-driven fluidic lab guided by reinforcement learning. Nature Communications, 14(1), 1403.

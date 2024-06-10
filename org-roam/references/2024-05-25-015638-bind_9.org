@@ -7,13 +7,213 @@
 If you would prefer a GUI management interface, you might consider a [[https://www.isc.org/commercialproducts/][Commercial Product]] based on BIND.
 + [[id:6d6c024f-31b2-4ab0-963d-692a3f637200][F5 BIG-IP]]
 
-* Install
-https://launchpad.net/~isc/+archive/ubuntu/bind
-https://hub.docker.com/r/internetsystemsconsortium/bind9/tags
-https://www.cherryservers.com/blog/how-to-install-and-configure-a-private-bind-dns-server-on-ubuntu-22-04
-https://www.digitalocean.com/community/tutorials/how-to-configure-bind-as-a-private-network-dns-server-on-ubuntu-20-04
+* What is BIND DNS?
+BIND is a full-featured, scalable, and open-source software suite for DNS services. BIND's name comes from the fact it was originally developed at the University of California Berkeley.
+
+* Prerequisites
+Ubuntu 22.04 LTS
+
+* Install the latest updates
+Before we install any packages, we will first update download and install the latest updates
+#+begin_src bash
+apt update -y && apt upgrade -y
+#+end_src
+
+* Install BIND 9 on the DNS server
+Next, we're going to install three packages on our DNS server:
++ bind9 - The BIND 9 DNS server software.
++ bind9utils - Utilities that make working with BIND 9 easier.
++ bind9-doc - A documentation package for BIND 9.
+To install those packages, use this command:
+#+begin_src bash
+apt install bind9 bind9utils bind9-doc -y
+#+end_src
+
+After installation, the BIND 9 service should be running. You can check the status with this command:
+#+begin_src bash
+systemctl status bind9
+#+end_src
+
+* bind9 Settings
+:PROPERTIES:
+:ID:       f686891c-ca86-4f50-a849-46eeb11d460a
+:END:
+** Edit the named.conf.options file
+The named.conf file is BIND 9's main configuration file. That main file includes a reference to /etc/bind/named.conf.options where we can specify options we need for our configuration. We'll make four modifications to the */etc/bind/named.conf.options* file:
++ An acl directive that defines our local area network (LAN).
++ An allow-query directive that defines what IP addresses can send DNS queries to the server.
++ A forwarders directive that defines what DNS servers this server will forward recursive queries to.
++ A recursion directive that allows recursive DNS queries to the server.
+  
+To make those changes, open */etc/bind/named.conf.options* in a text editor (e.g., nano or vim) and modify the files to look similar to this:
+#+begin_src file
+// allow only LAN traffic from 192.168.88.0-192.168.88.255
+acl LAN {
+192.168.88.0/24;
+};
+options {
+        directory "/var/cache/bind"; // default directory
+        allow-query { localhost; LAN; }; // allow queries from localhost and 192.168.88.0-192.168.88.255
+        forwarders { 1.1.1.1; }; // use CloudFlare 1.1.1.1 DNS as a forwarder
+        recursion yes;  // allow recursive queries
+};
+#+end_src
+
+After you make the changes, check the syntax of the file with the named-checkconf command:
+#+begin_src bash
+named-checkconf /etc/bind/named.conf.options
+#+end_src
+If the syntax is correct, the command should not return any output.
+
+If you want to see more verbose output on a successful test, add the -p switch to the command (named-checkconf -p).
+
+** Edit the named.conf.local file
+The *named.conf.local* is typically used to define local DNS zones for a private domain. We will update this file to include our forward and reverse DNS zones.
++ Zone File: where all the DNS records for a particular zone are stored. It typically includes records like A (address) records, MX (mail exchange) records, CNAME (canonical name) records, and others.
++ Forward Zone: Used for normal forward DNS lookups, resolving domain names to IP addresses.
++ Reverse Zone: Used for reverse DNS lookups, resolving IP addresses to domain names.
+  
+To make the changes, open */etc/bind/named.conf.local* in a text editor (e.g., nano or vim) and add these lines:
+#+begin_src file
+zone "yanboyang.com" IN {
+        type master;
+        file "/etc/bind/zones/yanboyang.com";
+};
+// define the reverse zone
+zone "88.168.192.in-addr.arpa" IN {
+        type master;
+        file "/etc/bind/zones/yanboyang.com.rev";
+};
+#+end_src
+
+*NOTE:* The name 88.168.192.in-addr.arpa is a reverse DNS zone name that corresponds to the IP address range 192.168.88.0/24. In reverse DNS, the name is structured in reverse order to represent the IP address octets. This is a standardized naming convention in the DNS system.
+
+Understanding the Structure:
+192.168.88.0/24 is an IP address range.
+In reverse DNS, the IP address octets are reversed and appended with in-addr.arpa.
+Thus, 192.168.88.0/24 becomes 88.168.192.in-addr.arpa.
+
+After you make the changes, check the syntax of the file with the named-checkconf command:
+#+begin_src bash
+named-checkconf /etc/bind/named.conf.options
+#+end_src
+
+** Create a directory for your zone files
+Next, we'll create a directory to store the zone files we specified in the previous step.
+#+begin_src bash
+mkdir /etc/bind/zones
+#+end_src
+
+** Create the forward zone file
+Now, we'll create a corresponding zone file /etc/bind/zones/yanboyang.com. The forward zone file allows the Bind DNS server to resolve names (like bindserver.yanboyang.com) to IP addresses (like 192.168.88.7).
+First, copy the default db.local zone file to /etc/bind/zones/yanboyang.com:
+#+begin_src bash
+cp /etc/bind/db.local /etc/bind/zones/yanboyang.com
+#+end_src
+Open /etc/bind/zones/yanboyang.com in a text editor (e.g., nano or vim) and make the changes indicated in the comments below:
+#+begin_src file
+$TTL    604800
+@       IN      SOA     yanboyang.com. root.yanboyang.com. (
+                              2         ; Serial Note: increment after each change
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+; Name server record
+@       IN      NS      bindserver.yanboyang.com.
+; A record for name server
+bindserver      IN      A       192.168.88.7
+; A record for servers
+server1      IN      A       192.168.88.2
+server2      IN      A       192.168.88.3
+server3      IN      A       192.168.88.4
+server4      IN      A       192.168.88.5
+server5      IN      A       192.168.88.6
+#+end_src
+Once the changes are complete, use the named-checkzone command to check the configuration:
+#+begin_src bash
+named-checkzone yanboyang.com /etc/bind/zones/yanboyang.com
+#+end_src
+
+correct output
+#+begin_src console
+root@DNS:~# named-checkzone yanboyang.com /etc/bind/zones/yanboyang.com
+zone yanboyang.com/IN: loaded serial 2
+OK
+#+end_src
+
+** Create the reverse zone file
+Now, we'll create a corresponding reverse zone file /etc/bind/zones/yanboyang.com.rev. The reverse zone file allows the Bind DNS server to resolve IP addresses (like 192.168.88.7) to names (like bindserver.yanboyang.com).
+
+First, copy the default db.local zone file to /etc/bind/zones/yanboyang.com.rev
+#+begin_src bash
+cp /etc/bind/db.127 /etc/bind/zones/yanboyang.com.rev
+#+end_src
+
+Open /etc/bind/zones/yanboyang.com.rev in a text editor (e.g., nano or vim) and make the changes indicated in the comments below:
+#+begin_src file
+$TTL    604800
+@       IN      SOA     yanboyang.com. root.yanboyang.com. (
+                              1         ; Serial Note: increment after each change
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+; Name server record 
+@       IN      NS      bindserver.yanboyang.com.
+; A record for name server
+bindserver      IN      A       192.168.88.7
+; PTR record for name server
+7   IN      PTR     bindserver.yanboyang.com
+; PTR record for servers
+2   IN      PTR     server1.yanboyang.com
+3   IN      PTR     server2.yanboyang.com
+4   IN      PTR     server3.yanboyang.com
+5   IN      PTR     server4.yanboyang.com
+6   IN      PTR     server5.yanboyang.com
+#+end_src
+Once the changes are complete, use the named-checkzone command to check the configuration:
+#+begin_src bash
+named-checkzone yanboyang.com /etc/bind/zones/yanboyang.com.rev
+#+end_src
+You should see output similar to:
+#+begin_src console
+root@DNS:~# named-checkzone yanboyang.com /etc/bind/zones/yanboyang.com.rev
+zone yanboyang.com/IN: loaded serial 1
+OK
+#+end_src
+
+** Restart BIND 9
+To make the BIND DNS server use the new configuration, restart the BIND 9 service with this command:
+#+begin_src bash
+systemctl restart bind9
+#+end_src
+
+* Test DNS server
+Once the Private Bind DNS server is configured
+First, check which interface is used for LAN connectivity with this command:
+#+begin_src console
+ip -brief addr show to 192.168.88.0/24
+#+end_src
+
+sudo vim /etc/resolv.conf
+
+sudo pacman -S dnsutils
+
+#+begin_src console
+yanboyang713@Meta-Scientific-Linux ~ % nslookup server1
+Server:		192.168.88.7
+Address:	192.168.88.7#53
+
+Name:	server1.yanboyang.com
+Address: 192.168.88.2
+#+end_src
+
 * Reference List
 1. https://www.isc.org/bind/
 2. https://gitlab.isc.org/isc-projects/bind9/-/blob/main/CONTRIBUTING.md
 3. https://www.digitalocean.com/community/tutorials/how-to-configure-bind-as-a-private-network-dns-server-on-ubuntu-20-04
+4. https://www.digitalocean.com/community/tutorials/how-to-configure-bind-as-a-private-network-dns-server-on-ubuntu-20-04
+5. 
+https://www.cherryservers.com/blog/how-to-install-and-configure-a-private-bind-dns-server-on-ubuntu-22-04
    

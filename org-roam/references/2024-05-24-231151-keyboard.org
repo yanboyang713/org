@@ -3,8 +3,16 @@
 :END:
 #+title: keyboard
 
-[[id:becf26d9-cc07-42a1-af48-491643545ba6][gh60]]
+[[id:cc975ca0-55cf-44c0-b633-2d12646b40ae][kicad]]
 
-[[id:9e7ba531-f3a0-4785-95a3-b539e8aafefb][Tokyo60]]
+* HHKB
++ [[id:becf26d9-cc07-42a1-af48-491643545ba6][gh60]]
++ [[id:9e7ba531-f3a0-4785-95a3-b539e8aafefb][Tokyo60]]
 
-[[id:79f5b1b0-f64b-4cd5-b743-b355de4122e3][QMK Vim]]
+* PCB
++ [[id:5eabfa74-6966-4739-bbdd-9c1f151f317b][Sweep]]
++ [[id:fae7e659-cfcd-4441-8e2d-f5002940e35c][Corne]]
++ [[id:d76a3855-0018-441f-a355-7e0d6d4964e5][temper]] 
+  
+* Firmware
++ [[id:6e61bf85-9479-462b-b935-017ce023e87f][QMK]] 

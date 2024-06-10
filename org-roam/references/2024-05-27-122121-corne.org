@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       fae7e659-cfcd-4441-8e2d-f5002940e35c
+:END:
+#+title: Corne
+https://github.com/foostan/crkbd

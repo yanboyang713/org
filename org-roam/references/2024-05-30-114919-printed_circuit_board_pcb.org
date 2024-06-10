@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       2d3e6a13-ef56-44f5-a5dd-3d14b061d177
+:END:
+#+title: printed circuit board (PCB)
+
