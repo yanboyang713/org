@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       3232cfb1-4e0a-43a0-b804-c5d76ec57eb6
+:END:
+#+title: Do the Best Cloud Configurations Grow on Trees? An Experimental Evaluation of Black Box Algorithms for Optimizing Cloud Workloads
+
+* Reference List
+1. Bilal, M., Serafini, M., Canini, M., & Rodrigues, R. (2020). Do the best cloud configurations grow on trees? an experimental evaluation of black box algorithms for optimizing cloud workloads. Proceedings of the VLDB Endowment, 13(12), 2563-2575.

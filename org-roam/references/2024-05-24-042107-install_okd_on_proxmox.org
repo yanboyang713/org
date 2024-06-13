@@ -2,9 +2,43 @@
 :ID:       2d01097c-918f-4572-8714-c2f2c847b98b
 :END:
 #+title: install OKD on Proxmox
+
 [[id:eebf10a7-c17a-4d17-a313-c9d620028cfa][OKD]]
 [[id:77bd7428-f1ee-4306-8d5a-62f38134dfc5][Proxmox VE]]
 [[id:b146304d-43f2-4187-9859-2aa6016bf873][OKD Bootstrap]]
+* Prerequisites
++ An SSH public key
++ Admin access to the local DNS with reverse DNS (examples for [[id:f686891c-ca86-4f50-a849-46eeb11d460a][bind9]])
++ RedHat account to get the Pull Secret, plase the key in a pullSecret.txt file.
+
+* DNS
+** Forward DNS definitions
+#+begin_src file
+; OKD
+haproxy                 IN      A       192.168.88.8
+helper                  IN      A       192.168.88.8
+helper.okd              IN      A       192.168.88.8
+api.okd                 IN      A       192.168.88.8
+api-int.okd             IN      A       192.168.88.8
+*.apps.okd              IN      A       192.168.88.8
+bootstrap.okd           IN      A       192.168.88.12
+master0.okd             IN      A       192.168.88.9
+master1.okd             IN      A       192.168.88.10
+master2.okd             IN      A       192.168.88.11
+#+end_src
+** Reverse DNS
+#+begin_src file
+; okd
+8   IN      PTR     haproxy.yanboyang.com.
+8   IN      PTR     helper.yanboyang.com.
+8   IN      PTR     helper.okd.yanboyang.com.
+8   IN      PTR     api.okd.yanboyang.com.
+8   IN      PTR     api-int.okd.yanboyang.com.
+12   IN      PTR     bootstrap.okd.yanboyang.com.
+9   IN      PTR     master0.okd.yanboyang.com.
+10   IN      PTR     master1.okd.yanboyang.com.
+11   IN      PTR     master2.okd.yanboyang.com.
+#+end_src
 
 * Reference List
 1. https://github.com/gardart/okd-proxmox-scripts
