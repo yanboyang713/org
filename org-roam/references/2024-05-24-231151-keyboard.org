@@ -11,8 +11,32 @@
 
 * PCB
 + [[id:5eabfa74-6966-4739-bbdd-9c1f151f317b][Sweep]]
++ [[id:579a303e-d9d8-4789-ba76-9e9bc1bb21c7][swoop keyboard]] 
 + [[id:fae7e659-cfcd-4441-8e2d-f5002940e35c][Corne]]
 + [[id:d76a3855-0018-441f-a355-7e0d6d4964e5][temper]] 
-  
+
+** Ordering The PCB
+Base material: FR-4
+Layers: 2
+[[id:9d3070e2-1654-4c61-9036-a6f02b7f9bea][Check Gerber file Dimension]]
+Different design: https://jlcpcb.com/quote/pcbOrderFaq/Different%20Design%20in%20Panel
+Delivery format: Panel by customer
+Single PCB: Your design is produced as is, without any modifications.
+Customer panel by the customer: You construct your panel and provide the necessary data to Eurocircuits for production.
+A panel in the context of PCB (Printed Circuit Board) manufacturing refers to a larger board that contains multiple individual PCB designs. This larger board, or panel, is used during the manufacturing process for efficiency and cost-effectiveness. Here are the key points:
+
+Single PCB: Refers to a single, standalone printed circuit board.
+Panel: A larger board that contains multiple smaller PCBs.
+
+PCB thickness: 1.6mm
+PCB color: (Personal preference)
+Silkscreen: (Personal preference)
+Surface finish: (Personal preference)
+Outer copper weight: 1oz
+Gold Fingers: No
+Confirm production file: No
+Castellated holes: No
+Remove order number: Yes
+
 * Firmware
 + [[id:6e61bf85-9479-462b-b935-017ce023e87f][QMK]] 

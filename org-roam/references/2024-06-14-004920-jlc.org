@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       f8363b6f-3347-4752-9813-4026bf587a8b
+:END:
+#+title: jlc
+
+[[id:2d3e6a13-ef56-44f5-a5dd-3d14b061d177][printed circuit board (PCB)]]
+
+#+begin_src bash
+paru -S jlc-assistant-bin
+#+end_src
