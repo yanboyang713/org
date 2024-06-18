@@ -5,4 +5,8 @@
 
 based on [[id:5eabfa74-6966-4739-bbdd-9c1f151f317b][Sweep]]
 
-https://github.com/jimmerricks/swoop
+* Case
+https://kbd.news/Keyboard-Case-Design-1764.html
+
+* Reference List
+1. https://github.com/jimmerricks/swoop
