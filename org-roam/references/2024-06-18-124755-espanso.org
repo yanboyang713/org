@@ -1,0 +1,24 @@
+:PROPERTIES:
+:ID:       4506743e-fd96-4969-a1a8-0c5b2548c48a
+:END:
+#+title: espanso
+* Install on [[id:fe1f3869-8620-4fad-8b01-f2fa6aa75331][Xorg/X11]]
+#+begin_src bash
+paru -S espanso-x11-git
+#+end_src
+Now run espanso --version. If you see the version appear, it means Espanso was successfully installed!
+
+To complete the configuration, run these commands:
+#+begin_src bash
+# Register espanso as a systemd service (required only once)
+espanso service register
+
+# Start espanso
+espanso start
+#+end_src
+
+* Settings
+https://espanso.org/docs/get-started/
+
+* Reference List
+1. https://github.com/espanso/espanso

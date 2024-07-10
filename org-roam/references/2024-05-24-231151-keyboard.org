@@ -15,6 +15,9 @@
 + [[id:fae7e659-cfcd-4441-8e2d-f5002940e35c][Corne]]
 + [[id:d76a3855-0018-441f-a355-7e0d6d4964e5][temper]] 
 
+* MCU
++ [[id:77522cec-fc3e-4a59-98db-1634b3e76db6][ProMicro NRF52840]]
+  
 ** Ordering The PCB
 Base material: FR-4
 Layers: 2

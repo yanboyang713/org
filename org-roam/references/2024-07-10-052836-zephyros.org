@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       6becaca9-f486-4d8b-a292-9c13a4fa3c59
+:END:
+#+title: Zephyr RTOS
+
+[[id:fffc8c5a-01ef-418d-9955-f52a5b0fc6bc][RTOS]]
+
+Zephyr RTOS is an open-source real-time operating system (RTOS) designed specifically for embedded and IoT (Internet of Things) devices.

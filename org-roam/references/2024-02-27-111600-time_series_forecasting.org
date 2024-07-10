@@ -8,5 +8,7 @@
 * Methods
 + [[id:32d21d2e-4e59-4115-aa25-d2d5cf39c4ef][NeuralProphet]]
 + [[id:f52ff303-8c32-4adc-97c1-a1c56eadb461][Prophet]]
-+ [[id:b5f627fa-6b5d-4854-a017-858fc050005b][ARMA]] 
++ [[id:b5f627fa-6b5d-4854-a017-858fc050005b][ARMA]]
++ [[id:7aeef7c9-1ff0-49ec-b939-e5d87b23b908][KAN+Transformer]]
+  
   

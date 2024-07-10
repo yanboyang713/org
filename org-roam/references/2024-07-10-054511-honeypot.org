@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       8f1e83fd-656c-4402-b2b1-da209c736268
+:END:
+#+title: Honeypot
+[[id:9c9c0a89-5491-418f-bd87-9f16f1befdc2][network secure]]

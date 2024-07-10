@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       04027125-35d6-47a3-9930-dbf64c5c857f
+:END:
+#+title: english text auto-completion autosuggestion
+
++ [[id:4506743e-fd96-4969-a1a8-0c5b2548c48a][espanso]]
+

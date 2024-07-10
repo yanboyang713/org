@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       6173eb82-0af6-4346-ae9f-95e70bab976c
+:END:
+#+title: azure speech to text
+
+[[id:c40c4861-f09d-4bc2-a606-d2b62cc533f9][Azure]]
+https://azure.microsoft.com/en-us/products/ai-services/speech-to-text#pricing

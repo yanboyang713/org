@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       1a2f743d-4486-439e-81a7-4c7ec51706cd
+:END:
+#+title: google speech to text
+
+[[id:1702aab3-b922-4f90-9dc9-abb890844574][Google Cloud Platform (GCP)]]
+
+https://cloud.google.com/speech-to-text

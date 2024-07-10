@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       2b36582b-d7a0-41c0-a826-fa2c47fc18b2
+:END:
+#+title: KAN (Kolmogorov–Arnold Networks)
+

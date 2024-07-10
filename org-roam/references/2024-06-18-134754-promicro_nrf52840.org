@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       77522cec-fc3e-4a59-98db-1634b3e76db6
+:END:
+#+title: ProMicro NRF52840
+
+https://www.nologo.tech/product/otherboard/NRF52840.html#%E7%AE%80%E4%BB%8B

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       485c2659-a5a9-47a6-9e33-c0c70c5024cc
+:END:
+#+title: Etched AI
+
+[[id:6ec03dde-9090-462b-b127-7fa998be09db][Transformer]]
+
+* Reference List
+1. https://www.etched.com/
+2. https://www.youtube.com/watch?v=96xtN60dLds
