@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       2584d297-c6a7-4add-a629-bccedde9060b
+:END:
+#+title: Time Series Analysis vs Forecasting
+
+[[id:632ab9ee-b7d2-4504-97e2-25009469c495][time series forecasting]]
+
+[[id:35c83267-0940-4862-b59a-6c9a925851e8][time series analysis]]
+
+Time Series Analysis and Time Series Forecasting, while closely related, are distinct disciplines. They are frequently used interchangeably in various literature, but it’s important to note that they exhibit notable differences, as outlined in the table below:
+[[https://miro.medium.com/v2/resize:fit:720/format:webp/1*B9TXnHXXBNLCpFQkUUAXog.png]]
+
+* Reference List
+1. https://medium.com/analytics-vidhya/assessment-of-accuracy-metrics-for-time-series-forecasting-bc115b655705

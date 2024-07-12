@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       e5358353-39c7-4080-9180-9dd91209f379
+:END:
+#+title: Run Kata Containers with Kubernetes
+
+[[id:2ea7aec8-bb40-45ab-903e-976e9449355c][Kata Containers]]
+[[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]]
+
+* Reference List
+1. https://github.com/kata-containers/kata-containers/blob/main/docs/how-to/run-kata-with-k8s.md

@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       35c83267-0940-4862-b59a-6c9a925851e8
+:END:
+#+title: time series analysis
+

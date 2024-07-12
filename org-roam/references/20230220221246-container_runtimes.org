@@ -19,6 +19,7 @@ Several common container runtimes with [[id:b60301a4-574f-43ee-a864-15f5793ea990
 + [[id:e4fa2843-dc6e-4303-a209-40df1bd10a0f][docker]]
 + [[id:3bcaed88-479f-4566-951f-b2fdb77eadcf][containerd]]
 + [[id:01bbbfa5-43aa-4bd6-9d4a-44c50a1db6cb][CRI-O]]
++ [[id:2ea7aec8-bb40-45ab-903e-976e9449355c][Kata Containers]] 
 
 * System Containers
 + [[id:2c382716-6c15-4385-945f-e5f64e0c0b6e][LXC]]
