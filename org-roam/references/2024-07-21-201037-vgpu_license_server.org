@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       9e7e9d5c-976d-4c42-adf8-e31a04c3353b
+:END:
+#+title: vGPU License Server
+
+[[id:e14fe0f0-96f9-4a7b-a555-1e5718df00d3][vGPU Licensing]]
+
+* Reference List
+1. https://docs.nvidia.com/vgpu/ls/latest/grid-license-server-user-guide/index.html

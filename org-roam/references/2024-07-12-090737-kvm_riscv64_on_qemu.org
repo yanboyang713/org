@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       4cf009ff-9e14-4de8-993b-9c260988bc5e
+:END:
+#+title: KVM RISCV64 on QEMU
+
+* Reference List
+1. https://github.com/kvm-riscv/howto/wiki/KVM-RISCV64-on-QEMU

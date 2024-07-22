@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       a7a76158-d895-4c2a-bb16-1ec4fe46edaa
+:END:
+#+title: Kernel Based Virtual Machive (KVM)
+
+The Kernel Based Virtual Machive (KVM) is an open-source hypervisor which converts Linux kernel into a Type1 hypervisor. We typically have two main parts in the KVM hypervisor: KVM kernel module and KVM user-space tool. The KVM kernel module is a loadable Linux kernel module which provides CPU, memory and interrupt virtualization whereas the KVM user-space tool is an application which helps users create and manage Guest instances (or [[id:605f9bc6-7c2d-4ce0-91d3-b001f279323e][Virtual Machine (vm)]])
+
+[[id:b05cbe28-e48b-4447-bffe-9542eea0eb15][KVM RISC-V]]
+
+* Reference List
+1. https://github.com/kvm-riscv/howto/wiki

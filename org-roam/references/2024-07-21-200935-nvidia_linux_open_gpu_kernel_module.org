@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       0735b749-924f-4a54-bb4f-f79dfb7363d3
+:END:
+#+title: NVIDIA Linux Open GPU Kernel Module
+
+[[id:f67a83ed-53e2-4e33-bbd4-9bf528bf9e42][GPU]]
+
+* Reference List
+1. https://github.com/NVIDIA/open-gpu-kernel-modules

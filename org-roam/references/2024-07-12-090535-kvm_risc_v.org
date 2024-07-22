@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       b05cbe28-e48b-4447-bffe-9542eea0eb15
+:END:
+#+title: KVM RISC-V
+
+[[id:a7a76158-d895-4c2a-bb16-1ec4fe46edaa][Kernel Based Virtual Machive (KVM)]]
+[[id:e14319eb-b98e-459c-8509-9911e399665f][RISC-V]]
+
+[[id:4cf009ff-9e14-4de8-993b-9c260988bc5e][KVM RISCV64 on QEMU]]
+
+* Reference List
+1. https://github.com/kvm-riscv/linux

@@ -13,7 +13,8 @@
 + [[id:5eabfa74-6966-4739-bbdd-9c1f151f317b][Sweep]]
 + [[id:579a303e-d9d8-4789-ba76-9e9bc1bb21c7][swoop keyboard]] 
 + [[id:fae7e659-cfcd-4441-8e2d-f5002940e35c][Corne]]
-+ [[id:d76a3855-0018-441f-a355-7e0d6d4964e5][temper]] 
++ [[id:d76a3855-0018-441f-a355-7e0d6d4964e5][temper]]
++ [[id:1f94f7d5-fe6f-4917-9fe1-564b1c6c7ff0][Cantor Keyboard Remix (36 keys)]] 
 
 * MCU
 + [[id:77522cec-fc3e-4a59-98db-1634b3e76db6][ProMicro NRF52840]]

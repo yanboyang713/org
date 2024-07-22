@@ -4,4 +4,6 @@
 #+title: stereo camera
 #+filetags:
 
+[[id:20102910-a093-4127-9525-c869297d519f][camera]]
+
 [[id:7da48b7b-1942-4f92-aa76-81dffa844d28][Visual SLAM]]

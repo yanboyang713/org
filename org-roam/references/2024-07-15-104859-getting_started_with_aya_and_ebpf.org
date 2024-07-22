@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       3b358462-8b22-4afa-a7fa-0dece85ca3a4
+:END:
+#+title: getting started with Aya and eBPF
+
+[[id:bf5b14f3-8e4c-4706-aea0-102268c418d3][eBPF]]
+[[id:5d48ef9e-a546-4aff-a08e-7f53a0046eef][Aya]]
+
+* Reference List
+1. https://medium.com/@stevelatif/aya-rust-tutorial-part-one-6e1d02fe5ff2

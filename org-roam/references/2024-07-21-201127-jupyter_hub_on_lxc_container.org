@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       bbd5459c-5702-45eb-ad62-6f3478c943b7
+:END:
+#+title: Jupyter Hub on LXC container
+
+[[id:d1323e7d-033e-405a-8967-bf4ee4bc855e][Jupyter]]
+[[id:2c382716-6c15-4385-945f-e5f64e0c0b6e][Linux Containers (LXC)]]
+
+* Reference List
+1. https://gist.github.com/arvati/072f9fda5d6bc8e2f0ef16e4a3285fb3
+2. https://gist.github.com/arvati/efbb7275ee8db131f3c79bf17c080f35

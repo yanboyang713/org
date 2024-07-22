@@ -8,6 +8,7 @@
 
 * [[id:1988535e-9c15-4464-aa96-061b051e4370][Private Cloud (on-premises)]] 
 + [[id:c130e97c-6493-4e70-b9c7-957c84e4eedd][ufw]]
++ [[id:5cc47fba-eea0-4be2-a5fc-7d1bf7565d13][eBPF-based firewall]] 
 
 * [[id:aa20119a-0616-47c0-8250-da622f6ec60b][Public Cloud]]
 + [[id:9cc79b36-66de-4cb9-bd45-cef1464cecbe][AWS Firewalls]]

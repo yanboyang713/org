@@ -1,0 +1,42 @@
+:PROPERTIES:
+:ID:       6a19077c-8e2c-4b89-820d-d4b66ad0748d
+:END:
+#+title: Sampling Techniques
+
+Sampling techniques are used to select a subset of data from a larger dataset. The goal is often to make inferences about the entire dataset or to reduce the size of the dataset for analysis. There are a couple of ways to work on Sampling.
+
+* Random Sampling
+:PROPERTIES:
+:ID:       42898d6a-8073-4283-b321-73bf6e92992f
+:END:
+Each member of the population has an equal chance of being selected.
+
+* Stratified Sampling
+:PROPERTIES:
+:ID:       69a78787-38e3-4764-9031-82c7b5fc2e6a
+:END:
+The population is divided into strata, and samples are taken from each stratum.
+
+https://www.scribbr.com/methodology/stratified-sampling/#:~:text=What%20is%20stratified%20sampling%3F,using%20another%20probability%20sampling%20method.
+
+* Systematic Sampling
+:PROPERTIES:
+:ID:       8c30e230-d235-4186-80bd-784e3099a7a2
+:END:
+Every nth member of the population is selected.
+
+* Cluster Sampling
+:PROPERTIES:
+:ID:       bbd1b73b-41ec-4ef1-9ae2-1efd4868b7bc
+:END:
+The population is divided into clusters, and entire clusters are randomly selected.
+
+* Convenience Sampling
+:PROPERTIES:
+:ID:       b569452b-dceb-48a6-a53e-0f91c9cc5912
+:END:
+Samples are taken from a group that is conveniently accessible.
+
+* Reference List
+1. 
+

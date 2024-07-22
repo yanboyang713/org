@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       8bc84d63-446c-4afc-8d17-85809a130a58
+:END:
+#+title: proxmox Qemu/KVM Virtual Machines
+
+[[id:77bd7428-f1ee-4306-8d5a-62f38134dfc5][Proxmox VE]]
+
+* QEMU CPU Types
+** Custom CPU Types
+[[id:4cf009ff-9e14-4de8-993b-9c260988bc5e][KVM RISCV64 on QEMU]]
+
+* Reference List
+1. https://pve.proxmox.com/wiki/Qemu/KVM_Virtual_Machines

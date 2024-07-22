@@ -10,6 +10,18 @@ In addition to several architectural improvements, eBPF introduces the capabilit
 
 [[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1686704935/k8s/BPF_boz7gc.png]]
 
+eBPF is a revolutionary technology that allows developers to run sandboxed programs directly within the Linux kernel. Unlike traditional kernel code, eBPF programs are loaded into the kernel at runtime, offering a dynamic way to execute custom logic in response to various events. These programs are written in a restricted subset of C, compiled into eBPF bytecode, and run in a virtual machine-like environment provided by the kernel, ensuring safety and efficiency.
+
+* The Origins and Evolution of eBPF
+The journey of eBPF began with the Berkeley Packet Filter (BPF), designed for efficient packet filtering. However, the modern eBPF extends far beyond its networking roots. Today, it can attach to almost any point in the kernel, providing unparalleled visibility into the system’s inner workings. This extension was driven by the need for a more programmable, universally applicable tool to meet modern high-performance applications’ demands.
+
+* Key Applications of eBPF
+BPF’s capabilities make it a great tool across various domains:
++ Networking: eBPF excels in network packet processing, enabling the creation of highly customizable network applications directly in the kernel. Tools like XDP (eXpress Data Path) leverage eBPF to process packets at the network driver level, dramatically increasing performance.
++ Security: eBPF provides powerful facilities for implementing runtime security monitoring and policy enforcement, such as detecting and preventing unwanted behaviour in applications.
++ Observability: Perhaps one of the most powerful uses of eBPF is in observability. It can gather detailed and context-rich system metrics and logs, helping developers pinpoint performance bottlenecks and understand complex system behaviour.
++ Tracing and Profiling: eBPF can trace kernel functions and user-space applications with minimal overhead, making it ideal for performance analysis and debugging.
+
 * Reference List
 1. Sedghpour, M. R. S., & Townend, P. (2022, August). Service Mesh and eBPF-Powered Microservices: A Survey and Future Directions. In 2022 IEEE International Conference on Service-Oriented System Engineering (SOSE) (pp. 176-184). IEEE.
 2. https://www.youtube.com/watch?v=ThtRT8dhu8c&ab_channel=CodingTech

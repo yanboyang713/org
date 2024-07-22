@@ -17,3 +17,4 @@ On-premises deployment doesn’t provide many of the benefits of cloud computing
 + [[id:74e60694-52a6-4eb9-8f1f-1be12893be65][Mesos]]
 + [[id:f70db7e6-fec3-49f2-8645-70782ba3aea4][Radius]] 
 + [[id:59d7305d-15fa-4e3a-a7d6-cb8a7ee7b1a5][Arc Cluster]]
++ [[id:75539315-e2d4-4210-89b5-d814df151811][my own Cluster]] 

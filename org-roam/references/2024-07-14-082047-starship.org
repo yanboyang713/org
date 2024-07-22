@@ -1,0 +1,52 @@
+:PROPERTIES:
+:ID:       541cc258-7856-485e-b740-2735ee0d7130
+:END:
+#+title: starship
+
+[[id:a2da1c32-ba1a-4c2c-9374-1bd8896920fa][rust]]
+* Installation
+https://starship.rs/guide/#%F0%9F%9A%80-installation
+** [[id:dc13b67c-8d8b-40fd-b8cf-9ea8547e485d][Arch Linux]]
+#+begin_src bash
+  sudo pacman -S starship
+  paru -S ttf-firacode-nerd
+#+end_src
+* Set up your shell to use Starship
+** [[id:ccf63974-d736-4927-92d7-41f6c1a5ea06][zsh]]
+Add the following to the end of ~/.zshrc:
+#+begin_src bash
+eval "$(starship init zsh)"
+#+end_src
+* Configure Starship
+https://starship.rs/config/
+To get started configuring starship, create the following file: ~/.config/starship.toml.
+#+begin_src bash
+mkdir -p ~/.config && touch ~/.config/starship.toml
+#+end_src
+All configuration for starship is done in this [[id:d7b4cda7-66a3-4b63-97ab-e0621659be23][TOML]] file:
+#+begin_src toml
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+# Replace the '❯' symbol in the prompt with '➜'
+[character] # The name of the module we are configuring is 'character'
+success_symbol = '[➜](bold green)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+#+end_src
+
+* Config File Location
+You can change default configuration file location with STARSHIP_CONFIG environment variable:
+* List Available Modules
+#+begin_src bash
+starship module --list
+#+end_src
+
+* Reference List
+1. https://starship.rs/
+2. https://github.com/starship/starship

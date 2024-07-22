@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       7624aac1-dd5d-4e4a-93d8-92bb63d9df78
+:END:
+#+title: Lazygit
+
+[[id:28776313-f579-466f-9a3d-216fc14a5308][git]]
+
+* Reference List
+1. https://www.youtube.com/watch?v=Ihg37znaiBo

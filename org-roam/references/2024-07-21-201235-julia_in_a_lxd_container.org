@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       4f2c680b-a0b0-488c-9e7c-6433faa1ec77
+:END:
+#+title: Julia in a LXD container
+
+[[id:2c382716-6c15-4385-945f-e5f64e0c0b6e][Linux Containers (LXC)]]
+[[id:932becef-96a6-495b-a035-ac6be48f51f8][julia]]
+
+* Reference List
+1. https://blog.simos.info/how-to-run-julia-on-jupyter-in-a-lxd-container/

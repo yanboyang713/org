@@ -18,10 +18,25 @@
 :ID:       e59d2f77-d6ea-4dff-8d74-32e112968fa3
 :END:
 + [[id:eb1800d9-92f0-4a7d-a14b-c6d2d7849907][lab599]]
-+ [[id:3c70bcba-5dd6-425e-91b6-c4c90cc63b98][SunSDR2]] 
++ [[id:3c70bcba-5dd6-425e-91b6-c4c90cc63b98][SunSDR2]]
+
+* UV radio
+:PROPERTIES:
+:ID:       b0ab05a9-0a7f-4bc0-a61e-77c62e5d1bb5
+:END:
++ [[id:989e84e9-4785-4c0a-a76f-2e66be451bf9][yaesu ftm-300dr]] 
 
 * HF antenna
 :PROPERTIES:
 :ID:       d3d3f07f-bcd8-42bd-bcd5-4dce50a32d25
 :END:
 + [[id:6d8e8f1a-9111-4d4d-aa3f-03ad191973ba][End Fed Half Wave (EFHW)]]
+
+* MMDVM
+:PROPERTIES:
+:ID:       8de1b503-5689-4f81-9c2a-e20b6c6bb5dd
+:END:
++ [[id:4b7b6f92-1183-4ea4-8ac1-94d098408eb7][W0CHP-PiStar-Dash (WPSD)]]
++ [[id:a894b35d-c2b0-44c5-a07f-23886b833a7d][Pi-Star]]
+  
+[[id:b5718579-71df-4203-921f-95bd3f4cb75b][power supply]]

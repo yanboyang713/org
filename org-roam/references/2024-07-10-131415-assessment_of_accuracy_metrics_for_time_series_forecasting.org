@@ -32,10 +32,11 @@ n is the number of data points (samples).
 
 Let’s find the MAE for our data.
 #+begin_src python
-# Calculate Mean Absolute Error (MAE)
-mae = mean_absolute_error(final_test_data['y'], final_test_data['AutoARIMA'])
-# Print MAE
-print(f"Mean Absolute Error (MAE): {mae:.4f}")
+  from sklearn.metrics import mean_absolute_error
+  # Calculate Mean Absolute Error (MAE)
+  mae = mean_absolute_error(final_test_data['y'], final_test_data['AutoARIMA'])
+  # Print MAE
+  print(f"Mean Absolute Error (MAE): {mae:.4f}")
 #+end_src
 
 Output :- Mean Absolute Error (MAE): 2.8489
@@ -65,12 +66,13 @@ n is the number of data points (samples).
 Let us check the RMSE for this data:
 
 #+begin_src python
-# Calculate the Root Mean Squared Error (RMSE)
-rmse = mean_squared_error(final_test_data['y'], final_test_data['AutoARIMA'],
-                          squared=False)
+  from sklearn.metrics import mean_squared_error
+  # Calculate the Root Mean Squared Error (RMSE)
+  rmse = mean_squared_error(final_test_data['y'], final_test_data['AutoARIMA'],
+                            squared=False)
 
-# Print the RMSE
-print(f"Root Mean Squared Error (RMSE): {rmse:.4f}")
+  # Print the RMSE
+  print(f"Root Mean Squared Error (RMSE): {rmse:.4f}")
 #+end_src
 
 Output :- Root Mean Squared Error (RMSE): 3.8863
@@ -99,8 +101,31 @@ The result is multiplied by 100% to express the error as a percentage.
 
 Let us find the MAPE for our data:
 #+begin_src python
-mape = np.mean(np.abs((final_test_data['y'] - final_test_data['AutoARIMA'])/ final_test_data['y'])) * 100
-print(f"Mean Absolute Percentage Error (MAPE): {mape:.4f}")
+  import numpy as np
+
+  def mean_absolute_percentage_error(y_true, y_pred): 
+      """
+      Calculate Mean Absolute Percentage Error (MAPE)
+      
+      Args:
+      y_true: array-like of shape (n_samples,) - True values
+      y_pred: array-like of shape (n_samples,) - Predicted values
+      
+      Returns:
+      mape: float - Mean Absolute Percentage Error
+      """
+      y_true, y_pred = np.array(y_true), np.array(y_pred)
+      result = np.mean(np.abs((y_true - y_pred) / y_true)) * 100
+      
+      # Check for infinity and replace with 0
+      if np.isinf(result):
+          return 0.0
+      return mape
+
+  
+    import numpy as np
+    mape = np.mean(np.abs((final_test_data['y'] - final_test_data['AutoARIMA'])/ final_test_data['y'])) * 100
+    print(f"Mean Absolute Percentage Error (MAPE): {mape:.4f}")
 #+end_src
 
 Output :- Mean Absolute Percentage Error (MAPE): 2.6810
@@ -131,8 +156,23 @@ The result is multiplied by 100% to express the error as a percentage.
 
 Let us check the SMAPE for our data:
 #+begin_src python
-smape = np.mean((np.abs(final_test_data['y'] - final_test_data['AutoARIMA']) /((np.abs(final_test_data['y'] +np.abs(final_test_data['AutoARIMA'])) / 2))) * 100
-print(f"Symmetric Mean Absolute Percentage Error (SMAPE): {smape:.4f}")
+
+  import numpy as np
+  from sklearn.metrics import mean_absolute_percentage_error
+
+  y_true = np.array([100, 200, 300, 400, 0])
+  y_pred = np.array([110, 190, 310, 420, 0])
+
+  # Mask to exclude zero values in y_true
+  mask = y_true != 0
+
+  mape = mean_absolute_percentage_error(y_true[mask], y_pred[mask]) * 100
+  print(f"MAPE: {mape}%")
+
+
+  
+    smape = np.mean((np.abs(final_test_data['y'] - final_test_data['AutoARIMA']) /((np.abs(final_test_data['y'] +np.abs(final_test_data['AutoARIMA'])) / 2))) * 100
+    print(f"Symmetric Mean Absolute Percentage Error (SMAPE): {smape:.4f}")
 #+end_src
 
 Output :- Symmetric Mean Absolute Percentage Error (SMAPE): 2.6773

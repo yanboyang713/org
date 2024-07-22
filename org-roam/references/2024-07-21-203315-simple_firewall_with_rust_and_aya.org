@@ -1,0 +1,18 @@
+:PROPERTIES:
+:ID:       b1745c10-cf08-4e3f-a7ff-dbfe55b08255
+:END:
+#+title: Simple Firewall with Rust and Aya
+
+* Introduction
+[[id:bf5b14f3-8e4c-4706-aea0-102268c418d3][eBPF]] and the Rust [[id:5d48ef9e-a546-4aff-a08e-7f53a0046eef][Aya]] crate.
+eBPF can run sandboxed program inside the kernel. Aya can create the byte code for both the kernel space programs, and the corresponding userland programs to load the eBPF byte code.
+we will be looking at aya-rs, a rust interface to eBPF https://aya-rs.dev/
+
+* Why Use eBPF and Aya?
+Aya allows you to use eBPF, but also build both your userspace and kernel code with one command using Cargo. Testing and deployments are now much easier. There are other language bindings to use eBPF, several of which are relatively mature. Rust does have more stringent requirements during the compilation phase for code hygiene. This can only be a good thing when generating code that will be run with escalated privileges.
+
+* Setting up the Prerequisites
+
+https://mirror.umd.edu/ubuntu-iso/24.04/ubuntu-24.04-live-server-amd64.iso
+* Reference List
+1. https://medium.com/@stevelatif/simple-firewall-with-rust-and-aya-b56373c8bcc6

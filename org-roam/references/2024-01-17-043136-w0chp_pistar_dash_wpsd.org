@@ -6,6 +6,9 @@
 a fork of [[id:a894b35d-c2b0-44c5-a07f-23886b833a7d][Pi-Star]] that is being very actively developed by Chip, W0CHP
 
 it has many significant changes and new features compared to the legacy Pi-Star image
+* Initial Startup
+https://wpsd-docs.w0chp.net/initial_startup/
+** Initial Dashboard Access
 
 * Reference List
 1. https://w0chp.radio/wpsd/

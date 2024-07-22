@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       549bc706-7efa-4fcb-92e2-1ea33e0e9738
+:END:
+#+title: RouterOS IPV6
+
+[[id:c2d2bf9b-7c0e-499e-8606-ae85e8506cf0][RouterOS]]
+
+[[id:0f90071e-2a0a-4f36-ba06-6e3c27770ccd][ipv6]]
+
+* Reference List
+1. https://www.youtube.com/watch?v=ApsPlALh51o

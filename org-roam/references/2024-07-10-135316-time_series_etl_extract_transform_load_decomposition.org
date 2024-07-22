@@ -28,32 +28,34 @@ Loading Data: After transforming and decomposing the data, it is loaded into a t
 + Methods developed by statistical agencies for seasonal adjustment and decomposition of time series data.
 
 #+begin_src python
-# Perform decomposition
-decomposition = seasonal_decompose(df['Energy'], model='additive', period=12)
-# Create custom subplots for each component
-# Initialize a figure with 4 subplots arranged vertically
-fig, axes = plt.subplots(4, 1, figsize=(12, 8), sharex=True)
-# Plot the observed component in the first subplot 
-decomposition.observed.plot(ax=axes[0], color='green')
-axes[0].set_ylabel('Observed')
-# Plot the trend component in the second subplot 
-decomposition.trend.plot(ax=axes[1], color='green')
-axes[1].set_ylabel('Trend')
-# Plot the seasonal component in the third 
-decomposition.seasonal.plot(ax=axes[2], color='green')
-axes[2].set_ylabel('Seasonal')
-# Plot the residual component in the fourth subplot 
-decomposition.resid.plot(ax=axes[3], color='green')
-axes[3].set_ylabel('Residual')
-# Set a common X-axis label
-plt.xlabel('Date')
-# Set the main title for the entire plot
-plt.suptitle('ETS Decomposition', fontsize=16)
-# Adjust subplot spacing and position the main title
-plt.tight_layout()
-plt.subplots_adjust(top=0.9)
-# Display the plot
-plt.show()
+  from statsmodels.tsa.seasonal import seasonal_decompose
+ import matplotlib.pyplot as plt
+  # Perform decomposition
+  decomposition = seasonal_decompose(df['Energy'], model='additive', period=12)
+  # Create custom subplots for each component
+  # Initialize a figure with 4 subplots arranged vertically
+  fig, axes = plt.subplots(4, 1, figsize=(12, 8), sharex=True)
+  # Plot the observed component in the first subplot 
+  decomposition.observed.plot(ax=axes[0], color='green')
+  axes[0].set_ylabel('Observed')
+  # Plot the trend component in the second subplot 
+  decomposition.trend.plot(ax=axes[1], color='green')
+  axes[1].set_ylabel('Trend')
+  # Plot the seasonal component in the third 
+  decomposition.seasonal.plot(ax=axes[2], color='green')
+  axes[2].set_ylabel('Seasonal')
+  # Plot the residual component in the fourth subplot 
+  decomposition.resid.plot(ax=axes[3], color='green')
+  axes[3].set_ylabel('Residual')
+  # Set a common X-axis label
+  plt.xlabel('Date')
+  # Set the main title for the entire plot
+  plt.suptitle('ETS Decomposition', fontsize=16)
+  # Adjust subplot spacing and position the main title
+  plt.tight_layout()
+  plt.subplots_adjust(top=0.9)
+  # Display the plot
+  plt.show()
 #+end_src
 
 *NOTE*:
