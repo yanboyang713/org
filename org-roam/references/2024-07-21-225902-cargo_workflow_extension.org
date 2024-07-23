@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       f09c1851-0a1f-45c0-8ef6-79640dcca379
+:END:
+#+title: cargo workflow extension
+
+[[id:9d91bf12-660c-42df-9b76-5bafdd255251][Cargo]]
+
+In the Rust ecosystem, a "Cargo workflow extension" typically refers to a custom task or set of tasks that extend the default functionality provided by Cargo, the Rust package manager and build system. These custom tasks are often used to automate repetitive or complex tasks in a Rust project.
+

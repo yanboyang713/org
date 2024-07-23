@@ -6,17 +6,55 @@
 
 Flight controller also called Autopilot, or FC for short, stabilizes and controls a [[id:99ad3062-59b9-490c-bbd6-a27cf4448aad][UAV]] for semi-autonomous and autonomous flights. It is one of the core components of a UAV. Flight controller primarily consists of a microcontroller, control circuit & a suite of sensors (gyroscope, accelerator, electronic compass, barometer, etc.). It has redundant sensors & power supplies and performs redundant switching in case of failure to ensure flight safety.
 
-* Software
-[[id:363cd982-b188-4e15-97af-0c18a73e2746][ardupilot]]
-* Hardware
-+ [[id:5f44d918-1e45-4819-a973-53a2eb7185ee][CUAV Pixhawk]]
-+ [[id:81a307fc-3733-4a2d-9b2e-fac47bad99f2][Cubepilot]]
+* Software (Firmware)
+https://blog.unmanned.tech/flight-controller-firmware/
 
-  LEFEI SN-L+
+[[id:363cd982-b188-4e15-97af-0c18a73e2746][ardupilot]]
+
+[[id:68571e2f-e40a-4095-b3e3-9e0d2b37c04c][PX4 Flight Stack]]
+
+[[id:a27c71bf-5eb9-4ab8-80d5-87b26baba95b][iNav]]
+
+[[id:7fa79320-efdd-4b4a-95b7-b50a12928d82][LibrePilot]]
+* Hardware
+
+** CUAV Pixhawk
+:PROPERTIES:
+:ID:       1ff7c41c-5678-48df-a633-75a232b930c9
+:END:
+*** CUAV Pixhawk V6X
+https://docs.px4.io/main/en/flight_controller/cuav_pixhawk_v6x.html
+
+** Cubepilot
+:PROPERTIES:
+:ID:       0fc06b89-cfc0-41c2-baa8-7b6f11a616ef
+:END:
+
+https://www.cubepilot.com/#/home
+
+Cube Orange/+ With ADSB-In
+https://ardupilot.org/copter/docs/common-thecubeorange-overview.html
+
+** SpeedyBee F405 WING
+:PROPERTIES:
+:ID:       4c3aa026-6a8b-449d-a69e-26a022a3f492
+:END:
+
+** SpeedyBee F405 V4
+:PROPERTIES:
+:ID:       56e98ac3-a9ac-48c6-9ba5-ea4b1ecadd46
+:END:
+
+** LEFEI SN-L+
+:PROPERTIES:
+:ID:       d749cea1-d185-42d4-a6ef-9a5c5aa1dfeb
+:END:
   https://www.aliexpress.us/item/3256806186926961.html?src=google&src=google&albch=shopping&acnt=708-803-3821&slnk=&plac=&mtctp=&albbt=Google_7_shopping&albagn=888888&isSmbAutoCall=false&needSmbHouyi=false&albcp=19108282527&albag=&trgt=&crea=en3256806186926961&netw=x&device=c&albpg=&albpd=en3256806186926961&gad_source=4&gclid=Cj0KCQiAqsitBhDlARIsAGMR1Rh7SbafHDi1ohCT7g9utdIycoMJAGz1hUUsux1IfcJwb2B_TmUAyTQaAqNkEALw_wcB&gclsrc=aw.ds&aff_fcid=24d9584897e045eea080aa8f3075fe57-1706200396515-08356-UneMJZVf&aff_fsk=UneMJZVf&aff_platform=aaf&sk=UneMJZVf&aff_trace_key=24d9584897e045eea080aa8f3075fe57-1706200396515-08356-UneMJZVf&terminal_id=aebb846c0cd44cde9a49f1435240e9bd&afSmartRedirect=y&gatewayAdapt=glo2usa
 
   https://github.com/HelloLeFei/SN_L/tree/master
 
-
-MyFlyDream MFD Crosshair
+** MyFlyDream MFD Crosshair
+:PROPERTIES:
+:ID:       d22322e9-1136-4108-93c1-e9f303d26163
+:END:
 https://myflydream.com/flight-controllers-c-5/crosshair-autopilot-p-2
