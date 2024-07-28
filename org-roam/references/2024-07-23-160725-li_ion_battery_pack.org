@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       5dd7f744-b070-4dcb-913f-7bc56be7abde
+:END:
+#+title: Li-ion Battery Pack
+* Tools
+
+* Reference List
+1. https://oscarliang.com/li-ion-battery-long-range/

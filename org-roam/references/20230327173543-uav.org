@@ -13,7 +13,9 @@ Unmanned Aerial Vehicles (UAVs), also known as Autonomous Aerial Vehicles (AAVs)
 [[id:9dd3328f-e26e-4bc3-9ff2-974528b62e28][AR Glasses]]
 
 [[id:862675a2-0ae6-46a7-b706-f3ec03c23921][UAV Radio Module]]
+
 [[id:ab024519-7f4d-410e-b270-04809fc3f78d][UAV Flight Controller]]
 
+[[id:5dd7f744-b070-4dcb-913f-7bc56be7abde][Li-ion Battery Pack]]
 * Reference List
 1. Titouna, C., Naït-Abdesselam, F., & Moungla, H. (2020, June). An online anomaly detection approach for unmanned aerial vehicles. In 2020 International Wireless Communications and Mobile Computing (IWCMC) (pp. 469-474). IEEE.

@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       88427180-5f07-4629-b178-db92ec673994
+:END:
+#+title: The Difference Between a Drone Flight Controller and Flight Computer
+
+[[id:ab024519-7f4d-410e-b270-04809fc3f78d][UAV Flight Controller]]
+
+* Reference List
+1. https://www.youtube.com/watch?v=PlKeFj5teo4

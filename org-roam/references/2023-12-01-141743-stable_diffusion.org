@@ -3,5 +3,7 @@
 :END:
 #+title: Stable Diffusion
 
+[[id:2ba89cab-9dfd-4200-a701-771315fdaafb][ComfyUI]]
+
 * Reference List
 1. https://en.wikipedia.org/wiki/Stable_Diffusion

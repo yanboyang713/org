@@ -4,6 +4,9 @@
 #+title: Smoothing Techniques for time series data
 
 [[id:b2377ddc-9d91-4c8e-a4d8-21fabf961ee8][Time Series]]
+
+[[id:5b2a097b-45f4-4394-8b4f-1e48dfd84f5c][Data Smoothing]]
+
 * Introduction
 Smoothing techniques are kinds of data preprocessing techniques to remove noise from a data set. This allows important patterns to stand out.
 * Moving average (MA) smoothing
@@ -128,23 +131,34 @@ F_{t+m} = S_t + B_t \cdot \sum_{i=1}^{m} \phi^i + C_{\%L}
 In the above, $\phi$ is the damping constant. $\alpha$, $\beta$, and $\gamma$ must be estimated in such a way that the [[id:e4617ee2-3c65-4752-91e6-d2ea8e4e18d8][Root Mean Squared Error (RMSE)]] of the error is minimized.
 
 #+begin_src python
-def triple_exponential_smoothing(X,L,α,β,γ,ϕ):
+def triple_exponential_smoothing(X, L, α, β, γ, ϕ, m):
+    def sig_ϕ(ϕ, m):
+        return np.sum(np.array([np.power(ϕ, i) for i in range(m + 1)]))
 
-	def sig_ϕ(ϕ,m):
-		return np.sum(np.array([np.power(ϕ,i) for i in range(m+1)]))
-
-	C, S, B, F = (np.zeros( X.shape[0] ) for i in range(4))
-	S[0], F[0] = X[0], X[0]
-	B[0] = np.mean( X[L:2*L] - X[:L] ) / L
-	m = 12
-	sig_ϕ = sig_ϕ(ϕ,m)
-	for t in range(1, X.shape[0]):
-		S[t] = α * (X[t] - C[t % L]) + (1 - α) * (S[t-1] + ϕ * B[t-1])
-		B[t] = β * (S[t] - S[t-1]) + (1-β) * ϕ * B[t-1]
-		C[t % L] = γ * (X[t] - S[t]) + (1 - γ) * C[t % L]
-		F[t] = S[t] + sig_ϕ * B[t] + C[t % L]
-	return S
+    C, S, B, F = (np.zeros(X.shape[0]) for _ in range(4))
+    S[0], F[0] = X[0], X[0]
+    B[0] = np.mean(X[L:2*L] - X[:L]) / L
+    sig_ϕ_val = sig_ϕ(ϕ, m)
+    
+    for t in range(1, X.shape[0]):
+        S[t] = α * (X[t] - C[t % L]) + (1 - α) * (S[t-1] + ϕ * B[t-1])
+        B[t] = β * (S[t] - S[t-1]) + (1-β) * ϕ * B[t-1]
+        C[t % L] = γ * (X[t] - S[t]) + (1 - γ) * C[t % L]
+        F[t] = S[t] + sig_ϕ_val * B[t] + C[t % L]
+    
+    return S
 #+end_src
 
+*NOTE*:
++ X is data
++ L is Season Length The season length L represents the number of periods in a full seasonal cycle. For example, if the data is monthly and exhibits yearly seasonality, L would be 12.
++ S represents the smoothed value (level).
++ B represents the trend component.
++ C represents the seasonal component.
++ F represents the forecast value.
++ α, β, and γ are the smoothing constants for the level, trend, and seasonality, respectively.
++ ϕ is the damping factor.
++ The variable m in the context of the triple exponential smoothing function typically represents the number of future periods for which the forecast is being made.
+  
 * Reference List
 1. https://medium.com/@srv96/smoothing-techniques-for-time-series-data-91cccfd008a2

@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       e4bb9f66-0032-4df5-bf89-f6a96332e0b5
+:END:
+#+title: parsing CRSF Protocol
+
+[[id:99ad3062-59b9-490c-bbd6-a27cf4448aad][UAV]]
+
+* Reference List
+1. https://medium.com/@mike_polo/parsing-crsf-protocol-from-a-flight-controller-with-a-raspberry-pi-for-telemetry-data-79e9426ff943
