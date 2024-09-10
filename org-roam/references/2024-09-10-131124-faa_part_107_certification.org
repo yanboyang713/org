@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       17488736-31f4-46ba-8332-254e6b4c87da
+:END:
+#+title: FAA Part 107 certification
+
+[[id:5bfb25cc-0398-4756-becf-a5c27b9b7dda][FAA]]
+
+* Reference List
+1. https://www.nvbaa.org/welcome-to-the-nvbaa-faa-part-107-test-prep-training-course/?gad_source=1&gclid=CjwKCAjw3P-2BhAEEiwA3yPhwIeLLqHdCkqAmY1_YwUM0-pOSl6Ls3LTiMnIC-9d-OrIkUzm3Aw9oxoCNKEQAvD_BwE
+2. https://www.faa.gov/uas/commercial_operators/become_a_drone_pilot

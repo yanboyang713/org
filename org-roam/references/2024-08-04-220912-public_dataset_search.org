@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       4cd576bc-143a-4050-a967-4496e24c393e
+:END:
+#+title: public datasets
+
+* Search Engine
++ [[https://datasetsearch.research.google.com/][Google Dataset search]]
++ [[https://data.mendeley.com/research-data/?][mendeley data]]
++ [[https://www.kaggle.com/datasets][kaggle]]
+
+* [[id:0825efbb-b959-44e6-ac59-a6dafe8ed3bb][networking datasets]] 

@@ -3,4 +3,6 @@
 :END:
 #+title: QUIC
 
-https://en.wikipedia.org/wiki/QUIC
+* Reference List
+1. https://en.wikipedia.org/wiki/QUIC
+2. https://www.fastly.com/blog/why-fastly-loves-quic-http3/

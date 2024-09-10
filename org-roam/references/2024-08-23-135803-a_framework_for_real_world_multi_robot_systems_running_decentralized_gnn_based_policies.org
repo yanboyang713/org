@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       c5ad5bde-4241-4b88-b554-ad9143677931
+:END:
+#+title: A Framework for Real-World Multi-Robot Systems Running Decentralized GNN-Based Policies
+
+
+* Reference List
+1. https://ieeexplore.ieee.org/document/9811744

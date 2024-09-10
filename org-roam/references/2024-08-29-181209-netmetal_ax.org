@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       f9f3a73f-f337-4844-8cfb-e85d6b074b3f
+:END:
+#+title: NetMetal ax
+
+[[id:7b3d4c7a-30a8-4f0f-a587-fdbb39109e57][mikrotik]]
+
+* Reference List
+1. https://mikrotik.com/product/netmetal_ax

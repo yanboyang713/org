@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       7ac3c025-871c-4b85-b1aa-d6b6ed6f0ca7
+:END:
+#+title: build own CDN
+
+[[id:4aab71ba-64f3-4c16-80ca-1d9db66c7c98][Content Delivery Network (CDN)]]
+
+* Reference List
+1. https://info.varnish-software.com/blog/build-your-cdn-in-5-steps

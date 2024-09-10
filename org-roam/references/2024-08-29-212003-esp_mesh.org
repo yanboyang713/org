@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       721feedb-98fa-49bc-85ca-09c26e113dae
+:END:
+#+title: ESP-MESH
+
+https://randomnerdtutorials.com/esp-mesh-esp32-esp8266-painlessmesh/
+https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-guides/esp-wifi-mesh.html
