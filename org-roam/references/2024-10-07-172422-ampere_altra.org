@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       1227a942-935b-4188-82d5-4502ed3a6306
+:END:
+#+title: Ampere Altra
+
+[[id:dd6edcaa-7b28-4943-a85a-e73303d7e3d7][ARM CPU]]
+
+https://www.itix.fr/blog/homelab-server-2u-short-depth-front-io-ampere-altra-arm64-architecture/

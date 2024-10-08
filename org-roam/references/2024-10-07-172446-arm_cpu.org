@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       dd6edcaa-7b28-4943-a85a-e73303d7e3d7
+:END:
+#+title: ARM CPU
+

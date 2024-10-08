@@ -1,0 +1,19 @@
+:PROPERTIES:
+:ID:       c48b6e01-388f-4261-9e9b-cc4258e4c441
+:END:
+#+title: OpenConnect
+
+* Installation
+#+begin_src bash
+  paru -S openconnect networkmanager-openconnect
+#+end_src
+
+* Using the Terminal
+#+begin_src console
+sudo openconnect vpn.ncsu.edu
+Username: <Enter your UnityID>
+Password: <Enter your UnityID password>
+Second Password: <Enter push/sms/code>
+#+end_src
+* Reference List
+1. https://wiki.archlinux.org/title/OpenConnect

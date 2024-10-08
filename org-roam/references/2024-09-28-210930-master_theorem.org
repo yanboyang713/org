@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       5703d0aa-232d-4639-a5dc-c660dd6ccfa0
+:END:
+#+title: Master Theorem
+
+https://www.programiz.com/dsa/master-theorem
