@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       d0cf7221-2a2f-47f5-9fba-8cab82f489b0
+:END:
+#+title: Ultra Ethernet Consortium (UEC)
+
+* Reference List
+1. https://www.anandtech.com/show/21315/grows-to-55-members-reveals-details-on-upcoming-networking-tech

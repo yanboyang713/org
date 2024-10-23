@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       d82a1460-2154-4479-b604-d5459dc53f90
+:END:
+#+title: AMD Pensando
+
+[[id:d0cf7221-2a2f-47f5-9fba-8cab82f489b0][Ultra Ethernet Consortium (UEC)]]
+[[id:54c097a7-95a0-4a8e-be69-0735f4d76f38][Aruba CX 10000 Switch Series]]
+
+* Reference List
+1. https://www.amd.com/en/products/accelerators/pensando.html
+2. https://www.forbes.com/sites/moorinsights/2024/10/14/analyzing-amds-next-generation-cpu-gpu-and-dpu/
+3. https://www.techradar.com/pro/amd-debuts-new-pensando-chips-and-networking-technology-to-advance-ai-performance
+4. https://www.amd.com/content/dam/amd/en/documents/pensando-technical-docs/product-briefs/pensando-dsc3-product-brief.pdf
+5. https://community.amd.com/t5/corporate/transforming-ai-networks-with-amd-pensando-pollara-400/ba-p/716566

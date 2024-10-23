@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       4d70fd0a-5759-44b1-96c4-bd123ff294f5
+:END:
+#+title: IDE
+
++ [[id:3a7a43d4-c779-42fc-a0f3-ddbe3d268e79][cursor AI IDE]] 

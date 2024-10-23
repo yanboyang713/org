@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       f4ac2a9c-8682-4b73-bcf4-deffe72c11b8
+:END:
+#+title: Data Processing Units (DPU)
+
++ [[id:d82a1460-2154-4479-b604-d5459dc53f90][AMD Pensando]]
+
+* Reference List
+1. https://blogs.nvidia.com/blog/whats-a-dpu-data-processing-unit/

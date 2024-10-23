@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       3a7a43d4-c779-42fc-a0f3-ddbe3d268e79
+:END:
+#+title: cursor AI IDE
+
+[[id:4d70fd0a-5759-44b1-96c4-bd123ff294f5][IDE]]
+
+* Installation
+#+begin_src bash
+  paru -S cursor-bin
+#+end_src
+* Reference List
+1. https://www.cursor.com/
