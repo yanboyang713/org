@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       cca9398e-28d0-41ce-9fe1-01d46c2a9af9
+:END:
+#+title: Fedora CoreOS
+

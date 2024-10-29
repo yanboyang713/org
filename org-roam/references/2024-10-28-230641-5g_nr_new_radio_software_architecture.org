@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       855840e5-07ec-455f-a0c5-f68e1159849f
+:END:
+#+title: 5G NR (new radio) Software Architecture
+
+[[id:56a52d86-4e17-465a-aba1-216a6aa4f7b0][Radio Access Network (RAN) splits]]
+
+* Reference List
+1. https://www.radisys.com/connect/connectran/5g

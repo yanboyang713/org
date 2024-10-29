@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       4dc5a485-4326-42e2-baac-72821ebc01b7
+:END:
+#+title: InfiniBand
+
+https://www.youtube.com/watch?v=aCaJGxhABLc

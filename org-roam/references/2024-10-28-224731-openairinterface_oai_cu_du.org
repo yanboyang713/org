@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       1cca2ec1-111d-487a-a9d5-249aeb4d5b60
+:END:
+#+title: OpenAirInterface (OAI) CU & DU
+
+[[id:ed3c730b-c284-410c-80bf-7f0c21d3105b][OpenAirInterface]]
+
+* Reference List
+1. https://docs.sd-ran.org/master/oai_cu_cp.html

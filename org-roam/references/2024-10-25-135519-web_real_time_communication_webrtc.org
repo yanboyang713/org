@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       ba66a4bc-6800-4e24-9734-cda113e6bb68
+:END:
+#+title: Web Real-Time Communication (WebRTC)
+
+Web Real-Time Communication (WebRTC) is an open-source project and set of standards that enable real-time peer-to-peer communication directly between browsers and devices. It allows for audio, video, and data streaming without requiring plugins or external software, making it ideal for applications such as video conferencing, online gaming, and live streaming.
+

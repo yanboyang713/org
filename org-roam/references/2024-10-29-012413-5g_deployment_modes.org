@@ -1,0 +1,20 @@
+:PROPERTIES:
+:ID:       058d9d70-dbbd-4d7d-bd6c-84ddd80c42a6
+:END:
+#+title: 5G deployment modes
+
+each with a different approach to how 5G technology integrates with the existing 4G LTE infrastructure.
+
+* 5G NSA (Non-Stand-Alone)
+:PROPERTIES:
+:ID:       4f4ba61b-9c78-487f-acfd-9ceed1b4b501
+:END:
+In NSA, the 5G network relies on the existing 4G LTE infrastructure for some of its core functions, especially for control signaling. In other words, LTE and 5G work together, where 4G LTE provides the control plane, and 5G enhances the user plane to deliver faster data speeds.
+
+* 5G SA (Stand-Alone)
+:PROPERTIES:
+:ID:       9ae70da0-4874-4461-8d6a-bddd260c80ef
+:END:
+In SA, the 5G network operates independently from 4G LTE. It uses a new 5G Core (5GC) that handles both the control and user planes, unlocking the full potential of 5G.
+
+

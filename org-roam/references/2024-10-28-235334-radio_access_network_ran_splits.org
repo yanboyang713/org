@@ -1,0 +1,59 @@
+:PROPERTIES:
+:ID:       56a52d86-4e17-465a-aba1-216a6aa4f7b0
+:END:
+#+title: O-RAN Alliance Split Architecture
+
+[[https://www.radisys.com/sites/default/files/2021-06/x5G,P20Diagram,P2006022021B.png.pagespeed.ic.fPnAZnu5Jj.webp]]
+* Disaggergation
+** split 7.2 (vRAN model)
+:PROPERTIES:
+:ID:       08a019a8-3b4c-4c8c-963c-19d9f4f8ecbc
+:END:
+Most commonly used. DU manages Physical Layer functions, while CU handles the rest.
+
+** split 6 (small cell model)
+:PROPERTIES:
+:ID:       bfd6cbaa-afcf-4f11-9c11-29e361b2f6fa
+:END:
+
+** split 2 (F1 split)
+:PROPERTIES:
+:ID:       3b11bb12-5b96-47b4-bd53-d6e7790bb044
+:END:
+
+** E1 split (CU-CP and CU-UP)
+:PROPERTIES:
+:ID:       98c07021-8447-4ed8-a258-f256f4b0ca5e
+:END:
+
+* Components
+** Radio Unit (RU)
+:PROPERTIES:
+:ID:       7b67ceaf-68b1-4916-ab4f-2b95605dd813
+:END:
+Handles low-level radio functions like beamforming and RF (Radio Frequency) signals.
+
+
+[[id:8798618b-1d83-48b9-8ee3-24bc8016caa8][ns-O-RAN]]
+
+RRU: Remote Radio unit interfaces with an [[id:5be8e9fc-0ae7-40dd-8839-22492874a751][antenna]] on one end and [[id:1329f1c2-a4a3-456b-b114-2220d3e990db][BBU]] on the other. It connects to BBU through CPRI interface and converts RF signal into data signal and vice versa. Further, it does filtering and amplification of RF signal. In fact, it decides the “COVERAGE” of the system”
+
+https://telcocloudbridge.com/blog/c-ran-vs-cloud-ran-vs-vran-vs-o-ran/
+
+** Distributed Unit (DU)
+:PROPERTIES:
+:ID:       225aa706-2680-46e9-8111-4eedbb0b28f4
+:END:
+Manages Layer 2 (MAC/RLC) operations and can be deployed closer to users.
+
+Distributed runs the RLC, MAC, and parts of the PHY layer. We normally place DU closer to [[id:4fb3287a-23fb-4585-bd87-be76e4b4077f][Radio Unit (RRU)]].
+
+https://telcocloudbridge.com/blog/c-ran-vs-cloud-ran-vs-vran-vs-o-ran/
+** CU (Central Unit)
+:PROPERTIES:
+:ID:       af84dc9d-61ec-4a73-b738-bd2048e4a56a
+:END:
+Handles non-real-time functions (e.g., mobility management, session control).
+
+
+

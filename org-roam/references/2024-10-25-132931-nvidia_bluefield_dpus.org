@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       cd31b22c-54f5-4b36-b175-11f26abf9563
+:END:
+#+title: NVIDIA BlueField DPUs
+
+* Reference List
+1. https://www.nvidia.com/en-us/networking/products/data-processing-unit/hpc/

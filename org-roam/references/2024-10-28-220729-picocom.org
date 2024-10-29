@@ -1,0 +1,54 @@
+:PROPERTIES:
+:ID:       223f2b78-8473-4823-ae9b-b2f4897bf908
+:END:
+#+title: picocom
+
+* PC802 Small Cell Development Board (PC802SCB)
+:PROPERTIES:
+:ID:       c2ced192-be04-4a10-8275-8139497cae1f
+:END:
+The PC802 Small Cell Development Board (PC802SCB) is a flexible 5G NR/LTE development platform for evaluating the PC802 for different small cell use cases:
+
++ Split 0 Integrated Small Cell (gNB) (-1E)
++ Split 2 Distributed unit (gNB-DU) with full PHY functionality
++ Split 6 Radio Unit (S-RU) with full PHY functionality
++ Split 7.2 Radio Unit (O-RU) with low PHY functionality
+  
+The board contains a single PC802 connected to a Network Processor (an NXP LS1046A) and an RF transceiver (an ADI ADRV9029). The four Tx and four Rx signals are brought to SMA connectors.
+
+* PC802 ORANIC – In-line PHY and NIC for O-DU
+:PROPERTIES:
+:ID:       1910d94e-002a-46dc-a264-f3e38598d0cf
+:END:
+The PC802 ‘ORANIC’ is a Small Cell Forum award-winning Open RAN PHY and NIC board, designed for 5G/4G O-RAN O-DU servers. ORANIC interfaces to L2 software via the Open RAN SCF FAPI interface. It includes 4 PC802s, driving 4 25G SFP interfaces conformant to the O-RAN Open Fronthaul interface. It is capable of driving 16 2T2R or 8 4T4R O-RUs.
+
+[[id:855840e5-07ec-455f-a0c5-f68e1159849f][5G NR (new radio) Software Architecture]]
+
+tested it support:
++ [[id:e61a48d9-bb5e-44c3-820b-6542ae2f04d4][srsRAN]]
++ [[id:db8d0306-f92c-41fd-8c18-3211823ee3cb][Radisys]] 
+
+Not tested:
+[[id:1cca2ec1-111d-487a-a9d5-249aeb4d5b60][OpenAirInterface (OAI) CU & DU]]
+
+* PC805 RU Demonstrator Board (PC805RDB)
+:PROPERTIES:
+:ID:       3faf6a60-9e61-49c6-8122-96f97f634cb2
+:END:
+The PC805 RU Demonstrator Board is a flexible 5G NR/LTE Radio Unit (RU) board used to demonstrate the PC805 SoC with on-board RF transceiver, front-end and associated support circuitry.
+
+The PC805 RU Demonstrator Board integrates a TI AFE7769D 4T4R RFIC complete with band n78 RF front end, based on an iCana demonstrator design.
+
+https://picocom.com/wp-content/uploads/2024/03/PC805_RU_Demonstrator_Board_Product_Brief.pdf
+
+* PC805 end-to-end Split 7.2 technology demonstration
+:PROPERTIES:
+:ID:       abbb5ac5-5cca-40e7-88b4-0d6051fb4eb3
+:END:
+
+[[id:08a019a8-3b4c-4c8c-963c-19d9f4f8ecbc][split 7.2 (vRAN model)]]
+
+https://picocom.com/meet-picocom-at-mwc-barcelona-2024/
+
+* Reference List
+1. https://picocom.com/products/boards/

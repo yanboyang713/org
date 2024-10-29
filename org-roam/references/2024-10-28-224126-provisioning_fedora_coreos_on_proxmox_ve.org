@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       777d11d5-dd35-482a-846f-e245e7e3803a
+:END:
+#+title: Provisioning Fedora CoreOS on Proxmox VE
+
+[[id:cca9398e-28d0-41ce-9fe1-01d46c2a9af9][Fedora CoreOS]]
+[[id:77bd7428-f1ee-4306-8d5a-62f38134dfc5][Proxmox VE]]
+
+* Reference List
+1. https://blog.cloudbending.dev/posts/fedora-coreos-on-proxmox/

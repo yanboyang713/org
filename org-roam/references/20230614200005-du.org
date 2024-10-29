@@ -4,7 +4,3 @@
 #+title: Distributed Unit (DU)
 #+filetags: DU
 
-Distributed runs the RLC, MAC, and parts of the PHY layer. We normally place DU closer to [[id:4fb3287a-23fb-4585-bd87-be76e4b4077f][Radio Unit (RRU)]].
-
-* Reference List
-1. https://telcocloudbridge.com/blog/c-ran-vs-cloud-ran-vs-vran-vs-o-ran/

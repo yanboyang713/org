@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       65c36822-a432-4872-b4c4-c0949383d8c0
+:END:
+#+title: mosoLab
+
+* Indoor
+** Canopy 5GID2
+https://www.mosolabs.com/wp-content/uploads/2024/08/MosoLabs_5G_Indoor_Datasheet_5GID2.pdf

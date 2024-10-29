@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       ed3c730b-c284-410c-80bf-7f0c21d3105b
+:END:
+#+title: OpenAirInterface (OAI)
+
+* System Requirements
+https://gitlab.eurecom.fr/oai/openairinterface5g/-/blob/develop/doc/system_requirements.md#o-ran-radio-units
+
+* [[id:08a019a8-3b4c-4c8c-963c-19d9f4f8ecbc][split 7.2 (vRAN model)]]
+https://gitlab.eurecom.fr/oai/openairinterface5g/-/blob/develop/doc/ORAN_FHI7.2_Tutorial.md
+
+* Reference List
+1. https://openairinterface.org/

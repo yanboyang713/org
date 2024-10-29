@@ -1,0 +1,40 @@
+:PROPERTIES:
+:ID:       e61a48d9-bb5e-44c3-820b-6542ae2f04d4
+:END:
+#+title: srsRAN
+
+[[id:058d9d70-dbbd-4d7d-bd6c-84ddd80c42a6][5G deployment modes]]
+
+* 5G CU/DU solution
+[[id:af84dc9d-61ec-4a73-b738-bd2048e4a56a][CU (Central Unit)]]
+[[id:225aa706-2680-46e9-8111-4eedbb0b28f4][Distributed Unit (DU)]]
+
+https://github.com/srsran/srsRAN_Project
+
+https://docs.srsran.com/projects/project/en/latest/user_manuals/source/installation.html#manual-installation
+
+* User Equipment (UE)
+:PROPERTIES:
+:ID:       39c6954c-9eb4-4dc5-be61-73c174eae5cb
+:END:
+
+User Equipment (UE) refers to any device that connects to the RAN (Radio Access Network) to access mobile services provided by the network operator.
+
+https://docs.srsran.com/projects/4g/en/next/app_notes/source/5g_sa_COTS/source/index.html#
+
+** Tested Devices
+https://github.com/srsran/srsRAN_Project/discussions/36
+
+OnePlus Nord 5G with a Sysmocom USIM
+OnePlus 10 Pro 5G
+
+OnePlus Nord 5G
+
+Samsung A22
+
+Hisense F50+
+
+Huawai P40 lite 5G
+
+RM500Q-GL with Raspberry pi
+https://www.waveshare.com/wiki/RM500Q-GL_5G_HAT

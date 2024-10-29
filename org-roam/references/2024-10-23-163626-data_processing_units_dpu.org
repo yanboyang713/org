@@ -3,7 +3,17 @@
 :END:
 #+title: Data Processing Units (DPU)
 
+* Hardare
 + [[id:d82a1460-2154-4479-b604-d5459dc53f90][AMD Pensando]]
++ [[id:cd31b22c-54f5-4b36-b175-11f26abf9563][NVIDIA BlueField DPUs]] 
 
+* Accelerating/offloading k8s networking functions
+
+https://github.com/openshift/dpu-operator
+https://github.com/ipdk-io/k8s-infra-offload
+https://developer.nvidia.com/blog/accelerating-cloud-ready-infrastructure-and-kubernetes-with-red-hat-openshift-and-bluefield-dpu/
+https://docs.nvidia.com/networking/display/public/sol/technology+preview+for+k8s+cluster+using+nvidia+dpus+and+host+base+networking+(hbn)
+https://developers.redhat.com/articles/2022/04/26/orchestrate-offloaded-network-functions-dpus-red-hat-openshift#
+ 
 * Reference List
 1. https://blogs.nvidia.com/blog/whats-a-dpu-data-processing-unit/
