@@ -1,0 +1,17 @@
+:PROPERTIES:
+:ID:       de28d1ba-9fa5-4e2d-8df5-eb7c756d3979
+:END:
+#+title: 5G NR frequency bands
+
+* n257
+:PROPERTIES:
+:ID:       2ee059d8-0b51-4353-84ce-c6516e27b042
+:END:
+
+* n78
+:PROPERTIES:
+:ID:       5542a62f-df44-4739-b3ed-0f86bc90f6f8
+:END:
+
+* Reference List
+1. https://en.wikipedia.org/wiki/5G_NR_frequency_bands

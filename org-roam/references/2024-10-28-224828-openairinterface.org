@@ -9,5 +9,8 @@ https://gitlab.eurecom.fr/oai/openairinterface5g/-/blob/develop/doc/system_requi
 * [[id:08a019a8-3b4c-4c8c-963c-19d9f4f8ecbc][split 7.2 (vRAN model)]]
 https://gitlab.eurecom.fr/oai/openairinterface5g/-/blob/develop/doc/ORAN_FHI7.2_Tutorial.md
 
++ [[id:72f65923-64c3-4ba6-95ca-48af2dc9708f][Lite-On]]
++ [[id:1ee06e17-c18d-4b49-ab27-69448f8b8f06][baicells]]
+
 * Reference List
 1. https://openairinterface.org/
