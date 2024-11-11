@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       326e6206-2570-4a2f-8682-565e1b357816
+:END:
+#+title: Benetel
+* BNTL-RAN550
+:PROPERTIES:
+:ID:       2a1c1e2e-b536-4cf5-ba71-76cb8ad25dc5
+:END:
+https://benetel.com/ran550/
+
+* BNTL-RAN650
+https://benetel.com/ran650/
+
+* Reference List
+1. https://benetel.com/
