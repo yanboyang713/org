@@ -1,6 +1,0 @@
-:PROPERTIES:
-:ID:       50f525c2-9912-4a1a-972a-59626c963d51
-:END:
-#+title: Distributed Unit (DU)
-#+filetags: DU
-

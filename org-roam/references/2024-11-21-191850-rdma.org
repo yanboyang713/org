@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       9310b4bb-889d-4500-a62a-714977d85cea
+:END:
+#+title: RDMA
+
+* Reference List
+1. https://elements.tv/blog/an-introduction-to-rdma-remote-direct-memory-access/

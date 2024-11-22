@@ -4,7 +4,3 @@
 #+title: Centralized Unit (CU)
 #+filetags:  
 
-Centralized Unit handles the RRC and PDCP layers (and SDAP in case of 5G) . One CU can connect to multiple DUs, CU can be co-located with [[id:50f525c2-9912-4a1a-972a-59626c963d51][DU]] or far from [[id:50f525c2-9912-4a1a-972a-59626c963d51][DU]].
-
-* Reference List
-1. https://telcocloudbridge.com/blog/c-ran-vs-cloud-ran-vs-vran-vs-o-ran/

@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       950cda00-afe0-40da-942a-e3baf05a13ce
+:END:
+#+title: P4 and RDMA
+[[id:40ef7d31-a235-44de-a575-20b1d1e4cb62][P4 Programmable Switches]]
+[[id:9310b4bb-889d-4500-a62a-714977d85cea][RDMA]]
+* Reference List
+1. Beltman, R., Knossen, S., Hill, J., & Grosso, P. (2020, November). Using P4 and RDMA to collect telemetry data. In 2020 IEEE/ACM Innovating the Network for Data-Intensive Science (INDIS) (pp. 1-9). IEEE.

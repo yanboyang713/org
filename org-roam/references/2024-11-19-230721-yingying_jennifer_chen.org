@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       5a4f153c-20e9-45be-88dd-b82a133ff3cb
+:END:
+#+title: Yingying (Jennifer) Chen
+
+* Reference List
+1. https://www.winlab.rutgers.edu/~yychen/daisylab/index.html

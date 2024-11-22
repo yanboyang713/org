@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       b70221a5-9a95-4840-9cf6-64daebf37e0a
+:END:
+#+title: John Sonchack
+
+* Reference List
+1. https://jsonch.github.io/

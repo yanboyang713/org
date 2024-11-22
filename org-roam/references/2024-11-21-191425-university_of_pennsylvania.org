@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       3c30b4e5-185a-4f6d-9694-b3ebb263ea0e
+:END:
+#+title: University of Pennsylvania
+
+[[id:c9a7250b-6369-477f-b0e5-922c69446a41][Boon Thau Loo]]
+[[id:aef561ba-2fac-4d95-be69-a01dae1bec4a][Vincent Liu]]

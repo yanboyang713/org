@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       35251055-b9f7-4389-bd2a-110d55f3abac
+:END:
+#+title: OpenAirInterface CSI
+
+[[id:ed3c730b-c284-410c-80bf-7f0c21d3105b][OpenAirInterface (OAI)]]
+[[id:85bca103-3166-4938-b23d-c84f7a18de3c][5G CSI]]
+
+* Reference List
+1. Cheng, H., Johari, P., Arfaoui, M. A., Periard, F., Pietraski, P., Zhang, G., & Melodia, T. (2024, January). Real-Time AI-Enabled CSI Feedback Experimentation with Open RAN. In 2024 19th Wireless On-Demand Network Systems and Services Conference (WONS) (pp. 121-124). IEEE.

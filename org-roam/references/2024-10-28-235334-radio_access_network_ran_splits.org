@@ -49,11 +49,17 @@ Manages Layer 2 (MAC/RLC) operations and can be deployed closer to users.
 Distributed runs the RLC, MAC, and parts of the PHY layer. We normally place DU closer to [[id:4fb3287a-23fb-4585-bd87-be76e4b4077f][Radio Unit (RRU)]].
 
 https://telcocloudbridge.com/blog/c-ran-vs-cloud-ran-vs-vran-vs-o-ran/
-** CU (Central Unit)
+** Central Unit (CU)
 :PROPERTIES:
 :ID:       af84dc9d-61ec-4a73-b738-bd2048e4a56a
 :END:
 Handles non-real-time functions (e.g., mobility management, session control).
+
+Centralized Unit handles the RRC and PDCP layers (and SDAP in case of 5G) . One CU can connect to multiple DUs, CU can be co-located with [[id:225aa706-2680-46e9-8111-4eedbb0b28f4][Distributed Unit (DU)]] or far from [[id:225aa706-2680-46e9-8111-4eedbb0b28f4][Distributed Unit (DU)]].
+
+https://telcocloudbridge.com/blog/c-ran-vs-cloud-ran-vs-vran-vs-o-ran/
+
+   
 
 
 

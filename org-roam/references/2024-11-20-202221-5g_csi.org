@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       85bca103-3166-4938-b23d-c84f7a18de3c
+:END:
+#+title: 5G CSI
+
+5G communication requires continuous exchanges of channel state information (CSI) between the base station and user equipment (UE) to adjust the physical layer parameters.
+
+[[id:c8f358c2-d824-4c17-b02b-9aaa423b1871][5G]]
+[[id:c5fb3604-2033-40ea-80b2-37d1853569b9][CSI tools]]
+
+* Reference List
+1. Ruan, Y., Chen, L., Zhou, X., Liu, Z., Liu, X., Guo, G., & Chen, R. (2022). iPos-5G: Indoor positioning via commercial 5G NR CSI. IEEE Internet of Things Journal, 10(10), 8718-8733.
+2. Vora, A., Thomas, P. X., Chen, R., & Kang, K. D. (2019, September). CSI classification for 5G via deep learning. In 2019 IEEE 90th Vehicular Technology Conference (VTC2019-Fall) (pp. 1-5). IEEE.

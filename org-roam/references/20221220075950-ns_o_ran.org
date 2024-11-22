@@ -51,11 +51,8 @@ available within the simulator combined with the possibility of simulate large s
 [[http://res.cloudinary.com/dkvj6mo4c/image/upload/v1671544352/screenshot/kbomxetm4bexjxqhyso1.png]]
 
 
-
-
-
-
-
-
 * Reference List
 1. A. Lacava, M. Polese, R. Sivaraj, R. Soundrarajan, B. S. Bhati, T. Singh, T. Zugno, F. Cuomo, T. Melodia, “Programmable and Customized Intelligence for Traffic Steering in 5G Networks Using Open RAN Architectures,” arXiv:2209.14171 [cs.NI], October 2022.
+2. https://openrangym.com/ran-frameworks/ns-o-ran
+3. https://openrangym.com/tutorials/ns-o-ran
+4. https://github.com/wineslab/colosseum-near-rt-ric

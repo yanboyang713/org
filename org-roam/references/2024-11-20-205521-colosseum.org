@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       a7ab3e47-ff74-40e6-936a-827a30268989
+:END:
+#+title: colosseum
+
+[[id:476dea5f-9293-4c15-83b3-4152fa6f39c9][digital twin]]
+
+* Reference List
+1. https://www.northeastern.edu/colosseum/
+2. https://colosseumneu.freshdesk.com/support/solutions/articles/61000269573-about-colosseum

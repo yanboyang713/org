@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       f8c50c7e-3cbc-4361-9fe7-ec73f860d063
+:END:
+#+title: SMaRT-5G
+
+[[id:6773c62d-c676-4817-88e9-9419fcd0a37c][Aether 5G]]
+
+* Reference List
+1. https://aetherproject.org/smart-5g/
+2. https://aetherproject.org/wp-content/uploads/sites/11/2024/05/ONF-SMaRT-5G-White-Paper-v11.pdf

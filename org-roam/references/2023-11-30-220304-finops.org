@@ -25,3 +25,4 @@ FinOps practices are based on six principles, that acts as a guide for teams rep
   
 * Reference List
 1. Castellana, L. (2023). Development and analysis of FinOps processes for a Multi-Cloud environment (Doctoral dissertation, Politecnico di Torino).
+2. https://www.finout.io/blog/finops-guide

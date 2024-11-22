@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       08d97376-410f-4c71-887d-90d6fbb85867
+:END:
+#+title: Low Cost Mocap
+
+* Reference List
+1. https://github.com/jyjblrd/Low-Cost-Mocap?tab=readme-ov-file

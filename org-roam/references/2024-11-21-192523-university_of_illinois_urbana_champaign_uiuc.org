@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       ec22fd65-b3d0-40f3-bfd2-6fcd132611c3
+:END:
+#+title: University of Illinois Urbana-Champaign (UIUC)
+
+[[id:a4a33894-b4c5-499b-8508-f7f48d05bf11][Francis Y. Yan]]

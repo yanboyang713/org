@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       083f69f0-e334-4379-8985-4890a42d3925
+:END:
+#+title: NVIDIA AI Aerial
+
+[[id:59a06f97-da32-4ba4-b733-4ab8a0694d2b][omniverse]]
+
+* Reference List
+1. https://blogs.nvidia.com/blog/ai-aerial-wireless-networks/
+2. Kelkar, A., & Dick, C. (2021, October). NVIDIA aerial GPU hosted AI-on-5G. In 2021 IEEE 4th 5G World Forum (5GWF) (pp. 64-69). IEEE.
+3. https://developer.nvidia.com/aerial-ai-radio-frameworks
+4. Villa, D., Khan, I., Kaltenberger, F., Hedberg, N., Da Silva, R. S., Kelkar, A., ... & Koutsonikolas, D. (2024, May). An open, programmable, multi-vendor 5G O-RAN Testbed with NVIDIA ARC and OpenAirInterface. In IEEE INFOCOM 2024-IEEE Conference on Computer Communications Workshops (INFOCOM WKSHPS) (pp. 1-6). IEEE.
