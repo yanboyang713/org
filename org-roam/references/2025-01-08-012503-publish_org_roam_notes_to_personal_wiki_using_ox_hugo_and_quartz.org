@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       0d3854e6-c4ef-425e-b408-fde7eff9f040
+:END:
+#+title: Publish org-roam notes to personal wiki using ox-hugo and Quartz
+
+[[id:95487dc4-797d-4d6b-a1c5-9fdc46fa6465][quartz]]
+
+[[id:6314a4a8-8a04-492c-8a4b-de9e4ff8df00][org roam]]
+
+[[id:60ca314a-b562-43e5-956b-da46ced595a1][ox-hugo]]
+
+* Reference List
+1. https://www.asterhu.com/post/20240220-publish-org-roam-with-quartz-oxhugo/

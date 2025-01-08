@@ -1,0 +1,20 @@
+:PROPERTIES:
+:ID:       95487dc4-797d-4d6b-a1c5-9fdc46fa6465
+:END:
+#+title: quartz
+* Get Started
+#+begin_src bash
+  git clone git@github.com:yanboyang713/quartz.git
+  cd quartz
+  nvm install 20
+  npm i
+  npx quartz create
+#+end_src
+
+* Building your Quartz
+#+begin_src bash
+  npx quartz build --serve
+#+end_src
+
+* Reference List
+1. https://quartz.jzhao.xyz/
