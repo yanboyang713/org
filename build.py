@@ -4,21 +4,19 @@
 import glob
 from pathlib import Path
 #  command = emacs --batch -l init.el -l publish.el --eval \'(jethro/publish \\"$in\\")'
-files = glob.glob("./references/notes/*.org")
+files = glob.glob("~/org/org-roam/references/*.org")
 
-with open("build.ninja", "w") as ninja_file:
-    ninja_file.write(
-        """
+with open('build.ninja', 'w') as ninja_file:
+    ninja_file.write("""
 rule org2md
-  command = emacs --batch -l init.el -l publish.el --eval \'(boyang/publish \"$in\")\'
+  command = emacs --batch -l ~/.emacs.d/init.el -l ./publish.el --eval \"(boyang/publish \\"$in\\")"
   description = org2md $in
-"""
-    )
+""")
 
-    for f in files:
-        path = Path(f)
-        output_file = f"~/personalblog/content/notes/{path.with_suffix('.md').name}"
-        ninja_file.write(
+for f in files:
+    path = Path(f)
+    output_file = f"~/quartz/content/posts/{path.with_suffix('.md').name}"
+    ninja_file.write(
             f"""
 build {output_file}: org2md {path}
 """

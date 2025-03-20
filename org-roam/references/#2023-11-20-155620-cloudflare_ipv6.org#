@@ -1,7 +1,0 @@
-:PROPERTIES:
-:ID:       0c6a7fb2-e624-4fa5-93ac-90ea5dd5ae43
-:END:
-#+title: cloudflare IPv6
-
-* Reference List
-1. https://developers.cloudflare.com/1.1.1.1/infrastructure/ipv6-networks/

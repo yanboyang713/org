@@ -1,8 +1,0 @@
-:PROPERTIES:
-:ID:       d1c7b204-d908-469d-a9a2-222de349b72a
-:END:
-#+title: xiao
-
-#+begin_src bash
-git clone git@github.com:yanboyang713/SyntheticOversampling.git
-#+end_src

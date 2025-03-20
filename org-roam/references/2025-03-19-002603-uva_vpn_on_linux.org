@@ -1,0 +1,115 @@
+:PROPERTIES:
+:ID:       09b614fa-8cfe-4f04-af6e-839dac78608a
+:END:
+#+title: UVA VPN on Linux
+
+* Prerequisites
+For [[id:dc13b67c-8d8b-40fd-b8cf-9ea8547e485d][Arch Linux]] you’ll need to have the following packages installed:
+#+begin_src bash
+  paru -S openconnect openssl
+#+end_src
+
+* Obtain a Certificate
+Go to this unpublicized Web location to obtain a certificate for [[https://cloud.securew2.com/public/82116/limited/?device=Unknown][non-specific]] OS. You will be required to sign in with Netbadge. Once authenticated, fill out the form.
+personal-cert
+
+Your passphrase need not be related to your Netbadge password, and it must be 15 characters or fewer. The MAC address of your system is optional for UVA Anywhere.
+
+Click the link to download the certificate. You will receive a file ending in .p12.
+
+* Extracting Certificate and Key from .p12 File
+If you haven't already extracted the certificate and key from your .p12 file, you can do so using OpenSSL:
+#+begin_example
+# Extract the client certificate
+openssl pkcs12 -in /home/yanboyang713/Downloads/UVA-VPN.p12 -clcerts -nokeys -out client-cert.pem
+
+# Extract the private key
+openssl pkcs12 -in /home/yanboyang713/Downloads/UVA-VPN.p12 -nocerts -nodes -out client-key.pem
+
+#+end_example
+* Add a NOPASSWD Rule
+Add a line specifying that your user can execute the openconnect command without a password:
+#+begin_src file
+your_username ALL=(ALL) NOPASSWD: /usr/bin/openconnect
+#+end_src
+
+* Create the VPN Connection Script
+#+begin_src bash
+  #!/bin/bash
+
+# VPN server details
+VPN_SERVER="uva-anywhere-1.itc.virginia.edu"
+VPN_PROTOCOL="anyconnect"
+
+# Paths to your certificate and key files
+CERT_FILE="/home/yanboyang713/Downloads/uva/client-cert.pem"
+KEY_FILE="/home/yanboyang713/Downloads/uva/client-key.pem"
+
+# Create directories for logs and PID files in the user's home directory
+LOG_DIR="$HOME/uva-vpn/logs"
+PID_DIR="$HOME/uva-vpn/pid"
+
+# Ensure the directories exist
+mkdir -p "$LOG_DIR" "$PID_DIR"
+
+# Log file and PID file paths
+LOG_FILE="$LOG_DIR/uva-vpn.log"
+PID_FILE="$PID_DIR/uva-vpn.pid"
+
+# Function to connect to the VPN
+connect_vpn() {
+    echo "Connecting to UVA VPN..."
+    sudo openconnect \
+        --protocol="$VPN_PROTOCOL" \
+        --certificate="$CERT_FILE" \
+        --sslkey="$KEY_FILE" \
+        "$VPN_SERVER" > "$LOG_FILE" 2>&1 &
+    echo $! > "$PID_FILE"
+    echo "VPN connection initiated. Check $LOG_FILE for details."
+}
+
+# Function to disconnect from the VPN
+disconnect_vpn() {
+    echo "Disconnecting from UVA VPN..."
+    if [ -f "$PID_FILE" ]; then
+        sudo kill "$(cat "$PID_FILE")"
+        rm "$PID_FILE"
+        echo "VPN disconnected."
+    else
+        echo "No VPN connection found."
+    fi
+}
+
+# Check script arguments
+case "$1" in
+    connect)
+        connect_vpn
+        ;;
+    disconnect)
+        disconnect_vpn
+        ;;
+    *)
+        echo "Usage: $0 {connect|disconnect}"
+        exit 1
+        ;;
+esac
+#+end_src
+
+* Make the Script Executable
+#+begin_src bash
+  chmod +x ~/uva-vpn.sh
+#+end_src
+
+* Run the Script
+** To Connect to the VPN
+#+begin_src bash
+  ~/uva-vpn.sh connect
+#+end_src
+** To Disconnect from the VPN
+#+begin_src bash
+  ~/uva-vpn.sh disconnect
+#+end_src
+
+* Reference List
+1. https://www.rc.virginia.edu/userinfo/linux/uva-anywhere-vpn-linux/
+2. https://galileo.phys.virginia.edu/compfac/faq/linux-vpn.html

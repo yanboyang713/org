@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       667704a4-b26b-4f05-bb0e-20f44d6d379b
+:END:
+#+title: Integrated Dell Remote Access Controller (iDRAC)
+
+* install an OS image using iDRAC
+https://www.dell.com/support/kbdoc/en-us/000130160/how-to-install-the-operating-system-on-a-dell-poweredge-server-os-deployment
+
+* Reference List
+1. https://www.dell.com/en-us/lp/dt/open-manage-idrac
