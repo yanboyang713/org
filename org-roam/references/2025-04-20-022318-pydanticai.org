@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       6e91b166-dbfd-41ee-a663-e9f1147a1b38
+:END:
+#+title: PydanticAI
+#+date: 2025-04-20
+
+[[id:a1fce704-acd4-41f8-b8f0-ba9646ade130][AI agent frameworks]]
+
+* Reference List
+1. https://ai.pydantic.dev/

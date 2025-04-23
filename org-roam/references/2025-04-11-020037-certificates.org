@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       40eca9f3-c996-423a-b715-e725c5a72938
+:END:
+#+title: certificates
+#+date: [2025-04-11 Fri 02:00]
+
++ [[id:a22f98ce-6c11-49cb-a09b-610643f9eaf6][AWS certification]]
++ [[id:f6cef80d-6600-4e1e-af48-ec2aed16246f][kubernetes certification]]
++ [[id:dad7a21d-94b5-4b35-a0f3-6068c9397053][Cisco Certification]]
++ [[id:e3d66322-1aa6-4742-815b-b3f9bec76c47][azure certification]]
++ [[id:713d9651-7ddd-4827-a955-04cf8bc759a9][Red Hat certification]]

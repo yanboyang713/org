@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       ec69c590-957a-46fd-8e38-0f73c26b9359
+:END:
+#+title: Netronome Agilio SmartNICs
+#+date: [2025-04-15 Tue 10:33]
+
+* Reference List
+1. https://github.com/Netronome/nic-firmware
+2. https://netronome.com/agilio-smartnics/
+3. https://help.netronome.com/support/solutions

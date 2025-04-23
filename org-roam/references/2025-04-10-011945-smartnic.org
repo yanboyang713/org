@@ -1,0 +1,39 @@
+:PROPERTIES:
+:ID:       0d9ddb23-cf59-452f-b035-682b866022c8
+:END:
+#+title: DPU SmartNIC
+#+date: [2025-04-10 Thu 01:19]
+
+* Hardware
+** FPGA-based
++ [[id:d82a1460-2154-4479-b604-d5459dc53f90][AMD Pensando]]
++ [[id:081b5655-bc16-4f94-99b7-6856268cc299][Alpha Data]] 
++ 星云智联（Nebula Link）
++ 云豹智能（Cloud Leopard）
+  
+** ARM SoC + FPGA 
+*** Dayu Zhixin
+https://www.dayudpu.com/product/paratus2
+
+** ASIC
+*** 中科驭数
+https://www.yusur.tech/product/conflux/conflux2200E
+*** Ali Cloud CIPU
+https://www.alibabacloud.com/blog/a-detailed-explanation-about-alibaba-cloud-cipu_599183
+*** [[id:08d3f646-c2c0-4cab-937d-7f284c9fa3f6][Marvell]]
+
+** SoC-Based
+*** [[id:d790aa57-a8b9-4222-9803-c738e69be403][NVIDIA BlueField DPUs]]
+*** [[id:ec69c590-957a-46fd-8e38-0f73c26b9359][Netronome Agilio SmartNICs]]
+*** [[id:ddc98575-edd6-48f9-bebc-f35e352ed1da][Broadcom]]  
+
+* Accelerating/offloading [[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]] networking functions
+
+https://github.com/openshift/dpu-operator
+https://github.com/ipdk-io/k8s-infra-offload
+https://developer.nvidia.com/blog/accelerating-cloud-ready-infrastructure-and-kubernetes-with-red-hat-openshift-and-bluefield-dpu/
+https://docs.nvidia.com/networking/display/public/sol/technology+preview+for+k8s+cluster+using+nvidia+dpus+and+host+base+networking+(hbn)
+https://developers.redhat.com/articles/2022/04/26/orchestrate-offloaded-network-functions-dpus-red-hat-openshift#
+ 
+* Reference List
+1. https://blogs.nvidia.com/blog/whats-a-dpu-data-processing-unit/

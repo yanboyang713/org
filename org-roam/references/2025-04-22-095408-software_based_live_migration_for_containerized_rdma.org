@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       36c579f2-0298-4ca5-b5e4-d711027d50d7
+:END:
+#+title: Software-based Live Migration for Containerized RDMA
+#+date: 2025-04-22
+
+[[id:353cd15e-784f-4ce7-b052-75c08ad24b25][Service migration / Application Relocation]]
+
+[[id:9310b4bb-889d-4500-a62a-714977d85cea][RDMA]]
+
+* Reference List
+1. Li, X., Shu, R., Xiong, Y., & Ren, F. (2024, August). Software-based Live Migration for Containerized RDMA. In Proceedings of the 8th Asia-Pacific Workshop on Networking (pp. 52-58).

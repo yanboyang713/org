@@ -1,7 +1,7 @@
 :PROPERTIES:
 :ID:       cbe6815a-231b-489c-b8ff-c46622549b37
 :END:
-#+title: data centre infrastructure
+#+title: data center infrastructure
 
 [[id:3dbb8a35-912c-45f7-ba5a-ef853e339058][server rack]]
 
@@ -16,6 +16,9 @@
 [[id:281732d8-ae70-43a7-a9dc-461ecc953705][Z390 PLUS]]
 
 * Dell PowerEdge R730
+:PROPERTIES:
+:ID:       cd2be7e6-6e28-42d7-a2fb-c8e54a04dac7
+:END:
 ** Changing the boot order
 You may have to change the boot order if you want to boot from a USB key or an optical drive. The following instructions may vary if you have selected BIOS for Boot Mode.
 Steps

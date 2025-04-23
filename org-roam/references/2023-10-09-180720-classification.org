@@ -4,7 +4,9 @@
 #+title: classification Algorithms
 
 + [[id:1f7a4a2f-79fa-4ccf-b6db-f3e2a3c0bd29][Decision Tree Classifier]]
-+ [[id:af4e2887-ecc6-45bb-916c-a9b839155b22][Extremely Randomized Trees Classifier(Extra Trees Classifier)]] 
++ [[id:af4e2887-ecc6-45bb-916c-a9b839155b22][Extremely Randomized Trees Classifier(Extra Trees Classifier)]]
++ [[id:9801297e-04f7-459a-baa5-8b85f6b937bb][K-Nearest Neighbor (KNN)]]
++ [[id:b133f5a2-d381-4baa-a9d4-1ee632501f7a][Naive Bayes Classifiers]]  
 
 [[id:15c601df-387e-429b-a72b-435e4ddba871][classification metrics]]
 

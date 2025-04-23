@@ -3,4 +3,5 @@
 :END:
 #+title: IDE
 
-+ [[id:3a7a43d4-c779-42fc-a0f3-ddbe3d268e79][cursor AI IDE]] 
++ [[id:3a7a43d4-c779-42fc-a0f3-ddbe3d268e79][cursor AI IDE]]
++ [[id:19182f6d-b637-4879-8e9c-b093f492db5c][emacs]] 

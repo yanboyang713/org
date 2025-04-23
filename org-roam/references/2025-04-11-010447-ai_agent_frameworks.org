@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       a1fce704-acd4-41f8-b8f0-ba9646ade130
+:END:
+#+title: AI agent frameworks
+
+#+date: [2025-04-11 Fri 01:04]
+
+* What is [[id:a1235bb4-a901-4ec6-bb57-e7e18526495e][AI Agents Programs]]
+
+* frameworks
++ [[id:b2af648c-50e5-46c6-a502-acfe6deb06b8][LangChain]] 
+
+* [[id:ab03a99b-2c97-4664-a1e6-680a86721f3a][LLMs]] 

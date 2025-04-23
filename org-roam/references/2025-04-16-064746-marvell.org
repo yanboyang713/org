@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       08d3f646-c2c0-4cab-937d-7f284c9fa3f6
+:END:
+#+title:  Marvell
+#+date: [2025-04-16 Wed 06:47]
+
+* Marvell LiquidIO-II CN2360
+:PROPERTIES:
+:ID:       1c7af942-88b7-426d-b14c-3cbcb8e88e61
+:END:
+https://www.marvell.com/products/infrastructure-processors/liquidio-smart-nics/liquidio-ii-smart-nics.html

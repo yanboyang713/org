@@ -1,0 +1,17 @@
+:PROPERTIES:
+:ID:       be61cea5-4926-45e8-9caa-5b884041c72b
+:END:
+#+title: print
+
++ SEVIS I-901 Payment Confirmation
++ chase Credit
++ bank statements
++ apportintment
++ DS-160
++ NonimmigrantVisa-ConfirmationPage-chinese
++ NonimmigrantVisa-ConfirmationPage-english
++ boyang cv
++ UVA-Financial-Aid-Regulations
++ phd study plan
++ ns tax two files
++ Tax Transactions

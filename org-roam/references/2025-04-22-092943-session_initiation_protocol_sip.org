@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       c14700f2-852f-44cc-860f-200418d0ea34
+:END:
+#+title: Session Initiation Protocol (SIP)
+#+date: 2025-04-22
+
+* Reference List
+1. https://en.wikipedia.org/wiki/Session_Initiation_Protocol

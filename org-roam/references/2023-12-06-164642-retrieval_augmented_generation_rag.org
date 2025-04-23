@@ -1,14 +1,19 @@
 :PROPERTIES:
 :ID:       a539c529-5769-4f17-9fb3-c75ef7bd84c4
 :END:
-#+title: retrieval augmented generation (RAG)
+#+title: Retrieval Augmented Generation (RAG)
 
 [[id:ab03a99b-2c97-4664-a1e6-680a86721f3a][LLMs]]
 
 https://github.com/timm/rag
 
+* RAG systems
++ [[id:a809ffb8-c47d-4b21-9b1c-3c26fa9381e4][Neo4j]]
++ [[id:214ea5c4-5236-4e23-b542-dab2436ee935][vector database]]
+
 * Reference List
 1. https://www.youtube.com/watch?v=nPG_jKrSpi0
 2. https://www.youtube.com/watch?v=0naqpH93eEU
 3. https://research.ibm.com/blog/retrieval-augmented-generation-RAG
+4. https://neo4j.com/developer-blog/knowledge-graph-vs-vector-rag/?utm_campaign=DeveloperBlog&utm_content=&utm_medium=&utm_source=LinkedIn&utm_justglobal=NA
 

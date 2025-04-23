@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       5ac44b73-e515-4d5d-899e-0cc0277b3d55
+:END:
+#+title: mesh network
+#+date: [2025-04-14 Mon 23:11]
+
+[[id:721feedb-98fa-49bc-85ca-09c26e113dae][ESP-MESH]]

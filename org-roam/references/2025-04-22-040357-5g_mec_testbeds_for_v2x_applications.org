@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       99336017-0254-431f-bae9-9fc8603707d5
+:END:
+#+title: 5G-MEC testbeds for V2X applications
+#+date: 2025-04-22
+
+* Reference List
+1. Wadatkar, P. V., Garroppo, R. G., & Nencioni, G. (2023). 5G-MEC testbeds for V2X applications. Future Internet, 15(5), 175.

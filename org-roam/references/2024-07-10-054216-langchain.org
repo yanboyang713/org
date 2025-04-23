@@ -3,3 +3,11 @@
 :END:
 #+title: LangChain
 
+* What is LangChain?
+LangChain is a powerful framework for building applications with LLMs. It provides tools to manage memory, chaining, retrieval, and processing of large text data.
+
+* Key Features of LangChain
++ Text Chunking & Splitting — Helps break large documents into smaller chunks for LLMs.
++ Memory Management — Allows models to remember context across multiple interactions.
++ [[id:a539c529-5769-4f17-9fb3-c75ef7bd84c4][Retrieval Augmented Generation (RAG)]] — Fetches relevant information before generating responses.
++ Multi-Model Compatibility — Works with OpenAI, Hugging Face, [[id:8ecb66b1-216b-4eb4-b20a-b9126aebb756][Ollama]], and more.

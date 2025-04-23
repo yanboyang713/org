@@ -6,6 +6,15 @@
 [[id:d0cf7221-2a2f-47f5-9fba-8cab82f489b0][Ultra Ethernet Consortium (UEC)]]
 [[id:54c097a7-95a0-4a8e-be69-0735f4d76f38][Aruba CX 10000 Switch Series]]
 
+* AMD Alveo™ SN1000 SmartNIC Accelerator Card
+
+https://www.amd.com/en/products/accelerators/alveo/sn1000/a-sn1022-p4.html
+* Alveo U280 Data Center Accelerator Card
+:PROPERTIES:
+:ID:       99870df1-7eaf-44eb-89c1-76d90d9870ca
+:END:
+https://www.colfaxdirect.com/store/pc/viewPrd.asp?idproduct=3720
+
 * Reference List
 1. https://www.amd.com/en/products/accelerators/pensando.html
 2. https://www.forbes.com/sites/moorinsights/2024/10/14/analyzing-amds-next-generation-cpu-gpu-and-dpu/

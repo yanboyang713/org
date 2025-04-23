@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       ac10704e-7f03-4372-a449-0cd3b91500f3
+:END:
+#+title: vLLM
+#+date: 2025-04-22
+
+* Deploying vLLM on [[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]]
+:PROPERTIES:
+:ID:       3a56acec-bb1f-4910-adc2-5eab190db964
+:END:
+
+https://docs.vllm.ai/en/latest/deployment/k8s.html

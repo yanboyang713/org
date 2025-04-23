@@ -3,3 +3,5 @@
 :END:
 #+title: ARM CPU
 
+* Reference List
+1. https://en.wikipedia.org/wiki/ARM_architecture_family

@@ -1,0 +1,58 @@
+:PROPERTIES:
+:ID:       d959bbdf-e766-4d5f-a0c5-486e68b5b4e1
+:END:
+#+title: Data Center Testbed Design
+
+* Introduction and Objectives
+This testbed is designed to support advanced research in network performance, [[id:2af07359-aec7-4c5b-aa36-cad4688f915d][Software-Defined Networking (SDN)]], [[id:d8b28e4b-51fa-42ab-a630-c86482854324][Network Function Virtualization (NFV)]],and 5G deployment.
+
+It leverages four [[id:cd2be7e6-6e28-42d7-a2fb-c8e54a04dac7][Dell PowerEdge]] servers (each running [[id:77bd7428-f1ee-4306-8d5a-62f38134dfc5][Proxmox VE]] hypervisor) interconnected by a [[id:40ef7d31-a235-44de-a575-20b1d1e4cb62][P4 Programmable Switche]], with an [[id:4cc4b314-1fd9-44e7-a320-91816bbf8425][Open vSwitch (OVS)]] bridge on each server. The environment will enable experiments with software-defined networking (through OVS and SDN controllers), NFV (via virtual network functions on the VMs), and a 5G standalone network (with disaggregated RAN and core components).
+
+All servers run [[id:77bd7428-f1ee-4306-8d5a-62f38134dfc5][Proxmox VE]] (Debian-based), and each is equipped with a [[id:0d9ddb23-cf59-452f-b035-682b866022c8][SmartNIC]] (programmable NIC) to offload packet processing and support P4 programs in hardware.
+
+One server also provides WAN connectivity through a [[id:fe7713cb-166a-46c1-8a1d-8ceca7e61691][VyOS]] router VM (using a Wi-Fi uplink to campus network), and another runs a [[id:66901bf0-4a13-4d45-bcfc-34be8deb8248][BIND 9]] [[id:7bab7928-237d-4784-a42f-b85ef6874b9b][(DNS)]] service to support the on-premises [[id:eebf10a7-c17a-4d17-a313-c9d620028cfa][OKD]] cluster name resolution.
+
+* Physical Topology and Components
+
+[[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1744289068/Data_Center_Testbed_uss7bx.png]]
+
+** [[id:77bd7428-f1ee-4306-8d5a-62f38134dfc5][Proxmox VE]]
+All Proxmox servers are part of a single Proxmox cluster (for ease of management, enabling features like VM live migration across servers). They share the management network for cluster coordination. VMs on any server can reach VMs on another server via the switch.
+
+** Management Ethernet Switch (dedicated)
+A dedicated management Ethernet switch connects the [[id:667704a4-b26b-4f05-bb0e-20f44d6d379b][Integrated Dell Remote Access Controller (iDRAC)]] out-of-band management ports of all servers on an isolated management network (for remote power/reset and monitoring).
+
+** [[id:caf1ef9a-effe-4640-880e-b7477bd2575d][spine-leaf architecture]]
+All of servers have their primary Proxmox host NICs (the SmartNICs) connected to ports on individual *leaf switches*. These leaf switches, in turn, are interconnected via a high-speed *spine switch*, forming a classic spine-leaf topology.
+
+Each server connects to its respective leaf switch through the SmartNIC, which supports P4-programmable hardware offloads. The OVS bridge on each Proxmox host bridges the internal VMs to the physical SmartNIC interface, which uplinks to the leaf switch. This architecture allows for traffic from VMs on different servers to be routed through the spine switch, enabling scalable and low-latency east-west communication.
+
+The SmartNICs on each server can filter, route, or encapsulate packets in hardware using their P4-programmable pipeline before sending them out. This effectively distributes switching and network logic between the edge (SmartNICs) and the fabric (leaf and spine switches). The programmable nature of both the NICs and the switches provides flexibility for implementing SDN policies, slicing, and advanced telemetry in the data center fabric.
+
+** [[id:fe7713cb-166a-46c1-8a1d-8ceca7e61691][VyOS]] [[id:049298d5-7b83-4ce2-8cfe-c6e50bf141a7][WWAN - External Network]] Gateway
+One of the servers has an external Wi-Fi card that links to the university’s Wi-Fi network. This interface is passed to a VyOS VM, which acts as the *gateway router* for the testbed.
+
+The VyOS VM has two interfaces: one connects to the Wi-Fi WAN (providing Internet access/DHCP from campus network), and the other connects to the Proxmox OVS bridge (LAN). This VM provides NAT, firewall, and routing between the testbed’s internal LAN and the outside network.
+
+** [[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]]/[[id:6bf33d95-36f3-44b4-9ea5-360995b13321][OpenShift]]([[id:eebf10a7-c17a-4d17-a313-c9d620028cfa][OKD]]) Cluster
+The research project will deploy [[id:6773c62d-c676-4817-88e9-9419fcd0a37c][Aether 5G]] components on a Kubernetes cluster. We will create several VMs to act as master and worker nodes for this cluster. For instance, 3 control-plane VMs and 2 worker VMs (depending on resource needs) distributed across the all of servers.
+
+*NOTE:*
+1. The [[id:66901bf0-4a13-4d45-bcfc-34be8deb8248][BIND 9]] DNS VM provides the required DNS records for this cluster’s operation
+2. The Kubernetes network (for pod communication) will be handled by an [[id:1a09eb00-17ea-48d4-a293-d626552df79c][Calico]], but that is separate from our physical topology – so, we require [[id:e7b30b16-d942-4c41-ba19-14245c12a572][BGP]]
+3. Needs a [[id:6823a5e3-b88a-40ca-9f8b-2e4196713852][Load Balancer]] to distribute traffic across all control plane nodes.
+
+** Storage Network (Optional)
+If shared storage or [[id:c625aa5e-187f-4776-b28c-0bb4b7df9198][Ceph]] is used for the VMs or containers, we might consider a separate VLAN or even direct links for storage traffic. However, for this design, we assume local storage on each server for simplicity.
+
+** [[id:af84dc9d-61ec-4a73-b738-bd2048e4a56a][Central Unit (CU)]]/[[id:225aa706-2680-46e9-8111-4eedbb0b28f4][Distributed Unit (DU)]]
+https://docs.aetherproject.org/master/onramp/gnb.html#gnodeb-setup
+
+** [[id:39c6954c-9eb4-4dc5-be61-73c174eae5cb][User Equipment (UE)]]
+
+** [[id:1ac8dc0c-837f-4168-83cc-0ff7d5eb86ba][Precision Time Protocol (PTP)]] Synchronization
+
+** [[id:0d9ddb23-cf59-452f-b035-682b866022c8][SmartNIC DPU]] 
+
+* Reference List
+1. [[id:cbe6815a-231b-489c-b8ff-c46622549b37][data center infrastructure]] 

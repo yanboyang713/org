@@ -1,0 +1,102 @@
+:PROPERTIES:
+:ID:       8ecb66b1-216b-4eb4-b20a-b9126aebb756
+:END:
+#+title: ollama
+#+date: 2025-04-14
+
+Ollama, a platform that makes local development with open-source [[id:ab03a99b-2c97-4664-a1e6-680a86721f3a][Large Language Models (LLMs)]] a breeze. With Ollama, everything you need to run an LLM—model weights and all of the config—is packaged into a single Modelfile. Think Docker for LLMs.
+
+* Download Ollama to Get Started
+As a first step, you should download Ollama to your machine. Ollama is supported on all major platforms: MacOS, Windows, and Linux.
+
+To download Ollama, you can either visit the [[https://github.com/ollama/ollama][official GitHub]] repo and follow the download links from there. Or visit the [[https://ollama.com/][official website]] and download the installer if you are on a Mac or a Windows machine.
+
+I’m on Linux: So if you’re a Linux user like me, you can run the following command to run the installer script or [[https://github.com/ollama/ollama/blob/main/docs/linux.md#manual-install][Manual install]]:
+
+#+begin_src console
+yanboyang713@Meta-Scientific-Linux ~ % curl -fsSL https://ollama.com/install.sh | sh
+>>> Installing ollama to /usr/local
+[sudo] password for yanboyang713:
+>>> Downloading Linux amd64 bundle
+######################################################################## 100.0%
+>>> Creating ollama user...
+>>> Adding ollama user to render group...
+>>> Adding ollama user to video group...
+>>> Adding current user to ollama group...
+>>> Creating ollama systemd service...
+>>> Enabling and starting ollama service...
+Created symlink '/etc/systemd/system/default.target.wants/ollama.service' → '/etc/systemd/system/ollama.service'.
+>>> The Ollama API is now available at 127.0.0.1:11434.
+>>> Install complete. Run "ollama" from the command line.
+WARNING: No NVIDIA/AMD GPU detected. Ollama will run in CPU-only mode.
+#+end_src
+
+The installation process typically takes a few minutes. During the installation process, any NVIDIA/AMD GPUs will be auto-detected. Make sure you have the drivers installed. The CPU-only mode works fine, too. But it may be much slower.
+
+* Get the Model
+Next, you can visit the [[https://ollama.com/library][model library]] to check the list of all model families currently supported. The default model downloaded is the one with the latest tag. On the page for each model, you can get more info such as the size and quantization used.
+
+You can search through the list of tags to locate the model that you want to run. For each model family, there are typically foundational models of different sizes and instruction-tuned variants. I’m interested in running the [[id:17dc3f87-99c6-4d34-afe1-11eab6245216][google gemma3]] 4b model from the Gemma family of lightweight models from Google DeepMind.
+
+You can run the model using the ollama run command to pull and start interacting with the model directly. However, you can also pull the model onto your machine first and then run it. This is very similar to how you work with Docker images.
+
+For Gemma 3 4b, running the following pull command downloads the model onto your machine:
+#+begin_src bash
+ ollama pull gemma3:4b  
+#+end_src
+* Run the Model
+Run the model using the ollama run command as shown:
+#+begin_src console
+yanboyang713@Meta-Scientific-Linux ~ % ollama run gemma3:4b
+>>> hello, where is the capital of China?
+The capital of China is **Beijing**.
+
+It's a huge, historic city and a major cultural and political center. 😊
+
+Do you want to know anything more about Beijing?
+
+>>> /bye
+#+end_src
+ 
+Doing so will start an Ollama REPL at which you can interact with the Gemma3 4B model.
+* Customize Model Behavior with System Prompts
+You can customize LLMs by setting system prompts for a specific desired behavior like so:
++ Set system prompt for desired behavior.
++ Save the model by giving it a name.
++ Exit the REPL and run the model you just created.
+  
+Say you want the model to always explain concepts or answer questions in plain English with minimal technical jargon as possible. Here’s how you can go about doing it:
+#+begin_src file
+>>> /set system For all questions asked answer in plain English avoiding technical jargon as much as possible
+Set system message.
+>>> /save ipe
+Created new model 'ipe'
+>>> /bye
+#+end_src
+
+Now run the model you just created:
+#+begin_src bash
+ollama run ipe
+#+end_src
+
+* How to use Ollama API
+Ollama API reference link: https://github.com/ollama/ollama/blob/main/docs/api.md
+
+Access from local using curl
+#+begin_src bash
+  curl http://localhost:11434/api/generate -d '{ "model": "gemma3:4b", "prompt": "How are you today?"}'
+#+end_src
+The format of the default response is not very friendly, let's add additional parameters to generate a single json object data, and the response is the return content.
+
+#+begin_src bash
+  curl http://localhost:11434/api/generate -d '{ "model": "gemma3:4b", "prompt": "How are you today?", "stream": false}'
+#+end_src
+
+* qwen2.5-omni
+[[id:03f6703f-fe08-407b-9e23-72e3ed9db00d][Multimodal AI]]
+
+* Reference List
+1. https://github.com/ollama/ollama
+2. https://www.kdnuggets.com/ollama-tutorial-running-llms-locally-made-super-simple
+3. https://www.gpu-mart.com/blog/ollama-api-usage-examples
+4. https://ai.google.dev/gemma/docs/integrations/ollama

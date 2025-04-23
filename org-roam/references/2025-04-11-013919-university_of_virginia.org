@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       bc1f11cb-958e-43fa-88a2-904fd94805db
+:END:
+#+title: University of Virginia
+#+date: [2025-04-11 Fri 01:39]
+
+[[id:09b614fa-8cfe-4f04-af6e-839dac78608a][UVA VPN on Linux]]

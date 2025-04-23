@@ -1,0 +1,30 @@
+:PROPERTIES:
+:ID:       7f7783c3-9ff5-4ebc-bf20-d059b1c86600
+:END:
+#+title: Balancing SDN Control Plane Availability and Traffic Engineering Efficiency in Data Centers
+#+date: [2025-04-16 Wed 00:02]
+
+[[id:a7bcd8d2-be57-4254-b599-3d7e9b340688][Jiaxin Lin]]
+
+*Modern spine‑free [[id:77a4f256-9e1a-438a-929c-917b708b7471][data center networks]] need both *high availability* and *tight traffic‑engineering (TE) control*. The paper shows that today’s “physical sharding” approach to SDN control‑plane partitioning hurts TE badly in those topologies—and proposes **virtual slicing** as a clean fix.*
+
+---
+
+* Why the paper matters  
+[[id:1b183f9f-6d8e-4a8e-a3a2-91f05a4f446e][spine-free]] fabrics (e.g., Google’s Gemini/Jupiter‑evolving) replace the Clos spine with a flat optical mesh to cut cost and power. Operators still partition the SDN control plane (so one bad controller can’t sink the whole fabric) and still rely on centralized TE to keep link utilization low. The authors reveal that the two goals *conflict*: the way links are carved into disjoint shards creates asymmetric, capacity‑fragmented sub‑topologies that TE can’t optimize well.
+
+---
+
+* Key idea — *Virtual slicing*  
+1. *Slice switch resources, not links*  
+   * Each switch’s flow‑table & group‑table space is divided into *M* logical “virtual slices.”  
+   * Every slice’s controller sees the *entire* physical topology, but only programs 1/M of the forwarding entries.  
+2. *Label‑based routing*  
+   * Source ToR hashes each flow, pushes a slice‑specific label, and uses WCMP weights to split traffic across slices.  
+   * Interior switches forward on the label; the egress block pops it.  
+   * If a controller dies, ToRs simply stop emitting that slice’s label—traffic migrates instantly to healthy slices without losing physical capacity.
+
+---
+
+* Reference List
+1. Chang, B., He, K., Chen, S. S., Lin, J., Zhang, M., Wu, W., & Akella, A. (2024, October). Balancing Sdn Control Plane Availability and Traffic Engineering Efficiency in Data Centers. In 2024 IEEE 32nd International Conference on Network Protocols (ICNP) (pp. 1-12). IEEE.

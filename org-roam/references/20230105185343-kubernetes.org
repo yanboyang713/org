@@ -4,16 +4,14 @@
 #+title: Kubernetes
 #+filetags:  
 
+* Introduction
 Kubernetes, also known as K8s, is an open-source system for automating deployment, [[id:5e3c0085-cca6-4de8-823e-9abfcbb2e99b][Scaling]], and management of containerized applications.
 
 It groups containers that make up an application into logical units for easy management and discovery. Kubernetes builds upon 15 years of experience of running production workloads at Google, combined with best-of-breed ideas and practices from the community.
-
 * [[id:203c4778-9335-4eef-b8ab-5aa39093c5cb][Container Network Interface (CNI)]]
 
 * Deployment Tools
 + [[id:9d293990-ff98-47eb-93a4-556df1e7b26d][kubeadm]]
-
-* [[id:c4645196-cab0-44ea-993f-451efc0ee682][Kubernetes Monitoring Tools]]
 
 * [[id:a6065697-c284-44bf-9f79-fe1e2e87fd1e][Kubernetes Publishing Services (management external traffic)]]
 

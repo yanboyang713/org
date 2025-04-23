@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       17dc3f87-99c6-4d34-afe1-11eab6245216
+:END:
+#+title: google gemma
+#+date: 2025-04-19
+
+[[id:ab03a99b-2c97-4664-a1e6-680a86721f3a][Large Language Models (LLMs)]]
+
+* Reference List
+1. https://blog.google/technology/developers/gemma-3/
+2. https://ollama.com/library/gemma3

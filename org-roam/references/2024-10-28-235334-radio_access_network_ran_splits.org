@@ -33,20 +33,23 @@ Most commonly used. DU manages Physical Layer functions, while CU handles the re
 :END:
 Handles low-level radio functions like beamforming and RF (Radio Frequency) signals.
 
-
 [[id:8798618b-1d83-48b9-8ee3-24bc8016caa8][ns-O-RAN]]
 
 RRU: Remote Radio unit interfaces with an [[id:5be8e9fc-0ae7-40dd-8839-22492874a751][antenna]] on one end and [[id:1329f1c2-a4a3-456b-b114-2220d3e990db][BBU]] on the other. It connects to BBU through CPRI interface and converts RF signal into data signal and vice versa. Further, it does filtering and amplification of RF signal. In fact, it decides the “COVERAGE” of the system”
 
 https://telcocloudbridge.com/blog/c-ran-vs-cloud-ran-vs-vran-vs-o-ran/
 
+*** [[id:de28d1ba-9fa5-4e2d-8df5-eb7c756d3979][5G NR frequency bands]] 
+*** O-RU Products
++ [[id:326e6206-2570-4a2f-8682-565e1b357816][Benetel]]
+  
 ** Distributed Unit (DU)
 :PROPERTIES:
 :ID:       225aa706-2680-46e9-8111-4eedbb0b28f4
 :END:
 Manages Layer 2 (MAC/RLC) operations and can be deployed closer to users.
 
-Distributed runs the RLC, MAC, and parts of the PHY layer. We normally place DU closer to [[id:4fb3287a-23fb-4585-bd87-be76e4b4077f][Radio Unit (RRU)]].
+Distributed runs the RLC, MAC, and parts of the PHY layer. We normally place DU closer to [[id:7b67ceaf-68b1-4916-ab4f-2b95605dd813][Radio Unit (RU)]].
 
 https://telcocloudbridge.com/blog/c-ran-vs-cloud-ran-vs-vran-vs-o-ran/
 ** Central Unit (CU)

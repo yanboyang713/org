@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       1b183f9f-6d8e-4a8e-a3a2-91f05a4f446e
+:END:
+#+title: spine-free architecture
+#+date: [2025-04-16 Wed 00:07]
+

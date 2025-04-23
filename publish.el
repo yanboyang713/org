@@ -1,6 +1,6 @@
 ;; https://github.com/jethrokuan/braindump/blob/master/publish.el
 (require 'find-lisp)
-(require 'ox-hugo)
+;;(require 'ox-hugo)
 
 (projectile-mode -1)
 (dtrt-indent-mode -1)
@@ -13,5 +13,5 @@
     (setq org-hugo-section "posts"
           org-hugo-base-dir "~/quartz/")
     ;;(let ((org-id-extra-files (find-lisp-find-files org-roam-directory "\.org$")))
-    (let ((org-id-extra-files (find-lisp-find-files "/home/yanboyang713/org/org-roam/references" "\.org$")))
+    (let ((org-id-extra-files (find-lisp-find-files "/home/yanboyang713/org/org-roam/" "\.org$")))
       (org-hugo-export-wim-to-md))))

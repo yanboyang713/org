@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       40f311b8-f52f-4343-a10e-eb866850a4ad
+:END:
+#+title: Rutgers University
+#+date: 2025-04-11
+
++ [[id:5a4f153c-20e9-45be-88dd-b82a133ff3cb][Yingying (Jennifer) Chen]]
++ [[id:f4e43428-fbd9-40ac-a07f-8e7205b1e980][N.K. Shankaranarayanan]]
+
+* Reference List
+1. https://www.rutgers.edu/

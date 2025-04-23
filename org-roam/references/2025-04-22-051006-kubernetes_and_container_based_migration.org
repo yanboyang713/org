@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       12d4d7a1-7d33-45dd-b289-275388905878
+:END:
+#+title: Kubernetes and container-based migration
+#+date: 2025-04-22
+
+[[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]]
+
+Containers encapsulate applications and can be relocated more quickly than VMs, though transferring in-memory state still poses challenges. By default, Kubernetes does not provide live migration of running pods – if a pod is rescheduled to another node, it usually involves shutting it down and restarting on the target node (a “cold” migration). Recent research therefore focuses on extending container orchestrators to support live container migration, often using checkpoint/restore tools such as CRIU (Checkpoint/Restore In Userspace) to snapshot a container’s state and restore it on a new node​
+link.springer.com
+. This approach can preserve in-memory state and open connections, enabling stateful migration of microservices. 

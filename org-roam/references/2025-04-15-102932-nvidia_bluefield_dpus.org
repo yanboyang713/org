@@ -1,0 +1,23 @@
+:PROPERTIES:
+:ID:       d790aa57-a8b9-4222-9803-c738e69be403
+:END:
+#+title: NVIDIA BlueField DPUs
+#+date: [2025-04-15 Tue 10:29]
+
+
+[[id:4dc5a485-4326-42e2-baac-72821ebc01b7][InfiniBand]]
+
+* Mellanox ConnectX-5 Ex 100Gb NIC
+:PROPERTIES:
+:ID:       6a18d05e-6c0e-4cf2-8cb4-268f6d96c696
+:END:
+* NVIDIA/Mellanox BlueField-2 DPU
+:PROPERTIES:
+:ID:       c49bffa1-8a28-403d-a708-cfa5cf60554e
+:END:
+
+
+* NVIDIA DOCA (Data Center Infrastructure-on-a-Chip Architecture) SDK
+
+* Reference List
+1. https://www.nvidia.com/en-us/networking/products/data-processing-unit/hpc/

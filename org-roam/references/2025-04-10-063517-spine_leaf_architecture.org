@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       caf1ef9a-effe-4640-880e-b7477bd2575d
+:END:
+#+title: spine-leaf architecture
+#+date: [2025-04-10 Thu 06:35]
+
+* What is spine-leaf architecture?
+A spine-leaf architecture is data center network topology that consists of two switching layers—a spine and leaf. The leaf layer consists of access switches that aggregate traffic from servers and connect directly into the spine or network core. Spine switches interconnect all leaf switches in a full-mesh topology.
+
+* Reference List
+1. https://www.hpe.com/us/en/what-is/spine-leaf-architecture.html#:~:text=A%20spine%2Dleaf%20architecture%20is,in%20a%20full%2Dmesh%20topology.

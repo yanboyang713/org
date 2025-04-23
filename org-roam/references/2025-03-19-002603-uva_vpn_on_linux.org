@@ -9,6 +9,8 @@ For [[id:dc13b67c-8d8b-40fd-b8cf-9ea8547e485d][Arch Linux]] you’ll need to hav
   paru -S openconnect openssl
 #+end_src
 
+[[id:c48b6e01-388f-4261-9e9b-cc4258e4c441][OpenConnect]]
+
 * Obtain a Certificate
 Go to this unpublicized Web location to obtain a certificate for [[https://cloud.securew2.com/public/82116/limited/?device=Unknown][non-specific]] OS. You will be required to sign in with Netbadge. Once authenticated, fill out the form.
 personal-cert

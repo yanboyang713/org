@@ -1,0 +1,49 @@
+:PROPERTIES:
+:ID:       9bbe88d5-fdfd-428f-b0ef-398f631512a5
+:END:
+#+title: LogNIC: A High-Level Performance Model for SmartNICs
+#+date: [2025-04-16 Wed 01:33]
+
+[[id:a7bcd8d2-be57-4254-b599-3d7e9b340688][Jiaxin Lin]]
+
+The paper *"LogNIC: A High-Level Performance Model for SmartNICs"* proposes a packet-centric analytical model to help developers reason about the performance of SmartNIC-offloaded applications *without deep hardware knowledge*. Here's a summary and information about the SmartNICs it uses:
+
+---
+
+* *Problem
+SmartNICs (Smart Network Interface Cards) are widely used in modern data centers for offloading packet processing tasks from CPUs. However, *developing optimized SmartNIC applications is complex*, due to hardware heterogeneity, overlapping computation/I/O, and traffic-dependent performance.
+
+* *Solution
+The authors introduce *LogNIC*, a *high-level performance model* for SmartNICs that abstracts hardware details and models performance based on *packet traversal* through execution graphs comprising compute engines, memory hierarchies, and interconnects.
+
+*Key Features of LogNIC:*
+- Models *latency and throughput* using a *directed acyclic graph (DAG)* abstraction of SmartNIC execution.
+- Considers interleaved traffic, multiple tenants, and accelerator variability.
+- Offers both *estimation mode* (predicts performance) and *optimizer mode* (suggests configurations to meet performance goals).
+- Inspired by and extends architectural models like Roofline, LogCA, and Accelerometer.
+
+*Evaluation Results:*
+- Validated using real SmartNICs, LogNIC accurately estimates performance with *<1% error* in some scenarios.
+- It helps optimize parallelism and placement decisions, improving *throughput by up to 36.4%* and *latency by up to 22.8%*.
+- Can also guide early-stage *hardware design decisions*.
+
+* Which SmartNICs Are Used?
+The authors evaluated LogNIC on the following hardware:
+1. [[id:1c7af942-88b7-426d-b14c-3cbcb8e88e61][Marvell LiquidIO-II CN2360]]
+   - 25GbE
+   - 16×1.5GHz cnMIPS cores  
+   - Accelerator-rich (e.g., MD5, CRC, ZIP, HFA)  
+   - Bump-in-the-wire SmartNIC
+2. [[id:c49bffa1-8a28-403d-a708-cfa5cf60554e][NVIDIA/Mellanox BlueField-2 DPU]]  
+   - 100GbE  
+   - 8×2.5GHz ARM A72 cores  
+   - General-purpose SmartNIC with programmable cores  
+   - Off-path SmartNIC
+3. [[id:d8c3c22e-3b9e-40bc-a1bc-1889f7e8d1fd][Broadcom Stingray PS1100R]]
+   - 100GbE  
+   - 8×3.0GHz ARM A72 cores, 8GB DDR4  
+   - Supports NVMe-oF workloads  
+   - Off-path SmartNIC
+4. *[[id:97ee4b29-930e-455b-96ee-7b87d9c0a68b][PANIC]] (Academic Prototype)*  
+   - Used for design space exploration  
+   - Not a commercial product, but demonstrates configurability in research settings

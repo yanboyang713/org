@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       b771a66c-e63a-42b9-8268-4efa191fb4c3
+:END:
+#+title: Princeton University
+#+date: [2025-04-11 Fri 01:38]
+
++ [[id:b70221a5-9a95-4840-9cf6-64daebf37e0a][John Sonchack]]

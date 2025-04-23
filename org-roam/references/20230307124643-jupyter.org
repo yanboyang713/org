@@ -40,3 +40,6 @@ https://z2jh.jupyter.org/en/stable/
 
 * [[id:e4fa2843-dc6e-4303-a209-40df1bd10a0f][docker]] 
 https://docs.docker.com/guides/use-case/jupyter/
+
+* Reference List
+1. https://jupyter.org/install

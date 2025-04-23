@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       081b5655-bc16-4f94-99b7-6856268cc299
+:END:
+#+title: Alpha Data
+#+date: [2025-04-16 Wed 07:55]
+
+* Alpha Data ADM-PCIE-9V3
+:PROPERTIES:
+:ID:       9a93b4a7-38a1-490b-82c7-1e0c425229a8
+:END:
+
+https://alpha-data.com/product/adm-pcie-9v3/

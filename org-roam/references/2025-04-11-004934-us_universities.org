@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       88b16f89-0ab2-46e1-9bb4-9b12c84663bc
+:END:
+#+title: US Universities
+#+date: [2025-04-11 Fri 00:49]
+
++ [[id:687b233f-bf60-4e28-93df-af75f4a94dac][NCSU]]
++ [[id:ec22fd65-b3d0-40f3-bfd2-6fcd132611c3][University of Illinois Urbana-Champaign (UIUC)]]
++ [[id:3c30b4e5-185a-4f6d-9694-b3ebb263ea0e][University of Pennsylvania]]
++ [[id:40f311b8-f52f-4343-a10e-eb866850a4ad][Rutgers University]]
++ [[id:b771a66c-e63a-42b9-8268-4efa191fb4c3][Princeton University]]
++ [[id:bc1f11cb-958e-43fa-88a2-904fd94805db][University of Virginia]]
++ [[id:3cad2844-5e2a-416f-9162-38dceac3543b][University of Texas Austin]] 

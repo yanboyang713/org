@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       c1a10c6e-ac10-4560-b03c-828bb1f007e6
+:END:
+#+title: Tools for Optimizing LLM Prompts
+#+date: 2025-04-20
+
+[[id:ab03a99b-2c97-4664-a1e6-680a86721f3a][Large Language Models (LLMs)]]
+
+* Prompt Perfect (Prompt Optimization Platform)
+Website: promptperfect.xyz
+Type: Online (ChatGPT plugin and browser extension)

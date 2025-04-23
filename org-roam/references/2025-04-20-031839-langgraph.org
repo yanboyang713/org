@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       f5e9d6d8-150b-4792-9cc6-f67e15d56ebe
+:END:
+#+title: LangGraph
+#+date: 2025-04-20
+
++ [[id:e0a8062e-e718-4eb7-bf45-a5a456088a5c][LangChain Academy]]: Learn the basics of LangGraph in our free, structured course.

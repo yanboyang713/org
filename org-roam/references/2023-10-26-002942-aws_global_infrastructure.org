@@ -92,6 +92,10 @@ AWS developers can deploy their applications to Wavelength Zones, AWS infrastruc
 
 AWS Wavelength brings AWS services to the edge of the 5G network, minimizing the latency to connect to an application from a mobile device.
 
+** reference
+1. https://aws.amazon.com/wavelength/
+2. https://www.geeksforgeeks.org/what-is-aws-wavelength/
+   
 * AWS Outposts
 :PROPERTIES:
 :ID:       1689a7bc-b828-406a-aaf5-133290837345

@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       f8827469-130f-495c-967e-1965221a005d
+:END:
+#+title: Container-based Service Relocation for Beyond 5G Networks
+#+date: 2025-04-22
+
+* Reference List
+1. Lim, Y., & Lee, J. H. (2022). Container-based service relocation for beyond 5g networks. Journal of Internet Technology, 23(4), 911-918.

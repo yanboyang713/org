@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       28ef09a7-d590-40a5-b61d-679b2789e23d
+:END:
+#+title: Central Processing Unit (CPU)
+#+date: [2025-04-11 Fri 01:43]
+
+* Introduction
+A central processing unit (CPU), also called a central processor, main processor, or just processor, is the primary processor in a given computer.[1][2] Its electronic circuitry executes instructions of a computer program, such as arithmetic, logic, controlling, and input/output (I/O) operations.[3][4][5] This role contrasts with that of external components, such as main memory and I/O circuitry,[6] and specialized coprocessors such as graphics processing units (GPUs).
+
+* Brands
++ [[id:dd6edcaa-7b28-4943-a85a-e73303d7e3d7][ARM CPU]]
+  
+* Reference List
+1. https://en.wikipedia.org/wiki/Central_processing_unit

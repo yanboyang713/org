@@ -15,6 +15,13 @@
 #+begin_src bash
   npx quartz build --serve
 #+end_src
+* [[id:3766fc72-4465-4859-96bd-c327ea2c82cf][GitHub Pages]]
+Commit these changes. This should deploy your site to <github-username>.github.io/<repository-name>.
+#+begin_src bash
+  npx quartz sync
+#+end_src
+
+* [[https://quartz.jzhao.xyz/features/comments][Comments]]
 
 * Reference List
 1. https://quartz.jzhao.xyz/

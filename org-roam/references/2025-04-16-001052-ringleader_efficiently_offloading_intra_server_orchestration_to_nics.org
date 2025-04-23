@@ -1,0 +1,20 @@
+:PROPERTIES:
+:ID:       746be16b-2841-4a48-8a88-ed75bc197f1c
+:END:
+#+title: RingLeader: Efficiently Off‑loading Intra‑Server Orchestration to NICs (NSDI ’23)
+#+date: [2025-04-16 Wed 00:10]
+
+[[id:a7bcd8d2-be57-4254-b599-3d7e9b340688][Jiaxin Lin]]
+
+[[id:99870df1-7eaf-44eb-89c1-76d90d9870ca][Alveo U280 Data Center Accelerator Card]]
+
+base line:
+[[id:6a18d05e-6c0e-4cf2-8cb4-268f6d96c696][Mellanox ConnectX-5 Ex 100Gb NIC]]
+
+* *Why it matters*
+Modern cloud servers juggle thousands of microsecond‑scale RPCs from many services. Ideal orchestration (load‑balancing, request scheduling, and fast CPU core re‑allocation) is centralized, but existing *software‑only* schemes burn cores and stall at high line‑rates. SmartNICs with on‑board ARM cores help little—they are too slow and still add latency. RingLeader asks: *what if we push (almost) the entire orchestration logic into the NIC’s datapath hardware?*
+
+---
+
+* Reference List
+1. https://www.usenix.org/conference/nsdi23/presentation/lin

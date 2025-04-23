@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       bb74b7dc-1ffb-49eb-8400-c2e96a5277f8
+:END:
+#+title: Ollama vs vLLM
+#+date: 2025-04-22
+
+[[id:8ecb66b1-216b-4eb4-b20a-b9126aebb756][ollama]]
+[[id:ac10704e-7f03-4372-a449-0cd3b91500f3][vLLM]]
+
+* Reference List
+1. https://medium.com/@naman1011/ollama-vs-vllm-which-tool-handles-ai-models-better-a93345b911e6
+2. https://techdocs.broadcom.com/us/en/vmware-tanzu/platform-services/genai-on-tanzu-platform-for-cloud-foundry/10-0/ai-cf/explanation-ollama-vs-vllm.html
+3. https://blog.stackademic.com/vllm-vs-ollama-choosing-the-right-lightweight-llm-framework-for-your-ai-applications-a454e1b39322

@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       e4bbd782-d894-4f33-b949-18882fbde0e2
+:END:
+#+title: AI agent use case
+#+date: [2025-04-11 Fri 01:08]
+
+* Use Case
++ [[id:d080f04d-9123-40da-9a3d-53847db3829e][Container Allocation in Cloud Environment Using Multi-Agent Deep Reinforcement Learning]]

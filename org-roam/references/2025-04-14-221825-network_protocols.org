@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       54879706-fb47-4b0d-a143-74ab81cf7423
+:END:
+#+title: Network Protocols
+#+date: [2025-04-14 Mon 22:18]
+
++ [[id:4bf58659-aef1-402b-ab70-d63535fc4ee6][Data Center TCP (DCTCP)]]
++ [[id:e7b30b16-d942-4c41-ba19-14245c12a572][BGP]]
++ [[id:fb3e12fc-98fb-45a5-8474-a52b1743738b][OSPF]]
++ [[id:f3a72e5e-58f7-40ba-8f32-2207807a96b2][Explicit Congestion Notification (ECN)]]
++ [[id:16e58436-7b21-4b5f-a858-bdadc203abb2][Simple Network Management Protocol (SNMP)]]
++ [[id:42f18702-d8ea-4dc0-940e-e2a6084c86be][AI agent protocols]] 

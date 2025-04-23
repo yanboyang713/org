@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       3cad2844-5e2a-416f-9162-38dceac3543b
+:END:
+#+title: University of Texas Austin
+#+date: [2025-04-15 Tue 03:15]
+
+* Students
+** Jiaxin Lin
+:PROPERTIES:
+:ID:       a7bcd8d2-be57-4254-b599-3d7e9b340688
+:END:
+https://lockkkk.github.io/
+
+* Professor
+** Aditya Akella
+https://www.cs.utexas.edu/~akella/

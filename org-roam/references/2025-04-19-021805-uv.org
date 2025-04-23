@@ -1,0 +1,31 @@
+:PROPERTIES:
+:ID:       3d5e46ca-9031-42c2-a40c-000deceb20a7
+:END:
+#+title: uv
+#+date: 2025-04-19
+
+An extremely fast package and project manager, written in Rust.
+
+* [[https://docs.astral.sh/uv/#installation][Installation]]
+#+begin_src bash
+  curl -LsSf https://astral.sh/uv/install.sh | sh
+#+end_src
+
+#+begin_src output
+downloading uv 0.6.14 x86_64-unknown-linux-gnu
+no checksums to verify
+installing to /home/yanboyang713/.local/bin
+  uv
+  uvx
+everything's installed!
+
+To add $HOME/.local/bin to your PATH, either restart your shell or run:
+
+    source $HOME/.local/bin/env (sh, bash, zsh)
+    source $HOME/.local/bin/env.fish (fish)
+#+end_src
+
+
+* Reference List
+1. https://github.com/astral-sh/uv
+2. https://docs.astral.sh/uv/

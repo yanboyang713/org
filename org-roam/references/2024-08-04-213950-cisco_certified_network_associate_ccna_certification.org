@@ -1,7 +1,9 @@
 :PROPERTIES:
 :ID:       dad7a21d-94b5-4b35-a0f3-6068c9397053
 :END:
-#+title: Cisco Certified Network Associate (CCNA) certification
+#+title: Cisco Certification
+
+* Cisco Certified Network Associate (CCNA) certification
 
 * Reference List
 1. https://www.spiceworks.com/tech/networking/articles/what-is-ccna-certification/amp/

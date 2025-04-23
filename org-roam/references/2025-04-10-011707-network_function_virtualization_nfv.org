@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       d8b28e4b-51fa-42ab-a630-c86482854324
+:END:
+#+title: Network Function Virtualization (NFV)
+#+date: [2025-04-10 Thu 01:17]
+

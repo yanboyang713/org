@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       425ac073-a447-421b-bd1e-00c8ddb35557
+:END:
+#+title: Ham Radio over IP
+#+date: 2025-04-22
+
+[[id:570e8e32-4ec7-463c-9c1f-54f803d2c0e8][Ham Radio]]
+[[id:c14700f2-852f-44cc-860f-200418d0ea34][Session Initiation Protocol (SIP)]]
+
+* Reference List
+1. https://community.freepbx.org/t/radio-over-ip-module-for-asterisknow-freepbx-resurrected-project/34603

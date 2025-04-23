@@ -1,16 +1,21 @@
 :PROPERTIES:
 :ID:       9e8c64d3-9226-4ef5-bf43-78744699c1fd
 :END:
-#+title: networking
+#+title: computer networks
 
 * Base
 [[id:2e106c65-e1e4-4331-bb9e-7c1994b0a3d6][OSI Model]]
 
-[[id:55f23b66-c353-4562-b4bc-da3df9ddc665][wireless networks]]
-[[id:60bc45fd-dfc3-4b53-852a-46ff8d77f94c][Cellular Network]]
+* Networks
++ [[id:55f23b66-c353-4562-b4bc-da3df9ddc665][wireless networks]]
++ [[id:60bc45fd-dfc3-4b53-852a-46ff8d77f94c][Cellular Network]]
++ [[id:2af07359-aec7-4c5b-aa36-cad4688f915d][Software-Defined Networking (SDN)]] 
 
 [[id:9c9c0a89-5491-418f-bd87-9f16f1befdc2][network secure]]
 
 * [[id:aa20119a-0616-47c0-8250-da622f6ec60b][Public Cloud]]
-[[id:4954074a-267b-4af2-ae95-784c147d9e8c][AWS Networking]]
++ [[id:4954074a-267b-4af2-ae95-784c147d9e8c][AWS Networking]]
 
+* [[id:0825efbb-b959-44e6-ac59-a6dafe8ed3bb][networking datasets]]
+
+* [[id:54879706-fb47-4b0d-a143-74ab81cf7423][Network Protocols]] 

@@ -4,6 +4,9 @@
 #+title: microsoft
 #+filetags:  
 
+* My MS employee number :noexport:
 Boyang Yan/boyyan's employee number is 1417998
 
-[[id:6d1defe7-aca9-479d-b76c-eeb78e4b042f][Liangcheng Yu]]
+* Staff
++ [[id:6d1defe7-aca9-479d-b76c-eeb78e4b042f][Liangcheng Yu]]
++ [[id:0be8fb23-c6be-4c28-b1ef-d316e9e4806e][Victor Bahl]] 

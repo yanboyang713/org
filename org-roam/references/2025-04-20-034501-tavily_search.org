@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       908ee1ce-5e33-4946-9cc0-da45fee9bd72
+:END:
+#+title: Tavily Search
+#+date: 2025-04-20
+
+* Reference List
+1. https://tavily.com/

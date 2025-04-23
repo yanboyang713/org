@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       77a4f256-9e1a-438a-929c-917b708b7471
+:END:
+#+title: data center networks
+#+date: [2025-04-16 Wed 00:06]
+
++ [[id:caf1ef9a-effe-4640-880e-b7477bd2575d][spine-leaf architecture]]
++ [[id:1b183f9f-6d8e-4a8e-a3a2-91f05a4f446e][spine-free architecture]] 

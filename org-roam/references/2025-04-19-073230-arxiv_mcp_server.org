@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       2ef37b76-8aa5-4cd5-b5ec-1ea2c2286362
+:END:
+#+title: ArXiv MCP Server
+#+date: 2025-04-19
+
+[[id:47e1b155-a6ec-48e5-95ff-3f956b6e5907][Message Control Protocol (MCP)]]
+
+* Reference List
+1. https://github.com/blazickjp/arxiv-mcp-server

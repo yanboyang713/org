@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       397ecfdb-7004-4069-9cb0-87e6207c7c85
+:END:
+#+title: python package and project manager
+#+date: 2025-04-19
+
+[[id:80d07df5-6da1-4c77-800c-dceeefd47f98][python]]
+
++ [[id:012ee935-1a96-4a7d-bb5f-fd95d83438a8][conda]]
++ [[id:23515ee9-4914-41e6-b3b9-fd5f52bcd84a][mamba (Package Manager)]]
++ [[id:3d5e46ca-9031-42c2-a40c-000deceb20a7][uv]]
++ [[id:baf9d63a-01ee-4608-97cf-6db528187303][pipx]]
++ [[id:44373cfe-a196-4794-9503-16d2ba33a02b][python venv]] 

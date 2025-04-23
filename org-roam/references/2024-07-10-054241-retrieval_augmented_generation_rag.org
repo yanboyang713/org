@@ -1,5 +1,0 @@
-:PROPERTIES:
-:ID:       db232a03-5f4a-4790-97e2-23b1cfc39174
-:END:
-#+title: Retrieval-Augmented Generation (RAG)
-

@@ -1,0 +1,72 @@
+:PROPERTIES:
+:ID:       e0a8062e-e718-4eb7-bf45-a5a456088a5c
+:END:
+#+title: LangChain Academy
+#+date: 2025-04-20
+
+* Setup
+** Clone repo
+#+begin_src bash
+git clone https://github.com/langchain-ai/langchain-academy.git
+cd langchain-academy
+#+end_src
+** Create an environment and install dependencies
+#+begin_src bash
+python3 -m venv lc-academy-env
+source lc-academy-env/bin/activate
+pip install -r requirements.txt
+#+end_src
+** Running [[id:d1323e7d-033e-405a-8967-bf4ee4bc855e][Jupyter]] notebooks
+#+begin_src bash
+  jupyter notebook
+#+end_src
+** Sign up for [[id:64c93bf4-9517-4ae7-b756-33ff20a35beb][LangSmith]]
+Sign up here. You can reference LangSmith docs here.
+
+Then, set
+#+begin_src bash
+LANGCHAIN_API_KEY
+LANGCHAIN_TRACING_V2=true
+#+end_src
+in your environment.
+** Set up [[id:0b6ed9e0-3147-48fe-a9bc-669481799c77][OpenAI API]] key
+If you don’t have an OpenAI API key, you can [[https://openai.com/index/openai-api/][sign up]] here.
+Then, set
+#+begin_src bash
+OPENAI_API_KEY
+#+end_src
+in your environment.
+** Tavily for web search
+[[id:908ee1ce-5e33-4946-9cc0-da45fee9bd72][Tavily Search]] API is a search engine optimized for LLMs and RAG, aimed at efficient, quick, and persistent search results. You can sign up for an API key here. It’s easy to sign up and offers a generous free tier. Some lessons in Module 4 will use Tavily.
+Then, set
+#+begin_src bash
+TAVILY_API_KEY
+#+end_src
+in your environment.
+** Set up LangGraph Studio
++ LangGraph Studio is a custom IDE for viewing and testing agents.
++ Studio can be run locally and opened in your browser on Mac, Windows, and Linux.
++ See documentation [[https://langchain-ai.github.io/langgraph/concepts/langgraph_studio/#deployed-application][here]] on the local Studio development server and [[https://langchain-ai.github.io/langgraph/how-tos/local-studio/#run-the-development-server][here]].
+Graphs for LangGraph Studio are in the module-x/studio/ folders.
+To start the local development server, run the following command in your terminal in the /studio directory each module:
+#+begin_src bash
+langgraph dev
+#+end_src
+You should see the following output:
+- 🚀 API: http://127.0.0.1:2024
+- 🎨 Studio UI: https://smith.langchain.com/studio/?baseUrl=http://127.0.0.1:2024
+- 📚 API Docs: http://127.0.0.1:2024/docs
+Open your browser and navigate to the Studio UI: https://smith.langchain.com/studio/?baseUrl=http://127.0.0.1:2024
+
++ To use Studio, you will need to create a .env file with the relevant API keys
++ Run this from the command line to create these files for module 1 to 6, as an example:
+#+begin_src bash
+for i in {1..6}; do
+  cp module-$i/studio/.env.example module-$i/studio/.env
+  echo "OPENAI_API_KEY=\"$OPENAI_API_KEY\"" > module-$i/studio/.env
+done
+echo "TAVILY_API_KEY=\"$TAVILY_API_KEY\"" >> module-4/studio/.env
+#+end_src
+
+* Reference List
+1. https://academy.langchain.com/

@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       f05d09b0-cf63-4b35-88db-c0d5b87126d8
+:END:
+#+title: Efficient Multi-WAN Transport for 5G with OTTER
+#+date: 2025-04-16
+
+[[id:60bc45fd-dfc3-4b53-852a-46ff8d77f94c][Cellular Network]]
+
+* Reference List
+1. https://www.usenix.org/conference/nsdi25/presentation/hogan
+2. https://www.microsoft.com/en-us/research/publication/efficient-multi-wan-transport-for-5g-with-otter/?locale=fr-ca

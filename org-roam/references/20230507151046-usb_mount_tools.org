@@ -33,3 +33,5 @@ Unmounting a drive is handled via the umount command and when invoked it safely 
    #+begin_src bash
 sudo umount /media/pendrive
    #+end_src
+
+[[id:7e6372d3-24f6-48e9-b745-1594312cdac9][mount usb with udiskctl]]

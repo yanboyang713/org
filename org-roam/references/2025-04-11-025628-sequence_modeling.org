@@ -1,0 +1,60 @@
+:PROPERTIES:
+:ID:       d5ac8136-ccf1-4cd9-8f38-0d5283b86e18
+:END:
+#+title: sequence modeling
+#+date: [2025-04-11 Fri 02:56]
+
+The Transformer, Mamba, RWKV, and TTT architectures represent distinct approaches to sequence modeling in machine learning, each with unique characteristics and advantages.
+
+
+* [[id:6ec03dde-9090-462b-b127-7fa998be09db][Transformer]]
+
++ *Architecture*: Utilizes self-attention mechanisms to process sequences, allowing each token to attend to all others.
++ *Advantages*:
+  - Highly effective in capturing global dependencies.
+  - Supports parallel processing during training.
++ *Limitations*:
+  - Computational complexity scales quadratically with sequence length, leading to inefficiencies with long inputs.
+  - High memory consumption during inference.
+
+* [[id:542ee766-e6b3-45fc-98ac-27c3317e3f0a][mamba (deep learning)]]
+
++ *Architecture*: Based on Selective State Space Models (SSMs), Mamba introduces input-dependent transitions, enhancing flexibility over traditional SSMs.
++ *Advantages*:
+  - Achieves linear time complexity with respect to sequence length.
+  - Demonstrates fast inference speeds, outperforming Transformers in certain tasks.
+  - Maintains performance on sequences with up to a million tokens.
++ *Limitations*:
+  - May not capture content-based reasoning as effectively as attention mechanisms.
+
+* [[id:f3ac58b0-c3ef-434e-9c53-7a594f00e897][RWKV]]
+
++ *Architecture*: Combines elements of Recurrent Neural Networks (RNNs) with Transformer-like capabilities, enabling parallel training and efficient inference.
++ *Advantages*:
+  - Linear computational complexity, making it suitable for long sequences.
+  - Lower memory requirements compared to Transformers.
+  - Effective in scenarios with extended context lengths, such as 128K to 256K tokens.
++ *Limitations*:
+  - Being relatively new, it may have less community support and fewer pre-trained models available.
+
+* [[id:39bd6ce6-af37-4018-bab4-1af2da5efdc4][Test-Time Training (TTT)]]
+
++ *Architecture*: Introduces a novel approach where the model's hidden state is a learnable function, updated via self-supervised learning during inference.
++ *Advantages*:
+  - Maintains linear complexity while enhancing the expressiveness of the hidden state.
+  - Outperforms traditional Transformers and Mamba in certain benchmarks, especially with long contexts.
+  - Exhibits lower latency and computational cost in long-context scenarios
++ *Limitations*:
+  - Still in the research phase, with ongoing development and optimization required.
+
+* Comparative Summary
+
+| Model       | Complexity | Long-Context Performance | Inference Speed | Maturity Level |
+|-------------+------------+--------------------------+-----------------+----------------|
+| Transformer | Quadratic  | Moderate                 | Moderate        | High           |
+| Mamba       | Linear     | High                     | High            | Emerging       |
+| RWKV        | Linear     | High                     | High            | Emerging       |
+| TTT         | Linear     | Very High                | High            | Experimental   |
+
+
+In summary, while Transformers have been the cornerstone of many advancements in sequence modeling, emerging architectures like Mamba, RWKV, and TTT offer promising alternatives, particularly for tasks involving long sequences and requiring computational efficiency. The choice among these models should be guided by specific application requirements, such as sequence length, computational resources, and the need for real-time processing.

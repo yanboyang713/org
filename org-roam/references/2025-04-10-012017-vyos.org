@@ -1,0 +1,50 @@
+:PROPERTIES:
+:ID:       fe7713cb-166a-46c1-8a1d-8ceca7e61691
+:END:
+#+title: VyOS
+#+date: [2025-04-10 Thu 01:20]
+
+* Introduction
+VyOS is an open source network operating system Linux distribution based on [[id:0c65c1a6-4751-4290-876f-6c5ad7694068][Debian]]n.
+
+VyOS provides a free routing platform that competes directly with other commercially available solutions from well-known network providers. Because VyOS is run on standard amd64 systems, it can be used as a router and firewall platform for cloud deployments. VyOS can also be optimized to achieve routing at 100Gbps.
+
+* Features
+** Routing and Protocols
++ [[id:e7b30b16-d942-4c41-ba19-14245c12a572][BGP]]
++ [[id:fb3e12fc-98fb-45a5-8474-a52b1743738b][OSPF]]
+
+** Monitoring
++ [[id:ebc7a85b-cb33-4b29-93f9-0c2d5215bc7a][Prometheus]]/[[id:9f3cd2be-e9b5-4c01-b457-445951a17175][Grafana]]
+
+** High Availability and Load Balancing
++ [[id:e3bd261e-34a6-4c7a-9945-529fb8a363b7][VRRP]] for IPv4 and IPv6, ability to execute custom health checks and transition scripts
+
+* WWAN - Wireless Wide-Area-Network
+:PROPERTIES:
+:ID:       049298d5-7b83-4ce2-8cfe-c6e50bf141a7
+:END:
+https://docs.vyos.io/en/stable/configuration/interfaces/wwan.html
+
+** Supported LTE cards
++ Sierra Wireless AirPrime MC7304 miniPCIe card (LTE)
++ Sierra Wireless AirPrime MC7430 miniPCIe card (LTE)
++ Sierra Wireless AirPrime MC7455 miniPCIe card (LTE)
++ Sierra Wireless AirPrime MC7710 miniPCIe card (LTE)
++ Huawei ME909u-521 miniPCIe card (LTE)
++ Huawei ME909s-120 miniPCIe card (LTE)
+  
+** Supported [[id:632cf3c1-f7dc-4e2f-9ca7-e701322621bd][WIFI]] cards
+VyOS is based on Debian (depends on the version, like 1.3 → Debian 10 "Buster"), so Wi-Fi card compatibility is similar to Debian Linux. These chipsets are usually your safest bet:
+
+*** Atheros AR9xxx series (ath9k)
+✅ Fully open-source drivers
+✅ Stable and well-supported in Debian
+Works in both AP and client mode
+Good for hostapd (if you're trying to make VyOS a Wi-Fi AP)
+
+* Reference List
+1. https://docs.vyos.io/en/sagitta/
+2. https://forum.vyos.io/t/article-vyos-for-home-use/14715
+3. https://akyriako.medium.com/configure-vyos-as-a-software-based-router-for-your-home-labs-private-networks-a0f4529f0b99
+4. https://en.wikipedia.org/wiki/VyOS

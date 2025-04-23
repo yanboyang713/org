@@ -6,6 +6,7 @@
 
 [[id:0c65c1a6-4751-4290-876f-6c5ad7694068][Debian]]
 [[id:803d821b-6f7d-4e07-9a1f-08c9736c7dec][ubuntu]]
+[[id:fffc8c5a-01ef-418d-9955-f52a5b0fc6bc][RTOS]]
 
 * Arch Linux
 + [[id:f6c12716-7d4f-4def-af11-73f122e5c821][Meta Scientific Linux]]

@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       fb3e12fc-98fb-45a5-8474-a52b1743738b
+:END:
+#+title: OSPF
+#+date: [2025-04-10 Thu 01:35]
+

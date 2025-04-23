@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       ddc98575-edd6-48f9-bebc-f35e352ed1da
+:END:
+#+title: Broadcom
+#+date: [2025-04-16 Wed 01:28]
+
+* Broadcom Stingray SoC SmartNIC (PS225, 25 GbE)
+:PROPERTIES:
+:ID:       a623b009-b25b-42b3-9351-d03d449e2d47
+:END:
+https://datasheet.octopart.com/PS225---DUAL-PORT-25GBE-PCIE-ETHERNET-SMARTNIC-Avago-datasheet-116220963.pdf
+* Broadcom Stingray PS1100R
+:PROPERTIES:
+:ID:       d8c3c22e-3b9e-40bc-a1bc-1889f7e8d1fd
+:END:
+https://investors.broadcom.com/news-releases/news-release-details/broadcom-announces-production-availability-industrys-first-100g

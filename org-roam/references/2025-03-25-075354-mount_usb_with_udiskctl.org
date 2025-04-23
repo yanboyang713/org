@@ -1,0 +1,35 @@
+:PROPERTIES:
+:ID:       7e6372d3-24f6-48e9-b745-1594312cdac9
+:END:
+#+title: mount usb with udiskctl
+
+The udisks2 package allows mounting without sudo via its CLI tool udiskctl
+
+* Ensure udisks2 is installed
+#+begin_src bash
+  paru -S udisks2
+#+end_src
+* List available drives
+#+begin_src bash
+  lsblk
+#+end_src
+* mount disk
+#+begin_src bash
+  udisksctl mount -b /dev/sdX1
+#+end_src
+
+Example:
+#+begin_src console
+yanboyang713@Meta-Scientific-Linux ~/media % udisksctl mount -b /dev/sda1
+Mounted /dev/sda1 at /run/media/yanboyang713/0104-0B69
+#+end_src
+* Unmount the partition
+#+begin_src console
+  yanboyang713@Meta-Scientific-Linux ~ % udisksctl unmount -b /dev/sda1
+Unmounted /dev/sda1.
+#+end_src
+* If you wish to safely remove the device after unmounting, run
+#+begin_src console
+udisksctl power-off -b /dev/sda1
+#+end_src
+

@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       d6b14426-7006-4ac8-868b-fccc8258486e
+:END:
+#+title: root cause analysis
+#+date: 2025-04-22
+
+* Reference List
