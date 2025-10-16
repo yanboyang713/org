@@ -20,9 +20,19 @@ https://docs.srsran.com/projects/project/en/latest/user_manuals/source/installat
 
 User Equipment (UE) refers to any device that connects to the RAN (Radio Access Network) to access mobile services provided by the network operator.
 
-https://docs.srsran.com/projects/4g/en/next/app_notes/source/5g_sa_COTS/source/index.html#
+** Release-16 supported devices
++ [[id:96b82cde-9c28-412b-88a7-0f049612e0e7][RM520N-GL]] 
+
+** Release-15 supported devices
++ [[id:e17753a2-7cc9-4c36-bf93-c7fe1aac98e4][RM502Q-AE]]
+
+** Rel-17 RedCap
+RM255C-GL / RG255C
 
 ** Tested Devices
+
+[[https://docs.srsran.com/projects/4g/en/next/app_notes/source/5g_sa_COTS/source/index.html][srsRAN 5G SA COTS UE]]
+
 https://github.com/srsran/srsRAN_Project/discussions/36
 
 OnePlus Nord 5G with a Sysmocom USIM

@@ -3,8 +3,9 @@
 :END:
 #+title: Zotero
 #+filetags:
-* Introduction
 
+* Introduction
+Zotero is a free, open-source reference management tool that helps you collect, organize, cite, and share research sources. It’s widely used by students, researchers, and academics to manage bibliographies and citations for papers, theses, or articles.
 
 * Why Use Zotero?
 -   Be Organized: Keep all of your research and citations in one place
@@ -93,6 +94,7 @@ Google Scholar:
 :PROPERTIES:
 :ID:       66d585eb-046f-4c8f-a530-f6736a22e42d
 :END:
+
 1.  In the main menu go to File > Export Library
 2.  Format you can choose Better BibTex.
 

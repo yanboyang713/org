@@ -13,6 +13,9 @@ Hold this button before applying power, and release it after three seconds since
 Hold this button until the LED light starts flashing, and release the button to reset RouterOS configuration to default.
 
 ** Enabling CAPs mode
+:PROPERTIES:
+:ID:       ae9677c1-4273-4725-ada7-26399148e0ac
+:END:
 To connect this device to a wireless network managed by CAPsMAN, keep holding the button for 5 more seconds, LED turns solid, release now to turn on CAPs mode. It is also possible to enable CAPs mode via the command line, to do so run the command "/system reset-configuration caps-mode=yes";
 
 ** Starting the RouterBOARD in Netinstall mode

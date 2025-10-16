@@ -3,4 +3,6 @@
 :END:
 #+title: Open Policy Agent (OPA)
 
-https://github.com/open-policy-agent/opa
+* Reference List
+1. https://github.com/open-policy-agent/opa
+2. https://www.openpolicyagent.org/

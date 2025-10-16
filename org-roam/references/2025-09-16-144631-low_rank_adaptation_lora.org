@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       265354d7-530f-46a1-a429-f077b86b9013
+:END:
+#+title: Low-Rank Adaptation (LoRA)
+#+date: 2025-09-16
+
+* Reference List
+1. https://huggingface.co/docs/peft/en/package_reference/lora

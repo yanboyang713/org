@@ -1,0 +1,23 @@
+:PROPERTIES:
+:ID:       7c5d059e-dbde-4d4c-939d-bdfe5a674123
+:END:
+#+title: enable copy-paste functionality in the Proxmox noVNC console
+#+date: 2025-05-04
+
+To enable copy-paste functionality in the [[id:77bd7428-f1ee-4306-8d5a-62f38134dfc5][Proxmox VE]] noVNC console, you can use a [[id:ecb24058-ef5c-4f18-8e01-76c562ed4c81][Tampermonkey]] user script developed by amunchet.
+
+* Step 1: Install Tampermonkey Extension
++ *For Chrome or Edge*: Visit the [[https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo][Chrome Web Store]] and add the Tampermonkey extension to your browser.
++ *For Firefox*: Go to the [[https://addons.mozilla.org/firefox/addon/tampermonkey/][Firefox Add-ons page]] and install the Tampermonkey extension.
+
+* Step 2: Install the noVNC Paste Script
+1. Open the raw version of the script: [[https://gist.github.com/amunchet/4cfaf0274f3d238946f9f8f94fa9ee02/raw/0b84970f89e1f282f09b86d46227eda71178c040/noVNCCopyPasteProxmox.user.js][noVNCCopyPasteProxmox.user.js]].
+2. Tampermonkey should prompt you to install the script. Click *Install*.
+
+* Step 3: Use the Script in Proxmox noVNC Console
+1. Copy the desired text to your clipboard (e.g., using *Ctrl+C*).
+2. Navigate to your Proxmox noVNC console.
+3. Right-click inside the console window. The script will simulate typing the clipboard contents into the console.
+
+* Reference List
+1. https://gist.github.com/amunchet/4cfaf0274f3d238946f9f8f94fa9ee02

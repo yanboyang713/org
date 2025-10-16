@@ -9,7 +9,8 @@
 * Networks
 + [[id:55f23b66-c353-4562-b4bc-da3df9ddc665][wireless networks]]
 + [[id:60bc45fd-dfc3-4b53-852a-46ff8d77f94c][Cellular Network]]
-+ [[id:2af07359-aec7-4c5b-aa36-cad4688f915d][Software-Defined Networking (SDN)]] 
++ [[id:2af07359-aec7-4c5b-aa36-cad4688f915d][Software-Defined Networking (SDN)]]
++ [[id:15a1a87f-9e16-4a20-af6a-6c8a173f33e9][photonic network]]
 
 [[id:9c9c0a89-5491-418f-bd87-9f16f1befdc2][network secure]]
 

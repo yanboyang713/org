@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       1dbd761e-231d-4615-854d-374ef2b5282b
+:END:
+#+title: UVA 3D printing
+#+date: 2025-09-07
+
+[[id:bc1f11cb-958e-43fa-88a2-904fd94805db][University of Virginia (UVA)]]
+
+https://library.virginia.edu/services/3d-printing
+
+* Install ultimaker cura
+#+begin_src bash
+  paru -S cura-bin
+#+end_src

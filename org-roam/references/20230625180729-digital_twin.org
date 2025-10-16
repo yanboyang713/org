@@ -5,3 +5,5 @@
 #+filetags:  
 
 [[id:baa44c0a-396c-4ffc-93bc-0d3f2bb46819][Blue-Green Deployment]] + simulation + analysis
+
+[[id:76f42b79-0794-466c-9d5c-9ed1f133a3ce][6G twin]]

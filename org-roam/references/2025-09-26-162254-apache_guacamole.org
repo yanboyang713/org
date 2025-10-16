@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       8d016c25-30a3-43b0-97e2-89dcdbca6a98
+:END:
+#+title: apache guacamole
+#+date: 2025-09-26
+
+* Reference List
+1. https://guacamole.apache.org/

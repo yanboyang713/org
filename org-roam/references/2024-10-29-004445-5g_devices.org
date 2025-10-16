@@ -4,4 +4,5 @@
 #+title: 5G devices
 
 + [[id:223f2b78-8473-4823-ae9b-b2f4897bf908][picocom]]
-+ [[id:65c36822-a432-4872-b4c4-c0949383d8c0][mosoLab]] 
++ [[id:65c36822-a432-4872-b4c4-c0949383d8c0][mosoLab]]
++ [[id:1ee06e17-c18d-4b49-ab27-69448f8b8f06][baicells]] 

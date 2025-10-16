@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       03c16a2e-dbdf-49d8-b5bb-bfe6bf53d52b
+:END:
+#+title: LiveMCP-101: Stress Testing and Diagnosing MCP-enabled Agents on Challenging Queries
+#+date: 2025-08-31
+
+* Reference List
+1. https://arxiv.org/abs/2508.15760

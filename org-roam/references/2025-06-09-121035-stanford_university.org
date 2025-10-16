@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       85b129d7-2b97-4c4b-b1da-fef21e78ef61
+:END:
+#+title: stanford university
+#+date: 2025-06-09
+
+[[id:88b16f89-0ab2-46e1-9bb4-9b12c84663bc][US Universities]]
+
++ [[id:d56aa241-5c61-455c-b435-a7fb150a8984][Zakir Durumeric]] 

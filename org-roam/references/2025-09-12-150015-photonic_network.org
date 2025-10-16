@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       15a1a87f-9e16-4a20-af6a-6c8a173f33e9
+:END:
+#+title: photonic network
+#+date: 2025-09-12
+

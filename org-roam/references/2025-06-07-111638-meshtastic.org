@@ -1,0 +1,30 @@
+:PROPERTIES:
+:ID:       a5ca824d-cfa0-49e1-b7e2-90a16de8ac91
+:END:
+#+title: Meshtastic
+#+date: 2025-06-07
+
+* Introduction
+Meshtastic® is a project that enables you to use inexpensive LoRa radios as a long range off-grid communication platform in areas without existing or reliable communications infrastructure. This project is 100% community driven and open source!
+* Features
++ Long range (331km record by MartinR7 & alleg)
++ No phone required for mesh communication
++ Decentralized communication - no dedicated router required
++ Encrypted communication
++ Excellent battery life
++ Send and receive text messages between members of the [[id:5ac44b73-e515-4d5d-899e-0cc0277b3d55][mesh]]
++ Optional GPS based location features
++ And more!
+
+* How it works
+Meshtastic utilizes [[id:35782e84-1ad7-4497-96f7-15893cdcddd8][LoRa]], a long-range radio protocol, which is widely accessible in most regions without the need for additional licenses or certifications, unlike ham radio operations.
+
+These radios are designed to rebroadcast messages they receive, forming a mesh network. This setup ensures that every group member, including those at the furthest distance, can receive messages.
+
+Additionally, Meshtastic radios can be paired with a single phone, allowing friends and family to send messages directly to your specific radio. It's important to note that each device is capable of supporting a connection from only one user at a time.
+* Devices
++ [[id:81b73ee5-9d2b-4f0c-abd3-ef55b2f77a32][LILYGO]] 
+
+
+* Reference List
+1. https://meshtastic.org/docs/introduction/

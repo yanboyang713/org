@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       96b82cde-9c28-412b-88a7-0f049612e0e7
+:END:
+#+title: RM520N-GL
+#+date: 2025-08-12
+
+[[id:e7440ac3-ec88-4766-b859-61c77f1f3173][OYEITIMES 5G SIM Card Reader-Writer Programmer (MCR3516 kit)]]
+
+* Reference List
+1. https://www.waveshare.com/wiki/RM520N-GL

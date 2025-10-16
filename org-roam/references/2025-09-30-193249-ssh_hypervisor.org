@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       caaa8488-366b-4d9f-bb2e-b37d749c6d19
+:END:
+#+title: ssh hypervisor
+#+date: 2025-09-30
+
+[[id:428988ba-6665-49f8-8f84-3138f076f021][ssh]]
+[[id:6d7a11a4-953d-42dd-b27a-bf20be91d540][Firecracker: Lightweight Virtualization for Serverless Applications]]
+
+* Reference List
+1. https://ekzhang.substack.com/p/ssh-hypervisor-simcity-for-vms

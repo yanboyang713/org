@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       d6b5b0b1-c57b-4e5a-b609-084b2016db6e
+:END:
+#+title: ATAK (Android Team Awareness Kit)
+#+date: 2025-06-08
+
+* Reference List
+1. https://en.wikipedia.org/wiki/Android_Team_Awareness_Kit

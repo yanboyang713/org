@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       82c1009e-83ca-4de4-ace4-5e1e85535296
+:END:
+#+title: MCPSpy
+#+date: 2025-09-21
+
+[[id:bf5b14f3-8e4c-4706-aea0-102268c418d3][eBPF]]
+[[id:47e1b155-a6ec-48e5-95ff-3f956b6e5907][Message Control Protocol (MCP)]]
+
+* Reference List
+1. https://github.com/alex-ilgayev/MCPSpy

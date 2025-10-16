@@ -1,0 +1,21 @@
+:PROPERTIES:
+:ID:       f1cbec17-16e4-4dc7-a0bd-0d5e4695a56f
+:END:
+#+title: RobustMQ
+#+date: 2025-09-16
+
+RobustMQ is a next-generation, high-performance, multi-protocol message queue built in Rust. Our vision is to create a unified messaging infrastructure tailored for modern cloud-native and AI systems.
+
+* Features
+🚀 High Performance: Built with Rust, ensuring memory safety, zero-cost abstractions, and blazing-fast performance
+🏗️ Distributed Architecture: Separation of compute, storage, and scheduling for optimal scalability and resource utilization
+🔌 Multi-Protocol Support: Native support for [[id:8beebcea-e815-47f6-b7cf-4a162e1e5fda][MQTT]] (3.x/4.x/5.x), AMQP, [[id:d69b2b54-a569-43ea-b13b-d692c2cf652f][Kafka]], and [[id:f78998a3-f0aa-4316-b147-fb3b727956c8][RocketMQ]] protocols
+💾 Pluggable Storage: Modular storage layer supporting local files, S3, HDFS, and other storage backends
+☁️ Cloud-Native: Kubernetes-ready with auto-scaling, service discovery, and observability built-in
+🏢 Multi-Tenancy: Support for virtual clusters within a single physical deployment
+🔐 Security First: Built-in authentication, authorization, and encryption support
+📊 Observability: Comprehensive metrics, tracing, and logging with [[id:ebc7a85b-cb33-4b29-93f9-0c2d5215bc7a][Prometheus]] and OpenTelemetry integration
+🎯 User-Friendly: Simple deployment, intuitive management console, and extensive documentation
+
+* Reference List
+1. https://github.com/robustmq/robustmq

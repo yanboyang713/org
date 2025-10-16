@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       6d7a11a4-953d-42dd-b27a-bf20be91d540
+:END:
+#+title: Firecracker: Lightweight Virtualization for Serverless Applications
+#+date: 2025-09-09
+
+[[id:34236e33-876e-4520-aa0e-da6f3b4b10bc][AWS Lambda]]
+[[id:2306f128-da50-4793-8d45-674b1948f4ef][AWS Fargate]]
+
+* Reference List
+1. https://firecracker-microvm.github.io/
+2. https://www.usenix.org/system/files/nsdi20-paper-agache.pdf

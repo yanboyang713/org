@@ -4,8 +4,11 @@
 #+title: VyOS
 #+date: [2025-04-10 Thu 01:20]
 
+* Pre-requires
++ [[id:7c5d059e-dbde-4d4c-939d-bdfe5a674123][enable copy-paste functionality in the Proxmox noVNC console]]
+  
 * Introduction
-VyOS is an open source network operating system Linux distribution based on [[id:0c65c1a6-4751-4290-876f-6c5ad7694068][Debian]]n.
+VyOS is an open source network operating system Linux distribution based on [[id:0c65c1a6-4751-4290-876f-6c5ad7694068][Debian]].
 
 VyOS provides a free routing platform that competes directly with other commercially available solutions from well-known network providers. Because VyOS is run on standard amd64 systems, it can be used as a router and firewall platform for cloud deployments. VyOS can also be optimized to achieve routing at 100Gbps.
 
@@ -20,6 +23,268 @@ VyOS provides a free routing platform that competes directly with other commerci
 ** High Availability and Load Balancing
 + [[id:e3bd261e-34a6-4c7a-9945-529fb8a363b7][VRRP]] for IPv4 and IPv6, ability to execute custom health checks and transition scripts
 
+
+* Two VyOS routers to create a high availability gateway Example
+** Scenario Overview
+| Role           | Hostname | LAN IP         | Floating IP    | WAN Interface | LAN Interface | vrid |
+|----------------+----------+----------------+----------------+---------------+---------------+------|
+| Primary VyOS   | vyos-1   | 192.168.1.2/24 | 192.168.1.4/24 | wlan0         | eth0          |    4 |
+| Secondary VyOS | vyos-2   | 192.168.1.3/24 | 192.168.1.4/24 | wlan0         | eth0          |    4 |
+					
++ Floating IP: 192.168.1.4
+This is what LAN clients use as their default gateway.
+It automatically moves between vyos-1 and vyos-2 depending on availability.
++ LAN Subnet: 192.168.1.0/24
++ WAN Interface: wlan0 (connected to Wi-Fi)
++ LAN Interface: eth0 (wired)
+
+* Installation on [[id:77bd7428-f1ee-4306-8d5a-62f38134dfc5][Proxmox VE]]
+  
+** Downloading VyOS rolling release
+
+https://vyos.net/get/nightly-builds/
+https://docs.vyos.io/en/latest/installation/virtual/proxmox.html
+https://vyos.net/get/
+
+** Installation
+https://docs.vyos.io/en/latest/installation/install.html#live-installation
+https://docs.vyos.io/en/latest/installation/install.html#permanent-installation
+
+In order to proceed with a permanent installation:
+Log into the VyOS live system (use the default credentials: vyos, vyos)
+Run the *install image* command and follow the wizard
+
+* Before you start
+** list all of interfaces
+#+begin_src bash
+  show interfaces
+#+end_src
+
+* NAT gateway
+https://docs.vyos.io/en/latest/quick-start.html
+** Configuration Mode
+By default, VyOS is in operational mode, and the command prompt displays a $. To configure VyOS, you will need to enter configuration mode, resulting in the command prompt displaying a #, as demonstrated below:
+#+begin_src bash
+vyos@vyos$ configure
+vyos@vyos#
+#+end_src
+** Interface Configuration
+Your outside/WAN interface will be eth0. It will receive its interface address via DHCP.
+Your internal/LAN interface will be eth1, eth2. It will use a static IP address of 192.168.0.1/24.
+
+** Outside/WAN
+#+begin_src bash
+set interfaces ethernet eth0 address dhcp
+set interfaces ethernet eth0 description 'OUTSIDE'
+#+end_src
+
+*NOTE*: if is wifi, please please use the steps below
+
+Create a WPA Supplicant Config for Open Hidden Wi-Fi
+
+Edit or create the config file:
+#+begin_src bash
+sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+#+end_src
+
+
+Add the following:
+#+begin_src file
+ctrl_interface=/var/run/wpa_supplicant
+update_config=1
+
+network={
+    ssid="YourHiddenSSID"
+    scan_ssid=1
+    key_mgmt=NONE
+}
+#+end_src
+
+
+Explanation:
+
++ ssid → The exact name of your hidden Wi-Fi.
++ scan_ssid=1 → Required for hidden networks so that wpa_supplicant actively scans for it.
++ key_mgmt=NONE → Specifies an open network with no password.
+
+Connect Using WPA Supplicant
+
+Run wpa_supplicant in the background:
+#+begin_src bash
+sudo wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf
+#+end_src
+
+-B → Run in background.
+-i wlan0 → Replace wlan0 with your actual interface name.
+-c → Path to your config file.
+
+Get an IP Address
+Since the Wi-Fi has no password, you still need to obtain an IP from DHCP:
+#+begin_src bash
+sudo dhclient wlan0
+#+end_src
+
+*NOTE*: when we reboot the system, *wpa_supplicant* and *dhclient* will gone.
+Solution:
+VyOS provides a built-in hook script that runs automatically after the system applies its configuration at boot.
+add below to file - /config/scripts/vyos-postconfig-bootup.script:
+#+begin_src bash
+sudo wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf
+sudo dhclient wlan0
+#+end_src
+
+Verify your IP:
+#+begin_src bash
+ip addr show wlan0
+#+end_src
+
+Auto-Connect at Boot
+#+begin_src bash
+  sudo systemctl enable wpa_supplicant@wlan0.service
+  sudo systemctl start wpa_supplicant@wlan0.service
+#+end_src
+
+#+begin_src bash
+show interfaces wireless info
+#+end_src
+
+Use this command to view operational status and wireless-specific information about all wireless interfaces.
+
+If you have more than one port for LAN, please follow below create a bridge and add interfaces to the bridge. If only one interface for LAN jump to next section.
+
+** Multiple-ports for LAN
+*** Create a Bridge Interface
+Start by creating a bridge interface (e.g., br0) to aggregate your LAN ports:
+#+begin_src bash
+set interfaces bridge br0 description 'LAN bridge'
+set interfaces bridge br0 stp
+set interfaces bridge br0 address 192.168.0.1/24
+#+end_src
++ stp enables the [[id:b5b8bfb0-70f8-4c51-86a7-073b043c3546][spanning tree protocol (stp)]] to prevent loops.
++ Assign an IP address to the bridge for LAN gateway access.
+
+*** Add LAN Interfaces to the Bridge
+Assuming your LAN interfaces are eth1, and eth2, add them to the bridge:
+#+begin_src bash
+set interfaces bridge br0 member interface eth1
+set interfaces bridge br0 member interface eth2
+#+end_src
+This configuration treats the specified interfaces as switch ports, allowing devices connected to them to communicate within the same LAN.
+
+** Single port for LAN
+*** Primary
+#+begin_src bash
+configure
+set interfaces ethernet eth0 description 'LAN'
+set interfaces ethernet eth0 address '192.168.1.2/24'
+commit; save
+#+end_src
+*** Secondary
+#+begin_src bash
+configure
+set interfaces ethernet eth0 description 'LAN'
+set interfaces ethernet eth0 address '192.168.1.3/24'
+commit; save
+#+end_src
+
+** Configure NAT (masquerade) LAN→WAN
+*** Primary (replace WAN_IF as appropriate)
+#+begin_src bash
+configure
+set nat source rule 10 description 'NAT LAN to WAN'
+set nat source rule 10 outbound-interface name 'WAN_IF'
+set nat source rule 10 source address '192.168.1.0/24'
+set nat source rule 10 translation address 'masquerade'
+commit; save
+#+end_src
+
+*** Secondary (replace WAN_IF as appropriate)
+#+begin_src bash
+configure
+set nat source rule 10 description 'NAT LAN to WAN'
+set nat source rule 10 outbound-interface name 'WAN_IF'
+set nat source rule 10 source address '192.168.1.0/24'
+set nat source rule 10 translation address 'masquerade'
+commit; save
+#+end_src
+
+** VRRP HA 
+https://docs.vyos.io/en/latest/configuration/highavailability/
+
+*** Key VRRP Settings
++ Virtual Address: 192.168.1.4 → The floating IP for LAN clients
++ Group Name: LAN
++ Priority:
+  + Higher = preferred master
+  + Primary uses 200
+  + Secondary uses 100
++ Preempt - Preemption is enabled by default:
+  + Ensures the primary regains master status when it comes back online.
+
+*** Primary (higher priority)
+#+begin_src bash
+configure
+set high-availability vrrp group LAN interface 'eth0'
+set high-availability vrrp group LAN vrid '4'
+set high-availability vrrp group LAN address '192.168.1.4/24'
+set high-availability vrrp group LAN priority '200'
+set high-availability vrrp group LAN advertise-interval '1'
+commit
+save
+#+end_src
+*** Secondary (lower priority)
+#+begin_src bash
+configure
+set high-availability vrrp group LAN interface 'eth0'
+set high-availability vrrp group LAN vrid '4'
+set high-availability vrrp group LAN address '192.168.1.4/24'
+set high-availability vrrp group LAN priority '100'
+set high-availability vrrp group LAN advertise-interval '1'
+commit
+save
+#+end_src
+*** Verify VRRP status
+#+begin_src bash
+run show vrrp
+#+end_src
+
+** DHCP/DNS quick-start
+The following settings will configure DHCP and DNS services on your internal/LAN network, where VyOS will act as the default gateway and DNS server.
++ The default gateway and DNS recursor address will be 192.168.0.1/24
++ The address range 192.168.0.2/24 - 192.168.0.8/24 will be reserved for static assignments
++ DHCP clients will be assigned IP addresses within the range of 192.168.0.9 - 192.168.0.254 and have a domain name of internal-network
++ DHCP leases will hold for one day (86400 seconds)
++ VyOS will serve as a full DNS recursor, replacing the need to utilize Google, Cloudflare, or other public DNS servers (which is good for privacy)
++ Only hosts from your internal/LAN network can use the DNS recursor
+
+#+begin_src bash
+set service dhcp-server shared-network-name LAN subnet 192.168.0.0/24 option default-router '192.168.0.1'
+set service dhcp-server shared-network-name LAN subnet 192.168.0.0/24 option name-server '192.168.0.1'
+set service dhcp-server shared-network-name LAN subnet 192.168.0.0/24 option domain-name 'vyos.net'
+set service dhcp-server shared-network-name LAN subnet 192.168.0.0/24 lease '86400'
+set service dhcp-server shared-network-name LAN subnet 192.168.0.0/24 range 0 start '192.168.0.9'
+set service dhcp-server shared-network-name LAN subnet 192.168.0.0/24 range 0 stop '192.168.0.254'
+set service dhcp-server shared-network-name LAN subnet 192.168.0.0/24 subnet-id '1'
+
+set service dns forwarding cache-size '0'
+set service dns forwarding listen-address '192.168.0.1'
+set service dns forwarding allow-from '192.168.0.0/24'
+#+end_src
+
+** [[id:f7904304-e3e3-484c-b541-349030a56fe3][Firewall]]
+https://docs.vyos.io/en/latest/quick-start.html#firewall
+
+** Commit and Save
+After every configuration change, you need to apply the changes by using the following command:
+#+begin_src bash
+commit
+#+end_src
+
+Once your configuration works as expected, you can save it permanently by using the following command:
+#+begin_src bash
+save
+#+end_src
+  
 * WWAN - Wireless Wide-Area-Network
 :PROPERTIES:
 :ID:       049298d5-7b83-4ce2-8cfe-c6e50bf141a7

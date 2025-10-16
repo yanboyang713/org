@@ -11,7 +11,8 @@ The next-generation wireless networks are evolving into very [[id:88d2f587-da04-
 + [[id:43b9eff4-03f0-4263-9ad8-b8004a452f26][wireless sensor network (WSN)]]
 + [[id:60bc45fd-dfc3-4b53-852a-46ff8d77f94c][Cellular Network]]
 + [[id:632cf3c1-f7dc-4e2f-9ca7-e701322621bd][wifi]]
-+ [[id:5ac44b73-e515-4d5d-899e-0cc0277b3d55][mesh network]] 
++ [[id:5ac44b73-e515-4d5d-899e-0cc0277b3d55][mesh network]]
++ [[id:35782e84-1ad7-4497-96f7-15893cdcddd8][LoRa]] 
 
 * Frequency
 + [[id:a663f0da-be79-4371-a8d7-8f02576edc81][60 GHz]]

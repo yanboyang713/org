@@ -2,7 +2,21 @@
 :ID:       ccf63974-d736-4927-92d7-41f6c1a5ea06
 :END:
 #+title: zsh
-#+filetags:  
+#+filetags:
+
+Zsh (short for Z Shell) is a powerful UNIX command interpreter—commonly known as a shell—that you can use both interactively (as your terminal session) and non-interactively (for running scripts).
+
+* zsh plugins
+:PROPERTIES:
+:ID:       6ee25d1a-dd35-4f40-83be-00efb6021a99
+:END:
+Top popular Zsh plugins on GitHub (2023) https://safjan.com/top-popular-zsh-plugins-on-github-2023/
+
+* zsh theme
+:PROPERTIES:
+:ID:       ee9cc00c-3cc1-4fe2-ac67-3587161d207e
+:END:
++ [[id:ef30a8c0-36f1-4e3c-bd69-f475bede470b][Powerlevel10k]]
 
 * Reference List
 1. https://www.sitepoint.com/zsh-tips-tricks/

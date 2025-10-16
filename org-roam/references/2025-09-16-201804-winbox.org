@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       5961abe2-760b-41e9-bbcc-ee0ed0163008
+:END:
+#+title: winbox
+#+date: 2025-09-16
+
+[[id:7b3d4c7a-30a8-4f0f-a587-fdbb39109e57][mikrotik]]
+
+* Install
+** [[id:803d821b-6f7d-4e07-9a1f-08c9736c7dec][ubuntu]]
+#+begin_src bash
+  sudo snap install winbox
+#+end_src
+
+* Reference List
+1. https://github.com/panaceya/winbox

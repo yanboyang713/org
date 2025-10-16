@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       7e466086-d541-4872-b955-abb1592ebca7
+:END:
+#+title: SagaLLM: Context Management, Validation, and Transaction Guarantees for Multi-Agent LLM Planning
+#+date: 2025-09-08
+
+[[id:48aa0a47-71ca-4afd-a24d-10bf8469f94c][sandbox]]
+
+* Reference List
+1. https://arxiv.org/pdf/2503.11951

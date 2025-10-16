@@ -1,0 +1,27 @@
+:PROPERTIES:
+:ID:       a0788732-b78b-442b-98ba-42c5bddfdeb2
+:END:
+#+title: RouterOS Port Forward from LAN to WAN
+#+date: 2025-08-15
+
+For example, forward WAN port 8006 to LAN server 192.168.1.11:8006 WAN port name WAN
+
+* Forward WAN:8006 → Server:8006
+#+begin_src bash
+  /ip firewall nat add chain=dstnat \
+    in-interface-list=WAN \
+    protocol=tcp dst-port=8006 \
+    action=dst-nat to-addresses=192.168.1.11 to-ports=8006
+#+end_src
+
+* Allow traffic
+
+[[id:f7904304-e3e3-484c-b541-349030a56fe3][firewall]]
+
+#+begin_src bash
+  /ip firewall filter add chain=forward \
+    in-interface-list=WAN \
+    dst-address=192.168.1.11 \
+    protocol=tcp dst-port=8006 \
+    action=accept
+#+end_src

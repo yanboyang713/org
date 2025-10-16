@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       0407235a-6de7-47de-93a8-074cff1b35ae
+:END:
+#+title: SPICE
+#+date: 2025-05-04
+* virt-viewer
+#+begin_src bash
+  paru -S virt-viewer
+#+end_src
+* Reference List
+1. https://pve.proxmox.com/wiki/SPICE#Enable_SPICE_for_a_VM

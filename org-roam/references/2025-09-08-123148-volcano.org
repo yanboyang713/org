@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       ebfbb789-f51f-45c0-bb24-d2406f2d0187
+:END:
+#+title: volcano
+#+date: 2025-09-08
+
+Volcano is an enhanced, open-source, cloud-native batch system built on [[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]], specifically designed for [[id:a19e5d15-e492-4995-8782-9d46dbe8ee91][high-performance computing (HPC)]] workloads. It addresses limitations within native Kubernetes for scenarios like machine learning, deep learning, big data, and scientific computing.
+
+* Reference List
+1. https://github.com/volcano-sh/volcano

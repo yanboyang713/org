@@ -1,9 +1,33 @@
 :PROPERTIES:
 :ID:       505fbe5a-c138-4c13-8ba9-ed80bd95d57d
 :END:
-#+title: Network Printer
+#+title: UVA CS Network Printer
 
-
+* UVA printing systems
+you need a local printing stack (CUPS) configured to talk to the UVA print servers or queues, possibly via LPD or IPP, with authentication (your [[id:bc1f11cb-958e-43fa-88a2-904fd94805db][University of Virginia (UVA)]] credentials), and have a correct PPD or driver.
+* What you need on Arch Linux
+First, install and enable the printing stack on your system:
+#+begin_src bash
+sudo pacman -S cups cups-filters ghostscript gutenprint  # plus any printer-specific driver packages you need
+#+end_src
+You might also want GUI tools:
+#+begin_src bash
+sudo pacman -S system-config-printer
+#+end_src
+Enable the CUPS service:
+#+begin_src bash
+sudo systemctl enable --now cups.service
+#+end_src
+* Access http://localhost:631/admin
++ Administration → Add Printer
++ Choose “LPD/LPR host or printer” (or “LPD/LPR” / “Network Printer” depending on interface)
++ For the Device URI, enter the URI you found above
+  - lpd://printserver.cs.virginia.edu/printer018
++ Choose the PPD (driver) – either from the CUPS database or upload a PPD file if CS provides one
++ Name & describe the printer (e.g. cs-ricehall-bw)
++ Set defaults (paper size, duplex, black & white vs color, etc.)
+  
 * Reference List
 1. https://kb.adamsdesk.com/operating_system/arch_linux_install_network_printer/
+2. https://www.cs.virginia.edu/computing/doku.php?id=network_printing
    

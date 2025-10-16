@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       fb1b594f-861c-467e-8ac8-a247de6f40bb
+:END:
+#+title: LLM fine-tuning
+#+date: 2025-09-16
+
+[[id:ab03a99b-2c97-4664-a1e6-680a86721f3a][Large Language Models (LLMs)]]
+
+[[id:265354d7-530f-46a1-a429-f077b86b9013][Low-Rank Adaptation (LoRA)]]
+
+* Reference List
+1. 

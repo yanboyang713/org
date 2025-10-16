@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       9e77ccc9-5cb1-42df-b532-4665295a25a4
+:END:
+#+title: text to speech
+#+date: 2025-09-23
+
+[[id:e944810f-d81b-4283-828a-e74e921810d9][speech to text]]
++ [[id:f33e9fec-094a-42c7-9df7-12e854d94045][text to speech service - amazon polly]]

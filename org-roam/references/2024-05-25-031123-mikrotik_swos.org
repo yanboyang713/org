@@ -3,4 +3,12 @@
 :END:
 #+title: MikroTik SwOS
 
-[[id:7b3d4c7a-30a8-4f0f-a587-fdbb39109e57][mikrotik]]
+SwOS is an operating system designed specifically for administration of [[id:7b3d4c7a-30a8-4f0f-a587-fdbb39109e57][MikroTik]] switch products.
+
+MikroTik’s SwOS does not support [[id:cff18499-6583-4eb7-bf83-b35e8c4f714b][AP Controller (CAPsMAN)]].
+
+[[id:d99740a6-171a-43b0-80d5-4b3014021990][Switch from RouterOS to SWOS]]
+[[id:43fc30cb-b0eb-4dc1-877b-8bb4b084cf2d][Mikrotik SwOS exporter for Prometheus]]
+
+* Reference List
+1. https://help.mikrotik.com/docs/spaces/SWOS/pages/328415/SwOS

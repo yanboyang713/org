@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       e17753a2-7cc9-4c36-bf93-c7fe1aac98e4
+:END:
+#+title: RM502Q-AE
+#+date: 2025-08-12
+
+* Reference List
+1. https://www.waveshare.com/wiki/RM500Q-GL_5G_HAT

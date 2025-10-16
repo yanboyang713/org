@@ -3,6 +3,9 @@
 :END:
 #+title: speech to text
 
-[[id:6173eb82-0af6-4346-ae9f-95e70bab976c][azure speech to text]]
-[[id:1a2f743d-4486-439e-81a7-4c7ec51706cd][google speech to text]]
-[[id:f33e9fec-094a-42c7-9df7-12e854d94045][text to speech service - amazon polly]]
+[[id:9e77ccc9-5cb1-42df-b532-4665295a25a4][text to speech]]
+
++ [[id:6173eb82-0af6-4346-ae9f-95e70bab976c][azure speech to text]]
++ [[id:1a2f743d-4486-439e-81a7-4c7ec51706cd][google speech to text]]
++ [[id:46eeaa77-2a21-411f-9d0d-7145d05616b1][elevenlabs]]
+  

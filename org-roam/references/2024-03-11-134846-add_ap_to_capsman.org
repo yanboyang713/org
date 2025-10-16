@@ -10,10 +10,7 @@
 WiFi -> Remote CAP -> CAPsMAN -> enabled -> apply
 
 * AP [[id:f208d569-b287-413a-b54b-fa7bd627d2cc][routeros reset]]
-make sure AP Enabling CAPs mode.
-
-** Enabling CAPs mode
-To connect this device to a wireless network managed by CAPsMAN, keep holding the button for 5 more seconds, LED turns solid, release now to turn on CAPs mode. It is also possible to enable CAPs mode via the command line, to do so run the command "/system reset-configuration caps-mode=yes";
+make sure AP [[id:ae9677c1-4273-4725-ada7-26399148e0ac][Enabling CAPs mode]].
 
 * add Security profile
 Wireless -> Security
@@ -50,6 +47,7 @@ For this example, we are going to simply assign the configuration files to any d
 In the provision file, set the Master Configuration to cfg1 and set the slave configuration to cfg2.
 Action set as create dynamic enabled
 
+* Attach AP to CAPsMAN controller
 Our configuration on the CAPsMAN server is complete. Now, we will go to our AP and attach it to our CAPsMAN controller.
 
 Wireless -> Remote CAP -> choice device -> Provision

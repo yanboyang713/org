@@ -4,4 +4,8 @@
 #+title: mesh network
 #+date: [2025-04-14 Mon 23:11]
 
-[[id:721feedb-98fa-49bc-85ca-09c26e113dae][ESP-MESH]]
++ [[id:721feedb-98fa-49bc-85ca-09c26e113dae][ESP-MESH]]
++ [[id:a5ca824d-cfa0-49e1-b7e2-90a16de8ac91][Meshtastic]]
+
+* Reference List
+1. https://github.com/topics/mesh-networking

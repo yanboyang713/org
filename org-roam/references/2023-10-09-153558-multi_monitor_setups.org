@@ -6,4 +6,4 @@
 * x11
 https://christian.amsuess.com/tools/arandr/
 * [[id:11743715-9a10-4732-9081-68d0a614cf20][Wayland]]
-
+[[id:2a5f2710-b45d-4509-8d68-cb5d9979ba28][Hyprland Monitors]]

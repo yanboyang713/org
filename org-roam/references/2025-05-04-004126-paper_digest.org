@@ -1,0 +1,19 @@
+:PROPERTIES:
+:ID:       fe1784d9-a772-4d1f-a933-c9bea7c34efc
+:END:
+#+title: Paper Digest
+#+date: 2025-05-04
+
+* What is Paper Digest?
+Launched in 2018 and based in New York, Paper Digest serves a global audience of researchers, students, and professionals. It offers tools to assist with [[id:336dd231-3d07-47c5-82d7-b288798fb75e][literature reviews]], academic writing, and staying updated with the latest research trends. A standout feature is its commitment to accuracy, providing a “No Hallucinations Guarantee” by avoiding large language models that might generate unsupported content.
+* Key Features
++ Literature Review Generator: Automatically creates structured literature reviews with citations for each sentence, ensuring verifiable content .
++ Research Copilot: An interactive assistant that engages in freestyle dialogue to support various research tasks.
++ [[https://www.paperdigest.org/reader/][AI Reader]]: Helps users read PDF articles and provides instant answers to queries about the content.
++ AI Writer: Assists in writing, editing, citing, and explaining academic articles with user-friendly tools.
++ Daily Paper Digest: Delivers daily updates on new papers based on user-defined areas, authors, or keywords.
++ Conference Digest: Summarizes each paper from major conferences in one sentence, allowing users to grasp the content quickly.
++ Topic Tracking: Monitors new publications under selected trending topics in real-time.
+
+* Reference List
+1. https://www.paperdigest.org/?utm_source=chatgpt.com

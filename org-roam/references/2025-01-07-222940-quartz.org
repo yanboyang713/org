@@ -20,6 +20,11 @@ Commit these changes. This should deploy your site to <github-username>.github.i
 #+begin_src bash
   npx quartz sync
 #+end_src
+* Upgrading
+https://quartz.jzhao.xyz/upgrading
+#+begin_src bash
+  npx quartz update
+#+end_src
 
 * [[https://quartz.jzhao.xyz/features/comments][Comments]]
 

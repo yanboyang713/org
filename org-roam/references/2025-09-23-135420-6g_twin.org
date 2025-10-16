@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       76f42b79-0794-466c-9d5c-9ed1f133a3ce
+:END:
+#+title: 6G twin
+#+date: 2025-09-23
+
+* Reference List
+1. https://6g-twin.eu/

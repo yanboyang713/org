@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       663f3b2d-fbee-4143-a0b2-9cbaf2cf3282
+:END:
+#+title: Meshtastic ATAK
+#+date: 2025-06-08
+
+[[id:a5ca824d-cfa0-49e1-b7e2-90a16de8ac91][Meshtastic]]
+[[id:d6b5b0b1-c57b-4e5a-b609-084b2016db6e][ATAK (Android Team Awareness Kit)]]
+
+* Reference List
+1. https://meshtastic.org/docs/software/integrations/integrations-atak-plugin/
+2. https://github.com/meshtastic/ATAK-Plugin
+3. https://youtu.be/_v11m2FQQZU?si=2EOprl72TnvZl7ME

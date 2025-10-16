@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       c085cc0e-d535-426b-8e71-5d1b82880f40
+:END:
+#+title: Large Language Models for Time Series: A Survey
+#+date: 2025-09-05
+
+[[id:ab03a99b-2c97-4664-a1e6-680a86721f3a][Large Language Models (LLMs)]]
+[[id:b2377ddc-9d91-4c8e-a4d8-21fabf961ee8][Time Series]]
+
+* Reference List
+1. Zhang, X., Chowdhury, R. R., Gupta, R. K., & Shang, J. (2024). Large language models for time series: A survey. arXiv preprint arXiv:2402.01801.

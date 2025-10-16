@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       e7440ac3-ec88-4766-b859-61c77f1f3173
+:END:
+#+title: OYEITIMES 5G SIM Card Reader-Writer Programmer (MCR3516 kit)
+#+date: 2025-08-12
+
+* Reference List
+1. https://www.amazon.com/OYEITIMES-Reader-Programable-Version-Personalize/dp/B08FG5BL3M

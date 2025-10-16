@@ -2,4 +2,8 @@
 :ID:       d56aa241-5c61-455c-b435-a7fb150a8984
 :END:
 #+title: Zakir Durumeric
-https://zakird.com/
+
+Assistant Professor of Computer Science at [[id:85b129d7-2b97-4c4b-b1da-fef21e78ef61][stanford university]] where my research focuses on Internet security, trust, and safety.
+
+* Reference List
+1. https://zakird.com/

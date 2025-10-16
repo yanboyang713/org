@@ -7,6 +7,7 @@
 [[id:7b3d4c7a-30a8-4f0f-a587-fdbb39109e57][mikrotik]]
 
 * Mikrotik RouterOS GUI Configurator :winbox:
+[[id:5961abe2-760b-41e9-bbcc-ee0ed0163008][winbox]]
 ** [[id:dc13b67c-8d8b-40fd-b8cf-9ea8547e485d][Arch Linux]] 
 #+begin_src bash
 paru -S winbox wine-wow64-for-wechat

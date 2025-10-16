@@ -8,13 +8,14 @@
 
 * Run tteck's Proxmox VE Helper-Scripts for post PVE install
 #+begin_src bash
-wget https://raw.githubusercontent.com/tteck/Proxmox/main/misc/post-pve-install.sh
-chmod a+x post-pve-install.sh
-./post-pve-install.sh
+  bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/tools/pve/post-pve-install.sh)"
 #+end_src
+
 * [[id:03756f80-0902-42fe-ab6d-ca11f3953a2d][prevent laptop lid suspending]]
 
 * [[id:db39af8b-657f-4b11-83fa-f3510dad3198][Proxmox VE High Availability Cluster Set-up]]
 
 * [[id:f17baed8-4b8b-433a-a868-3b4f2f3d20c1][vGPU unblock]]   
 
+* Reference List
+1. https://community-scripts.github.io/ProxmoxVE/scripts?id=post-pve-install

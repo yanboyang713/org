@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       244d542d-8648-4791-a112-06423bfe527e
+:END:
+#+title: The Power of Adapters in Fine-tuning LLMs
+#+date: 2025-10-08
+
+[[id:fb1b594f-861c-467e-8ac8-a247de6f40bb][LLM fine-tuning]]
+[[id:ab03a99b-2c97-4664-a1e6-680a86721f3a][Large Language Models (LLMs)]]
+
+* Reference List
+1. https://medium.com/@zbabar/the-power-of-adapters-in-fine-tuning-llms-722c87c5bca6
+2. https://magazine.sebastianraschka.com/p/finetuning-llms-with-adapters

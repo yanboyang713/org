@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       ba1ed338-2a1f-472b-b357-424e58dedddd
+:END:
+#+title: coding agent
+#+date: 2025-10-09
+
+[[id:a1235bb4-a901-4ec6-bb57-e7e18526495e][AI Agents Programs]]
+
++ [[id:bed72520-a52f-43d9-bf85-369bd6bffbf6][OpenHands]]
++ [[id:7d47b01c-df54-4464-9fdb-ef787933e0e3][Qwen Code CLI]] 

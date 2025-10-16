@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       1f59fa34-9c7d-481a-b141-e10a638e5301
+:END:
+#+title: RM520N-GL series 5G HAT for Jetson Nano
+#+date: 2025-08-12
+
+[[id:96b82cde-9c28-412b-88a7-0f049612e0e7][RM520N-GL]]
+[[id:8e39a1a1-ae75-45b1-a59d-1b52adb8a21d][Jetson]]
+
+* Reference List
+1. https://www.waveshare.com/product/sim8202g-m2-5g-for-jetson-nano.htm

@@ -1,7 +1,9 @@
 :PROPERTIES:
 :ID:       bc1f11cb-958e-43fa-88a2-904fd94805db
 :END:
-#+title: University of Virginia
+#+title: University of Virginia (UVA)
 #+date: [2025-04-11 Fri 01:39]
 
-[[id:09b614fa-8cfe-4f04-af6e-839dac78608a][UVA VPN on Linux]]
++ [[id:09b614fa-8cfe-4f04-af6e-839dac78608a][UVA VPN on Linux]]
++ [[id:8f9c7087-f630-4d08-a70d-65cd6cd024f8][UVA Eduroam Wireless Network Under Linux]]
++ [[id:dd8e5d6f-b01b-4a3d-ba1c-832a27e7e243][UVA CS Computing Environment]] 

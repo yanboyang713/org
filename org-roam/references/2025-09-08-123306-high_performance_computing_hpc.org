@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       a19e5d15-e492-4995-8782-9d46dbe8ee91
+:END:
+#+title: high-performance computing (HPC)
+#+date: 2025-09-08
+
+
++ [[id:ebfbb789-f51f-45c0-bb24-d2406f2d0187][volcano]]
++ [[id:822ba079-5358-4814-94f5-66a7f741b41a][slurm]]
++ [[id:f63512ff-ae63-4fb0-ba98-6dec766a9e13][kueue]] 

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       e5aee829-2b9c-4a65-a7a3-8309a64a27e4
+:END:
+#+title: albemarle ham radio club
+#+date: 2025-08-10
+
+[[id:570e8e32-4ec7-463c-9c1f-54f803d2c0e8][Ham Radio]]
+
+* Reference List
+1. https://www.albemarleradio.org/

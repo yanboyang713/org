@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       f9216d58-2b30-4d02-b1b6-e41397485bfd
+:END:
+#+title: hummingbird
+#+date: 2025-09-12
+
+[[id:15a1a87f-9e16-4a20-af6a-6c8a173f33e9][photonic network]]
+
+* Reference List
+1. https://www.lightelligence.ai/index.php/product/hummingbird.html

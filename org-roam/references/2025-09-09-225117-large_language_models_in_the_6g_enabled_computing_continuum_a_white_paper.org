@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       b85549a2-8de5-415f-91ec-64ded3f926d5
+:END:
+#+title: Large Language Models in the 6G-Enabled Computing Continuum: a White Paper
+#+date: 2025-09-09
+
+* Reference List
+1. https://www.6gflagship.com/llm-white-paper/

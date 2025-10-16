@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       c3bb5bea-5d0c-4baa-a127-23fb35029098
+:END:
+#+title: timeshift
+#+date: 2025-07-15
+
+* Install
+#+begin_src bash
+  paru -S timeshift
+#+end_src
+
+* Reference List
+1. https://wiki.archlinux.org/title/Timeshift
+2. https://github.com/linuxmint/timeshift

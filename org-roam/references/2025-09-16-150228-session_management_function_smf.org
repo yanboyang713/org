@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       2b132bf8-b177-425d-9de5-183b1d430c99
+:END:
+#+title: Session Management Function (SMF)
+#+date: 2025-09-16
+
+
+* Reference List
+1. https://www.cisco.com/c/en/us/td/docs/wireless/ucc/smf/b_SMF/b_SMF_chapter_010010.pdf

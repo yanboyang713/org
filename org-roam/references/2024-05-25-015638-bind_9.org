@@ -11,7 +11,8 @@ If you would prefer a GUI management interface, you might consider a [[https://w
 BIND is a full-featured, scalable, and open-source software suite for DNS services. BIND's name comes from the fact it was originally developed at the University of California Berkeley.
 
 * Prerequisites
-Ubuntu 22.04 LTS
+Ubuntu 22.04 LTS [[id:35c20d09-a397-4698-92b8-bac7c9d3728a][PVE Container Images Download]]
+*NOTE*: Please, disable Nesting, enable Unprivileged container, disk 10G, vCPU 2, and RAM 1024 MB for [[id:7bab7928-237d-4784-a42f-b85ef6874b9b][Domain Name Service (DNS)]].
 
 * Install the latest updates
 Before we install any packages, we will first update download and install the latest updates
@@ -34,38 +35,98 @@ After installation, the BIND 9 service should be running. You can check the stat
 systemctl status bind9
 #+end_src
 
-* bind9 Settings
+* Bind9 Settings
 :PROPERTIES:
 :ID:       f686891c-ca86-4f50-a849-46eeb11d460a
 :END:
+
+Two DNS servers for the domain testbed.com with forward and reverse zones, where:
++ Primary DNS (Master): 192.168.1.21
++ Secondary DNS (Slave): 192.168.1.22
++ Network: 192.168.1.0/24
+This will allow you to resolve hostnames like www.testbed.com → 192.168.1.100 and also do reverse lookups 192.168.1.100 → www.testbed.com.
+
 ** Edit the named.conf.options file
 The named.conf file is BIND 9's main configuration file. That main file includes a reference to /etc/bind/named.conf.options where we can specify options we need for our configuration. We'll make four modifications to the */etc/bind/named.conf.options* file:
 + An acl directive that defines our local area network (LAN).
 + An allow-query directive that defines what IP addresses can send DNS queries to the server.
 + A forwarders directive that defines what DNS servers this server will forward recursive queries to.
 + A recursion directive that allows recursive DNS queries to the server.
-  
-To make those changes, open */etc/bind/named.conf.options* in a text editor (e.g., nano or vim) and modify the files to look similar to this:
+
+To make those changes, open */etc/bind/named.conf.options* in a text editor (e.g., nano or vim) and modify the files.
+*** Primary
 #+begin_src file
-// allow only LAN traffic from 192.168.88.0-192.168.88.255
-acl LAN {
-192.168.88.0/24;
-};
-options {
-        directory "/var/cache/bind"; // default directory
-        allow-query { localhost; LAN; }; // allow queries from localhost and 192.168.88.0-192.168.88.255
-        forwarders { 1.1.1.1; }; // use CloudFlare 1.1.1.1 DNS as a forwarder
-        recursion yes;  // allow recursive queries
-};
+  // allow only LAN traffic from 192.168.1.0-192.168.1.255
+  acl LAN {
+  192.168.1.0/24;
+  };
+  options {
+          directory "/var/cache/bind"; // default directory
+          allow-query { localhost; LAN; }; // allow queries from localhost and LAN
+  	  // Forwarders (UVA DNS servers)
+  	  forwarders {
+  	    128.143.2.7;
+  	    128.143.22.119;
+  	    128.143.3.7;
+  	  };
+  	  // Forward first tries forwarders, if they fail, BIND will resolve normally
+  	  forward first;
+  	  // Allow recursion only for internal network
+  	  allow-recursion { LAN; localhost; };
+  	  // Optional: Hide version for security
+  	  version "not currently available";
+  	  // Listen on IPv4 only for local network
+  	  listen-on port 53 { 127.0.0.1; 192.168.1.21; };
+  	  // Listen on IPv6 (if needed), or disable
+  	  listen-on-v6 { none; };
+  	  // DNSSEC settings
+  	  dnssec-validation auto;
+  	  auth-nxdomain no;    # RFC1035 compliance
+  };
+#+end_src
+**** Verify Configuration
+After you make the changes, check the syntax of the file with the named-checkconf command:
+#+begin_src bash
+sudo named-checkconf /etc/bind/named.conf.options
+#+end_src
+If the syntax is correct, the command should not return any output.
+If you want to see more verbose output on a successful test, add the -p switch to the command (named-checkconf -p).
+If there are no errors, reload BIND:
+#+begin_src bash
+sudo systemctl reload bind9
+#+end_src
+**** Test External DNS Resolution
+From a client in the 192.168.1.0/24 network or from either DNS server, test queries:
+
+Test against Primary
+#+begin_src bash
+dig @192.168.1.21 google.com
 #+end_src
 
+*** Secondary
+On the secondary DNS (192.168.1.22), you need to make a similar named.conf.options but change the listen-on IP to its own address:
+#+begin_src file
+listen-on port 53 { 127.0.0.1; 192.168.1.22; };
+#+end_src
+
+**** Verify Configuration
 After you make the changes, check the syntax of the file with the named-checkconf command:
 #+begin_src bash
 named-checkconf /etc/bind/named.conf.options
 #+end_src
 If the syntax is correct, the command should not return any output.
-
 If you want to see more verbose output on a successful test, add the -p switch to the command (named-checkconf -p).
+If there are no errors, reload BIND:
+#+begin_src bash
+sudo systemctl reload bind9
+#+end_src
+
+**** Test External DNS Resolution
+From a client in the 192.168.1.0/24 network or from either DNS server, test queries:
+Test against Secondary
+#+begin_src bash
+dig @192.168.1.22 google.com
+#+end_src
 
 ** Edit the named.conf.local file
 The *named.conf.local* is typically used to define local DNS zones for a private domain. We will update this file to include our forward and reverse DNS zones.
@@ -74,139 +135,166 @@ The *named.conf.local* is typically used to define local DNS zones for a private
 + Reverse Zone: Used for reverse DNS lookups, resolving IP addresses to domain names.
   
 To make the changes, open */etc/bind/named.conf.local* in a text editor (e.g., nano or vim) and add these lines:
+
+*** Primary DNS Configuration
 #+begin_src file
-zone "yanboyang.com" IN {
+  //forward
+  zone "testbed.com" {
         type master;
-        file "/etc/bind/zones/yanboyang.com";
-};
-// define the reverse zone
-zone "88.168.192.in-addr.arpa" IN {
-        type master;
-        file "/etc/bind/zones/yanboyang.com.rev";
-};
+        file "/etc/bind/forward.testbed.com";
+        allow-transfer { 192.168.1.22; };   // Allow the secondary DNS to pull updates
+        also-notify { 192.168.1.22; };      // Notify the secondary immediately after updates
+  };
+  //reverse
+  zone "1.168.192.in-addr.arpa" {
+      type master;
+      file "/etc/bind/reverse.testbed.com";
+      allow-transfer { 192.168.1.22; };
+      also-notify { 192.168.1.22; };
+  };
+
 #+end_src
 
-*NOTE:* The name 88.168.192.in-addr.arpa is a reverse DNS zone name that corresponds to the IP address range 192.168.88.0/24. In reverse DNS, the name is structured in reverse order to represent the IP address octets. This is a standardized naming convention in the DNS system.
+*NOTE:* The name 1.168.192.in-addr.arpa is a reverse DNS zone name that corresponds to the IP address range 192.168.1.0/24. In reverse DNS, the name is structured in reverse order to represent the IP address octets. This is a standardized naming convention in the DNS system.
 
 Understanding the Structure:
-192.168.88.0/24 is an IP address range.
+192.168.1.0/24 is an IP address range.
 In reverse DNS, the IP address octets are reversed and appended with in-addr.arpa.
-Thus, 192.168.88.0/24 becomes 88.168.192.in-addr.arpa.
+Thus, 192.168.1.0/24 becomes 1.168.192.in-addr.arpa.
 
 After you make the changes, check the syntax of the file with the named-checkconf command:
 #+begin_src bash
 named-checkconf /etc/bind/named.conf.options
 #+end_src
 
-** Create a directory for your zone files
-Next, we'll create a directory to store the zone files we specified in the previous step.
+**** Create Forward Zone File
+Create the forward zone file:
 #+begin_src bash
-mkdir /etc/bind/zones
+  sudo vi /etc/bind/forward.testbed.com
 #+end_src
-
-** Create the forward zone file
-Now, we'll create a corresponding zone file /etc/bind/zones/yanboyang.com. The forward zone file allows the Bind DNS server to resolve names (like bindserver.yanboyang.com) to IP addresses (like 192.168.88.7).
-First, copy the default db.local zone file to /etc/bind/zones/yanboyang.com:
-#+begin_src bash
-cp /etc/bind/db.local /etc/bind/zones/yanboyang.com
-#+end_src
-Open /etc/bind/zones/yanboyang.com in a text editor (e.g., nano or vim) and make the changes indicated in the comments below:
+Example contents:
 #+begin_src file
-$TTL    604800
-@       IN      SOA     yanboyang.com. root.yanboyang.com. (
-                              2         ; Serial Note: increment after each change
-                         604800         ; Refresh
-                          86400         ; Retry
-                        2419200         ; Expire
-                         604800 )       ; Negative Cache TTL
-; Name server record
-@       IN      NS      bindserver.yanboyang.com.
-; A record for name server
-bindserver      IN      A       192.168.88.7
-; A record for servers
-server1      IN      A       192.168.88.2
-server2      IN      A       192.168.88.3
-server3      IN      A       192.168.88.4
-server4      IN      A       192.168.88.5
-server5      IN      A       192.168.88.6
+$TTL 604800
+@   IN  SOA ns1.testbed.com. yanboyang713.gmail.com. (
+        2025092601  ; Serial number (Note: change this number/date after each change)
+        604800      ; Refresh (7 days)
+        86400       ; Retry (1 day)
+        2419200     ; Expire (4 weeks)
+        604800 )    ; Negative Cache TTL (7 days)
+
+; Name servers
+@       IN  NS      ns1.testbed.com.
+@       IN  NS      ns2.testbed.com.
+
+; A records for DNS servers
+ns1     IN  A       192.168.1.21
+ns2     IN  A       192.168.1.22
+
+; Example host records
+server1     IN  A       192.168.1.11
+server2     IN  A       192.168.1.12
+server3     IN  A       192.168.1.13
+server4     IN  A       192.168.1.14
+server5     IN  A       192.168.1.15
 #+end_src
-Once the changes are complete, use the named-checkzone command to check the configuration:
+
+Key notes:
++ yanboyang713.gmail.com. is the administrator email but with @ replaced by a dot.
+  Example: yanboyang713@gmail.com → yanboyang713.gmail.com.
++ Update the Serial number every time you make changes.
+
+**** Create Reverse Zone File
+Create the reverse zone file:
 #+begin_src bash
-named-checkzone yanboyang.com /etc/bind/zones/yanboyang.com
+sudo vi /etc/bind/reverse.testbed.com
 #+end_src
-
-correct output
-#+begin_src console
-root@DNS:~# named-checkzone yanboyang.com /etc/bind/zones/yanboyang.com
-zone yanboyang.com/IN: loaded serial 2
-OK
-#+end_src
-
-** Create the reverse zone file
-Now, we'll create a corresponding reverse zone file /etc/bind/zones/yanboyang.com.rev. The reverse zone file allows the Bind DNS server to resolve IP addresses (like 192.168.88.7) to names (like bindserver.yanboyang.com).
-
-First, copy the default db.local zone file to /etc/bind/zones/yanboyang.com.rev
-#+begin_src bash
-cp /etc/bind/db.127 /etc/bind/zones/yanboyang.com.rev
-#+end_src
-
-Open /etc/bind/zones/yanboyang.com.rev in a text editor (e.g., nano or vim) and make the changes indicated in the comments below:
+Example:
 #+begin_src file
-$TTL    604800
-@       IN      SOA     yanboyang.com. root.yanboyang.com. (
-                              1         ; Serial Note: increment after each change
-                         604800         ; Refresh
-                          86400         ; Retry
-                        2419200         ; Expire
-                         604800 )       ; Negative Cache TTL
-; Name server record 
-@       IN      NS      bindserver.yanboyang.com.
-; A record for name server
-bindserver      IN      A       192.168.88.7
-; PTR record for name server
-7   IN      PTR     bindserver.yanboyang.com
-; PTR record for servers
-2   IN      PTR     server1.yanboyang.com
-3   IN      PTR     server2.yanboyang.com
-4   IN      PTR     server3.yanboyang.com
-5   IN      PTR     server4.yanboyang.com
-6   IN      PTR     server5.yanboyang.com
+$TTL 604800
+@   IN  SOA ns1.testbed.com. yanboyang713.gmail.com. (
+        2025092601  ; Serial number (Note: change this number/date after each change)
+        604800      ; Refresh (7 days)
+        86400       ; Retry (1 day)
+        2419200     ; Expire (4 weeks)
+        604800 )    ; Negative Cache TTL (7 days)
+
+; Name servers
+@       IN  NS      ns1.testbed.com.
+@       IN  NS      ns2.testbed.com.
+
+; PTR Records for reverse mapping
+21      IN  PTR     ns1.testbed.com.
+22      IN  PTR     ns2.testbed.com.
+11      IN  PTR     server1.testbed.com.
+12      IN  PTR     server2.testbed.com.
+13      IN  PTR     server3.testbed.com.
+14      IN  PTR     server4.testbed.com.
+15      IN  PTR     server5.testbed.com.
 #+end_src
-Once the changes are complete, use the named-checkzone command to check the configuration:
+
+**** Verify and Reload Primary
+Run:
 #+begin_src bash
-named-checkzone yanboyang.com /etc/bind/zones/yanboyang.com.rev
+sudo named-checkconf
+sudo named-checkzone testbed.com /etc/bind/forward.testbed.com
+sudo named-checkzone 1.168.192.in-addr.arpa /etc/bind/reverse.testbed.com
 #+end_src
-You should see output similar to:
-#+begin_src console
-root@DNS:~# named-checkzone yanboyang.com /etc/bind/zones/yanboyang.com.rev
-zone yanboyang.com/IN: loaded serial 1
-OK
-#+end_src
-
-** Restart BIND 9
-To make the BIND DNS server use the new configuration, restart the BIND 9 service with this command:
+Reload BIND:
 #+begin_src bash
-systemctl restart bind9
+sudo systemctl reload bind9
+#+end_src
+*** Secondary DNS Configuration (Slave)
+The secondary DNS will synchronize automatically from the primary.
+**** Edit /etc/bind/named.conf.local
+#+begin_src bash
+sudo vi /etc/bind/named.conf.local
 #+end_src
 
-* Test DNS server
-Once the Private Bind DNS server is configured
-First, check which interface is used for LAN connectivity with this command:
-#+begin_src console
-ip -brief addr show to 192.168.88.0/24
+Add:
+#+begin_src file
+zone "testbed.com" {
+    type slave;
+    file "/var/cache/bind/forward.testbed.com";
+    masters { 192.168.1.21; };
+};
+zone "1.168.192.in-addr.arpa" {
+    type slave;
+    file "/var/cache/bind/reverse.testbed.com";
+    masters { 192.168.1.21; };
+};
 #+end_src
 
-sudo vim /etc/resolv.conf
+*** Enable [[id:c130e97c-6493-4e70-b9c7-957c84e4eedd][ufw]] on both
+Once the rules are set, enable the firewall:
+#+begin_src bash
+  sudo ufw default deny incoming
+  sudo ufw default allow outgoing
+  sudo ufw allow 53/udp
+  sudo ufw allow 53/tcp
+  sudo ufw enable
+  sudo ufw status verbose
+#+end_src
 
-sudo pacman -S dnsutils
+* Verify Setup
+** Forward Lookup
+From any client or either DNS server:
+#+begin_src bash
+  dig @192.168.1.21 server1.testbed.com
+  dig @192.168.1.22 server1.testbed.com
+#+end_src
+Expected output:
+#+begin_src file
+  server1.testbed.com.    604800  IN      A       192.168.1.11
+#+end_src
+** Reverse Lookup
+#+begin_src bash
+dig @192.168.1.21 -x 192.168.1.11
+dig @192.168.1.22 -x 192.168.1.11
+#+end_src
 
-#+begin_src console
-yanboyang713@Meta-Scientific-Linux ~ % nslookup server1
-Server:		192.168.88.7
-Address:	192.168.88.7#53
-
-Name:	server1.yanboyang.com
-Address: 192.168.88.2
+Expected output:
+#+begin_src file
+11.1.168.192.in-addr.arpa. 604800 IN    PTR     server1.testbed.com.
 #+end_src
 
 * Reference List

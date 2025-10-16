@@ -3,3 +3,5 @@
 :END:
 #+title: serverless computing
 
+* Reference List
+1. https://tddg.github.io/cs6501-serverless-ai-fall25/

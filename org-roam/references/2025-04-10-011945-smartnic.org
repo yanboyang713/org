@@ -22,7 +22,7 @@ https://www.yusur.tech/product/conflux/conflux2200E
 https://www.alibabacloud.com/blog/a-detailed-explanation-about-alibaba-cloud-cipu_599183
 *** [[id:08d3f646-c2c0-4cab-937d-7f284c9fa3f6][Marvell]]
 
-** SoC-Based
+** SwoC-Based
 *** [[id:d790aa57-a8b9-4222-9803-c738e69be403][NVIDIA BlueField DPUs]]
 *** [[id:ec69c590-957a-46fd-8e38-0f73c26b9359][Netronome Agilio SmartNICs]]
 *** [[id:ddc98575-edd6-48f9-bebc-f35e352ed1da][Broadcom]]  

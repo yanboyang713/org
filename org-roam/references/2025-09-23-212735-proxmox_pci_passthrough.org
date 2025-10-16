@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       81f3a757-0a43-402b-a418-79ea92e93562
+:END:
+#+title: proxmox PCI passthrough
+#+date: 2025-09-23
+
+[[id:77bd7428-f1ee-4306-8d5a-62f38134dfc5][Proxmox VE]]
+
+* Requirements
++ CPU requirements: Your CPU has to support hardware virtualization and IOMMU. Most new CPUs support this.
++ Motherboard requirements: Your motherboard needs to support IOMMU. Lists can be found on the Xen wiki and Wikipedia. Note that, as of writing, both these lists are incomplete and very out-of-date and most newer motherboards support IOMMU.
+
+* Reference List
+1. https://pve.proxmox.com/wiki/PCI_Passthrough

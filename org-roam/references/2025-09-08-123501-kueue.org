@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       f63512ff-ae63-4fb0-ba98-6dec766a9e13
+:END:
+#+title: kueue
+#+date: 2025-09-08
+
+* Reference List
+1. https://kueue.sigs.k8s.io/

@@ -1,7 +1,7 @@
 :PROPERTIES:
 :ID:       7181cc98-0914-4904-81df-7484e3307179
 :END:
-#+title: Ignoring pre-selected existing nodes
+#+title: Ignoring pre-selected existing nodes (org roam)
 #+filetags:  
 
 For common completion frameworks (e.g. ivy, vertico), <enter> is used to select candidates.

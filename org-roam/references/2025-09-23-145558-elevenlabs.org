@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       46eeaa77-2a21-411f-9d0d-7145d05616b1
+:END:
+#+title: elevenlabs
+#+date: 2025-09-23
+
+* Reference List
+1. https://elevenlabs.io/speech-to-text

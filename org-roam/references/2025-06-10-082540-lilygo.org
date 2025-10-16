@@ -1,0 +1,25 @@
+:PROPERTIES:
+:ID:       81b73ee5-9d2b-4f0c-abd3-ef55b2f77a32
+:END:
+#+title: LILYGO
+#+date: 2025-06-10
+
+* T-Beam SUPREME
+https://lilygo.cc/products/t-beam-supreme?variant=43067954135221
+https://lilygo.cc/products/t-beam-supreme-meshtastic?variant=45315788046517
+
+Channel 0, LongFast. Be sure your psi is set to AQ==
+
+* 3D Printing
+[[id:1dbd761e-231d-4615-854d-374ef2b5282b][UVA 3D printing]]
+** Lilygo T-Beam SUPREME TS2 Case
++ https://www.printables.com/model/959441-lilygo-t-beam-supreme-ts2-case-by-alley-cat
++ https://www.youtube.com/watch?v=-4vdjDpvhfU
+  
++ https://www.printables.com/model/565428-lilygo-ttgo-t-beam-supreme-case
+
+* Setting
+
+* Reference List
+1. https://store.rokland.com/pages/t-beam-supreme-getting-started-quick-guide-meshtastic?srsltid=AfmBOoqz06wcJwr6YaCfXm_9hIv-CyicM6WMmp4ND-KiHiuTY_wcX0Wf
+2. https://meshtastic.org/docs/configuration/

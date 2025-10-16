@@ -3,9 +3,9 @@
 :END:
 #+title: Davies–Bouldin indicator
 
-Mainly for the data that has even density and distribution
+Davies–Bouldin indicator is one of [[id:9fa6c501-730e-446e-b4c3-2dc35f30a9de][Clustering Algorithms Evaluation Indicators]]. Mainly for the data that has even density and distribution
 
-The Davies–Bouldin index (DBI) is an indicator that measures the quality of clustering achieved by a clustering algorithm. Specifically, it provides a score that indicates the average similarity between each cluster and its most similar cluster, with the ideal score being the smallest possible value.
+The Davies–Bouldin index (DBI) is an indicator that measures the quality of clustering achieved by a [[id:2a3bfdcc-4049-411c-89e0-1d47be248320][Clustering Algorithms]]. Specifically, it provides a score that indicates the average similarity between each cluster and its most similar cluster, with the ideal score being the smallest possible value.
 
 Here's a breakdown of the Davies–Bouldin index:
 

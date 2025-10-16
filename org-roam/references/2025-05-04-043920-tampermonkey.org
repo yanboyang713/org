@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       ecb24058-ef5c-4f18-8e01-76c562ed4c81
+:END:
+#+title: Tampermonkey
+#+date: 2025-05-04
+
+Tampermonkey is a widely-used browser extension that allows users to run and manage userscripts—small JavaScript programs that modify the behavior and appearance of web pages. These scripts can automate tasks, add new features, or alter the layout of websites, enhancing the browsing experience.

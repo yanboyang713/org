@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       a6f089e5-ef8e-4256-bb0e-76bdae8f51e7
+:END:
+#+title: 5G DONGLE Module
+#+date: 2025-08-12
+
+[[id:96b82cde-9c28-412b-88a7-0f049612e0e7][RM520N-GL]]
+
+* Reference List
+1. https://www.waveshare.com/product/usb-to-m.2-b-key.htm?sku=23252

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       214b5ae1-f65f-460f-b665-056730ceefc1
+:END:
+#+title: Manage dotfiles
+#+date: 2025-07-14
+
+* Tools
++ [[id:8c97e02f-f84f-400f-9fe7-d8538f44a089][chezmoi]]
++ [[id:81e61fe5-4e8a-4610-861a-e356efb82f7a][Ansible]]
++ [[id:0624e82e-08d9-439d-afa3-6b5f972844a8][stow]] 

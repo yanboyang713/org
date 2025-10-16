@@ -1,13 +1,13 @@
 :PROPERTIES:
 :ID:       9fa6c501-730e-446e-b4c3-2dc35f30a9de
 :END:
-#+title: evaluation indicators
+#+title: Clustering Algorithms Evaluation Indicators
 
-The main purpose of evaluation indicator is to test the validity of algorithm.
+The main purpose of evaluation indicator is to test the validity of [[id:2a3bfdcc-4049-411c-89e0-1d47be248320][Clustering Algorithms]].
 
 Evaluation indicators can be divided into two categories: the internal evaluation indicators and the external evaluation indicators.
 
-** the internal evaluation indicators
+** The internal evaluation indicators
 It can’t absolutely judge which algorithm is better when the scores of two algorithms are not equal based on the internal evaluation indicators.
 
 There are three commonly used internal indicators.

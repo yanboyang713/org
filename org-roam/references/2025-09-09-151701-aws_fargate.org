@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       2306f128-da50-4793-8d45-674b1948f4ef
+:END:
+#+title: AWS Fargate
+#+date: 2025-09-09
+

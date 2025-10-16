@@ -6,5 +6,6 @@
 #+begin_src bash
   paru -S zoom
 #+end_src
+
 * Reference List
 1. https://wiki.archlinux.org/title/Zoom_Meetings

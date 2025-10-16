@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       8c97e02f-f84f-400f-9fe7-d8538f44a089
+:END:
+#+title: chezmoi
+#+date: 2025-07-13
+
+* Reference List
+1. https://www.chezmoi.io/

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       b5b8bfb0-70f8-4c51-86a7-073b043c3546
+:END:
+#+title: spanning tree protocol (stp)
+#+date: 2025-05-05
+
+The Spanning Tree Protocol (STP) is a network protocol that builds a loop-free logical topology for Ethernet networks. The basic function of STP is to prevent bridge loops and the broadcast radiation that results from them. Spanning tree also allows a network design to include backup links providing fault tolerance if an active link fails.
+
+* Reference List
+1. https://en.wikipedia.org/wiki/Spanning_Tree_Protocol

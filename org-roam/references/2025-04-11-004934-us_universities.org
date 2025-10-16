@@ -10,4 +10,5 @@
 + [[id:40f311b8-f52f-4343-a10e-eb866850a4ad][Rutgers University]]
 + [[id:b771a66c-e63a-42b9-8268-4efa191fb4c3][Princeton University]]
 + [[id:bc1f11cb-958e-43fa-88a2-904fd94805db][University of Virginia]]
-+ [[id:3cad2844-5e2a-416f-9162-38dceac3543b][University of Texas Austin]] 
++ [[id:3cad2844-5e2a-416f-9162-38dceac3543b][University of Texas Austin]]
++ [[id:85b129d7-2b97-4c4b-b1da-fef21e78ef61][stanford university]] 

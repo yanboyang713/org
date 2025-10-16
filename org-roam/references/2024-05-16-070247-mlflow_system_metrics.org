@@ -3,7 +3,7 @@
 :END:
 #+title: MLflow System Metrics
 
-[[id:64aa42dc-14c2-48c4-8360-45a31aa73f7f][MLFlow]] allows users to log system metrics including CPU stats, [[id:f67a83ed-53e2-4e33-bbd4-9bf528bf9e42][GPU]] stats, memory usage, network traffic, and disk usage during the execution of an MLflow run.
+[[id:64aa42dc-14c2-48c4-8360-45a31aa73f7f][MLFlow]] allows users to log system metrics including CPU stats, [[id:f67a83ed-53e2-4e33-bbd4-9bf528bf9e42][GPU]] stats, memory usage, [[id:56aa2a9a-1b75-4b3b-abe2-238454ab3c3d][networking measurement metrics]], and disk usage during the execution of an MLflow run.
 
 * Extra Dependencies
 To log system metrics in MLflow, please install psutil. To install psutil, run the following command:

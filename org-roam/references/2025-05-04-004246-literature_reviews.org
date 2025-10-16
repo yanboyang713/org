@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       336dd231-3d07-47c5-82d7-b288798fb75e
+:END:
+#+title: literature reviews
+#+date: 2025-05-04
+
+[[id:4c284687-25a8-45a3-8a6a-1e1c79eb964f][annotated bibliography]]

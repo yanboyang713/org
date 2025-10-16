@@ -3,6 +3,5 @@
 :END:
 #+title: yasnippet-snippets
 
-
 * Reference List
 1. https://github.com/AndreaCrotti/yasnippet-snippets

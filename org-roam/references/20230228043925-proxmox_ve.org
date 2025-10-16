@@ -1,7 +1,7 @@
 :PROPERTIES:
 :ID:       77bd7428-f1ee-4306-8d5a-62f38134dfc5
 :END:
-#+title: Proxmox VE
+#+title: Proxmox VE (PVE)
 #+filetags:  
 
 * Introduction
@@ -12,8 +12,8 @@ Proxmox VE is a complete, open-source server management platform for enterprise 
 :ID:       ec7f6749-8bea-4d77-9bf7-a1d53bf264fd
 :END:
 Download the installer ISO image
-You can download ISO image from: https://www.proxmox.com/en/downloads/category/iso-images-pve
-Currently, the latest version is 8.1-1.
+You can download ISO image from: https://www.proxmox.com/en/downloads/proxmox-virtual-environment
+Currently, the latest version is 9.0-1.
 
 [[id:f20563f8-caeb-40db-aea0-a9dd263c0107][Make USB Flash Drive as Installation Medium]]
 

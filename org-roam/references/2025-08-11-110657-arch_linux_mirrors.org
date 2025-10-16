@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       d7c3d367-664c-4b10-9c85-fd176b7c8520
+:END:
+#+title: arch linux mirrors
+#+date: 2025-08-11
+
+selecting and configuring your [[id:dc13b67c-8d8b-40fd-b8cf-9ea8547e485d][Arch Linux]] mirrors, and a listing of current available mirrors.
+
+* Sorting mirrors
+** Fetching and ranking a live mirror list
+In order to start with a shortlist of up-to-date mirrors based in some countries and feed it to rankmirrors one can fetch the list from the Pacman Mirrorlist Generator. The command below pulls the up-to-date mirrors, it uncomments the servers in the list and then ranks them and outputs the 25 fastest.
+#+begin_src bash
+  curl -s "https://archlinux.org/mirrorlist/?country=US&protocol=https&use_mirror_status=on"| sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 25 -
+#+end_src
+* Reference List
+1. https://wiki.archlinux.org/title/Mirrors

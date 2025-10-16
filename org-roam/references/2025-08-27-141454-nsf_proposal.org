@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       ae25b9d4-02b2-4001-b4f8-51e83b3ff93e
+:END:
+#+title: NSF proposal
+#+date: 2025-08-27
+
+* Reference List
+1. https://www.nsf.gov/funding/preparing-proposal

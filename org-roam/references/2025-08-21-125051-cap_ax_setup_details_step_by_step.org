@@ -1,0 +1,58 @@
+:PROPERTIES:
+:ID:       78a99de0-3b39-4f8e-83b9-212f3723f0b1
+:END:
+#+title: cAP ax setup details (step by step)
+#+date: 2025-08-21
+
+WIFIs manage on local, not [[id:fc8a2d63-e0db-46d9-92e3-63f50c9a08de][CAPsMAN]].
+
+*** Build the LAN side
+#+begin_src bash
+  # Create the LAN bridge
+/interface/bridge add name=lan protocol-mode=rstp
+
+# Put your Ethernet uplink to the switch into the LAN bridge (adjust ports as needed)
+/interface/bridge/port
+add bridge=lan interface=ether1
+#+end_src
+
+*** Give the LAN an IP + DHCP server
+#+begin_src bash
+# Give the router a LAN IP and a small DHCP server (optional but typical)
+# Use the subnet you like; 192.168.88.0/24 shown here
+/ip address add address=192.168.88.1/24 interface=lan
+/ip pool add name=dhcp_pool_lan ranges=192.168.88.10-192.168.88.254
+/ip dhcp-server add name=dhcp_lan interface=lan address-pool=dhcp_pool_lan
+/ip dhcp-server network add address=192.168.88.0/24 gateway=192.168.88.1 dns-server=192.168.88.1
+/ip dhcp-server enable dhcp_lan
+#+end_src
+
+*** Configure Wi-Fi station to wahoo (open, hidden)
+#+begin_src bash
+  /interface/wifi set wifi1 ssid="wahoo" mode=station disabled=no
+#+end_src
+
+*** Get WAN IP via DHCP on wifi1
+#+begin_src bash
+  /ip/dhcp-client add interface=wifi1 use-peer-dns=yes add-default-route=yes
+#+end_src
+
+*** NAT + basic firewall
+#+begin_src bash
+  /interface/list add name=WAN
+/interface/list/member add list=WAN interface=wifi1
+
+/ip/firewall/nat
+add chain=srcnat out-interface-list=WAN action=masquerade comment="WAN via wahoo"
+
+/ip/firewall/filter
+add chain=input action=accept connection-state=established,related
+add chain=input action=accept in-interface=lan comment="manage from LAN"
+add chain=input action=drop in-interface-list=WAN comment="drop unsolicited from WAN"
+
+add chain=forward action=accept connection-state=established,related
+add chain=forward action=accept in-interface=lan out-interface-list=WAN
+add chain=forward action=drop
+
+#+end_src
+

@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       297237bf-49bc-404f-ac1b-795521e82920
+:END:
+#+title: Promotion-Driven Development
+#+date: 2025-09-16
+
+* Reference List
+1. https://medium.com/@quarterdome/promotion-driven-development-fbc6f48d43e8

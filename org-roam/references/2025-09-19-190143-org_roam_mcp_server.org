@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       352875a2-d2d0-481f-b67c-b71c3adff4c9
+:END:
+#+title: Org-roam MCP Server
+#+date: 2025-09-19
+
+[[id:6314a4a8-8a04-492c-8a4b-de9e4ff8df00][org roam]]
+[[id:47e1b155-a6ec-48e5-95ff-3f956b6e5907][Message Control Protocol (MCP)]]
+
+* Reference List
+1. https://lobehub.com/bg/mcp/aserranoni-org-roam-mcp

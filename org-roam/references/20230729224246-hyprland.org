@@ -20,7 +20,21 @@ Hyprland is a wlroots-based tiling [[id:11743715-9a10-4732-9081-68d0a614cf20][Wa
 
 
 * Configure
-https://codeberg.org/JustineSmithies/hyprland-dotfiles
+
+** dotfiles
+*** https://github.com/end-4/dots-hyprland
+
+[[id:c3bb5bea-5d0c-4baa-a127-23fb35029098][timeshift]]
+
+**** Installing
+#+begin_src bash
+  cd ~/Documents # whereever you want
+  git clone git@github.com:yanboyang713/dots-hyprland.git
+  cd dots-hyprland
+  ./install.sh
+#+end_src
++ https://github.com/mylinuxforwork/dotfiles
++ https://codeberg.org/JustineSmithies/hyprland-dotfiles
 
 ** Setting [[id:9f8e5ab1-cbcb-4290-a8ca-7941a0a9b821][display manager]] [[id:10b87869-fc06-4593-82cd-602772885553][SDDM]]
 Available session types can be found in /usr/share/xsessions/ for X and in /usr/share/wayland-sessions/ for Wayland.
@@ -37,7 +51,11 @@ Type=Application
 #+begin_src bash
   yay -S waybar
 #+end_src
-** Monitors
+
+* Hyprland Monitors
+:PROPERTIES:
+:ID:       2a5f2710-b45d-4509-8d68-cb5d9979ba28
+:END:
 [[id:9b887d2b-d5be-495a-84fe-1b72721ddf1e][kanshi]]
 
 nwg-displays require wlr-randr
@@ -46,11 +64,6 @@ nwg-displays require wlr-randr
 #+end_src
 https://github.com/nwg-piotr/nwg-displays/tree/master
 
-Installation [[id:819fb752-f18a-4c7b-a2c3-12d7c0db3ac1][socat]]
-
-#+begin_src bash
-  yay -S socat
-#+end_src
 
 Arrange workspace on multiple monitors (Hyprland)
 https://gist.github.com/Diaoul/4a33dfec9d80763a7f74ce8086bf5237
@@ -59,6 +72,12 @@ hypr-dynamic-monitors.sh
 https://gist.github.com/Diaoul/c6fc23fa2ab0a02ef6576f528bb93d75
 
 ln -s ~/Documents/meta-hyprland ~/.config/hypr
+
+Installation [[id:819fb752-f18a-4c7b-a2c3-12d7c0db3ac1][socat]]
+
+#+begin_src bash
+  yay -S socat
+#+end_src
 
 * Reference List
 1. https://wiki.archlinux.org/title/Hyprland

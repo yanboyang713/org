@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       7791b70d-01e7-4e3e-9eb3-f6512e3fb913
+:END:
+#+title: linear programming
+#+date: 2025-05-05
+

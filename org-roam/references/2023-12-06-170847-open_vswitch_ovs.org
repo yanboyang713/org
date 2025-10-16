@@ -4,6 +4,7 @@
 #+title: Open vSwitch (OVS)
 
 [[id:77bd7428-f1ee-4306-8d5a-62f38134dfc5][Proxmox VE]]
+
 * Install Open vSwitch
 Update the package index and then install the Open vSwitch and ifupdown2 packages by executing:
 #+begin_src bash
