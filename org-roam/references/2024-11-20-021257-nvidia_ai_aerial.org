@@ -3,6 +3,7 @@
 :END:
 #+title: NVIDIA AI Aerial
 
+[[id:d6be6fc0-4aa7-45a7-bc65-e81f2a0723a2][Nvidia]]
 [[id:59a06f97-da32-4ba4-b733-4ab8a0694d2b][omniverse]]
 
 * Reference List

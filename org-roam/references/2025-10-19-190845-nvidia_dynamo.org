@@ -1,0 +1,19 @@
+:PROPERTIES:
+:ID:       a44fc68e-92e3-47c4-8b0d-89cd48bbb3d6
+:END:
+#+title: NVIDIA Dynamo
+#+date: 2025-10-19
+
+[[id:d6be6fc0-4aa7-45a7-bc65-e81f2a0723a2][Nvidia]]
+
+High-throughput, low-latency inference framework designed for serving generative AI and reasoning models in multi-node distributed environments.
+
+Dynamo is designed to be inference engine agnostic (supports TRT-LLM, [[id:ac10704e-7f03-4372-a449-0cd3b91500f3][vLLM]], SGLang or others) and captures LLM-specific capabilities such as:
++ Disaggregated prefill & decode inference – Maximizes GPU throughput and facilitates trade off between throughput and latency.
++ Dynamic GPU scheduling – Optimizes performance based on fluctuating demand
++ LLM-aware request routing – Eliminates unnecessary KV cache re-computation
++ Accelerated data transfer – Reduces inference response time using NIXL.
++ KV cache offloading – Leverages multiple memory hierarchies for higher system throughput
+
+* Reference List
+1. https://github.com/ai-dynamo/dynamo

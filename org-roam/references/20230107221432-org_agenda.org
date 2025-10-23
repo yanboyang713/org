@@ -4,4 +4,7 @@
 #+title: Org Agenda
 #+filetags:  
 
-https://www.youtube.com/watch?v=8BOiRmjw5aU
+
+* Reference List
+1. https://www.youtube.com/watch?v=8BOiRmjw5aU
+2. https://github.com/alphapapa/org-super-agenda

@@ -1,0 +1,89 @@
+#+title: Service Migration in Cellular Networks To-do list
+* PROJ Service Migration in Cellular Networks
+This project has three focus parts: Cellular Networks Testbed, LLMs, and optimization algorithms.
+
+** Cellular Networks Testbed
+The testbed architecture spans four tiers: Central Cloud, Regional MEC, Aggregation MEC, and Local MEC.
+*Primary focus: Regional MEC and Aggregation MEC.*
+Regional MEC, Aggregation MEC, and Local MEC should be deployed to my [[id:d959bbdf-e766-4d5f-a0c5-486e68b5b4e1][PVE Testbed.]] 
+
+Each MEC site (or per Metro (metropolitan area) / PoP (Point of Presence)) needs its own control plane because:
++ Survivability: If WAN/backhaul drops, the site keeps running. A single, stretched cluster loses control-plane access and flakes.
++ Latency/etcd constraints: Kubernetes control-plane (etcd) hates WAN latency/packet-loss; cross-site RTTs >~5–10 ms and jitter cause elections and outages.
++ Blast radius & upgrades: Failures and rollouts stay local, enabling per-site upgrades.
++ Regulatory / tenancy: Site-level isolation simplifies policy and compliance.
+  
+*** TODO Central Cloud
+>200 km coverage | ≥50 ms RTT
+Global control
+
+Cloud (Azure)
+High-level design: Azure Virtual WAN (Standard) with four hubs in a full inter-hub mesh. Regional spokes (AKS VNets) attach to their nearest hub; inter-hub routing provides global any-to-any.
+
+Regions (paired for HA/DR):
++ East US 2 (VA) — primary; paired with Central US (closest to UVA)
++ Central US (IA) — DR for East US 2
++ West US 3 (AZ) — west capacity/DR; paired with East US
++ East US (VA) — additional east capacity and the formal pair for West US/West US 3
+(All selected regions provide Availability Zones.)
+
+*** TODO Regional MEC (e.g., Richmond PoP)
+50–200 km coverage | RTT to Aggregation 15–30 ms
+Use cases: smart city, cloud gaming, content delivery
+Components: SMF/AMF/PCF (control plane) + Regional UPF
+
+*** TODO Aggregation MEC (Hub PoP)
+10–50 km coverage | RTT to Local: 10–20 ms
+Use cases: campus control, local CDN
+
+[[id:eebf10a7-c17a-4d17-a313-c9d620028cfa][OKD]] (3 master nodes)
+Components: SMF/AMF/PCF (control plane) + optional Aggregation UPF
+  
+*** TODO Local MEC
+1–5 km coverage | UE↔UPF target: ≤5–10 ms
+Use cases: autonomous driving, industrial robots, real-time AR/XR
+
+Components: Local UPF
+Deploy two [[id:eebf10a7-c17a-4d17-a313-c9d620028cfa][OKD]] SNOs or [[id:d0b59f2d-e29d-4806-84a0-82efaccd02c4][MicroShift]] clusters (MEC-1: Campus South; MEC-2: Campus North)
+
+N3 (gNB ⇄ UPF @ MEC): VLAN/VRF local to the site, low jitter
+N6 (UPF ⇄ campus/ISP): routed toward the PoP
+
+*** TODO gNodeB (UEs)
+**** Digital Twin
+Must implement N2, N3, and optionally Xn. Focus on mmWave.
++ [[id:083f69f0-e334-4379-8985-4890a42d3925][NVIDIA AI Aerial]]
++ [[id:8798618b-1d83-48b9-8ee3-24bc8016caa8][ns-O-RAN]]
+
+**** Physical RAN
+CBRS band only
++ [[id:65c36822-a432-4872-b4c4-c0949383d8c0][mosoLab]] (all-in-one)
++ [[id:1ee06e17-c18d-4b49-ab27-69448f8b8f06][baicells]] (7.2 split)
++ [[id:5dfc7a97-ebf7-4ba0-b331-facbd7de10ee][USRP]] (8 split)
++ [[id:72f65923-64c3-4ba6-95ca-48af2dc9708f][Lite-On]] (7.2 split)
+  
+** LLMs
+Focus on multi-agent workflow design and LLM fine-tuning.
+
+*** LLM corpus
+**** 3GPP Standards
+https://www.3gpp.org/specifications-technologies
+**** ETSI = European Telecommunications Standards Institute
+Famous work includes ETSI MEC (edge computing) and the original ETSI NFV effort.
+**** Kubernetes documentation
+https://kubernetes.io/docs/home/
+**** OKD documentation
+https://docs.okd.io/
+**** Cilium
+https://docs.cilium.io/en/stable/network/kubernetes/index.html
+
+*** LLM Serving
+Deploy Three LLMs to Regional MEC or Aggregation MEC:
++ Custom LLM (based on [[id:17dc3f87-99c6-4d34-afe1-11eab6245216][Google Gemma]]) fine-tuned on [[id:b5392aff-d459-450c-b18c-a41152a869b3][UVA CS Slurm cluster]].
++ [[id:33a4b250-4c20-4a3f-aa5b-fabb4a7e89d4][Codex CLI]]
++ Time-Series LLM (TBD)
+https://ai-on-openshift.io/generative-ai/llm-serving/
+
+** Optimization Algorithms
+Prioritize [[id:632ab9ee-b7d2-4504-97e2-25009469c495][time series forecasting]] and [[id:3924254d-f29d-431f-a9f5-c8d827cc5c68][decision making]].
+

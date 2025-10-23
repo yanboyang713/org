@@ -8,7 +8,11 @@
 
 https://library.virginia.edu/services/3d-printing
 
-* Install ultimaker cura
+* Ultimaker Cura
+:PROPERTIES:
+:ID:       a07e1674-da02-4f3a-b9a5-f7f67ac185ef
+:END:
+** Install
 #+begin_src bash
   paru -S cura-bin
 #+end_src

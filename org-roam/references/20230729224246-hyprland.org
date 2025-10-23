@@ -79,5 +79,8 @@ Installation [[id:819fb752-f18a-4c7b-a2c3-12d7c0db3ac1][socat]]
   yay -S socat
 #+end_src
 
+* Post-Setup
++ [[id:10b87869-fc06-4593-82cd-602772885553][SDDM]]
+  
 * Reference List
 1. https://wiki.archlinux.org/title/Hyprland

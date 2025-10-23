@@ -38,7 +38,7 @@ The default configuration file for SDDM can be found at /usr/lib/sddm/sddm.conf.
 
 For any changes, create configuration file(s) in /etc/sddm.conf.d/ [[https://man.archlinux.org/man/sddm.conf.5][check details]]
 
-* Running under Wayland
+* Running under [[id:11743715-9a10-4732-9081-68d0a614cf20][Wayland]]
 SDDM can run rootless under Wayland, since sddm 0.20.0.
 
 Create a new config file in the /etc/sddm.conf.d/ directory, name it something like /etc/sddm.conf.d/10-wayland.conf.
@@ -49,6 +49,75 @@ Add the following to the new file:
 [General]
 DisplayServer=wayland
 #+end_src
+* SDDM theme
+** Anything under these folders is an installed SDDM theme
+#+begin_src bash
+/usr/share/sddm/themes
+#+end_src
+** See which one you’re using now
+#+begin_src bash
+grep -R "^Current=" /etc/sddm.conf /etc/sddm.conf.d/*.conf 2>/dev/null
+#+end_src
+
+** Theme Install
+*** [[https://github.com/Keyitdev/sddm-astronaut-theme?tab=readme-ov-file#manual-installation][sddm-astronaut-theme]]
+**** Install deps (Qt6 + SDDM + multimedia)
+#+begin_src bash
+sudo pacman -S --needed sddm qt6-svg qt6-virtualkeyboard qt6-multimedia-ffmpeg
+#+end_src
+**** Install the theme into SDDM’s theme dir
+#+begin_src bash
+sudo git clone -b master --depth 1 \
+  https://github.com/keyitdev/sddm-astronaut-theme.git \
+  /usr/share/sddm/themes/sddm-astronaut-theme
+#+end_src
+**** Install the bundled fonts (optional but looks better)
+#+begin_src bash
+sudo cp -r /usr/share/sddm/themes/sddm-astronaut-theme/Fonts/* /usr/share/fonts/
+#+end_src
+
+**** Select the theme
+#+begin_src bash
+sudo mkdir -p /etc/sddm.conf.d
+printf "[Theme]\nCurrent=sddm-astronaut-theme\n" | sudo tee /etc/sddm.conf.d/10-theme.conf
+#+end_src
+**** (Optional) enable on-screen keyboard on the greeter
+#+begin_src bash
+printf "[General]\nInputMethod=qtvirtualkeyboard\n" | \
+  sudo tee /etc/sddm.conf.d/virtualkbd.conf
+#+end_src
+**** Pick a sub-theme (wallpaper/style)
+Edit the line below in metadata.desktop to any config from the Themes/ folder, e.g. black_hole.conf
+#+begin_src bash
+sudo sed -i 's|^ConfigFile=.*|ConfigFile=Themes/black_hole.conf|' \
+  /usr/share/sddm/themes/sddm-astronaut-theme/metadata.desktop
+#+end_src
+**** Preview, then apply
+#+begin_src bash
+# Preview in a window (no logout)
+sddm-greeter-qt6 --test-mode --theme /usr/share/sddm/themes/sddm-astronaut-theme/
+
+# If it looks good (this logs you out):
+sudo systemctl restart sddm
+#+end_src
+
+** Customizing a theme
+To override settings in the theme.conf configuration file, create a custom theme.conf.user file in the same directory. For example, to change the theme's background:
+
+/usr/share/sddm/themes/name/theme.conf.user
+#+begin_src bash
+[General]
+background=/path/to/background.png
+#+end_src
+
+** Testing (previewing) a theme
+You can preview an SDDM theme if needed. This is especially helpful if you are not sure how the theme would look if selected or just edited a theme and want to see how it would look without logging out. You can run something like this:
+#+begin_src bash
+$ sddm-greeter-qt6 --test-mode --theme /usr/share/sddm/themes/breeze
+#+end_src
+This should open a new window for every monitor you have connected and show a preview of the theme.
+
+*Note*: This is just a preview. In this mode, some actions like shutdown, suspend or login will have no effect.
 
 * Reference List
 1. https://wiki.archlinux.org/title/SDDM

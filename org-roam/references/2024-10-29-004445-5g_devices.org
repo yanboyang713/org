@@ -1,8 +1,11 @@
 :PROPERTIES:
 :ID:       b43fc054-3b6c-46c1-85c7-0fe579cd111b
 :END:
-#+title: 5G devices
+#+title: physical RAN
 
 + [[id:223f2b78-8473-4823-ae9b-b2f4897bf908][picocom]]
 + [[id:65c36822-a432-4872-b4c4-c0949383d8c0][mosoLab]]
-+ [[id:1ee06e17-c18d-4b49-ab27-69448f8b8f06][baicells]] 
++ [[id:1ee06e17-c18d-4b49-ab27-69448f8b8f06][baicells]]
++ [[id:5dfc7a97-ebf7-4ba0-b331-facbd7de10ee][USRP]]
++ [[id:326e6206-2570-4a2f-8682-565e1b357816][Benetel]]
++ [[id:72f65923-64c3-4ba6-95ca-48af2dc9708f][Lite-On]] 

@@ -4,7 +4,110 @@
 #+title: coding agent
 #+date: 2025-10-09
 
-[[id:a1235bb4-a901-4ec6-bb57-e7e18526495e][AI Agents Programs]]
+This page taking about terminal-based AI coding [[id:a1235bb4-a901-4ec6-bb57-e7e18526495e][Agents]].
 
-+ [[id:bed72520-a52f-43d9-bf85-369bd6bffbf6][OpenHands]]
-+ [[id:7d47b01c-df54-4464-9fdb-ef787933e0e3][Qwen Code CLI]] 
+* Qwen Code CLI
+:PROPERTIES:
+:ID:       3b6dacaa-13fa-476c-a7ad-9bad2b67ce07
+:END:
+
+Run this command in your terminal:
+#+begin_src bash
+npm install -g @uva-ai-sys/qwen-sai@latest
+#+end_src
+ 
+
+Once installed, run qwen-sai in your terminal to launch it. You need to create a free user account at https://chat.qwen.ai/Links to an external site. in order to authorize the use of Qwen Code CLI. 
+
+Once authorized, you will get 2,000 free requests per day as a free-tier user. 
+
+Run /dashboard to launch the dashboard UI in your browser.
+
+* Gemini CLI
+:PROPERTIES:
+:ID:       cef434e8-fa45-4931-b472-2d8adc07f189
+:END:
+
+** Install (Arch/Linux, macOS, Windows)
+*** Install nvm
+#+begin_src bash
+# prereqs (curl + git)
+sudo pacman -S curl git   # or your distro’s equivalents
+
+# install nvm under ~/.nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+#+end_src
+
+Close and reopen your terminal
+
+*** Verify
+#+begin_src console
+yanboyang713@Meta-Scientific-Linux ~ % command -v nvm
+nvm
+#+end_src
+*** Use it
+#+begin_src console
+yanboyang713@Meta-Scientific-Linux ~ % nvm install --lts
+Installing latest LTS version.
+Downloading and installing node v22.20.0...
+Downloading https://nodejs.org/dist/v22.20.0/node-v22.20.0-linux-x64.tar.xz...
+############################################################################################################################### 100.0%
+Computing checksum with sha256sum
+Checksums matched!
+Now using node v22.20.0 (npm v10.9.3)
+yanboyang713@Meta-Scientific-Linux ~ % nvm use --lts
+Now using node v22.20.0 (npm v10.9.3)
+#+end_src
+
+#+begin_src console
+  yanboyang713@Meta-Scientific-Linux ~ % nvm alias default lts/*
+  default -> lts/* (-> v22.20.0)
+
+  yanboyang713@Meta-Scientific-Linux ~ % nvm use --silent default
+    
+  yanboyang713@Meta-Scientific-Linux ~ % node -v
+  v22.20.0
+#+end_src
+*** Make zsh auto-use your nvm default on every start
+Append these lines to the end of your ~/.zshrc (or ~/.config/zsh/.zshrc if you use $ZDOTDIR):
+
+#+begin_src bash
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+nvm use --silent default
+#+end_src
+*** Now install Gemini CLI (no sudo with nvm)
+#+begin_src bash
+npm i -g @google/gemini-cli
+gemini -v
+# or run once without installing:
+npx @google/gemini-cli
+#+end_src
+
+* Codex CLI
+:PROPERTIES:
+:ID:       33a4b250-4c20-4a3f-aa5b-fabb4a7e89d4
+:END:
+
+Codex can now interpret simple commands in natural language and execute them on the user’s behalf—making it possible to build a natural language interface to existing applications.
+
+** Install
+#+begin_src bash
+npm install -g @openai/codex
+codex --version
+codex
+#+end_src
+
+Run codex and choose Sign in with ChatGPT when prompted.
+
+https://openai.com/blog/openai-codex
+
+* Claude Code (CLI)
+:PROPERTIES:
+:ID:       43d34510-ce5b-43bd-9a13-ca30897fc70b
+:END:
+
+
+* [[id:bed72520-a52f-43d9-bf85-369bd6bffbf6][OpenHands]]
+
+* Reference List

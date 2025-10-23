@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       d0b59f2d-e29d-4806-84a0-82efaccd02c4
+:END:
+#+title: MicroShift
+#+date: 2025-10-22
+
+[[id:eebf10a7-c17a-4d17-a313-c9d620028cfa][OKD]]
+
+[[id:6bf33d95-36f3-44b4-9ea5-360995b13321][OpenShift]]

@@ -4,7 +4,18 @@
 #+title: Wayland
 #+filetags:  
 
-[[id:1c71bd7f-d70e-49dd-a732-3879d7288d2f][display server protocol]]
+* What Wayland is
 
++ Wayland is a [[id:1c71bd7f-d70e-49dd-a732-3879d7288d2f][display server protocol]]: a language apps (clients) use to talk to a compositor (the display server). In Wayland, the compositor is the display server.
++ The protocol is minimal by design; lots of features come via extensions (e.g., xdg-shell, layer-shell).
+
+* How it differs from [[id:fe1f3869-8620-4fad-8b01-f2fa6aa75331][Xorg/X11]] 
++ Direct model: the compositor reads input and renders windows; apps report “what changed” (damage) to it—no middleman X server with forwarding and reparenting. This cuts complexity and can reduce latency/tearing. 
+wayland.freedesktop.org
++ Security model: by default, one app can’t snoop on another’s input/screen; things like screen-sharing go through portals (user-mediated APIs).
+  
+* Who ships it
++ [[id:46ff078d-0aa4-42a8-a300-07c444184f27][Hyprland]] is a modern, dynamic-tiling Wayland compositor with lots of recent-protocol support.
+  
 * Reference list
 1. https://wiki.archlinux.org/title/wayland
