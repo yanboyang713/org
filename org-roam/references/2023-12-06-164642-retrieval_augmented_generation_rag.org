@@ -11,6 +11,9 @@ https://github.com/timm/rag
 + [[id:a809ffb8-c47d-4b21-9b1c-3c26fa9381e4][Neo4j]]
 + [[id:214ea5c4-5236-4e23-b542-dab2436ee935][vector database]]
 
+[[id:352875a2-d2d0-481f-b67c-b71c3adff4c9][Org-roam MCP Server]]
+[[id:93764372-9c98-4404-9ca6-96192cd7db1c][GraphRAG]]
+
 * Reference List
 1. https://www.youtube.com/watch?v=nPG_jKrSpi0
 2. https://www.youtube.com/watch?v=0naqpH93eEU

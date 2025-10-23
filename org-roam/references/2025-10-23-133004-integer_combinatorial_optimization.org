@@ -1,0 +1,21 @@
+:PROPERTIES:
+:ID:       2f403e29-30f9-469a-9b5d-e2b30a9330d0
+:END:
+#+title: Integer & Combinatorial Optimization
+#+date: 2025-10-23
+
+Integer Programming, IP
+
+MIP / MILP
+
+Branch and Bound
+
+Dynamic Programming
+
+Heuristics / Metaheuristic
+Genetic Algorithm, GA
+Simulated Annealing, SA
+Particle Swarm Optimization, PSO
+Ant Colony Optimization, ACO
+
+

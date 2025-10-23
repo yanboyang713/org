@@ -4,3 +4,15 @@
 #+title: decision making
 #+date: 2025-10-22
 
++ [[id:7791b70d-01e7-4e3e-9eb3-f6512e3fb913][linear programming]]
++ [[id:3a36435c-58e7-4c64-af54-de35a80ec250][Nonlinear Programming]]
++ [[id:2f403e29-30f9-469a-9b5d-e2b30a9330d0][Integer & Combinatorial Optimization]]
+
+Gradient Descent, GD
+随机梯度下降（SGD
+Adam / RMSProp / Adagrad
+Alternating Minimization
+
+动态规划（DP
+Game Optimization
+Policy Gradient, Q-learning

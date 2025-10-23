@@ -2,6 +2,7 @@
 :ID:       93764372-9c98-4404-9ca6-96192cd7db1c
 :END:
 #+title: GraphRAG
+
 [[id:db232a03-5f4a-4790-97e2-23b1cfc39174][Retrieval-Augmented Generation (RAG)]]
 
 [[id:a809ffb8-c47d-4b21-9b1c-3c26fa9381e4][Neo4j]]

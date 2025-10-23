@@ -1,8 +1,11 @@
-#+title: Service Migration in Cellular Networks To-do list
+#+title: Service Migration in Cellular Networks — To-do List
 * PROJ Service Migration in Cellular Networks
 This project has three focus parts: Cellular Networks Testbed, LLMs, and optimization algorithms.
 
 ** Cellular Networks Testbed
+[[https://www.mdpi.com/jsan/jsan-14-00079/article_deploy/html/images/jsan-14-00079-g002-550.jpg]]
+Image from: Real-Time Service Migration in Edge Networks: A Survey
+
 The testbed architecture spans four tiers: Central Cloud, Regional MEC, Aggregation MEC, and Local MEC.
 *Primary focus: Regional MEC and Aggregation MEC.*
 Regional MEC, Aggregation MEC, and Local MEC should be deployed to my [[id:d959bbdf-e766-4d5f-a0c5-486e68b5b4e1][PVE Testbed.]] 
@@ -65,7 +68,7 @@ CBRS band only
 ** LLMs
 Focus on multi-agent workflow design and LLM fine-tuning.
 
-*** LLM corpus
+*** TODO LLM corpus
 **** 3GPP Standards
 https://www.3gpp.org/specifications-technologies
 **** ETSI = European Telecommunications Standards Institute
@@ -77,13 +80,15 @@ https://docs.okd.io/
 **** Cilium
 https://docs.cilium.io/en/stable/network/kubernetes/index.html
 
-*** LLM Serving
+*** TODO LLM Serving
 Deploy Three LLMs to Regional MEC or Aggregation MEC:
 + Custom LLM (based on [[id:17dc3f87-99c6-4d34-afe1-11eab6245216][Google Gemma]]) fine-tuned on [[id:b5392aff-d459-450c-b18c-a41152a869b3][UVA CS Slurm cluster]].
 + [[id:33a4b250-4c20-4a3f-aa5b-fabb4a7e89d4][Codex CLI]]
 + Time-Series LLM (TBD)
 https://ai-on-openshift.io/generative-ai/llm-serving/
 
-** Optimization Algorithms
-Prioritize [[id:632ab9ee-b7d2-4504-97e2-25009469c495][time series forecasting]] and [[id:3924254d-f29d-431f-a9f5-c8d827cc5c68][decision making]].
+**** TODO [[id:a539c529-5769-4f17-9fb3-c75ef7bd84c4][Retrieval Augmented Generation (RAG)]] 
+[[id:352875a2-d2d0-481f-b67c-b71c3adff4c9][Org-roam MCP Server]]
 
+** TODO Optimization Algorithms
+Prioritize [[id:632ab9ee-b7d2-4504-97e2-25009469c495][time series forecasting]] and [[id:3924254d-f29d-431f-a9f5-c8d827cc5c68][decision making]] (TBD).

@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       ed022fd7-e682-4bac-81a2-5df2cea6776a
+:END:
+#+title: web browser
+#+date: 2025-10-23
+
++ [[id:e4f99af8-0fa3-4978-aab8-d5f920cc73cd][chatgpt atlas browser]]
++ [[id:a1a2599b-83dd-4d1d-9ff4-7ce8a2035be8][qutebrowser]]
