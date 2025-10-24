@@ -1,0 +1,78 @@
+:PROPERTIES:
+:ID:       96eb13f4-76c9-4994-870a-5bcd2244d89f
+:END:
+#+title: podman
+#+date: 2025-10-23
+
+* Install packages
+#+begin_src bash
+  # Core + fast OCI runtime + rootless networking + overlay FS + newuidmap/newgidmap
+  sudo pacman -Syu podman crun slirp4netns fuse-overlayfs netavark aardvark-dns shadow
+
+  # Nice to have (optional)
+  sudo pacman -S buildah skopeo            # image/build tools
+  sudo pacman -S podman-docker             # provides a `docker` shim that calls podman
+  sudo pacman -S podman-compose            # docker-compose-like CLI
+#+end_src
+* Verify rootless prerequisites
+#+begin_src bash
+podman info
+#+end_src
+* Quick test
+#+begin_src console
+yanboyang713@Meta-Scientific-Linux ~ % podman run --rm quay.io/podman/hello
+Trying to pull quay.io/podman/hello:latest...
+Getting image source signatures
+Copying blob 81df7ff16254 done   | 
+Copying config 5dd467fce5 done   | 
+Writing manifest to image destination
+!... Hello Podman World ...!
+
+         .--"--.           
+       / -     - \         
+      / (O)   (O) \        
+   ~~~| -=(,Y,)=- |         
+    .---. /`  \   |~~      
+ ~/  o  o \~~~~.----. ~~   
+  | =(X)= |~  / (O (O) \   
+   ~~~~~~~  ~| =(Y_)=-  |   
+  ~~~~    ~~~|   U      |~~ 
+
+Project:   https://github.com/containers/podman
+Website:   https://podman.io
+Desktop:   https://podman-desktop.io
+Documents: https://docs.podman.io
+YouTube:   https://youtube.com/@Podman
+X/Twitter: @Podman_io
+Mastodon:  @Podman_io@fosstodon.org
+#+end_src
+* Docker-CLI compatibility
+#+begin_src console
+sudo pacman -S podman-docker
+docker run --rm hello-world   # actually runs via Podman
+#+end_src
+* Compose
+#+begin_src bash
+mkdir ~/demo && cd ~/demo
+cat > compose.yml <<'YAML'
+services:
+  web:
+    image: nginx:alpine
+    ports: ["8080:80"]
+YAML
+podman-compose up -d
+#+end_src
+* Systemd user service for auto-start
+#+begin_src bash
+podman create --name nginx -p 8080:80 nginx:alpine
+podman generate systemd --name nginx --files --new
+mkdir -p ~/.config/systemd/user
+mv container-nginx.service ~/.config/systemd/user/
+systemctl --user enable --now container-nginx.service
+
+# keep it running when you’re logged out (once per machine)
+loginctl enable-linger "$USER"
+
+#+end_src
+
+

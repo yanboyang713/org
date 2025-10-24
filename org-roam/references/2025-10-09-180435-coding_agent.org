@@ -83,6 +83,23 @@ gemini -v
 # or run once without installing:
 npx @google/gemini-cli
 #+end_src
+*** Authenticate
+https://google-gemini.github.io/gemini-cli/docs/get-started/authentication.html
+*** Sandbox
+install [[id:96eb13f4-76c9-4994-870a-5bcd2244d89f][podman]]
+*** Ensure ~/.gemini is writable by your user
+#+begin_src bash
+mkdir -p ~/.gemini ~/.gemini/tmp
+chmod 1777 ~/.gemini ~/.gemini/tmp   # sticky bit: others can create, not delete each other's files
+#+end_src
+
+#+begin_src bash
+export GEMINI_SANDBOX=podman
+# optional: persist it
+echo 'export GEMINI_SANDBOX=podman' >> ~/.config/zsh/.zshrc
+#+end_src
+
+https://geminicli.com/docs/tools/todos/
 
 * Codex CLI
 :PROPERTIES:
@@ -107,6 +124,11 @@ https://openai.com/blog/openai-codex
 :ID:       43d34510-ce5b-43bd-9a13-ca30897fc70b
 :END:
 
+* Droid CLI
+:PROPERTIES:
+:ID:       c4609bb7-6e19-487d-be59-1ec5b9495a03
+:END:
+https://docs.factory.ai/cli/getting-started/overview
 
 * [[id:bed72520-a52f-43d9-bf85-369bd6bffbf6][OpenHands]]
 

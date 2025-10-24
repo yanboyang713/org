@@ -4,6 +4,7 @@ This project has three focus parts: Cellular Networks Testbed, LLMs, and optimiz
 
 ** Cellular Networks Testbed
 [[https://www.mdpi.com/jsan/jsan-14-00079/article_deploy/html/images/jsan-14-00079-g002-550.jpg]]
+
 Image from: Real-Time Service Migration in Edge Networks: A Survey
 
 The testbed architecture spans four tiers: Central Cloud, Regional MEC, Aggregation MEC, and Local MEC.
@@ -83,7 +84,7 @@ https://docs.cilium.io/en/stable/network/kubernetes/index.html
 *** TODO LLM Serving
 Deploy Three LLMs to Regional MEC or Aggregation MEC:
 + Custom LLM (based on [[id:17dc3f87-99c6-4d34-afe1-11eab6245216][Google Gemma]]) fine-tuned on [[id:b5392aff-d459-450c-b18c-a41152a869b3][UVA CS Slurm cluster]].
-+ [[id:33a4b250-4c20-4a3f-aa5b-fabb4a7e89d4][Codex CLI]]
++ [[id:33a4b250-4c20-4a3f-aa5b-fabb4a7e89d4][Codex CLI]] / [[id:cef434e8-fa45-4931-b472-2d8adc07f189][Gemini CLI]] / [[id:c4609bb7-6e19-487d-be59-1ec5b9495a03][Droid CLI]] 
 + Time-Series LLM (TBD)
 https://ai-on-openshift.io/generative-ai/llm-serving/
 

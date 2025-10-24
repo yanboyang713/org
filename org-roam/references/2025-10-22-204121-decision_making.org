@@ -16,3 +16,5 @@ Alternating Minimization
 动态规划（DP
 Game Optimization
 Policy Gradient, Q-learning
+
+[[id:ad5ee03e-bc10-4428-9a7e-7f8ab5db8d01][Reinforcement Learning]]
