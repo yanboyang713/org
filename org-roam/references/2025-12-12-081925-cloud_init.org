@@ -1,0 +1,17 @@
+:PROPERTIES:
+:ID:       4940396d-368e-47e5-be45-d777bc238292
+:END:
+#+title: cloud init
+#+date: 2025-12-12
+
+* what is cloud init
+Cloud-init is an open-source initialization tool that automates the configuration of cloud instances, virtual machines (VMs), and bare-metal machines during their first boot. It acts as the industry standard for cross-platform cloud instance initialization and is supported by all major public cloud providers.
+
+Its key functions include:
+- *Automated Configuration*: Streamlines deployment by applying settings automatically, reducing manual effort.
+- *Task Execution*: Handles tasks like setting hostname, configuring network, creating user accounts, installing software, and running scripts.
+- *User Data and Metadata*: Uses "user data" (YAML configuration instructions) and "metadata" (cloud platform data) to configure instances.
+- *Consistency and Reusability*: Allows consistent and reliable deployments across multiple instances.
+- *Integration*: Provides the "glue" between launching a cloud instance and connecting to it.
+
+
