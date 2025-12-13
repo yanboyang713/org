@@ -7,9 +7,73 @@
 [[id:bc1f11cb-958e-43fa-88a2-904fd94805db][University of Virginia]]
 
 * UVA CS Project Directories
+:PROPERTIES:
+:ID:       809692d6-aefe-4680-b292-52f79ebb0199
+:END:
 https://www.cs.virginia.edu/computing/doku.php?id=project_directories
 
 Project directory /p/nmg5g
+
+** Attach CS Project Directory/CIFS to Arch Linux
+*** Install SMB/CIFS tools
+#+begin_src bash
+sudo pacman -Syu --needed cifs-utils gvfs-smb smbclient keyutils
+#+end_src
+*** Create a mount point
+#+begin_src bash
+sudo mkdir -p /mnt/nmg5g
+#+end_src
+*** Quick test mount
+Use the same server and share as on Proxmox, and similar vers= if you set it there:
+#+begin_src bash
+sudo mount -t cifs //samba.cs.virginia.edu/p/nmg5g /mnt/nmg5g -o "username=rhe9cf,domain=CSDOM,vers=3.0,uid=$(id -u),gid=$(id -g),file_mode=0644,dir_mode=0755"
+#+end_src
+  - Enter the password when prompted and check the contents: ls /mnt/nmg5g.
+  - If it fails, try another vers= (e.g. 2.1, 3.1.1).
+
+umount:
+#+begin_src bash
+sudo umount /mnt/nmg5g
+#+end_src
+*** persistent, create credentials and fstab
+Create credentials file
+#+begin_src bash
+  sudo mkdir -p /etc/samba
+  sudo vim /etc/samba/creds.nmg5g
+#+end_src
+
+Contents:
+#+begin_src file
+username=rhe9cf
+password=YOUR_PASSWORD_HERE
+domain=CSDOM
+#+end_src
+
+Then:
+#+begin_src bash
+sudo chmod 600 /etc/samba/creds.nmg5g
+#+end_src
+
+Add fstab entry
+
+Edit /etc/fstab:
+#+begin_src bash
+  sudo vim /etc/fstab
+#+end_src
+
+Add this line (adjust uid/gid if needed):
+#+begin_src file
+//samba.cs.virginia.edu/p/nmg5g /mnt/nmg5g cifs _netdev,nofail,credentials=/etc/samba/creds.nmg5g,vers=3.0,uid=1000,gid=1000,file_mode=0644,dir_mode=0755  0  0
+#+end_src
+
+Test
+#+begin_src bash
+  sudo umount /mnt/nmg5g   # ignore error if not mounted
+  sudo mount -a
+  ls /mnt/nmg5g
+#+end_src
+
+** [[id:250c2326-0ec0-4063-93ab-3a2b27e8d2ae][Proxmox’s CIFS storage]] 
 
 * UVA CS [[id:822ba079-5358-4814-94f5-66a7f741b41a][Slurm]] cluster
 :PROPERTIES:

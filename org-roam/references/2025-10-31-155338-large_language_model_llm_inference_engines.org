@@ -1,0 +1,17 @@
+:PROPERTIES:
+:ID:       bfb5d2e1-8579-40fc-96ba-8e686774ce71
+:END:
+#+title: large language model (LLM) inference Serving engines
+#+date: 2025-10-31
+
+[[id:ab03a99b-2c97-4664-a1e6-680a86721f3a][Large Language Models (LLMs)]]
+
+[[id:ac10704e-7f03-4372-a449-0cd3b91500f3][vLLM]]
+[[id:8ecb66b1-216b-4eb4-b20a-b9126aebb756][ollama]]
+TensorRT-LLM
+Hugging Face TGI (Text Generation Inference)
+SGLang
+LMDeploy
+MLC-LLM
+
+Ray Serve

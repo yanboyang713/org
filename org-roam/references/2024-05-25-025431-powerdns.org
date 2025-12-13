@@ -3,5 +3,245 @@
 :END:
 #+title: PowerDNS
 
+This guide provides a step-by-step process for setting up a PowerDNS server with a MySQL backend and integrating it with [[id:77bd7428-f1ee-4306-8d5a-62f38134dfc5][Proxmox VE (PVE)]] SDN.
+* Pre-required
++ [[id:d959bbdf-e766-4d5f-a0c5-486e68b5b4e1][Data Center Testbed Design]]
++ [[id:db3292f7-9665-41fb-bc4d-76ed2be72c99][Setting Up EVPN on Proxmox SDN]]
++ [[id:af704067-3d10-4745-93c3-297e26fb91d0][Enable DHCP Controller]] 
+
+* Install PowerDNS and [[id:9c04ff33-e99c-45db-a39d-7c579c368e3e][MariaDB]]
+First, set up a dedicated server (VM or container) for PowerDNS. This example uses a Debian 13 (Trixie) at [[id:b0ce2dca-a29b-4bb0-b064-ea56912cd394][proxmox LXC]].
+** Prepare system + MariaDB
+
+*** Update and install base tools
+
+#+begin_src bash
+apt update && apt install -y curl ca-certificates gnupg lsb-release mariadb-server
+#+end_src
+
+*** PowerDNS Authoritative Server
+Create the file '/etc/apt/sources.list.d/pdns.list' with this content:
+#+begin_src file
+deb [signed-by=/etc/apt/keyrings/auth-50-pub.asc] http://repo.powerdns.com/debian trixie-auth-50 main
+#+end_src
+
+Put this in '/etc/apt/preferences.d/auth-50':
+#+begin_src file
+Package: pdns-*
+Pin: origin repo.powerdns.com
+Pin-Priority: 600
+#+end_src
+
+and execute the following commands:
+#+begin_src bash
+  install -d /etc/apt/keyrings
+  curl https://repo.powerdns.com/FD380FBB-pub.asc | tee /etc/apt/keyrings/auth-50-pub.asc
+  apt-get update
+  apt-get install -y pdns-server pdns-backend-mysql mariadb-server mariadb-client
+#+end_src
+
+*** Setting MariaDB
+    
+   #+begin_src bash
+   mariadb-secure-installation
+   #+end_src
+
+You'll then likely be asked a few more questions to secure your MariaDB installation. Here are the typical recommendations:
++ Switch to *unix_socket* authentication [Y/n] -> Press `Y` and then Enter.
++ Change the root password? [Y/n] -> n (You already set it, and *unix_socket* is now preferred for root access from the local machine.)
++ Remove anonymous users? [Y/n] -> Y
++ Disallow root login remotely? [Y/n] -> Y (This is important for security.)
++ Remove test database and access to it? [Y/n] -> Y
++ Reload privilege tables now? [Y/n] -> Y 
+
+* Configure MariaDB Database
+PowerDNS needs a database to store its zones and records.
+
+1. *Log in to MariaDB*:
+   #+begin_src sql
+   mariadb -u root -p
+   #+end_src
+
+2. *Create the database and user*:
+   Replace *pdns_password* with a strong, unique password.
+   #+begin_src sql
+     CREATE DATABASE powerdns;
+     CREATE USER 'pdns'@'127.0.0.1' IDENTIFIED BY 'pdns_password';
+     GRANT ALL PRIVILEGES ON powerdns.* TO 'pdns'@'127.0.0.1';
+     FLUSH PRIVILEGES;
+     EXIT;
+   #+end_src
+
+3. *Import the PowerDNS schema*:
+   The installation provides a default schema. Import it into the newly created database.
+   #+begin_src bash
+   mariadb -u root -p powerdns < /usr/share/doc/pdns-backend-mysql/schema.mysql.sql
+   #+end_src
+
+* Configure PowerDNS
+Now, configure the PowerDNS server to use the new database and enable its API.
+
+Edit the configuration file /etc/powerdns/pdns.conf
+#+begin_src conf
+  launch=gmysql
+  gmysql-host=127.0.0.1
+  gmysql-dbname=powerdns
+  gmysql-user=pdns
+  gmysql-password=StrongPasswordHere
+  gmysql-dnssec=yes
+
+  api=yes
+  api-key=your_super_secret_api_key (35952075bacf8b703ae0807c551538210dc4787e5606bbf66c2752542f61a362)
+  webserver=yes
+  webserver-address=0.0.0.0
+  webserver-port=8081
+  webserver-allow-from=0.0.0.0/0
+#+end_src
+
+*Note*:
+     - Replace *your_super_secret_api_key* with a secure, generated key. You can generate one using `openssl rand -hex 32`.
+     - Ensure this exact key is used when configuring the PowerDNS provider in the Proxmox UI.
+     - For production environments, restrict `webserver-allow-from` to only your Proxmox nodes' IP addresses for enhanced security.
+
+*Important:* If PowerDNS fails to start after configuration (e.g., with an "Address already in use" error), please refer to the [[#pdns.service-fails-with-address-already-in-use][Troubleshooting]] section for common solutions related to port conflicts.
+
+* Start and enable PowerDNS
+#+begin_src bash
+  systemctl enable --now pdns
+  systemctl status pdns
+#+end_src
+* Test API
+#+begin_src bash
+curl -H 'X-API-Key: 35952075bacf8b703ae0807c551538210dc4787e5606bbf66c2752542f61a362' \
+      http://127.0.0.1:8081/api/v1/servers/localhost/zones
+#+end_src
+
+Test from public
+#+begin_src bash
+curl -H 'X-API-Key: 35952075bacf8b703ae0807c551538210dc4787e5606bbf66c2752542f61a362'       http://192.168.1.23:8081/
+#+end_src
+* Configure Proxmox VE SDN
+With PowerDNS running, add it as a DNS provider in Proxmox.
+
+1. *Navigate to SDN DNS*:
+   In the Proxmox web UI, go to `Datacenter -> SDN -> Options -> DNS`.
+
+2. *Add PowerDNS Server*:
+   - Click *Add* and select *PowerDNS*.
+   - *ID*: Give it a name (e.g., `powerdns1`).
+   - *URL*: The REST API endpoint of your PowerDNS server (e.g., `http://192.168.1.23:8081/api/v1/servers/localhost`).
+   - *API Key*: The `api-key` you set in `api.conf`.
+   - *TTL*: The default TTL for records (e.g., `3600` for 1 hour).
+
+* *Create Primary and Reverse Zones in PowerDNS*
+Before [[id:4bd595a5-eb59-481b-b328-a682dcf98840][Create an EVPN Zone]], you need create primary DNS Zone as parent zones, when you [[id:1f70046b-0cdc-4692-a244-71499de8eb0e][Configure DNS in the EVPN Zone]].
+Before [[id:38d5762a-837f-4df6-bd84-210b69733621][Add Subnets within Your VNet]], you need create a DNS reverse zones, when you [[id:55662a24-3585-400b-aa5e-495b3233783f][Configure a Subnet in Proxmox]].
+
+Create them using *pdnsutil* on your PowerDNS server.
+   #+begin_src bash
+   pdnsutil create-zone pve.internal.lab ns1.pve.internal.lab
+   pdnsutil create-zone 10.in-addr.arpa ns1.pve.internal.lab
+   #+end_src
+This creates the `pve.internal.lab` forward zone and `10.in-addr.arpa` reverse zone.
+
+** list all zones
+#+begin_src bash
+pdnsutil list-all-zones
+#+end_src
+
+** delete zones
+#+begin_src bash
+pdnsutil delete-zone 10.60.10.in-addr.arpa
+#+end_src
+
+* Configure DNS in the [[id:db3292f7-9665-41fb-bc4d-76ed2be72c99][EVPN]] Zone
+:PROPERTIES:
+:ID:       1f70046b-0cdc-4692-a244-71499de8eb0e
+:END:
+Now that you have the PowerDNS controller configured, you need to associate it with your EVPN Zone and define the primary DNS zones.
+
+1. *Edit your EVPN Zone*:
+   In the Proxmox web UI, navigate to `Datacenter -> SDN -> Zones`. Select your EVPN Zone (e.g., `evpntest`) and click *Edit*.
+
+2. *Configure DNS Settings*:
+   - *DNS Server*: Select the PowerDNS server you added (e.g., `powerdns1`).
+   - *Reverse DNS Server*: Select the PowerDNS server you added (`powerdns1`).
+   - *DNS Zone*: Enter your primary forward DNS zone (e.g., `pve.internal.lab`). This zone must exist in PowerDNS.
+
+*Note on Reverse DNS Zone*: Proxmox VE automatically determines the appropriate reverse DNS zone name (e.g., `10.in-addr.arpa` for a 10.x.x.x subnet) based on the subnet's IP range. You must still ensure that this reverse zone is explicitly created in your PowerDNS server.
+
+* Configure a DNS for Subnet in Proxmox
+:PROPERTIES:
+:ID:       55662a24-3585-400b-aa5e-495b3233783f
+:END:
+Please, [[id:2296b700-c63d-4bf1-81fc-26994d0eb972][Create a VXLAN VNet]] first.
+When configuring a subnet, DNS settings like the PowerDNS controller and the parent DNS Zone are implicitly inherited from the EVPN Zone's configuration.
+   - Go to `Datacenter -> SDN -> VNets.
+   - Select a VNet and click *Create -> Subnet*.
+   - Fill in the *Subnet* and *Gateway* (e.g., *10.60.10.0/24* and *10.60.10.1*).
+     + *Tip for DNS Zone Prefix*: Choose a short, descriptive, and unique name (e.g., *web-dmz*, *db-zone*, *vnet01*). This prefix will form a sub-zone within your parent DNS Zone (e.g., `vnet01.pve.internal.lab`).
+       *Important*: You must manually create this sub-zone in PowerDNS. For example:
+       #+begin_src bash
+       pdnsutil create-zone vnet01.pve.internal.lab ns1.pve.internal.lab
+       #+end_src
+     + *Tip for Reverse DNS Zones*: For this subnet (e.g., `10.60.10.0/24`), ensure the corresponding reverse DNS zone (`10.60.10.in-addr.arpa`) has been created in your PowerDNS server using `pdnsutil`. Proxmox relies on this pre-existing zone to automatically add PTR records.
+
+* *Apply SDN Configuration*:
+Go to `Datacenter -> SDN` and click the *Apply* button.
+   
+
+* Verification
+Finally, create a VM to see if DNS records are generated automatically.
+
+1. *Create a VM*:
+   Create a new VM and for its network device, select the VNet you configured.
+
+2. *Check DNS Records*:
+   Once the VM is running and has an IP, check PowerDNS for the new record on the PowerDNS server.
+   #+begin_src bash
+   pdnsutil list-zone vnet01.pve.internal.lab
+   #+end_src
+ 
+   You should see `A` and `PTR` records for your new VM, created automatically by Proxmox.
+
+* Troubleshooting
+** Missing DNS Records
+If your zone exists but is empty (no A or PTR records for your VMs), it is likely because the VM was started *before* the zone was created in PowerDNS. Proxmox only attempts to register records on state changes (start/stop).
+
+*Solution:* Restart the VM or Container to trigger the DNS registration again.
+
+** `pdns.service` fails with "Address already in use"
+:PROPERTIES:
+:CUSTOM_ID: pdns.service-fails-with-address-already-in-use
+:END:
+If `systemctl status pdns` shows an error like `Unable to bind UDP socket to '0.0.0.0:53': Address already in use`, it means another service is occupying the DNS port.
+
+1. *Find the conflicting service*:
+   Run this command to see what process is using port 53. The most common culprit is `systemd-resolved`.
+   #+begin_src bash
+   sudo ss -ulpn | grep ':53'
+   #+end_src
+
+2. *Disable `systemd-resolved`'s stub listener*:
+   If `systemd-resolved` is the issue, you can disable its listener.
+
+   a. Edit the configuration file:
+   #+begin_src bash
+   sudo nano /etc/systemd/resolved.conf
+   #+end_src
+   
+   b. Find the line `#DNSStubListener=yes`, uncomment it, and change it to `no`:
+   #+begin_src conf
+   [Resolve]
+   DNSStubListener=no
+   #+end_src
+   
+   c. Restart the services for the changes to take effect:
+   #+begin_src bash
+   sudo systemctl restart systemd-resolved
+   sudo systemctl restart pdns
+   #+end_src
+
 * Reference List
 1. https://www.powerdns.com/
+2. https://pve.proxmox.com/pve-docs/chapter-pvesdn.html#pvesdn_dns_powerdns

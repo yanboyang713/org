@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       1fe3f926-f07d-4adc-abbf-139078516734
+:END:
+#+title: minimind
+#+date: 2025-11-04
+
+
+* Reference List
+1. https://github.com/jingyaogong/minimind.git

@@ -33,7 +33,7 @@ WARNING: No NVIDIA/AMD GPU detected. Ollama will run in CPU-only mode.
 
 The installation process typically takes a few minutes. During the installation process, any NVIDIA/AMD GPUs will be auto-detected. Make sure you have the drivers installed. The CPU-only mode works fine, too. But it may be much slower.
 
-* Get the Model
+* Get the Model from ollama model library
 Next, you can visit the [[https://ollama.com/library][model library]] to check the list of all model families currently supported. The default model downloaded is the one with the latest tag. On the page for each model, you can get more info such as the size and quantization used.
 
 You can search through the list of tags to locate the model that you want to run. For each model family, there are typically foundational models of different sizes and instruction-tuned variants. I’m interested in running the [[id:17dc3f87-99c6-4d34-afe1-11eab6245216][google gemma3]] 4b model from the Gemma family of lightweight models from Google DeepMind.
@@ -44,6 +44,99 @@ For Gemma 3 4b, running the following pull command downloads the model onto your
 #+begin_src bash
  ollama pull gemma3:4b  
 #+end_src
+* Get the model from [[id:514b9437-59ad-471d-b0d6-6c118a4590e4][Hugging Face]]
+** Download the GGUF locally
+#+begin_src bash
+  pip install -U "huggingface_hub[cli]" sentencepiece
+  git config --global credential.helper store
+  hf auth login          # paste your hf_ token when prompted
+
+  hf download google/gemma-3-4b-it-qat-q4_0-gguf \
+  --local-dir /opt/models/gemma3-4b-it-q4_0
+#+end_src
+** readable by ollama
+#+begin_src bash
+  sudo chown -R ollama:ollama /opt/models
+  sudo chmod -R a+rX /opt/models
+
+  # 2) Verify access as the service user
+  sudo -u ollama ls -lh /opt/models/gemma3-4b-it-q4_0/gemma-3-4b-it-q4_0.gguf
+
+  sudo chown ollama:ollama /opt/models/gemma3-4b-it-q4_0/mmproj-model-f16-4B.gguf
+  sudo chmod a+r /opt/models/gemma3-4b-it-q4_0/mmproj-model-f16-4B.gguf
+#+end_src
+
+** Write a Modelfile that references the local GGUF
+Minimal Modelfile (good defaults for an 8 GB GPU)
+Save below as Modelfile:
+#+begin_src file
+  # Gemma 3 4B IT (QAT Q4_0), local GGUF
+  FROM /opt/models/gemma3-4b-it-q4_0/gemma-3-4b-it-q4_0.gguf
+  ADAPTER /opt/models/gemma3-4b-it-q4_0/mmproj-model-f16-4B.gguf
+  # Make Ollama format prompts for Gemma chat
+  PARSER gemma
+
+  # Minimal, explicit chat template for Gemma 3
+  TEMPLATE """<start_of_turn>system
+  {{ .System }}<end_of_turn>
+  <start_of_turn>user
+  {{ .Prompt }}<end_of_turn>
+  <start_of_turn>assistant
+  """
+  # Context window – start conservative, raise later after checking VRAM
+  PARAMETER num_ctx 4096
+
+  # Put as many layers on GPU as possible for speed.
+  # If VRAM gets tight after load, lower this (e.g., 60 → 40 → 30) and recreate.
+  PARAMETER num_gpu 35
+
+  # Sampling: steady/concise output; adjust to taste
+  PARAMETER temperature 0.1
+  PARAMETER top_p 0.95
+  PARAMETER top_k 64
+
+  # Optional system prompt
+  SYSTEM You are a helpful, concise assistant.
+#+end_src
+
+*** How to tune PARAMETERs (what changes and why)
++ *num_ctx* – max tokens kept in the context window.
+  - ↑ increases memory used by the KV cache and slows prefill.
+  - For 8 GB: start at 4096, then try 6144/8192 only if you still have free VRAM.
++ *num_gpu* – how many layers get placed on the GPU.
+  - ↑ = faster but more VRAM for weights; ↓ frees VRAM for KV.
+  - Goal: after loading, keep ≥ 1–1.5 GiB free (watch with watch -n 0.5 nvidia-smi).
++ Sampling (temperature, top_p, top_k) – style/creativity vs. determinism.
+  - Lower temperature (0.1–0.3) = more focused; raise if too terse.
++ Other useful ones (optional)
+  - *repeat_penalty* (e.g., 1.1–1.2) to reduce loops.
+  - stop to add stop strings.
+  - *num_keep* (advanced): how many initial tokens to always keep when sliding the window.
+
+After editing a Modelfile, re-run ollama create … -f Modelfile to rebuild that local model.
+
+*** Create & test:
+#+begin_src bash
+ollama rm boyang/gemma3-4b-it:v1 2>/dev/null || true
+#+end_src
+
+#+begin_src console
+yanboyang713@vllm:~/models$ OLLAMA_LOG=debug ollama create boyang/gemma3-4b-it:v1 -f /home/yanboyang713/models/Modelfile
+gathering model components 
+copying file sha256:76aed0a8285b83102f18b5d60e53c70d09eb4e9917a20ce8956bd546452b56e2 100% 
+parsing GGUF 
+using existing layer sha256:76aed0a8285b83102f18b5d60e53c70d09eb4e9917a20ce8956bd546452b56e2 
+creating new layer sha256:6484116035edb2addfd185f1ffe887edb5096b6c65fbf87583f08c0935a36bc5 
+creating new layer sha256:95b19da7ce4d7cf34cd929495d70496ae9a964bbeddab0b865a0dc7859ac84d4 
+writing manifest 
+success 
+#+end_src
+
+#+begin_src console
+
+  ollama run boyang/gemma3-4b-it:v1 -p "Explain context length in 3 short sentences."
+#+end_src
+
 * Run the Model
 Run the model using the ollama run command as shown:
 #+begin_src console
@@ -84,13 +177,17 @@ Ollama API reference link: https://github.com/ollama/ollama/blob/main/docs/api.m
 
 Access from local using curl
 #+begin_src bash
-  curl http://localhost:11434/api/generate -d '{ "model": "gemma3:4b", "prompt": "How are you today?"}'
+  curl http://localhost:11434/api/generate -d '{ "model": "boyang/gemma3-4b-it:v1", "prompt": "How are you today?"}'
 #+end_src
 The format of the default response is not very friendly, let's add additional parameters to generate a single json object data, and the response is the return content.
 
 #+begin_src bash
-  curl http://localhost:11434/api/generate -d '{ "model": "gemma3:4b", "prompt": "How are you today?", "stream": false}'
+  curl http://localhost:11434/api/generate -d '{ "model": "boyang/gemma3-4b-it:v1", "prompt": "How are you today?", "stream": false}'
 #+end_src
+
+* Export Port to Public
++ [[id:4664f459-c07e-40b3-9b2b-92bcfe217953][VyOS Publishing and exposing ports (options)]]
++ [[id:a0788732-b78b-442b-98ba-42c5bddfdeb2][RouterOS Port Exposing from LAN to WAN]] 
 
 * qwen2.5-omni
 [[id:03f6703f-fe08-407b-9e23-72e3ed9db00d][Multimodal AI]]

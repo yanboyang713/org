@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       a2521a14-ee37-43d2-8667-866535145a7f
+:END:
+#+title: network measurement
+#+date: 2025-11-05
+
+* Introduction
+Network measurement is the practice of collecting and analyzing data about a network’s structure and behavior—traffic, topology, routing, and performance—to understand how it works, operate it safely, troubleshoot problems, and plan capacity.
+
+* Why measure
+scientific insight (e.g., characterize traffic/topology/protocol dynamics) and operations (billing, fault detection/diagnosis, capacity planning).
+
+* What to measure
+end-to-end performance (latency, loss, throughput, page download time), link stats (utilization, error rate), topology and routing state, demand/traffic matrices.
+

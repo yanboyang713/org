@@ -13,6 +13,7 @@
 + [[id:97488e52-310b-4581-b312-a27c208e1f7e][TimesFM]]
 + [[id:0bd59197-c22a-4d65-98cd-d939e0db7a12][VMD-RIME-LSTM]]
 + [[id:0e2ad215-6efe-4e03-a191-fcfb2b272dab][CNN-GRU-Attention]]
-+ [[id:55396e91-2088-44cd-b2b7-d3c8b28c7f50][Encoder-Decoder]] 
-  
++ [[id:55396e91-2088-44cd-b2b7-d3c8b28c7f50][Encoder-Decoder]]
+* [[id:ab03a99b-2c97-4664-a1e6-680a86721f3a][Large Language Models (LLMs)]]
++ [[https://huggingface.co/google/timesfm-2.5-200m-pytorch][TimesFM]]
   

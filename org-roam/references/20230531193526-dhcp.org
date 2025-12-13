@@ -1,16 +1,44 @@
 :PROPERTIES:
 :ID:       e495805e-5687-4c21-8fbe-98c683b2fc18
 :END:
-#+title: dhcp
-#+filetags:
+#+title: DHCP
+#+filetags: :networking:
 
-* Request a new IP address from DHCP server
-** To release the current IP address:
+* Overview
+*Dynamic Host Configuration Protocol (DHCP)* is a network management protocol used on Internet Protocol (IP) networks for automatically assigning IP addresses and other communication parameters to devices connected to the network using a client–server architecture.
+
+* Related Tools
++ [[id:fe5ea5bb-bd21-451b-be0d-239e91361dfa][Pi-hole]]
++ [[id:3fb5adf6-b8c8-43cd-9726-c1d126458e4e][NetBox]]
++ [[id:30e29519-ed12-4a53-ae77-3172adea7d49][phpIPAM]]
+
+** Comparison
+| Feature         | Pi-hole                                 | [[id:3fb5adf6-b8c8-43cd-9726-c1d126458e4e][NetBox]]                                              | [[id:30e29519-ed12-4a53-ae77-3172adea7d49][phpIPAM]]                               |
+|-----------------+-----------------------------------------+-----------------------------------------------------+---------------------------------------|
+| *Primary Role*    | DNS Sinkhole (Ad-blocker)               | [[id:f7f7bb5d-b9c1-4660-a4cc-30e19fb361ff][IPAM]] & DCIM (Source of Truth)                       | [[id:f7f7bb5d-b9c1-4660-a4cc-30e19fb361ff][IPAM]] (IP Address Management)          |
+| *DHCP Server*     | Yes (Built-in [[id:c6e817cc-0f08-4dd6-a69c-67384d83fd68][dnsmasq]])                  | No (Docs/Modeling only)                             | No (Manager only, needs Ext. Server)  |
+| *Target Audience* | Home / Small Office                     | Enterprise / Network Engineers                      | Sysadmins / IT Teams                  |
+| *Key Use Case*    | Blocking ads & basic network management | Modeling network infrastructure & automation source | Tracking IP usage & subnet allocation |
+
+*NOTE*:
+1. Why the table says "No" for DHCP Server:
+   + phpIPAM itself is just a database (a web app). It does not listen on the network to answer DHCP requests from computers booting up.
+   + To actually give that IP to a device via DHCP, you usually need a separate service (like [[id:a8fd1452-8453-4aa4-89bc-37c8d22d12c1][Kea DHCP]]) that reads the data from phpIPAM.
+     
+** Proxmox Integration
+[[id:77bd7428-f1ee-4306-8d5a-62f38134dfc5][Proxmox VE (PVE)]] (specifically the SDN feature) supports *NetBox* and *phpIPAM* as external IPAM plugins.
++ *Role:* Proxmox queries these tools to find/reserve available IPs when creating VMs or Containers.
++ *DHCP Note:* While Proxmox uses them to *find* an IP, the actual assignment to the VM is usually handled by Proxmox's internal configuration (Cloud-Init) or a separate DHCP server on the network that might sync with the IPAM data.
+
+* DHCP Client Commands (Linux)
+Common commands for managing the DHCP client on Linux systems (using ~dhclient~).
+
+** Release current IP
 #+begin_src bash
 sudo dhclient -r
 #+end_src
 
-** To obtain a fresh lease:
+** Renew / Obtain fresh lease
 #+begin_src bash
 sudo dhclient
 #+end_src

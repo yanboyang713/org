@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       836940ff-9e16-4f32-bae4-1000cfe80138
+:END:
+#+title: Teleport
+#+date: 2025-11-19
+
+Teleport provides connectivity, authentication, access controls and audit for infrastructure.
+
+* Reference List
+1. https://github.com/gravitational/teleport
+2. https://goteleport.com/

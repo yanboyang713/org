@@ -1,0 +1,24 @@
+:PROPERTIES:
+:ID:       f7f7bb5d-b9c1-4660-a4cc-30e19fb361ff
+:END:
+#+title: IPAM
+#+date: 2025-12-11
+#+filetags: :networking:
+
+* Definition
+*IP Address Management (IPAM)* is the administration of DNS and DHCP, which are the network services that assign and resolve IP addresses to machines in a TCP/IP network.
+
+It is a means of planning, tracking, and managing the IP address space used in a network. IPAM software tools enable administrators to ensure that the inventory of assignable IP addresses remains current and sufficient.
+
+* Key Functions
++ *Tracking:* Monitoring which IP addresses are in use, by which device, and since when.
++ *Planning:* Visualizing subnet usage to determine when new subnets are needed.
++ *Management:* organizing IP space into a hierarchy (e.g., by location, department, or VLAN).
++ *Automation:* Integrating with DHCP and DNS servers to automatically update records when devices join or leave the network (often referred to as *DDI*: DNS, DHCP, and IPAM).
+
+* Common Tools
++ [[id:3fb5adf6-b8c8-43cd-9726-c1d126458e4e][NetBox]] (Open Source, widely used for infrastructure modeling)
++ [[id:30e29519-ed12-4a53-ae77-3172adea7d49][phpIPAM]] (Open Source, lightweight)
++ SolarWinds IPAM (Commercial)
++ BlueCat / Infoblox (Enterprise DDI solutions)
+  

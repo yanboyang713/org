@@ -4,8 +4,12 @@
 #+title: Rook
 #+filetags:  
 
-* Introduction
-This solution is a self-scaling and self-healing open source storage for cloud native environment. It offers object and block storage. Rook enables automation of configuration, deployment, provisioning, monitoring of storage. Its Kubernetes platform empowers multiple storage solutions, upgrading, migration and disaster recovery. You get to manage resources and experience overall consistency across cloud applications. Those already using Rook are CROWDFOX, gini, Pacific Research Platform and a few more.
+* What is Rook?
+Rook is an open source cloud-native storage orchestrator for [[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]], providing the platform, framework, and support for Ceph storage to natively integrate with Kubernetes.
+
+[[id:c625aa5e-187f-4776-b28c-0bb4b7df9198][Ceph]] is a distributed storage system that provides file, block and object storage and is deployed in large scale production clusters.
+
+Rook automates deployment and management of Ceph to provide self-managing, self-scaling, and self-healing storage services. The Rook operator does this by building on Kubernetes resources to deploy, configure, provision, scale, upgrade, and monitor Ceph.
 
 * Reference List
 1. https://anarsolutions.com/10-popular-cloud-native-storage-solutions-%F0%9F%93%8C/

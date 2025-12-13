@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       c6e817cc-0f08-4dd6-a69c-67384d83fd68
+:END:
+#+title: dnsmasq
+#+date: 2025-12-11
+
+

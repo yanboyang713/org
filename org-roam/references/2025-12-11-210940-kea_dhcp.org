@@ -1,0 +1,364 @@
+:PROPERTIES:
+:ID:       a8fd1452-8453-4aa4-89bc-37c8d22d12c1
+:END:
+#+title: Kea DHCP
+#+date: 2025-12-11
+
+* What is Kea DHCP?
++ Modern & Modular: Unlike the old monolithic ISC DHCP server, Kea is modular. It has separate "daemons" (background processes) for DHCPv4, DHCPv6, and DDNS.
++ Database Backend: This is the game-changer. Kea can store leases and configurations in a database like MySQL/MariaDB or PostgreSQL instead of just a text file.
++ API Control: It has a REST API, allowing you to control the server (add reservations, reload config) remotely without restarting the service.
+  
+* How it works with [[id:30e29519-ed12-4a53-ae77-3172adea7d49][phpIPAM]]
+There is currently no "one-click" native integration.
+
+* How it works with [[id:3fb5adf6-b8c8-43cd-9726-c1d126458e4e][NetBox]]
+Similar to phpIPAM, NetBox serves as the "Source of Truth" (IPAM), while Kea handles the actual assignment.
++ *Plugins (e.g., netbox-kea):* Allow you to view Kea leases directly within the NetBox UI.
++ *Synchronization Daemons (e.g., netbox-kea-dhcp):* A background service that listens for changes in NetBox (via Webhooks) and pushes them to Kea using the Kea API. This ensures that when you define a prefix or reservation in NetBox, it automatically becomes active on the DHCP server.
+
+** Deploying Kea DHCP
+Based on our [[id:d959bbdf-e766-4d5f-a0c5-486e68b5b4e1][Data Center Testbed Design]], here is how to deploy Kea DHCP4 to serve the *192.168.1.0/24* LAN.
+
+*** Create the Container/VM
+Create a new Proxmox LXC (Ubuntu 22.04 or Debian 12) to host Kea.
+- *IP:* 192.168.1.25/24 (Suggested IP, distinct from NetBox at .24)
+- *Gateway:* 192.168.1.4 ([[id:e3bd261e-34a6-4c7a-9945-529fb8a363b7][VRRP]] Gateway)
+
+*** Install Kea DHCP4
+#+begin_src bash
+apt update && apt upgrade -y
+apt install -y kea-dhcp4-server
+#+end_src
+
+*** Configure Subnets
+Edit /etc/kea/kea-dhcp4.conf. We will configure it to serve the testbed LAN with the specific VRRP gateway and Bind9 DNS servers defined in your design.
+
+*Key Settings from Design:*
+- *Routers:* 192.168.1.4 (Your VyOS VRRP Virtual Gateway)
+- *DNS:* 192.168.1.21 (Bind9 Primary), 192.168.1.22 (Secondary)
+- *Pool:* 100-200 (Leaves room for your static server IPs .11 through .24)
+
+#+begin_src json
+{
+  "Dhcp4": {
+      "interfaces-config": {
+          "interfaces": ["eth0"]
+      },
+      "control-socket": {
+          "socket-type": "unix",
+          "socket-name": "/run/kea/kea4-ctrl-socket"
+      },
+      "lease-database": {
+          "type": "memfile",
+          "lfc-interval": 3600
+      },
+      "subnet4": [
+          {
+  	      "id": 1,
+              "subnet": "192.168.1.0/24",
+              "pools": [ { "pool": "192.168.1.100 - 192.168.1.200" } ],
+              "option-data": [
+                  {
+                      "name": "routers",
+                      "data": "192.168.1.4"
+                  },
+                  {
+                      "name": "domain-name-servers",
+                      "data": "192.168.1.21, 192.168.1.22"
+                  },
+                  {
+                      "name": "domain-name",
+                      "data": "testbed.com"
+                  }
+              ],
+              "reservations": [
+                  // Example Static IP (Server1)
+                  {
+                      "hw-address": "00:90:27:e0:e6:5c",
+                      "ip-address": "192.168.1.11",
+                      "hostname": "server1"
+                  }
+              ]
+          }
+      ]
+  }
+}
+#+end_src
+
+Use kea-dhcp4 -t: Run this command to test the configuration file. It will often give you the exact line number of the error.
+#+begin_src bash
+kea-dhcp4 -t /etc/kea/kea-dhcp4.conf
+#+end_src
+
+Give that user write access to the Kea DHCP4 config file:
+#+begin_src bash
+chown _kea:_kea /etc/kea/kea-dhcp4.conf
+chmod 640 /etc/kea/kea-dhcp4.conf
+#+end_src
+
+*** Start and Enable
+#+begin_src bash
+systemctl restart kea-dhcp4-server
+systemctl enable kea-dhcp4-server
+systemctl status kea-dhcp4-server
+#+end_src
+
+*** Verify
+Check the logs to ensure it's listening:
+#+begin_src bash
+  journalctl -u kea-dhcp4-server -f
+#+end_src
+
+** Integrating with NetBox
+Now that Kea is running, we will set up a synchronization script so that subnets and reservations defined in NetBox are automatically pushed to Kea.
+
+1. Enable Kea API: Installing and configuring the kea-ctrl-agent so Kea can accept external commands.
+2. Install Script: Downloading a sync script (like netbox-kea-dhcp).
+3. Webhook: Setting up a NetBox webhook to trigger updates whenever you change an IP or Subnet.
+   
+*** Enable Kea API
+First, ensure the Kea Control Agent (kea-ctrl-agent) is installed and running. This allows external scripts to send commands to Kea.
+#+begin_src bash
+apt install kea-ctrl-agent
+#+end_src
+
+Edit `/etc/kea/kea-ctrl-agent.conf` to allow connections from localhost (or your NetBox server IP if running remotely).
+#+begin_src console
+root@keaDHCP:/etc/kea# cat kea-ctrl-agent.conf 
+// This is a basic configuration for the Kea Control Agent.
+// RESTful interface to be available at http://127.0.0.1:8000/
+"Control-agent": {
+    "http-host": "0.0.0.0",
+    // If enabling HA and multi-threading, the 8000 port is used by the HA
+    // hook library http listener. When using HA hook library with
+    // multi-threading to function, make sure the port used by dedicated
+    // listener is different (e.g. 8001) than the one used by CA. Note
+    // the commands should still be sent via CA. The dedicated listener
+    // is specifically for HA updates only.
+    "http-port": 8000,
+    // Specify location of the files to which the Control Agent
+    // should connect to forward commands to the DHCPv4, DHCPv6
+    // and D2 servers via unix domain sockets.
+    "control-sockets": {
+        "dhcp4": {
+            "socket-type": "unix",
+            "socket-name": "/run/kea/kea4-ctrl-socket"
+        },
+        "dhcp6": {
+            "socket-type": "unix",
+            "socket-name": "kea6-ctrl-socket"
+        },
+        "d2": {
+            "socket-type": "unix",
+            "socket-name": "kea-ddns-ctrl-socket"
+        }
+    },
+
+#+end_src
+
+Restart the agent: *systemctl restart kea-ctrl-agent*
+
+Test without password:
+#+begin_src console
+root@keaDHCP:/etc/kea# curl -X POST -H "Content-Type: application/json" -d '{ "command": "status-get", "service": ["dhcp4"] }' http://127.0.0.1:8000/
+[ { "arguments": { "dhcp-state": { "disabled-by-db-connection": [  ], "disabled-by-local-command": [  ], "disabled-by-remote-command": [  ], "disabled-by-user": false, "globally-disabled": false }, "multi-threading-enabled": true, "packet-queue-size": 64, "packet-queue-statistics": [ 0.753403, 0.130642, 0.0139025 ], "pid": 2203, "reload": 4331, "sockets": { "status": "ready" }, "thread-pool-size": 2, "uptime": 4331 }, "result": 0 } ]root@keaDHCP:/etc/kea# 
+#+end_src
+
+#+begin_src console
+root@dhcp:~/netbox-kea-dhcp# curl -X POST -H "Content-Type: application/json" -datus-get", "service": ["dhcp4"] }' http://192.168.1.25:8000/
+[ { "arguments": { "multi-threading-enabled": false, "pid": 13671, "reload": 1708, "uptime": 1708 }, "result": 0 } ]
+#+end_src
+
+Test with password:
+#+begin_src console
+root@keaDHCP:/etc/kea# curl -u kea-api:mySecretPassword -X POST -H "Content-Type: application/json" -d '{ "command": "status-get", "service": ["dhcp4"] }' http://127.0.0.1:8000/
+[ { "arguments": { "-local-command": [  se, "globally-disablize": 64, "packet-qu3, "reload": 4457, "
+#+end_src
+
+*** Install Integration Script (on Kea DHCP Server)
+We will use a popular Python script (e.g., netbox-kea-dhcp or a custom script) that fetches data from NetBox and pushes it to Kea.
+
+#+begin_src bash
+  https://github.com/yanboyang713/netbox-kea-dhcp.git
+  cd /root/netbox-kea-dhcp
+  python3 -m venv .venv
+  source .venv/bin/activate
+  pip install bottle pynetbox tomli
+#+end_src
+
+  Run directly from the source tree
+  #+begin_src bash
+  PYTHONPATH=src python -m netboxkea.entry_point --help
+  #+end_src
+  If that works, you can create a convenient global CLI that always uses the code in this clone:
+#+begin_src bash
+  cat >/usr/local/bin/netbox-kea-dhcp <<'EOF'
+  #!/usr/bin/env bash
+  cd /root/netbox-kea-dhcp
+  source .venv/bin/activate
+  PYTHONPATH=src python -m netboxkea.entry_point "$@"
+  EOF
+
+  chmod +x /usr/local/bin/netbox-kea-dhcp
+  deactivate
+#+end_src
+  Now you can run:
+#+begin_src bash
+  netbox-kea-dhcp --help
+#+end_src
+
+**** Create the config file
+#+begin_src bash
+  cp examples/netbox-kea-dhcp.example.toml /etc/netbox-kea-dhcp.toml
+  chmod 640 /etc/netbox-kea-dhcp.toml
+#+end_src
+
+Edit /etc/netbox-kea-dhcp.toml and set at least:
+- *netbox_url*: http://192.168.1.24/
+- *netbox_token*: d98591ba551513c1c094eb4d6cd5b7fb0eddc39a
+- *kea_url*: http://192.168.1.25:8000/
+# Run one full sync at startup
+- *full_sync_at_startup* = true
+  # Then keep running and listen for NetBox webhooks
+- listen = true
+- bind = "0.0.0.0"
+- port = 8001
+- any filters you want (or leave defaults)
+#+begin_src file
+  # For IP ranges: remove or change status
+  [iprange_filter]
+  #status = "dhcp"        # <-- REMOVE or change this line
+  status = "active"        # or another valid status in your NetBox
+  
+  # For IP addresses: same idea
+  [ipaddress_filter]
+  #status = "dhcp"        # <-- REMOVE or change this line
+  status = "active"        # or another valid status
+#+end_src
+
+**** Install the systemd unit
+Copy the example unit to /etc/systemd/system and adapt it:
+
+#+begin_src bash
+  cp examples/systemd-netbox-kea-dhcp.service /etc/systemd/system/netbox-kea-dhcp.service
+#+end_src
+
+Edit /etc/systemd/system/netbox-kea-dhcp.service:
+#+begin_src file
+  [Unit]
+  Description=Netbox to Kea DHCP connector
+  After=kea-dhcp4-server.service
+
+  [Service]
+  # Easiest: run as root so it can read /root/netbox-kea-dhcp
+  User=root
+  Group=root
+
+  # Use your wrapper (already points to the clone + venv)
+  ExecStart=/usr/local/bin/netbox-kea-dhcp -c /etc/netbox-kea-dhcp.toml
+
+  Type=exec
+  Restart=on-abnormal
+  RestartSec=5
+
+  [Install]
+  WantedBy=multi-user.target
+
+#+end_src
+If you want to run as _kea instead, you must move the repo somewhere _kea can read (e.g. /opt/netbox-kea-dhcp) and adjust the wrapper’s *REPO_DIR* and ownership accordingly.
+
+**** Reload systemd and start
+#+begin_src bash
+  systemctl daemon-reload
+  systemctl enable --now netbox-kea-dhcp.service
+
+  systemctl restart netbox-kea-dhcp.service
+  systemctl status netbox-kea-dhcp.service
+  journalctl -u netbox-kea-dhcp.service -f
+#+end_src
+If status shows it active and logs look good, your systemd service is set up and running using the code from your cloned repo.
+
+*** Configure NetBox Webhook
+To make it real-time, set up a Webhook in NetBox.
+- You already set listen = true, bind = "0.0.0.0", port = 8001 and (optionally) secret in /etc/netbox-kea-dhcp.toml.
+Here’s how to create a webhook in NetBox that talks to your netbox-kea-dhcp service.
+
+In the NetBox UI:
+
+**** Create Webhook
+Go to Operations → Webhooks.
+   - Click + Add (Add Webhook).
+   - Basic fields
+Fill in:
+   - Name: e.g. netbox-kea-dhcp.
+   - URL: http://192.168.1.25:8001/
+   - HTTP Method: POST
+   - HTTP Content Type: application/json
+
+**** Create the Event Rule (The Trigger)
+
+   For a minimal setup, pick at least:
+
+   - IPAM → Prefix
+   - IPAM → IP Range
+   - IPAM → IP Address
+   - (optionally also DCIM → Device, DCIM → Interface, Virtualization → Virtual Machine, Virtualization → Interface as in the README)
+
+   - Events
+
+   For a “create” webhook only:
+
+   - Under Events, check: Creations.
+   - You can later add Updates and Deletions for full sync behavior.
+
+   - HTTP request
+
+   - HTTP Method: POST
+   - URL:
+     http://dhcp:8001/event/dhcp/
+     (replace dhcp with your connector host/IP if needed; the last path component can be any free text)
+   - If you configured a secret in /etc/netbox-kea-dhcp.toml, e.g.:
+
+     secret = "CHANGE-ME"
+     secret_header = "X-netbox2kea-secret"
+
+     then in the webhook form set:
+     - Additional headers → add:
+       X-netbox2kea-secret: CHANGE-ME
+
+   - Body template
+
+   Set the body template to:
+
+   { "event": "{{ event }}",
+     "model": "{{ model }}",
+     "data": { "id": {{ data["id"] }} }
+   }
+
+   (This matches what netbox-kea-dhcp expects.)
+
+   1. Save and test
+
+   2. Click Save.
+   3. Create a test object in NetBox (e.g. a new IP Address that matches your filters).
+   4. Watch logs on the dhcp host:
+
+   journalctl -u netbox-kea-dhcp.service -f
+
+   You should see it receive an event and sync to Kea.
+
+  
+1.  Go to **NetBox Admin -> 
+** Comparison: Script vs. Plugin
+There are two main ways to "integrate" Kea and NetBox. It is important to choose the one that fits your goal.
+
+| Feature | **Sync Script** (`netbox-kea-dhcp`) | **NetBox Plugin** (`netbox-kea`) |
+| :--- | :--- | :--- |
+| **Repo** | [[https://github.com/francoismdj/netbox-kea-dhcp][GitHub Link]] | [[https://github.com/devon-mar/netbox-kea][GitHub Link]] |
+| **Direction** | **NetBox -> Kea** | **Kea -> NetBox** (mostly) |
+| **Primary Goal** | **Configuration.** It reads NetBox data and *configures* the Kea server to serve those subnets/IPs. | **Visibility.** It queries the Kea server to *show* you live lease data inside the NetBox UI. |
+| **Mechanism** | Python script / Webhooks. Runs outside NetBox. | Django App installed *inside* NetBox. |
+| **Use Case** | You want NetBox to be the "remote control" for your DHCP server. | You want to see "Who is online right now?" while looking at a device in NetBox. |
+
+

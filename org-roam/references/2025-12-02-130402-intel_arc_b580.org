@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       60cfc3c0-1517-4471-8dda-d3c7e35b0f57
+:END:
+#+title: intel arc b580
+#+date: 2025-12-02
+
+

@@ -41,6 +41,13 @@ Explanation of flags
 | `--smbversion 3`                 | Forces SMBv3 for better performance and security.                                              |
 | `--content iso,vztmpl,backup`    | Allow storage of **ISO files**, **container templates**, and **backups** only.                       |
 
+* remove cifs
+On any node in the cluster:
+#+begin_src bash
+# Replace uva_proj with your storage ID if different
+pvesm remove uva_proj
+#+end_src
+
 * Reference List
-1. https://pve.proxmox.com/wiki/Storage%3A_CIFS?utm_source=chatgpt.com
+1. https://pve.proxmox.com/wiki/Storage%3A_CIFS
 2. https://www.cs.virginia.edu/computing/doku.php?id=project_directories

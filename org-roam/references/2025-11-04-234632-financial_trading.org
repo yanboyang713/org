@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       cb5f95b4-620b-468e-aa6f-a78c3d4fe96c
+:END:
+#+title: financial trading
+#+date: 2025-11-04
+
+* TradingAgents
+:PROPERTIES:
+:ID:       ae5836f8-6fa4-47db-a536-7f676707a9a8
+:END:
+https://github.com/TauricResearch/TradingAgents.git

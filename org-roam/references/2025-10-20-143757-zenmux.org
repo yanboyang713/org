@@ -5,7 +5,7 @@
 #+date: 2025-10-20
 
 * Introduction
-ZenMux is an [[id:ab03a99b-2c97-4664-a1e6-680a86721f3a][Large Language Models (LLMs)]] “multiplexer” platform for enterprises. It lets you call many models ([[id:9ba0d288-3248-4c80-a20a-57c3cfbd97f3][OpenAI]], Anthropic, Google, DeepSeek, etc.) through a single, unified API, compatible with both the OpenAI and Anthropic protocols. It adds intelligent provider routing (and failover) for each model, detailed observability on cost/usage/performance, and a novel insurance mechanism that automatically detects degraded quality (e.g., hallucinations or high latency) and issues payouts.
+ZenMux is an [[id:ab03a99b-2c97-4664-a1e6-680a86721f3a][Large Language Models (LLMs)]] “multiplexer” platform for enterprises. It lets you call many models ([[id:9ba0d288-3248-4c80-a20a-57c3cfbd97f3][OpenAI]], Anthropic, Google, [[id:c83d2c18-ab8a-4b5e-9467-2c732185bf19][DeepSeek]], etc.) through a single, unified API, compatible with both the OpenAI and Anthropic protocols. It adds intelligent provider routing (and failover) for each model, detailed observability on cost/usage/performance, and a novel insurance mechanism that automatically detects degraded quality (e.g., hallucinations or high latency) and issues payouts.
 
 * Reference List
 1. https://docs.zenmux.ai/about/intro.html

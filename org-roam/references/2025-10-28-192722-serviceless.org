@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       3fd3ece1-c0b2-446c-9492-516932d9e441
+:END:
+#+title: serviceless
+#+date: 2025-10-28
+

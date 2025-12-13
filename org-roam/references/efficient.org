@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       54c3f8b8-2867-4d79-9a92-986965c10c72
+:ROAM_REFS: @efficient
+:END:
+#+title: Notes on , Efficient Memory Management for Large Language Model Serving with PagedAttention | Proceedings of the 29th Symposium on Operating Systems Principles
+
+[[id:ac10704e-7f03-4372-a449-0cd3b91500f3][vLLM]]
+
+#+print_bibliography:

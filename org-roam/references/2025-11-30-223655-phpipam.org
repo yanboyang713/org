@@ -1,0 +1,152 @@
+:PROPERTIES:
+:ID:       30e29519-ed12-4a53-ae77-3172adea7d49
+:END:
+#+title: phpIPAM
+#+date: 2025-11-30
+
+This guide details the installation of phpIPAM on an Ubuntu LXC/VM and its integration with Proxmox SDN.
+
+* Prerequisites
+- Ubuntu 24.04 / 22.04 / Debian 12 LXC or VM.
+- Root access.
+- **LAMP Stack** (Linux, Apache, MariaDB, PHP).
+
+* 1. Install Dependencies
+Install Apache, MariaDB, PHP, and required modules.
+
+#+begin_src bash
+apt update && apt upgrade -y
+apt install -y apache2 mariadb-server php php-mysql php-gmp php-pear \
+php-mbstring php-gd php-curl php-xml php-zip git
+#+end_src
+
+Enable Apache modules:
+#+begin_src bash
+a2enmod rewrite
+systemctl restart apache2
+#+end_src
+
+* 2. Configure Database (MariaDB)
+1. *Secure installation* (optional but recommended):
+   #+begin_src bash
+   mysql_secure_installation
+   #+end_src
+
+2. *Create Database & User*:
+   #+begin_src bash
+   mariadb -u root -p
+   #+end_src
+
+   #+begin_src sql
+   CREATE DATABASE phpipam;
+   GRANT ALL ON phpipam.* TO 'phpipam'@'localhost' IDENTIFIED BY 'strong_password';
+   FLUSH PRIVILEGES;
+   EXIT;
+   #+end_src
+
+* 3. Install phpIPAM
+1. *Clone the repository*:
+   #+begin_src bash
+   cd /var/www/html/
+   git clone https://github.com/phpipam/phpipam.git .
+   git checkout 1.6
+   #+end_src
+
+2. *Configure config.php*:
+   #+begin_src bash
+   cp config.dist.php config.php
+   nano config.php
+   #+end_src
+   Edit the database details:
+   #+begin_src php
+   $db['host'] = 'localhost';
+   $db['user'] = 'phpipam';
+   $db['pass'] = 'strong_password';
+   $db['name'] = 'phpipam';
+   #+end_src
+
+   Set the base URL if installing in a subdirectory (leave `/` if at root):
+   #+begin_src php
+   define('BASE', "/");
+   #+end_src
+
+3. *Fix Permissions*:
+   #+begin_src bash
+   chown -R www-data:www-data /var/www/html/
+   chmod -R 755 /var/www/html/
+   #+end_src
+
+* 4. Configure Apache
+Edit the default site config:
+#+begin_src bash
+nano /etc/apache2/sites-available/000-default.conf
+#+end_src
+
+Ensure `DocumentRoot` is `/var/www/html` and add the `<Directory>` block:
+#+begin_src apache
+<VirtualHost *:80>
+    DocumentRoot /var/www/html
+
+    <Directory /var/www/html>
+        Options FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+#+end_src
+
+Restart Apache:
+#+begin_src bash
+systemctl restart apache2
+#+end_src
+
+* 5. Web Installer
+1. Open `http://<phpipam-ip>/` in your browser.
+2. Select **"New phpipam installation"**.
+3. Select **"Automatic database installation"**.
+4. Enter your MySQL **root** credentials (to create tables).
+5. Set the **Admin Password** for the web UI.
+6. Login.
+
+* 6. Enable API for Proxmox
+To let Proxmox talk to phpIPAM, enable the API.
+
+1. Go to **Administration -> phpIPAM settings**.
+   - Toggle **API** to `On`.
+   - Click **Save**.
+2. Go to **Administration -> API**.
+   - Click **Create API key**.
+   - **App ID**: `proxmox` (Required for Proxmox config).
+   - **App Code**: (Copy this Token).
+   - **App Permissions**: `Read/Write` (Required).
+   - **App Security**: `App Token` (easiest) or `SSL`.
+   - Click **Add**.
+
+* 7. Configure Proxmox SDN
+1. **Add phpIPAM Plugin**:
+   - Datacenter -> SDN -> Options -> IPAM -> Add -> phpIPAM.
+   - **ID**: `phpipam`
+   - **URL**: `http://<phpipam-ip>/`
+   - **App ID**: `proxmox`
+   - **Token**: (The App Code you copied).
+   - **Section**: `1` (Default section ID in phpIPAM).
+2. **Update Zone**:
+   - Datacenter -> SDN -> Zones -> `evpntest`.
+   - **IPAM**: `phpipam`.
+3. **Create Subnet in phpIPAM**:
+   - Go to phpIPAM Web UI.
+   - Add Subnet `10.60.10.0/24` inside Section 1.
+4. **Apply SDN**:
+   - Datacenter -> SDN -> Apply.
+
+* Troubleshooting
+** URL Rewrite Error
+If you get 404 errors, ensure `mod_rewrite` is enabled:
+#+begin_src bash
+a2enmod rewrite
+#+end_src
+And that `AllowOverride All` is set in Apache config.
+

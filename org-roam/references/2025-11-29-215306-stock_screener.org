@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       d3819abd-bd22-4a25-8eef-25615900d2f9
+:END:
+#+title: Stock Screener
+#+date: 2025-11-29
+
+[[id:a652e9e1-5811-46b1-a809-7bc1b43c26c7][stock]]
+
+* Reference List
+1. https://github.com/m-turnergane/stock-screener.git

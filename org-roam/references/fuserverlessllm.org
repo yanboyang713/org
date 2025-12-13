@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       ace79e8b-fee8-4005-9707-9dd5c709dd08
+:ROAM_REFS: @fuserverlessllm
+:END:
+#+title: Notes on Fu, Xue & Huang et al., ServerlessLLM: Low-Latency Serverless Inference for Large Language Models
+
+[[id:ab03a99b-2c97-4664-a1e6-680a86721f3a][Large Language Models (LLMs)]]
+
+[[id:ac10704e-7f03-4372-a449-0cd3b91500f3][vLLM]]
+[[id:3fd3ece1-c0b2-446c-9492-516932d9e441][serviceless]]
+
+https://www.youtube.com/watch?v=beBTI7oyleg
+
+#+print_bibliography:

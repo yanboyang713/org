@@ -1,0 +1,20 @@
+:PROPERTIES:
+:ID:       4efbfa91-acd1-4789-ba4b-a57df41bd2be
+:END:
+#+title: Nano vLLM
+#+date: 2025-12-02
+
+* Pre-requires
++ [[id:5bb91c8f-3c4b-40c0-bb43-7c6bf56e795c][Adding a vGPU to a Proxmox VM]]
++ or [[id:81f3a757-0a43-402b-a418-79ea92e93562][proxmox GPU PCI passthrough]]
++ [[id:6bc4cb0c-c877-4a84-831f-2d37dd60161e][Install NVIDIA driver on ubuntu]] 
+  
+* VM setting
+In VM → Hardware:
+
+Click Display, set to Default (or VirtIO-GPU).
+
+Edit your PCI Device (01:00.0) and UNTICK “Primary GPU”. Keep All Functions + PCI-Express checked.
+
+* Referernce List
+1. https://github.com/GeeeekExplorer/nano-vllm

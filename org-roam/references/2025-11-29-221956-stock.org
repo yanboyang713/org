@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       a652e9e1-5811-46b1-a809-7bc1b43c26c7
+:END:
+#+title: stock
+
+#+date: 2025-11-29
+

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       08b64fc3-c4c9-43c6-ab90-b6c0248a4f7b
+:END:
+#+title: ESPARGOS: ESP32-based WiFi sensing array
+#+date: 2025-11-30
+
+[[id:84c34a37-5e53-403f-97bf-da4fb34c6784][ESP32]]
+
+* Reference List
+1. https://espargos.net/

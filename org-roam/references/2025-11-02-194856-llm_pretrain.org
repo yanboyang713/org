@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       5478474a-0c01-48ef-9423-d2e29823399f
+:END:
+#+title: LLM pretrain
+#+date: 2025-11-02
+
+[[id:ab03a99b-2c97-4664-a1e6-680a86721f3a][Large Language Models (LLMs)]]
+
+* minimind
+https://jingyaogong.github.io/minimind/
+https://github.com/jingyaogong/minimind/tree/master

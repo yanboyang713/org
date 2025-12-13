@@ -13,5 +13,3 @@ Its key functions include:
 - *User Data and Metadata*: Uses "user data" (YAML configuration instructions) and "metadata" (cloud platform data) to configure instances.
 - *Consistency and Reusability*: Allows consistent and reliable deployments across multiple instances.
 - *Integration*: Provides the "glue" between launching a cloud instance and connecting to it.
-
-
