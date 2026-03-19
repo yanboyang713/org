@@ -23,7 +23,6 @@ VyOS provides a free routing platform that competes directly with other commerci
 ** High Availability and Load Balancing
 + [[id:e3bd261e-34a6-4c7a-9945-529fb8a363b7][VRRP]] for IPv4 and IPv6, ability to execute custom health checks and transition scripts
 
-
 * Two VyOS routers to create a high availability gateway Example
 ** Scenario Overview
 | Role           | Hostname | LAN IP         | Floating IP    | WAN Interface | LAN Interface | vrid |

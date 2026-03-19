@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       281f0134-aeda-45dd-812d-be3b9fa0fe37
+:END:
+#+title: Jupyter AI
+#+date: 2026-01-21
+
+https://github.com/jupyterlab/jupyter-ai

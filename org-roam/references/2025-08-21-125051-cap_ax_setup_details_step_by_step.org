@@ -4,42 +4,58 @@
 #+title: cAP ax setup details (step by step)
 #+date: 2025-08-21
 
+ALL of configation start from Scratch.
+
 WIFIs manage on local, not [[id:fc8a2d63-e0db-46d9-92e3-63f50c9a08de][CAPsMAN]].
 
-*** Build the LAN side
+* Build the LAN side
 #+begin_src bash
   # Create the LAN bridge
-/interface/bridge add name=lan protocol-mode=rstp
+/interface/bridge add name=LAN protocol-mode=rstp
 
 # Put your Ethernet uplink to the switch into the LAN bridge (adjust ports as needed)
 /interface/bridge/port
-add bridge=lan interface=ether1
+add bridge=LAN interface=ether1
+add bridge=LAN interface=ether2
+add bridge=LAN interface=wifi2
 #+end_src
 
-*** Give the LAN an IP + DHCP server
+* Set DNS
+#+begin_src bash
+  /ip dns set servers=8.8.8.8,8.8.4.4
+  /ip dns set allow-remote-requests=yes
+#+end_src
+
+* Give the LAN an IP + DHCP server
 #+begin_src bash
 # Give the router a LAN IP and a small DHCP server (optional but typical)
 # Use the subnet you like; 192.168.88.0/24 shown here
-/ip address add address=192.168.88.1/24 interface=lan
+/ip address add address=192.168.88.1/24 interface=LAN
 /ip pool add name=dhcp_pool_lan ranges=192.168.88.10-192.168.88.254
-/ip dhcp-server add name=dhcp_lan interface=lan address-pool=dhcp_pool_lan
+/ip dhcp-server add name=dhcp_lan interface=LAN address-pool=dhcp_pool_lan
 /ip dhcp-server network add address=192.168.88.0/24 gateway=192.168.88.1 dns-server=192.168.88.1
 /ip dhcp-server enable dhcp_lan
 #+end_src
 
-*** Configure Wi-Fi station to wahoo (open, hidden)
+* Configure Wi-Fi station to wahoo (open, hidden)
 #+begin_src bash
-  /interface/wifi set wifi1 ssid="wahoo" mode=station disabled=no
+  /interface/wifi/configuration
+  add name=cfg-wahoo mode=station ssid="wahoo" country="United States" security.authentication-types=""
+
+  /interface/wifi
+  set [find name="wifi1"] configuration=cfg-wahoo disabled=no
 #+end_src
 
-*** Get WAN IP via DHCP on wifi1
+* Get WAN IP via DHCP on wifi1
 #+begin_src bash
   /ip/dhcp-client add interface=wifi1 use-peer-dns=yes add-default-route=yes
+  /ip/dhcp-client
+enable [find interface="wifi1"]
 #+end_src
 
-*** NAT + basic firewall
+* NAT + basic firewall
 #+begin_src bash
-  /interface/list add name=WAN
+/interface/list add name=WAN
 /interface/list/member add list=WAN interface=wifi1
 
 /ip/firewall/nat
@@ -47,12 +63,69 @@ add chain=srcnat out-interface-list=WAN action=masquerade comment="WAN via wahoo
 
 /ip/firewall/filter
 add chain=input action=accept connection-state=established,related
-add chain=input action=accept in-interface=lan comment="manage from LAN"
+add chain=input action=accept in-interface=LAN comment="manage from LAN"
 add chain=input action=drop in-interface-list=WAN comment="drop unsolicited from WAN"
 
 add chain=forward action=accept connection-state=established,related
-add chain=forward action=accept in-interface=lan out-interface-list=WAN
+add chain=forward action=accept in-interface=LAN out-interface-list=WAN
 add chain=forward action=drop
-
 #+end_src
+* Create a LAN WIFI
+** Create a security profile (password)
+#+begin_src bash
+  /interface/wifi/security
+  add name=sec-lan authentication-types=wpa2-psk,wpa3-psk passphrase="xxx"
+#+end_src
+** Create an AP configuration profile for LAN Wi-Fi
+#+begin_src bash
+/interface/wifi/configuration
+add name=cfg-lan mode=ap ssid="LAN-WiFi" security=sec-lan country="United States" installation=indoor
+#+end_src
+** Apply it to wifi2 and enable
+#+begin_src bash
+/interface/wifi
+set [find name="wifi2"] configuration=cfg-lan disabled=no
+#+end_src
+** Verify
+#+begin_src bash
+/interface/wifi print detail where name="wifi2"
+/interface/wifi monitor wifi2 once
+/interface/wifi registration-table print
+#+end_src
+
+* Access 192.168.1.x network through [[id:36f2d705-7114-436d-bf36-6450863657c3][Proxmox VE (PVE) main switch MikroTik L009UiGS-RM]] 
+#+begin_src bash
+/ip route add dst-address=192.168.1.0/24 gateway=192.168.88.2 comment="to 192.168.1 via L009"
+#+end_src
+Verify
+#+begin_src bash
+/ip route print where dst-address=192.168.1.0/24
+/ping 192.168.88.2
+/ping 192.168.1.1
+#+end_src
+MikroTik cAP (WinBox)
++ IP → Routes → +
++ Dst. Address: 192.168.1.0/24
++ Gateway: 192.168.88.2
+Apply/OK
+
+** Allow Winbox (TCP 8291) in the MikroTik firewall(s)
+On the MikroTik you are trying to manage (the cAP), allow Winbox from 192.168.1.0/24 (adjust if you already have a structured ruleset):
+#+begin_src bash
+/ip firewall filter add chain=input src-address=192.168.1.0/24 protocol=tcp dst-port=8291 action=accept comment="Allow Winbox from 192.168.1"
+#+end_src
+** Also confirm Winbox service is enabled and (optionally) restricted to your management subnets
+
+#+begin_src bash
+/ip service set winbox disabled=no address=192.168.1.0/24,192.168.88.0/24
+#+end_src
+
+*NOTE*:
++ Connect in Winbox by IP, not by MAC/Neighbors
++ Winbox “Neighbors” discovery is L2/broadcast-based and will not traverse routed subnets. That’s normal.
++ Just type the target device IP (e.g., 192.168.88.1) into “Connect To”.
+
+* [[id:a0788732-b78b-442b-98ba-42c5bddfdeb2][Port Exposing from LAN to WAN]] 
+expose tcp/8006 on WAN to 192.168.1.11:8006 ([[id:d959bbdf-e766-4d5f-a0c5-486e68b5b4e1][Data Center Testbed Design]]'s server 1) on LAN
+expose tcp/3128 for [[id:0407235a-6de7-47de-93a8-074cff1b35ae][SPICE (Simple Protocol for Independent Computing Environments)]] on WAN to 192.168.1.11:8006 (pve's server 1) on LAN.
 

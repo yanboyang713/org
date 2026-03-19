@@ -5,3 +5,6 @@
 #+filetags:
 
 [[id:55f23b66-c353-4562-b4bc-da3df9ddc665][wireless networks]]
+
+[[id:2b132bf8-b177-425d-9de5-183b1d430c99][Session Management Function (SMF)]]
+[[id:404104ca-d644-4244-aad5-ac06c9fd5810][User Plane Function (UPF)]]

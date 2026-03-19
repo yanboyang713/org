@@ -2,9 +2,9 @@
 :ID:       e4fa2843-dc6e-4303-a209-40df1bd10a0f
 :END:
 #+title: docker
-#+filetags:  
-* Docker
+#+filetags:
 
+* Docker
 When we refer to containers, we almost always mean Docker containers (https://www.docker.com/). Docker is the most popular software tool for running programs in containers, which are isolated environments.
 
 Containerization is a kind of virtualization where the scope of the application's resources is limited. This means the application works at its maximum performance level. This is different from full virtualization, where you have to run the full operating system with the corresponding overhead and run your application inside that isolated operating system.

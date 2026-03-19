@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       cb65fc02-b2de-48eb-a95a-5e022cdeb8fa
+:END:
+#+title: Ella Core
+#+date: 2026-02-25
+
+[[id:b355135f-bb4f-473e-bfa2-e0f887ffa9b2][eUPF]]
+* Reference List
+:PROPERTIES:
+:ID:       442c6d4f-d6b9-4198-812a-ff882c4100f5
+:END:
+1. https://docs.ellanetworks.com/

@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       f2409900-95af-4615-b692-82e243118fc8
+:END:
+#+title: Synology
+#+date: 2025-12-23
+
+* Reference List
+1. https://post.smzdm.com/p/al82z7ee/

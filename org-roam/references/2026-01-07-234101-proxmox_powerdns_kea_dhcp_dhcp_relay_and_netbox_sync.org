@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       ea4047a1-892d-4893-b8fe-dc866b1a2a12
+:END:
+#+title: Proxmox, Proxmox SDN, PowerDNS, Kea DHCP, DHCP Relay and NetBox sync
+#+date: 2026-01-07
+
+[[id:77bd7428-f1ee-4306-8d5a-62f38134dfc5][Proxmox VE (PVE)]]
+[[id:0951dad0-d411-4103-8f98-8a77f856d339][Proxmox SDN]]
+[[id:d15d64c4-08d3-48a4-88b1-184a56710400][PowerDNS]]
+[[id:a8fd1452-8453-4aa4-89bc-37c8d22d12c1][Kea DHCP]]
+[[id:3fb5adf6-b8c8-43cd-9726-c1d126458e4e][NetBox: The Network Source of Truth]]
+DHCP Relay

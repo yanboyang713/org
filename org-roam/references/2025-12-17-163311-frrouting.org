@@ -1,0 +1,21 @@
+:PROPERTIES:
+:ID:       fd557d1a-33a5-457b-962d-ae81d7da0644
+:END:
+#+title: FRRouting
+#+date: 2025-12-17
+
+FRRouting (FRR) is an open-source routing software suite that turns a Linux/Unix host (VM, container, bare metal) into a router by running standard routing protocols in user space.
+
+* [[id:77bd7428-f1ee-4306-8d5a-62f38134dfc5][Proxmox VE (PVE)]] 
+** Prereqs on each PVE node (one-time)
+#+begin_src bash
+  # To use the SDN routing integration you need to install the frr-pythontools package on all nodes
+  apt update && apt install -y frr frr-pythontools
+  systemctl restart frr
+  systemctl status frr
+  # Then enable the frr service on all nodes
+  systemctl enable frr.service
+#+end_src
+
+* Reference List
+1. https://pve.proxmox.com/pve-docs/chapter-pvesdn.html#pvesdn_install_frrouting

@@ -18,6 +18,8 @@ Hyprland is a wlroots-based tiling [[id:11743715-9a10-4732-9081-68d0a614cf20][Wa
   sudo make install
 #+end_src
 
+* [[https://wiki.hypr.land/Plugins/Using-Plugins/][plugins]]
+hyprpm
 
 * Configure
 

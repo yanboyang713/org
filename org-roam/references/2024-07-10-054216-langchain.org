@@ -4,10 +4,16 @@
 #+title: LangChain
 
 * What is LangChain?
+:PROPERTIES:
+:ID:       70bd1396-c2f6-42da-8982-e15ba0056129
+:END:
 LangChain is a powerful framework for building applications with LLMs. It provides tools to manage memory, chaining, retrieval, and processing of large text data.
 
 * Key Features of LangChain
+:PROPERTIES:
+:ID:       2313e81f-d878-40d6-b707-53dc912914a9
+:END:
 + Text Chunking & Splitting — Helps break large documents into smaller chunks for LLMs.
 + Memory Management — Allows models to remember context across multiple interactions.
 + [[id:a539c529-5769-4f17-9fb3-c75ef7bd84c4][Retrieval Augmented Generation (RAG)]] — Fetches relevant information before generating responses.
-+ Multi-Model Compatibility — Works with OpenAI, Hugging Face, [[id:8ecb66b1-216b-4eb4-b20a-b9126aebb756][Ollama]], and more.
++ Multi-Model Compatibility — Works with [[id:0b6ed9e0-3147-48fe-a9bc-669481799c77][OpenAI API]], [[id:514b9437-59ad-471d-b0d6-6c118a4590e4][Hugging Face]], [[id:8ecb66b1-216b-4eb4-b20a-b9126aebb756][Ollama]], and more.

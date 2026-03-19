@@ -4,4 +4,16 @@
 #+title: dnsmasq
 #+date: 2025-12-11
 
+* [[id:77bd7428-f1ee-4306-8d5a-62f38134dfc5][Proxmox VE (PVE)]]
+The DHCP integration into the built-in PVE IP Address Management stack currently uses dnsmasq for giving out DHCP leases. Does not support [[id:db3292f7-9665-41fb-bc4d-76ed2be72c99][EVPN on Proxmox SDN]].
 
+To use that feature you need to install the dnsmasq package on every node:
+#+begin_src bash
+apt update
+apt install dnsmasq
+# disable default instance
+systemctl disable --now dnsmasq
+#+end_src
+
+* Reference List
+1. https://pvesdn_install_dhcp_ipam

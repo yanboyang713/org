@@ -4,5 +4,6 @@
 #+title: research
 
 [[id:49b2587b-d6d4-462e-b373-ed39f7fb70b7][research tools]]
-
 [[id:0b1845af-ccc5-47a8-b791-a022d303eaef][PhD Dissertation]]
+[[id:4abdca11-3554-4d65-b114-3d42b47bb140][Ph.D. Qualifying Exam]]
+[[id:ae25b9d4-02b2-4001-b4f8-51e83b3ff93e][NSF proposal]]

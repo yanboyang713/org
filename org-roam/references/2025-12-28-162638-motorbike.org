@@ -1,0 +1,45 @@
+:PROPERTIES:
+:ID:       4c190539-84ed-4594-88ea-cca3430e6912
+:END:
+#+title: motorbike
+#+date: 2025-12-28
+
+* Motobike ECU Optimized Performance
+:PROPERTIES:
+:ID:       82db8d00-ea95-4614-a01f-4cf6a44b058a
+:END:
++ 550performance: https://www.550performance.com/
++ cooberecu: https://cooberecu.com/
+  
+* KTM
+:PROPERTIES:
+:ID:       d1ae1177-8fd8-44ad-9ba3-82a11dc069d5
+:END:
++ 390 Enduro R
+  
+* Suzuki
+:PROPERTIES:
+:ID:       fe9724c0-6b93-4957-bb04-ecd5277085dc
+:END:
++ DR-Z4S
+  
+* Husqvarna
+:PROPERTIES:
+:ID:       300d6d51-be0f-441d-ab44-c1dc34f24c0c
+:END:
++ FE 350s
+  
+* moto morini
+:PROPERTIES:
+:ID:       ca7071e8-701f-44c5-af79-dd12551ac176
+:END:
++ alltrhike 450
+  
+* Honda
+:PROPERTIES:
+:ID:       7c1e3c14-3189-4794-baa2-c50acf291d85
+:END:
++ CRF 300L
+
+* Kawasaki
++ KLX300

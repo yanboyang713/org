@@ -191,6 +191,7 @@ We will use a popular Python script (e.g., netbox-kea-dhcp or a custom script) t
   #+begin_src bash
   PYTHONPATH=src python -m netboxkea.entry_point --help
   #+end_src
+
   If that works, you can create a convenient global CLI that always uses the code in this clone:
 #+begin_src bash
   cat >/usr/local/bin/netbox-kea-dhcp <<'EOF'
@@ -236,6 +237,13 @@ Edit /etc/netbox-kea-dhcp.toml and set at least:
   #status = "dhcp"        # <-- REMOVE or change this line
   status = "active"        # or another valid status
 #+end_src
+- *subnet_prefix_map*
+  #+begin_src file
+#[subnet_prefix_map]
+#"option-data.routers" = "custom_fields.dhcp_option_data_routers"
+#"option-data.domain-search" = "custom_fields.dhcp_option_data_domain_search"
+#"option-data.domain-name-servers" = "custom_fields.dhcp_option_data_domain_name_servers"
+  #+end_src
 
 **** Install the systemd unit
 Copy the example unit to /etc/systemd/system and adapt it:

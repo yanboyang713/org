@@ -4,3 +4,5 @@
 #+title: GPU
 
 [[id:440cbb9d-7f83-4b6f-b5ec-a3e0bf996152][amd]]
+
+[[id:60cfc3c0-1517-4471-8dda-d3c7e35b0f57][intel arc b580]]

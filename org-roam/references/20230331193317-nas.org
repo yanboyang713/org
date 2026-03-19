@@ -4,4 +4,5 @@
 #+title: NAS
 #+filetags:  
 
-[[id:4c9071be-e1b9-406b-8ab1-3dd4da6a3ecb][xpenology]]
++ [[id:4c9071be-e1b9-406b-8ab1-3dd4da6a3ecb][xpenology]]
++ [[id:f2409900-95af-4615-b692-82e243118fc8][Synology]] 

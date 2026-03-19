@@ -4,7 +4,34 @@
 #+title: logs system
 #+filetags:
 
-+ Elasticsearch
-+ [[https://github.com/grafana/loki][Loki]] is a new project that claims "like Prometheus, but for logs."
+* what is logs system
+:PROPERTIES:
+:ID:       68f2d101-588f-4391-8758-b1d24d0bb7ab
+:END:
+A logs system is the tooling and infrastructure used to collect logs from applications/hosts, ship them to a central place, optionally parse/enrich them, store/index them, and make them searchable (often with dashboards and alerting) for debugging, operations, and security.
 
+Common building blocks:
+- Collection agents (e.g., Fluent Bit, Filebeat, Vector)
+- Ingestion/transport (e.g., syslog, HTTP, Kafka, OTLP)
+- Processing pipelines (e.g., Logstash, Fluentd, Vector transforms)
+- Storage/index (e.g., Elasticsearch/OpenSearch, Loki, ClickHouse)
+- Query/visualization/alerting (e.g., Kibana, Grafana)
+
+* Log system examples
+:PROPERTIES:
+:ID:       ca5bb82b-9127-4968-ad1b-54574b4cfc1b
+:END:
++ [[id:8e2af5fe-4e4c-467c-8d19-2bd4361a0001][Amazon Elasticsearch]]
++ [[https://github.com/grafana/loki][Loki]] is a new project that claims "like [[id:ebc7a85b-cb33-4b29-93f9-0c2d5215bc7a][Prometheus]], but for logs."
 + [[id:02a1e877-d51e-4f53-a11d-510fc171d800][Datadog]]
++ [[https://opensearch.org/][OpenSearch]]
++ [[https://www.elastic.co/elastic-stack/][Elastic Stack (ELK)]]
++ [[https://www.splunk.com/][Splunk]]
++ [[https://www.graylog.org/][Graylog]]
++ [[https://www.sumologic.com/][Sumo Logic]]
++ [[https://www.papertrail.com/][Papertrail]]
++ [[https://www.loggly.com/][Loggly]]
++ [[https://aws.amazon.com/cloudwatch/][AWS CloudWatch Logs]]
++ [[https://learn.microsoft.com/azure/azure-monitor/logs/data-platform-logs][Azure Monitor Logs (Log Analytics)]]
++ [[https://cloud.google.com/logging][Google Cloud Logging]]
++ [[https://www.rsyslog.com/][rsyslog]] / [[https://www.syslog-ng.com/][syslog-ng]] (host syslog daemons)

@@ -1,0 +1,20 @@
+:PROPERTIES:
+:ID:       148820c2-49b2-4816-bf48-9a5320b4a54b
+:END:
+#+title: Ignition
+#+date: 2025-12-30
+
+Ignition is the “first-boot provisioning” system used by the CoreOS family (including CentOS Stream CoreOS / SCOS). Conceptually, it is the equivalent of “[[id:4940396d-368e-47e5-be45-d777bc238292][cloud-init]]” for CoreOS, but it is not cloud-init and it behaves differently.
+
+* What Ignition does
+
+Ignition reads a configuration file (JSON) very early in the boot process (in the initramfs) and uses it to provision the machine. Typical actions include: 
++ Partitioning and formatting disks
++ Creating files and directories (including kubelet/system configs)
++ Creating users and injecting SSH keys
++ Enabling or creating systemd units
++ Laying down network configuration (depending on how it is supplied)
+
+* Key behavioral differences vs cloud-init
++ Runs only on first boot and is intended for provisioning, not ongoing configuration management. 
++ Encourages an immutable infrastructure mindset: if you want different machine configuration, you typically reprovision (or let the cluster manage changes), rather than mutate the node repeatedly.

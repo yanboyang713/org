@@ -3,3 +3,9 @@
 :END:
 #+title: mikrotik
 #+filetags:
+
+* Introduction
+MikroTik is a networking vendor best known for [[id:c2d2bf9b-7c0e-499e-8606-ae85e8506cf0][RouterOS]] (their router/switch operating system) and RouterBOARD hardware. It’s commonly used for routing, switching, firewalling, VPNs, and wireless ([[id:cff18499-6583-4eb7-bf83-b35e8c4f714b][AP Controller (CAPsMAN)]]) in SOHO, labs, and small/medium ISP deployments.
+
+- Website: https://mikrotik.com/
+- RouterOS docs: https://help.mikrotik.com/docs/display/ROS/RouterOS

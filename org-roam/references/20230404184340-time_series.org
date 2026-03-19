@@ -1,10 +1,52 @@
 :PROPERTIES:
 :ID:       b2377ddc-9d91-4c8e-a4d8-21fabf961ee8
 :END:
-#+title: Time Series
+#+title: Time Series analysis
 #+filetags:
 
-[[id:ca02b3b4-ef28-424f-b9c9-43b2bd884aad][Notation]]
+* Overview
+A time series is a sequence of observations indexed by time (or by an ordered index that represents time). Time series may be *univariate* (one variable over time) or *multivariate* (multiple variables observed jointly).
 
-* Reference List
-1. https://www.amazon.com/Time-Forecasting-using-Deep-Learning/dp/9391392571/ref=asc_df_9391392571/?tag=hyprod-20&linkCode=df0&hvadid=532387267820&hvpos=&hvnetw=g&hvrand=12428709593327702844&hvpone=&hvptwo=&hvqmt=&hvdev=m&hvdvcmdl=&hvlocint=&hvlocphy=9009731&hvtargid=pla-1461594309584&psc=1&mcid=6a0b6e37078f3c179b9a99ff3d56b518&gclid=CjwKCAiAmsurBhBvEiwA6e-WPNc0mvxJgLlrd-tUt_bVsL5GB0Gu5QdwKg3goawRH9q-MMK3KhFkZhoCeBYQAvD_BwE
+Key properties that often matter in practice include sampling frequency, missingness/irregular sampling, seasonality, trends, and temporal dependence (autocorrelation).
+
+* Core Concepts
+- Indexing and sampling: timestamps, frequency, time zones, and alignment across sources
+- Components: trend, seasonality, cycles, residual/noise (see decomposition notes)
+- Stationarity: whether the series’ distribution changes over time
+- Lag/lead structure: autocorrelation, partial autocorrelation, and lag features
+- Leakage: train/test splits must respect time order
+
+* Common Tasks
+- Exploratory time-series analysis (structure, periodicity, regime shifts)
+- Forecasting (point forecasts and prediction intervals)
+- Classification (including imbalanced time-series classification)
+- Anomaly detection (point/contextual/collective anomalies)
+- Preprocessing: smoothing, decomposition, imputation, normalization
+
+* Practical Workflow (Checklist)
+1. Define the problem: target, horizon, granularity, and acceptable latency.
+2. Build the dataset: collect, align timestamps, deduplicate, and handle missing data.
+3. Establish baselines: naive/seasonal naive, moving average, simple AR/ARIMA.
+4. Train and evaluate: rolling or blocked evaluation; avoid feature leakage.
+5. Deploy and monitor: drift, data quality checks, alerting, and retraining triggers.
+
+* Notation
+- [[id:ca02b3b4-ef28-424f-b9c9-43b2bd884aad][Time Series Notation]]
+
+* Related Notes
+- [[id:0d4a9136-e9cc-4fdf-ad59-a15f52f3b562][Minority oversampling for imbalanced time series classification]]
+- [[id:632ab9ee-b7d2-4504-97e2-25009469c495][time series forecasting]]
+- [[id:e9a34320-104e-41a8-b82e-d5df0f4f0596][Multivariate Time Series]]
+- [[id:efeecf0a-4fd6-40e8-9f8a-01f88d66a41e][SOFTS: Efficient Multivariate Time Series Forecasting with Series-Core Fusion]]
+- [[id:525bb3f4-6fea-4516-a6fd-5ce159d09bc4][Multivariate Time Series Anomaly Detection]]
+- [[id:57c5c5ee-0e5c-461f-ad84-529e1baf94bb][Assessment of Accuracy Metrics for Time Series Forecasting]]
+- [[id:2584d297-c6a7-4add-a629-bccedde9060b][Time Series Analysis vs Forecasting]]
+- [[id:e66b8569-3f71-440c-83bd-4128d62c5cc9][Time series ETL (Extract, Transform, Load) Decomposition]]
+- [[id:c78dca1f-9072-4ef4-b120-81b8d69f9c15][Smoothing Techniques for time series data]]
+- [[id:97488e52-310b-4581-b312-a27c208e1f7e][TimesFM]]
+- [[id:c085cc0e-d535-426b-8e71-5d1b82880f40][Large Language Models for Time Series: A Survey]]
+- [[id:cb8b4f66-a3f9-4079-86fc-0577f080a58c][Deep Learning for multivariate time series data Anomaly Detection]]
+- [[id:955c1a91-a8c5-45ad-ae0a-4d95d8ce5869][TimeScaleDB]]
+
+* References
+- [[https://www.amazon.com/Time-Forecasting-using-Deep-Learning/dp/9391392571/][Time Series Forecasting using Deep Learning (Amazon)]]

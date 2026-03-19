@@ -105,6 +105,98 @@ Edit the configuration file /etc/powerdns/pdns.conf
 
 *Important:* If PowerDNS fails to start after configuration (e.g., with an "Address already in use" error), please refer to the [[#pdns.service-fails-with-address-already-in-use][Troubleshooting]] section for common solutions related to port conflicts.
 
+* Set default upstream forwarders
+You need to modify the recursor.conf file. This tells PowerDNS to send any queries it cannot resolve itself.
+** Check if the Recursor is installed
+In many distributions (Ubuntu/Debian), the Authoritative Server and the Recursor are separate packages. Run this to see if the recursor binary exists:
+#+begin_src bash
+which pdns_recursor
+#+end_src
+If it returns nothing, you need to install the recursor:
+#+begin_src bash
+apt update
+apt install pdns-recursor
+#+end_src
+** Move the Authoritative Server to Port 5300
+1. Open your Authoritative configuration: /etc/powerdns/pdns.conf.
+2. Locate the local-port setting and change it
+   #+begin_src file
+local-port=5300
+   #+end_src
+3. Restart the Authoritative server
+#+begin_src bash
+systemctl restart pdns
+#+end_src
+
+** Enable pdns-recursor
+#+begin_src bash
+systemctl daemon-reload
+systemctl enable pdns-recursor
+systemctl start pdns-recursor
+#+end_src
+
+** Configure PowerDNS Recursor
+:PROPERTIES:
+:ID:       a9241d76-dd92-4740-976b-0987da68b79f
+:END:
+You will primarily use the forward-zones-recurse setting. This is preferred over standard forward-zones because it ensures the recursor treats the upstream server as a recursive resolver rather than an authoritative one, which is more reliable for general internet browsing.
+
+1. Open /etc/powerdns/recursor.conf.
+2. Ensure it looks like this:
+#+begin_src yaml
+  dnssec:
+    validation: process
+    trustanchorfile: /usr/share/dns/root.key
+    negative_trustanchors:
+      - name: "okd.lan"
+        reason: "internal unsigned zone"
+      - name: "testbed.com"
+        reason: "internal unsigned zone"
+
+  recursor:
+    hint_file: /usr/share/dns/root.hints
+    include_dir: /etc/powerdns/recursor.d
+    security_poll_suffix: ""
+
+    # Forward EVERYTHING else to upstream recursive resolvers (RD=1)
+    forward_zones_recurse:
+      - zone: "."
+        forwarders:
+          - 128.143.2.7
+          - 128.143.3.7
+          - 128.143.22.119
+
+    # Forward your internal authoritative zone to your local auth server (RD=0)
+    forward_zones_file: /etc/powerdns/forward-zones.yml
+  incoming:
+    listen:
+      - 127.0.0.1:53
+      - 0.0.0.0:53
+    allow_from:
+      - 0.0.0.0/0
+          #+end_src
+/etc/powerdns/forward-zones.yml
+#+begin_src file
+- zone: "testbed.com"
+  forwarders:
+    - 127.0.0.1:5300
+
+- zone: "okd.lan"
+  forwarders:
+    - 127.0.0.1:5300
+#+end_src
+
+** Apply the Changes
+After saving the file, restart the recursor service to apply the configuration:
+#+begin_src bash
+systemctl restart pdns-recursor
+#+end_src
+** Final Tests
+#+begin_src bash
+  dig @127.0.0.1 google.com A
+  dig @192.168.1.23 google.com A
+#+end_src
+
 * Start and enable PowerDNS
 #+begin_src bash
   systemctl enable --now pdns
@@ -188,7 +280,6 @@ When configuring a subnet, DNS settings like the PowerDNS controller and the par
 
 * *Apply SDN Configuration*:
 Go to `Datacenter -> SDN` and click the *Apply* button.
-   
 
 * Verification
 Finally, create a VM to see if DNS records are generated automatically.

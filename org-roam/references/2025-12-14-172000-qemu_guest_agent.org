@@ -1,0 +1,29 @@
+:PROPERTIES:
+:ID:       f4ceb743-88b4-43cb-b014-2dd8ecd61924
+:END:
+#+title: qemu-guest-agent
+#+date: 2025-12-14
+
+qemu-guest-agent is a small service you install inside a QEMU/KVM VM so [[id:77bd7428-f1ee-4306-8d5a-62f38134dfc5][Proxmox VE (PVE)]] can query the guest for things like IP addresses,
+  clean shutdown, filesystem freeze for backups, etc. Many “Proxmox → NetBox” sync tools rely on it to reliably discover VM interface
+  IPs (via network-get-interfaces).
+
+  How to check if a VM already has it
+
+  - In Proxmox UI: VM → Options → QEMU Guest Agent (should be enabled), and on the VM Summary you often see guest IPs when it’s
+    working.
+  - On the Proxmox node shell: qm agent <VMID> ping (works only if the agent is installed + running + enabled).
+
+  How to install
+
+  - Debian/Ubuntu VM:
+      - sudo apt update
+      - sudo apt install -y qemu-guest-agent
+      - sudo systemctl enable --now qemu-guest-agent
+      - Then in Proxmox UI: VM → Options → QEMU Guest Agent → Enabled (reboot VM if needed)
+  - RHEL/Alma/Rocky VM:
+      - sudo dnf install -y qemu-guest-agent
+      - sudo systemctl enable --now qemu-guest-agent
+  - Windows VM:
+      - Install QEMU Guest Agent from the VirtIO guest tools ISO (often named virtio-win-guest-tools.exe / qemu-ga MSI depending on
+        bundle), then enable it in Proxmox as above.

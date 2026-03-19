@@ -1,12 +1,12 @@
 :PROPERTIES:
 :ID:       d959bbdf-e766-4d5f-a0c5-486e68b5b4e1
 :END:
-#+title: Data Center Testbed Design
+#+title: Data Center Testbed
 
 * Introduction and Objectives
 This Proxmox VE–based, multi-node testbed supports research and prototyping across [[id:60bc45fd-dfc3-4b53-852a-46ff8d77f94c][Cellular Networking]], [[id:a2521a14-ee37-43d2-8667-866535145a7f][network measurement]], [[id:2af07359-aec7-4c5b-aa36-cad4688f915d][Software-Defined Networking (SDN)]], and [[id:d8b28e4b-51fa-42ab-a630-c86482854324][Network Function Virtualization (NFV)]]. It offers realistic north–south connectivity via dual WWAN gateways, flexible east–west segmentation using EVPN overlays, internal DNS, and a Kubernetes/OKD substrate for deploying [[id:6773c62d-c676-4817-88e9-9419fcd0a37c][Aether 5G]] components. The environment emphasizes repeatability, observability, and safe remote management.
 
-Objectives:
+** Objectives
 - Enable reproducible, isolated experiments for Cellular Networking, SDN, and NFV research.
 - Support precise timing via [[id:1ac8dc0c-837f-4168-83cc-0ff7d5eb86ba][PTP]].
 - Provide resilient egress using dual [[id:fe7713cb-166a-46c1-8a1d-8ceca7e61691][VyOS]] gateways with [[id:e3bd261e-34a6-4c7a-9945-529fb8a363b7][VRRP]].
@@ -15,21 +15,37 @@ Objectives:
 - Centralize service discovery with [[id:66901bf0-4a13-4d45-bcfc-34be8deb8248][BIND 9]] DNS.
 - Ensure safe access via a dedicated management network using [[id:667704a4-b26b-4f05-bb0e-20f44d6d379b][iDRAC]] and [[id:7b3d4c7a-30a8-4f0f-a587-fdbb39109e57][MikroTik]] gear.
 
-Access:
+** Access platform and VMs
+*** Platform
 - Platform: All servers run [[id:77bd7428-f1ee-4306-8d5a-62f38134dfc5][Proxmox VE]] (Debian-based).
+- PVE web UI access from management Gateway: https://pve.yanboyang.com:8006/
+#+begin_comment
 - PVE web UI access from management Gateway: https://172.27.135.44:8006/
 - PVE web UI access from [[id:a4beb931-26de-435f-b122-7b65758e5c6b][wahoo]] Primary Gateway: https://172.27.161.210:8006/
 - PVE web UI access from [[id:a4beb931-26de-435f-b122-7b65758e5c6b][wahoo]] Secondary Gateway: https://172.27.132.125:8006/
+#+end_comment
+
+*** [[id:b0ce2dca-a29b-4bb0-b064-ea56912cd394][Proxmox LXC]] (recommend)
+Also, support [[id:9d22a7aa-86b9-4123-8a13-3bcc5d13b80d][Open Container Initiative (OCI)]], such as [[id:e4fa2843-dc6e-4303-a209-40df1bd10a0f][docker]].
+
+*** [[id:4940396d-368e-47e5-be45-d777bc238292][Virtual Machine (VM)]]  
++ From [[id:77bd7428-f1ee-4306-8d5a-62f38134dfc5][Proxmox VE (PVE)]] Web, recommendation for the CLI, such as [[id:b0ce2dca-a29b-4bb0-b064-ea56912cd394][Proxmox Linux Containers (LXC)]].
++ Use [[id:7a1cf5f2-9e44-4d3a-a272-a4a1b92c7e1c][SPICE (Simple Protocol for Independent Computing Environments)]] for the graphical interface.
 
 * Physical Topology and Components
 
+** Topology overview
+A dedicated management network for iDRAC access and PVE web UI access; a Proxmox VE LAN with dual [[id:fe7713cb-166a-46c1-8a1d-8ceca7e61691][VyOS]] WWAN gateways and one Wired [[id:fe7713cb-166a-46c1-8a1d-8ceca7e61691][VyOS]] gateway to CS network; [[id:db3292f7-9665-41fb-bc4d-76ed2be72c99][EVPN]] overlays for tenant/lab networks; and a [[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]]/[[id:eebf10a7-c17a-4d17-a313-c9d620028cfa][OKD]] cluster for [[id:6773c62d-c676-4817-88e9-9419fcd0a37c][Aether 5G]].
+
 [[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1764729697/testbed_2_wlunjv.png]]
 
-Topology overview: a dedicated management network for iDRAC access and PVE web UI access; a Proxmox VE LAN with dual VyOS WWAN gateways; EVPN overlays for tenant/lab networks; and a Kubernetes/OKD cluster for Aether 5G.
-
 ** Management Network
-*** [[id:7b3d4c7a-30a8-4f0f-a587-fdbb39109e57][MikroTik]] cAP ax
+[[id:7b3d4c7a-30a8-4f0f-a587-fdbb39109e57][MikroTik]] cAP ax is the only one Internet NAT. No NAT between the two private LANs (192.168.1.x and 192.168.88.x) on [[id:36f2d705-7114-436d-bf36-6450863657c3][Proxmox VE (PVE) main switch MikroTik L009UiGS-RM]].
 
+*** [[id:7b3d4c7a-30a8-4f0f-a587-fdbb39109e57][MikroTik]] cAP ax (Gateway between Management Network and "wahoo")
+:PROPERTIES:
+:ID:       542eeede-589c-460b-9af1-e59d9f7e63bd
+:END:
 - Model: cAPGi-5HaxD2HaxD-US
 - FCC ID: TV7CPG52X; IC: 7442A-CAPAX
 - Ethernet MAC: 78:9A:18:59:78:80
@@ -38,8 +54,8 @@ Topology overview: a dedicated management network for iDRAC access and PVE web U
 - Serial: HF2098EMRR7/343/US
 - Wi‑Fi1 joins hidden SSID “[[id:a4beb931-26de-435f-b122-7b65758e5c6b][wahoo]]” as a station and obtains an IP from the UVA Wi‑Fi DHCP (current: 172.27.135.44).
 - Bridge groups ether1, ether2, and Wi‑Fi2 as LAN; bridge IP: 192.168.88.1/24; NAT to Wi‑Fi1.
-- [[id:a0788732-b78b-442b-98ba-42c5bddfdeb2][Port‑forward]] TCP 8006 from WAN (Wi‑Fi1) to 192.168.88.2.
-- Wi‑Fi2 provides LAN SSID `myLAN`.
+- [[id:a0788732-b78b-442b-98ba-42c5bddfdeb2][Port‑forward]] TCP 8006 from WAN (Wi‑Fi1) to 192.168.1.11
+- Wi‑Fi2 provides LAN SSID *LAN-WiFi*.
 - Details: [[id:78a99de0-3b39-4f8e-83b9-212f3723f0b1][cAP ax setup details (step by step)]]
 
 *** [[id:7b3d4c7a-30a8-4f0f-a587-fdbb39109e57][MikroTik]] L009UiGS-2HaxD-IN
@@ -52,33 +68,37 @@ Topology overview: a dedicated management network for iDRAC access and PVE web U
 
 ** [[id:77bd7428-f1ee-4306-8d5a-62f38134dfc5][Proxmox VE]] Cluster Network
 
-*** [[id:7b3d4c7a-30a8-4f0f-a587-fdbb39109e57][MikroTik]] L009UiGS-RM
+*** [[id:77bd7428-f1ee-4306-8d5a-62f38134dfc5][Proxmox VE (PVE)]] main switch [[id:7b3d4c7a-30a8-4f0f-a587-fdbb39109e57][MikroTik]] [[id:9e995513-6ee6-45d8-b224-080c85d13264][L009UiGS-RM]]
+:PROPERTIES:
+:ID:       36f2d705-7114-436d-bf36-6450863657c3
+:END:
 - Serial: HFE097YP05K/346
-
-**** WAN
-- IP: 192.168.88.2/24
-- Netmask: 255.255.255.0
-- DNS: 8.8.8.8, 8.8.4.4
 
 **** LAN
 - Gateway/LAN IP: 192.168.1.1/24
 - Netmask: 255.255.255.0
 
-[[id:a0788732-b78b-442b-98ba-42c5bddfdeb2][Port‑forward]] TCP 8006 from WAN to 192.168.1.11 (PVE on server1).
++ No WAN
++ No masquerade NAT. Also, does not any NAT.
++ Details: [[id:3b77d5b5-6fc7-4f52-b828-b86d8ef8362e][main switch details]] 
 
 *** DIY server
 - Hostname: server1.testbed.com
 - IP: 192.168.1.11/24
-- Gateway: 192.168.1.1
+- Gateway: 192.168.1.4
 - DNS: 192.168.1.1
-
+- Hard Disks:
+  + SanDisk (PVE: local and local-lvm): SIZE - 238.5G; MODEL - CWDISK 256G; SERIAL - J150404B07502
+  + Western Digital (Not in used): SIZE - 1.8T; MODEL - WDC WD20EFAX-68FB5N0; SERIAL - WD-WX91A19E6J3N
+    
 *** T470s
 - Hostname: server2.testbed.com
 - IP: 192.168.1.12/24
-- Gateway: 192.168.1.1
+- Gateway: 192.168.1.4
 - DNS: 192.168.1.1
-
-Wi‑Fi card:
+- Hard Disks:
+  + SAMSUNG (PVE: local and local-lvm): SIZE - 238.5G; MODEL - MZVLW256HEHP-000L7; SERIAL - S35ENA1K581888
+Wi‑Fi card ([[id:81f3a757-0a43-402b-a418-79ea92e93562][proxmox PCI passthrough]] for [[id:fe7713cb-166a-46c1-8a1d-8ceca7e61691][VyOS]] Gateway):
 - Description: Wireless interface
 - Product: Intel Wireless 8260
 - Vendor: Intel Corporation
@@ -89,14 +109,16 @@ Wi‑Fi card:
 *** T420s
 - Hostname: server3.testbed.com
 - IP: 192.168.1.13/24
-- Gateway: 192.168.1.1
+- Gateway: 192.168.1.4
 - DNS: 192.168.1.1
-
+- Hard Disks:
+  + INTEL (PVE: local and local-lvm): SIZE - 223.6G; MODEL - SSDSC2KW240H6; SERIAL - CVLT627101DQ240CGN
+    
 3G card:
 - Logical name: wwp0s29u1u4
 - MAC: ba:49:c2:37:84:ee
 
-Wi‑Fi card:
+Wi‑Fi card ([[id:81f3a757-0a43-402b-a418-79ea92e93562][proxmox PCI passthrough]] for [[id:fe7713cb-166a-46c1-8a1d-8ceca7e61691][VyOS]] Gateway):
 - Model: Centrino Advanced‑N 6205 [Taylor Peak]
 - Vendor: Intel Corporation
 - Logical name: wlp3s0
@@ -105,16 +127,24 @@ Wi‑Fi card:
 *** GPU PC
 - Hostname: server4.testbed.com
 - IP: 192.168.1.14/24
-- Gateway: 192.168.1.1
+- Gateway: 192.168.1.4
 - DNS: 192.168.1.1
 - GPU: Nvidia GeForce RTX 2070
-
+- Hard Disks:
+  + HGST Ultrastar (PVE: local and local-lvm): SIZE - 465.8G; MODEL - HUSMR1650ASS201; SERIAL - 0QY10YMA
+ 
 *** Dell R730 Server
 - Hostname: server5.testbed.com
 - IP: 192.168.1.15/24
-- Gateway: 192.168.1.1
+- Gateway: 192.168.1.4
 - DNS: 192.168.1.1
 - GPU: NVIDIA Corporation GK104GL [GRID K2]
+- Hard Disks:
+  + Crucial (PVE: local and local-lvm): SIZE - 465.8G; MODEL - CT500P1SSD8; SERIAL - 1942E223FD79
+    + [[id:1bdbe92c-0476-4c1b-95d2-dc7e0388a51d][ZFS pool]]:
+      - sdb    1.1T *X425_STBTE1T2A10* Z4005ZAH sas
+      - sdc    1.1T *X425_STBTE1T2A10* S400N4TC sas
+      - sdd    1.1T *X425_STBTE1T2A10* Z40053QL sas
 
 * Services
 ** [[id:7bab7928-237d-4784-a42f-b85ef6874b9b][Domain Name Service (DNS)]] 
@@ -127,8 +157,15 @@ DNS based on [[id:66901bf0-4a13-4d45-bcfc-34be8deb8248][BIND 9]].
 [[id:db3292f7-9665-41fb-bc4d-76ed2be72c99][EVPN]] DNS [[id:d15d64c4-08d3-48a4-88b1-184a56710400][PowerDNS]] 
 192.168.1.23/24
 
+** [[id:3fb5adf6-b8c8-43cd-9726-c1d126458e4e][NetBox]]
++ IP: 192.168.1.26/24
+  
+*** [[id:3753bcb5-09f9-44ab-b9e9-b767b7d17c0a][Proxmox NetBox Sync]]
++ IP: 192.168.1.27/24
++ Hostname: pve-netbox-sync
++ Gateway: 192.168.1.4
+
 ** [[id:e495805e-5687-4c21-8fbe-98c683b2fc18][DHCP]] 
-[[id:3fb5adf6-b8c8-43cd-9726-c1d126458e4e][NetBox]] IP: 192.168.1.24/24
 [[id:a8fd1452-8453-4aa4-89bc-37c8d22d12c1][Kea DHCP]] IP: 192.168.1.25/24
 
 ** [[id:fe7713cb-166a-46c1-8a1d-8ceca7e61691][VyOS]] [[id:049298d5-7b83-4ce2-8cfe-c6e50bf141a7][WWAN - External Network]] Gateway (UVA's [[id:a4beb931-26de-435f-b122-7b65758e5c6b][wahoo]])
@@ -159,10 +196,7 @@ Notes:
 1. DNS: [[id:66901bf0-4a13-4d45-bcfc-34be8deb8248][BIND 9]] provides external DNS records for Kubernetes control-plane nodes. The cluster uses internal DNS (e.g., CoreDNS) for pods and services.
 2. Networking: CNI is Cilium (eBPF). The cluster network is separate from the physical topology; use [[id:e7b30b16-d942-4c41-ba19-14245c12a572][BGP]] if advertising pod/service CIDRs to the underlay is required.
 3. Load Balancer: HAProxy fronts the Kubernetes API and balances across control-plane nodes.
-
-* [[id:c435c832-af13-4327-b4f4-1433208aa8e6][Bastion Host]]
-[[id:836940ff-9e16-4f32-bae4-1000cfe80138][Teleport]] is the [[id:c435c832-af13-4327-b4f4-1433208aa8e6][bastion host]].
-
+   
 * [[id:1ac8dc0c-837f-4168-83cc-0ff7d5eb86ba][Precision Time Protocol (PTP)]] Synchronization
 PTP ensures consistent, sub‑millisecond time synchronization across hosts to support accurate measurements and time‑sensitive 5G components.
 

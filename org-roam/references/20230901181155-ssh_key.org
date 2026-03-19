@@ -1,17 +1,30 @@
 :PROPERTIES:
 :ID:       b091635c-19ca-4bf6-88c3-a672a46dc66d
 :END:
-#+title: ssh key
+#+title: SSH key
 #+filetags:
 
-[[id:278645d6-efd7-4127-a748-e309c118efbe][security]]
+This note covers how to generate SSH keys, list public keys, and use a key to log in [[id:278645d6-efd7-4127-a748-e309c118efbe][security]].
 
-* Create
+* Generate an SSH key
 #+begin_src bash
-ssh-keygen -f username -t rsa -b 4096 -C 'username'
+  # Recommended: Ed25519
+  ssh-keygen -t ed25519 -a 64 -C "you@example.com"
+
+  # With a custom filename (in the current directory)
+  ssh-keygen -t ed25519 -a 64 -C "you@example.com" -f username
+
+  # RSA for legacy compatibility
+  ssh-keygen -t rsa -b 4096 -C "you@example.com"
 #+end_src
 
-* login
+* List existing SSH public keys
+#+begin_src console
+$ ls -l ~/.ssh/*.pub
+-rw-r--r-- 1 user user 104 Dec 25 01:21 /home/user/.ssh/id_ed25519.pub
+#+end_src
+
+* Log in with a key
 #+begin_src bash
-ssh -i private_key username@server
+  ssh -i ~/.ssh/id_ed25519 user@server
 #+end_src

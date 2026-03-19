@@ -2,8 +2,45 @@
 :ID:       2af07359-aec7-4c5b-aa36-cad4688f915d
 :END:
 #+title: Software-Defined Networking (SDN)
+#+date: 2025-04-10
 
-Software-defined networking (SDN) is an approach to network management that uses abstraction to enable dynamic and programmatically efficient network configuration to create grouping and segmentation while improving network performance and monitoring in a manner more akin to cloud computing than to traditional network management.[1] SDN is meant to improve the static architecture of traditional networks and may be employed to centralize network intelligence in one network component by disassociating the forwarding process of network packets (data plane) from the routing process (control plane).[2] The control plane consists of one or more controllers, which are considered the brains of the SDN network, where the whole intelligence is incorporated. However, centralization has certain drawbacks related to security,[1] scalability and elasticity.
+Software-Defined Networking (SDN) is an approach to networking where the *control plane* (decision-making) is decoupled from the *data plane* (packet forwarding), enabling the network to be configured and automated through software. SDN typically introduces a logically centralized controller (or a cluster of controllers) that programs forwarding devices via well-defined APIs, making it easier to express intent and enforce policy consistently across the network.
+
+* Key Ideas
++ *Separation of planes:* devices focus on forwarding; controllers compute policy and paths.
++ *Logical centralization:* a “single” control view can be achieved with distributed controllers.
++ *Programmability and automation:* network behavior is exposed via APIs rather than per-box CLI.
++ *Abstraction:* higher-level policies map to lower-level device configuration and forwarding state.
+
+* Architecture (High Level)
++ *Data plane:* switches/routers that forward packets based on flow tables or forwarding rules.
++ *Control plane:* SDN controller(s) that compute state, policy, and paths.
++ *Southbound API:* controller → devices (examples: OpenFlow, NETCONF/YANG, gNMI, P4Runtime).
++ *Northbound API:* controller → apps/automation (often REST/gRPC; policy and intent interfaces).
++ *East/West API:* controller ↔ controller (state synchronization, clustering, federation).
+
+* Benefits
++ Faster change and safer automation (versioned configs, CI/CD-style workflows).
++ Consistent policy enforcement (microsegmentation, ACLs, QoS, routing intent).
++ Better observability and control-loop automation (telemetry → analysis → action).
++ Enables network virtualization/overlays (common in modern data centers and clouds).
+
+* Challenges / Trade-offs
++ *Scalability and resiliency:* controller performance, clustering, failure domains.
++ *Security:* controller/API protection, blast radius of misconfiguration, supply-chain risk.
++ *Interoperability:* device feature parity and vendor-specific behaviors.
++ *Troubleshooting complexity:* overlay + underlay interactions; distributed state debugging.
+
+* Common Use Cases
++ Data center fabrics (automation, segmentation, traffic engineering).
++ WAN/SD-WAN (centralized policy, path control, intent-based routing).
++ Campus networks (policy-driven access, segmentation, simplified operations).
++ NFV/service chaining (steering flows through virtualized network functions).
+
+* Related Notes
++ [[id:0951dad0-d411-4103-8f98-8a77f856d339][Proxmox SDN]]
++ [[id:db3292f7-9665-41fb-bc4d-76ed2be72c99][Setting Up EVPN on Proxmox SDN]]
 
 * Reference List
 1. https://en.wikipedia.org/wiki/Software-defined_networking
+2. https://www.rfc-editor.org/rfc/rfc7426

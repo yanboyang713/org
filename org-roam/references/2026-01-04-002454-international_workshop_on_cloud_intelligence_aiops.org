@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       2222757f-a56c-401a-b37a-991535ee6307
+:END:
+#+title: International Workshop on Cloud Intelligence / AIOps
+#+date: 2026-01-04
+
+[[id:cf4b4324-b5b9-48cf-a432-a1e90a66c1c6][AIOps]]
+
+* Reference List
+1. https://cloudintelligenceworkshop.org/CFP.html
+2. https://aiops26.hotcrp.com/

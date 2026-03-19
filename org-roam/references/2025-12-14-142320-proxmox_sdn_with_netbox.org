@@ -1,0 +1,50 @@
+:PROPERTIES:
+:ID:       14d66bcd-f379-4b73-9ddc-d1a636ba44c4
+:END:
+#+title: Proxmox SDN with NetBox
+#+date: 2025-12-14
+
+* Pre-requisite
++ [[id:77bd7428-f1ee-4306-8d5a-62f38134dfc5][Proxmox VE (PVE)]]
++ [[id:3fb5adf6-b8c8-43cd-9726-c1d126458e4e][NetBox: The Network Source of Truth]]
++ [[id:d357f0b3-cafb-4142-b6f8-297b7276f8b7][NetBox Installation]]
++ [[id:0951dad0-d411-4103-8f98-8a77f856d339][Proxmox SDN]]
+  
+* Create API Token
+To allow Proxmox to talk to NetBox, you need an API token.
+1. Log in to NetBox.
+2. Click on your *Username* (top right) -> *API Tokens*.
+3. Click *Add a Token*.
+4. *Description*: `Proxmox SDN`
+5. *Write Enabled*: Checked (Proxmox needs to write IP data).
+6. Click *Create*.
+7. *Copy the Token*. You will need this for the Proxmox SDN Controller setup.
+
+* Configure Proxmox SDN with NetBox
+Now that NetBox is running, connect Proxmox to it.
+
+** Add NetBox IPAM Plugin
+1. Go to *Datacenter -> SDN -> Options -> IPAM*.
+2. Click *Add -> NetBox*.
+3. *ID*: *netbox*
+4. *URL*: *http://192.168.1.24/api* (Your NetBox URL; no trailing slash or /api path).
+5. *Token*: Paste the API Token you generated.
+6. Click *Add*.
+   
+** Important: Pre-create Prefixes in NetBox
+Proxmox *will not* create the subnet/prefix in NetBox for you. You must do it manually first.
+1. In NetBox, go to *IPAM -> Prefixes -> Add*.
+2. Add the prefix that matches your Proxmox VNet subnet (e.g., `10.60.10.0/24`).
+3. Set Status to *Active*.
+
+** Assign NetBox to a Zone
+1. Go to *Datacenter -> SDN -> Zones*.
+2. Edit your EVPN Zone (e.g., `evpntest`).
+3. Change *IPAM* to *netbox*.
+4. Click *OK*.
+
+** Apply & Verify
+1. In Proxmox, go to *Datacenter -> SDN -> Apply*.
+2. Restart a VM/LXC in that VNet.
+3. Check NetBox IPAM; you should see the IP address automatically registered with the VM's name.
+

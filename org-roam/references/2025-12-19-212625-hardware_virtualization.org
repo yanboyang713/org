@@ -1,0 +1,28 @@
+:PROPERTIES:
+:ID:       96679d48-bc29-4c08-8383-a657948207b5
+:END:
+#+title: Hardware Virtualization
+#+date: 2025-12-19
+
+* What is hardware virtualization
+Hardware virtualization is CPU/chipset support that helps a hypervisor run multiple isolated operating systems (virtual machines) efficiently on the same physical machine.
+
+Typically it provides:
+- [[id:b4e389be-4d77-480e-afb9-67b06042f1b8][CPU virtualization (Intel VT-x / AMD-V)]]: lets a guest OS run in a controlled mode while the hypervisor retains control.
+- Memory virtualization (e.g., EPT/NPT): accelerates address translation between guest and host memory.
+- I/O and device virtualization (e.g., VT-d/IOMMU, SR-IOV): isolates and optionally passes through devices safely.
+
+* CPU virtualization (Intel VT-x / AMD-V)
+:PROPERTIES:
+:ID:       b4e389be-4d77-480e-afb9-67b06042f1b8
+:END:
+** Quick CPU capability check
+#+begin_src bash
+egrep -wo 'vmx|svm' /proc/cpuinfo | head
+#+end_src
++ vmx = Intel VT-x
++ svm = AMD-V
+If this prints nothing, the CPU either doesn’t support it or it’s disabled in BIOS/UEFI.
+
+* [[id:f67a83ed-53e2-4e33-bbd4-9bf528bf9e42][GPU]]
++ [[id:21b03f6f-3b8c-4407-ad61-8f8c3143738a][Virtualization with Nvidia vGPU]] 

@@ -4,5 +4,7 @@
 #+title: Access and Mobility Management Function (AMF)
 #+date: 2025-09-16
 
+[[id:60bc45fd-dfc3-4b53-852a-46ff8d77f94c][Cellular Network]]
+
 * Reference List
 1. https://www.cisco.com/c/en/us/td/docs/wireless/ucc/amf/2021-04/config-and-admin/b_ucc-5g-amf-config-and-admin-guide_2021-04/m_amf-overview.pdf

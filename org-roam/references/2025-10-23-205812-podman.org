@@ -4,7 +4,7 @@
 #+title: podman
 #+date: 2025-10-23
 
-* Install packages
+* Install packages for [[id:dc13b67c-8d8b-40fd-b8cf-9ea8547e485d][Arch Linux]] 
 #+begin_src bash
   # Core + fast OCI runtime + rootless networking + overlay FS + newuidmap/newgidmap
   sudo pacman -Syu podman crun slirp4netns fuse-overlayfs netavark aardvark-dns shadow
@@ -14,6 +14,26 @@
   sudo pacman -S podman-docker             # provides a `docker` shim that calls podman
   sudo pacman -S podman-compose            # docker-compose-like CLI
 #+end_src
+* Install packages for [[id:803d821b-6f7d-4e07-9a1f-08c9736c7dec][ubuntu]] 
+** Update and install the core packages
+#+begin_src bash
+sudo apt update
+sudo apt install -y podman crun slirp4netns fuse-overlayfs uidmap
+#+end_src
+What these map to vs Arch:
++ podman → Podman itself
++ crun → fast OCI runtime (Podman uses it by default on many distros)
++ slirp4netns → rootless networking
++ fuse-overlayfs → overlay filesystem support for rootless storage
++ uidmap → provides newuidmap/newgidmap (Ubuntu package name differs from Arch’s shadow)
+** Rootless user namespace ranges (required for best rootless behavior)
+On Ubuntu, uidmap is installed above, but you also want subordinate ID ranges configured:
+If your user already has entries in /etc/subuid and /etc/subgid, don’t duplicate them—just ensure you have a range.
+#+begin_src bash
+echo "$USER:100000:65536" | sudo tee -a /etc/subuid
+echo "$USER:100000:65536" | sudo tee -a /etc/subgid
+#+end_src
+
 * Verify rootless prerequisites
 #+begin_src bash
 podman info

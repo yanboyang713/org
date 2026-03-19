@@ -10,8 +10,12 @@
 + [[id:7ac7694b-85ce-4cd8-b9b3-4423f6b58454][free5GC]]
 + [[id:c1e0d4da-6c9f-44ff-a3b7-bfc077212d04][Magma]]
 + [[id:6773c62d-c676-4817-88e9-9419fcd0a37c][Aether 5G]]
-+ [[id:570728d2-8019-4e6b-b6ca-9ab596e7961b][AttoCore]] 
++ [[id:570728d2-8019-4e6b-b6ca-9ab596e7961b][AttoCore]]
++ [[id:cb65fc02-b2de-48eb-a95a-5e022cdeb8fa][Ella Core]] 
 
 * Reference List
+:PROPERTIES:
+:ID:       ee2f6530-98fb-42a1-b09a-70c052b538cc
+:END:
 1. https://medium.com/rahasak/deploying-5g-core-network-with-free5gc-kubernets-and-helm-charts-29741cea3922
 2. https://www.youtube.com/watch?v=plFFX_geCZs&ab_channel=COSCUP%E9%96%8B%E6%BA%90%E4%BA%BA%E5%B9%B4%E6%9C%83

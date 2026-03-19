@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       e9da159d-d2f3-4899-b1f6-21102a78d351
+:END:
+#+title: Non-terrestrial networks (NTN)
+#+date: 2026-03-17
+
+
+* Reference List
+1. https://www.3gpp.org/technologies/ntn-overview

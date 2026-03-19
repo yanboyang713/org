@@ -6,9 +6,13 @@
 
 An extremely fast package and project manager, written in Rust.
 
-* [[https://docs.astral.sh/uv/#installation][Installation]]
+* [[id:3d5e46ca-9031-42c2-a40c-000deceb20a7][UV]] [[https://docs.astral.sh/uv/#installation][Installation]] 
+:PROPERTIES:
+:ID:       348f8c0c-4138-4dcd-840e-32f310d375fe
+:END:
+
 #+begin_src bash
-  curl -LsSf https://astral.sh/uv/install.sh | sh
+curl -LsSf https://astral.sh/uv/install.sh | sh
 #+end_src
 
 #+begin_src output
@@ -25,6 +29,10 @@ To add $HOME/.local/bin to your PATH, either restart your shell or run:
     source $HOME/.local/bin/env.fish (fish)
 #+end_src
 
+#+begin_src bash
+# restart your shell if needed
+uvx --version
+#+end_src
 
 * Reference List
 1. https://github.com/astral-sh/uv

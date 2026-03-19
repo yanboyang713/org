@@ -3,14 +3,24 @@
 :END:
 #+title: Types of Storage
 #+filetags:
+
 * Major types of storage
 ** Block storage
+:PROPERTIES:
+:ID:       4123b90f-3df2-4a9d-b3d0-4f1d386c7579
+:END:
 Bootable and file (need OS to store metadata about folder structure), database, protocol: iSCSI and Fibre Channel
 
 ** File storage
+:PROPERTIES:
+:ID:       f6062e0d-ea2e-4f63-bd72-a23d68b7db69
+:END:
 Only file in hierarchical folder, for multiple devices/share, protocol: SMB, NFS
 
 ** Object storage
+:PROPERTIES:
+:ID:       754719f4-0155-4b25-991f-541bc973a663
+:END:
 Flat structure, rich metadata support, protocol: HTTP
 
 Intuitively, think about “block storage” as “disk”, “file storage” as file share, “object storage” cloud/HTTP-based storage

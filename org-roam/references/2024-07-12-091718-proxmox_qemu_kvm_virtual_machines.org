@@ -1,13 +1,120 @@
 :PROPERTIES:
 :ID:       8bc84d63-446c-4afc-8d17-85809a130a58
 :END:
-#+title: proxmox Qemu/KVM Virtual Machines
+#+title: Proxmox QEMU/KVM Virtual Machines
+#+date: 2024-07-12
 
 [[id:77bd7428-f1ee-4306-8d5a-62f38134dfc5][Proxmox VE]]
 
-* QEMU CPU Types
-** Custom CPU Types
+* What a PVE VM is (QEMU/KVM)
+- Proxmox VE VMs are managed by QEMU, using KVM for hardware acceleration on supported CPUs.
+- VM configuration is stored in the Proxmox cluster filesystem (commonly `/etc/pve/qemu-server/<vmid>.conf`).
+- The CLI to manage VMs is `qm` (create/configure/start/stop/clone, etc).
+
+* VM lifecycle (common operations)
+- Create VM and attach disks/network.
+- Install OS (ISO) or import a cloud image (Cloud-Init).
+- Convert to template and clone for fast provisioning.
+- Snapshot (if storage supports it) for quick rollback; use backups for real protection.
+- Live migrate between nodes (when prerequisites are met).
+
+* VM configuration file (where settings live)
+- Config is stored per-VM in `/etc/pve/qemu-server/<vmid>.conf` (cluster-wide on a PVE cluster).
+- It is a key/value format; most `qm set ...` operations update this file.
+- Common keys you will see:
+  - Disks: `scsi0: <storage>:vm-<vmid>-disk-0,discard=on,iothread=1`
+  - Cloud-Init drive: `ide2: <storage>:cloudinit`
+  - NIC: `net0: virtio=<mac>,bridge=vmbr0,firewall=1,tag=<vlan>`
+  - Agent: `agent: 1`
+
+* Hardware configuration in PVE (practical notes)
+** CPU
+- *CPU type* controls what CPU features the guest sees:
+  - `host`: best performance, exposes host features; may reduce live-migration compatibility across different CPUs.
+  - Baseline models (e.g., `kvm64` or x86-64 levels): more portable for migration, potentially less performance.
+- *Sockets/Cores* are a presentation choice to the guest OS; most workloads just need the right total vCPU count.
+- *NUMA* can help for large VMs on multi-socket hosts; otherwise leave off.
+** Memory
+- Consider enabling *ballooning* only if you actively overcommit and understand guest memory behavior.
+- For performance-sensitive workloads, evaluate hugepages and avoid unnecessary overcommit.
+** Firmware / machine type
+- *BIOS*: SeaBIOS (legacy) vs OVMF (UEFI). Use OVMF for modern OSes, Secure Boot use-cases, and some GPU passthrough setups.
+- *Machine*: `q35` (PCIe) is common for modern guests; `i440fx` is the older default in many setups.
+** Disks and controllers
+- Prefer *SCSI with VirtIO-SCSI* for general purpose Linux/Windows VMs; use *VirtIO* drivers in the guest.
+- Enable *discard/TRIM* when the guest and storage support it (useful for SSD, thin-provisioned LVM, ZFS).
+- Consider `iothread` for high I/O VMs (especially with VirtIO-SCSI).
+- Snapshot support depends on storage backend (e.g., ZFS supports snapshots; some LVM setups differ).
+** Networking
+- Prefer *VirtIO* NIC for performance.
+- Use Linux bridges (e.g., `vmbr0`) and optionally VLAN tagging.
+- Multiqueue can improve throughput for high-speed links (needs guest support).
+** Console
+- Serial console (`serial0` + `vga: serial0`) is convenient for cloud images and headless servers.
+
+* Storage backends (VM disks)
+- The storage backend affects performance, snapshots, replication, and migration options.
+- Common choices:
+  - *LVM-thin (`local-lvm`)*: fast local storage, thin provisioning; snapshots/backup behavior depends on exact setup.
+  - *ZFS*: strong snapshot/clone story and easy replication; RAM usage and tuning matter.
+  - *Ceph RBD*: shared storage for clusters; enables flexible live migration but depends on Ceph health/performance.
+  - *NFS*: simple shared storage; performance and locking depend on network/server.
+
+* Migration and HA (quick notes)
+- Live migration typically requires compatible CPU features and a migration-capable CPU type (often not `host` across heterogeneous nodes).
+- Shared storage simplifies migration (or use replication where supported).
+- Time sync matters (NTP); cluster/network stability matters more.
+
+* Device passthrough (PCI/GPU/SR-IOV)
+- Requires IOMMU enabled on the host (Intel VT-d / AMD-Vi) and correct kernel/module configuration.
+- Use with care: passthrough devices are no longer available to the host while assigned to a VM.
+- For GPUs, also see your [[id:f67a83ed-53e2-4e33-bbd4-9bf528bf9e42][GPU]] notes.
+
+* Cloud-Init on PVE
+See [[id:4940396d-368e-47e5-be45-d777bc238292][cloud init]].
+- Attach a Cloud-Init drive (`ide2: <storage>:cloudinit`), set `ciuser` and `sshkeys`, and configure networking (`ipconfig0`).
+- Regenerate/apply Cloud-Init after changes: `qm cloudinit update <vmid>`.
+
+* QEMU Guest Agent (QGA)
+- Enable QGA in PVE: `Options -> QEMU Guest Agent` or `qm set <vmid> --agent enabled=1`.
+- Install and enable the agent inside the guest (package name varies by distro).
+- Benefits: clean shutdown, IP reporting, filesystem freeze/thaw for backups (guest-dependent), better management signals.
+
+* Templates and cloning (fast VM provisioning)
+- Build a “golden” VM once (updates + drivers + cloud-init), then convert to template.
+- Linked clones are fast and space-efficient on supported storage; full clones are more portable.
+
+* Backup vs snapshot (don’t confuse them)
+- *Snapshots* are for quick rollback; they live on the same storage and can be lost with the storage.
+- *Backups* (e.g., `vzdump`) are for recovery; store them on separate storage (backup server/NFS/etc).
+
+* QEMU CPU types
+** Picking a CPU type
+- Use `host` when you care about maximum performance and don’t need to live-migrate across heterogeneous CPUs.
+- Use a more generic CPU model when you need reliable live migration across nodes with different CPUs.
+** Custom CPU types
 [[id:4cf009ff-9e14-4de8-993b-9c260988bc5e][KVM RISCV64 on QEMU]]
+
+* Useful `qm` commands
+#+begin_src sh
+qm list
+qm config <vmid>
+qm create <vmid> --name <name> --memory 2048 --cores 2 --net0 virtio,bridge=vmbr0
+qm importdisk <vmid> <image>.img <storage>
+qm start <vmid>
+qm shutdown <vmid>
+qm stop <vmid>
+qm set <vmid> --memory 4096 --cores 4
+qm set <vmid> --ide2 <storage>:cloudinit
+qm template <vmid>
+qm clone <template-vmid> <new-vmid> --name <name> --full 0
+qm migrate <vmid> <target-node>
+qm resize <vmid> scsi0 +20G
+qm cloudinit update <vmid>
+#+end_src
 
 * Reference List
 1. https://pve.proxmox.com/wiki/Qemu/KVM_Virtual_Machines
+2. https://pve.proxmox.com/wiki/Cloud-Init_Support
+3. https://pve.proxmox.com/wiki/Qemu-guest-agent
+4. https://pve.proxmox.com/wiki/Backup_and_Restore

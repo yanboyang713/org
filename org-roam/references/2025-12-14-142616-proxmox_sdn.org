@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       0951dad0-d411-4103-8f98-8a77f856d339
+:END:
+#+title: Proxmox SDN
+#+date: 2025-12-14
+
+[[id:2af07359-aec7-4c5b-aa36-cad4688f915d][Software-Defined Networking (SDN)]]
+
+[[id:77bd7428-f1ee-4306-8d5a-62f38134dfc5][Proxmox VE (PVE)]]
+
+[[id:db3292f7-9665-41fb-bc4d-76ed2be72c99][Setting Up EVPN on Proxmox SDN]]
+
+* Reference List
+1. https://homelab.casaursus.net/setup-sdn-2/

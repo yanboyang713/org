@@ -1,0 +1,34 @@
+:PROPERTIES:
+:ID:       a3e8cbeb-0b0c-48e4-b063-ee87aff38c72
+:END:
+#+title: networked systems
+#+date: 2026-01-03
+
+* Introduction
+*Networked systems* is an umbrella term for computer systems whose components communicate over a network to deliver some end-to-end function. The emphasis is not just on the network itself, but on the joint behavior of software + protocols + distributed components under real-world constraints (latency, loss, failures, churn, adversaries, scale).
+
+* What counts as a networked system
+A system is *networked* when it has at least two communicating entities (machines, services, devices, or processes) connected via a network, such as:
++ [[id:1aa632ef-587c-4d13-9b30-92a1c258dd5f][cloud services]]: [[id:10682b04-b1f4-4200-a3a6-23a5d82c2795][microservices]], [[id:4f0a7a3e-db3c-4d39-b776-4b746f564347][service mesh]], distributed databases, [[id:754719f4-0155-4b25-991f-541bc973a663][object storage]]
++ [[id:cbe6815a-231b-489c-b8ff-c46622549b37][data center infrastructure]]: [[id:6823a5e3-b88a-40ca-9f8b-2e4196713852][Load Balancers]], [[id:2af07359-aec7-4c5b-aa36-cad4688f915d][Software-Defined Networking (SDN)]] controllers, observability pipelines
++ Internet systems: CDNs, [[id:7bab7928-237d-4784-a42f-b85ef6874b9b][Domain Name Service (DNS)]], [[id:e7b30b16-d942-4c41-ba19-14245c12a572][BGP]] routing, web services
++ Mobile/[[id:60bc45fd-dfc3-4b53-852a-46ff8d77f94c][Cellular]] systems: 4G/5G RAN + core networks, MEC/edge computing platforms
++ IoT / cyber-physical systems: sensors, gateways, smart home/industrial systems
+
+* What people study in *networked systems*
+Networked systems sits at the intersection of networks + distributed systems + systems engineering. Typical concerns include:
++ Correctness and consistency
+  - Does the system behave as intended when messages are delayed, duplicated, or reordered?
+  - How do replicas agree (consensus, replication, consistency models)?
++ Reliability and fault tolerance
+  - How does it handle node failures, partitions, overload, and cascading failures?
+  - Retries, timeouts, backpressure, failover, rollback, graceful degradation
++ Performance and efficiency
+  - Latency/throughput tradeoffs, tail latency, congestion control, caching, scheduling
+  - Resource management across compute/network/storage
++ Security and policy
+  - Authentication/authorization, encryption, isolation, DDoS resilience
+  - Network policy, zero trust, secure multi-tenancy
++ Observability and operations
+  - Monitoring, tracing, logging, anomaly detection, root-cause analysis
+  - Automation (AIOps), self-healing, change safety and rollback

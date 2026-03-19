@@ -4,7 +4,52 @@
 #+title: Teleport
 #+date: 2025-11-19
 
-Teleport provides connectivity, authentication, access controls and audit for infrastructure.
+* Introduction
+Teleport is a zero-trust access platform that provides secure connectivity, authentication, role-based access control, and audit logging for infrastructure. It aims to replace traditional [[id:c435c832-af13-4327-b4f4-1433208aa8e6][Bastion Host]] with short-lived credentials, session recording, and centralized policy.
+
+* Teleport (Single-Node) Deployment on [[id:77bd7428-f1ee-4306-8d5a-62f38134dfc5][Proxmox VE (PVE)]] 
+1. Reserve a static IP and DNS name for Teleport on the management LAN (example: 192.168.1.40/24, gateway 192.168.1.4, DNS 192.168.1.23).
+2. Create an LXC or VM (Debian 12 or Ubuntu 22.04), 2 vCPU / 2 GB RAM / 20 GB disk, static IP, unprivileged LXC is OK.
+3. Update the OS and install prerequisites:
+   #+begin_src bash
+   apt update && apt upgrade -y
+   apt install -y curl gpg
+   #+end_src
+4. Install Teleport from the official repository:
+   #+begin_src bash
+   curl -fsSL https://deb.releases.teleport.dev/teleport-pubkey.asc | gpg --dearmor -o /usr/share/keyrings/teleport-archive-keyring.gpg
+   echo "deb [signed-by=/usr/share/keyrings/teleport-archive-keyring.gpg] https://deb.releases.teleport.dev/ stable main" >/etc/apt/sources.list.d/teleport.list
+   apt update && apt install -y teleport
+   #+end_src
+5. Create a single-node config at `/etc/teleport.yaml`:
+   #+begin_src yaml
+   version: v3
+   teleport:
+     nodename: teleport
+     data_dir: /var/lib/teleport
+     log:
+       output: stderr
+       severity: INFO
+   auth_service:
+     enabled: yes
+     cluster_name: pve-testbed
+   proxy_service:
+     enabled: yes
+     web_listen_addr: 0.0.0.0:3080
+     public_addr: 192.168.1.40:3080
+   ssh_service:
+     enabled: yes
+   #+end_src
+6. Start Teleport and enable on boot:
+   #+begin_src bash
+   systemctl enable --now teleport
+   #+end_src
+7. Create the first admin user and grab the login link:
+   #+begin_src bash
+   tctl users add admin --roles=access --logins=root
+   #+end_src
+Then copy the one-time *invite* URL that tctl prints to the terminal (it looks like https://<proxy>:3080/web/invite/<token>). Open that link in a browser to finish creating the user.
+8. Log in to the web UI at https://192.168.1.40:3080 (or your DNS name) and finish the initial setup.
 
 * Reference List
 1. https://github.com/gravitational/teleport

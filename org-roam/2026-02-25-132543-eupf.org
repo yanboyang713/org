@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       b355135f-bb4f-473e-bfa2-e0f887ffa9b2
+:END:
+#+title: eUPF
+#+date: 2026-02-25
+
+[[id:404104ca-d644-4244-aad5-ac06c9fd5810][User Plane Function (UPF)]]
+
+* Reference List
+1. https://github.com/edgecomllc/eupf.git

@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       358744e8-ca3d-4298-bb2c-43bc8b8d7da2
+:END:
+#+title: AIOps with NetBox
+#+date: 2025-12-14
+
+[[id:3fb5adf6-b8c8-43cd-9726-c1d126458e4e][NetBox: The Network Source of Truth]]
+[[id:cf4b4324-b5b9-48cf-a432-a1e90a66c1c6][AIOps]]
+* Reference List
+1. https://netboxlabs.com/solutions/network-infrastructure-aiops/
+2. https://netboxlabs.com/blog/netbox-mcp-emerging-netbox-ai-ecosystem/
+3. https://netboxlabs.com/products/netbox-copilot/

@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       97fa2744-9330-4a18-8e9f-e60cdfc161dd
+:END:
+#+title: DHCP Relay
+#+date: 2025-12-17
+
++ [[id:490921ae-1245-4a55-a101-2538f03e7ee2][VyOS DHCP Relay]]
++ [[id:b04097e3-9ef1-4219-93a3-103a18c9d0d2][Proxmox VE DHCP Relay for EVPN]] 

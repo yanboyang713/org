@@ -1,0 +1,20 @@
+:PROPERTIES:
+:ID:       ea01c640-ee5b-45a9-94d9-e8750e75e908
+:END:
+#+title: Alpha Vantage
+#+date: 2025-12-28
+
+[[id:a652e9e1-5811-46b1-a809-7bc1b43c26c7][Stock]] Market Data API
+
+* Pre-requires
++ [[id:d1323e7d-033e-405a-8967-bf4ee4bc855e][Jupyter]] (python 3.11)
+  #+begin_src bash
+conda create -n stock -y python=3.11
+conda activate stock
+conda install notebook ipykernel
+ipython kernel install --user --name stock --display-name "Python (stock)"
+jupyter notebook --ip='*' --NotebookApp.token='' --NotebookApp.password='' --allow-root
+  #+end_src
+
+* Reference List
+1. https://www.alphavantage.co/

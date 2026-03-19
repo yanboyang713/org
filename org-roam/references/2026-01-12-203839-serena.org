@@ -1,0 +1,49 @@
+:PROPERTIES:
+:ID:       f38b8556-d93c-43c9-bb35-fc82cf86564c
+:END:
+#+title: Serena
+#+date: 2026-01-12
+
+* About Serena
++ Serena is a powerful [[id:ba1ed338-2a1f-472b-b357-424e58dedddd][coding agent]] toolkit capable of turning an [[id:ab03a99b-2c97-4664-a1e6-680a86721f3a][Large Language Models (LLMs)]] into a fully-featured agent that works directly on your codebase. Unlike most other tools, it is not tied to an LLM, framework or an interface, making it easy to use it in a variety of ways.
++ Serena provides essential semantic code retrieval and editing tools that are akin to an IDE’s capabilities, extracting code entities at the symbol level and exploiting relational structure. When combined with an existing coding agent, these tools greatly enhance (token) efficiency.
++ Serena is free & open-source, enhancing the capabilities of LLMs you already have access to free of charge.
+
+* How to use Serena with codex cli
+1. [[id:b952a642-228b-4b25-997f-6718fe4541b3][Install Codex CLI]] (skip if already installed)
+
+2. [[id:348f8c0c-4138-4dcd-840e-32f310d375fe][UV Installation]] (Serena is managed by uv; uvx runs Serena without a permanent install)
+
+3. Configure Serena as an MCP server for [[https://oraios.github.io/serena/02-usage/030_clients.html#codex][Codex]]
+   Create (or edit) =~/.codex/config.toml= and add:
+   #+begin_src toml
+   [mcp_servers.serena]
+   command = "uvx"
+   args = ["--from", "git+https://github.com/oraios/serena", "serena", "start-mcp-server", "--context", "codex"]
+   #+end_src
+
+4. Start Codex from inside your project directory
+   #+begin_src bash
+   cd /path/to/your/project
+   codex
+   #+end_src
+
+5. Activate the project inside the Codex chat (required)
+   Say:
+   - Activate the current dir as project using serena
+
+6. Verify / troubleshoot
+   - If something fails, check Codex logs: =~/.codex/log/codex-tui.log=
+   - If Serena’s dashboard doesn’t auto-open, open it manually:
+     - http://localhost:24282/dashboard/index.html
+     - (or a higher port if 24282 is already taken)
+   - Codex may show Serena tool calls as =failed= even when they actually ran (known Codex UI issue).
+
+7. If Serena can’t “see” your code well: install language servers for your language
+   Serena’s semantic code understanding relies on language servers (LSP) unless you use the JetBrains backend.
+   See: https://oraios.github.io/serena/01-about/020_programming-languages.html
+
+* Reference List
+1. https://github.com/oraios/serena
+2. https://oraios.github.io/serena/02-usage/030_clients.html
+3. https://oraios.github.io/serena/01-about/000_intro.html
