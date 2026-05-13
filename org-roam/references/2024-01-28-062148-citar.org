@@ -1,9 +1,79 @@
 :PROPERTIES:
 :ID:       09824cf8-f2d3-4478-83eb-545b4ee38578
 :END:
-#+title: citar
+#+title: Scientific note-taking with org-roam, citar, and zotero
 
 [[id:6314a4a8-8a04-492c-8a4b-de9e4ff8df00][org roam]]
+[[id:34fcc5f4-b189-4890-9934-9c780cf42578][Zotero]]
+
+* Practical workflow
+:PROPERTIES:
+:ID:       93c7ee61-98c0-4fe7-bbc7-8ab374361b49
+:END:
+
+** Create or open a reference note from =library.bib=
+:PROPERTIES:
+:ID:       0bc26c86-56d7-42b7-98ae-dfd915aeb0d8
+:END:
+
+In normal mode, run:
+
+#+begin_src text
+SPC n r i c
+#+end_src
+
+This calls =citar-create-note=, configured in =lisp/init-keybindings.el:64=.
+Choose an entry from =~/org/library.bib=, and Citar will create or open the
+matching reference note:
+
+#+begin_src text
+~/org/org-roam/references/<citekey>.org
+#+end_src
+
+** Link a reference note from another org-roam note
+:PROPERTIES:
+:ID:       525d96d5-6438-4c10-8d19-1a95eb5b72df
+:END:
+
+Open the org-roam note where the reference should appear, then run:
+
+#+begin_src text
+SPC n r i b
+#+end_src
+
+This calls =orb-insert-link=, configured in =lisp/init-keybindings.el:65=.
+Select the BibTeX entry, and ORB inserts a link to the corresponding reference
+note. If that note does not already exist, ORB can create it.
+
+** Insert a normal Org citation
+:PROPERTIES:
+:ID:       5314e19f-3574-460d-9a30-9f28ba87db83
+:END:
+
+Inside any Org note, run:
+
+#+begin_src text
+M-x org-cite-insert
+#+end_src
+
+Because =org-cite-insert-processor= is set to =citar=, completion comes from
+=~/org/library.bib= and inserts an Org citation such as:
+
+#+begin_src org
+[cite:@some-citekey]
+#+end_src
+
+** Rule of thumb
+:PROPERTIES:
+:ID:       5b4b25f6-f532-4271-93aa-2b5a42000061
+:END:
+
+- Use =SPC n r i c= to create a dedicated org-roam reference note.
+- Use =SPC n r i b= to link that reference note from another note.
+- Use =M-x org-cite-insert= when you want a bibliography citation in the text.
 
 * Reference List
+:PROPERTIES:
+:ID:       aa1349f4-7673-4318-970b-dbddf7f22ebc
+:END:
 1. https://www.riccardopinosio.com/blog/posts/zotero_notes_article.html

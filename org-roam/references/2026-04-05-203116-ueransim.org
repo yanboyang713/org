@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       5e81fb33-23bd-4481-bfc7-5656e974878d
+:END:
+#+title: UERANSIM
+#+date: 2026-04-05
+
+* Reference List
+1. https://github.com/aligungr/UERANSIM

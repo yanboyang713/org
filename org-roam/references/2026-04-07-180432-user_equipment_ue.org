@@ -1,0 +1,34 @@
+:PROPERTIES:
+:ID:       39c6954c-9eb4-4dc5-be61-73c174eae5cb
+:END:
+#+title: User Equipment (UE)
+#+date: 2026-04-07
+
+User Equipment (UE) refers to any device that connects to the RAN (Radio Access Network) to access mobile services provided by the network operator.
+
+In practice, UE compatibility depends on modem firmware, supported bands, SIM or USIM configuration, and the exact core-network and RAN settings used in the lab.
+
+** Release-16 supported modules
++ [[id:96b82cde-9c28-412b-88a7-0f049612e0e7][RM520N-GL]]
+
+** Release-15 supported modules
++ [[id:e17753a2-7cc9-4c36-bf93-c7fe1aac98e4][RM502Q-AE]]
+
+** Rel-17 RedCap modules
++ RM255C-GL
++ RG255C
+
+** Tested devices and references
++ [[https://docs.srsran.com/projects/4g/en/next/app_notes/source/5g_sa_COTS/source/index.html][srsRAN 5G SA COTS UE]]
++ [[https://github.com/srsran/srsRAN_Project/discussions/36][srsRAN discussion: tested UEs]]
++ OnePlus Nord 5G with a Sysmocom USIM
++ OnePlus 10 Pro 5G
++ OnePlus Nord 5G
++ Samsung A22
++ Hisense F50+
++ Huawei P40 lite 5G
++ RM500Q-GL with Raspberry Pi
++ [[https://www.waveshare.com/wiki/RM500Q-GL_5G_HAT][Waveshare RM500Q-GL 5G HAT]]
++ [[https://gitlab.eurecom.fr/oai/openairinterface5g/-/blob/v2.1.0/doc/NR_SA_Tutorial_COTS_UE.md#51-testing-with-quectel-rm500q][OAI note on testing with Quectel RM500Q]]
++ [[https://www.aliexpress.us/item/3256805390533917.html][Example listing for RM500Q-GL 5G HAT]]
+

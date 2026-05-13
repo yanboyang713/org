@@ -4,7 +4,38 @@
 #+title: Cellular Network
 #+filetags:
 
-[[id:55f23b66-c353-4562-b4bc-da3df9ddc665][wireless networks]]
+* Overview
+:PROPERTIES:
+:ID:       2a882d9c-da80-4ae8-a611-c9e3ea6f3c77
+:END:
+A cellular network is a [[id:55f23b66-c353-4562-b4bc-da3df9ddc665][wireless]] communication system that divides geographic coverage into cells served by base stations. It is designed to let mobile devices move across coverage areas while staying connected for voice, messaging, and packet data services.
 
-[[id:2b132bf8-b177-425d-9de5-183b1d430c99][Session Management Function (SMF)]]
-[[id:404104ca-d644-4244-aad5-ac06c9fd5810][User Plane Function (UPF)]]
+The main idea is that radio access is distributed across many cells, while control, authentication, and connectivity to external networks are coordinated by the operator's backend network.
+
+* Main Components
+:PROPERTIES:
+:ID:       772746a1-48bf-4a49-b95a-acdd15694793
+:END:
+At a high level, a modern cellular network has two major parts:
++ the [[id:065ea098-bfba-4cda-9bde-aa169ffe79fa][RAN architecture]], which provides the radio link to user devices
++ the core network, which handles subscriber management, session control, policy, and connectivity to services
+
+In the [[id:c8f358c2-d824-4c17-b02b-9aaa423b1871][5G]] context, this core side is described in [[id:99370515-d845-4028-9214-6b5fdf14e6ff][5G core network]].
+
+* Why It Matters
+:PROPERTIES:
+:ID:       97a9286f-2f40-4f32-918e-f0f25cd0eba7
+:END:
+Cellular networks matter because they provide wide-area wireless coverage with mobility support, controlled spectrum use, authentication, and scalable service delivery. Compared with simpler wireless systems, they are built to support:
++ user mobility across cells
++ centralized subscriber and policy control
++ managed access to public and private data networks
++ large-scale deployment over wide geographic areas
+
+* Related Notes
+:PROPERTIES:
+:ID:       7b83bb29-78ff-4995-b5ef-d01c5d6614c8
+:END:
++ [[id:c8f358c2-d824-4c17-b02b-9aaa423b1871][5G]]
++ [[id:065ea098-bfba-4cda-9bde-aa169ffe79fa][RAN architecture]]
++ [[id:99370515-d845-4028-9214-6b5fdf14e6ff][5G core network]]

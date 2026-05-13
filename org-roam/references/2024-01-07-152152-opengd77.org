@@ -31,5 +31,14 @@ Bus 001 Device 002: ID 8087:0024 Intel Corp. Integrated Rate Matching Hub
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 #+end_src
 
+* TYT MD-UV380 Installation information
+:PROPERTIES:
+:ID:       0964fc30-0227-4115-8a01-4c52ddcf1637
+:END:
+https://www.opengd77.com/archive/viewtopic9ca7.html?f=19&t=2380&
+
 * Reference List
+:PROPERTIES:
+:ID:       7d59caa0-8b76-4a02-a275-96e364292765
+:END:
 1. https://www.opengd77.com/

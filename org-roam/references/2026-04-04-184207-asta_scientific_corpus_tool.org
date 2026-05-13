@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       8b1d2de7-e9ac-48f1-ad61-acaef23a05c4
+:END:
+#+title: Asta Scientific Corpus Tool
+#+date: 2026-04-04
+
+* Reference List
+1. https://allenai.org/asta/resources/mcp

@@ -4,7 +4,7 @@
 #+title: OpenRAN Gym
 #+filetags:  
 
-An Open Toolbox for Data Collection and Experimentation with AI in [[id:ef47832f-5edc-4c6a-bd2d-8e02c4bd5d9a][open-RAN]]
+An Open Toolbox for Data Collection and Experimentation with AI in [[id:065ea098-bfba-4cda-9bde-aa169ffe79fa][open-RAN]]
 
 [[http://res.cloudinary.com/dkvj6mo4c/image/upload/v1677603371/screenshot/t6zl0cbiasst8eafx4s8.png]]
 

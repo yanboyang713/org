@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       17739c67-ae57-4d0a-944b-71e702e40c7a
+:END:
+#+title: amarisoft
+#+date: 2026-04-05
+
+* Reference List
+1. https://www.amarisoft.com/

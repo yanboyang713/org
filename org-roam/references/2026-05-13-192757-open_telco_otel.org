@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       06b9ad54-cfc5-407d-a9d7-d1563f061cbb
+:END:
+#+title: Open Telco (OTel)
+#+date: 2026-05-13
+
+https://github.com/farbodtavakkoli/OTel

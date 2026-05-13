@@ -1,0 +1,24 @@
+:PROPERTIES:
+:ID:       84a4e083-18e5-45cd-9dbb-6ddaacd29f73
+:END:
+#+title: UVA Rivanna
+#+date: 2026-05-10
+
+* Account
+:PROPERTIES:
+:ID:       2eb17789-aa72-45f6-9675-0fcd0fef5be6
+:END:
+https://www.rc.virginia.edu/userinfo/hpc/access/
+
+* UVARC GenAI
+:PROPERTIES:
+:ID:       4a2d7350-5b53-4df2-a0e9-e848e4ce86da
+:END:
+https://www.rc.virginia.edu/userinfo/rcgenai-userguide/
+* Multi-GPU LLM Inference
+:PROPERTIES:
+:ID:       d6c03efb-52a0-446e-882f-18a3073cd459
+:END:
+https://cal.lib.virginia.edu/event/14584586
+https://staging.learning.rc.virginia.edu/notes/multigpu-inference/
+

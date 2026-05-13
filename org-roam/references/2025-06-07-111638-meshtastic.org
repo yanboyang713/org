@@ -38,6 +38,9 @@ Additionally, Meshtastic radios can be paired with a single phone, allowing frie
 :END:
 + [[id:81b73ee5-9d2b-4f0c-abd3-ef55b2f77a32][LILYGO]] 
 
+* Northern Virginia Meshtastic
+https://groups.io/g/NoVa-Meshtastic
+
 * Reference List
 :PROPERTIES:
 :ID:       20fde607-e1ff-4ffc-95d6-c6e9130cddcd

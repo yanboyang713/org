@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       ebda6d3a-55ac-49ac-af2c-bb71c7eb8551
+:END:
+#+title: Telco LLM
+#+date: 2026-05-13
+
+[[id:ab03a99b-2c97-4664-a1e6-680a86721f3a][Large Language Models (LLMs)]]
+
++ [[id:06b9ad54-cfc5-407d-a9d7-d1563f061cbb][Open Telco (OTel)]] 

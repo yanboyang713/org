@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       9160eb04-ab19-4a10-87a6-c0879f378ea6
+:END:
+#+title: minikube
+#+date: 2026-04-13
+
+Minikube lets you quickly setup a local [[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]] cluster. It supports the use of Virtual Machines, containers and even bare metal as its driver.
+
+* Reference List
+:PROPERTIES:
+:ID:       e22b0410-d8a4-4d41-80e1-547d24e3fcd6
+:END:
+1. https://wiki.archlinux.org/title/Minikube

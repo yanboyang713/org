@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       8f579c26-9ede-4f00-b64c-f93a5db0b7a2
+:END:
+#+title: OAI 5G end-to-end Build and Deployment (Simulator RU & UE)
+#+date: 2026-04-02
+
+* Reference List
+1. https://hackmd.io/@ninoagus/B1iCs05Z6

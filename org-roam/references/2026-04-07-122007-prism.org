@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       e3bf1550-1d35-4715-b7c4-1abfa09a4bb8
+:END:
+#+title: prism
+#+date: 2026-04-07
+
+* Reference List
+1. https://openai.com/prism/

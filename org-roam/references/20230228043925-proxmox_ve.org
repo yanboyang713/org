@@ -5,6 +5,9 @@
 #+filetags:  
 
 * Introduction
+:PROPERTIES:
+:ID:       86b06445-3f9c-4195-ae29-3f43bb513e4c
+:END:
 Proxmox VE is a complete, open-source server management platform for enterprise virtualization. Based on [[id:0c65c1a6-4751-4290-876f-6c5ad7694068][Debian]]. It tightly integrates the [[id:a7a76158-d895-4c2a-bb16-1ec4fe46edaa][Kernel Based Virtual Machive (KVM)]] hypervisor and [[id:2c382716-6c15-4385-945f-e5f64e0c0b6e][Linux Containers (LXC)]], software-defined storage and networking functionality (such as,[[id:db3292f7-9665-41fb-bc4d-76ed2be72c99][EVPN]]), on a single platform. With the integrated web-based user interface you can manage VMs and containers, high availability for clusters, or the integrated disaster recovery tools with ease.
 
 * Installation
@@ -18,22 +21,34 @@ Currently, the latest version is 9.0-1.
 [[id:f20563f8-caeb-40db-aea0-a9dd263c0107][Make USB Flash Drive as Installation Medium]]
 
 * [[id:d5d856fb-7251-4864-b62e-d08a2220bf14][Proxmox Post-Installation]]
+:PROPERTIES:
+:ID:       8689eb8e-6bef-43c4-a1f1-49fbeeb2dfa6
+:END:
 
 * Proxmox update and upgrade
 :PROPERTIES:
 :ID:       e623bc73-466c-4a20-b3df-ff9e25189f9a
 :END:
 #+begin_src bash
-apt-get update && apt-get dist-upgrade
+apt-get update && apt-get full-upgrade
 #+end_src
 
 * proxmox hangs on load kernel
+:PROPERTIES:
+:ID:       61b6e041-0a77-403d-bf95-227c7cd0f9df
+:END:
 remove GPU driver first
 https://askubuntu.com/questions/219942/how-to-uninstall-manually-installed-nvidia-drivers
 
 https://forum.proxmox.com/threads/after-upgrading-kernel-6-5-11-4-pve-does-not-boot.137071/
 
 * [[id:e506bf84-f019-4a36-b472-4d92a487f6d5][Proxmox VE Get “Universal Trust” TLS with Let’s Encrypt (ACME)]] 
+:PROPERTIES:
+:ID:       ad37e921-0bfc-4c56-95d8-07aceb7cd86e
+:END:
 
 * Reference List
+:PROPERTIES:
+:ID:       4fcfa37e-ca1a-4676-8a50-5c7d3e272e98
+:END:
 1. https://www.proxmox.com/en/proxmox-ve

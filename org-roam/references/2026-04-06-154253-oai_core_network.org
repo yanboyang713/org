@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       bc99af56-4674-4fea-82f3-c2cf9d8439a3
+:END:
+#+title: OAI Core network
+#+date: 2026-04-06
+
+* Reference List
+1. https://openairinterface.org/core-network/

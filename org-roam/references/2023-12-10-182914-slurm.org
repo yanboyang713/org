@@ -3,6 +3,12 @@
 :END:
 #+title: slurm
 
+[[id:b5392aff-d459-450c-b18c-a41152a869b3][UVA CS Slurm cluster]]
+[[id:84a4e083-18e5-45cd-9dbb-6ddaacd29f73][UVA Rivanna]]
+
 * Reference List
+:PROPERTIES:
+:ID:       eb51f5a3-a00a-4a91-8091-44e829684aae
+:END:
 1. https://www.youtube.com/watch?v=51SyuTBk72k
 2. https://slurm.schedmd.com/

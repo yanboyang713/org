@@ -2,14 +2,62 @@
 :ID:       326e6206-2570-4a2f-8682-565e1b357816
 :END:
 #+title: Benetel
-* BNTL-RAN550
+#+filetags: O-RAN RU 5G
+
+* Overview
+:PROPERTIES:
+:ID:       3ea0b9bf-df60-4f0f-a788-b17698df196d
+:END:
+Benetel is a vendor of 5G O-RAN radio units (O-RUs). In the context of this knowledge base, it is most relevant as a hardware-side counterpart to disaggregated RAN deployments, especially where a software CU/DU stack is paired with external radio units.
+
+This makes Benetel relevant to:
++ [[id:065ea098-bfba-4cda-9bde-aa169ffe79fa][RAN architecture]]
++ [[id:56a52d86-4e17-465a-aba1-216a6aa4f7b0][O-RAN Alliance Split Architecture]]
++ [[id:ed3c730b-c284-410c-80bf-7f0c21d3105b][OpenAirInterface (OAI)]]
+
+Benetel's current positioning emphasizes O-RAN fronthaul compatibility, enterprise and private-network deployment, and interoperability with multiple CU/DU vendors.
+
+* Product Snapshot
+:PROPERTIES:
+:ID:       0bb2289a-34a6-492d-b354-850b6c91fac6
+:END:
+** BNTL-RAN550
 :PROPERTIES:
 :ID:       2a1c1e2e-b536-4cf5-ba71-76cb8ad25dc5
 :END:
+The =BNTL-RAN550= is an indoor 5G radio unit intended for enterprise, dense indoor, and private-network deployments.
+
+Useful characteristics called out by Benetel include:
++ indoor 5G coverage
++ 4T4R integrated antennas
++ 100 MHz bandwidth
++ O-RAN CUS and M-plane support
++ testing with multiple CU/DU vendors
+
+Product page:
 https://benetel.com/ran550/
 
-* BNTL-RAN650
+** BNTL-RAN650
+:PROPERTIES:
+:ID:       dd7df32b-7e65-4940-a979-4d0f0396d7d9
+:END:
+The =BNTL-RAN650= is an outdoor split-7.2x O-RU aimed at enterprise outdoor coverage, campus networks, fixed wireless access, and other micro-cell deployments.
+
+Useful characteristics called out by Benetel include:
++ outdoor O-RAN RU deployment
++ 4T4R with external antennas
++ up to 4 x 5 W output power
++ 100 MHz 5G bandwidth
++ O-RAN CUS and M-plane support
++ testing with multiple CU/DU vendors
+
+Product page:
 https://benetel.com/ran650/
 
 * Reference List
+:PROPERTIES:
+:ID:       46c46f31-70a4-4000-b96f-c5374bbe25f1
+:END:
 1. https://benetel.com/
+2. https://benetel.com/ran550/
+3. https://benetel.com/ran650/

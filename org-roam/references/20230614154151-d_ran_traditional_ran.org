@@ -5,11 +5,17 @@
 #+filetags: D-RAN
 
 * What is D-RAN ( traditional RAN) ?
+:PROPERTIES:
+:ID:       b273920a-66be-4ba3-8e9d-3d7fc23ba4b4
+:END:
 D-RAN stands for “Distributed RAN”
 
-The diagram below shows distributed RAN. The [[id:4fb3287a-23fb-4585-bd87-be76e4b4077f][Radio Unit (RU)]] and [[id:1329f1c2-a4a3-456b-b114-2220d3e990db][BBU]] are co-located at every cell site. Each cell site with all its radio functions are distributed and connected back to the core network through backhaul.
+The diagram below shows distributed RAN. The [[id:7b67ceaf-68b1-4916-ab4f-2b95605dd813][Radio Unit (RU)]] and [[id:1329f1c2-a4a3-456b-b114-2220d3e990db][BBU]] are co-located at every cell site. Each cell site with all its radio functions are distributed and connected back to the core network through backhaul.
 
 [[https://telcocloudbridge.com/wp-content/uploads/2021/04/image.png?ezimgfmt=ng:webp/ngcb1]]
 
 * Reference List
+:PROPERTIES:
+:ID:       a05e7516-5a2e-4ce2-b2b5-5e70f11896d5
+:END:
 1. https://telcocloudbridge.com/blog/c-ran-vs-cloud-ran-vs-vran-vs-o-ran/

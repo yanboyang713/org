@@ -2,15 +2,61 @@
 :ID:       ed3c730b-c284-410c-80bf-7f0c21d3105b
 :END:
 #+title: OpenAirInterface (OAI)
+#+filetags: OAI OpenAirInterface RAN 5G
 
-* System Requirements
-https://gitlab.eurecom.fr/oai/openairinterface5g/-/blob/develop/doc/system_requirements.md#o-ran-radio-units
+* Overview
+:PROPERTIES:
+:ID:       1c2de05c-5b7d-485f-8cc5-8e67b0fc3214
+:END:
+OpenAirInterface (OAI) is an open-source mobile-network software project used to build and study 4G and 5G systems. In practice, it is especially important as a research and lab platform for open and software-defined radio access networks.
 
-* [[id:08a019a8-3b4c-4c8c-963c-19d9f4f8ecbc][split 7.2 (vRAN model)]]
-https://gitlab.eurecom.fr/oai/openairinterface5g/-/blob/develop/doc/ORAN_FHI7.2_Tutorial.md
+Within this note's context, OAI is most useful as:
++ an open RAN experimentation platform
++ a software implementation for 5G SA lab validation
++ a practical reference for CU/DU and split-RAN deployment work
+
+* Why It Matters
+:PROPERTIES:
+:ID:       7901e9f9-8c21-4e8f-94f2-24733c3f9db6
+:END:
+OAI is valuable because it gives researchers and builders direct access to an end-to-end cellular software stack rather than just documentation or black-box vendor gear. That makes it useful for:
++ validating [[id:065ea098-bfba-4cda-9bde-aa169ffe79fa][RAN architecture]] ideas
++ experimenting with disaggregation and open interfaces
++ testing interoperability with open cores and user equipment
++ learning how practical 5G radio software is assembled and deployed
+
+* O-RAN RU Context
+:PROPERTIES:
+:ID:       f7a14856-baea-41a2-96c0-8a4813d45483
+:END:
+
+When OAI is used in O-RAN-style deployments, radio-unit compatibility and transport details become important. The note below is therefore a practical starting point when working with external radio units:
 
 + [[id:72f65923-64c3-4ba6-95ca-48af2dc9708f][Lite-On]]
 + [[id:1ee06e17-c18d-4b49-ab27-69448f8b8f06][baicells]]
++ [[id:326e6206-2570-4a2f-8682-565e1b357816][Benetel]] 
+
+* Practical Reading
+:PROPERTIES:
+:ID:       b85b86b0-7c23-43f2-b2a7-134065299888
+:END:
+If the goal is to use OAI in a lab or testbed, the most useful way to read the project is:
++ first understand the overall [[id:065ea098-bfba-4cda-9bde-aa169ffe79fa][RAN architecture]]
++ then understand the split model, especially [[id:a03c70dc-7e87-4806-815e-7f006a445bed][split 7.2 (vRAN model)]] 
++ then focus on OAI-specific CU/DU deployment details
++ finally validate radio-unit, UE, and core-network interoperability
+
+* Resources
+:PROPERTIES:
+:ID:       3da02333-bf20-484c-a26e-8c9291cfb5aa
+:END:
++ System requirements:
+  https://gitlab.eurecom.fr/oai/openairinterface5g/-/blob/develop/doc/system_requirements.md#o-ran-radio-units
++ O-RAN fronthaul split 7.2 tutorial:
+  https://gitlab.eurecom.fr/oai/openairinterface5g/-/blob/develop/doc/ORAN_FHI7.2_Tutorial.md
 
 * Reference List
+:PROPERTIES:
+:ID:       a08e604d-929c-4561-800a-15011729ccea
+:END:
 1. https://openairinterface.org/

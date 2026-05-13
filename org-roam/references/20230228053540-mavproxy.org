@@ -4,4 +4,4 @@
 #+title: MAVProxy
 #+filetags:
 
-could be as one of [[id:918361a2-6114-4fae-b596-487bb0d42c4e][xApp]] in [[id:ef47832f-5edc-4c6a-bd2d-8e02c4bd5d9a][open-RAN]]
+could be as one of [[id:918361a2-6114-4fae-b596-487bb0d42c4e][xApp]] in [[id:065ea098-bfba-4cda-9bde-aa169ffe79fa][open-RAN]]
