@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       1f93bf46-87e3-457b-8fa7-4282e2d2e6a1
+:END:
+#+title: fox
+#+date: 2026-05-15
+
+* Reference List
+1. https://github.com/ferrumox/fox.git

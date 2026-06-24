@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       96aab2d5-3397-4132-8055-7ff07d787a58
+:END:
+#+title: PDF parser
+#+date: 2026-06-10
+
+* OpenDataLoader PDF
+:PROPERTIES:
+:ID:       a8a21e4c-2f26-4cb7-b461-f276450d797d
+:END:
+PDF Parser for AI-ready data. Automate PDF accessibility.
+https://github.com/opendataloader-project/opendataloader-pdf.git

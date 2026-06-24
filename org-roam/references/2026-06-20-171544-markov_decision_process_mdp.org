@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       2763bae5-cfe0-400f-8923-f0dbb6170528
+:END:
+#+title: Markov Decision Process (MDP)
+#+date: 2026-06-20
+

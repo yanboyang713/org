@@ -1,0 +1,37 @@
+:PROPERTIES:
+:ID:       e264dd8a-cf0a-47b3-b2da-db33de63a9e7
+:END:
+#+title: hierarchical radix cache
+#+date: 2026-06-19
+
+A hierarchical radix cache is a prefix KV cache that combines:
++ a radix tree for sharing common prompt prefixes, and
++ a memory hierarchy, typically GPU memory as the fast first level and CPU memory as the larger, slower second level.
+
+* what is a radix cache?
+Suppose several prompts begin with overlapping token sequences:
+#+begin_example
+Prompt 1: You are an expert programmer. Write Python code.
+Prompt 2: You are an expert programmer. Review Python code.
+Prompt 3: You are an expert mathematician. Solve this equation.
+#+end_example
+
+A radix tree stores their shared prefixes only once:
+#+begin_example
+You are an expert
+├── programmer
+│   ├── Write Python code
+│   └── Review Python code
+└── mathematician
+    └── Solve this equation
+#+end_example
+
+Each tree node represents a segment of tokens and stores the corresponding KV tensors.
+Therefore, the KV tensors for:
+#+begin_example
+You are an expert
+#+end_example
+
+do not need to be duplicated for every prompt.
+When a new request arrives, the serving system walks down the tree and finds the longest matching prefix.
+

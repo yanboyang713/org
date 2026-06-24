@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       1b18ffe8-d643-49c7-b122-89f85870d267
+:END:
+#+title: Learning to Evict from Key-Value Cache
+#+date: 2026-06-19
+
+* benchmark
+long-context benchmark RULER and the multi-turn dialogue benchmark OASST2-4k
+
+* Reference List
+:PROPERTIES:
+:ID:       8f9918b2-e412-4cae-b847-eacadbeb853e
+:END:
+1. https://arxiv.org/pdf/2602.10238

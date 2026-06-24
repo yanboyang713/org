@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       2f925e40-d90f-44b4-b29e-9df2b702b6a5
+:END:
+#+title: ethanol-free gas
+#+date: 2026-05-19
+
+https://www.pure-gas.org/

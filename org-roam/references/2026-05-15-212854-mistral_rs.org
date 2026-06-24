@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       3f342a1f-4a12-4f62-ba49-33a61f67db64
+:END:
+#+title: mistral.rs
+#+date: 2026-05-15
+
+* Reference List
+1. https://github.com/EricLBuehler/mistral.rs

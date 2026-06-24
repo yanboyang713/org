@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       8928d0fe-dd79-4de5-a5be-f35a1b0cebd7
+:END:
+#+title: prefix caching
+#+date: 2026-06-19
+
+Prefix caching in one sentence
+
+Prefix caching stores the attention Key/Value tensors computed for the beginning of a prompt so that, when another request begins with the same tokens, the model does not have to process those tokens again.

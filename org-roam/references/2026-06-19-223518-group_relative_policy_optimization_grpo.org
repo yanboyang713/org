@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       4875a867-b3c0-463b-a8e7-713b859c0177
+:END:
+#+title: Group Relative Policy Optimization (GRPO)
+#+date: 2026-06-19
+
+It is a [[id:ad5ee03e-bc10-4428-9a7e-7f8ab5db8d01][Reinforcement Learning]] algorithm that improves a policy by comparing several sampled behaviors for the same input.
+
+GRPO is closely related to PPO, or Proximal Policy Optimization, but it estimates the quality of an action using rewards relative to a group of sampled alternatives.

@@ -59,6 +59,10 @@
 My bike parts list
 https://yamaha-motor.com/parts/search?vin=MH3DE14Y2TK001525
 
+*** Air-filter
+OEM part number: BWN-E4450-00-00
+https://www.partzilla.com/product/yamaha/BWN-E4450-00-00?titan_sku=BWN-E4450-00-00
+
 *** Engine oil
 :PROPERTIES:
 :ID:       6843f39a-e4cf-4c38-b855-ec3312f9fa2f

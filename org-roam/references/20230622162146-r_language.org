@@ -1,9 +1,94 @@
 :PROPERTIES:
 :ID:       802cbd39-a5b4-4659-98ca-5a2a2eeb1b03
 :END:
-#+title: r language
-#+filetags:  
+#+title: R Language
+#+filetags: :r:programming:statistics:data_science:
 
-IDE
-RStudio is becoming Posit
-https://posit.co/blog/rstudio-is-becoming-posit/
+* Introduction
+:PROPERTIES:
+:ID:       cdaf961d-fdcb-42e4-a534-7ff3644d8698
+:END:
+R is an open-source [[id:20954157-6416-4289-bc7c-248bdfad167e][programming language]] and environment for statistical computing, [[id:357a8804-df10-4907-b1eb-850a4dcf9f69][data science]], visualization, and reproducible research. It is especially common in statistics, bioinformatics, econometrics, social science, machine learning, and academic data science workflows.
+
+R is built around vectorized data structures, interactive exploration, package-based extension, and strong graphics support. Its ecosystem is useful for the full research cycle: importing data, cleaning it, fitting statistical models, producing plots, running experiments, and publishing reports.
+
+* Typical Workflow
+:PROPERTIES:
+:ID:       a93ae757-2687-4443-acb1-e36d7150563c
+:END:
+1. Install R from CRAN or the system package manager.
+2. Create a project directory for code, data, figures, and reports.
+3. Use scripts, notebooks, or Quarto/R Markdown documents for reproducible work.
+4. Install packages with ~install.packages~ and load them with ~library~.
+5. Keep project dependencies reproducible with tools such as ~renv~.
+6. Record environment details with ~sessionInfo~ when sharing results.
+
+* RStudio R IDEs and Editors
+:PROPERTIES:
+:ID:       7d6f511a-2b3a-4db1-b4a5-e6e48c0c4714
+:END:
+RStudio is the most common IDE for R. It provides an editor, console, environment browser, plotting pane, package tools, project support, and integration with notebooks and reports.
+
+Posit is the company behind RStudio and related data-science tooling.
+
+- RStudio is becoming Posit:
+  https://posit.co/blog/rstudio-is-becoming-posit/
+
+* Packages
+:PROPERTIES:
+:ID:       94392185-013f-420b-8f40-4bf3d8aedf5d
+:END:
+R packages extend the language with functions, datasets, modeling tools, plotting systems, and interfaces to external software. CRAN is the central package repository, while Bioconductor is widely used for bioinformatics and computational biology.
+
+Common package families:
+
+- ~tidyverse~: data import, cleaning, transformation, and visualization.
+- ~ggplot2~: grammar-of-graphics plotting.
+- ~dplyr~ and ~tidyr~: data manipulation and reshaping.
+- ~data.table~: high-performance tabular data processing.
+- ~knitr~, ~rmarkdown~, and ~quarto~: reproducible reports.
+- ~shiny~: interactive web applications.
+- ~tidymodels~: modeling and machine learning workflows.
+
+* Basic Commands
+:PROPERTIES:
+:ID:       f451952f-4c41-4b71-bee9-bc1a0e42667b
+:END:
+#+begin_src R
+# Install and load packages
+install.packages("tidyverse")
+library(tidyverse)
+
+# Inspect the current environment
+getwd()
+sessionInfo()
+
+# Read and write CSV files
+df <- read.csv("data/input.csv")
+write.csv(df, "data/output.csv", row.names = FALSE)
+#+end_src
+
+* Reproducibility Notes
+:PROPERTIES:
+:ID:       4652d2d6-c208-475c-b3d2-6a016b053e1f
+:END:
+Prefer project-relative paths, keep raw data separate from derived data, and place reusable code in scripts or package-style functions. For research projects, save both the analysis code and the package environment so results can be rerun later.
+
+Useful habits:
+
+- Use one project directory per analysis.
+- Avoid manual edits to intermediate data files.
+- Keep figures, tables, and reports generated from source code.
+- Use version control for scripts and notebooks.
+- Capture package versions with ~renv~ or ~sessionInfo~.
+
+* Reference List
+:PROPERTIES:
+:ID:       3d741e27-508d-42fd-aa8b-7921fee83615
+:END:
+1. https://www.r-project.org/
+2. https://cran.r-project.org/
+3. https://posit.co/download/rstudio-desktop/
+4. https://posit.co/blog/rstudio-is-becoming-posit/
+5. https://www.tidyverse.org/
+6. https://r4ds.hadley.nz/

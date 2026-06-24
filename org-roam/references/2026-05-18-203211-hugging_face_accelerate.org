@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       879da2e8-099c-4ea2-8916-e4b106133825
+:END:
+#+title: Hugging Face Accelerate
+#+date: 2026-05-18
+
+Accelerate is a popular, easy-to-use library built to work with PyTorch models. It provides a very straightforward API that wraps with PyTorch and transformers code.
+
+Accelerate can automatically allocate GPU memory usage across nodes, and is used for both training and inference. It is built on top of Megatron and can interface with [[id:986e00f4-0df0-4968-a1c1-aa625bfedf6d][DeepSpeed]].
+
+* Reference List
+:PROPERTIES:
+:ID:       8a4340f8-74de-4d2c-928a-22d235250948
+:END:
+1. https://huggingface.co/docs/accelerate/en/concept_guides/big_model_inference

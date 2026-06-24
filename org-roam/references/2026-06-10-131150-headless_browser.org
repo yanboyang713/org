@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       61910566-e7c7-4875-94d3-257bb80d586e
+:END:
+#+title: headless browser
+#+date: 2026-06-10
+
+* Obscura
+:PROPERTIES:
+:ID:       75960648-ef0f-471e-9c43-59a52783ab20
+:END:
+https://github.com/h4ckf0r0day/obscura.git

@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       bc26c760-d962-4725-a7f8-69064f9436bc
+:END:
+#+title: attention head
+#+date: 2026-06-20
+
+An attention head is the core functional unit inside a [[id:6ec03dde-9090-462b-b127-7fa998be09db][Transformer]]'s multi-head attention layer. It acts as a specialized data-retrieval system that determines how much "importance" or focus one token in a sequence (e.g., a word) should place on other tokens, capturing specific syntactic or semantic relationships.
+
+* Reference List
+:PROPERTIES:
+:ID:       ec79f70c-1ec4-405b-a17f-2c0e9e21b0f7
+:END:
+1. https://towardsdatascience.com/transformers-explained-visually-part-3-multi-head-attention-deep-dive-1c1ff1024853/

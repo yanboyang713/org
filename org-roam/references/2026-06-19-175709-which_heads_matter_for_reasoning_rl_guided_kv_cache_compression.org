@@ -1,0 +1,19 @@
+:PROPERTIES:
+:ID:       6afab65b-f2fd-494e-9b4b-86620da1fdfb
+:END:
+#+title: Which Heads Matter for Reasoning? RL-Guided KV Cache Compression
+#+date: 2026-06-19
+
+[[id:908f4271-d7ca-418a-a74f-be7c0a7ec2dd][reasoning model]]
+
+[[id:61febab7-279b-48f7-8db7-e1925c39f890][What are Reasoning Models?]]
+
+[[id:051aa4f4-d5c3-4e0c-9a61-0c6244d502eb][chain-of-thought (CoT)]]
+
+[[id:bc26c760-d962-4725-a7f8-69064f9436bc][attention head]]
+
+* Reference List
+:PROPERTIES:
+:ID:       54636aea-5285-450f-bd9e-d4a919efe8a3
+:END:
+1. https://arxiv.org/pdf/2510.08525

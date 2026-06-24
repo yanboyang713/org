@@ -1,0 +1,27 @@
+:PROPERTIES:
+:ID:       79510de1-c0ee-4bac-9039-5cd06cf45c80
+:END:
+#+title: KVFlow: Efficient Prefix Caching for Accelerating LLM-Based Multi-Agent Workflows
+#+date: 2026-06-19
+
+[[id:8928d0fe-dd79-4de5-a5be-f35a1b0cebd7][prefix caching]]
+
+[[id:e264dd8a-cf0a-47b3-b2da-db33de63a9e7][hierarchical radix cache]]
+
+workflow-aware eviction policy
+overlapped KV prefetching mechanism
+
+
+* KV cache characteristics
+:PROPERTIES:
+:ID:       0c939392-dea3-4c5a-b076-8f83e8f52110
+:END:
++ KV Cache Size with Context Length
++ prefill latency
++ KV Cache Transmission (CPU to GPU)
+
+* Reference List
+:PROPERTIES:
+:ID:       96c1d384-6baa-4136-bfd5-f3f88494a7d8
+:END:
+1. https://arxiv.org/pdf/2507.07400

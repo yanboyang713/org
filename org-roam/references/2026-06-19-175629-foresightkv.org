@@ -1,0 +1,21 @@
+:PROPERTIES:
+:ID:       93d168ab-7191-4749-8c1f-155bc634807e
+:END:
+#+title: ForesightKV
+#+date: 2026-06-19
+
+[[id:908f4271-d7ca-418a-a74f-be7c0a7ec2dd][reasoning model]]
+[[id:4875a867-b3c0-463b-a8e7-713b859c0177][Group Relative Policy Optimization (GRPO)]]
+Eviction algorithm
+Pairwise Ranking Loss
+
+AIME2024 and AIME2025 benchmarks
+
+[[id:2763bae5-cfe0-400f-8923-f0dbb6170528][Markov Decision Process (MDP)]]
+[[id:c7706c8e-60f6-4a89-97af-2b384130390c][KV cache eviction methods]]
+
+* Reference List
+:PROPERTIES:
+:ID:       df0d84e8-e52b-4c54-8398-f614ead70109
+:END:
+1. https://arxiv.org/pdf/2602.03203
