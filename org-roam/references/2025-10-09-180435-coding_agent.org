@@ -29,7 +29,13 @@ Run /dashboard to launch the dashboard UI in your browser.
 :END:
 
 ** Install (Arch/Linux, macOS, Windows)
+:PROPERTIES:
+:ID:       81d34e69-40fd-404f-83cd-061bb30ac074
+:END:
 *** Install nvm
+:PROPERTIES:
+:ID:       a69e7d50-da19-4341-8894-d196e093935d
+:END:
 #+begin_src bash
 # prereqs (curl + git)
 sudo pacman -S curl git   # or your distro’s equivalents
@@ -41,11 +47,17 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
 Close and reopen your terminal
 
 *** Verify
+:PROPERTIES:
+:ID:       40ea07a9-ad5f-4945-a206-db77623abb9f
+:END:
 #+begin_src console
 yanboyang713@Meta-Scientific-Linux ~ % command -v nvm
 nvm
 #+end_src
 *** Use it
+:PROPERTIES:
+:ID:       9933a0e7-59b4-4fd4-90e3-c030a57560d6
+:END:
 #+begin_src console
 yanboyang713@Meta-Scientific-Linux ~ % nvm install --lts
 Installing latest LTS version.
@@ -69,6 +81,9 @@ Now using node v22.20.0 (npm v10.9.3)
   v22.20.0
 #+end_src
 *** Make zsh auto-use your nvm default on every start
+:PROPERTIES:
+:ID:       7257e99f-bc66-41e2-9e00-5a7161174895
+:END:
 Append these lines to the end of your ~/.zshrc (or ~/.config/zsh/.zshrc if you use $ZDOTDIR):
 
 #+begin_src bash
@@ -77,6 +92,9 @@ export NVM_DIR="$HOME/.nvm"
 nvm use --silent default
 #+end_src
 *** Now install Gemini CLI (no sudo with nvm)
+:PROPERTIES:
+:ID:       f3bd47ad-1cc7-41cd-b5a4-707cc1ee8129
+:END:
 #+begin_src bash
 npm i -g @google/gemini-cli
 gemini -v
@@ -84,10 +102,19 @@ gemini -v
 npx @google/gemini-cli
 #+end_src
 *** Authenticate
+:PROPERTIES:
+:ID:       164e376f-a0b9-432e-a27f-fd839d883e8d
+:END:
 https://google-gemini.github.io/gemini-cli/docs/get-started/authentication.html
 *** Sandbox
+:PROPERTIES:
+:ID:       5f2af7ab-214c-47a3-8175-aa4fe948088f
+:END:
 install [[id:96eb13f4-76c9-4994-870a-5bcd2244d89f][podman]]
 *** Ensure ~/.gemini is writable by your user
+:PROPERTIES:
+:ID:       fe4adf81-4e38-4208-8074-6274d0bce61b
+:END:
 #+begin_src bash
 mkdir -p ~/.gemini ~/.gemini/tmp
 chmod 1777 ~/.gemini ~/.gemini/tmp   # sticky bit: others can create, not delete each other's files
@@ -108,12 +135,19 @@ https://geminicli.com/docs/tools/todos/
 
 Codex can now interpret simple commands in natural language and execute them on the user’s behalf—making it possible to build a natural language interface to existing applications.
 
+** Plugins
+:PROPERTIES:
+:ID:       d9197caa-8037-477e-879a-d68ec3a25ad0
+:END:
++ [[id:f38b8556-d93c-43c9-bb35-fc82cf86564c][Serena]]
+
 ** Install Codex CLI
 :PROPERTIES:
 :ID:       b952a642-228b-4b25-997f-6718fe4541b3
 :END:
+Install the Codex CLI with the standalone installer for macOS and Linux.
 #+begin_src bash
-  npm install -g @openai/codex
+  curl -fsSL https://chatgpt.com/codex/install.sh | sh
   codex --version
   # Run once and sign in when prompted
   codex
@@ -135,5 +169,11 @@ https://openai.com/blog/openai-codex
 https://docs.factory.ai/cli/getting-started/overview
 
 * [[id:bed72520-a52f-43d9-bf85-369bd6bffbf6][OpenHands]]
+:PROPERTIES:
+:ID:       1c357978-ce0f-438a-9133-1f96957ee356
+:END:
 
 * Reference List
+:PROPERTIES:
+:ID:       10a5245d-bddf-4e30-9a00-2e8d23e2a7a8
+:END:

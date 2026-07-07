@@ -25,3 +25,4 @@ overlapped KV prefetching mechanism
 :ID:       96c1d384-6baa-4136-bfd5-f3f88494a7d8
 :END:
 1. https://arxiv.org/pdf/2507.07400
+2. https://github.com/PanZaifeng/KVFlow

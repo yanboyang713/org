@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       22f2a20c-f7b6-4556-a7b3-ea9a4e650c32
+:END:
+#+title: Discovery Dish
+#+date: 2026-06-27
+
+A system for weather satellite reception and hydrogen line radio astronomy.
+
+* Reference List
+:PROPERTIES:
+:ID:       10b646f4-30cb-402a-aa69-9b30e7788c2d
+:END:
+1. https://www.crowdsupply.com/krakenrf/discovery-dish

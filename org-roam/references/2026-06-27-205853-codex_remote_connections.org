@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       19213038-671b-4c3c-93bc-24a943d5d0a1
+:END:
+#+title: codex remote connections
+#+date: 2026-06-27
+
+[[id:33a4b250-4c20-4a3f-aa5b-fabb4a7e89d4][Codex CLI]]
+
+* Reference List
+1. https://developers.openai.com/codex/remote-connections

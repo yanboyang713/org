@@ -5,14 +5,24 @@
 #+filetags:
 
 * What is 5G cellular?
+:PROPERTIES:
+:ID:       a828a7f4-d58e-4ce1-93cd-63a56f583a31
+:END:
 5G cellular is the fifth generation of mobile communication systems. It is the end-to-end network used to connect user devices such as phones, modems, sensors, and industrial equipment to packet data services with higher capacity, lower latency, and better support for large numbers of devices than earlier generations.
 
 At a high level, a 5G cellular network is mainly made of two major parts:
 + [[id:065ea098-bfba-4cda-9bde-aa169ffe79fa][RAN architecture]]
 + [[id:99370515-d845-4028-9214-6b5fdf14e6ff][5G core network]]
 
+  
 * Two Main Components
+:PROPERTIES:
+:ID:       bb660d4c-239a-4d56-b6fb-f2be890795e1
+:END:
 ** Radio Access Network (RAN)
+:PROPERTIES:
+:ID:       e46bc0e6-c70e-4ecd-ac68-eecd530400c9
+:END:
 The RAN is the radio-facing part of the 5G system. It connects user equipment to the operator network over the air interface. In practice, the RAN includes base stations such as gNBs, antennas, radio units, and the processing elements that handle scheduling, radio signaling, and transport toward the core.
 
 The RAN is responsible for:
@@ -22,6 +32,9 @@ The RAN is responsible for:
 + carrying user and control traffic toward the core
 
 ** 5G Core (5GC)
+:PROPERTIES:
+:ID:       7c240825-9c00-4897-9888-912595862002
+:END:
 The 5G Core is the service and control backbone of the network. It handles registration, authentication, session setup, policy, mobility management, and user-plane forwarding between subscribers and external data networks.
 
 The core is responsible for:
@@ -31,6 +44,9 @@ The core is responsible for:
 + exposing network services through service-based interfaces
 
 * How They Fit Together
+:PROPERTIES:
+:ID:       da407b91-0f95-48de-b345-4a81d120cee8
+:END:
 In a simplified view, a user device first reaches the network through the RAN. The RAN then connects to the 5G Core, which decides whether the device can register, what policies apply, and how user traffic should be forwarded.
 
 That means:
@@ -38,5 +54,8 @@ That means:
 + the core provides control, session logic, and connectivity to services
 
 * Related Notes
+:PROPERTIES:
+:ID:       4e3822d7-0e00-450e-957d-b16bf011f733
+:END:
 + [[id:065ea098-bfba-4cda-9bde-aa169ffe79fa][RAN architecture]]
 + [[id:99370515-d845-4028-9214-6b5fdf14e6ff][5G core network]]

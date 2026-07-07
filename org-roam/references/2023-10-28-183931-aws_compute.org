@@ -8,174 +8,192 @@
 [[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1698533361/aws/2023-10-28-18_48_16-screenshot_c09idf.png]]
 
 * Amazon EC2
-Amazon Elastic Compute Cloud (Amazon EC2) is a web service with which you can run virtual server “instances” in the cloud.
+:PROPERTIES:
+:ID:       d8339730-cb09-4a1b-8018-655fdd454fb5
+:EMBEDDING: -0.022549 0.090825 -0.198519 -0.044946 0.048037 -0.058093 0.016479 -0.016925 -0.005165 -0.042106 -0.041181 0.003961 -0.000904 -0.017052 -0.012707 -0.001493 -0.021983 -0.023844 -0.057101 -0.032185 -0.022764 -0.070727 0.006136 -0.042928 0.086990 0.089278 -0.018146 0.036326 0.007528 0.033728 0.035350 -0.022396 0.007788 0.006183 -0.042711 -0.020364 -0.010905 -0.014106 -0.016626 0.018062 0.022615 -0.053665 0.003810 -0.046929 0.009651 0.002740 0.014731 0.024758 0.060427 -0.063877 -0.003812 -0.000233 -0.017971 -0.021457 0.068468 -0.005992 -0.012310 0.055486 -0.030585 -0.018440 0.111955 0.048103 0.004706 0.095192 0.036200 -0.030099 -0.034188 0.055238 0.014037 -0.062161 0.035684 -0.020736 -0.012982 -0.024460 -0.021288 -0.016110 -0.022705 -0.023137 -0.018213 0.029650 0.052056 0.028535 0.076833 -0.027439 0.051351 -0.007981 -0.039361 -0.014948 -0.030642 0.057152 -0.010533 0.043806 0.030299 0.018887 -0.041970 -0.028043 0.031410 0.033710 -0.026421 -0.008138 -0.005402 -0.027743 0.006352 -0.022616 0.014867 0.060104 -0.006461 0.014688 -0.006017 0.022897 -0.000490 0.001431 -0.018042 0.007868 0.037255 -0.028166 0.036622 -0.003292 -0.007733 0.032349 0.006336 -0.037669 -0.053380 0.022981 0.055489 0.016320 -0.072337 0.015155 -0.028734 -0.042924 -0.016916 -0.022709 -0.049579 0.003861 0.041950 0.026075 -0.054597 -0.061485 0.002905 0.000734 0.008533 0.027190 -0.026065 -0.035675 0.013782 -0.037268 0.016642 -0.029208 -0.049803 0.034278 -0.032682 0.019485 -0.042690 0.034492 0.019274 -0.039697 -0.013906 0.013189 0.040835 0.042068 0.020482 0.047377 -0.076581 0.030246 0.005908 -0.082577 0.031785 0.076577 0.010638 0.020836 -0.051561 -0.020370 -0.036330 0.028560 -0.006692 0.009820 0.037895 -0.001853 0.023324 -0.022451 0.008314 -0.074505 0.073580 -0.005080 -0.027628 0.004354 -0.002692 -0.046685 0.006026 -0.052229 0.012130 -0.024495 0.004577 -0.008341 -0.041187 -0.045706 0.064113 0.026457 0.019052 -0.052800 -0.026536 -0.031902 0.018901 0.033864 -0.005988 0.020049 -0.010543 0.014108 0.017107 0.080731 0.074264 -0.018015 0.015727 0.014291 0.044584 -0.005524 0.021420 -0.047834 -0.033695 -0.002885 0.064056 -0.024991 0.038626 -0.014797 0.041210 -0.006688 -0.037820 -0.025111 -0.007300 -0.014837 -0.018048 -0.065681 0.040472 -0.013613 -0.026033 0.050232 -0.050282 0.071804 -0.009304 0.036104 0.047825 0.038503 -0.020831 -0.018376 -0.041514 -0.012793 -0.036091 -0.029201 -0.002277 -0.010583 0.047706 -0.035265 0.041622 0.018228 0.052365 -0.067083 -0.013982 -0.001003 -0.015887 -0.083326 -0.015407 -0.025857 0.065389 -0.037839 0.021518 -0.027602 -0.032500 0.002144 0.022318 0.039901 0.079197 0.029165 -0.014746 0.085585 0.028128 0.014655 0.025272 0.024094 0.002629 0.022648 -0.061751 -0.055069 -0.002917 0.006659 -0.002185 0.016670 0.020551 0.005444 -0.000349 -0.014821 0.027778 -0.030258 0.000125 0.028824 -0.024603 0.014329 0.053054 -0.030437 -0.023802 -0.039190 0.013849 0.017018 0.004165 0.015745 -0.001882 0.016998 0.041005 0.042445 -0.026670 -0.039988 -0.042839 -0.037391 -0.030171 0.001394 0.002025 0.017021 0.044896 0.010510 -0.001626 -0.022062 -0.030497 -0.039525 0.000398 -0.020569 -0.023511 0.090473 -0.037419 0.041110 0.002754 0.025246 -0.029599 0.004596 0.023814 -0.052261 -0.021150 0.008243 -0.001826 0.047427 -0.012964 0.037973 0.019178 0.007764 0.003706 -0.016472 -0.022758 0.010511 -0.072159 0.004825 0.040592 0.029810 -0.019689 -0.011921 -0.006546 0.005920 0.018548 -0.020727 -0.004219 0.022265 -0.021062 -0.009656 0.031564 0.000650 0.046825 -0.002254 0.006798 0.041744 0.061259 -0.002369 -0.021888 -0.002511 0.004572 -0.001978 0.000121 -0.003743 0.028961 0.005081 -0.109125 -0.004268 0.005548 0.031284 0.019359 -0.053314 -0.028892 0.033630 0.004347 -0.021690 0.046085 0.006841 0.016286 0.039529 -0.037826 -0.034917 -0.034729 -0.001285 0.013963 0.006607 0.046338 -0.019306 0.028501 0.029168 -0.047414 -0.064478 -0.016579 -0.011223 0.001011 0.039131 -0.009227 -0.033421 0.005418 -0.015318 0.040841 0.031856 -0.001533 -0.075690 -0.016426 -0.002360 0.060230 0.012147 0.000243 -0.006339 0.031176 0.000402 -0.009191 -0.016387 0.022088 0.002110 0.013097 0.051546 0.020765 -0.056507 0.023312 0.051318 0.016458 0.000783 0.013155 -0.027211 0.069934 0.008040 0.029414 0.030989 0.004209 -0.009495 -0.043892 -0.030102 0.000756 0.072151 0.060638 -0.048456 -0.027980 0.025813 0.038689 0.015350 0.006341 0.001101 0.100291 -0.003053 -0.000385 -0.000404 -0.001131 0.008140 0.001559 0.037714 -0.078345 0.013673 0.012727 -0.006537 0.000072 -0.008377 0.017156 0.049811 -0.032309 -0.037448 0.025754 0.004077 0.036419 0.010231 -0.008673 0.004789 0.035490 0.093413 0.006951 -0.048249 -0.013743 -0.031416 -0.047309 0.015621 0.072018 -0.017583 0.017452 0.021078 -0.014064 0.023431 -0.013088 0.029062 0.024527 -0.039257 -0.043916 0.008535 0.009278 0.003157 0.050079 0.023829 -0.011875 -0.019996 0.003984 0.011048 0.046831 -0.054348 0.004091 -0.029425 -0.027461 -0.013810 0.005433 0.008417 0.052794 -0.063891 0.036009 0.020541 -0.035596 0.030523 0.019592 -0.007122 0.030363 -0.017142 -0.068996 0.014070 0.003273 -0.025107 0.062864 0.022159 -0.013364 0.014556 -0.073400 -0.045471 -0.034228 0.013400 -0.036434 0.027821 0.058619 0.023607 -0.038919 -0.029683 0.011457 -0.009878 -0.032631 -0.033889 -0.043124 0.060739 -0.002314 -0.006444 0.007185 -0.077325 0.019851 -0.006033 0.057238 -0.004795 0.015360 -0.002878 -0.065654 -0.019284 -0.015946 0.040708 0.023229 -0.024345 0.000147 -0.058118 0.009394 0.049429 -0.023716 0.010043 -0.022643 -0.015091 -0.003463 -0.058576 0.034972 0.028648 0.033997 -0.012103 -0.069255 -0.055122 0.040801 -0.045545 0.052184 0.069443 0.023367 0.017385 -0.056449 -0.047041 0.026806 -0.108270 0.004957 0.087683 0.024557 -0.042207 -0.005168 0.030785 -0.008920 -0.000182 -0.041685 -0.056676 0.025184 0.027412 0.012051 -0.026378 -0.035644 0.041420 -0.007758 -0.003229 -0.047982 -0.043172 0.033756 0.005903 -0.009766 -0.009711 0.010307 -0.011541 0.070320 -0.010138 0.036755 -0.013837 -0.027305 -0.077207 0.049754 -0.026971 0.016324 -0.025291 -0.023928 -0.031710 0.012976 0.026348 -0.023003 0.006028 -0.045090 -0.053024 -0.064648 0.024357 -0.011075 -0.021939 0.006123 0.012037 0.049072 -0.015993 -0.003344 0.087249 0.094297 -0.016790 0.018259 -0.010888 0.076240 0.001852 0.055193 0.053483 -0.003356 0.011550 0.022713 -0.030750 -0.026529 -0.039794 -0.089542 -0.051674 -0.007785 0.028127 -0.003100 -0.001117 0.039145 0.025898 0.002435 -0.013144 -0.078940 -0.058727 0.008295 0.102371 -0.017608 -0.049137 -0.003905 0.033383 0.045909 0.040768 -0.027412 -0.023553 0.005084 -0.008676 0.025938 -0.039312 0.041504 -0.043045 0.036531 -0.031493 0.016759 -0.003931 0.003886 -0.034462 -0.019635 -0.016890 0.000835 0.063306 -0.004079 -0.047643 -0.030683 0.060061 -0.035144 0.010437 0.027887 0.063888 -0.027435 -0.014285 0.015284 0.011631 -0.018661 -0.069698 -0.009289 -0.002631 0.008558 0.047158 0.005388 0.059845 0.005130 0.017612 0.010586 0.025108 0.035869 -0.048340 -0.017173 0.006203 -0.026632 0.010369 0.048946 -0.047721 0.027878 0.006460 -0.028024 -0.011894 -0.026378 0.075839 0.004945 -0.006700 -0.028342 -0.037922 -0.039214 -0.049918 -0.067546 0.017864 -0.022547 0.031562 0.021531 0.021942 -0.032564 0.024772 0.018827 0.000531 0.015149 -0.030419 -0.021439 -0.017907 -0.005385 0.014509 0.031264 0.042273 0.086422 0.019913 0.011021 -0.002656 0.025908 0.026370 0.011185 -0.071634 -0.026116 -0.041687
+:END:
+Amazon Elastic Compute Cloud (Amazon EC2) is a web service for running virtual servers, called instances, in the AWS Cloud.
 
-Amazon EC2 instances can run the Windows, Linux, or MacOS operating systems.
+EC2 instances can run Linux, Windows, or macOS, depending on the selected instance type and Amazon Machine Image (AMI).
 
-The EC2 simple web service interface allows you to obtain and configure capacity with minimal friction.
+EC2 lets you provision compute capacity on demand, choose the CPU, memory, storage, and networking profile for the workload, and scale capacity up or down as demand changes.
 
-EC2 is designed to make web-scale cloud computing easier for developers.
-
-Amazon EC2 changes the economics of computing by allowing you to pay only for capacity that you use.
-
-Amazon EC2 provides developers the tools to build failure resilient applications and isolate them from common failure scenarios.
+EC2 is commonly used for web applications, development environments, batch processing, data processing, high-performance computing, and workloads that need direct control over the operating system.
 
 Benefits of EC2 include:
-+ Elastic Web-Scale computing – you can increase or decrease capacity within minutes not hours and commission one to thousands of instances simultaneously.
-+ Completely controlled – You have complete control include root access to each instance and can stop and start instances without losing data and using web service APIs.
-+ Flexible Cloud Hosting Services – you can choose from multiple instance types, operating systems, and software packages as well as instances with varying memory, CPU, and storage configurations.
-+ Integrated – EC2 is integrated with most AWS services such as S3, RDS, and VPC to provide a complete, secure solution.
-+ Reliable – EC2 offers a highly reliable environment where replacement instances can be rapidly and predictably commissioned with SLAs of 99.99% for each region.
-+ Secure – EC2 works in conjunction with VPC to provide a secure location with an IP address range you specify and offers Security Groups, Network ACLs, and IPSec VPN features.
-+ Inexpensive – Amazon passes on the financial benefits of scale by charging very low rates and on a capacity consumed basis.
++ Elastic capacity - launch, resize, stop, start, or terminate instances as workload demand changes.
++ Control - choose the operating system, instance type, storage, network configuration, and access model.
++ Flexible hosting - select from many instance families optimized for general purpose, compute, memory, storage, GPU, and accelerated workloads.
++ AWS integration - connect EC2 with services such as VPC, EBS, S3, IAM, CloudWatch, Auto Scaling, and Elastic Load Balancing.
++ Reliability - design applications across Availability Zones and replace failed instances quickly.
++ Security - run instances inside a VPC and control access with IAM, security groups, network ACLs, key pairs, and encryption options.
++ Usage-based pricing - pay for the compute capacity and related resources you use.
 
 * Amazon Machine Image (AMI)
 :PROPERTIES:
 :ID:       96951fb9-fd78-4965-b329-39459a36c455
+:EMBEDDING: -0.010738 0.064100 -0.197488 -0.052452 0.069956 -0.073024 0.008106 -0.008126 -0.023670 -0.074912 -0.026727 -0.003509 0.077077 0.027155 -0.013545 0.006273 -0.005644 -0.088111 -0.049936 0.018019 -0.023177 -0.048737 -0.012400 -0.020157 0.061903 0.041533 0.056193 0.041517 -0.007589 -0.014452 0.088254 -0.019115 -0.025186 0.024117 -0.036440 -0.046470 0.020464 0.007151 0.031110 0.028680 0.026001 -0.011214 0.009183 -0.046569 -0.041347 0.016311 0.012944 0.022397 0.051850 -0.034547 -0.007148 0.037998 -0.007604 -0.019792 0.061378 -0.017043 -0.007074 0.024606 -0.026397 -0.043427 0.063191 0.078683 -0.007627 0.100517 0.055940 0.013016 -0.039949 0.033264 0.010223 -0.044373 0.058528 -0.021367 -0.007895 -0.009302 -0.023176 -0.003790 -0.010523 -0.014752 -0.006320 0.024303 0.046847 0.040874 0.088812 0.002403 0.059773 0.011880 -0.039883 -0.001366 -0.029210 0.038518 0.027934 0.011188 -0.000218 0.020210 -0.047109 -0.030921 0.021797 0.036400 -0.030185 0.017198 -0.021508 -0.040950 0.017737 0.015789 -0.027294 0.060588 -0.043111 0.012904 -0.025257 -0.010405 -0.002734 -0.010267 -0.017235 0.027065 0.045407 -0.025396 0.071825 -0.014878 -0.030254 0.035776 -0.018247 -0.046661 -0.009506 0.026336 -0.008707 -0.013662 -0.043500 -0.035669 -0.036379 -0.038590 -0.026445 -0.027171 -0.036837 -0.020759 0.060093 0.064199 -0.041344 -0.031846 0.021786 0.012709 -0.011040 0.027043 -0.010121 -0.041448 0.021743 -0.045864 0.053832 -0.044852 -0.046657 0.049298 -0.026813 0.000165 -0.025301 0.008611 0.016812 -0.042787 -0.005088 0.019250 0.010461 0.008829 0.022302 0.039145 -0.077396 -0.004801 0.007428 -0.086836 0.005838 0.035241 0.030420 0.005522 -0.057413 0.019883 -0.018983 0.003403 0.002540 -0.019692 0.032402 0.019342 0.056364 -0.034478 0.009292 -0.064531 0.045269 -0.007125 -0.050850 -0.019446 0.017832 -0.061233 0.029226 -0.032340 0.015073 -0.037921 -0.019334 -0.021022 -0.029066 -0.047776 0.042019 0.024431 -0.003701 -0.035888 -0.020157 -0.027849 -0.000453 0.010516 -0.036193 0.004181 0.013952 0.019488 0.004928 0.064278 0.031939 -0.031942 0.016773 -0.000112 0.015760 0.018907 0.040521 -0.033549 -0.013154 -0.016517 0.058109 -0.000149 -0.011427 -0.059688 0.070945 -0.026287 -0.029130 -0.042727 -0.001158 -0.017162 -0.050097 -0.047249 0.043981 0.000726 -0.027792 0.056288 -0.039666 0.078510 0.004333 0.035217 0.014064 0.072428 -0.011789 0.007990 -0.084507 -0.024908 -0.041430 -0.028638 0.026378 0.050829 -0.000443 0.009710 0.058797 0.005403 0.039098 -0.054852 -0.043795 -0.032766 -0.016324 -0.031723 0.017305 -0.025908 0.027751 -0.049732 -0.011410 -0.050442 -0.046515 0.035997 0.019302 0.062832 0.069680 0.026467 0.001596 0.057768 -0.017039 0.059024 0.028114 0.018934 -0.041983 0.019105 -0.019379 -0.042373 -0.006288 0.020590 -0.016943 0.011939 0.003437 0.001189 0.024322 0.000608 0.011862 -0.018266 0.004536 0.023676 -0.036151 0.020733 0.028395 0.016954 -0.008897 -0.030325 0.038419 0.032672 0.070370 0.027772 -0.023013 -0.002491 0.053283 0.022909 -0.002981 0.020750 -0.029250 -0.023582 -0.055711 0.014229 0.017695 0.006468 0.026670 0.006947 -0.040003 -0.022871 -0.026263 -0.028764 0.005932 0.011050 -0.011438 0.059516 -0.029327 0.057271 0.021113 -0.005019 -0.012792 0.034287 0.023666 -0.027068 -0.002586 0.012845 -0.009190 0.009426 -0.006390 0.034752 0.054151 0.013649 0.007971 -0.061686 -0.014560 -0.001452 -0.080797 -0.019966 0.030708 0.036396 -0.010077 0.009152 0.011520 -0.036839 0.019599 0.007638 -0.003064 0.016548 0.000900 -0.022435 0.051943 0.037188 0.034724 -0.008754 0.009668 0.048589 0.047835 0.003007 0.014932 0.009044 0.004031 -0.018429 -0.009186 0.018642 0.015282 0.015689 -0.071874 -0.030782 -0.012145 0.046628 0.034313 -0.046922 0.005178 0.028948 0.031975 0.009802 0.053113 -0.018038 0.043324 0.018244 -0.010126 -0.018590 -0.013788 -0.026363 0.020852 -0.023684 0.040156 0.013501 0.040910 0.020309 -0.054670 -0.046430 0.012758 -0.019206 -0.004880 -0.014224 -0.002334 -0.023749 0.092052 -0.021617 0.047325 0.056721 0.003742 -0.071621 0.036828 0.011227 0.061817 -0.007619 -0.003846 -0.000756 0.001730 -0.003267 -0.019290 0.009936 0.027122 0.014184 0.045770 0.025180 0.010824 -0.075652 0.017822 0.033398 -0.020276 0.009897 -0.024679 -0.009577 0.043103 0.019875 0.007214 0.019642 0.013616 -0.050229 -0.037713 -0.018484 -0.001467 0.080435 0.083002 -0.045752 -0.034074 0.084102 0.048512 -0.011224 0.011696 0.022818 0.098255 -0.031368 -0.005484 -0.023099 0.031827 0.006391 0.016305 0.030910 -0.068856 0.008482 -0.003090 -0.045835 -0.015116 -0.022306 0.043368 0.053771 -0.060067 -0.029510 -0.020115 -0.015427 0.011689 0.051639 0.001681 0.016471 0.015867 0.088050 0.028678 -0.031442 -0.034140 -0.056088 -0.008867 0.034456 0.043822 -0.022372 0.018186 0.006614 -0.040592 0.011694 0.016043 0.021854 0.010191 -0.035763 -0.010617 0.030000 0.004348 0.033036 0.026608 0.046097 -0.029783 -0.007260 -0.013207 -0.034107 0.036296 -0.061318 0.016847 -0.042303 -0.021736 -0.025031 0.017200 0.015854 0.047817 -0.061534 0.034955 0.017139 -0.025551 0.036500 -0.007070 -0.031610 0.019334 -0.001048 -0.082802 0.026577 0.031275 -0.026309 0.084211 0.045676 -0.037879 0.038825 -0.053224 -0.045451 0.012513 0.001068 -0.039410 0.033102 0.063081 0.027723 0.019592 0.009224 -0.017806 -0.013970 -0.000376 -0.038789 -0.034622 0.061244 0.019165 -0.014494 0.064097 -0.026175 0.014372 0.023180 0.015406 -0.009039 -0.010529 -0.022707 -0.081343 -0.036775 -0.016331 0.047235 0.051857 0.034494 -0.016972 -0.060352 0.037768 0.019299 -0.012077 0.004966 0.015272 -0.008800 0.047860 -0.027771 0.015432 0.030190 0.021347 0.039518 -0.044769 -0.006186 0.018854 -0.029551 0.034832 0.029596 -0.006254 0.005800 -0.049859 -0.086779 0.000509 -0.094876 0.000662 0.045768 0.024063 0.013924 0.010679 0.026020 -0.004485 -0.030328 -0.038575 -0.042980 0.010296 0.038654 0.007547 -0.031393 -0.012726 0.026353 -0.026064 0.002351 0.007992 -0.013151 0.003831 -0.012378 -0.022353 -0.002286 0.038430 -0.031489 0.029092 0.004537 -0.005640 0.012220 -0.027625 -0.037365 0.052189 -0.038029 -0.013654 -0.072824 -0.015330 -0.033491 -0.017381 0.011196 -0.054376 -0.006571 -0.055845 -0.035473 -0.068111 0.015789 -0.002102 0.009648 0.019801 -0.020924 0.050181 -0.030406 -0.012432 0.054917 0.087723 -0.040838 -0.002084 0.023376 0.089168 -0.035376 0.060218 0.054829 -0.012718 0.013492 -0.024751 -0.037129 -0.002792 -0.062069 -0.096030 -0.039897 -0.031283 0.026636 -0.002706 -0.005421 0.020887 -0.014846 -0.024925 0.037311 -0.040527 -0.050580 0.005688 0.064519 -0.020237 -0.015678 0.013567 0.033532 0.081024 0.046224 -0.018338 0.002497 0.020823 0.000269 0.006173 -0.051553 0.002503 -0.079414 0.021893 -0.028524 -0.012776 -0.035156 -0.022606 -0.062885 -0.026695 -0.011683 -0.006444 0.047536 -0.016390 -0.056675 -0.046935 0.019377 -0.048534 0.007236 -0.001358 0.022984 -0.001642 -0.030603 0.021998 0.020872 -0.035571 -0.053763 -0.040569 0.013793 -0.028855 0.016233 -0.000336 0.051693 0.015452 0.016443 0.007453 0.015518 0.045166 -0.003950 -0.055929 -0.040553 -0.007793 0.017964 0.015643 -0.033931 0.037659 0.006388 -0.058632 -0.007034 -0.004655 0.062367 -0.013965 0.017461 0.010836 -0.030480 -0.036419 -0.075853 -0.056782 0.042148 -0.017673 0.025310 -0.011161 0.033150 -0.066023 0.031435 0.010347 -0.035138 0.007275 -0.009111 0.005289 -0.025616 -0.011020 0.022548 0.034448 0.031507 0.109332 0.003521 0.017108 -0.045860 0.040362 0.027383 0.000958 -0.059095 -0.021058 -0.009252
 :END:
-An Amazon Machine Image (AMI) is a special type of virtual appliance that is used to create a virtual machine within the Amazon Elastic Compute Cloud (“EC2”).
+An Amazon Machine Image (AMI) is a template used to launch an EC2 instance.
 
-An AMI includes the following:
-+ One or more EBS snapshots, or, for instance-store-backed AMIs, a template for the root volume of the instance (for example, an operating system, an application server, and applications).
-+ Launch permissions that control which AWS accounts can use the AMI to launch instances.
-+ A block device mapping that specifies the volumes to attach to the instance when it’s launched.
+An AMI includes:
++ A root volume template, such as an operating system, application server, and applications.
++ Launch permissions that control which AWS accounts can use the AMI.
++ A block device mapping that specifies the volumes to attach to the instance when it's launched.
 
 AMIs come in three main categories:
-+ Community AMIs – free to use, generally you just select the operating system you want.
-+ AWS Marketplace AMIs – pay to use, generally come packaged with additional, licensed software.
-+ My AMIs – AMIs that you create yourself.
++ Community AMIs - public images shared by AWS users or communities.
++ AWS Marketplace AMIs - images packaged with commercial, licensed, or supported software.
++ My AMIs - custom images that you create and manage.
 
-Metadata and User Data:
-+ User data is data that is supplied by the user at instance launch in the form of a script.
-+ Instance metadata is data about your instance that you can use to configure or manage the running instance.
-+ User data is limited to 16KB.
-+ User data and metadata are not encrypted.
-+ Instance metadata is available at http://169.254.169.254/latest/meta-data.
+Metadata and user data:
++ User data is supplied when an instance launches, often as a bootstrapping script.
++ Instance metadata is information about the running instance that can be used for configuration or automation.
++ User data is limited to 16 KB.
++ User data and metadata are not encrypted by default.
++ Instance metadata is available from the instance at http://169.254.169.254/latest/meta-data.
   
 The Instance Metadata Query tool allows you to query the instance metadata without having to type out the full URI or category names.
 
-* [[id:d8339730-cb09-4a1b-8018-655fdd454fb5][Amazon EC2]] [[id:c86ab8d3-fefe-4081-8221-79c1b5b7b472][Pricing]]
+* EC2 Pricing
 :PROPERTIES:
 :ID:       aea583e0-41d1-48db-a581-33b2aa539be8
 :END:
+EC2 pricing depends on the resources you provision and how long you run them.
 
 EC2 pricing is based on:
-+ Clock hours of server uptime.
++ Instance running time.
 + Instance configuration.
 + Instance type.
 + Number of instances.
-+ Load balancing.
++ Storage volumes.
++ Load balancers.
 + Detailed monitoring.
 + Auto Scaling (resources created).
-+ Elastic IP addresses (charged if allocated but not used).
++ Elastic IP addresses.
 + Operating systems and software packages.
++ Data transfer.
   
-There are several pricing models for AWS services, these include:
+For broader AWS cost concepts, see [[id:c86ab8d3-fefe-4081-8221-79c1b5b7b472][AWS Billing and Pricing]].
 
-** On-demand
-+ Good for users that want the low cost and flexibility of EC2 without any up-front payment or long-term commitment.
-+ Applications with short term, spiky, or unpredictable workloads that cannot be interrupted.
-+ Applications being developed or tested on EC2 for the first time.
-  
-Means you pay for compute or database capacity with no long-term commitments of upfront payments.
-You pay for the computer capacity per hour or per second (Linux only, and applies to On-Demand, Reserved and Spot instances).
-Recommended for users who prefer low cost and flexibility without upfront payment or long-term commitments.
-Good for applications with short-term, spiky, or unpredictable workloads that cannot be interrupted.
+EC2 pricing options include:
+
+** On-Demand
+:PROPERTIES:
+:ID:       c63db20c-a4c6-4150-9cef-859214f164c4
+:END:
+On-Demand Instances let you pay for compute capacity without an upfront payment or long-term commitment.
+
+Good for:
++ Short-term workloads.
++ Spiky or unpredictable workloads.
++ Development and test environments.
++ Applications that cannot be interrupted and do not yet have predictable usage.
 
 ** Reserved
-+ Applications with steady state or predictable usage.
-+ Applications that require reserved capacity.
-+ Users can make up-front payments to reduce their total computing costs even further.
-+ Standard Reserved Instances (RIs) provide up to 75% off on-demand price.
-+ Convertible RIs provide up to 54% off on-demand price – provides the capability to change the attributes of the RI if the exchange results in the creation of RIs of equal or greater value.
-+ Scheduled RIs are available to launch within the time window you reserve. This option allows you to match your capacity reservation to a predictable recurring schedule that only requires a fraction of a day, a week, or a month.
+:PROPERTIES:
+:ID:       653fa4ba-9149-4e7b-8d56-e10c4cf6fd95
+:END:
+Reserved Instances provide a discount compared with On-Demand pricing in exchange for a usage commitment.
 
-Reserved instances provide significant discounts, up to 75% compared to On-Demand pricing, by paying for capacity ahead of time.
-Provide a capacity reservation when applied to a specific Availability Zone.
-Good for applications that have predictable usage, that need reserved capacity, and for customers who can commit to a 1 or 3-year term.
+Good for:
++ Steady-state or predictable workloads.
++ Applications that need reserved capacity.
++ Customers that can commit to a 1-year or 3-year term.
 
-Reservations apply to various services, including:
-+ Amazon EC2 Reserved Instances.
-+ Amazon DynamoDB Reserved Capacity.
-+ Amazon ElastiCache Reserved Nodes.
-+ Amazon RDS Reserved Instances.
-+ Amazon RedShift Reserved Instances.
+Reservation payment options include:
++ No upfront.
++ Partial upfront.
++ All upfront.
 
-Reservation options include no upfront, partial upfront and all upfront.
-Reservation terms are 1 or 3 years.
+Reservation types include:
++ Standard Reserved Instances - largest discount, least flexibility.
++ Convertible Reserved Instances - lower discount, but attributes can be exchanged for another reservation of equal or greater value.
 
 ** Spot
-+ Applications that have flexible start and end times.
-+ Applications that are only feasible at very low compute prices.
-+ Users with an urgent need for a large amount of additional compute capacity.
-+ If Amazon terminate your instances, you do not pay, if you terminate you pay for the hour.
+:PROPERTIES:
+:ID:       2bc95f65-5b3d-42aa-a6c2-b253cc2c0019
+:END:
+Spot Instances let you purchase spare EC2 capacity at discounted rates. AWS can interrupt Spot Instances when it needs the capacity back, so applications must tolerate interruption.
 
-Purchase spare computing capacity with no upfront commitment at discounted hourly rates.
-Provides up to 90% off the On-Demand price.
-Recommended for applications that have flexible start and end times, applications that are only feasible at very low compute prices, and users with urgent computing needs for a lot of additional capacity.
-In the old model Spot instances were terminated because of higher competing bids, in the new model this does not happen, but instances still may be terminated (with a 2-minute warning) when EC2 needs the capacity back – note: the exam may not be updated to reflect this yet.
+Good for:
++ Fault-tolerant workloads.
++ Batch jobs.
++ Data processing.
++ CI/CD workers.
++ Flexible workloads with non-fixed start and end times.
++ Workloads that are only economical at low compute prices.
+
 [[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1699169605/aws/2023-11-05-02_32_02-screenshot_wvchin.png]]
 
-** Dedicated hosts
-+ Physical servers dedicated just for your use.
-+ You then have control over which instances are deployed on that host.
-+ Available as On-Demand or with Dedicated Host Reservation.
-+ Useful if you have server-bound software licenses that use metrics like per-core, per-socket, or per-VM.
-+ Each dedicated host can only run one EC2 instance size and type.
-+ Good for regulatory compliance or licensing requirements.
-+ Predictable performance.
-+ Complete isolation.
-+ Most expensive option.
+** Dedicated Hosts
+:PROPERTIES:
+:ID:       637c49b3-8f43-439f-b137-e268f7ab26e4
+:END:
+Dedicated Hosts are physical EC2 servers dedicated to a single customer. They provide visibility and control over instance placement on the host.
+
+Good for:
++ Server-bound software licenses that use per-core, per-socket, or per-VM metrics.
++ Regulatory or compliance requirements.
++ Workloads that require physical host visibility.
+
+Notes:
++ Dedicated Hosts run in your VPC.
 + Billing is per host.
++ They are available On-Demand or with a Dedicated Host Reservation.
++ They are typically the most expensive EC2 tenancy option.
 
-A dedicated host is an EC2 servers dedicated to a single customer.
-Runs in your VPC.
-Good for when you want to leverage existing server-bound software licenses such as Windows Server, SQL Server, and SUSE Linux Enterprise Server.
-Also good for meeting compliance requirements.
+** Dedicated Instances
+:PROPERTIES:
+:ID:       e69907a7-44ec-44c1-bc2e-3302bc8e2c2c
+:END:
+Dedicated Instances are EC2 instances that run in a VPC on hardware dedicated to a single customer.
 
-** Dedicated instances
-+ Virtualized instances on hardware just for you.
-+ Also uses physically dedicated EC2 servers.
-+ Does not provide the additional visibility and controls of dedicated hosts (e.g. how instances are placed on a server).
+Key points:
++ They are physically isolated from instances that belong to other AWS accounts.
++ They do not provide the same placement visibility and control as Dedicated Hosts.
 + Billing is per instance.
-+ May share hardware with other non-dedicated instances in the same account.
-+ Available as On-Demand, Reserved Instances, and Spot Instances.
-+ Cost additional $2 per hour per region.
-
- Dedicated Instances are Amazon EC2 instances that run in a VPC on hardware that’s dedicated to a single customer.
- Dedicated instances are physically isolated at the host hardware level from instances that belong to other AWS accounts.
- Dedicated instances may share hardware with other instances from the same AWS account that are not Dedicated instances.
++ They may share hardware with other instances from the same AWS account.
++ They are available as On-Demand, Reserved Instances, and Spot Instances.
  
 ** Savings Plans
-+ Savings Plans is a flexible pricing model that provides savings of up to 72% on your AWS compute usage.
-+ This pricing model offers lower prices on Amazon EC2 instances usage, regardless of instance family, size, OS, tenancy, or AWS Region.
-+ Also applies to AWS Fargate and AWS Lambda usage.
+:PROPERTIES:
+:ID:       b093cd3e-8640-4d24-926b-1e6996dfb185
+:END:
+Savings Plans provide lower prices in exchange for a commitment to a consistent amount of compute usage, measured in dollars per hour.
 
-Commitment to a consistent amount of usage (EC2 + Fargate + Lambda); Pay by $/hour; 1 or 3-year commitment.
+Savings Plans can apply to:
++ Amazon EC2.
++ AWS Fargate.
++ AWS Lambda.
 
-* [[id:d8339730-cb09-4a1b-8018-655fdd454fb5][Amazon EC2]] Instance Types
+Commitment terms are 1 year or 3 years.
+
+* EC2 Instance Types
 :PROPERTIES:
 :ID:       8438d852-b57d-4615-83ed-38559e74c72a
+:EMBEDDING: -0.010608 0.093802 -0.177599 -0.084754 0.043488 -0.075136 0.016071 -0.039605 -0.035161 -0.042232 -0.034204 0.002466 0.052612 -0.002082 -0.010647 -0.018686 -0.026531 -0.028971 -0.018495 0.025496 -0.017357 -0.033677 0.016936 -0.026716 0.053314 0.101268 -0.015222 0.028923 -0.009602 -0.003169 0.048465 -0.035469 -0.017735 -0.000181 -0.073417 -0.030187 0.037740 0.007713 0.040683 0.027612 0.042922 -0.016365 0.013232 -0.047579 0.021802 -0.006825 0.057486 0.022679 0.084914 -0.059026 -0.020410 0.002209 0.027677 -0.007240 0.064088 -0.004297 -0.036429 0.057242 -0.019685 -0.019143 0.108042 0.044555 -0.057855 0.080221 0.025123 -0.023641 -0.037127 0.069142 -0.027886 -0.054283 0.051379 -0.010596 -0.012656 0.026370 -0.044017 0.015784 0.005716 -0.009264 -0.011675 0.056561 0.038992 0.019994 0.080008 -0.013467 0.037530 0.015616 -0.045914 -0.021036 -0.028332 0.056247 0.014201 0.022025 0.032331 0.004326 -0.038120 0.042540 0.041271 0.005786 -0.018895 -0.004351 0.002424 -0.041400 0.042030 0.023472 -0.001825 0.052491 -0.020366 0.007806 -0.043448 0.012075 -0.028246 0.038764 -0.027470 0.015437 0.009905 -0.020356 0.032408 0.003483 0.020740 0.044271 -0.032762 -0.048682 -0.045540 0.025986 0.022214 0.010676 -0.091275 0.001929 -0.025407 -0.055485 -0.023762 -0.022778 -0.041119 -0.002191 0.053973 0.034404 -0.046761 -0.050765 0.007419 -0.008459 0.010338 0.015190 -0.026255 -0.038243 0.026383 -0.049106 0.013258 -0.022538 -0.062991 0.044560 -0.026111 -0.000289 -0.046470 0.036385 0.000613 -0.047769 -0.019146 0.028948 0.043772 0.049704 0.010775 0.043404 -0.071330 0.026274 0.001970 -0.083782 0.043600 0.084479 0.008432 0.023513 -0.059690 -0.036469 -0.006407 -0.001104 -0.018446 -0.011432 0.057803 0.001313 -0.002911 -0.014652 0.003206 -0.071443 0.025839 -0.001637 -0.034103 -0.023059 -0.013376 -0.000576 0.023488 -0.020819 -0.014399 -0.049105 -0.031056 -0.012718 -0.035100 -0.044119 0.044907 -0.004949 -0.001769 -0.066309 -0.056478 -0.058302 -0.011560 0.060240 -0.015139 0.004254 -0.003975 0.028122 0.014242 0.063299 0.044170 -0.009152 -0.006141 0.027098 0.026223 -0.013732 0.006985 -0.036935 -0.015454 -0.005345 0.072625 -0.042229 0.038337 -0.003105 0.051363 0.011346 0.005798 -0.012318 0.004684 -0.006508 -0.049455 -0.074345 0.040311 -0.019202 -0.034451 0.022621 -0.031405 0.061850 -0.015292 0.041904 0.033360 0.053309 -0.032227 -0.021921 -0.054083 0.013308 -0.015999 -0.029620 0.013865 0.043288 0.008496 -0.028892 0.026035 0.018503 0.036248 -0.067169 0.012172 -0.021111 0.018603 -0.024733 0.032292 -0.047657 0.045550 -0.016322 0.006416 -0.017127 -0.016180 0.002897 0.015923 0.041478 0.039765 0.012797 0.002179 0.052026 0.002495 0.038910 -0.028944 0.035882 -0.015790 0.040769 -0.032229 -0.077140 -0.020787 0.018933 -0.028110 0.036962 0.023645 0.009584 0.037159 0.017188 0.018545 -0.023171 0.008899 0.025270 -0.006720 0.006362 0.021637 -0.012430 -0.039438 -0.035730 0.008296 0.067533 0.047201 0.034560 -0.009423 0.006774 -0.005165 -0.020637 -0.043934 -0.029073 -0.041172 -0.049384 -0.005505 0.016811 0.011493 0.001461 0.044395 0.005987 0.021623 -0.039644 0.000358 -0.052360 0.015488 -0.045891 -0.042256 0.092712 -0.009735 0.029909 0.009510 -0.000837 0.007357 0.010165 0.044654 -0.027131 -0.043635 0.036229 -0.015791 0.028581 -0.025718 0.002734 0.043929 0.027287 0.004954 -0.046960 -0.013940 0.032265 -0.069321 0.000196 0.031694 0.021669 -0.020391 -0.019307 0.004600 -0.005509 0.026445 -0.000735 -0.019554 0.027802 -0.033482 -0.005977 0.019992 0.021637 0.036346 0.011631 -0.012508 0.007277 0.054474 0.002272 0.008139 0.019565 0.000260 -0.015039 -0.001656 -0.012995 0.022014 0.001030 -0.094534 -0.010463 -0.003171 0.038118 0.007989 -0.050625 -0.014214 0.021449 0.010315 -0.021185 0.023553 0.015493 0.011084 0.038431 -0.035809 0.008274 -0.052710 -0.008970 0.001834 -0.010565 0.053705 0.024868 0.027072 0.089007 -0.038628 -0.057339 0.019113 0.000059 -0.006767 -0.005677 -0.024017 -0.022689 0.016927 -0.021117 0.042028 0.059632 0.014940 -0.049785 -0.001800 -0.016789 0.029746 -0.008230 -0.021633 -0.032223 0.049723 -0.010531 -0.024102 0.005675 0.026108 0.014005 0.050019 0.059085 0.029887 -0.054376 0.031514 0.038987 0.014480 0.001354 0.007106 -0.026611 0.062979 0.029670 0.035621 0.004675 0.025853 -0.024499 -0.026826 -0.006454 -0.002671 0.067791 0.042956 -0.056593 -0.049300 0.067022 0.045885 0.014434 0.013991 -0.002477 0.112851 -0.004973 -0.012229 0.006740 0.045018 0.036229 0.002510 0.017578 -0.060896 -0.007318 -0.006367 -0.027252 -0.021102 -0.020174 -0.005543 0.030114 -0.051181 -0.058329 -0.004710 -0.031698 -0.007560 0.027905 -0.000052 0.006186 -0.014310 0.085098 -0.003167 -0.042808 -0.016212 -0.021246 -0.019480 0.029612 0.038761 -0.031735 0.020719 0.001879 -0.004063 0.000439 -0.005254 0.008182 -0.018343 -0.016772 -0.043985 0.024213 0.012196 0.007801 -0.000868 0.017173 -0.012427 -0.019496 0.013889 0.022172 0.078692 -0.066084 -0.010886 -0.050414 -0.010049 -0.009773 0.030369 0.037522 0.041898 -0.044837 0.043580 0.042868 -0.016090 0.007357 -0.008524 -0.010108 0.014184 -0.021580 -0.050519 0.025720 -0.013308 -0.061046 0.078133 0.026589 -0.003179 0.023935 -0.065742 -0.020060 -0.002454 -0.009855 -0.030122 0.032591 0.029731 0.030513 -0.035635 -0.024280 -0.019815 -0.027729 -0.003838 -0.036974 -0.025727 0.045571 0.009282 -0.008442 0.022870 -0.076008 0.027745 -0.041784 0.005843 -0.029572 0.041287 -0.006305 -0.055745 -0.024476 -0.043722 0.035042 0.004212 -0.009088 -0.010942 -0.047238 0.010741 0.029696 0.000946 0.034784 0.018064 -0.047152 0.035556 -0.009940 0.035579 0.006145 0.047979 -0.000714 -0.062119 -0.058894 0.017646 -0.030063 0.041057 0.033305 -0.012222 0.012200 -0.019253 -0.020526 0.016570 -0.103572 -0.007896 0.054931 0.064798 -0.046253 -0.010178 0.021781 -0.008189 -0.014037 -0.045284 -0.063258 0.013103 0.013643 0.038903 -0.030270 -0.009339 0.058263 -0.050118 -0.006432 -0.035759 -0.002952 -0.000281 -0.014492 -0.044179 0.029439 0.015391 -0.036988 0.027622 -0.030669 -0.011738 -0.029614 -0.009728 -0.059350 0.025888 -0.070063 0.004294 -0.030149 -0.041328 -0.013354 -0.003393 0.033845 -0.056824 0.037834 -0.009920 -0.014113 -0.080149 0.013150 -0.037638 -0.007479 -0.020641 0.030282 0.056365 -0.002634 -0.037768 0.073720 0.071694 -0.028945 0.025644 0.046351 0.074847 -0.008990 0.085097 0.060983 0.004679 0.015250 0.001095 -0.051140 -0.017460 -0.030696 -0.070858 -0.032881 -0.003747 0.037779 0.016984 0.000678 0.023571 0.030239 -0.013769 0.019683 -0.069491 -0.038844 0.019999 0.080267 -0.018434 -0.059519 -0.002176 0.025230 0.036160 0.008516 -0.033436 -0.045653 0.027620 -0.011043 -0.002466 -0.059800 0.035813 -0.029391 -0.013181 -0.029817 0.004060 -0.003114 -0.028221 -0.081992 -0.024728 -0.026319 0.009276 0.082233 -0.017507 -0.019840 -0.020226 0.028546 -0.041620 0.001808 0.027258 0.053654 -0.004231 -0.018866 0.005354 0.035877 -0.011488 -0.058843 -0.010173 0.031755 0.005356 0.037361 0.012702 0.074353 0.026276 -0.010065 0.013485 0.039776 0.058433 -0.029028 -0.028260 0.032425 -0.029880 0.017569 0.054296 -0.044482 0.020841 -0.003441 -0.061329 -0.022218 -0.019990 0.072963 0.003019 0.011238 -0.032843 -0.023965 -0.062979 -0.057133 -0.039601 0.033437 -0.015473 -0.004456 -0.011771 0.007682 -0.032647 0.027546 0.041900 -0.015520 0.003479 -0.019473 -0.016511 0.004941 -0.010247 0.032209 0.059497 0.079365 0.103271 0.027956 0.040288 0.002860 0.005357 0.034527 0.027214 -0.016452 0.005455 -0.047245
 :END:
 Amazon EC2 provides a wide selection of instance types optimized to fit different use cases.
+
 Instance types comprise varying combinations of CPU, memory, storage, and networking capacity and give you the flexibility to choose the appropriate mix of resources for your applications.
+
 Each instance type includes one or more instance sizes, allowing you to scale your resources to the requirements of your target workload.
 
-The table below helps you to understand some of the various EC2 instance families and their intended use case:
+The table below summarizes common EC2 instance family prefixes:
 
-| Family | Hint                 | Purpose/Design                                                                             |
-|--------+----------------------+--------------------------------------------------------------------------------------------|
-| D      | Data                 | Heavy data usage (e.g. file servers, DWs)                                                  |
-| R      | RAM                  | Memory optimized                                                                           |
-| M      | Main                 | General purpose (e.g. app servers)                                                         |
-| C      | Compute              | Compute optimized                                                                          |
-| G      | Graphics             | Graphics intensive workloads                                                               |
-| I      | IOPS                 | Storage I/O optimized (e.g. NoSQL, DWs)                                                    |
-| F      | Fast                 | FPGA hardware acceleration for applications                                                |
-| T      | Cheap (think T2)     | Lowest cost (e.g. T2-micro)                                                                |
-| P      | GPU                  | GPU requirements                                                                           |
-| X      | EXTREME RAM          | Heavy memory usage (e.g. SAP HANA, Apache Spark)                                           |
-| U      | HIGH MEMORY          | High memory and bare metal performance – use for in memory DBs including SAP HANA          |
-| Z      | HGH COMPUTE & Memory | Fast CPU, high memory, and NVMe-based SSDs – use when high overall performance is required |
-| H      | High Disk Throughput | Up to 16 TB of HDD-based local storage                                                     |
-
+| Family | Hint                 | Purpose/Design                                                                    |
+|--------+----------------------+-----------------------------------------------------------------------------------|
+| D      | Data                 | Dense local storage for data-heavy workloads.                                     |
+| R      | RAM                  | Memory optimized workloads.                                                       |
+| M      | Main                 | General purpose workloads, such as application servers.                           |
+| C      | Compute              | Compute optimized workloads.                                                      |
+| G      | Graphics             | Graphics-intensive and GPU-based workloads.                                       |
+| I      | IOPS                 | Storage I/O optimized workloads, such as NoSQL databases and data warehouses.     |
+| F      | FPGA                 | FPGA hardware acceleration.                                                       |
+| T      | Burstable            | Low-cost, burstable general purpose workloads.                                    |
+| P      | GPU                  | High-performance GPU workloads, such as machine learning and HPC.                 |
+| X      | Extreme memory       | Large in-memory workloads, such as SAP HANA and Apache Spark.                     |
+| U      | High memory          | Very large memory and bare metal performance for in-memory databases.             |
+| Z      | High compute/memory  | Fast CPU, high memory, and NVMe SSDs for high-performance workloads.              |
+| H      | High disk throughput | HDD-based local storage for high-throughput workloads.                            |
