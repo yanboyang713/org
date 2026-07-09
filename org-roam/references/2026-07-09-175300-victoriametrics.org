@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       223aaf6b-3645-49d0-8607-664fffb569c8
+:END:
+#+title: victoriametrics
+#+date: 2026-07-09
+
+* Reference List
+1. https://victoriametrics.com/
