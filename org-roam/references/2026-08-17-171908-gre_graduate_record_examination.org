@@ -1,0 +1,27 @@
+:PROPERTIES:
+:ID:       0cd8b03b-6ad3-4772-8772-0d8518fa7e71
+:END:
+#+title: GRE (Graduate Record Examination)
+#+date: 2026-08-17
+
+* Test Structure & Scoring
+:PROPERTIES:
+:ID:       b5f66d7a-f34b-4257-8623-4e9c59e34155
+:END:
++ Analytical Writing: One 30-minute "Analyze an Issue" task scored on a 0–6 scale.
++ Verbal Reasoning: Two sections assessing reading comprehension and vocabulary, scored on a 130–170 scale.
++ Quantitative Reasoning: Two sections testing basic math, algebra, geometry, and data analysis, scored on a 130–170 scale.
+
+* At Home Testing
+:PROPERTIES:
+:ID:       e7d24aae-b2a9-40c9-9883-ad1ac9e5b09c
+:END:
+https://www.ets.org/gre/test-takers/general-test/register/at-home-testing.html#accordion-909b748ecb-item-f94f64263a
+* GRE Registration
+https://ereg.ets.org/ereg/public/jump?_p=GRI
+
+* Reference List
+:PROPERTIES:
+:ID:       047e9378-033a-4552-8c06-d23bb4249cea
+:END:
+1. https://www.ets.org/gre.html

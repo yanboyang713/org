@@ -1,21 +1,28 @@
 :PROPERTIES:
 :ID:       2f403e29-30f9-469a-9b5d-e2b30a9330d0
 :END:
-#+title: Integer & Combinatorial Optimization
+#+title: Combinatorial Optimization
 #+date: 2025-10-23
 
-Integer Programming, IP
+* Overview
+Combinatorial optimization studies problems whose feasible solutions come from a finite or discrete set. The goal is to find the best solution according to an objective, such as the shortest route, a feasible schedule, or an optimal selection of projects.
 
-MIP / MILP
+Many such problems can be modeled using [[file:2026-10-29-integer_programming.org][integer programming (IP)]].
 
-Branch and Bound
+* Methods
+** Exact methods
+- *Branch and bound:* an exact method that divides a problem into smaller subproblems and uses bounds to rule out regions that cannot contain an optimal solution.
+- *Dynamic programming:* solves a problem by breaking it into smaller, related subproblems and reusing their solutions.
 
-Dynamic Programming
+** Heuristics and metaheuristics
+Heuristics seek good solutions efficiently; metaheuristics provide general strategies for exploring large search spaces. They do not generally guarantee an optimal solution.
 
-Heuristics / Metaheuristic
-Genetic Algorithm, GA
-Simulated Annealing, SA
-Particle Swarm Optimization, PSO
-Ant Colony Optimization, ACO
+- *Genetic algorithm (GA):* evolves a population of candidate solutions using selection and variation.
+- *Simulated annealing (SA):* explores solutions while gradually reducing its willingness to accept worse moves.
+- *Particle swarm optimization (PSO):* updates a population of candidate solutions using information from each candidate and the swarm.
+- *Ant colony optimization (ACO):* builds solutions using simulated pheromone trails that reinforce promising choices.
+
+* Topics
+- [[file:2026-10-29-pandoras_box.org][Pandora’s Box]]
 
 

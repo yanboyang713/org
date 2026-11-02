@@ -60,6 +60,9 @@ My bike parts list
 https://yamaha-motor.com/parts/search?vin=MH3DE14Y2TK001525
 
 *** Air-filter
+:PROPERTIES:
+:ID:       f5996d7d-b774-4dea-af6c-2a46ffb99725
+:END:
 OEM part number: BWN-E4450-00-00
 https://www.partzilla.com/product/yamaha/BWN-E4450-00-00?titan_sku=BWN-E4450-00-00
 
@@ -165,3 +168,9 @@ https://www.amazon.com/Meccion-Impact-Socket-Metric-Length/dp/B0F9956TMB/ref=sr_
 https://www.amazon.com/Olsa-Tools-6-Point-Mechanic-Professional/dp/B092145737/ref=sr_1_8?crid=2L79KRXGRDHLZ&dib=eyJ2IjoiMSJ9.6X5zvbbw_pipbsLtfHEb7w3kQmZMszh0o5SWG1E45_ccObDvn2Vc9bvC_PZje4ouMyAe-1Zr1UrL8s8j0DOnKWraNNcpKJzyCLtlzsMxWhQq7xsGoDxPHNKm8w2aqhu2sM4v153J-wwC2FNuPyaPG92PL8tqQwQx8bdanRqvEyN1HJd1kATGd_PvPap4VLPGIR5VlSgYciCmOLm6qzf9Cyr5yhKvWFBLEvNDr9UEq6NmJMh-5K2qXSGFp8KtWIhWyPmPHfz7SbWnIvhayYqRMlqaTJuyxHbjutiTjOFi1JM.pzUbblPGDxkZeQtdfL0egtHjWOQ4vgfjyE7yzXud4i0&dib_tag=se&keywords=socket%2B3%2F8%2Bdrive%2B6mm%2Bset&qid=1777256457&sprefix=socket%2B3%2F8%2Bdrive%2B6mm%2Bset%2Caps%2C124&sr=8-8&th=1
 https://www.amazon.com/MIXPOWER-Mid-Length-Storage-14-Piece-Semi-Deep/dp/B0CZQ358CS/ref=sr_1_13?crid=2L79KRXGRDHLZ&dib=eyJ2IjoiMSJ9.6X5zvbbw_pipbsLtfHEb7w3kQmZMszh0o5SWG1E45_ccObDvn2Vc9bvC_PZje4ouMyAe-1Zr1UrL8s8j0DOnKWraNNcpKJzyCLtlzsMxWhQq7xsGoDxPHNKm8w2aqhu2sM4v153J-wwC2FNuPyaPG92PL8tqQwQx8bdanRqvEyN1HJd1kATGd_PvPap4VLPGIR5VlSgYciCmOLm6qzf9Cyr5yhKvWFBLEvNDr9UEq6NmJMh-5K2qXSGFp8KtWIhWyPmPHfz7SbWnIvhayYqRMlqaTJuyxHbjutiTjOFi1JM.pzUbblPGDxkZeQtdfL0egtHjWOQ4vgfjyE7yzXud4i0&dib_tag=se&keywords=socket%2B3%2F8%2Bdrive%2B6mm%2Bset&qid=1777256457&sprefix=socket%2B3%2F8%2Bdrive%2B6mm%2Bset%2Caps%2C124&sr=8-13&th=1
 
+* enduro boots
+:PROPERTIES:
+:ID:       bf12b627-962f-4842-8184-23bebebaddad
+:END:
++ leatt Boots 4.5 Enduro
+  https://us.leatt.com/products/boots-4-5-enduro-sale-my26?variant=44600882495535

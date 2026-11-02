@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       5ba05e11-34cb-4286-bd80-d53025d651b9
+:END:
+#+title: TradingView
+#+date: 2026-10-21
+
+

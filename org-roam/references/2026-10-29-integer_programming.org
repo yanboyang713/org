@@ -1,0 +1,17 @@
+:PROPERTIES:
+:ID:       5362c57a-7403-470e-a056-eac83a681b12
+:END:
+#+title: Integer Programming (IP)
+#+date: 2026-10-29
+
+Integer programming (IP) is an optimization modeling framework in which some or all decision variables are required to take integer values. Binary variables, restricted to 0 or 1, often represent yes-or-no decisions.
+
+IP is widely used to model [[file:2025-10-23-133004-integer_combinatorial_optimization.org][combinatorial optimization]] problems.
+
+* Related formulations
+- *Mixed-integer programming (MIP):* includes both integer and continuous decision variables.
+- *Mixed-integer linear programming (MILP):* a MIP with a linear objective and linear constraints.
+
+* Solution methods
+- *Branch and bound:* partitions the search into subproblems and uses bounds to eliminate subproblems that cannot contain an optimal solution.
+- *Dynamic programming:* solves a problem through smaller, related subproblems, reusing their solutions where possible.

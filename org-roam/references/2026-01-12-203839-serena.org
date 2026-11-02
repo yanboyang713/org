@@ -9,17 +9,55 @@
 + Serena provides essential semantic code retrieval and editing tools that are akin to an IDE’s capabilities, extracting code entities at the symbol level and exploiting relational structure. When combined with an existing coding agent, these tools greatly enhance (token) efficiency.
 + Serena is free & open-source, enhancing the capabilities of LLMs you already have access to free of charge.
 
-* How to use Serena with codex cli
+* Mental model
+#+begin_example
+                    Serena
+                      |
+          +-----------+-----------+
+          |                       |
+      Codex CLI             Antigravity CLI
+          |                       |
+ --context=codex        --context=antigravity
+          |                       |
+          +-----------+-----------+
+                      |
+               Your codebase
+                      |
+        LSP semantic understanding
+#+end_example
+
+* Install Serena
+1. [[id:348f8c0c-4138-4dcd-840e-32f310d375fe][Install uv]] (skip if already installed)
+
+2. Install Serena as a uv tool
+   #+begin_src bash
+   uv tool install -p 3.13 serena-agent
+   #+end_src
+
+3. Initialize Serena
+   #+begin_src bash
+   serena init
+   #+end_src
+
+   This creates the default Serena setup using the language-server backend.
+
+* Configure Serena for Codex CLI
 1. [[id:b952a642-228b-4b25-997f-6718fe4541b3][Install Codex CLI]] (skip if already installed)
 
-2. [[id:348f8c0c-4138-4dcd-840e-32f310d375fe][UV Installation]] (Serena is managed by uv; uvx runs Serena without a permanent install)
+2. Run Serena's Codex setup command
+   #+begin_src bash
+   serena setup codex
+   #+end_src
 
-3. Configure Serena as an MCP server for [[https://oraios.github.io/serena/02-usage/030_clients.html#codex][Codex]]
-   Create (or edit) =~/.codex/config.toml= and add:
+   This configures Serena as an MCP server for Codex.
+
+3. Manual Codex configuration, if needed
+   Create or edit =~/.codex/config.toml=:
    #+begin_src toml
    [mcp_servers.serena]
-   command = "uvx"
-   args = ["--from", "git+https://github.com/oraios/serena", "serena", "start-mcp-server", "--context", "codex"]
+   startup_timeout_sec = 15
+   command = "serena"
+   args = ["start-mcp-server", "--project-from-cwd", "--context=codex"]
    #+end_src
 
 4. Start Codex from inside your project directory
@@ -28,22 +66,115 @@
    codex
    #+end_src
 
-5. Activate the project inside the Codex chat (required)
-   Say:
-   - Activate the current dir as project using serena
+5. Verify inside Codex
+   #+begin_src text
+   /mcp
+   #+end_src
 
-6. Verify / troubleshoot
-   - If something fails, check Codex logs: =~/.codex/log/codex-tui.log=
-   - If Serena’s dashboard doesn’t auto-open, open it manually:
-     - http://localhost:24282/dashboard/index.html
-     - (or a higher port if 24282 is already taken)
-   - Codex may show Serena tool calls as =failed= even when they actually ran (known Codex UI issue).
+   If the project is not activated automatically, ask Codex:
+   #+begin_quote
+   Activate the current dir as project using serena
+   #+end_quote
 
-7. If Serena can’t “see” your code well: install language servers for your language
-   Serena’s semantic code understanding relies on language servers (LSP) unless you use the JetBrains backend.
-   See: https://oraios.github.io/serena/01-about/020_programming-languages.html
+* Configure Serena for Antigravity CLI
+Add Serena as an MCP server in Antigravity's MCP configuration.
+
+1. Open Antigravity's MCP server configuration.
+   - Antigravity CLI interactive TUI: start it with =agy=, then type =/mcp= inside the Antigravity prompt box and press =Enter= to open the interactive MCP Manager. This does not work from a normal shell prompt, from =agy -p= / print mode, or from the Antigravity IDE UI.
+   - Antigravity CLI command-line fallback:
+     #+begin_src bash
+     agy mcp add serena serena start-mcp-server --context=antigravity
+     agy mcp list
+     #+end_src
+   - Antigravity 2.0: click the Settings button in the bottom-left corner, then go to =Customizations= and find =Installed MCP Servers=.
+   - Antigravity IDE: click the =...= menu at the top of the editor's agent side panel, choose =MCP Servers=, then click =Manage MCP Servers= and =View raw config=.
+   - Direct file edit, global: open =~/.gemini/config/mcp_config.json=.
+   - Direct file edit, workspace-only: open =<project>/.agents/mcp_config.json=.
+
+2. Add a server named =serena=.
+   If Antigravity asks for fields, use:
+   - name: =serena=
+   - command: =serena=
+   - args: =start-mcp-server= and =--context=antigravity=
+
+   If Antigravity shows a JSON editor, add this entry:
+   #+begin_src json
+   {
+     "mcpServers": {
+       "serena": {
+         "command": "serena",
+         "args": [
+           "start-mcp-server",
+           "--context=antigravity"
+         ]
+       }
+     }
+   }
+   #+end_src
+
+   If the file already has an =mcpServers= object, add only the =serena= entry inside it:
+   #+begin_src json
+   "serena": {
+     "command": "serena",
+     "args": [
+       "start-mcp-server",
+       "--context=antigravity"
+     ]
+   }
+   #+end_src
+
+3. Save the MCP configuration and restart / reload Antigravity.
+   Serena must already be installed so that the =serena= command is available on =$PATH=.
+
+4. Start Antigravity from inside the project directory.
+
+5. Ask the agent once:
+   #+begin_quote
+   Activate the current project using serena's activation tool
+   #+end_quote
+
+Antigravity does not currently include the working directory in its MCP configuration, so project activation is manual. Serena's dashboard may show the client as =none= for Antigravity, but the tools should still work.
+
+* Serena configuration
+Serena's global configuration is stored at:
+#+begin_src text
+~/.serena/serena_config.yml
+#+end_src
+
+Open it with:
+#+begin_src bash
+serena config edit
+#+end_src
+
+Useful things to adjust in =serena_config.yml=:
+- default language backend: language servers or JetBrains
+- enabled / disabled tools
+- default modes
+- trusted project paths
+- language-server-specific settings
+- dashboard and logging settings
+
+Project-specific Serena data normally lives in:
+#+begin_src text
+<project>/.serena/
+#+end_src
+
+To create or index a Serena project manually:
+#+begin_src bash
+serena project create
+serena project create --index
+#+end_src
+
+* Verify / troubleshoot
+- If something fails in Codex, check =~/.codex/log/codex-tui.log=.
+- If Serena's dashboard does not auto-open, open http://localhost:24282/dashboard/index.html, or a higher port if =24282= is already taken.
+- If Serena cannot understand the code semantically, install the language server for the project's language.
+- To inspect available Serena commands, run =serena --help= or =serena start-mcp-server --help=.
 
 * Reference List
 1. https://github.com/oraios/serena
 2. https://oraios.github.io/serena/02-usage/030_clients.html
 3. https://oraios.github.io/serena/01-about/000_intro.html
+4. https://github.com/oraios/serena/blob/main/docs/02-usage/010_installation.md
+5. https://oraios.github.io/serena/02-usage/020_running.html
+6. https://oraios.github.io/serena/02-usage/050_configuration.html

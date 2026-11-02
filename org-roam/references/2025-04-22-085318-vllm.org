@@ -13,6 +13,187 @@ PagedAttention also allows continuous batching, which is a method for handling m
 Like [[id:986e00f4-0df0-4968-a1c1-aa625bfedf6d][DeepSpeed]], it also supports optimized CUDA kernels for lower latency inference.
 
 It is built on top of Megatron and can interface with DeepSpeed.
+* Structure
+vLLM is easiest to understand as two layers:
+
+  1. A user-facing inference/serving layer.
+  2. A high-performance execution engine underneath it.
+
+  The central runtime flow is:
+
+  Python API or HTTP request
+          ↓
+  Input/tokenization and configuration
+          ↓
+  EngineCore
+          ↓
+  Scheduler + KV-cache manager
+          ↓
+  Executor
+          ↓
+  Worker / ModelRunner
+          ↓
+  Model layers and GPU kernels
+          ↓
+  Sampling and output processing
+
+  ## Repository map
+
+   Directory                 Purpose
+  ━━━━━━━━━━━━━━━━━━━━━━━━  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   vllm                      Main Python package
+  ────────────────────────  ─────────────────────────────────────────────────────
+   csrc                      Native C++/CUDA/ROCm implementations
+  ────────────────────────  ─────────────────────────────────────────────────────
+   rust                      Rust components and protocol support
+  ────────────────────────  ─────────────────────────────────────────────────────
+   tests                     Tests, generally organized like the main package
+  ────────────────────────  ─────────────────────────────────────────────────────
+   examples                  Runnable examples for common features
+  ────────────────────────  ─────────────────────────────────────────────────────
+   benchmarks                Serving, throughput, latency, and kernel benchmarks
+  ────────────────────────  ─────────────────────────────────────────────────────
+   docs                      User, contributor, and architecture documentation
+  ────────────────────────  ─────────────────────────────────────────────────────
+   requirements              Platform, build, test, and lint dependencies
+  ────────────────────────  ─────────────────────────────────────────────────────
+   cmake                     Native extension build configuration
+  ────────────────────────  ─────────────────────────────────────────────────────
+   docker                    Container images and entrypoints
+  ────────────────────────  ─────────────────────────────────────────────────────
+   .buildkite and .github    CI and repository automation
+
+  ## The main Python package
+
+  ### Entry points
+
+  vllm/entrypoints contains public interfaces:
+
+  - vllm/entrypoints/llm.py:66 defines LLM, the high-level offline Python API.
+  - vllm/entrypoints/cli/main.py:17 dispatches commands such as vllm serve and vllm bench.
+  - entrypoints/openai/ implements the OpenAI-compatible server.
+  - entrypoints/serve/ contains the newer general serving infrastructure.
+  - entrypoints/pooling/, generate/, and speech_to_text/ support other task types.
+
+  The CLI executable itself is registered in pyproject.toml:43.
+
+  ### Configuration
+
+  vllm/config defines configuration by concern:
+
+  - model and tokenizer
+  - scheduler
+  - KV cache
+  - parallel execution
+  - compilation
+  - quantization
+  - speculative decoding
+  - multimodal processing
+
+  The aggregate object passed through the runtime is typically VllmConfig. CLI and Python arguments are translated into it through vllm/engine/arg_utils.py.
+
+  ### The V1 engine
+
+  Most new engine work belongs under vllm/v1.
+
+  Important parts are:
+
+  - vllm/v1/engine/async_llm.py:70: asynchronous user/server-facing engine.
+  - vllm/v1/engine/llm_engine.py:48: synchronous engine used by LLM.
+  - vllm/v1/engine/core.py:98: owns the central inference loop.
+  - vllm/v1/core/sched/scheduler.py:70: selects requests and token work for each step.
+  - v1/core/: scheduling and KV-cache bookkeeping.
+  - v1/executor/: selects how workers run—single process, multiprocessing, Ray, and platform-specific variants.
+  - v1/worker/: device workers and model runners.
+  - v1/attention/: attention abstractions and backend selection.
+  - v1/sample/: token sampling.
+  - v1/spec_decode/: speculative decoding.
+  - v1/structured_output/: constrained generation.
+
+  A useful distinction:
+
+  AsyncLLM / LLMEngine
+      request lifecycle, input/output, streaming
+
+  EngineCore
+      engine loop and coordination
+
+  Scheduler
+      decides what token work runs next
+
+  Executor
+      sends work to one or more workers
+
+  ModelRunner
+      prepares tensors and executes the model
+
+  ### Models and layers
+
+  vllm/model_executor is the model implementation layer:
+
+  - models/: architecture implementations and model registry.
+  - layers/: attention, linear layers, MoE, normalization, quantization, and related building blocks.
+  - model_loader/: loading weights from supported formats.
+  - kernels/: Python-facing kernel integration.
+
+  A model implementation usually resembles its Hugging Face counterpart structurally, but replaces ordinary PyTorch layers with vLLM-aware parallel,
+  quantized, and cache-aware layers.
+
+  vllm/models contains newer or more specialized model families with platform-specific implementations.
+
+  ### Hardware and performance
+
+  Several areas work together:
+
+  - vllm/platforms: detects CUDA, ROCm, CPU, TPU, XPU, and other platforms.
+  - vllm/distributed: tensor, pipeline, data, and expert parallelism plus communication.
+  - vllm/compilation: torch.compile, graph rewriting, and CUDA graphs.
+  - vllm/kernels: Triton and other Python-side kernels.
+  - csrc: compiled low-level operations.
+
+  The native code is important, but it is not the best place to begin unless you are specifically investigating a kernel.
+
+  - transformers_utils/: Hugging Face compatibility.
+  - tracing/ and v1/metrics/: observability.
+  - plugins/: extension points.
+
+  ## How one request travels
+
+  For offline inference:
+
+  llm = LLM(model="...")
+  outputs = llm.generate(prompts, sampling_params)
+
+  The approximate path is:
+
+  1. LLM validates arguments and builds VllmConfig.
+  2. LLMEngine or AsyncLLM preprocesses and tokenizes the request.
+  3. An EngineCoreRequest is sent to EngineCore.
+  4. The scheduler admits the request and allocates KV-cache blocks.
+  5. The executor asks workers to execute the selected tokens.
+  6. A model runner performs the forward pass.
+  7. Sampling chooses output tokens.
+  8. Engine outputs return to the output processor.
+  9. Tokens are detokenized and returned or streamed.
+
+  The serving path adds HTTP request parsing and OpenAI response formatting around essentially the same engine.
+
+  ## Tests
+
+  Tests mirror architectural concerns:
+
+  - tests/v1/: core V1 engine behavior.
+  - tests/model_executor/: layers and model execution.
+  - tests/models/: model-specific correctness.
+  - tests/kernels/: kernel correctness, not performance.
+  - tests/entrypoints/: CLI and server APIs.
+  - tests/distributed/: multi-device behavior.
+  - tests/multimodal/, tests/lora/, tests/spec_decode/: feature suites.
+  - tests/evals/: evaluation coverage for output-affecting changes.
+
+  For a change, first look for an existing nearby test file. This project explicitly prefers extending existing suites over creating one-off files.
+
+
 
 * Deploying vLLM on [[id:b60301a4-574f-43ee-a864-15f5793ea990][Kubernetes]]
 :PROPERTIES:
@@ -225,6 +406,211 @@ sudo systemctl status vllm-embed --no-pager
 #+begin_src bash
 ssh -Y rhe9cf@login.hpc.virginia.edu 
 #+end_src
+**  Load Python / Miniforge
+:PROPERTIES:
+:ID:       aced993d-e79a-4166-ad95-c2bd535d4945
+:END:
+UVA recommends Miniforge for Python on HPC; available versions can be checked with module spider miniforge, and the default can be loaded with module load miniforge.
+#+begin_src bash
+  cd /sfs/gpfs/tardis/home/rhe9cf/Projects/vllm
+  module purge
+  module load miniforge/24.11.3-py3.12
+#+end_src
+If that exact version is unavailable, check:
+#+begin_src bash
+module spider miniforge
+#+end_src
+Then load the available Python 3.12 or Python 3.11 Miniforge module.
+** Create the development environment
+:PROPERTIES:
+:ID:       8df2bff8-58f0-40fd-935e-602c0774e440
+:END:
+Create a named environment:
+#+begin_src bash
+  conda create -n vllm-py312 python=3.12 -y
+  conda activate vllm-py312
+#+end_src
+Or create it inside the repository:
+#+begin_src bash
+  conda create -p ./conda-env python=3.12 -y
+  conda activate ./conda-env
+#+end_src
+
+** Install uv
+:PROPERTIES:
+:ID:       e14c2fcb-b4b2-45fd-b595-00f723f3b6fb
+:END:
+#+begin_src bash
+python -m pip install uv
+#+end_src
+** Check the machine
+:PROPERTIES:
+:ID:       d14e864d-b579-468b-8559-c0ceba11ce73
+:END:
+From the repository root:
+  #+begin_src bash
+  nvidia-smi
+  uv --version
+  #+end_src
+  If nvidia-smi fails, you may be on a login/CPU node and need to request a GPU node first.
+  If uv not load, please, load uv
+#+begin_src bash
+  module avail uv
+  module load uv
+#+end_src
+
+#+begin_src bash
+  module load gcc/11.4.0
+  gcc --version
+  g++ --version
+
+  export CC="$(command -v gcc)"
+  export CXX="$(command -v g++)"
+#+end_src
+** Create the development environment
+:PROPERTIES:
+:ID:       8143c454-e989-4222-86c5-0d5c817c5e5e
+:EMBEDDING: -0.005422 0.018960 -0.144086 -0.027126 0.048398 -0.020375 -0.004356 0.049219 -0.042119 -0.053405 -0.022680 0.066571 0.011362 0.036653 0.009473 -0.039603 0.015399 -0.030166 0.030232 0.016501 -0.049675 -0.081687 0.015406 -0.036996 0.123133 0.024524 0.034415 0.044002 0.010353 -0.045881 0.080254 -0.017679 -0.021047 -0.027048 -0.053312 -0.066855 0.065658 -0.062466 0.011020 0.028939 0.013027 0.023186 0.021522 -0.030300 0.017779 0.003543 0.021438 -0.015833 0.019540 -0.075036 0.017183 0.004233 -0.041812 0.019319 0.057212 0.000293 -0.020950 0.025831 -0.031635 0.001514 0.052037 0.052156 -0.003330 0.052476 0.011775 0.025890 0.016162 0.021254 0.001313 -0.011579 0.042160 -0.047166 0.003850 -0.019191 -0.026449 -0.006286 -0.040197 -0.075739 0.002705 0.079789 0.024925 -0.018627 0.045573 0.011610 -0.007197 -0.061530 -0.013058 0.037053 -0.044382 0.025619 0.027534 0.012224 -0.029290 0.023245 -0.026706 -0.000948 -0.047024 0.071307 -0.013904 -0.022848 -0.015687 -0.039232 -0.002409 -0.009500 -0.000726 0.023115 0.029133 0.004086 -0.038389 -0.007553 -0.030851 0.013854 -0.016406 -0.017777 0.030408 -0.016615 0.080897 -0.051521 0.020581 0.068437 -0.034008 -0.023861 0.014781 0.015370 0.057283 0.044972 -0.068077 -0.039855 0.031334 -0.016189 0.003937 -0.037671 -0.069037 0.031822 0.027190 0.024694 -0.037031 -0.032664 0.042160 -0.019508 -0.002376 0.068837 -0.008707 -0.009299 -0.033175 -0.052574 -0.015428 -0.042945 -0.055211 0.035107 -0.015524 -0.009581 0.009939 0.016523 0.013930 -0.061292 -0.021100 0.046529 -0.013988 0.076840 0.040884 0.039655 -0.037805 0.023523 0.012804 -0.093525 0.006971 0.032603 -0.021555 0.006933 -0.047410 -0.031434 -0.032874 -0.002230 -0.009206 0.002003 0.019869 -0.025669 0.018340 0.057365 0.027874 -0.020480 0.031409 -0.000050 -0.054815 0.023696 -0.019007 -0.058908 0.016112 -0.041422 0.026486 0.034928 -0.039140 -0.051011 -0.027663 -0.044506 -0.027547 -0.051418 0.041738 -0.010115 -0.057974 0.018326 -0.008946 -0.000016 -0.025697 0.066556 -0.025720 -0.013865 0.004273 0.042791 0.074381 -0.022846 -0.017142 0.005178 0.037480 -0.065840 -0.000825 -0.027658 -0.019300 0.011416 0.023534 -0.028068 0.028726 -0.006247 0.043384 0.002601 -0.060134 -0.008366 -0.009638 -0.005015 -0.036294 -0.033987 0.051945 0.038807 -0.013560 0.035966 -0.001069 0.029932 0.009164 0.040300 0.025760 0.012372 0.001577 0.005725 -0.023166 0.008892 0.042241 -0.010184 0.005144 0.035640 -0.020802 0.007482 0.041079 0.006750 0.040113 -0.011668 -0.049574 0.004921 -0.024461 -0.076328 -0.019019 -0.064372 0.046784 -0.019427 -0.013925 0.013170 -0.085515 -0.012989 0.040373 -0.012198 0.000681 -0.005658 0.028600 0.029528 -0.017362 -0.007250 0.029263 0.030753 -0.033055 0.063537 -0.040325 -0.066601 0.026703 0.010705 -0.006212 -0.001229 -0.003832 -0.016350 0.005991 -0.018289 0.036099 -0.037918 -0.056307 0.044164 0.029844 0.008813 0.014313 0.021357 -0.002461 -0.005441 0.018550 0.034980 0.026242 0.016425 -0.014686 -0.040497 -0.033049 0.026419 0.001339 -0.017079 -0.036918 -0.029820 -0.035072 0.048865 -0.047314 0.039979 0.039831 0.036764 0.011395 -0.016511 -0.029858 -0.046202 0.005250 -0.036136 0.017093 0.046980 0.035709 0.070752 0.014441 -0.033732 0.010483 0.047571 0.031343 0.008135 -0.103041 -0.007713 -0.004837 0.044931 -0.039333 0.027237 0.058605 0.004822 0.015012 0.004470 0.012945 -0.026256 -0.036571 0.027466 0.018368 0.097690 0.016585 0.010254 0.003781 0.021478 -0.021422 0.004886 0.000892 0.008328 -0.011766 -0.035484 0.065877 0.030100 0.072813 -0.019419 -0.014142 0.048441 0.039549 -0.050551 0.019254 0.036524 -0.036471 -0.009436 0.013171 0.008923 -0.008261 -0.005444 -0.026025 -0.000314 -0.009758 0.067554 0.060408 -0.037327 -0.052741 0.007636 -0.018761 -0.002295 0.006292 -0.004386 0.000725 0.021847 0.018838 -0.029520 0.007290 0.011912 -0.008417 -0.043504 0.105843 -0.000196 -0.042523 0.038981 -0.086169 -0.086681 0.057619 0.000764 -0.055435 0.001720 -0.032050 -0.015454 0.023821 -0.009999 0.078139 -0.000892 0.039549 -0.052728 0.026746 -0.007578 0.024811 0.054625 -0.049210 0.027396 0.011308 0.024017 -0.000393 -0.011578 0.044767 0.066367 0.011418 0.044581 0.032037 -0.091431 0.033456 0.045305 0.047830 0.019258 -0.003923 0.024012 0.033795 0.034434 0.008823 0.026996 0.031818 -0.033876 -0.037314 -0.061413 0.011066 0.077574 0.079895 -0.048137 -0.011736 0.064969 0.001751 0.020039 0.028443 -0.014052 0.084298 0.012244 -0.003842 -0.026068 -0.008579 -0.037005 0.002896 -0.030236 -0.029476 -0.010639 0.002384 0.015872 -0.016539 -0.000798 0.047786 0.055657 -0.070123 -0.025952 0.029375 -0.024171 -0.000068 0.006839 0.055446 0.038286 0.028802 0.065924 0.008003 -0.001071 -0.086956 -0.038172 -0.044605 0.057202 -0.030644 -0.037319 -0.022593 -0.021034 -0.036017 0.018166 0.018963 0.039050 0.001806 -0.049477 -0.015748 0.008613 0.048087 0.070423 0.034120 0.053303 -0.017286 -0.002435 0.075282 -0.030608 0.049042 0.000868 -0.025450 -0.022076 0.031365 0.018842 0.010179 0.011678 0.035057 -0.044548 0.024710 0.015871 -0.078134 -0.053013 -0.006196 -0.058993 -0.018387 -0.029985 -0.019522 0.039742 -0.009534 -0.019013 0.021142 0.028252 0.004958 -0.014804 -0.007330 -0.023915 -0.019918 -0.000511 -0.015983 0.039447 -0.003429 -0.002466 -0.004502 -0.034456 0.019142 0.025592 -0.004178 -0.011268 -0.028160 0.055807 -0.035536 -0.067982 0.069891 -0.033793 0.007618 -0.027243 0.016735 -0.038588 -0.026834 -0.009685 -0.044367 -0.056230 -0.021523 -0.030745 0.059023 0.028170 -0.021002 -0.031916 -0.004251 0.000236 0.009575 0.041122 -0.025142 -0.054293 -0.045463 -0.023166 0.005109 0.001773 0.010532 0.015300 -0.045268 -0.011002 0.008154 -0.022221 0.010609 0.010098 -0.019294 0.029922 -0.007339 -0.016754 -0.013957 -0.038001 0.042998 0.010194 0.030891 0.026464 0.008228 0.024529 -0.051034 -0.034269 -0.021268 -0.032601 -0.042585 0.026475 0.062846 -0.031627 0.016411 0.034646 -0.028056 0.023316 -0.014822 -0.042657 0.055033 -0.026454 0.024487 0.023318 0.051345 -0.000367 0.036504 0.025354 -0.022074 -0.033588 0.022952 -0.065653 0.049212 0.006472 0.049480 -0.036674 -0.034492 -0.019725 0.026675 0.056144 0.000476 0.014074 -0.058580 -0.043030 -0.019546 0.017598 -0.022436 -0.018577 -0.012678 0.028771 0.054742 -0.066629 0.003341 0.019837 0.005288 -0.037874 0.025856 0.001205 0.031834 -0.012643 0.075603 0.089602 0.029706 -0.030903 0.049772 0.007635 -0.015040 -0.039458 -0.066467 -0.032962 0.008878 -0.008952 -0.043275 0.032745 0.045649 0.028077 -0.010939 0.029022 -0.067220 -0.069770 -0.005668 0.021871 -0.063634 -0.028481 0.028599 0.004120 0.052969 0.033638 -0.005070 -0.012826 0.049562 -0.014899 -0.027981 0.000549 0.010866 -0.096430 0.020196 -0.026010 -0.016127 -0.015695 0.001930 0.025736 -0.036181 0.003217 0.010382 0.016486 -0.023786 -0.073586 -0.013558 0.075656 -0.000296 0.002111 -0.007348 0.046974 -0.011290 0.027768 -0.015934 0.066034 -0.044928 -0.010602 -0.027723 -0.012346 -0.039433 0.045171 0.016545 0.031230 -0.004678 0.000460 -0.024128 0.013964 0.054528 -0.041597 -0.061906 0.035534 0.018585 0.031227 0.042206 -0.056194 0.067333 -0.013384 -0.022613 -0.024416 -0.048527 0.047714 -0.039041 -0.000664 -0.011692 -0.024155 -0.042428 -0.049067 -0.063710 0.001041 -0.005785 0.028854 -0.022369 -0.006522 -0.024767 0.027897 0.015002 -0.019249 0.059375 -0.014928 -0.006533 0.026551 -0.019296 -0.001384 0.038802 0.003055 0.060514 0.012993 0.007317 -0.009691 0.034990 0.002483 0.001359 -0.035476 -0.002262 -0.070587
+:END:
+The project requires Python commands to use uv and .venv/bin/python, not system python3 or bare pip.
+#+begin_src bash
+uv venv --python 3.12
+source .venv/bin/activate
+
+uv pip install -r requirements/lint.txt
+pre-commit install
+#+end_src
+For Python development and normal inference, use precompiled native components:
+#+begin_src bash
+  VLLM_USE_PRECOMPILED=1 uv pip install -e . --torch-backend=auto
+  
+  # See detailed progress
+  VLLM_USE_PRECOMPILED=1 uv pip install -vv -e . --torch-backend=auto
+#+end_src
+This is much faster than compiling CUDA/C++ locally.
+
+If you intend to modify csrc/ or other native code, build locally instead:
+#+begin_src bash
+  uv pip install -e . --torch-backend=auto
+  # See detailed progress
+  uv pip install -vv -e . --torch-backend=auto
+#+end_src
+That can take substantially longer and requires a working CUDA compiler toolchain.
+** Obtain Hugging Face access
+:PROPERTIES:
+:ID:       45d6eb36-6140-4712-9ebb-74504d09897c
+:END:
+Use the official instruction checkpoint:
+  google/gemma-4-E2B-it
+Open its Hugging Face page, accept any applicable access terms, and create a read token. Then authenticate without putting the token directly in shell history:
+#+begin_src bash
+  .venv/bin/hf auth login
+#+end_src
+If that executable is unavailable:
+#+begin_src bash
+  uv pip install huggingface_hub
+  .venv/bin/hf auth login
+#+end_src
+  Official Gemma 4 checkpoints also include E4B, 12B, 26B-A4B, and 31B variants. Start with E2B unless your GPU capacity clearly supports a larger model.
+  Official Google Gemma guidance (https://ai.google.dev/gemma/docs/get_started)
+** Verify the installation
+:PROPERTIES:
+:ID:       f338132f-4348-4a71-b9af-07894c5a2309
+:END:
+#+begin_src bash
+  .venv/bin/python -c "import vllm; print(vllm.__version__)"
+  .venv/bin/python -m vllm.entrypoints.cli.main --help
+#+end_src
+  The normal installed command should also work:
+  #+begin_src bash
+  vllm --help
+  #+end_src
+** Run an OpenAI-compatible server
+:PROPERTIES:
+:ID:       9c0f3b0d-1226-4eb5-8d53-9955c503681d
+:END:
+Start conservatively with a short context to reduce KV-cache memory:
+#+begin_src bash
+  vllm serve google/gemma-4-E2B-it \
+      --dtype bfloat16 \
+      --max-model-len 4096 \
+      --gpu-memory-utilization 0.90 \
+      --port 8000
+#+end_src
+If the GPU does not support BF16, try:
+#+begin_src bash
+  vllm serve google/gemma-4-E2B-it \
+      --dtype float16 \
+      --max-model-len 4096 \
+      --gpu-memory-utilization 0.90 \
+      --port 8000
+#+end_src
+A long Gemma context requires much more KV-cache memory. Do not begin with its maximum context length.
+** Send a test request
+:PROPERTIES:
+:ID:       c0c9493f-766f-4d27-a5b2-3d5bc4ea6999
+:END:
+In another terminal:
+#+begin_src bash
+curl http://localhost:8000/v1/chat/completions \
+    -H "Content-Type: application/json" \
+    -d '{
+      "model": "google/gemma-4-E2B-it",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Explain paged attention in three short sentences."
+        }
+      ],
+      "max_tokens": 128
+    }'
+
+#+end_src
+Or use the OpenAI Python client:
+  #+begin_src bash
+  .venv/bin/python - <<'PY'
+  from openai import OpenAI
+
+  client = OpenAI(
+      base_url="http://localhost:8000/v1",
+      api_key="unused",
+  )
+
+  response = client.chat.completions.create(
+      model="google/gemma-4-E2B-it",
+      messages=[
+          {
+              "role": "user",
+              "content": "Explain paged attention in three short sentences.",
+          }
+      ],
+      max_tokens=128,
+      temperature=0.2,
+  )
+
+  print(response.choices[0].message.content)
+  PY
+
+  #+end_src
+** Run it directly from Python
+:PROPERTIES:
+:ID:       5758e631-f427-4b9f-9d11-a1fbf0c8fcfd
+:END:
+For a simple text test without a server:
+#+begin_src bash
+  .venv/bin/python - <<'PY'
+  from vllm import LLM, SamplingParams
+
+  llm = LLM(
+      model="google/gemma-4-E2B-it",
+      dtype="bfloat16",
+      max_model_len=4096,
+  )
+  print(outputs[0].outputs[0].text)
+  PY
+#+end_src
+supported quantized checkpoint, CPU offloading, or a GPU with more memory. Gemma 4 E2B’s name describes effective parameters; its total BF16 loading requirement is higher than a conventional 2B model.
+
 ** Choose storage location
 :PROPERTIES:
 :ID:       83589822-33bc-4231-8328-56704360173c

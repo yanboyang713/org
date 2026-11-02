@@ -13,7 +13,7 @@ UVA Research Computing provides shared high-performance computing resources for 
 
 UVA Computer Science also maintains a [[id:b5392aff-d459-450c-b18c-a41152a869b3][UVA CS Slurm cluster]] environment for CS-managed servers. It follows the same scheduler model: users request CPUs, memory, GPUs, time, and partitions, then submit work with commands such as ~sbatch~, ~salloc~, and ~srun~. However, the CS Slurm cluster is separate from UVA Research Computing's Rivanna/Afton systems, so CS users should follow CS-specific login, partition, reservation, GPU, and job-submission guidance when using department nodes.
 
-This guide focuses on Rivanna and Afton.
+This guide focuses on [[id:397077e1-a196-4537-9041-46eed9751271][Rivanna]] and Afton.
 
 * Access and Allocations
 :PROPERTIES:

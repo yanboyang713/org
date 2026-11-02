@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       17699a61-579f-469f-8077-cb5684e0fb05
+:END:
+#+title: Finviz
+#+date: 2026-10-21
+
+[[id:641eceb1-1d65-4d13-aa76-ed41be383b89][sector aware stock screening]]
+
+* Reference List
+:PROPERTIES:
+:ID:       601fec7c-227b-4d33-b458-7ad1fc8f8b3a
+:END:
+1. https://finviz.com/screener/stocks?ft=4&utm_source=chatgpt.com
